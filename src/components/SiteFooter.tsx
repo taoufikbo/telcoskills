@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Marque from "@/components/Marque";
+import { LienChoix } from "@/produits/consentement";
+import { mesureActive } from "@/produits/mesure";
 import { depotPublic } from "@/lib/contribution";
 import { INSTANCE } from "@/lib/instance";
 import { lienVisible, sectionsVisibles } from "@/lib/sections";
@@ -75,6 +77,12 @@ export default async function SiteFooter() {
             <a href={depotPublic()!} target="_blank" rel="noopener noreferrer" className="underline">
               Contribuer sur GitHub
             </a>
+          </>
+        )}
+        {mesureActive(INSTANCE.refonte) && (
+          <>
+            {" · "}
+            <LienChoix />
           </>
         )}
       </p>

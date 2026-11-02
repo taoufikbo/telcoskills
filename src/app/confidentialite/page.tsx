@@ -18,13 +18,14 @@ export default function Confidentialite() {
         <h2>Ce qui reste dans votre navigateur</h2>
         <p>
           Votre progression dans les roadmaps, vos réponses au questionnaire « Par où commencer ? » et votre choix de thème clair ou sombre sont enregistrés
-          uniquement dans votre navigateur (stockage local). Ils ne sont envoyés à aucun serveur. Le diagnostic d&apos;équipe calcule son résultat dans votre
+          uniquement dans votre navigateur (stockage local), ainsi que votre choix sur la mesure d&apos;audience (valable six mois). Ils ne sont envoyés à aucun serveur. Le diagnostic d&apos;équipe calcule son résultat dans votre
           navigateur et n&apos;enregistre rien.
         </p>
         <h2>Mesure d&apos;audience</h2>
         <p>
           {INSTANCE.nom} mesure la fréquentation avec Vercel Web Analytics : des statistiques agrégées sur les pages vues et les clics sur les boutons
-          principaux. Ce service n&apos;utilise pas de cookie. Aucune publicité, aucun traceur publicitaire.
+          principaux. Ce service n&apos;utilise pas de cookie. Aucune publicité, aucun traceur publicitaire. La mesure ne démarre qu&apos;avec votre accord, donné ou refusé dans le bandeau
+          affiché à votre première visite ; vous pouvez changer d&apos;avis à tout moment avec « Gérer mes choix », en bas de chaque page. Refuser ne retire aucune fonction du site.
         </p>
         <h2>Prise de contact et newsletter</h2>
         <p>

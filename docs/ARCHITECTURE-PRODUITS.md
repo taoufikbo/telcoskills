@@ -110,12 +110,13 @@ flowchart TD
 | Cockpit | `<Cockpit donnees titre parNiveau onOuvrir onRythme onObjectif>`, `<Programme programme parNiveau>`, `<Rythme>`, `calculerCockpit`, `calculerProgramme`, `placerSemaines`, `projeter` | rien ; mêmes interdits que les visualisations | Catalogue, `src/lib/objectif.ts` et `duree.ts` (partagés) ; suivi, rythme, date et échéances reçus en entrée (raccord : RoadmapView, ProgrammeChoisi) |
 | Preuve | `chiffresCatalogue(catalogue)` (build), `<Preuve chiffres>` | rien ; chaque chiffre porte sa source | Catalogue |
 | Recherche | `construireIndex`, `rechercher`, `normaliser`, `<RecherchePalette>`, `<BoutonRecherche>` | rien | Catalogue (index servi par /index-recherche.json) |
+| Consentement | `<Bandeau>`, `<LienChoix>`, `useConsentement`, `lireChoix` | `tcr:consentement` (`{ choix, jour }`, valable 6 mois) | aucun |
 | Mesure | `suivre`, `suivreUnParJour`, `EVENEMENTS`, `<LienSuivi>`, `<Analytics>`, `calculerIndicateurs` | `tcr:mesure:*` | `src/lib/jour.ts` |
 | Landscape | `chargerLandscape`, `resoudreLandscape` (build), `<LandscapeView landscape>` | rien | Catalogue (content/landscape.json, rôles du projet, roadmaps), Recherche (`normaliser`) |
 | Inscription | `<EncartInscription action champEmail>`, `doitAfficher` | `tcr:inscription` (pages vues, fermeture, inscription) | Parcours (a choisi un parcours ?), Mesure ; affiché seulement si INSTANCE.inscription est renseigné |
 | Carte héros | `disposerCarte(roadmap, cibles, { heures?, depart? })`, `choisirCible` (build), `<CarteHeros disposition progression? onOuvrir?>` | rien ; le linter lui interdit le stockage et les hooks de Progression | Catalogue ; progression reçue en entrée |
 
-Pages d'essai : `/labo/progression`, `/labo/parcours`, `/labo/visiteur`, `/labo/diagnostic`, `/labo/reprendre`, `/labo/carte-heros`, `/labo/liste`, `/labo/metro`, `/labo/arbre`, `/labo/objectif`, `/labo/cockpit`, `/labo/preuve`, `/labo/recherche`, `/labo/mesure`, `/labo/landscape`.
+Pages d'essai : `/labo/progression`, `/labo/parcours`, `/labo/visiteur`, `/labo/diagnostic`, `/labo/reprendre`, `/labo/carte-heros`, `/labo/liste`, `/labo/metro`, `/labo/arbre`, `/labo/objectif`, `/labo/cockpit`, `/labo/consentement`, `/labo/preuve`, `/labo/recherche`, `/labo/mesure`, `/labo/landscape`.
 
 ## Prochaines étapes
 
@@ -142,3 +143,9 @@ Pages d'essai : `/labo/progression`, `/labo/parcours`, `/labo/visiteur`, `/labo/
 - Page de roadmap : cockpit (où j'en suis, heures faites et restantes, rythme et date d'arrivée, prochaine étape, révisions dues, objectif et chemin critique), programme par bloc, puis la carte en détail. Raccord : `src/components/RoadmapView.tsx` lit la progression, le rythme et les échéances (produit Progression) et les passe au produit Cockpit ; une seule action principale (accent) : « Réviser » s'il y a des révisions dues, sinon « Ouvrir » la prochaine étape.
 - Résultat du diagnostic : raccord `src/components/ProgrammeChoisi.tsx` (programme du parcours recommandé, rythme partagé avec le cockpit), données `/programmes.json` (route statique, `src/lib/programmes.ts`).
 - Le rythme (h par semaine, défaut 4) appartient au produit Progression (`tcr:pratique`, champ `rythme`). Les heures sont l'hypothèse éditoriale de content/orientation.json : toujours « estimation indicative ».
+
+## Consentement à la mesure d'audience
+
+- Le site ne dépose aucun cookie. Le seul traitement soumis à choix est la mesure Vercel Web Analytics : le script (`Analytics`, produit Mesure) ne se charge qu'après « Accepter » ; sans accord, `window.va` n'existe pas et `suivre` ne fait rien.
+- Bandeau en bas de page (« Refuser » et « Accepter » à égalité, non bloquant), lien « Gérer mes choix » dans le pied de page ; refuser après avoir accepté recharge la page pour décharger le script. Choix mémorisé 6 mois (`VALIDITE_JOURS`, hypothèse du site).
+- Le bandeau et le lien n'existent que si la mesure existe (`mesureActive` : production, instance publique, `NEXT_PUBLIC_ANALYTICS=vercel`). Sans cette variable sur Vercel, aucun bandeau n'apparaît : il n'y aurait rien à consentir.

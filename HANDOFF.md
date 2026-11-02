@@ -101,6 +101,8 @@ node scripts/verifier-rendu.mjs                                   # après le bu
     - **Résultat du diagnostic** : le programme du parcours recommandé (et le rythme) s'affiche avant la carte, chargé depuis `/programmes.json` (statique, environ 59 Ko, seulement après un diagnostic).
     - **Reste ouvert** : le cockpit n'est pas encore sur « Mon espace » (/moi) ; le programme sur le catalogue /ressources/roadmaps ; la date d'arrivée suppose un rythme constant et ne tient pas compte des jours sautés ; à valider avec de vrais utilisateurs.
 
+15. **Consentement à la mesure d'audience (fait le 2026-11-02).** Produit src/produits/consentement (essai /labo/consentement) : bandeau, « Gérer mes choix » en pied de page, script Vercel Web Analytics chargé seulement après accord. Visible seulement si `NEXT_PUBLIC_ANALYTICS=vercel` est défini sur Vercel (sinon aucune mesure, donc aucun bandeau). Page Confidentialité mise à jour ; durée de conservation du choix (6 mois) et rédaction juridique à valider par l'auteur.
+
 ## Idées issues de l'analyse du parcours utilisateur (non demandées)
 
 Prochaine action visible sur chaque page de roadmap ; progression partagée entre parcours (les ids de nœud sont communs) ; tableau de bord « Reprendre » ; dates de relecture et signaux de confiance sur les ressources ; vue équipe ; mesure d'usage et entretiens utilisateurs. L'assistant d'orientation n'a pas été testé auprès de vrais utilisateurs.

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
-import { Analytics } from "@/produits/mesure";
+import { Bandeau } from "@/produits/consentement";
+import { Analytics, mesureActive } from "@/produits/mesure";
 import { BoutonRecherche, RecherchePalette } from "@/produits/recherche";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <RecherchePalette />
         {refonte && INSTANCE.inscription && <EncartInscription action={INSTANCE.inscription.action} champEmail={INSTANCE.inscription.champEmail} />}
         <Analytics />
+        {mesureActive(refonte) && <Bandeau />}
       </body>
     </html>
   );
