@@ -6,6 +6,7 @@ import Draft, { BROUILLONS_VISIBLES } from "@/components/Draft";
 import JsonLd from "@/components/JsonLd";
 import { LienSuivi } from "@/produits/mesure";
 import Subscribe from "@/components/Subscribe";
+import SommaireParcours from "@/components/SommaireParcours";
 import { competenceLd, filAriane } from "@/lib/donneesStructurees";
 import { frameworksDuNoeud } from "@/lib/frameworks";
 import { INSTANCE } from "@/lib/instance";
@@ -68,8 +69,17 @@ export default async function PageNoeud({ params }: { params: Params }) {
   const rubrique = rubriqueThematique(roadmap.id);
   const parent = rubrique ? { nom: rubrique.nom, chemin: rubrique.href } : { nom: "Roadmaps", chemin: BASE_ROADMAPS };
 
+  const sommaire = (
+    <SommaireParcours
+      roadmap={{ id: roadmap.id, blocs: roadmap.blocs, noeuds: roadmap.noeuds.map(({ id, titre, bloc, niveau }) => ({ id, titre, bloc, niveau })) }}
+      titre={roadmap.titre}
+      parNiveau={chargerOrientation().duree_par_niveau_heures}
+      courant={noeud.id}
+    />
+  );
+
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+    <main className="mx-auto max-w-[88rem] px-4 py-10 sm:px-6 sm:py-14">
       <JsonLd data={competenceLd(noeud, roadmap, urlNoeud(reference, noeud.id), urlRoadmap(roadmap.id))} />
       <JsonLd
         data={filAriane([
@@ -130,7 +140,15 @@ export default async function PageNoeud({ params }: { params: Params }) {
         revenant={null}
       />
 
-      <div className="grid gap-10 lg:grid-cols-[1fr_300px]">
+      <div className="grid gap-10 lg:grid-cols-[17rem_minmax(0,1fr)_17rem]">
+        {/* Mode apprentissage : le programme du parcours à gauche (replié sur mobile), la compétence au centre, sa fiche à droite. */}
+        <div className="lg:sticky lg:top-24 lg:max-h-[calc(100dvh-7rem)] lg:self-start lg:overflow-y-auto">
+          <details className="lg:hidden">
+            <summary className="btn btn-ghost btn-sm w-full cursor-pointer justify-center">Programme du parcours</summary>
+            <div className="pt-4">{sommaire}</div>
+          </details>
+          <div className="hidden lg:block">{sommaire}</div>
+        </div>
         <article className="min-w-0 space-y-10">
           <header className="space-y-4">
             <h1 className="text-4xl font-semibold sm:text-5xl">{noeud.titre}</h1>

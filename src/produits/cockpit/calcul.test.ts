@@ -95,6 +95,18 @@ describe("cockpit", () => {
     expect(c.revision.total).toBe(1);
     expect(c.revision.premier?.id).toBe(roadmap.noeuds[2].id);
   });
+  it("planning : ne garde que les révisions futures de cette roadmap, les plus proches d'abord, quatre au plus", () => {
+    const [a, b, c] = roadmap.noeuds;
+    const calendrier = [
+      { id: a.id, echeance: "2026-11-02" },
+      { id: "ailleurs", echeance: "2026-11-05" },
+      { id: b.id, echeance: "2026-11-09" },
+      { id: c.id, echeance: "2026-11-30" },
+    ];
+    const cockpit = calculerCockpit({ ...entree(), calendrier });
+    expect(cockpit.aVenir.map((r) => r.id)).toEqual([b.id, c.id]);
+    expect(cockpit.aVenir[0].jour).toBe("2026-11-09");
+  });
   it("objectif : compétences à acquérir, heures, chemin critique jusqu'à la cible", () => {
     const cible = roadmap.noeuds.find((n) => n.prerequis.length > 0)!;
     const c = calculerCockpit(entree(etatVide(now), cible.id));

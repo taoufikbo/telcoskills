@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useSyncExternalStore } from "react";
 import { suivre } from "@/produits/mesure";
-import { RYTHME_DEFAUT, definirRythme, echues, ecartJours, rythmeDe, enregistrerRappel as enregistrer, etatVide, jourLocal, lireEtat, migrer, serialiserEtat, type EtatPratique } from "./etat";
+import { RYTHME_DEFAUT, definirRythme, echues, prochainesEcheances, ecartJours, rythmeDe, enregistrerRappel as enregistrer, etatVide, jourLocal, lireEtat, migrer, serialiserEtat, type EtatPratique } from "./etat";
 import { lireStatuts, type Progression } from "./progression";
 
 const CLE = "tcr:pratique";
@@ -128,4 +128,10 @@ export function useRythme() {
   const { etat, muter, pret } = usePratique();
   const definir = useCallback((h: number) => muter((e) => definirRythme(e, h)), [muter]);
   return { rythme: pret ? rythmeDe(etat) : RYTHME_DEFAUT, definir };
+}
+
+/** Toutes les échéances de révision à venir ou dues (compétence, jour), pour le planning du cockpit. Vide tant que l'état local n'est pas lu. */
+export function useCalendrier(): { id: string; echeance: string }[] {
+  const { etat, pret } = usePratique();
+  return useMemo(() => (pret ? prochainesEcheances(etat) : []), [etat, pret]);
 }

@@ -52,7 +52,7 @@ function Mesure({ valeur, libelle }: { valeur: string; libelle: string }) {
 
 /** Le cockpit d'une roadmap : où j'en suis, les heures, la prochaine étape en un clic, les révisions, l'objectif, la date d'arrivée estimée. */
 export default function Cockpit({ donnees, titre, parNiveau, onOuvrir, onRythme, onObjectif, projetId, aide = false, parcours }: Props) {
-  const { programme: p, decompte: d, suite, revision, objectif, projection, rythme } = donnees;
+  const { programme: p, decompte: d, suite, revision, objectif, projection, rythme, aVenir } = donnees;
   const aDecouvrir = Math.max(0, d.actifs - d.acquis - d.vus);
   const etiquette = suite.type === "debut" ? "Commencer ici" : suite.type === "termine" ? "Parcours terminé" : suite.enCours ? "Reprendre ici" : "Prochaine étape";
   // Une seule action principale : réviser quand des révisions sont dues, sinon la prochaine étape.
@@ -118,6 +118,22 @@ export default function Cockpit({ donnees, titre, parNiveau, onOuvrir, onRythme,
                   Réviser →
                 </button>
               </div>
+            </div>
+          )}
+
+          {aVenir.length > 0 && (
+            <div className="border-t pt-4" style={{ borderColor: "var(--filet)" }}>
+              <h2 className="mono">Révisions à venir</h2>
+              <ul className="mt-1 space-y-1 text-sm">
+                {aVenir.map((r) => (
+                  <li key={r.id} className="flex items-baseline gap-3">
+                    <span className="mono w-40 shrink-0 whitespace-nowrap tabular-nums">{formaterArrivee(r.jour)}</span>
+                    <button type="button" className={`min-w-0 text-left ${lien}`} onClick={() => onOuvrir(r.id)}>
+                      {r.titre}
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
 

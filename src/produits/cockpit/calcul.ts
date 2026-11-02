@@ -99,6 +99,8 @@ export type Cockpit = {
   projection: Projection;
   suite: Suite;
   revision: { total: number; premier: { id: string; titre: string } | null };
+  /** Prochaines révisions planifiées dans ce parcours (après aujourd'hui), les plus proches d'abord. */
+  aVenir: { id: string; titre: string; jour: string }[];
   objectif: ObjectifCockpit | null;
 };
 
@@ -111,13 +113,15 @@ type Entree = {
   suivi: (id: string) => SuiviNoeud;
   /** Compétences à réviser aujourd'hui (toutes roadmaps) : on ne garde que celles de cette roadmap. */
   echeances: string[];
+  /** Calendrier des révisions (toutes roadmaps) : on ne garde que les futures de cette roadmap. */
+  calendrier?: { id: string; echeance: string }[];
   cibleId: string | null;
   /** Vue à quatre statuts de la roadmap (useProgression). */
   progression: Progression;
 };
 
 /** Assemble le cockpit d'une roadmap : programme et heures, projection, prochaine étape, révisions dues, objectif et chemin critique. */
-export function calculerCockpit({ roadmap, parNiveau, rythme, now, decompte, suivi, echeances, cibleId, progression }: Entree): Cockpit {
+export function calculerCockpit({ roadmap, parNiveau, rythme, now, decompte, suivi, echeances, calendrier = [], cibleId, progression }: Entree): Cockpit {
   const programme = placerSemaines(calculerProgramme(roadmap, parNiveau, suivi), rythme);
   const parId = new Map(roadmap.noeuds.map((n) => [n.id, n]));
   const dues = echeances.filter((id) => parId.has(id));
@@ -149,6 +153,10 @@ export function calculerCockpit({ roadmap, parNiveau, rythme, now, decompte, sui
     projection: projeter(programme.restantes, rythme, now),
     suite: prochaineEtape(roadmap, progression),
     revision: { total: dues.length, premier: premier ? { id: premier.id, titre: premier.titre } : null },
+    aVenir: calendrier
+      .filter((c) => parId.has(c.id) && c.echeance > jourLocal(now))
+      .slice(0, 4)
+      .map((c) => ({ id: c.id, titre: parId.get(c.id)!.titre, jour: c.echeance })),
     objectif,
   };
 }

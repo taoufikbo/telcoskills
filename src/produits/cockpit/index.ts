@@ -1,5 +1,5 @@
 /**
- * Produit « Cockpit » (visualisation) : le programme d'un parcours (blocs dans l'ordre, compétences, heures estimées, projection en semaines
+ * Produit « Cockpit » (visualisation) : la barre de gauche du mode apprentissage (Sommaire : programme, compétence en cours, avancement), le programme d'un parcours (blocs dans l'ordre, compétences, heures estimées, projection en semaines
  * au rythme choisi) et le tableau de bord de la roadmap (où j'en suis, heures faites et restantes, prochaine étape, révisions dues,
  * objectif et chemin critique, date d'arrivée estimée). Contrat commun des visualisations : tout est reçu en entrée (suivi, rythme, date),
  * « ouvrir la compétence X » et « changer le rythme » sortent en événements ; aucun accès au stockage.
@@ -8,6 +8,7 @@
 export { default as Cockpit } from "./Cockpit";
 export { default as Programme } from "./Programme";
 export { default as Rythme } from "./Rythme";
+export { default as Sommaire } from "./Sommaire";
 export {
   calculerCockpit,
   calculerProgramme,

@@ -6,7 +6,7 @@
  */
 
 // Hooks (composants clients)
-export { usePratique, useDues, useEcheances, useRythme } from "./usePratique";
+export { usePratique, useDues, useCalendrier, useEcheances, useRythme } from "./usePratique";
 export { useProgression, type StatutDeclarable } from "./useProgression";
 
 // Modèle et opérations pures sur l'état partagé

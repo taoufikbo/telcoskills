@@ -107,7 +107,7 @@ flowchart TD
 | Reprendre | `<Reprendre roadmaps config sinon>`, `calculerReprise` | rien | Catalogue, Progression, Parcours |
 | Liste | `<Liste roadmap selection progression chemin onOuvrir>`, `lignesParBloc` | rien ; mêmes interdits que la Carte héros | Catalogue ; progression reçue en entrée |
 | Métro, Arbre, Objectif | `<CarteMetro>`, `<GrapheRoadmap>`, `<VueObjectif>` (React Flow, chargés à la demande) ; `calculerMetro`, `aretesArbre`, `syntheseObjectif` | rien ; mêmes interdits | Catalogue, `src/lib/layout.ts`, `navigation.ts`, `objectif.ts` (partagés) ; progression reçue en entrée ; Objectif émet aussi `onChoisirCible` |
-| Cockpit | `<Cockpit donnees titre parNiveau onOuvrir onRythme onObjectif>`, `<Programme programme parNiveau>`, `<Rythme>`, `calculerCockpit`, `calculerProgramme`, `placerSemaines`, `projeter` | rien ; mêmes interdits que les visualisations | Catalogue, `src/lib/objectif.ts` et `duree.ts` (partagés) ; suivi, rythme, date et échéances reçus en entrée (raccord : RoadmapView, ProgrammeChoisi) |
+| Cockpit | `<Sommaire programme titre hrefParcours courant href>` (barre de gauche des pages de compétence), `<Cockpit donnees titre parNiveau onOuvrir onRythme onObjectif>`, `<Programme programme parNiveau>`, `<Rythme>`, `calculerCockpit`, `calculerProgramme`, `placerSemaines`, `projeter` | rien ; mêmes interdits que les visualisations | Catalogue, `src/lib/objectif.ts` et `duree.ts` (partagés) ; suivi, rythme, date et échéances reçus en entrée (raccord : RoadmapView, ProgrammeChoisi) |
 | Preuve | `chiffresCatalogue(catalogue)` (build), `<Preuve chiffres>` | rien ; chaque chiffre porte sa source | Catalogue |
 | Recherche | `construireIndex`, `rechercher`, `normaliser`, `<RecherchePalette>`, `<BoutonRecherche>` | rien | Catalogue (index servi par /index-recherche.json) |
 | Consentement | `<Bandeau>`, `<LienChoix>`, `useConsentement`, `lireChoix` | `tcr:consentement` (`{ choix, jour }`, valable 6 mois) | aucun |
@@ -141,6 +141,7 @@ Pages d'essai : `/labo/progression`, `/labo/parcours`, `/labo/visiteur`, `/labo/
 ## Cockpit de la roadmap et programme du parcours
 
 - Page de roadmap : cockpit (où j'en suis, heures faites et restantes, rythme et date d'arrivée, prochaine étape, révisions dues, objectif et chemin critique), programme par bloc, puis la carte en détail. Raccord : `src/components/RoadmapView.tsx` lit la progression, le rythme et les échéances (produit Progression) et les passe au produit Cockpit ; une seule action principale (accent) : « Réviser » s'il y a des révisions dues, sinon « Ouvrir » la prochaine étape.
+- Page de compétence (mode apprentissage) : barre de gauche `Sommaire` (raccord `src/components/SommaireParcours.tsx`, qui lit la progression et la lui passe), compétence au centre, fiche à droite ; repliée sur mobile.
 - Résultat du diagnostic : raccord `src/components/ProgrammeChoisi.tsx` (programme du parcours recommandé, rythme partagé avec le cockpit), données `/programmes.json` (route statique, `src/lib/programmes.ts`).
 - Le rythme (h par semaine, défaut 4) appartient au produit Progression (`tcr:pratique`, champ `rythme`). Les heures sont l'hypothèse éditoriale de content/orientation.json : toujours « estimation indicative ».
 

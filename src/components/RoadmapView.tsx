@@ -10,7 +10,7 @@ import type { Roadmap } from "@/lib/schema";
 import { PASTILLE_NIVEAU } from "@/lib/styles";
 import { Cockpit, Programme, calculerCockpit } from "@/produits/cockpit";
 import type { Orientation } from "@/lib/orientation-schema";
-import { estLienEtat, useEcheances, useProgression, useRythme } from "@/produits/progression";
+import { estLienEtat, useCalendrier, useEcheances, useProgression, useRythme } from "@/produits/progression";
 import { useVisiteur } from "@/produits/visiteur";
 import type { InfoVideo } from "@/lib/formatVideo";
 import { Liste } from "@/produits/liste";
@@ -47,6 +47,7 @@ export default function RoadmapView({ roadmap, video, projetId, parNiveau, entet
   const { progression, decompte, suivi, monParcours, suivreCeParcours, definirStatut, remplacer, reinitialiser, migration, marquerMigrationLue } = useProgression(roadmap);
   useEffect(() => suivre("roadmap_open", { roadmap: roadmap.id }), [roadmap.id]);
   const echeances = useEcheances();
+  const calendrier = useCalendrier();
   const { rythme, definir: definirRythme } = useRythme();
   const visiteur = useVisiteur();
   // Un lien de sauvegarde complet (?etat=p1.…) se traite dans « Mon espace ».
@@ -92,8 +93,8 @@ export default function RoadmapView({ roadmap, video, projetId, parNiveau, entet
   };
 
   const cockpit = useMemo(
-    () => calculerCockpit({ roadmap, parNiveau, rythme, now: new Date(), decompte, suivi, echeances, cibleId, progression }),
-    [roadmap, parNiveau, rythme, decompte, suivi, echeances, cibleId, progression],
+    () => calculerCockpit({ roadmap, parNiveau, rythme, now: new Date(), decompte, suivi, echeances, calendrier, cibleId, progression }),
+    [roadmap, parNiveau, rythme, decompte, suivi, echeances, calendrier, cibleId, progression],
   );
 
   const noeudOuvert = roadmap.noeuds.find((n) => n.id === selection);
