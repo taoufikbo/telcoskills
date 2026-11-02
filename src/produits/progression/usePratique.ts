@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useSyncExternalStore } from "react";
 import { suivre } from "@/produits/mesure";
-import { echues, ecartJours, enregistrerRappel as enregistrer, etatVide, jourLocal, lireEtat, migrer, serialiserEtat, type EtatPratique } from "./etat";
+import { RYTHME_DEFAUT, definirRythme, echues, ecartJours, rythmeDe, enregistrerRappel as enregistrer, etatVide, jourLocal, lireEtat, migrer, serialiserEtat, type EtatPratique } from "./etat";
 import { lireStatuts, type Progression } from "./progression";
 
 const CLE = "tcr:pratique";
@@ -115,4 +115,17 @@ export { etatVide };
 export function useDues(): number {
   const { etat, now, pret } = usePratique();
   return pret ? echues(etat, now).length : 0;
+}
+
+/** Ids des compétences à réviser aujourd'hui, toutes roadmaps confondues (vide tant que l'état local n'est pas lu). */
+export function useEcheances(): string[] {
+  const { etat, now, pret } = usePratique();
+  return useMemo(() => (pret ? echues(etat, now) : []), [etat, now, pret]);
+}
+
+/** Rythme d'étude (heures par semaine), mémorisé dans l'état de pratique. Le défaut s'applique tant que rien n'est choisi. */
+export function useRythme() {
+  const { etat, muter, pret } = usePratique();
+  const definir = useCallback((h: number) => muter((e) => definirRythme(e, h)), [muter]);
+  return { rythme: pret ? rythmeDe(etat) : RYTHME_DEFAUT, definir };
 }

@@ -2,7 +2,10 @@ import { describe, expect, it } from "vitest";
 import {
   ajouterJours,
   compter,
+  RYTHME_MAX,
+  RYTHME_MIN,
   definirHorsParcours,
+  definirRythme,
   echues,
   enregistrerRappel,
   etatVide,
@@ -14,6 +17,7 @@ import {
   reinitialiserRoadmap,
   reprendreProgression,
   retirerVu,
+  rythmeDe,
   serialiserEtat,
   statutPratique,
   vueProgression,
@@ -213,5 +217,23 @@ describe("stockage", () => {
     e = reinitialiserRoadmap(e, roadmap);
     expect(statutPratique(e, a.id, J0)).toBe("a-decouvrir");
     expect(statutPratique(e, hors.id, J0)).toBe("vu");
+  });
+});
+
+describe("rythme d'étude", () => {
+  it("vaut 4 h par semaine tant que rien n'est choisi", () => {
+    expect(rythmeDe(etatVide(J0))).toBe(4);
+  });
+  it("se fixe à l'heure près, borné de 1 à 40, sans toucher aux compétences", () => {
+    const e = marquerVu(etatVide(J0), "a", J0);
+    expect(rythmeDe(definirRythme(e, 6.4))).toBe(6);
+    expect(rythmeDe(definirRythme(e, 0))).toBe(RYTHME_MIN);
+    expect(rythmeDe(definirRythme(e, 99))).toBe(RYTHME_MAX);
+    expect(definirRythme(e, 6).noeuds).toEqual(e.noeuds);
+  });
+  it("survit à la relecture du stockage ; un rythme absurde est rejeté (état vide)", () => {
+    const e = definirRythme(etatVide(J0), 7);
+    expect(lireEtat(serialiserEtat(e), J0).rythme).toBe(7);
+    expect(lireEtat(JSON.stringify({ ...e, rythme: 0 }), J0).rythme).toBeUndefined();
   });
 });

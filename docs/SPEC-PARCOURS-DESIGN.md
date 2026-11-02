@@ -102,5 +102,7 @@ Ce qui fait réapparaître chaque rubrique (aucune modification de code nécessa
 | Newsletter | `newsletterUrl` dans src/lib/instance.ts |
 | Diagnostic d'équipe | `brouillon: false` dans content/diagnostic.json |
 
-Roadmap : la carte occupe le premier écran (sur 1280 × 800, elle commence à 247 px au lieu de 335 et couvre environ 70 % de l'écran) : bandeau d'avancement sur une ligne, choix de vue, options et sauvegarde réunis sur une seule rangée. Sur mobile, la liste reste la vue principale.
+Mise à jour (point 14 du HANDOFF) : la carte n'occupe plus le premier écran ; elle est sous le cockpit et le programme.
+
+Ancien état de la roadmap : la carte occupait le premier écran (sur 1280 × 800, elle commence à 247 px au lieu de 335 et couvre environ 70 % de l'écran) : bandeau d'avancement sur une ligne, choix de vue, options et sauvegarde réunis sur une seule rangée. Sur mobile, la liste reste la vue principale.
 

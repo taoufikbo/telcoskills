@@ -5,28 +5,12 @@ import { useRef, useState } from "react";
 import {
   exporterProgression,
   importerProgression,
-  statistiquesParBloc,
   decoderEtat,
   type Progression,
 } from "@/produits/progression";
 import type { Roadmap } from "@/lib/schema";
 import { LienSuivi, suivre } from "@/produits/mesure";
 import { INSTANCE } from "@/lib/instance";
-
-function Barre({ valeur, libelle }: { valeur: number; libelle: string }) {
-  return (
-    <div
-      role="progressbar"
-      aria-label={libelle}
-      aria-valuemin={0}
-      aria-valuemax={100}
-      aria-valuenow={valeur}
-      className="h-2 w-full overflow-hidden bg-slate-200 dark:bg-slate-700"
-    >
-      <div className="h-full bg-orange transition-all" style={{ width: `${valeur}%` }} />
-    </div>
-  );
-}
 
 export default function PanneauProgression({
   roadmap,
@@ -35,7 +19,6 @@ export default function PanneauProgression({
   onReinitialiser,
   etatPartage,
   onEtatTraite,
-  decompte,
   migration,
   onMigrationLue,
 }: {
@@ -47,7 +30,6 @@ export default function PanneauProgression({
   etatPartage: string | null;
   /** Retire ?etat= de l'adresse une fois le lien chargé ou refusé. */
   onEtatTraite: () => void;
-  decompte: { acquis: number; aRevoir: number; actifs: number; pourcentage: number };
   /** Message unique : des compétences déclarées maîtrisées sont devenues « vues ». */
   migration: { declares: number; aAfficher: boolean };
   onMigrationLue: () => void;
@@ -55,7 +37,6 @@ export default function PanneauProgression({
   const [message, setMessage] = useState<string | null>(null);
   const [exportee, setExportee] = useState(false);
   const refFichier = useRef<HTMLInputElement>(null);
-  const parBloc = statistiquesParBloc(roadmap, progression);
 
   const exporter = () => {
     const blob = new Blob([exporterProgression(roadmap, progression)], { type: "application/json" });
@@ -102,7 +83,7 @@ export default function PanneauProgression({
   const bouton = "bouton !py-1 !text-xs";
 
   return (
-    <section aria-label="Détail de la progression" className="contents">
+    <section aria-label="Sauvegarde de la progression" className="contents">
       {migration.aAfficher && (
         <div role="status" className="basis-full border-l-2 py-1 pl-3 text-sm" style={{ borderColor: "var(--fg)" }}>
           <p>
@@ -153,21 +134,8 @@ export default function PanneauProgression({
       )}
 
       <details className="text-sm open:basis-full">
-        <summary className="cursor-pointer select-none py-1 font-semibold">Détail et sauvegarde</summary>
-        <ul className="mt-2 grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
-          {parBloc.map(({ bloc, stats }) => (
-            <li key={bloc}>
-              <div className="mb-0.5 flex justify-between">
-                <span>{bloc}</span>
-                <span>
-                  {stats.maitrise}/{stats.actifs}
-                </span>
-              </div>
-              <Barre valeur={stats.pourcentage} libelle={`Progression : ${bloc}`} />
-            </li>
-          ))}
-        </ul>
-        <div className="mt-3 flex flex-wrap gap-2">
+        <summary className="cursor-pointer select-none py-1 font-semibold">Sauvegarde</summary>
+        <div className="mt-2 flex flex-wrap gap-2">
           <button type="button" onClick={exporter} className={bouton}>
             Exporter (JSON)
           </button>

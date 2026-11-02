@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState, useSyncExternalStore, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import dynamic from "next/dynamic";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { suivre } from "@/produits/mesure";
@@ -8,10 +8,11 @@ import { cheminConseille } from "@/lib/chemin";
 import { LIBELLE_NIVEAU } from "@/lib/libelles";
 import type { Roadmap } from "@/lib/schema";
 import { PASTILLE_NIVEAU } from "@/lib/styles";
-import { estLienEtat, useDues, useProgression } from "@/produits/progression";
+import { Cockpit, Programme, calculerCockpit } from "@/produits/cockpit";
+import type { Orientation } from "@/lib/orientation-schema";
+import { estLienEtat, useEcheances, useProgression, useRythme } from "@/produits/progression";
 import { useVisiteur } from "@/produits/visiteur";
 import type { InfoVideo } from "@/lib/formatVideo";
-import AncreParcours from "./AncreParcours";
 import { Liste } from "@/produits/liste";
 import PanneauProgression from "./PanneauProgression";
 import PresentationVideo from "./PresentationVideo";
@@ -36,7 +37,7 @@ function useEcranLarge(): boolean {
   );
 }
 
-export default function RoadmapView({ roadmap, video, projetId, entete }: { roadmap: Roadmap; video: InfoVideo | null; projetId?: string; /** Rendu serveur sous le titre (origine de la roadmap). */ entete?: ReactNode }) {
+export default function RoadmapView({ roadmap, video, projetId, parNiveau, entete }: { roadmap: Roadmap; video: InfoVideo | null; projetId?: string; /** Heures estimées par niveau (hypothèse éditoriale de orientation.json). */ parNiveau: Orientation["duree_par_niveau_heures"]; /** Rendu serveur sous le titre (origine de la roadmap). */ entete?: ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
@@ -45,7 +46,8 @@ export default function RoadmapView({ roadmap, video, projetId, entete }: { road
   const chemin = useMemo(() => (cheminActif ? cheminConseille(roadmap) : null), [cheminActif, roadmap]);
   const { progression, decompte, suivi, monParcours, suivreCeParcours, definirStatut, remplacer, reinitialiser, migration, marquerMigrationLue } = useProgression(roadmap);
   useEffect(() => suivre("roadmap_open", { roadmap: roadmap.id }), [roadmap.id]);
-  const dues = useDues();
+  const echeances = useEcheances();
+  const { rythme, definir: definirRythme } = useRythme();
   const visiteur = useVisiteur();
   // Un lien de sauvegarde complet (?etat=p1.…) se traite dans « Mon espace ».
   const lienComplet = params.get("etat");
@@ -82,6 +84,18 @@ export default function RoadmapView({ roadmap, video, projetId, entete }: { road
   const choisirVue = (v: "objectif" | "metro" | "liste" | null) => majUrl({ vue: v, noeud: null });
   const choisirCible = useCallback((id: string | null) => majUrl({ vue: "objectif", cible: id, noeud: null }), [majUrl]);
 
+  const carteRef = useRef<HTMLDivElement>(null);
+  /** Depuis le cockpit : montre la carte en vue Objectif (avec ou sans cible déjà choisie). */
+  const voirObjectif = (id: string | null) => {
+    choisirCible(id);
+    requestAnimationFrame(() => carteRef.current?.scrollIntoView({ block: "start" }));
+  };
+
+  const cockpit = useMemo(
+    () => calculerCockpit({ roadmap, parNiveau, rythme, now: new Date(), decompte, suivi, echeances, cibleId, progression }),
+    [roadmap, parNiveau, rythme, decompte, suivi, echeances, cibleId, progression],
+  );
+
   const noeudOuvert = roadmap.noeuds.find((n) => n.id === selection);
   const aDemande = roadmap.noeuds.some((n) => n.demande === "forte");
 
@@ -96,17 +110,35 @@ export default function RoadmapView({ roadmap, video, projetId, entete }: { road
             <h1 className="text-xl font-bold">{roadmap.titre}</h1>
             {entete}
           </div>
-          {monParcours ? (
+        </div>
+      </div>
+
+      <Cockpit
+        donnees={cockpit}
+        titre={roadmap.titre}
+        parNiveau={parNiveau}
+        onOuvrir={ouvrir}
+        onRythme={definirRythme}
+        onObjectif={voirObjectif}
+        projetId={projetId}
+        aide={visiteur !== "revenant" && roadmap.type === "role"}
+        parcours={
+          monParcours ? (
             <span className="text-xs font-bold">● Mon parcours</span>
           ) : (
             <button type="button" className="bouton !py-1 !text-xs" onClick={suivreCeParcours}>
               Suivre ce parcours
             </button>
-          )}
-        </div>
+          )
+        }
+      />
+
+      <div className="border-b px-4 py-5" style={{ borderColor: "var(--filet)" }}>
+        <Programme programme={cockpit.programme} parNiveau={parNiveau} suivi onOuvrir={ouvrir} />
       </div>
 
-      <AncreParcours roadmap={roadmap} progression={progression} decompte={decompte} monParcours={monParcours} dues={dues} projetId={projetId} aide={visiteur !== "revenant" && roadmap.type === "role"} onOuvrir={ouvrir} />
+      <div ref={carteRef} className="scroll-mt-2">
+        <h2 className="mono px-4 pt-5">La carte, en détail</h2>
 
       <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b px-4 py-2" style={{ borderColor: "var(--filet)" }}>
         <div role="group" aria-label="Vue" className="flex gap-2">
@@ -158,7 +190,6 @@ export default function RoadmapView({ roadmap, video, projetId, entete }: { road
           progression={progression}
           onRemplacer={remplacer}
           onReinitialiser={reinitialiser}
-          decompte={decompte}
           migration={migration}
           onMigrationLue={marquerMigrationLue}
           etatPartage={estLienEtat(lienComplet) ? null : lienComplet}
@@ -177,16 +208,17 @@ export default function RoadmapView({ roadmap, video, projetId, entete }: { road
           onChoisirCible={choisirCible}
         />
       ) : vueMetro ? (
-        <div className="h-[calc(100dvh-14rem)] min-h-[480px]">
+        <div className="h-[75dvh] min-h-[480px]">
           <CarteMetro roadmap={roadmap} selection={selection} progression={progression} chemin={chemin} onOuvrir={ouvrir} />
         </div>
       ) : !vueListe ? (
-        <div className="h-[calc(100dvh-14rem)] min-h-[480px]">
+        <div className="h-[75dvh] min-h-[480px]">
           <GrapheRoadmap roadmap={roadmap} selection={selection} progression={progression} chemin={chemin} onOuvrir={ouvrir} />
         </div>
       ) : (
         <Liste roadmap={roadmap} selection={selection} progression={progression} chemin={chemin} onOuvrir={ouvrir} />
       )}
+      </div>
       {noeudOuvert && (
         <TiroirNoeud
           roadmap={roadmap}

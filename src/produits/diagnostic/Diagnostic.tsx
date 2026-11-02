@@ -7,7 +7,7 @@ import { libelleDuree } from "@/lib/duree";
 import { recommander, reponsesValides, type Orientation as ConfigOrientation, type Reponses } from "@/lib/orientation-schema";
 import { urlNoeud, urlProjet, urlRoadmap } from "@/lib/urls";
 import { enregistrerReponses as ecrire, useReponsesEnregistrees } from "@/produits/parcours";
-import { suivreParcours, usePratique } from "@/produits/progression";
+import { suivreParcours, usePratique, useRythme } from "@/produits/progression";
 import { ANCRE, decoderProfil, encoderProfil, PARAM } from "./profil";
 
 const lireParam = () => (typeof window === "undefined" ? "" : new URLSearchParams(window.location.search).get(PARAM) ?? "");
@@ -38,6 +38,7 @@ type Props = {
 /** Le diagnostic personnel : trois questions, un parcours recommandé, un premier pas. Écrit les réponses dans le produit Parcours. */
 export default function Diagnostic({ config, parcours, titresNoeuds, projets, durees, rolesSansParcours, testables, seulementSiPartage = false, apresResultat }: Props) {
   const { muter } = usePratique();
+  const { rythme } = useRythme();
   const { reponses: enregistrees } = useReponsesEnregistrees();
   const profilUrl = useSyncExternalStore(abonnerUrl, lireParam, () => "");
   const [copie, setCopie] = useState(false);
@@ -125,7 +126,7 @@ export default function Diagnostic({ config, parcours, titresNoeuds, projets, du
             ))}
           </ul>
           <p className="text-sm">
-            <strong>Durée estimée</strong> : {libelleDuree(depart.noeud)} pour la première compétence, {libelleDuree(depart.heuresBloc)} pour le bloc « {depart.bloc} » qui
+            <strong>Durée estimée</strong> : {libelleDuree(depart.noeud, rythme)} pour la première compétence, {libelleDuree(depart.heuresBloc, rythme)} pour le bloc « {depart.bloc} » qui
             l&apos;entoure. <span className="text-slate-600 dark:text-slate-400">Estimation indicative, selon le niveau de chaque compétence.</span>
           </p>
           {libelleRole && reco.role && (

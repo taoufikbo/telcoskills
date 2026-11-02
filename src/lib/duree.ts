@@ -6,8 +6,8 @@ export function heuresEstimees(noeuds: Pick<Noeud, "niveau">[], parNiveau: Orien
   return noeuds.reduce((total, n) => total + parNiveau[n.niveau], 0);
 }
 
-/** « environ 12 h » ou « environ 3 semaines à 4 h par semaine » : l'ordre de grandeur, jamais une promesse. */
-export function libelleDuree(heures: number): string {
+/** « environ 12 h » ou « environ 3 semaines à 4 h par semaine » : l'ordre de grandeur, jamais une promesse. Le rythme (h par semaine) est celui choisi par la personne, 4 par défaut. */
+export function libelleDuree(heures: number, rythme = 4): string {
   if (heures < 20) return `environ ${Math.round(heures)} h`;
-  return `environ ${Math.round(heures)} h, soit ${Math.ceil(heures / 4)} semaines à 4 h par semaine`;
+  return `environ ${Math.round(heures)} h, soit ${Math.ceil(heures / rythme)} semaines à ${rythme} h par semaine`;
 }

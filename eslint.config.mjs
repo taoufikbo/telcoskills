@@ -34,7 +34,7 @@ const config = [
 ];
 
 /** Visualisations : elles reçoivent la progression en lecture seule, elles n'accèdent jamais au stockage. */
-const VISUALISATIONS = ["carte-heros", "liste", "metro", "arbre", "objectif"];
+const VISUALISATIONS = ["carte-heros", "liste", "metro", "arbre", "objectif", "cockpit"];
 config.push({
   files: VISUALISATIONS.map((v) => `src/produits/${v}/**/*.{ts,tsx}`),
   rules: {

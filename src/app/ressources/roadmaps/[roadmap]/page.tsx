@@ -7,6 +7,7 @@ import RoadmapStatique from "@/components/RoadmapStatique";
 import RoadmapView from "@/components/RoadmapView";
 import { filAriane, roadmapLd } from "@/lib/donneesStructurees";
 import { INSTANCE } from "@/lib/instance";
+import { chargerOrientation } from "@/lib/orientation";
 import { exigerRefonte } from "@/lib/refonte";
 import { chargerProjets } from "@/lib/projets";
 import { chargerRoadmaps, getRoadmap } from "@/lib/roadmaps";
@@ -44,7 +45,7 @@ export default async function PageRoadmap({ params }: { params: Promise<{ roadma
         ])}
       />
       <Suspense fallback={<RoadmapStatique roadmap={roadmap} entete={<BadgeProvenance roadmap={roadmap} />} />}>
-        <RoadmapView roadmap={roadmap} video={infoVideo(roadmap.id)} projetId={chargerProjets()[0]?.id} entete={<BadgeProvenance roadmap={roadmap} />} />
+        <RoadmapView roadmap={roadmap} video={infoVideo(roadmap.id)} projetId={chargerProjets()[0]?.id} parNiveau={chargerOrientation().duree_par_niveau_heures} entete={<BadgeProvenance roadmap={roadmap} />} />
       </Suspense>
     </main>
   );

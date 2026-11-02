@@ -3,6 +3,7 @@
 import type { ComponentProps } from "react";
 import { Diagnostic } from "@/produits/diagnostic";
 import CarteHerosSuivie from "./CarteHerosSuivie";
+import ProgrammeChoisi from "./ProgrammeChoisi";
 
 /**
  * Raccord de page : le diagnostic, et dans son résultat la carte du chemin recommandé (de votre point de départ
@@ -13,9 +14,12 @@ export default function DiagnosticAvecCarte(props: Omit<ComponentProps<typeof Di
     <Diagnostic
       {...props}
       apresResultat={(reco) => (
-        <figure className="panneau p-4 sm:p-5">
-          <CarteHerosSuivie config={props.config} choix={reco} />
-        </figure>
+        <>
+          <ProgrammeChoisi roadmapId={reco.roadmapId} parNiveau={props.config.duree_par_niveau_heures} />
+          <figure className="panneau p-4 sm:p-5">
+            <CarteHerosSuivie config={props.config} choix={reco} />
+          </figure>
+        </>
       )}
     />
   );
