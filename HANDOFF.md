@@ -93,6 +93,11 @@ node scripts/verifier-rendu.mjs                                   # après le bu
     - **Recherche** : normalisation propre à l'arabe (diacritiques, formes de l'alif) dans src/produits/recherche.
     - **Tests** : les règles de contenu (source, ressource libre, compétence partagée identique) par langue ; contrôle de rendu des 3 langues ; captures en RTL.
     - Ordre conseillé : anglais d'abord (interface puis contenu), arabe ensuite, une fois l'infrastructure multilingue éprouvée.
+14. **Refonte des roadmaps : un vrai cockpit (backlog, demandé le 2026-11-02).** Constat de l'auteur : une fois le parcours choisi, l'utilisateur ne se sert pas de la barre de gauche ; il lui manque le programme et le volume d'heures. Cible :
+    - **Dès le choix du parcours** : le programme apparaît d'emblée (blocs dans l'ordre, compétences par bloc) avec le nombre d'heures estimé par bloc et au total, et une projection en semaines selon un rythme choisi (par exemple 4 h par semaine). Les heures reprennent l'hypothèse éditoriale de content/orientation.json (duree_par_niveau_heures), affichée comme estimation.
+    - **Dans la roadmap, un cockpit** plutôt qu'une carte seule : où j'en suis (acquis, vu, à revoir), heures faites et restantes, prochaine étape en un clic, révisions dues, objectif choisi et son chemin critique, date d'arrivée estimée au rythme choisi. La carte (arbre, métro, liste) reste accessible comme vue de détail.
+    - Les visualisations et données existent déjà (produits Progression, Reprendre, Objectif, heures de la Carte héros) : le chantier est surtout de les réunir en une page, sans barre latérale.
+    - À préciser avec l'auteur avant de coder : maquette du cockpit (bureau et mobile), rythme par défaut, place de la carte, ce qu'on retire de la page actuelle.
 
 ## Idées issues de l'analyse du parcours utilisateur (non demandées)
 
