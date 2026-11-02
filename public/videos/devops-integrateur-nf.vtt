@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.882
+Bienvenue dans la roadmap Intégrateur DevOps : acculturation aux NF.
+
+00:00:05.882 --> 00:00:25.862
+Cette roadmap s'adresse aux profils DevOps ou IT sans passé télécom qui doivent intégrer des fonctions réseau : d'abord le vocabulaire et les exigences du monde opérateur, puis le cœur 5G, le packaging, les tests et l'exploitation.
+
+00:00:25.862 --> 00:00:30.100
+Elle compte 51 compétences, réparties en 8 blocs.
+
+00:00:31.000 --> 00:00:36.040
+Le parcours suit 8 blocs, de Acculturation télécom à Sécurité et conformité.
+
+00:00:36.940 --> 00:00:38.805
+Acculturation télécom.
+
+00:00:38.805 --> 00:00:39.991
+6 compétences.
+
+00:00:39.991 --> 00:00:45.840
+Par exemple : Le réseau mobile en un schéma et Vocabulaire opérateur.
+
+00:00:46.740 --> 00:00:48.672
+Socle plateforme.
+
+00:00:48.672 --> 00:00:50.263
+7 compétences.
+
+00:00:50.263 --> 00:00:55.150
+Par exemple : Linux avancé et Git et CI CD.
+
+00:00:56.050 --> 00:00:59.459
+Réseau pour DevOps.
+
+00:00:59.459 --> 00:01:01.971
+5 compétences.
+
+00:01:01.971 --> 00:01:14.350
+Par exemple : Réseau IP, VLAN, routage, VPN et CNI et OVN-Kubernetes.
+
+00:01:15.250 --> 00:01:18.129
+Cœur 5G pour non-spécialistes.
+
+00:01:18.129 --> 00:01:19.472
+9 compétences.
+
+00:01:19.472 --> 00:01:25.997
+Par exemple : Identifiants et numérotation et Interfaces de service.
+
+00:01:25.997 --> 00:01:41.350
+Projet pratique : Déployer free5GC ou Open5GS sur un cluster de lab, y connecter un simulateur de gNB et d'UE, et établir une session PDU avec capture de trace.
+
+00:01:42.250 --> 00:01:45.690
+Packaging, livraison et documentation.
+
+00:01:45.690 --> 00:01:46.958
+7 compétences.
+
+00:01:46.958 --> 00:01:52.480
+Par exemple : Helm et packaging de CNF et Packaging d'une NF.
+
+00:01:53.380 --> 00:01:54.943
+CI CD et tests.
+
+00:01:54.943 --> 00:01:56.401
+6 compétences.
+
+00:01:56.401 --> 00:02:02.965
+Par exemple : CI CD d'intégration et Simulation de RAN et d'UE.
+
+00:02:02.965 --> 00:02:18.280
+Projet pratique : Écrire un script qui crée un cluster kind, déploie un cœur 5G open source et lance un test de session PDU, en une seule commande.
+
+00:02:19.180 --> 00:02:21.839
+Exploitation et observabilité.
+
+00:02:21.839 --> 00:02:23.081
+6 compétences.
+
+00:02:23.081 --> 00:02:29.020
+Par exemple : Prometheus, Alertmanager, Thanos et Logs centralisés.
+
+00:02:29.920 --> 00:02:31.868
+Sécurité et conformité.
+
+00:02:31.868 --> 00:02:33.053
+5 compétences.
+
+00:02:33.053 --> 00:02:40.420
+Par exemple : Sécurité de la chaîne d'approvisionnement et Secrets, PKI et certificats.
+
+00:02:41.320 --> 00:03:01.820
+Sur le site, vous pouvez parcourir la roadmap en arbre ou en plan de métro, ouvrir chaque compétence pour voir ses prérequis et ses ressources ouvertes, suivre votre progression, et choisir un objectif pour obtenir les étapes à enchaîner avec le chemin critique.
+
+00:03:02.720 --> 00:03:09.873
+À vous de jouer : choisissez un objectif et commencez par les compétences disponibles.
+
+00:03:09.873 --> 00:03:18.440
+Cette vidéo a été générée automatiquement à partir du contenu de la roadmap, avec une voix de synthèse.
+
+00:03:18.440 --> 00:03:23.430
+Les références sont à vérifier dans leur version en vigueur.

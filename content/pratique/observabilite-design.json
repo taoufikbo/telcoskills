@@ -1,0 +1,132 @@
+{
+  "noeud": "observabilite-design",
+  "questionPrealable": {
+    "id": "prealable-moment",
+    "enonce": "À quel moment faut-il décider quelles métriques, alertes et tableaux de bord l'exploitation devra avoir ?",
+    "options": [
+      "Après la mise en production, selon les incidents",
+      "Pendant la conception, à partir des exigences de service",
+      "Pendant la recette uniquement",
+      "Quand l'équipe d'exploitation le demande"
+    ],
+    "bonne": 1,
+    "explication": "Ce qu'on doit pouvoir observer découle des exigences de service (disponibilité, latence) fixées au design. Les ajouter après coup coûte plus cher et laisse des angles morts.",
+    "source": "Résumé du nœud (observabilite-design) : à compléter par une ressource",
+    "statut": "brouillon"
+  },
+  "contenu": {
+    "statut": "brouillon",
+    "vocabulaire": [
+      {
+        "terme": "SLI",
+        "definition": "Indicateur mesuré de la qualité du service, par exemple le taux de requêtes réussies."
+      },
+      {
+        "terme": "SLO",
+        "definition": "Objectif chiffré fixé sur un SLI, par exemple 99,9 % de requêtes réussies sur 30 jours."
+      },
+      {
+        "terme": "Runbook",
+        "definition": "Procédure écrite qui dit quoi vérifier et quoi faire quand une alerte se déclenche."
+      }
+    ],
+    "segments": [
+      {
+        "titre": "De l'exigence à l'indicateur",
+        "elements": [
+          "Partir des exigences de service : disponibilité, latence, capacité.",
+          "Choisir pour chacune un indicateur mesurable (SLI).",
+          "Fixer un objectif chiffré (SLO).",
+          "Vérifier que la plateforme expose bien cet indicateur."
+        ],
+        "schema": {
+          "alt": "Une exigence de service devient un indicateur, puis un objectif chiffré.",
+          "boites": [
+            "Exigence de service",
+            "Indicateur (SLI)",
+            "Objectif (SLO)"
+          ],
+          "fleches": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      },
+      {
+        "titre": "Trois sources de signal",
+        "elements": [
+          "Métriques : l'état et les tendances.",
+          "Journaux : ce qui s'est passé, événement par événement.",
+          "Traces : le chemin d'une requête entre services.",
+          "OpenTelemetry fournit un cadre commun pour les trois."
+        ]
+      },
+      {
+        "titre": "Des alertes utiles",
+        "elements": [
+          "Alerter sur ce que l'utilisateur ressent (SLO), pas sur chaque ressource.",
+          "Chaque alerte renvoie à un runbook.",
+          "Une alerte qui ne mène à aucune action est à supprimer.",
+          "Les seuils se revoient après chaque incident."
+        ]
+      }
+    ]
+  },
+  "lienProjet": {
+    "phase": "dimensionnement",
+    "role": "architecte"
+  },
+  "rappel": [
+    {
+      "id": "rappel-sli-slo",
+      "enonce": "Quelle phrase décrit correctement un SLO ?",
+      "options": [
+        "La mesure brute du temps de réponse",
+        "Un objectif chiffré fixé sur un indicateur de service",
+        "Une procédure d'intervention",
+        "Un contrat avec pénalités signé avec le client"
+      ],
+      "bonne": 1,
+      "explication": "Le SLO est l'objectif visé sur un indicateur (SLI). Un contrat avec pénalités est un SLA ; une procédure d'intervention est un runbook.",
+      "source": "Résumé du nœud (observabilite-design) : définition standard",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 3
+    },
+    {
+      "id": "rappel-alerte-actionnable",
+      "enonce": "Quelle alerte est la plus utile à l'astreinte ?",
+      "options": [
+        "CPU d'un nœud au-dessus de 80 %",
+        "Taux d'échec des enregistrements d'abonnés au-dessus du SLO pendant 5 minutes, avec runbook",
+        "Un pod a redémarré une fois",
+        "Utilisation disque à 50 %"
+      ],
+      "bonne": 1,
+      "explication": "Elle porte sur l'effet ressenti (échecs d'enregistrement), elle est durable (5 minutes) et elle indique quoi faire (runbook). Un CPU à 80 % peut être normal.",
+      "source": "Résumé du nœud (observabilite-design) : à compléter par une ressource",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 0
+    },
+    {
+      "id": "rappel-runbook",
+      "enonce": "À quoi sert un runbook rattaché à une alerte ?",
+      "options": [
+        "À archiver l'incident",
+        "À dire quoi vérifier et quoi faire dès que l'alerte se déclenche",
+        "À remplacer la supervision",
+        "À calculer le SLO"
+      ],
+      "bonne": 1,
+      "explication": "Le runbook transforme une alerte en action : il évite de réfléchir de zéro à 3 heures du matin.",
+      "source": "Résumé du nœud (observabilite-design) : à compléter par une ressource",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 0
+    }
+  ]
+}

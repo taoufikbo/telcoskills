@@ -1,0 +1,1840 @@
+{
+  "id": "ingenieur-caas-telco",
+  "titre": "Ingénieur CaaS telco",
+  "type": "role",
+  "presentation": "Cette roadmap s'adresse à celles et ceux qui construisent et exploitent une plateforme Kubernetes pour héberger des fonctions réseau télécoms : de Linux et des conteneurs jusqu'à OpenShift, au réseau secondaire, à la sécurité et à la conformité en France et en Europe.",
+  "version": "0.3",
+  "provenance": { "type": "offres", "nombre": 14, "approximatif": true, "date": "2026-10" },
+  "source": "Synthèse d'environ 14 offres (Red Hat, Ericsson, Nokia/LTTS, Accenture, Capgemini, Infosys, Deutsche Telekom, Slovak Telekom, Monaco Telecom, Dice) consultées en octobre 2026. Le champ 'demande' est un ordre de grandeur sur cet échantillon, pas une statistique. Le bloc « Réglementation France et Europe » et les nœuds de sécurité ajoutés en version 0.2 (sec-secrets, sec-detection, sec-5g) sont un ajout éditorial, hors de cet échantillon : leur demande est fixée à « faible » par défaut, en attendant une analyse des offres, et les références juridiques sont à vérifier dans leur version en vigueur. Depuis la version 0.3, chaque nœud porte au moins une référence ouverte avec lien (type « opensource » : projet ou documentation d'un projet libre ; type « libre » : texte officiel en accès libre, pour les nœuds réglementaires sans logiciel libre équivalent).",
+  "legende_demande": {
+    "forte": "présent dans la majorité des offres",
+    "moyenne": "présent dans plusieurs offres",
+    "faible": "mentionné ponctuellement ou implicite"
+  },
+  "blocs": [
+    "Fondations",
+    "Kubernetes cœur",
+    "Plateforme CaaS / OpenShift",
+    "Réseau telco",
+    "Performance temps réel",
+    "Stockage",
+    "Virtualisation",
+    "Automatisation",
+    "Observabilité",
+    "Sécurité",
+    "Réglementation France et Europe",
+    "CNF et 5G Core",
+    "Résilience et exploitation",
+    "Design et dimensionnement"
+  ],
+  "noeuds": [
+    {
+      "id": "linux",
+      "titre": "Linux avancé (RHEL/CentOS)",
+      "bloc": "Fondations",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "demande": "forte",
+      "resume": "Systemd, processus, namespaces/cgroups, SELinux, diagnostic système. Base de tout le reste.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation du noyau Linux",
+          "url": "https://docs.kernel.org/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation RHEL (administration)",
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        },
+        {
+          "type": "certif",
+          "nom": "RHCSA (curriculum)",
+          "url": "https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "reseau-ip",
+      "titre": "Réseau IP, VLAN, routage, VPN",
+      "bloc": "Fondations",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "demande": "forte",
+      "resume": "Adressage, VLAN, trunk, routage statique/BGP, MTU, VRF, tunnels. Exigé pour supporter le plan d'IP des projets.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "FRRouting : suite de routage open source (BGP, OSPF, BFD)",
+          "url": "https://docs.frrouting.org/"
+        },
+        {
+          "type": "cours",
+          "nom": "Fondamentaux réseau (CCNA, curriculum)",
+          "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccna.html",
+          "langue": "en",
+          "auteur": "Cisco"
+        }
+      ]
+    },
+    {
+      "id": "git-ci",
+      "titre": "Git et CI/CD",
+      "bloc": "Fondations",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "demande": "moyenne",
+      "resume": "Branches, revues, pipelines GitLab CI, artefacts.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Pro Git (livre libre, en français)",
+          "url": "https://git-scm.com/book/fr/v2"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation GitLab CI",
+          "url": "https://docs.gitlab.com/ci/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "GitLab"
+        }
+      ]
+    },
+    {
+      "id": "conteneurs",
+      "titre": "Conteneurs (OCI, Podman, CRI-O)",
+      "bloc": "Fondations",
+      "niveau": "fondamental",
+      "prerequis": [
+        "linux"
+      ],
+      "demande": "forte",
+      "resume": "Images, registries, runtime, différences Docker/Podman/CRI-O.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Podman : documentation",
+          "url": "https://podman.io/docs"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Podman",
+          "url": "https://docs.podman.io/en/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Podman"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation CRI-O",
+          "url": "https://cri-o.io/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "CRI-O"
+        }
+      ]
+    },
+    {
+      "id": "telco-101",
+      "titre": "Télécoms 101 (4G/5G, cœur de réseau)",
+      "bloc": "Fondations",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "demande": "moyenne",
+      "resume": "RAN, cœur, plan usager/plan de contrôle, vocabulaire opérateur. Distingue un ingénieur telco d'un ingénieur K8s généraliste.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Open5GS : cœur 4G/5G open source, documentation",
+          "url": "https://open5gs.org/open5gs/docs/"
+        },
+        {
+          "type": "spec",
+          "nom": "3GPP TS 23.501 (architecture système 5G), lecture guidée",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.501/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "3GPP"
+        }
+      ]
+    },
+    {
+      "id": "k8s-archi",
+      "titre": "Architecture Kubernetes",
+      "bloc": "Kubernetes cœur",
+      "niveau": "fondamental",
+      "prerequis": [
+        "conteneurs"
+      ],
+      "demande": "forte",
+      "resume": "Control plane, etcd, kubelet, scheduler, API server, contrôleurs.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : architecture du cluster",
+          "url": "https://kubernetes.io/docs/concepts/architecture/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Kubernetes (Concepts)",
+          "url": "https://kubernetes.io/docs/concepts/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        },
+        {
+          "type": "certif",
+          "nom": "CKA (curriculum CNCF)",
+          "url": "https://github.com/cncf/curriculum",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "CNCF"
+        }
+      ]
+    },
+    {
+      "id": "k8s-workloads",
+      "titre": "Workloads : Pods, Deployments, StatefulSets, Jobs",
+      "bloc": "Kubernetes cœur",
+      "niveau": "fondamental",
+      "prerequis": [
+        "k8s-archi"
+      ],
+      "demande": "forte",
+      "resume": "Cycle de vie, probes, ressources, affinités, PodDisruptionBudgets.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : workloads",
+          "url": "https://kubernetes.io/docs/concepts/workloads/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        }
+      ]
+    },
+    {
+      "id": "k8s-services",
+      "titre": "Services, Ingress, DNS",
+      "bloc": "Kubernetes cœur",
+      "niveau": "fondamental",
+      "prerequis": [
+        "k8s-archi",
+        "reseau-ip"
+      ],
+      "demande": "forte",
+      "resume": "ClusterIP, NodePort, LoadBalancer, Ingress/Route, CoreDNS.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : services, load balancing et réseau",
+          "url": "https://kubernetes.io/docs/concepts/services-networking/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        }
+      ]
+    },
+    {
+      "id": "k8s-stockage",
+      "titre": "Stockage Kubernetes : PV, PVC, StorageClass",
+      "bloc": "Kubernetes cœur",
+      "niveau": "fondamental",
+      "prerequis": [
+        "k8s-archi"
+      ],
+      "demande": "forte",
+      "resume": "Provisionnement dynamique, modes d'accès, snapshots.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : stockage",
+          "url": "https://kubernetes.io/docs/concepts/storage/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        }
+      ]
+    },
+    {
+      "id": "k8s-rbac",
+      "titre": "RBAC, quotas, multi-tenance",
+      "bloc": "Kubernetes cœur",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-workloads"
+      ],
+      "demande": "forte",
+      "resume": "Rôles, namespaces, ResourceQuota, LimitRange, isolation entre équipes et projets.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : contrôle d'accès RBAC",
+          "url": "https://kubernetes.io/docs/reference/access-authn-authz/rbac/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        }
+      ]
+    },
+    {
+      "id": "k8s-troubleshoot",
+      "titre": "Dépannage Kubernetes avancé et RCA",
+      "bloc": "Kubernetes cœur",
+      "niveau": "avance",
+      "prerequis": [
+        "k8s-workloads",
+        "k8s-services"
+      ],
+      "demande": "forte",
+      "resume": "Démarche d'analyse, événements, logs, nœuds NotReady, etcd, rédaction d'un rapport d'analyse de cause racine.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : dépannage et débogage",
+          "url": "https://kubernetes.io/docs/tasks/debug/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        }
+      ],
+      "projet": "Provoquer 5 pannes en lab et rédiger un RCA pour chacune."
+    },
+    {
+      "id": "ocp-install",
+      "titre": "Installation OpenShift (bare metal, agent, assisted)",
+      "bloc": "Plateforme CaaS / OpenShift",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-archi",
+        "linux",
+        "reseau-ip"
+      ],
+      "demande": "forte",
+      "resume": "Méthodes d'installation, prérequis réseau, DNS, VIP, certificats.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Installateur OpenShift / OKD (dépôt source)",
+          "url": "https://github.com/openshift/installer"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Installing)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/installation_overview/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "ocp-operators",
+      "titre": "Operators et OLM",
+      "bloc": "Plateforme CaaS / OpenShift",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "ocp-install"
+      ],
+      "demande": "moyenne",
+      "resume": "Cluster Operators, Operator Lifecycle Manager, catalogues, installation et mises à jour d'opérateurs.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Operator Lifecycle Manager (OLM)",
+          "url": "https://olm.operatorframework.io/docs/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Operators)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/operators/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "ocp-upgrade",
+      "titre": "Cycle de vie et upgrades de cluster",
+      "bloc": "Plateforme CaaS / OpenShift",
+      "niveau": "avance",
+      "prerequis": [
+        "ocp-operators"
+      ],
+      "demande": "forte",
+      "resume": "Canaux, chemins de mise à jour, MachineConfig, impact sur les CNF, fenêtres de maintenance.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Cluster Version Operator (dépôt source, logique des mises à jour)",
+          "url": "https://github.com/openshift/cluster-version-operator"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Updating clusters)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/updating_clusters/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "ocp-multicluster",
+      "titre": "Multi-cluster et edge (hub/spoke, ACM)",
+      "bloc": "Plateforme CaaS / OpenShift",
+      "niveau": "avance",
+      "prerequis": [
+        "ocp-upgrade"
+      ],
+      "demande": "moyenne",
+      "resume": "Gestion centralisée de flottes, politiques, déploiement sur site distant.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Open Cluster Management : gestion multi-clusters",
+          "url": "https://open-cluster-management.io/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Red Hat Advanced Cluster Management",
+          "url": "https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "ocp-rds",
+      "titre": "Telco reference design (RDS)",
+      "bloc": "Plateforme CaaS / OpenShift",
+      "niveau": "avance",
+      "prerequis": [
+        "ocp-install",
+        "perf-profile"
+      ],
+      "demande": "moyenne",
+      "resume": "Configurations de référence pour cœur et RAN : ce qui est recommandé pour héberger des CNF.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Telco reference configuration (dépôt openshift-kni)",
+          "url": "https://github.com/openshift-kni/telco-reference"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Telco core reference design)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/telco-core-ref-design-specs",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "distrib-alt",
+      "titre": "Autres distributions telco (Sylva, Nokia, Ericsson CNIS, Rancher)",
+      "bloc": "Plateforme CaaS / OpenShift",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-archi"
+      ],
+      "demande": "moyenne",
+      "resume": "Comparer les distributions de CaaS rencontrées chez les opérateurs et les équipementiers, leurs différences d'intégration.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Sylva : pile CaaS telco open source",
+          "url": "https://gitlab.com/sylva-projects/sylva-core"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Sylva",
+          "url": "https://sylva-projects.gitlab.io/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Sylva"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation des éditeurs respectifs"
+        }
+      ]
+    },
+    {
+      "id": "cni",
+      "titre": "CNI et OVN-Kubernetes",
+      "bloc": "Réseau telco",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-services",
+        "reseau-ip"
+      ],
+      "demande": "forte",
+      "resume": "Réseau de pods, OVN-Kubernetes, Open vSwitch, NetworkPolicy, egress.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OVN-Kubernetes : documentation",
+          "url": "https://ovn-kubernetes.io/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Networking)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/networking_overview/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "multus",
+      "titre": "Multus et réseaux secondaires",
+      "bloc": "Réseau telco",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "cni"
+      ],
+      "demande": "forte",
+      "resume": "NetworkAttachmentDefinition, macvlan, ipvlan, séparation plan de contrôle / usager / gestion.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Multus CNI (dépôt source)",
+          "url": "https://github.com/k8snetworkplumbingwg/multus-cni",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "K8s Network Plumbing WG"
+        }
+      ]
+    },
+    {
+      "id": "sriov",
+      "titre": "SR-IOV",
+      "bloc": "Réseau telco",
+      "niveau": "avance",
+      "prerequis": [
+        "multus"
+      ],
+      "demande": "forte",
+      "resume": "VF, opérateur SR-IOV, NIC supportées, accès direct pour l'UPF et les fonctions à haut débit.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "SR-IOV Network Operator (dépôt source)",
+          "url": "https://github.com/k8snetworkplumbingwg/sriov-network-operator"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (SR-IOV)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/hardware_networks/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "dpdk",
+      "titre": "DPDK et accélération du plan usager",
+      "bloc": "Réseau telco",
+      "niveau": "avance",
+      "prerequis": [
+        "sriov",
+        "perf-hugepages"
+      ],
+      "demande": "moyenne",
+      "resume": "Principes de DPDK, polling, exigences côté CaaS (HugePages, CPU isolés).",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "DPDK : guides de la documentation",
+          "url": "https://doc.dpdk.org/guides/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation DPDK (Getting Started)",
+          "url": "https://doc.dpdk.org/guides/linux_gsg/index.html",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "DPDK"
+        }
+      ]
+    },
+    {
+      "id": "lb-bgp",
+      "titre": "Load balancing bare metal et BGP (MetalLB)",
+      "bloc": "Réseau telco",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-services",
+        "reseau-ip"
+      ],
+      "demande": "moyenne",
+      "resume": "Annonce d'IP de service, BFD, intégration avec les routeurs de l'opérateur.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "MetalLB : documentation",
+          "url": "https://metallb.io/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "MetalLB"
+        }
+      ]
+    },
+    {
+      "id": "sctp-flux",
+      "titre": "Flux telco : SCTP, GTP, PFCP, HTTP/2",
+      "bloc": "Réseau telco",
+      "niveau": "avance",
+      "prerequis": [
+        "multus",
+        "telco-101"
+      ],
+      "demande": "faible",
+      "resume": "Protocoles utilisés par les fonctions 5G et leurs contraintes sur le CaaS (SCTP, ports, pare-feu, MTU).",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Wireshark : analyse des protocoles SCTP, GTP et PFCP",
+          "url": "https://www.wireshark.org/docs/"
+        },
+        {
+          "type": "spec",
+          "nom": "3GPP TS 29.244 (PFCP)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/29_series/29.244/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "3GPP"
+        },
+        {
+          "type": "spec",
+          "nom": "3GPP TS 29.281 (GTP-U)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/29_series/29.281/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "3GPP"
+        }
+      ]
+    },
+    {
+      "id": "perf-hugepages",
+      "titre": "HugePages et NUMA",
+      "bloc": "Performance temps réel",
+      "niveau": "avance",
+      "prerequis": [
+        "linux",
+        "k8s-workloads"
+      ],
+      "demande": "moyenne",
+      "resume": "Allocation de pages, topologie NUMA, alignement CPU/mémoire/NIC.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Noyau Linux : HugeTLB pages",
+          "url": "https://docs.kernel.org/admin-guide/mm/hugetlbpage.html"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Scalability and performance)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "perf-profile",
+      "titre": "Performance Profile et CPU pinning",
+      "bloc": "Performance temps réel",
+      "niveau": "avance",
+      "prerequis": [
+        "perf-hugepages"
+      ],
+      "demande": "moyenne",
+      "resume": "Isolation de CPU, gestionnaire de topologie, noyau temps réel, réglages pour CNF.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : politiques du CPU Manager",
+          "url": "https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Performance Addon / Node Tuning)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "ceph",
+      "titre": "Ceph / Rook / ODF",
+      "bloc": "Stockage",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-stockage"
+      ],
+      "demande": "moyenne",
+      "resume": "Architecture Ceph, pools, réplication, performance, dépannage d'un cluster dégradé.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Rook : stockage Ceph pour Kubernetes",
+          "url": "https://rook.io/docs/rook/latest/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Ceph",
+          "url": "https://docs.ceph.com/en/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Ceph"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Rook",
+          "url": "https://rook.io/docs/rook/latest-release/Getting-Started/intro/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Rook"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift Data Foundation",
+          "url": "https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.18",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "stockage-dr",
+      "titre": "Sauvegarde et réplication inter-sites",
+      "bloc": "Stockage",
+      "niveau": "avance",
+      "prerequis": [
+        "ceph"
+      ],
+      "demande": "faible",
+      "resume": "Snapshots, réplication asynchrone, RPO/RTO, impact sur la géo-redondance.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Velero : sauvegarde et restauration Kubernetes",
+          "url": "https://velero.io/docs/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation ODF (Disaster Recovery)",
+          "url": "https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.18",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "kubevirt",
+      "titre": "VMs sur Kubernetes (KubeVirt / OpenShift Virtualization)",
+      "bloc": "Virtualisation",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-workloads",
+        "k8s-stockage"
+      ],
+      "demande": "faible",
+      "resume": "Faire cohabiter VNF stateful et CNF, migration à chaud, réseau des VMs.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "KubeVirt : guide utilisateur",
+          "url": "https://kubevirt.io/user-guide/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift Virtualization",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/virtualization/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "openstack",
+      "titre": "OpenStack et NFVI (culture et migration)",
+      "bloc": "Virtualisation",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "linux",
+        "reseau-ip"
+      ],
+      "demande": "moyenne",
+      "resume": "Nova, Neutron, Cinder, rôle du NFVI historique. Utile pour comprendre le parc existant et migrer vers le CaaS.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OpenStack : documentation",
+          "url": "https://docs.openstack.org/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenStack (Install Guide)",
+          "url": "https://docs.openstack.org/install-guide/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "OpenStack"
+        }
+      ]
+    },
+    {
+      "id": "nfv-etsi",
+      "titre": "ETSI NFV, MANO, ONAP/OSM",
+      "bloc": "Virtualisation",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "telco-101"
+      ],
+      "demande": "moyenne",
+      "resume": "Modèle NFV (VNF, NFVI, VIM, MANO), évolution vers les CNF.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "ETSI OSM : orchestrateur MANO open source",
+          "url": "https://osm.etsi.org/docs/user-guide/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "ETSI OSM"
+        },
+        {
+          "type": "spec",
+          "nom": "ETSI GS NFV 002 (architecture)",
+          "url": "https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "ETSI"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation ONAP",
+          "url": "https://docs.onap.org/en/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "ONAP"
+        }
+      ]
+    },
+    {
+      "id": "helm",
+      "titre": "Helm et packaging de CNF",
+      "bloc": "Automatisation",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-workloads"
+      ],
+      "demande": "forte",
+      "resume": "Charts, values, hooks, gestion de versions. Les CNF sont livrés en charts.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Helm : documentation",
+          "url": "https://helm.sh/docs/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Helm"
+        }
+      ]
+    },
+    {
+      "id": "gitops",
+      "titre": "GitOps (ArgoCD / Flux)",
+      "bloc": "Automatisation",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "helm",
+        "git-ci"
+      ],
+      "demande": "moyenne",
+      "resume": "État désiré dans Git, synchronisation, gestion multi-environnements.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Argo CD : documentation",
+          "url": "https://argo-cd.readthedocs.io/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Argo CD"
+        }
+      ]
+    },
+    {
+      "id": "ansible-python",
+      "titre": "Ansible et Python pour l'exploitation",
+      "bloc": "Automatisation",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "linux"
+      ],
+      "demande": "forte",
+      "resume": "Playbooks, inventaires, rôles, scripts d'automatisation des tâches récurrentes.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Ansible : documentation",
+          "url": "https://docs.ansible.com/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "operators-dev",
+      "titre": "Développer un opérateur (Go)",
+      "bloc": "Automatisation",
+      "niveau": "avance",
+      "prerequis": [
+        "ocp-operators"
+      ],
+      "demande": "faible",
+      "resume": "Controller-runtime, CRD, réconciliation. Un plus recherché dans certaines équipes SRE.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubebuilder : le livre",
+          "url": "https://book.kubebuilder.io/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes SIGs"
+        },
+        {
+          "type": "doc",
+          "nom": "Operator SDK",
+          "url": "https://sdk.operatorframework.io/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Operator Framework"
+        }
+      ]
+    },
+    {
+      "id": "obs-metrics",
+      "titre": "Prometheus, Alertmanager, Thanos",
+      "bloc": "Observabilité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-workloads"
+      ],
+      "demande": "forte",
+      "resume": "Métriques, règles d'alerte, rétention longue, alerting basé sur les SLO.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Prometheus : documentation",
+          "url": "https://prometheus.io/docs/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Prometheus"
+        }
+      ]
+    },
+    {
+      "id": "obs-dash",
+      "titre": "Grafana et tableaux de bord",
+      "bloc": "Observabilité",
+      "niveau": "fondamental",
+      "prerequis": [
+        "obs-metrics"
+      ],
+      "demande": "forte",
+      "resume": "Tableaux de bord de plateforme et de CNF.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Grafana : documentation",
+          "url": "https://grafana.com/docs/grafana/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Grafana Labs"
+        }
+      ]
+    },
+    {
+      "id": "obs-logs",
+      "titre": "Logs centralisés (EFK/ELK, Loki)",
+      "bloc": "Observabilité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-workloads"
+      ],
+      "demande": "forte",
+      "resume": "Collecte, indexation, rétention, corrélation avec les alertes.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Grafana Loki : documentation",
+          "url": "https://grafana.com/docs/loki/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Grafana Labs"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Elastic",
+          "url": "https://www.elastic.co/docs",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Elastic"
+        }
+      ]
+    },
+    {
+      "id": "obs-telemetry",
+      "titre": "Télémétrie en streaming (gRPC, OpenTelemetry)",
+      "bloc": "Observabilité",
+      "niveau": "avance",
+      "prerequis": [
+        "obs-metrics"
+      ],
+      "demande": "faible",
+      "resume": "Évolution du SNMP vers la télémétrie en continu.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OpenTelemetry : documentation",
+          "url": "https://opentelemetry.io/docs/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "OpenTelemetry"
+        }
+      ]
+    },
+    {
+      "id": "sec-durcissement",
+      "titre": "Durcissement du cluster et des nœuds",
+      "bloc": "Sécurité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-rbac"
+      ],
+      "demande": "moyenne",
+      "resume": "Politiques de sécurité des pods, SELinux, SCC, référentiels CIS.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "kube-bench : contrôle des bonnes pratiques CIS Kubernetes",
+          "url": "https://github.com/aquasecurity/kube-bench"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Security)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/security_and_compliance/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        },
+        {
+          "type": "doc",
+          "nom": "CIS Kubernetes Benchmark",
+          "url": "https://www.cisecurity.org/benchmark/kubernetes",
+          "langue": "en",
+          "auteur": "CIS"
+        }
+      ]
+    },
+    {
+      "id": "sec-supply",
+      "titre": "Sécurité de la chaîne d'approvisionnement",
+      "bloc": "Sécurité",
+      "niveau": "avance",
+      "prerequis": [
+        "conteneurs",
+        "sec-durcissement"
+      ],
+      "demande": "moyenne",
+      "resume": "Scan d'images (Trivy), signature, politiques d'admission, SBOM.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Trivy : scanner de vulnérabilités et de SBOM",
+          "url": "https://trivy.dev/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Trivy",
+          "url": "https://trivy.dev/docs/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Aqua Security"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Sigstore",
+          "url": "https://docs.sigstore.dev/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Sigstore"
+        }
+      ]
+    },
+    {
+      "id": "sec-reseau",
+      "titre": "Segmentation et NetworkPolicy",
+      "bloc": "Sécurité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "cni"
+      ],
+      "demande": "moyenne",
+      "resume": "Isolation entre CNF, flux autorisés, audit des règles.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : Network Policies",
+          "url": "https://kubernetes.io/docs/concepts/services-networking/network-policies/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        }
+      ]
+    },
+    {
+      "id": "sec-secrets",
+      "titre": "Secrets, PKI et certificats",
+      "bloc": "Sécurité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "sec-durcissement"
+      ],
+      "demande": "faible",
+      "resume": "Gestion des secrets (Vault, secrets chiffrés), autorité de certification interne, cert-manager, rotation et expiration des certificats, HSM.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "cert-manager : documentation",
+          "url": "https://cert-manager.io/docs/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "cert-manager"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation HashiCorp Vault",
+          "url": "https://developer.hashicorp.com/vault/docs",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "HashiCorp"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Security : certificats)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/security_and_compliance/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "sec-detection",
+      "titre": "Journalisation de sécurité et détection",
+      "bloc": "Sécurité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "sec-durcissement",
+        "obs-logs"
+      ],
+      "demande": "faible",
+      "resume": "Audit Kubernetes et des nœuds, journaux de sécurité, intégration à un SIEM, détection d'anomalies à l'exécution (Falco), conservation des traces utile aux enquêtes et aux audits.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Falco : détection à l'exécution",
+          "url": "https://falco.org/docs/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Falco"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Audit log, Compliance Operator)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/security_and_compliance/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "reg-cadre-fr",
+      "titre": "Cadre français des communications électroniques (CPCE, ARCEP)",
+      "bloc": "Réglementation France et Europe",
+      "niveau": "fondamental",
+      "prerequis": [
+        "telco-101"
+      ],
+      "demande": "faible",
+      "resume": "Obligations des opérateurs en matière de sécurité et d'intégrité des réseaux, notification des incidents, rôle de l'ARCEP et de l'ANSSI. Sert à traduire une obligation légale en exigence sur la plateforme.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "Légifrance : CPCE, texte officiel en accès libre",
+          "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006070987/",
+          "acces": "gratuit",
+          "langue": "fr",
+          "auteur": "Légifrance"
+        },
+        {
+          "type": "doc",
+          "nom": "Publications de l'ARCEP sur la sécurité et l'intégrité des réseaux"
+        }
+      ]
+    },
+    {
+      "id": "reg-5g-securite",
+      "titre": "Sécurité des réseaux 5G : loi du 1er août 2019 et boîte à outils UE",
+      "bloc": "Réglementation France et Europe",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "telco-101",
+        "reg-cadre-fr"
+      ],
+      "demande": "faible",
+      "resume": "Régime d'autorisation d'exploitation des équipements de réseau mobile (loi n° 2019-810, article L.34-11 du CPCE), instruit par l'ANSSI, et mesures de la boîte à outils européenne pour la cybersécurité 5G, dont la diversification des fournisseurs.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "Boîte à outils de l'UE pour la cybersécurité 5G (texte en accès libre)",
+          "url": "https://digital-strategy.ec.europa.eu/en/library/cybersecurity-5g-networks-eu-toolbox-risk-mitigating-measures",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Commission européenne"
+        },
+        {
+          "type": "spec",
+          "nom": "Loi n° 2019-810 du 1er août 2019"
+        }
+      ]
+    },
+    {
+      "id": "reg-nis2",
+      "titre": "Directive NIS 2 et sa transposition française",
+      "bloc": "Réglementation France et Europe",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "sec-durcissement",
+        "reg-cadre-fr"
+      ],
+      "demande": "faible",
+      "resume": "Entités essentielles et importantes, mesures de gestion des risques, notification des incidents significatifs, responsabilité de la direction. Suivre le texte français de transposition dans sa version en vigueur.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "Directive (UE) 2022/2555 sur EUR-Lex (accès libre)",
+          "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "EUR-Lex"
+        },
+        {
+          "type": "doc",
+          "nom": "Publications de l'ANSSI sur NIS 2",
+          "url": "https://cyber.gouv.fr/reglementation/cybersecurite-systemes-dinformation/directives-nis-nis2-et-dispositif-saiv/",
+          "acces": "gratuit",
+          "langue": "fr",
+          "auteur": "ANSSI"
+        }
+      ]
+    },
+    {
+      "id": "reg-oiv",
+      "titre": "OIV, SIIV et résilience des entités critiques",
+      "bloc": "Réglementation France et Europe",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "reg-cadre-fr",
+        "sec-durcissement"
+      ],
+      "demande": "faible",
+      "resume": "Régime français des opérateurs d'importance vitale et de leurs systèmes d'information d'importance vitale, et directive européenne sur la résilience des entités critiques. Exigences de détection, d'homologation et de continuité qui touchent la plateforme.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "Directive (UE) 2022/2557 sur EUR-Lex (accès libre)",
+          "url": "https://eur-lex.europa.eu/eli/dir/2022/2557/oj",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "EUR-Lex"
+        },
+        {
+          "type": "doc",
+          "nom": "Dispositif de sécurité des activités d'importance vitale (ANSSI)",
+          "url": "https://cyber.gouv.fr/reglementation/cybersecurite-systemes-dinformation/directives-nis-nis2-et-dispositif-saiv/dispositif-saiv/",
+          "acces": "gratuit",
+          "langue": "fr",
+          "auteur": "ANSSI"
+        }
+      ]
+    },
+    {
+      "id": "reg-anssi",
+      "titre": "Référentiels et guides de l'ANSSI",
+      "bloc": "Réglementation France et Europe",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "sec-durcissement"
+      ],
+      "demande": "faible",
+      "resume": "Guide d'hygiène informatique, recommandations de configuration GNU/Linux, qualification SecNumCloud, certification de sécurité de premier niveau (CSPN) : les références utilisées en France pour cadrer un design et justifier des choix.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "ComplianceAsCode : profils de conformité automatisés, dont ANSSI BP-028",
+          "url": "https://github.com/ComplianceAsCode/content"
+        },
+        {
+          "type": "doc",
+          "nom": "Guide d'hygiène informatique (ANSSI)",
+          "url": "https://messervices.cyber.gouv.fr/guides/en-guideline-healthy-information-system-42-measures",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "ANSSI"
+        },
+        {
+          "type": "doc",
+          "nom": "Recommandations de configuration d'un système GNU/Linux (ANSSI)",
+          "url": "https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-relatives-un-systeme-gnulinux",
+          "acces": "gratuit",
+          "langue": "fr",
+          "auteur": "ANSSI"
+        },
+        {
+          "type": "doc",
+          "nom": "Référentiel SecNumCloud (ANSSI)",
+          "url": "https://cyber.gouv.fr/sites/default/files/document/secnumcloud-referentiel-exigences-v3.2.pdf",
+          "acces": "gratuit",
+          "langue": "fr",
+          "auteur": "ANSSI"
+        }
+      ]
+    },
+    {
+      "id": "reg-ue-certif",
+      "titre": "Certification européenne : Cybersecurity Act, EUCC, Critères Communs",
+      "bloc": "Réglementation France et Europe",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "reg-anssi"
+      ],
+      "demande": "faible",
+      "resume": "Cadre européen de certification de cybersécurité, schéma EUCC fondé sur les Critères Communs, évaluation de produits ; savoir lire un certificat dans un appel d'offres.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "Règlement (UE) 2019/881 sur EUR-Lex (accès libre)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2019/881/oj",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "EUR-Lex"
+        },
+        {
+          "type": "spec",
+          "nom": "Règlement d'exécution (UE) 2024/482 (EUCC)",
+          "url": "https://eur-lex.europa.eu/eli/reg_impl/2024/482/oj",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "EUR-Lex"
+        }
+      ]
+    },
+    {
+      "id": "reg-cra",
+      "titre": "Cyber Resilience Act",
+      "bloc": "Réglementation France et Europe",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "sec-supply"
+      ],
+      "demande": "faible",
+      "resume": "Exigences de cybersécurité pour les produits comportant des éléments numériques : gestion des vulnérabilités, nomenclature logicielle (SBOM), mises à jour de sécurité, notification. Impact sur le choix et la recette des CNF et des logiciels tiers.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "CycloneDX : standard ouvert de SBOM",
+          "url": "https://cyclonedx.org/"
+        },
+        {
+          "type": "spec",
+          "nom": "Règlement (UE) 2024/2847 (Cyber Resilience Act)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "EUR-Lex"
+        }
+      ]
+    },
+    {
+      "id": "reg-rgpd",
+      "titre": "RGPD, ePrivacy et données de connexion",
+      "bloc": "Réglementation France et Europe",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "telco-101"
+      ],
+      "demande": "faible",
+      "resume": "Données personnelles des abonnés : minimisation, durées de conservation, sous-traitance, transferts hors UE. Règles propres aux communications électroniques (directive ePrivacy, conservation des données de connexion) et rôle de la CNIL.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Logiciel PIA de la CNIL (analyse d'impact, open source)",
+          "url": "https://github.com/LINCnil/pia"
+        },
+        {
+          "type": "spec",
+          "nom": "Règlement (UE) 2016/679 (RGPD)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "EUR-Lex"
+        },
+        {
+          "type": "spec",
+          "nom": "Directive 2002/58/CE (ePrivacy)",
+          "url": "https://eur-lex.europa.eu/eli/dir/2002/58/oj",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "EUR-Lex"
+        },
+        {
+          "type": "doc",
+          "nom": "Guide de la sécurité des données personnelles (CNIL, édition 2024)",
+          "url": "https://www.cnil.fr/fr/guide-de-la-securite-des-donnees-personnelles-nouvelle-edition-2024",
+          "acces": "gratuit",
+          "langue": "fr",
+          "auteur": "CNIL"
+        }
+      ]
+    },
+    {
+      "id": "reg-souverainete",
+      "titre": "Souveraineté et protection des données hors UE",
+      "bloc": "Réglementation France et Europe",
+      "niveau": "avance",
+      "prerequis": [
+        "reg-anssi",
+        "reg-rgpd"
+      ],
+      "demande": "faible",
+      "resume": "SecNumCloud, exposition aux lois extraterritoriales, transferts de données hors UE, règlement sur les données (Data Act) et portabilité entre fournisseurs cloud. Impact sur le choix de l'hébergement et des services managés.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "Règlement (UE) 2023/2854 (Data Act) sur EUR-Lex (accès libre)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/2854/oj",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "EUR-Lex"
+        },
+        {
+          "type": "spec",
+          "nom": "Loi n° 2024-449 du 21 mai 2024 (SREN)"
+        },
+        {
+          "type": "doc",
+          "nom": "Référentiel SecNumCloud (ANSSI)",
+          "url": "https://cyber.gouv.fr/sites/default/files/document/secnumcloud-referentiel-exigences-v3.2.pdf",
+          "acces": "gratuit",
+          "langue": "fr",
+          "auteur": "ANSSI"
+        }
+      ]
+    },
+    {
+      "id": "reg-li",
+      "titre": "Interceptions légales et réquisitions",
+      "bloc": "Réglementation France et Europe",
+      "niveau": "avance",
+      "prerequis": [
+        "telco-101",
+        "reg-cadre-fr"
+      ],
+      "demande": "faible",
+      "resume": "Fonctions d'interception légale hébergées sur la plateforme : architecture ETSI et 3GPP, exigences de cloisonnement, de traçabilité et de confidentialité. Le cadre légal applicable se valide avec le service juridique.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OpenLI : interception légale open source conforme ETSI",
+          "url": "https://github.com/OpenLI-NZ/openli"
+        },
+        {
+          "type": "spec",
+          "nom": "3GPP TS 33.126 (interception légale, exigences)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.126/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "3GPP"
+        },
+        {
+          "type": "spec",
+          "nom": "3GPP TS 33.127 (interception légale, architecture)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.127/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "3GPP"
+        },
+        {
+          "type": "spec",
+          "nom": "ETSI TS 102 232 (interface de remise des données interceptées)",
+          "url": "https://www.etsi.org/deliver/etsi_ts/102200_102299/10223201/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "ETSI"
+        }
+      ]
+    },
+    {
+      "id": "reg-risque",
+      "titre": "Analyse de risques et assurance sécurité (EBIOS RM, ISO 27001, NESAS)",
+      "bloc": "Réglementation France et Europe",
+      "niveau": "avance",
+      "prerequis": [
+        "reg-anssi"
+      ],
+      "demande": "faible",
+      "resume": "Mener une analyse de risques (EBIOS Risk Manager), situer ISO/IEC 27001 et 27011, comprendre les évaluations d'équipements GSMA NESAS et 3GPP SCAS, constituer un dossier de conformité et ses preuves.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "MONARC : analyse de risques open source",
+          "url": "https://www.monarc.lu/"
+        },
+        {
+          "type": "doc",
+          "nom": "EBIOS Risk Manager (ANSSI)",
+          "url": "https://cyber.gouv.fr/securisation/analyse-des-risques/methode-ebios-rm/",
+          "acces": "gratuit",
+          "langue": "fr",
+          "auteur": "ANSSI"
+        },
+        {
+          "type": "spec",
+          "nom": "ISO/IEC 27001",
+          "url": "https://www.iso.org/standard/27001",
+          "acces": "payant",
+          "langue": "en",
+          "auteur": "ISO"
+        },
+        {
+          "type": "spec",
+          "nom": "ISO/IEC 27011",
+          "auteur": "ISO"
+        },
+        {
+          "type": "spec",
+          "nom": "GSMA NESAS",
+          "auteur": "GSMA"
+        },
+        {
+          "type": "spec",
+          "nom": "3GPP SCAS (TS 33.117)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.117/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "3GPP"
+        }
+      ]
+    },
+    {
+      "id": "5g-sba",
+      "titre": "Architecture 5G Core (SBA)",
+      "bloc": "CNF et 5G Core",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "telco-101"
+      ],
+      "demande": "forte",
+      "resume": "Fonctions AMF, SMF, UPF, NRF, SCP, SEPP, interfaces et rôle de chacune.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "free5GC : cœur 5G open source (guide)",
+          "url": "https://free5gc.org/guide/"
+        },
+        {
+          "type": "spec",
+          "nom": "3GPP TS 23.501 (architecture système 5G)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.501/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "3GPP"
+        },
+        {
+          "type": "spec",
+          "nom": "3GPP TS 23.502 (procédures)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.502/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "3GPP"
+        }
+      ]
+    },
+    {
+      "id": "cnf-onboarding",
+      "titre": "Onboarding et exigences d'infra d'un CNF",
+      "bloc": "CNF et 5G Core",
+      "niveau": "avance",
+      "prerequis": [
+        "5g-sba",
+        "helm",
+        "multus"
+      ],
+      "demande": "forte",
+      "resume": "Lire la fiche d'exigences d'un éditeur, la traduire en besoins de plateforme (réseaux, CPU, stockage, privilèges).",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "towards5gs-helm : charts Helm free5GC",
+          "url": "https://github.com/Orange-OpenSource/towards5gs-helm"
+        },
+        {
+          "type": "doc",
+          "nom": "Guides d'onboarding des éditeurs de CNF"
+        }
+      ],
+      "projet": "Déployer un cœur 5G open source (free5GC ou Open5GS) sur un cluster de lab."
+    },
+    {
+      "id": "cnf-ops",
+      "titre": "Exploitation de CNF : scaling, upgrade, panne",
+      "bloc": "CNF et 5G Core",
+      "niveau": "avance",
+      "prerequis": [
+        "cnf-onboarding",
+        "k8s-troubleshoot"
+      ],
+      "demande": "forte",
+      "resume": "Mise à l'échelle, mises à jour sans coupure, analyse du comportement du CNF lors d'une défaillance de plateforme.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OpenAirInterface : cœur 5G open source (déploiement)",
+          "url": "https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed"
+        },
+        {
+          "type": "retour-experience",
+          "nom": "Documentation d'exploitation des éditeurs"
+        }
+      ]
+    },
+    {
+      "id": "sec-5g",
+      "titre": "Sécurité du cœur 5G",
+      "bloc": "CNF et 5G Core",
+      "niveau": "avance",
+      "prerequis": [
+        "5g-sba",
+        "sec-reseau"
+      ],
+      "demande": "faible",
+      "resume": "Architecture de sécurité 5G : authentification, chiffrement, TLS et OAuth2 entre fonctions du SBA, rôle du SEPP à l'interconnexion, isolation des tranches, exigences que cela pose à la plateforme.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Open5GS : code source du cœur 5G open source",
+          "url": "https://github.com/open5gs/open5gs"
+        },
+        {
+          "type": "spec",
+          "nom": "3GPP TS 33.501 (architecture et procédures de sécurité 5G)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.501/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "3GPP"
+        }
+      ]
+    },
+    {
+      "id": "ha-geo",
+      "titre": "Haute disponibilité et géo-redondance",
+      "bloc": "Résilience et exploitation",
+      "niveau": "avance",
+      "prerequis": [
+        "ocp-upgrade",
+        "ceph"
+      ],
+      "demande": "moyenne",
+      "resume": "Zones de défaillance, absence de point de défaillance unique, architecture bi-site, arbitrage coût/risque.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : topologies de haute disponibilité",
+          "url": "https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Disaster recovery)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/backup_and_restore/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        },
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : exécuter un cluster sur plusieurs zones",
+          "url": "https://kubernetes.io/docs/setup/best-practices/multiple-zones/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        },
+        {
+          "type": "opensource",
+          "nom": "etcd : modes de défaillance",
+          "url": "https://etcd.io/docs/latest/op-guide/failures/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "etcd"
+        },
+        {
+          "type": "opensource",
+          "nom": "Ceph : clusters étirés sur deux sites (stretch mode)",
+          "url": "https://docs.ceph.com/en/latest/rados/operations/stretch-mode/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Ceph"
+        }
+      ]
+    },
+    {
+      "id": "incident-astreinte",
+      "titre": "Gestion d'incident et astreinte",
+      "bloc": "Résilience et exploitation",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-troubleshoot",
+        "obs-metrics"
+      ],
+      "demande": "moyenne",
+      "resume": "Runbooks, escalade, communication, post-mortem sans recherche de coupable.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "PagerDuty Incident Response : documentation open source",
+          "url": "https://response.pagerduty.com/"
+        },
+        {
+          "type": "livre",
+          "nom": "Google SRE Book : gestion des incidents",
+          "url": "https://sre.google/sre-book/managing-incidents/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Google"
+        },
+        {
+          "type": "livre",
+          "nom": "Google SRE Book : culture du post-mortem",
+          "url": "https://sre.google/sre-book/postmortem-culture/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Google"
+        }
+      ]
+    },
+    {
+      "id": "dimensionnement",
+      "titre": "Dimensionnement d'un cluster telco",
+      "bloc": "Design et dimensionnement",
+      "niveau": "avance",
+      "prerequis": [
+        "cnf-onboarding",
+        "ceph",
+        "perf-profile"
+      ],
+      "demande": "moyenne",
+      "resume": "Passer des exigences CNF à un nombre de nœuds, un profil CPU/mémoire/stockage et un plan réseau.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : considérations pour les grands clusters",
+          "url": "https://kubernetes.io/docs/setup/best-practices/cluster-large/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        },
+        {
+          "type": "doc",
+          "nom": "Guides de dimensionnement OpenShift et des éditeurs"
+        },
+        {
+          "type": "doc",
+          "nom": "OpenShift : planifier son environnement selon les maximums d'objets",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/planning-your-environment-according-to-object-maximums",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        },
+        {
+          "type": "doc",
+          "nom": "OpenShift : spécifications de référence du cœur télécom (Telco core RDS)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/telco-core-ref-design-specs",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "hld-lld",
+      "titre": "Documents HLD / LLD et plan d'IP",
+      "bloc": "Design et dimensionnement",
+      "niveau": "avance",
+      "prerequis": [
+        "dimensionnement",
+        "reseau-ip"
+      ],
+      "demande": "moyenne",
+      "resume": "Rédiger et défendre un design : schémas applicatif et réseau, matrice réseaux × nœuds, flux, hypothèses.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "arc42 : modèle libre de documentation d'architecture",
+          "url": "https://arc42.org/overview"
+        }
+      ]
+    },
+    {
+      "id": "certifs",
+      "titre": "Certifications utiles",
+      "bloc": "Design et dimensionnement",
+      "niveau": "transverse",
+      "prerequis": [],
+      "demande": "moyenne",
+      "resume": "CKA (souvent citée), Red Hat Certified OpenShift Administrator ou Architect, certifications 5G éditeurs.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Curriculums des certifications CNCF (CKA, CKAD, CKS)",
+          "url": "https://github.com/cncf/curriculum"
+        },
+        {
+          "type": "certif",
+          "nom": "CKA, EX280, EX380 (curriculums)"
+        }
+      ]
+    }
+  ]
+}

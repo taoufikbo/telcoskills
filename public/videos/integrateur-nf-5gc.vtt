@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.200
+Bienvenue dans la roadmap Intégrateur NF, domaine 5GC.
+
+00:00:04.200 --> 00:00:22.089
+Cette roadmap s'adresse à l'intégrateur de fonctions réseau du cœur 5G : comprendre l'architecture et les procédures 5G, empaqueter et déployer les fonctions, les tester, les exploiter et les intégrer avec des éditeurs différents.
+
+00:00:22.089 --> 00:00:25.900
+Elle compte 36 compétences, réparties en 8 blocs.
+
+00:00:26.800 --> 00:00:31.900
+Le parcours suit 8 blocs, de Fondations 5G à Intégration multi-éditeurs.
+
+00:00:32.800 --> 00:00:34.158
+Fondations 5G.
+
+00:00:34.158 --> 00:00:35.516
+4 compétences.
+
+00:00:35.516 --> 00:00:41.530
+Par exemple : Architecture 5G et Identifiants et numérotation.
+
+00:00:42.430 --> 00:00:44.840
+Fonctions du cœur 5G.
+
+00:00:44.840 --> 00:00:46.447
+6 compétences.
+
+00:00:46.447 --> 00:00:50.120
+Par exemple : AMF et SMF et UPF.
+
+00:00:51.020 --> 00:00:53.373
+Procédures et interconnexion.
+
+00:00:53.373 --> 00:00:54.509
+5 compétences.
+
+00:00:54.509 --> 00:01:01.730
+Par exemple : SEPP et itinérance 5G et Procédures d'enregistrement et d'authentification.
+
+00:01:02.630 --> 00:01:04.423
+Plateforme et CNF.
+
+00:01:04.423 --> 00:01:05.818
+6 compétences.
+
+00:01:05.818 --> 00:01:12.991
+Par exemple : Exigences d'infrastructure d'une NF et Packaging d'une NF.
+
+00:01:12.991 --> 00:01:28.930
+Projet pratique : Déployer free5GC ou Open5GS sur un cluster de lab, y connecter un simulateur de gNB et d'UE, et établir une session PDU avec capture de trace.
+
+00:01:29.830 --> 00:01:31.487
+Tests et validation.
+
+00:01:31.487 --> 00:01:32.647
+4 compétences.
+
+00:01:32.647 --> 00:01:40.270
+Par exemple : Simulation de RAN et d'UE et Plan de tests fonctionnels et d'interopérabilité.
+
+00:01:41.170 --> 00:01:43.390
+Exploitation et supervision.
+
+00:01:43.390 --> 00:01:44.500
+4 compétences.
+
+00:01:44.500 --> 00:01:51.080
+Par exemple : Indicateurs et compteurs de performance du 5GC et Analyse d'incident.
+
+00:01:51.980 --> 00:01:54.035
+Sécurité et conformité.
+
+00:01:54.035 --> 00:01:55.286
+3 compétences.
+
+00:01:55.286 --> 00:02:02.790
+Par exemple : Sécurité du SBA et Isolation et privilèges d'une NF sur la plateforme.
+
+00:02:03.690 --> 00:02:05.927
+Intégration multi-éditeurs.
+
+00:02:05.927 --> 00:02:07.087
+4 compétences.
+
+00:02:07.087 --> 00:02:14.710
+Par exemple : Onboarding d'une NF éditeur et Intégration multi-éditeurs et interopérabilité.
+
+00:02:15.610 --> 00:02:35.810
+Sur le site, vous pouvez parcourir la roadmap en arbre ou en plan de métro, ouvrir chaque compétence pour voir ses prérequis et ses ressources ouvertes, suivre votre progression, et choisir un objectif pour obtenir les étapes à enchaîner avec le chemin critique.
+
+00:02:36.710 --> 00:02:44.350
+À vous de jouer : choisissez un objectif et commencez par les compétences disponibles.
+
+00:02:44.350 --> 00:02:53.500
+Cette vidéo a été générée automatiquement à partir du contenu de la roadmap, avec une voix de synthèse.
+
+00:02:53.500 --> 00:02:58.830
+Les références sont à vérifier dans leur version en vigueur.

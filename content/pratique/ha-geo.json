@@ -1,0 +1,138 @@
+{
+  "noeud": "ha-geo",
+  "questionPrealable": {
+    "id": "prealable-quorum",
+    "enonce": "Un plan de contrôle à trois nœuds est réparti sur deux sites : deux nœuds sur le site A, un sur le site B. Le site A tombe. Que devient le plan de contrôle ?",
+    "options": [
+      "Il continue normalement avec le nœud restant",
+      "Il perd le quorum et devient indisponible",
+      "Kubernetes déplace automatiquement deux nœuds vers le site B",
+      "Il est reconstruit automatiquement en quelques secondes sur le site B"
+    ],
+    "bonne": 1,
+    "explication": "etcd exige la majorité des membres (2 sur 3). Avec un seul membre restant, il n'y a plus de quorum : le plan de contrôle ne peut plus fonctionner et la reprise demande une intervention. Deux sites ne suffisent donc pas à répartir proprement trois membres.",
+    "source": "etcd : modes de défaillance",
+    "statut": "brouillon"
+  },
+  "contenu": {
+    "statut": "brouillon",
+    "vocabulaire": [
+      {
+        "terme": "Quorum",
+        "definition": "Majorité de membres nécessaire pour qu'un système distribué prenne une décision. Pour 3 membres : 2."
+      },
+      {
+        "terme": "Zone de défaillance",
+        "definition": "Ensemble de composants qui tombent ensemble : un rack, une salle, un site."
+      },
+      {
+        "terme": "Actif/actif, actif/passif",
+        "definition": "Actif/actif : les deux sites servent le trafic. Actif/passif : un site attend de prendre le relais."
+      }
+    ],
+    "segments": [
+      {
+        "titre": "Zones de défaillance",
+        "elements": [
+          "Identifier ce qui peut tomber ensemble : nœud, rack, salle, site.",
+          "Répartir les composants critiques sur des zones différentes.",
+          "Supprimer les points de défaillance uniques.",
+          "Chaque zone ajoutée a un coût."
+        ]
+      },
+      {
+        "titre": "Le piège du quorum",
+        "elements": [
+          "etcd, le plan de contrôle et Ceph exigent une majorité.",
+          "Avec deux sites, l'un porte toujours la majorité ou une égalité.",
+          "Avec trois sites (ou un arbitre), la perte d'un site est supportée.",
+          "La latence entre sites limite ce qu'un cluster étiré peut supporter."
+        ],
+        "schema": {
+          "alt": "Les membres des deux sites contribuent au quorum : si le site A tombe, il ne reste qu'un membre sur trois.",
+          "boites": [
+            "Site A (2 membres)",
+            "Site B (1 membre)",
+            "Quorum : 2 sur 3"
+          ],
+          "fleches": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      },
+      {
+        "titre": "Arbitrer coût et risque",
+        "elements": [
+          "Un cluster étiré, ou un cluster par site.",
+          "Données répliquées en synchrone ou en asynchrone.",
+          "Chaque option fixe un RPO, un RTO et un coût.",
+          "L'arbitrage se documente dans une décision d'architecture (ADR)."
+        ]
+      }
+    ]
+  },
+  "lienProjet": {
+    "phase": "design",
+    "role": "architecte"
+  },
+  "pourquoi": {
+    "question": "Pourquoi choisir deux clusters indépendants (un par site) plutôt qu'un seul cluster étiré sur deux sites ?",
+    "reference": "Un cluster étiré sur deux sites ne survit pas à la perte du site qui porte la majorité du plan de contrôle (quorum), et la latence entre sites pèse sur etcd. Deux clusters indépendants isolent les pannes : la perte d'un site n'arrête pas l'autre. Contrepartie : il faut répliquer les données et orchestrer la bascule, avec un RPO et un RTO à définir.",
+    "source": "etcd : modes de défaillance ; Kubernetes : topologies de haute disponibilité",
+    "statut": "brouillon"
+  },
+  "rappel": [
+    {
+      "id": "rappel-quorum-5",
+      "enonce": "Un cluster etcd compte 5 membres. Combien de membres peut-il perdre en gardant le quorum ?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "bonne": 1,
+      "explication": "Le quorum est la majorité : 3 membres sur 5. Le cluster tolère donc la perte de 2 membres.",
+      "source": "etcd : modes de défaillance",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 2
+    },
+    {
+      "id": "rappel-synchrone",
+      "enonce": "Quel est l'effet principal d'une réplication synchrone entre deux sites éloignés ?",
+      "options": [
+        "RPO proche de zéro, mais latence d'écriture augmentée",
+        "Aucune perte de performance",
+        "RTO nul sans autre condition",
+        "On n'a plus besoin du second site"
+      ],
+      "bonne": 0,
+      "explication": "L'écriture n'est acquittée qu'après copie sur le second site : on ne perd presque rien, mais chaque écriture subit la latence du lien. Le RTO dépend en plus de la bascule.",
+      "source": "Ceph : clusters étirés sur deux sites (stretch mode)",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 2
+    },
+    {
+      "id": "rappel-spof",
+      "enonce": "Qu'est-ce qu'un point de défaillance unique ?",
+      "options": [
+        "Un composant dont la panne arrête le service parce qu'il n'a pas de remplaçant",
+        "Le composant le plus cher",
+        "Un nœud qui exécute une seule application",
+        "Un composant sans supervision"
+      ],
+      "bonne": 0,
+      "explication": "C'est un composant sans remplaçant : sa panne arrête le service. La haute disponibilité consiste à les supprimer ou à les redonder.",
+      "source": "Kubernetes : topologies de haute disponibilité",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 3
+    }
+  ]
+}

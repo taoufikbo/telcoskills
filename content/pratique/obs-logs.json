@@ -1,0 +1,132 @@
+{
+  "noeud": "obs-logs",
+  "questionPrealable": {
+    "id": "prealable-loki",
+    "enonce": "Pourquoi Loki coûte-t-il en général moins cher à exploiter qu'Elasticsearch pour des logs ?",
+    "options": [
+      "Il n'indexe que des labels, pas le texte complet de chaque ligne",
+      "Il compresse les logs 100 fois plus",
+      "Il ne conserve les logs que 24 heures",
+      "Il n'a pas besoin de stockage"
+    ],
+    "bonne": 0,
+    "explication": "Loki indexe seulement les labels (métadonnées) et stocke les lignes de log compressées en blocs. Elasticsearch indexe le texte complet, ce qui demande plus de CPU, de mémoire et de disque. Contrepartie : la recherche plein texte est plus lente dans Loki.",
+    "source": "Grafana Loki : documentation",
+    "statut": "brouillon"
+  },
+  "contenu": {
+    "statut": "brouillon",
+    "vocabulaire": [
+      {
+        "terme": "Label",
+        "definition": "Étiquette clé/valeur (application, namespace, nœud) qui sert à sélectionner des flux de logs."
+      },
+      {
+        "terme": "Index plein texte",
+        "definition": "Index de tous les mots d'un log : recherche rapide, mais stockage coûteux."
+      },
+      {
+        "terme": "Agent de collecte",
+        "definition": "Programme présent sur chaque nœud qui lit les logs des conteneurs et les envoie vers le stockage central (par exemple Fluent Bit, Vector, Grafana Alloy)."
+      }
+    ],
+    "segments": [
+      {
+        "titre": "Collecter",
+        "elements": [
+          "Un agent tourne sur chaque nœud (DaemonSet).",
+          "Il lit les fichiers de logs des conteneurs.",
+          "Il ajoute des labels (namespace, pod, application).",
+          "Il envoie les logs vers le stockage central."
+        ],
+        "schema": {
+          "alt": "L'agent lit les logs du conteneur puis les envoie au stockage central.",
+          "boites": [
+            "Conteneur",
+            "Agent (DaemonSet)",
+            "Stockage central"
+          ],
+          "fleches": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      },
+      {
+        "titre": "Stocker et interroger",
+        "elements": [
+          "Elasticsearch (piles ELK et EFK) indexe le texte complet.",
+          "Loki indexe uniquement les labels.",
+          "Le choix dépend du volume, du budget et du besoin de recherche plein texte.",
+          "Les deux gèrent une durée de rétention."
+        ]
+      },
+      {
+        "titre": "Éviter le piège des labels",
+        "elements": [
+          "Chaque combinaison de valeurs de labels crée un flux distinct.",
+          "Un label à valeur très variable (identifiant de requête) multiplie les flux.",
+          "L'index grossit et les performances baissent.",
+          "Gardez peu de labels, à valeurs peu nombreuses."
+        ]
+      }
+    ]
+  },
+  "lienProjet": {
+    "phase": "plateforme",
+    "role": "sre"
+  },
+  "rappel": [
+    {
+      "id": "rappel-daemonset",
+      "enonce": "Quel objet Kubernetes déploie un agent de collecte de logs sur chaque nœud ?",
+      "options": [
+        "Deployment",
+        "StatefulSet",
+        "DaemonSet",
+        "Job"
+      ],
+      "bonne": 2,
+      "explication": "Un DaemonSet garantit un pod par nœud, ce qui convient à un agent qui lit les logs locaux. Un Deployment place les pods où le planificateur le décide, sans garantie d'un par nœud.",
+      "source": "À ajouter : documentation Kubernetes (DaemonSet), absente des ressources de ce nœud",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 0
+    },
+    {
+      "id": "rappel-indexation-loki",
+      "enonce": "Dans Loki, qu'est-ce qui est indexé ?",
+      "options": [
+        "Le texte complet de chaque ligne",
+        "Les labels du flux",
+        "Uniquement l'heure",
+        "Rien : Loki parcourt tout à chaque recherche"
+      ],
+      "bonne": 1,
+      "explication": "Loki indexe les labels. On sélectionne d'abord les flux par leurs labels, puis on filtre le contenu des lignes de ces flux.",
+      "source": "Grafana Loki : documentation",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 0
+    },
+    {
+      "id": "rappel-cardinalite",
+      "enonce": "Un label Loki contient l'identifiant unique de chaque requête. Quelle est la conséquence ?",
+      "options": [
+        "Aucune : plus de labels accélère la recherche",
+        "Le nombre de flux explose, l'index grossit et les performances baissent",
+        "Les logs sont chiffrés",
+        "Loki refuse de démarrer"
+      ],
+      "bonne": 1,
+      "explication": "Chaque valeur distincte crée un nouveau flux : l'index et la mémoire grossissent. Les labels doivent rester peu nombreux et à valeurs limitées.",
+      "source": "Grafana Loki : documentation",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 0
+    }
+  ]
+}

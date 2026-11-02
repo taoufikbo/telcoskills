@@ -1,0 +1,782 @@
+{
+  "id": "parcours-sylva",
+  "titre": "Parcours Sylva : la pile cloud télécom open source",
+  "type": "competence",
+  "presentation": "Pour l'ingénieur ou l'architecte qui doit déployer ou opérer une plateforme Sylva : du socle Kubernetes et GitOps au cluster de gestion, aux clusters de charge et aux réglages des nœuds pour les fonctions réseau.",
+  "version": "0.1",
+  "provenance": {
+    "type": "editoriale"
+  },
+  "source": "Rédaction éditoriale à partir du dépôt sylva-core (README, valeurs d'exemple, units) et de la documentation officielle du projet Sylva, lus le 2026-11-02. Ce n'est pas une formation officielle Sylva ; le champ 'demande' n'est pas renseigné.",
+  "legende_demande": {
+    "forte": "présent dans la majorité des offres",
+    "moyenne": "présent dans plusieurs offres",
+    "faible": "mentionné ponctuellement ou implicite"
+  },
+  "blocs": [
+    "Socle Kubernetes et GitOps",
+    "Comprendre Sylva",
+    "Déployer une plateforme Sylva",
+    "Opérer la plateforme",
+    "Charges télécom"
+  ],
+  "noeuds": [
+    {
+      "id": "linux",
+      "titre": "Linux avancé (RHEL/CentOS)",
+      "bloc": "Socle Kubernetes et GitOps",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "resume": "Systemd, processus, namespaces/cgroups, SELinux, diagnostic système. Base de tout le reste.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation du noyau Linux",
+          "url": "https://docs.kernel.org/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation RHEL (administration)",
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        },
+        {
+          "type": "certif",
+          "nom": "RHCSA (curriculum)",
+          "url": "https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "conteneurs",
+      "titre": "Conteneurs (OCI, Podman, CRI-O)",
+      "bloc": "Socle Kubernetes et GitOps",
+      "niveau": "fondamental",
+      "prerequis": [
+        "linux"
+      ],
+      "resume": "Images, registries, runtime, différences Docker/Podman/CRI-O.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Podman : documentation",
+          "url": "https://podman.io/docs"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Podman",
+          "url": "https://docs.podman.io/en/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Podman"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation CRI-O",
+          "url": "https://cri-o.io/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "CRI-O"
+        }
+      ]
+    },
+    {
+      "id": "k8s-archi",
+      "titre": "Architecture Kubernetes",
+      "bloc": "Socle Kubernetes et GitOps",
+      "niveau": "fondamental",
+      "prerequis": [
+        "conteneurs"
+      ],
+      "resume": "Control plane, etcd, kubelet, scheduler, API server, contrôleurs.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : architecture du cluster",
+          "url": "https://kubernetes.io/docs/concepts/architecture/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Kubernetes (Concepts)",
+          "url": "https://kubernetes.io/docs/concepts/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        },
+        {
+          "type": "certif",
+          "nom": "CKA (curriculum CNCF)",
+          "url": "https://github.com/cncf/curriculum",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "CNCF"
+        }
+      ]
+    },
+    {
+      "id": "helm",
+      "titre": "Helm et packaging de CNF",
+      "bloc": "Socle Kubernetes et GitOps",
+      "niveau": "intermediaire",
+      "prerequis": [],
+      "resume": "Charts, values, hooks, gestion de versions. Les CNF sont livrés en charts.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Helm : documentation",
+          "url": "https://helm.sh/docs/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Helm"
+        }
+      ]
+    },
+    {
+      "id": "gitops",
+      "titre": "GitOps (ArgoCD / Flux)",
+      "bloc": "Socle Kubernetes et GitOps",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "helm"
+      ],
+      "resume": "État désiré dans Git, synchronisation, gestion multi-environnements.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Argo CD : documentation",
+          "url": "https://argo-cd.readthedocs.io/"
+        }
+      ]
+    },
+    {
+      "id": "sylva-projet",
+      "titre": "Le projet Sylva : une pile cloud télécom commune",
+      "bloc": "Comprendre Sylva",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "resume": "Projet de Linux Foundation Europe annoncé en novembre 2022 avec Deutsche Telekom, Ericsson, Nokia, Orange, Telecom Italia, Telefónica et Vodafone : un cadre logiciel cloud-native commun pour les réseaux d'opérateurs, une implémentation de référence (sylva-core, licence Apache 2.0) et un programme de validation des fonctions réseau.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "sylva-core : dépôt de la pile (licence Apache 2.0)",
+          "url": "https://gitlab.com/sylva-projects/sylva-core",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "doc",
+          "nom": "Linux Foundation Europe annonce le projet Sylva (communiqué, novembre 2022)",
+          "url": "https://www.linuxfoundation.org/press/linux-foundation-europe-announces-project-sylva-to-create-open-source-telco-cloud-software-framework-to-complement-open-networking-momentum",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "The Linux Foundation"
+        },
+        {
+          "type": "retour-experience",
+          "nom": "PowerDNS : validation d'une CNF au centre de validation d'Orange",
+          "url": "https://blog.powerdns.com/powerdns-achieves-sylva-project-validation",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "PowerDNS"
+        }
+      ]
+    },
+    {
+      "id": "sylva-architecture",
+      "titre": "Cluster de gestion, clusters de charge et units",
+      "bloc": "Comprendre Sylva",
+      "niveau": "fondamental",
+      "prerequis": [
+        "sylva-projet",
+        "k8s-archi"
+      ],
+      "resume": "Un cluster de gestion, déployé depuis une VM de bootstrap, crée et gère de façon déclarative des clusters de charge qui hébergent les CNF. Chaque cluster est composé d'« units », des composants open source obligatoires ou optionnels (Rancher, Keycloak, Harbor, Vault, Flux, Thanos…). Deux rôles : l'opérateur d'infrastructure et l'opérateur des charges.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : vue d'ensemble de la solution",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/getting-started/solution-overview.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : aperçu technique",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/_Design/01-technical-overview.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    },
+    {
+      "id": "cluster-api",
+      "titre": "Cluster API : le cycle de vie des clusters",
+      "bloc": "Comprendre Sylva",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-archi"
+      ],
+      "resume": "Gérer des clusters Kubernetes avec Kubernetes : des ressources déclaratives décrivent les clusters, des fournisseurs d'infrastructure et d'amorçage les réalisent. Sylva s'en sert pour tous ses clusters, y compris le cluster de gestion.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Cluster API : documentation officielle",
+          "url": "https://cluster-api.sigs.k8s.io/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes SIG Cluster Lifecycle"
+        },
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : aperçu technique (cycle de vie des clusters)",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/_Design/01-technical-overview.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    },
+    {
+      "id": "sylva-units",
+      "titre": "Le chart sylva-units : activer et configurer des units",
+      "bloc": "Comprendre Sylva",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "helm",
+        "gitops",
+        "sylva-architecture"
+      ],
+      "resume": "Un chart Helm maison transforme chaque unit en ressources Flux (GitRepository, HelmRepository, OCIRepository, Kustomization, HelmRelease) selon le contexte (bootstrap, gestion, charge) et les fournisseurs choisis. On active, désactive et règle les units dans values.yaml ; Kustomize adapte les manifestes sans les modifier.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "sylva-core : README (pile Sylva et structure du dépôt)",
+          "url": "https://gitlab.com/sylva-projects/sylva-core/-/blob/main/README.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : units",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/units.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "opensource",
+          "nom": "Flux : documentation officielle",
+          "url": "https://fluxcd.io/flux/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "CNCF"
+        }
+      ]
+    },
+    {
+      "id": "sylva-bootstrap",
+      "titre": "VM de bootstrap et prérequis du déploiement",
+      "bloc": "Déployer une plateforme Sylva",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "linux",
+        "sylva-units"
+      ],
+      "resume": "La VM de bootstrap (Ubuntu 22.04 LTS recommandée, 4 vCPU, 8 Go de mémoire et 16 conseillés, 40 Go de disque) doit joindre l'API de l'infrastructure ou les BMC (IPMI, Redfish), Internet et les réseaux utiles ; les noms d'hôtes *.sylva doivent être résolus par le DNS.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : prérequis",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/prerequisites.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    },
+    {
+      "id": "sylva-fournisseurs",
+      "titre": "Fournisseurs d'infrastructure et distributions Kubernetes",
+      "bloc": "Déployer une plateforme Sylva",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "cluster-api"
+      ],
+      "resume": "Les valeurs d'exemple de sylva-core combinent trois distributions (kubeadm, RKE2, Canonical Kubernetes) et des fournisseurs Cluster API : OpenStack (CAPO), bare metal avec Metal3 (CAPM3), vSphere (CAPV), OpenNebula (CAPONE) et Docker (CAPD) pour les essais. On part du dossier qui correspond à sa cible.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "sylva-core : valeurs d'exemple par distribution et fournisseur",
+          "url": "https://gitlab.com/sylva-projects/sylva-core/-/tree/main/environment-values",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : fournisseurs",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/providers.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    },
+    {
+      "id": "sylva-metal3",
+      "titre": "Bare metal avec Metal3 (CAPM3)",
+      "bloc": "Déployer une plateforme Sylva",
+      "niveau": "avance",
+      "prerequis": [
+        "sylva-fournisseurs",
+        "linux"
+      ],
+      "resume": "Provisionner des serveurs physiques par leur BMC (IPMI ou Redfish) avec Metal3 et le fournisseur Cluster API CAPM3. Sylva déploie aussi des clusters OKD sur bare metal par ce fournisseur.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Sylva, espace développeurs : Metal3",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/devzone/03-developer-perspectives/00-relevant-units/metal3.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : déploiement de clusters OKD",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/runtime-operations/cli-workload-cluster-operations/okd-deployment.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    },
+    {
+      "id": "sylva-suse",
+      "titre": "La variante SUSE de Sylva : SL Micro, RKE2, Rancher, Longhorn, NeuVector",
+      "bloc": "Déployer une plateforme Sylva",
+      "niveau": "avance",
+      "prerequis": [
+        "sylva-fournisseurs"
+      ],
+      "resume": "Une partie des composants de sylva-core vient des dépôts SUSE et Rancher : RKE2 (fournisseur Cluster API), Rancher et Rancher Turtles, Longhorn, NeuVector, Metal3 maintenu par SUSE, opérateur SR-IOV et KubeVirt de SUSE Edge. Le dépôt susetelcocloud aligne Sylva 1.7 sur SUSE Edge 3.6 : SUSE Linux Micro 6.2 configuré par Ignition, images construites avec KIWI et Edge Image Builder, charts et images de registry.suse.com.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Projet Sylva : variante SUSE Telco Cloud (susetelcocloud)",
+          "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "opensource",
+          "nom": "Rapport d'alignement Sylva 1.7 / SUSE Edge 3.6",
+          "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud/-/blob/main/mgmt/mgmt_stc3.6_sylva1.7.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "opensource",
+          "nom": "sylva-core : liste des units et origine de leurs charts",
+          "url": "https://gitlab.com/sylva-projects/sylva-core/-/blob/main/charts/sylva-units/units-description.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    },
+    {
+      "id": "sylva-installation",
+      "titre": "Déployer et valider le cluster de gestion",
+      "bloc": "Déployer une plateforme Sylva",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "sylva-bootstrap",
+        "sylva-fournisseurs"
+      ],
+      "resume": "bootstrap.sh crée un cluster temporaire qui déploie le cluster de gestion ; apply.sh installe ou met à jour ses units. On valide ensuite : nœuds Ready, pods de Rancher, Flux, Harbor, Vault et Keycloak en marche, points d'entrée exposés.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : démarrage rapide",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/getting-started/quickstart.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : installation",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/installation/installation.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : validation",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/installation/validation.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    },
+    {
+      "id": "obs-metrics",
+      "titre": "Prometheus, Alertmanager, Thanos",
+      "bloc": "Opérer la plateforme",
+      "niveau": "intermediaire",
+      "prerequis": [],
+      "resume": "Métriques, règles d'alerte, rétention longue, alerting basé sur les SLO.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Prometheus : documentation",
+          "url": "https://prometheus.io/docs/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Prometheus"
+        }
+      ]
+    },
+    {
+      "id": "obs-logs",
+      "titre": "Logs centralisés (EFK/ELK, Loki)",
+      "bloc": "Opérer la plateforme",
+      "niveau": "intermediaire",
+      "prerequis": [],
+      "resume": "Collecte, indexation, rétention, corrélation avec les alertes.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Grafana Loki : documentation",
+          "url": "https://grafana.com/docs/loki/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Grafana Labs"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Elastic",
+          "url": "https://www.elastic.co/docs",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Elastic"
+        }
+      ]
+    },
+    {
+      "id": "sec-supply",
+      "titre": "Sécurité de la chaîne d'approvisionnement",
+      "bloc": "Opérer la plateforme",
+      "niveau": "avance",
+      "prerequis": [
+        "conteneurs"
+      ],
+      "resume": "Scan d'images (Trivy), signature, politiques d'admission, SBOM.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Trivy : scanner de vulnérabilités et de SBOM",
+          "url": "https://trivy.dev/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Trivy",
+          "url": "https://trivy.dev/docs/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Aqua Security"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Sigstore",
+          "url": "https://docs.sigstore.dev/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Sigstore"
+        }
+      ]
+    },
+    {
+      "id": "sylva-clusters-charge",
+      "titre": "Créer des clusters de charge : du script à SylvaWorkloadCluster",
+      "bloc": "Opérer la plateforme",
+      "niveau": "avance",
+      "prerequis": [
+        "sylva-installation",
+        "gitops"
+      ],
+      "resume": "Avant Sylva 1.6, un cluster de charge se créait avec apply-workload-cluster.sh. Depuis la 1.6, on déclare une ressource SylvaWorkloadCluster, réconciliée depuis un dépôt Git propre à l'équipe, avec des valeurs par défaut fournies par l'administrateur (SylvaUnitsReleasePresets).",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : clusters de charge en GitOps",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/runtime-operations/gitops-workload-cluster-operations/overview.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : ajouter un cluster de charge (script)",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/runtime-operations/cli-workload-cluster-operations/addition.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    },
+    {
+      "id": "sylva-upgrade",
+      "titre": "Monter de version Kubernetes",
+      "bloc": "Opérer la plateforme",
+      "niveau": "avance",
+      "prerequis": [
+        "sylva-clusters-charge"
+      ],
+      "resume": "Une version de Sylva prend en charge plusieurs versions de Kubernetes (par exemple 1.29 à 1.31 pour Sylva 1.4). On monte d'une version mineure à la fois, en vérifiant la version de chaque nœud avant et après.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : montée de version Kubernetes",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/runtime-operations/cli-workload-cluster-operations/upgrade-kubernetes.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    },
+    {
+      "id": "sylva-services",
+      "titre": "Les services de la plateforme : Rancher, Keycloak, Harbor, Vault, Flux, Thanos",
+      "bloc": "Opérer la plateforme",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "sylva-installation"
+      ],
+      "resume": "Après le déploiement, la plateforme expose ses interfaces sous des noms d'hôtes en .sylva (rancher.sylva, keycloak.sylva, vault.sylva, harbor.sylva, flux.sylva, thanos.sylva) : savoir les joindre, retrouver les identifiants et à quoi sert chacun.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : services disponibles",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/post-deployment/available-services.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    },
+    {
+      "id": "sylva-observabilite",
+      "titre": "Journaux et supervision dans Sylva",
+      "bloc": "Opérer la plateforme",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "sylva-services",
+        "obs-logs",
+        "obs-metrics"
+      ],
+      "resume": "Dans chaque cluster, la pile rancher-logging (Fluent Bit, Fluentd) collecte les journaux ; Loki les centralise dans le cluster de gestion, consultables dans Grafana. La supervision se règle dans les sections logging et monitoring de values.yaml.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : journaux et supervision",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/advanced/logging-monitoring/README.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    },
+    {
+      "id": "sylva-securite",
+      "titre": "Sécurité : signatures d'images, PKI, NeuVector, SBOM, WireGuard",
+      "bloc": "Opérer la plateforme",
+      "niveau": "avance",
+      "prerequis": [
+        "sylva-services",
+        "sec-supply"
+      ],
+      "resume": "La section security de values.yaml règle un émetteur de certificats externe (par exemple Vault), la vérification des signatures d'images (cosign), le chiffrement WireGuard de Calico, l'analyse NeuVector et l'opérateur SBOM. Des politiques Kyverno font partie des units.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : sécurité",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/advanced/security/README.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "opensource",
+          "nom": "Sylva, espace développeurs : signatures d'images avec cosign",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/devzone/03-developer-perspectives/01-security/cosign.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    },
+    {
+      "id": "cni",
+      "titre": "CNI et OVN-Kubernetes",
+      "bloc": "Charges télécom",
+      "niveau": "intermediaire",
+      "prerequis": [],
+      "resume": "Réseau de pods, OVN-Kubernetes, Open vSwitch, NetworkPolicy, egress.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OVN-Kubernetes : documentation",
+          "url": "https://ovn-kubernetes.io/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Networking)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/networking_overview/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "multus",
+      "titre": "Multus et réseaux secondaires",
+      "bloc": "Charges télécom",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "cni"
+      ],
+      "resume": "NetworkAttachmentDefinition, macvlan, ipvlan, séparation plan de contrôle / usager / gestion.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Multus CNI (dépôt source)",
+          "url": "https://github.com/k8snetworkplumbingwg/multus-cni",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "K8s Network Plumbing WG"
+        }
+      ]
+    },
+    {
+      "id": "sriov",
+      "titre": "SR-IOV",
+      "bloc": "Charges télécom",
+      "niveau": "avance",
+      "prerequis": [
+        "multus"
+      ],
+      "resume": "VF, opérateur SR-IOV, NIC supportées, accès direct pour l'UPF et les fonctions à haut débit.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "SR-IOV Network Operator (dépôt source)",
+          "url": "https://github.com/k8snetworkplumbingwg/sriov-network-operator"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (SR-IOV)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/hardware_networks/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "perf-hugepages",
+      "titre": "HugePages et NUMA",
+      "bloc": "Charges télécom",
+      "niveau": "avance",
+      "prerequis": [
+        "linux"
+      ],
+      "resume": "Allocation de pages, topologie NUMA, alignement CPU/mémoire/NIC.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Noyau Linux : HugeTLB pages",
+          "url": "https://docs.kernel.org/admin-guide/mm/hugetlbpage.html"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Scalability and performance)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "perf-profile",
+      "titre": "Performance Profile et CPU pinning",
+      "bloc": "Charges télécom",
+      "niveau": "avance",
+      "prerequis": [
+        "perf-hugepages"
+      ],
+      "resume": "Isolation de CPU, gestionnaire de topologie, noyau temps réel, réglages pour CNF.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : politiques du CPU Manager",
+          "url": "https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Performance Addon / Node Tuning)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "sylva-node-classes",
+      "titre": "Classes de nœuds : generic, intensive, SR-IOV",
+      "bloc": "Charges télécom",
+      "niveau": "avance",
+      "prerequis": [
+        "perf-hugepages",
+        "perf-profile",
+        "sriov",
+        "sylva-clusters-charge"
+      ],
+      "resume": "Une classe de nœud regroupe les réglages d'un type de charge : generic (sans HugePages ni CPU pinning), intensive (HugePages, CPU manager statique) ou SR-IOV (HugePages, SR-IOV, CPU pinning, NUMA, isolation des CPU système). Réservé aux clusters RKE2 ; l'isolation des CPU ajoute nohz_full, irqaffinity et reservedSystemCPUs.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : classes de nœuds",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/advanced/node-classes/README.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "opensource",
+          "nom": "Documentation Sylva : isolation des CPU",
+          "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/advanced/node-classes/cpu-isolation.md",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Projet Sylva"
+        }
+      ]
+    }
+  ]
+}

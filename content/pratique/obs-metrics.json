@@ -1,0 +1,172 @@
+{
+  "noeud": "obs-metrics",
+  "questionPrealable": {
+    "id": "prealable-retention",
+    "enonce": "Une instance Prometheus garde ses métriques sur son disque local pendant quelques jours ou semaines. Quel composant permet de conserver des mois de métriques et d'interroger plusieurs Prometheus ensemble ?",
+    "options": [
+      "Alertmanager",
+      "Thanos",
+      "Loki",
+      "Un second Prometheus qui copie le premier"
+    ],
+    "bonne": 1,
+    "explication": "Thanos ajoute un stockage long terme sur un stockage objet et une requête globale sur plusieurs Prometheus. Alertmanager traite les alertes, Loki stocke des logs. Un second Prometheus qui copie le premier double le stockage local sans résoudre la rétention longue ni la requête globale.",
+    "source": "À ajouter : documentation Thanos (thanos.io), absente des ressources de ce nœud",
+    "statut": "brouillon"
+  },
+  "contenu": {
+    "statut": "brouillon",
+    "vocabulaire": [
+      {
+        "terme": "Série temporelle",
+        "definition": "Suite de valeurs d'une métrique, horodatées, pour une combinaison précise de labels."
+      },
+      {
+        "terme": "Scrape",
+        "definition": "Interrogation périodique, par Prometheus, de l'adresse /metrics d'un service pour récupérer ses métriques."
+      },
+      {
+        "terme": "Règle d'alerte",
+        "definition": "Condition écrite en PromQL que Prometheus évalue en continu ; quand elle reste vraie, l'alerte se déclenche."
+      }
+    ],
+    "segments": [
+      {
+        "titre": "Collecter",
+        "elements": [
+          "Prometheus interroge (pull) les services à intervalle régulier.",
+          "Chaque service expose ses métriques sur /metrics.",
+          "Dans Kubernetes, les cibles sont découvertes par ServiceMonitor ou PodMonitor (opérateur Prometheus).",
+          "Chaque série est identifiée par un nom et des labels."
+        ],
+        "schema": {
+          "alt": "Prometheus interroge le service, puis écrit les séries dans son stockage local.",
+          "boites": [
+            "Service (/metrics)",
+            "Prometheus",
+            "Stockage local"
+          ],
+          "fleches": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      },
+      {
+        "titre": "Alerter",
+        "elements": [
+          "Prometheus évalue les règles d'alerte.",
+          "Il envoie les alertes déclenchées à Alertmanager.",
+          "Alertmanager déduplique, regroupe et achemine vers la bonne équipe (e-mail, webhook).",
+          "Il gère aussi les silences et les inhibitions."
+        ],
+        "schema": {
+          "alt": "Prometheus envoie les alertes à Alertmanager, qui envoie les notifications.",
+          "boites": [
+            "Prometheus (règles)",
+            "Alertmanager",
+            "Notification"
+          ],
+          "fleches": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      },
+      {
+        "titre": "Conserver et regrouper",
+        "elements": [
+          "Prometheus seul ne garde que sa rétention locale.",
+          "Thanos Sidecar envoie les blocs vers un stockage objet.",
+          "Thanos Query interroge plusieurs Prometheus et le stockage objet.",
+          "Le Compactor réduit la résolution des données anciennes (downsampling)."
+        ],
+        "schema": {
+          "alt": "Le Sidecar envoie les blocs au stockage objet ; Thanos Query interroge le stockage objet et Prometheus.",
+          "boites": [
+            "Prometheus + Sidecar",
+            "Stockage objet",
+            "Thanos Query"
+          ],
+          "fleches": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              0
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "lienProjet": {
+    "phase": "plateforme",
+    "role": "sre"
+  },
+  "rappel": [
+    {
+      "id": "rappel-evaluation",
+      "enonce": "Quel composant évalue la condition d'une règle d'alerte ?",
+      "options": [
+        "Alertmanager",
+        "Prometheus",
+        "Thanos Compactor",
+        "Grafana"
+      ],
+      "bonne": 1,
+      "explication": "Prometheus évalue les règles et envoie les alertes déclenchées à Alertmanager. Alertmanager ne les évalue pas : il les regroupe, les déduplique et les achemine.",
+      "source": "Prometheus : documentation",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 0
+    },
+    {
+      "id": "rappel-regroupement",
+      "enonce": "Cinquante alertes similaires se déclenchent en même temps et le regroupement par label est configuré. Que fait Alertmanager ?",
+      "options": [
+        "Il envoie une notification par alerte",
+        "Il les regroupe et envoie une seule notification par groupe",
+        "Il supprime les plus anciennes",
+        "Il redémarre Prometheus"
+      ],
+      "bonne": 1,
+      "explication": "Alertmanager regroupe les alertes selon les labels choisis (group_by) et envoie une notification par groupe, pour ne pas noyer l'astreinte.",
+      "source": "Prometheus : documentation",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 0
+    },
+    {
+      "id": "rappel-sidecar",
+      "enonce": "Dans une architecture Thanos, quel composant envoie les blocs de données de Prometheus vers le stockage objet ?",
+      "options": [
+        "Thanos Query",
+        "Thanos Sidecar",
+        "Thanos Ruler",
+        "Thanos Compactor"
+      ],
+      "bonne": 1,
+      "explication": "Le Sidecar, installé à côté de Prometheus, téléverse ses blocs vers le stockage objet. Query interroge, Ruler évalue des règles globales, Compactor compacte et réduit la résolution des données stockées.",
+      "source": "À ajouter : documentation Thanos (thanos.io), absente des ressources de ce nœud",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 3
+    }
+  ]
+}

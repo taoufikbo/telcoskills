@@ -1,0 +1,1472 @@
+{
+  "id": "coeur-5g-sur-caas",
+  "titre": "Déployer un cœur 5G sur un CaaS : du design à la mise en production",
+  "version": "0.1",
+  "resume": "Un fil rouge pour voir qui fait quoi, à chaque phase d'un déploiement réaliste, et quelles compétences chaque rôle doit avoir. Les compétences renvoient vers les nœuds des roadmaps.",
+  "contexte": "Exemple type, à adapter : un opérateur déploie un cœur 5G (architecture orientée services) sous forme de fonctions réseau conteneurisées, fournies par un éditeur en charts Helm, sur une plateforme Kubernetes bare metal répartie sur deux sites, interconnectée au réseau IP/MPLS de l'opérateur, avec un objectif de disponibilité élevé.",
+  "source": "Rédaction éditoriale à partir des roadmaps du site et de la pratique des projets de plateforme ; ce n'est pas un retour d'expérience mesuré. Le découpage en phases, les jalons et la répartition des rôles sont à adapter à votre organisation et à valider par un chef de projet.",
+  "roles": [
+    {
+      "id": "chef-projet",
+      "libelle": "Chef de projet",
+      "description": "Cadre le périmètre, pilote les jalons et les risques, coordonne les acteurs."
+    },
+    {
+      "id": "architecte",
+      "libelle": "Architecte cloud / CaaS telco",
+      "description": "Conçoit et justifie l'architecture, dimensionne, garantit la cohérence d'ensemble.",
+      "roadmap": "architecte-caas-telco"
+    },
+    {
+      "id": "ingenieur-caas",
+      "libelle": "Ingénieur CaaS telco",
+      "description": "Installe, configure et fait évoluer la plateforme Kubernetes.",
+      "roadmap": "ingenieur-caas-telco"
+    },
+    {
+      "id": "integrateur-nf",
+      "libelle": "Intégrateur NF 5GC",
+      "description": "Fait fonctionner les fonctions réseau du cœur 5G sur la plateforme, de bout en bout.",
+      "roadmap": "integrateur-nf-5gc"
+    },
+    {
+      "id": "devops",
+      "libelle": "Intégrateur DevOps",
+      "description": "Automatise le packaging, le déploiement et les tests ; profil IT qui apprend le métier.",
+      "roadmap": "devops-integrateur-nf"
+    },
+    {
+      "id": "sre",
+      "libelle": "SRE / exploitation",
+      "description": "Prépare puis assure l'exploitation : objectifs de service, supervision, incidents, changements.",
+      "roadmap": "sre-exploitation-telco"
+    },
+    {
+      "id": "ingenieur-ia",
+      "libelle": "Ingénieur IA / plateforme d'inférence",
+      "description": "Héberge les modèles et l'assistant d'exploitation à base d'IA : GPU, inférence, agents, garde-fous et conformité.",
+      "roadmap": "ia-agentique-telco"
+    },
+    {
+      "id": "securite",
+      "libelle": "Sécurité / RSSI",
+      "description": "Définit et vérifie les exigences de sécurité et de conformité."
+    },
+    {
+      "id": "reseau",
+      "libelle": "Ingénieur réseau transport",
+      "description": "Raccorde la plateforme au réseau de l'opérateur : VLAN, VRF, routage, interconnexion."
+    },
+    {
+      "id": "editeur",
+      "libelle": "Éditeur de NF",
+      "description": "Fournit les fonctions réseau, leurs exigences, leur documentation et leur support."
+    },
+    {
+      "id": "juridique",
+      "libelle": "Juridique / DPO",
+      "description": "Identifie les obligations légales et les risques de conformité."
+    }
+  ],
+  "phases": [
+    {
+      "id": "cadrage",
+      "titre": "Cadrage et exigences",
+      "objectif": "Traduire le besoin en périmètre, exigences de service et contraintes techniques et réglementaires, et choisir les acteurs.",
+      "livrables": [
+        "Note de cadrage et périmètre",
+        "Exigences de service : disponibilité, capacité, latence",
+        "Registre des obligations réglementaires",
+        "Organisation du projet et répartition des responsabilités"
+      ],
+      "activites": [
+        {
+          "titre": "Comprendre le besoin et formuler les exigences de service",
+          "roles": [
+            "chef-projet",
+            "architecte",
+            "editeur"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "telco-101"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "archi-5g"
+            },
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "sre-slo"
+            }
+          ]
+        },
+        {
+          "titre": "Identifier le cadre réglementaire applicable",
+          "roles": [
+            "juridique",
+            "securite",
+            "architecte"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-cadre-fr"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-5g-securite"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-nis2"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-rgpd"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-li"
+            }
+          ]
+        },
+        {
+          "titre": "Choisir la distribution et les fournisseurs",
+          "roles": [
+            "architecte",
+            "chef-projet",
+            "editeur"
+          ],
+          "competences": [
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "evaluation-fournisseurs"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "distrib-alt"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "ocp-rds"
+            }
+          ]
+        },
+        {
+          "titre": "Partager un vocabulaire commun entre IT et télécom",
+          "roles": [
+            "devops",
+            "integrateur-nf",
+            "reseau"
+          ],
+          "competences": [
+            {
+              "roadmap": "devops-integrateur-nf",
+              "noeud": "tel-vocabulaire"
+            },
+            {
+              "roadmap": "devops-integrateur-nf",
+              "noeud": "dialogue-experts"
+            }
+          ]
+        },
+        {
+          "titre": "Cadrer l'usage de l'IA : cas d'usage, données et obligations (AI Act)",
+          "roles": [
+            "ingenieur-ia",
+            "juridique",
+            "securite",
+            "architecte"
+          ],
+          "competences": [
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "tel-ia-usecases"
+            },
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "reg-ai-act"
+            },
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "ia-llm-bases"
+            }
+          ]
+        }
+      ],
+      "jalon": {
+        "titre": "Go pour le design",
+        "criteres": [
+          "Exigences de service validées par le métier",
+          "Obligations réglementaires identifiées et attribuées",
+          "Éditeur et distribution retenus"
+        ]
+      },
+      "risques": [
+        "Exigences de disponibilité floues ou irréalistes",
+        "Cadre réglementaire découvert trop tard",
+        "Écart de vocabulaire entre équipes IT et réseau"
+      ]
+    },
+    {
+      "id": "design",
+      "titre": "Design de l'architecture (HLD)",
+      "objectif": "Définir l'architecture cible et justifier chaque choix structurant.",
+      "livrables": [
+        "HLD : schémas applicatif et réseau",
+        "Décisions d'architecture (ADR)",
+        "Matrice d'exigences des fonctions réseau",
+        "Plan de sécurité cible"
+      ],
+      "activites": [
+        {
+          "titre": "Concevoir le CaaS : distribution, sites, stockage, virtualisation",
+          "roles": [
+            "architecte",
+            "ingenieur-caas"
+          ],
+          "competences": [
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "k8s-archi"
+            },
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "ocp-multicluster"
+            },
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "ceph"
+            },
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "ha-geo"
+            },
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "kubevirt"
+            }
+          ]
+        },
+        {
+          "titre": "Concevoir les réseaux de support et le plan d'IP",
+          "roles": [
+            "architecte",
+            "reseau",
+            "ingenieur-caas"
+          ],
+          "competences": [
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "archi-reseau-support"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "cni"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "multus"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "sriov"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "lb-bgp"
+            }
+          ]
+        },
+        {
+          "titre": "Traduire les fonctions réseau en besoins de plateforme",
+          "roles": [
+            "architecte",
+            "integrateur-nf",
+            "editeur"
+          ],
+          "competences": [
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "matrice-exigences"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "cnf-exigences"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "cnf-onboarding"
+            }
+          ]
+        },
+        {
+          "titre": "Définir la sécurité et la conformité cibles",
+          "roles": [
+            "securite",
+            "architecte"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "sec-durcissement"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "sec-reseau"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "sec-secrets"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-anssi"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-risque"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "sec-sba"
+            }
+          ]
+        },
+        {
+          "titre": "Consigner les décisions et rédiger le HLD",
+          "roles": [
+            "architecte"
+          ],
+          "competences": [
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "adr"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "hld-lld"
+            }
+          ]
+        },
+        {
+          "titre": "Concevoir la plateforme d'inférence : modèles ouverts, GPU, souveraineté",
+          "roles": [
+            "ingenieur-ia",
+            "architecte"
+          ],
+          "competences": [
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "ia-modeles-ouverts"
+            },
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "inf-vllm"
+            },
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "reg-souverainete"
+            }
+          ]
+        }
+      ],
+      "jalon": {
+        "titre": "Revue d'architecture",
+        "criteres": [
+          "Chaque exigence de service est couverte par un élément du design",
+          "Les risques réglementaires ont une réponse",
+          "Les décisions principales sont consignées"
+        ]
+      },
+      "risques": [
+        "Design sur-spécifié par rapport aux exigences",
+        "Dépendance à un fournisseur non anticipée",
+        "Choix de réseau secondaire incompatible avec les exigences de l'éditeur"
+      ]
+    },
+    {
+      "id": "dimensionnement",
+      "titre": "Dimensionnement et détail (LLD)",
+      "objectif": "Chiffrer la plateforme et détailler sa réalisation.",
+      "livrables": [
+        "Dimensionnement : nœuds, CPU, mémoire, stockage, réseaux",
+        "LLD : paramètres, plan d'adressage, matrice de flux",
+        "Plan de tests de charge",
+        "Objectifs de service (SLO) et supervision cible"
+      ],
+      "activites": [
+        {
+          "titre": "Dimensionner le cluster à partir des exigences des fonctions",
+          "roles": [
+            "architecte",
+            "ingenieur-caas",
+            "editeur"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "dimensionnement"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "perf-hugepages"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "perf-profile"
+            },
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "bench-dimensionnement"
+            }
+          ]
+        },
+        {
+          "titre": "Rédiger le LLD, le plan d'IP et la matrice de flux",
+          "roles": [
+            "architecte",
+            "reseau",
+            "ingenieur-caas"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "hld-lld"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reseau-ip"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "sctp-flux"
+            },
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "archi-reseau-support"
+            }
+          ]
+        },
+        {
+          "titre": "Estimer coûts, énergie et capacité d'évolution",
+          "roles": [
+            "architecte",
+            "chef-projet"
+          ],
+          "competences": [
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "cout-energie"
+            },
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "cycle-vie-plateforme"
+            },
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "capacite"
+            }
+          ]
+        },
+        {
+          "titre": "Définir les objectifs de service et la supervision cible",
+          "roles": [
+            "sre",
+            "architecte"
+          ],
+          "competences": [
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "sre-slo"
+            },
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "alerting-utile"
+            },
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "observabilite-design"
+            }
+          ]
+        },
+        {
+          "titre": "Dimensionner les GPU et mesurer le coût par requête",
+          "roles": [
+            "ingenieur-ia",
+            "architecte"
+          ],
+          "competences": [
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "inf-bench"
+            },
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "gpu-partage"
+            },
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "cout-energie"
+            }
+          ]
+        }
+      ],
+      "jalon": {
+        "titre": "LLD validé et engagement des moyens",
+        "criteres": [
+          "Dimensionnement validé par l'éditeur",
+          "Plan d'IP et flux validés par l'équipe réseau",
+          "Objectifs de service convenus avec l'exploitation"
+        ]
+      },
+      "risques": [
+        "Hypothèses de charge non vérifiées",
+        "Plan d'IP incompatible avec l'interconnexion existante",
+        "Coût sous-estimé des licences et de l'énergie"
+      ]
+    },
+    {
+      "id": "plateforme",
+      "titre": "Construction de la plateforme",
+      "objectif": "Installer et configurer le CaaS conformément au LLD, de façon reproductible.",
+      "livrables": [
+        "Clusters installés sur les deux sites",
+        "Réseaux secondaires, stockage et profils de performance configurés",
+        "Supervision et journalisation opérationnelles",
+        "Procédure d'installation rejouable"
+      ],
+      "activites": [
+        {
+          "titre": "Installer le cluster et ses opérateurs",
+          "roles": [
+            "ingenieur-caas",
+            "devops"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "linux"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "conteneurs"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "k8s-archi"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "ocp-install"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "ocp-operators"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "ansible-python"
+            }
+          ]
+        },
+        {
+          "titre": "Configurer les réseaux secondaires et l'accélération",
+          "roles": [
+            "ingenieur-caas",
+            "reseau"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "multus"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "sriov"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "dpdk"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "lb-bgp"
+            }
+          ]
+        },
+        {
+          "titre": "Configurer stockage, performance et résilience",
+          "roles": [
+            "ingenieur-caas"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "ceph"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "perf-hugepages"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "perf-profile"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "ha-geo"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "stockage-dr"
+            }
+          ]
+        },
+        {
+          "titre": "Mettre en place observabilité et automatisation",
+          "roles": [
+            "sre",
+            "devops",
+            "ingenieur-caas"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "obs-metrics"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "obs-logs"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "obs-dash"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "gitops"
+            },
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "sondes"
+            }
+          ]
+        },
+        {
+          "titre": "Durcir la plateforme",
+          "roles": [
+            "securite",
+            "ingenieur-caas"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "sec-durcissement"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "sec-detection"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "sec-secrets"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "sec-reseau"
+            }
+          ]
+        },
+        {
+          "titre": "Installer les GPU, le serveur d'inférence et la passerelle d'accès",
+          "roles": [
+            "ingenieur-ia",
+            "ingenieur-caas"
+          ],
+          "competences": [
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "gpu-operator"
+            },
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "inf-kserve"
+            },
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "llmops-gateway"
+            }
+          ]
+        }
+      ],
+      "jalon": {
+        "titre": "Plateforme prête pour l'accueil des fonctions",
+        "criteres": [
+          "Installation rejouable et documentée",
+          "Écarts au LLD tracés et justifiés",
+          "Supervision et alertes de base opérationnelles"
+        ]
+      },
+      "risques": [
+        "Matériel livré différent du LLD",
+        "Alignement CPU, mémoire et carte réseau mal réglé, qui dégrade le plan usager",
+        "Installation manuelle non reproductible"
+      ]
+    },
+    {
+      "id": "integration",
+      "titre": "Intégration des fonctions réseau",
+      "objectif": "Déployer les fonctions de l'éditeur sur la plateforme et les faire dialoguer de bout en bout.",
+      "livrables": [
+        "Charts et configurations des fonctions, versionnés",
+        "Matrice de conformité aux exigences de l'éditeur",
+        "Environnement d'intégration reproductible",
+        "Dossier d'intégration"
+      ],
+      "activites": [
+        {
+          "titre": "Recevoir et contrôler les livrables de l'éditeur",
+          "roles": [
+            "integrateur-nf",
+            "devops",
+            "editeur"
+          ],
+          "competences": [
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "onboarding-editeur"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "etsi-sol"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "config-nf"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "helm-cnf"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "helm"
+            }
+          ]
+        },
+        {
+          "titre": "Déployer le cœur 5G en environnement d'intégration",
+          "roles": [
+            "integrateur-nf",
+            "devops",
+            "ingenieur-caas"
+          ],
+          "competences": [
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "deploiement-lab"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "amf"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "smf-upf"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "nrf-scp"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "session-pdu"
+            },
+            {
+              "roadmap": "devops-integrateur-nf",
+              "noeud": "lab-as-code"
+            }
+          ]
+        },
+        {
+          "titre": "Brancher la chaîne CI/CD d'intégration",
+          "roles": [
+            "devops",
+            "integrateur-nf"
+          ],
+          "competences": [
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "ci-cd-integration"
+            },
+            {
+              "roadmap": "devops-integrateur-nf",
+              "noeud": "tests-config"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "gitops"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "git-ci"
+            }
+          ]
+        },
+        {
+          "titre": "Valider les interfaces avec le réseau et les autres domaines",
+          "roles": [
+            "integrateur-nf",
+            "reseau",
+            "editeur"
+          ],
+          "competences": [
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "interfonctionnement-4g"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "sepp"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "ims-voix"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "multi-editeurs"
+            }
+          ]
+        },
+        {
+          "titre": "Sécuriser les échanges entre fonctions",
+          "roles": [
+            "securite",
+            "integrateur-nf"
+          ],
+          "competences": [
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "sec-sba"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "sec-plateforme"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "sec-5g"
+            }
+          ]
+        },
+        {
+          "titre": "Rédiger le dossier d'intégration",
+          "roles": [
+            "integrateur-nf",
+            "architecte"
+          ],
+          "competences": [
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "dossier-integration"
+            }
+          ]
+        }
+      ],
+      "jalon": {
+        "titre": "Intégration complète",
+        "criteres": [
+          "Les fonctions s'enregistrent et dialoguent sur les interfaces prévues",
+          "Le déploiement est reproductible depuis le dépôt de configuration",
+          "Les écarts par rapport aux exigences de l'éditeur sont tracés"
+        ]
+      },
+      "risques": [
+        "Écarts d'interprétation des spécifications entre éditeurs",
+        "Livrables de l'éditeur incomplets ou non versionnés",
+        "Configuration modifiée à la main, impossible à rejouer"
+      ]
+    },
+    {
+      "id": "tests",
+      "titre": "Tests et validation",
+      "objectif": "Démontrer que la solution fonctionne, tient la charge et résiste aux pannes.",
+      "livrables": [
+        "Plan et rapport de tests fonctionnels",
+        "Rapport de performance et de charge",
+        "Rapport de tests de résilience",
+        "Rapport de scan de sécurité"
+      ],
+      "activites": [
+        {
+          "titre": "Simuler le réseau d'accès et les terminaux",
+          "roles": [
+            "integrateur-nf",
+            "devops"
+          ],
+          "competences": [
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "simulation-ran-ue"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "enregistrement"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "traces"
+            }
+          ]
+        },
+        {
+          "titre": "Dérouler les tests fonctionnels et d'interopérabilité",
+          "roles": [
+            "integrateur-nf",
+            "devops",
+            "editeur"
+          ],
+          "competences": [
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "tests-fonctionnels"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "multi-editeurs"
+            }
+          ]
+        },
+        {
+          "titre": "Mesurer performance et capacité",
+          "roles": [
+            "integrateur-nf",
+            "architecte",
+            "ingenieur-caas"
+          ],
+          "competences": [
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "tests-perf"
+            },
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "bench-dimensionnement"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "perf-profile"
+            }
+          ]
+        },
+        {
+          "titre": "Éprouver la résilience",
+          "roles": [
+            "sre",
+            "integrateur-nf"
+          ],
+          "competences": [
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "chaos"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "resilience-nf"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "ha-geo"
+            }
+          ]
+        },
+        {
+          "titre": "Vérifier la sécurité des images et de la plateforme",
+          "roles": [
+            "securite",
+            "sre"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "sec-supply"
+            },
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "gestion-vulns"
+            }
+          ]
+        },
+        {
+          "titre": "Tester la sécurité et la qualité de l'assistant : injection de prompt, évaluation",
+          "roles": [
+            "ingenieur-ia",
+            "securite"
+          ],
+          "competences": [
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "ia-sec-owasp"
+            },
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "llmops-eval"
+            },
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "rag-evaluation"
+            }
+          ]
+        }
+      ],
+      "jalon": {
+        "titre": "Go pour la recette",
+        "criteres": [
+          "Tests fonctionnels réussis ou écarts acceptés",
+          "Performance conforme au dimensionnement",
+          "Aucune vulnérabilité critique ouverte"
+        ]
+      },
+      "risques": [
+        "Simulateur peu représentatif du trafic réel",
+        "Tests de charge lancés trop tard",
+        "Résilience testée sur un seul site"
+      ]
+    },
+    {
+      "id": "recette",
+      "titre": "Recette et préparation de l'exploitation",
+      "objectif": "Faire accepter la solution et préparer l'équipe qui l'exploitera.",
+      "livrables": [
+        "Rapport de recette signé",
+        "Runbooks et procédures d'exploitation",
+        "Plan de reprise testé",
+        "Dossier de conformité"
+      ],
+      "activites": [
+        {
+          "titre": "Dérouler la recette avec les critères d'acceptation",
+          "roles": [
+            "integrateur-nf",
+            "chef-projet",
+            "editeur"
+          ],
+          "competences": [
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "recette"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "kpi-5gc"
+            }
+          ]
+        },
+        {
+          "titre": "Rédiger runbooks et organiser l'astreinte",
+          "roles": [
+            "sre",
+            "ingenieur-caas"
+          ],
+          "competences": [
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "runbooks"
+            },
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "niveaux-support"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "incident-astreinte"
+            }
+          ]
+        },
+        {
+          "titre": "Tester le plan de reprise",
+          "roles": [
+            "architecte",
+            "sre",
+            "ingenieur-caas"
+          ],
+          "competences": [
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "pra-rpo-rto"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "stockage-dr"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "ha-geo"
+            }
+          ]
+        },
+        {
+          "titre": "Constituer le dossier de conformité",
+          "roles": [
+            "securite",
+            "juridique",
+            "architecte"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-risque"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "reglementation-5gc"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-nis2"
+            }
+          ]
+        },
+        {
+          "titre": "Transférer les compétences à l'équipe d'exploitation",
+          "roles": [
+            "integrateur-nf",
+            "sre",
+            "devops"
+          ],
+          "competences": [
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "procedures-5g-diagnostic"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "analyse-incident"
+            },
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "alerting-utile"
+            }
+          ]
+        },
+        {
+          "titre": "Valider les garde-fous de l'agent d'assistance à l'exploitation",
+          "roles": [
+            "ingenieur-ia",
+            "sre"
+          ],
+          "competences": [
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "ag-garde-fous"
+            },
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "tel-agent-noc"
+            }
+          ]
+        }
+      ],
+      "jalon": {
+        "titre": "Go / No-go de mise en production",
+        "criteres": [
+          "Recette signée",
+          "Équipe d'exploitation formée, astreinte organisée",
+          "Plan de reprise testé",
+          "Dossier de conformité complet"
+        ]
+      },
+      "risques": [
+        "Recette sur un périmètre plus étroit que la production",
+        "Exploitation découvrant la solution le jour de la bascule",
+        "Dossier de conformité incomplet au moment du go"
+      ]
+    },
+    {
+      "id": "production",
+      "titre": "Mise en production",
+      "objectif": "Basculer sans interruption notable et sécuriser les premières semaines.",
+      "livrables": [
+        "Plan de bascule et de retour arrière",
+        "Bascule réalisée et vérifiée",
+        "Rapport de suivi renforcé (hypercare)"
+      ],
+      "activites": [
+        {
+          "titre": "Planifier la fenêtre, la bascule et le retour arrière",
+          "roles": [
+            "chef-projet",
+            "sre",
+            "integrateur-nf"
+          ],
+          "competences": [
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "gestion-changement"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "upgrade-nf"
+            }
+          ]
+        },
+        {
+          "titre": "Basculer progressivement le trafic",
+          "roles": [
+            "integrateur-nf",
+            "reseau",
+            "sre"
+          ],
+          "competences": [
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "upgrade-nf"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "lb-bgp"
+            },
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "gestion-changement"
+            }
+          ]
+        },
+        {
+          "titre": "Assurer le suivi renforcé après la bascule",
+          "roles": [
+            "sre",
+            "ingenieur-caas",
+            "integrateur-nf",
+            "editeur"
+          ],
+          "competences": [
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "alerting-utile"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "obs-metrics"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "analyse-incident"
+            }
+          ]
+        },
+        {
+          "titre": "Tenir la gestion d'incident et l'escalade",
+          "roles": [
+            "sre",
+            "ingenieur-caas",
+            "editeur"
+          ],
+          "competences": [
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "niveaux-support"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "incident-astreinte"
+            }
+          ]
+        },
+        {
+          "titre": "Préparer la notification des incidents aux autorités",
+          "roles": [
+            "securite",
+            "juridique"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-nis2"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-cadre-fr"
+            }
+          ]
+        }
+      ],
+      "jalon": {
+        "titre": "Fin du suivi renforcé",
+        "criteres": [
+          "Objectifs de service tenus sur la période convenue",
+          "Aucun incident majeur ouvert",
+          "Passage de relais acté à l'exploitation"
+        ]
+      },
+      "risques": [
+        "Bascule sans retour arrière préparé",
+        "Alertes trop bruyantes qui masquent les vrais signaux",
+        "Éditeur peu disponible pendant la fenêtre"
+      ]
+    },
+    {
+      "id": "exploitation",
+      "titre": "Exploitation et amélioration continue",
+      "objectif": "Faire vivre la plateforme : tenir le service, maintenir, faire évoluer.",
+      "livrables": [
+        "Tableaux de bord et revue périodique des objectifs de service",
+        "Post-mortems et actions correctives suivies",
+        "Plan de mises à jour et de correctifs",
+        "Plan de capacité"
+      ],
+      "activites": [
+        {
+          "titre": "Superviser, traiter les incidents et analyser les causes",
+          "roles": [
+            "sre",
+            "integrateur-nf",
+            "ingenieur-caas"
+          ],
+          "competences": [
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "alerting-utile"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "analyse-incident"
+            },
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "postmortem"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "k8s-troubleshoot"
+            }
+          ]
+        },
+        {
+          "titre": "Mettre à jour la plateforme et les fonctions sans coupure",
+          "roles": [
+            "ingenieur-caas",
+            "integrateur-nf",
+            "sre"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "ocp-upgrade"
+            },
+            {
+              "roadmap": "integrateur-nf-5gc",
+              "noeud": "upgrade-nf"
+            },
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "capacite-noeuds"
+            },
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "gestion-vulns"
+            }
+          ]
+        },
+        {
+          "titre": "Suivre capacité et coûts",
+          "roles": [
+            "sre",
+            "architecte"
+          ],
+          "competences": [
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "capacite"
+            },
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "cout-energie"
+            },
+            {
+              "roadmap": "architecte-caas-telco",
+              "noeud": "cycle-vie-plateforme"
+            }
+          ]
+        },
+        {
+          "titre": "Réduire le travail manuel et améliorer les procédures",
+          "roles": [
+            "sre",
+            "devops"
+          ],
+          "competences": [
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "toil"
+            },
+            {
+              "roadmap": "sre-exploitation-telco",
+              "noeud": "runbooks"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "ansible-python"
+            }
+          ]
+        },
+        {
+          "titre": "Assurer la veille réglementaire et la souveraineté",
+          "roles": [
+            "juridique",
+            "securite",
+            "architecte"
+          ],
+          "competences": [
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-nis2"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-souverainete"
+            },
+            {
+              "roadmap": "ingenieur-caas-telco",
+              "noeud": "reg-anssi"
+            }
+          ]
+        },
+        {
+          "titre": "Superviser l'assistant IA et mesurer son apport à l'exploitation",
+          "roles": [
+            "ingenieur-ia",
+            "sre"
+          ],
+          "competences": [
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "llmops-obs"
+            },
+            {
+              "roadmap": "ia-agentique-telco",
+              "noeud": "tel-aiops"
+            }
+          ]
+        }
+      ],
+      "jalon": {
+        "titre": "Revue périodique",
+        "criteres": [
+          "Objectifs de service revus avec le métier",
+          "Actions des post-mortems clôturées ou planifiées",
+          "Trajectoire de versions et de capacité à jour"
+        ]
+      },
+      "risques": [
+        "Dette de mises à jour qui s'accumule",
+        "Savoir concentré sur une seule personne",
+        "Évolution réglementaire non répercutée"
+      ]
+    }
+  ]
+}

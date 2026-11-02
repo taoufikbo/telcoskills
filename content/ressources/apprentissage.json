@@ -1,0 +1,1244 @@
+{
+  "_aide": "Cursus, playlists et formations d'apprentissage, rattachés aux nœuds des roadmaps (par identifiant de nœud, partagé entre roadmaps). type : cours | video | doc ; acces : gratuit | freemium (accès libre, certificat ou suite payants) | payant ; langue : fr | en. Les formations payantes ne figurent que lorsqu'il n'existe pas d'équivalent gratuit de même niveau.",
+  "ressources": [
+    {
+      "noeuds": [
+        "reg-oiv"
+      ],
+      "type": "doc",
+      "nom": "Le dispositif de sécurité des activités d'importance vitale (SAIV) : OIV et SIIV",
+      "url": "https://cyber.gouv.fr/reglementation/cybersecurite-systemes-dinformation/directives-nis-nis2-et-dispositif-saiv/dispositif-saiv/",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "ANSSI"
+    },
+    {
+      "noeuds": [
+        "reg-souverainete",
+        "reg-anssi"
+      ],
+      "type": "doc",
+      "nom": "SecNumCloud : référentiel d'exigences pour les prestataires cloud (v3.2)",
+      "url": "https://cyber.gouv.fr/sites/default/files/document/secnumcloud-referentiel-exigences-v3.2.pdf",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "ANSSI"
+    },
+    {
+      "noeuds": [
+        "reg-cadre-fr",
+        "reg-5g-securite"
+      ],
+      "type": "doc",
+      "nom": "La 5G sur le site de l'ARCEP : régulation et déploiement",
+      "url": "https://www.arcep.fr/la-regulation/grands-dossiers-reseaux-mobiles/la-5g.html",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "ARCEP"
+    },
+    {
+      "noeuds": [
+        "reg-cra"
+      ],
+      "type": "cours",
+      "nom": "Understanding the EU Cyber Resilience Act (LFEL1001), cours gratuit de 90 minutes",
+      "url": "https://training.linuxfoundation.org/training/understanding-the-eu-cyber-resilience-act-cra-lfel1001/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Linux Foundation / OpenSSF"
+    },
+    {
+      "noeuds": [
+        "reg-cra"
+      ],
+      "type": "doc",
+      "nom": "Cyber Resilience Act : présentation par la Commission européenne",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Commission européenne"
+    },
+    {
+      "noeuds": [
+        "reg-souverainete"
+      ],
+      "type": "doc",
+      "nom": "Data Act : présentation par la Commission européenne",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/data-act",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Commission européenne"
+    },
+    {
+      "noeuds": [
+        "reg-li"
+      ],
+      "type": "doc",
+      "nom": "Interception légale : technologies et normes ETSI",
+      "url": "https://www.etsi.org/technologies/lawful-interception",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "ETSI"
+    },
+    {
+      "noeuds": [
+        "reg-risque"
+      ],
+      "type": "doc",
+      "nom": "La méthode EBIOS Risk Manager",
+      "url": "https://cyber.gouv.fr/la-methode-ebios-risk-manager",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "ANSSI"
+    },
+    {
+      "noeuds": [
+        "reg-anssi",
+        "sec-durcissement"
+      ],
+      "type": "doc",
+      "nom": "Guide d'hygiène informatique",
+      "url": "https://cyber.gouv.fr/publications/guide-dhygiene-informatique",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "ANSSI"
+    },
+    {
+      "noeuds": [
+        "reg-anssi",
+        "linux",
+        "sec-durcissement"
+      ],
+      "type": "doc",
+      "nom": "Recommandations de configuration d'un système GNU/Linux",
+      "url": "https://cyber.gouv.fr/publications/recommandations-de-securite-relatives-un-systeme-gnulinux",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "ANSSI"
+    },
+    {
+      "noeuds": [
+        "openstack",
+        "sec-durcissement"
+      ],
+      "type": "doc",
+      "nom": "Recommandations de sécurité pour OpenStack (ANSSI-BP-104)",
+      "url": "https://messervices.cyber.gouv.fr/documents-guides/anssi-guide-openstack_v1-0.pdf",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "ANSSI"
+    },
+    {
+      "noeuds": [
+        "distrib-alt",
+        "evaluation-fournisseurs"
+      ],
+      "type": "doc",
+      "nom": "Sylva : projet de pile cloud native pour les télécoms (Linux Foundation Europe)",
+      "url": "https://sylvaproject.org/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Sylva"
+    },
+    {
+      "noeuds": [
+        "distrib-alt",
+        "evaluation-fournisseurs"
+      ],
+      "type": "video",
+      "nom": "Sylva presentations",
+      "url": "https://www.youtube.com/playlist?list=PL_KV1BsedfgnHJrQvtVqZHqOMQjip9Gda",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Sylva"
+    },
+    {
+      "noeuds": [
+        "nfv-etsi",
+        "tel-nf",
+        "etsi-sol"
+      ],
+      "type": "video",
+      "nom": "OSM#15 Hackfest Barcelona - June 2023",
+      "url": "https://www.youtube.com/playlist?list=PLFqLBTy_ZDShg1BxNXgpRrma2ULvIAu39",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Open Source MANO"
+    },
+    {
+      "noeuds": [
+        "kubevirt"
+      ],
+      "type": "video",
+      "nom": "KubeVirt Summit 2025",
+      "url": "https://www.youtube.com/playlist?list=PLj6h78yzYM2PHiIU_qr729UCWibWvtcQB",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "CNCF [Cloud Native Computing Foundation]"
+    },
+    {
+      "noeuds": [
+        "kubevirt"
+      ],
+      "type": "video",
+      "nom": "KubeVirt Summit 2024",
+      "url": "https://www.youtube.com/playlist?list=PLnLpXX8KHIYy8VOalYQ7FnLTOR0eZ5KxD",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "KubeVirt"
+    },
+    {
+      "noeuds": [
+        "stockage-dr",
+        "pra-rpo-rto"
+      ],
+      "type": "video",
+      "nom": "Velero Demos and Deep Dives",
+      "url": "https://www.youtube.com/playlist?list=PL7bmigfV0EqT82eQaVCslWWM4k4d63KyK",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "VMware Cloud Native Apps"
+    },
+    {
+      "noeuds": [
+        "sec-detection"
+      ],
+      "type": "video",
+      "nom": "CNCF | Falco Talks",
+      "url": "https://www.youtube.com/playlist?list=PLgVVUpW8NIJCTTM0PH5Xecp_gO85IyvMf",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Falco"
+    },
+    {
+      "noeuds": [
+        "traces",
+        "depannage-reseau-telco",
+        "analyse-incident"
+      ],
+      "type": "video",
+      "nom": "Wireshark Masterclass",
+      "url": "https://www.youtube.com/playlist?list=PLW8bTPfXNGdC5Co0VnBK1yVzAwSSphzpJ",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Chris Greer"
+    },
+    {
+      "noeuds": [
+        "tests-fonctionnels",
+        "recette"
+      ],
+      "type": "video",
+      "nom": "Complete Robot Framework Tutorial",
+      "url": "https://www.youtube.com/playlist?list=PL4GZKvvcjS3u9FP3F9zW4ZbZB8pti2k37",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Robot Framework Tutorials"
+    },
+    {
+      "noeuds": [
+        "lab-as-code"
+      ],
+      "type": "video",
+      "nom": "Getting Started with KIND Kubernetes",
+      "url": "https://www.youtube.com/playlist?list=PL1xPpLHBFNWvKPI0ofmFzJn9lrWiqGukT",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "KubeSkills"
+    },
+    {
+      "noeuds": [
+        "tests-perf",
+        "bench-dimensionnement"
+      ],
+      "type": "video",
+      "nom": "Learn k6 Series",
+      "url": "https://www.youtube.com/playlist?list=PLJ9A48W0kpRJKmVeurt7ltKfrOdr8ZBdt",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "QAInsights"
+    },
+    {
+      "noeuds": [
+        "config-nf"
+      ],
+      "type": "video",
+      "nom": "NETCONF YANG Tutorial with Cisco real time examples",
+      "url": "https://www.youtube.com/playlist?list=PLOocymQm7YWaJX5l5SgfkAvHQYUS-Xr1Q",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "NetworkEvolution"
+    },
+    {
+      "noeuds": [
+        "linux"
+      ],
+      "type": "video",
+      "nom": "LINUX/Debian : devenir sysadmin",
+      "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWp1yRsq3-PyyisSIDg94ct9",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "xavki"
+    },
+    {
+      "noeuds": [
+        "linux",
+        "reseau-ip"
+      ],
+      "type": "video",
+      "nom": "Débuter en administration système et réseau",
+      "url": "https://www.youtube.com/playlist?list=PLSuzYIVSEUT6SE-5dSZq-zbtItfHqWdqv",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "IT-Connect - Florian"
+    },
+    {
+      "noeuds": [
+        "linux"
+      ],
+      "type": "video",
+      "nom": "Linux Commands for Beginners",
+      "url": "https://www.youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Learn Linux TV"
+    },
+    {
+      "noeuds": [
+        "linux"
+      ],
+      "type": "cours",
+      "nom": "Introduction to Linux (LFS101), cours en ligne gratuit",
+      "url": "https://training.linuxfoundation.org/training/introduction-to-linux/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Linux Foundation"
+    },
+    {
+      "noeuds": [
+        "linux"
+      ],
+      "type": "cours",
+      "nom": "Linux Journey : apprendre Linux pas à pas",
+      "url": "https://linuxjourney.com/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Linux Journey"
+    },
+    {
+      "noeuds": [
+        "linux"
+      ],
+      "type": "cours",
+      "nom": "RH124 : Red Hat System Administration I",
+      "url": "https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i",
+      "acces": "payant",
+      "langue": "en",
+      "auteur": "Red Hat"
+    },
+    {
+      "noeuds": [
+        "reseau-ip"
+      ],
+      "type": "video",
+      "nom": "Networking Fundamentals",
+      "url": "https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Practical Networking"
+    },
+    {
+      "noeuds": [
+        "reseau-ip"
+      ],
+      "type": "video",
+      "nom": "Réseaux : Ethernet, TCP/IP",
+      "url": "https://www.youtube.com/playlist?list=PLKGPGznq6a-X2J8dTThYPsnshJmiYbZy2",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "MOOC NSI : Numérique et Sciences Informatiques"
+    },
+    {
+      "noeuds": [
+        "reseau-ip"
+      ],
+      "type": "video",
+      "nom": "Free CCNA 200-301 Complete Practical Course v1.1",
+      "url": "https://www.youtube.com/playlist?list=PLw6kwOJVj3MbMZ8B72ZgUryj8OSETC0ds",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "David Bombal Tech"
+    },
+    {
+      "noeuds": [
+        "reseau-ip"
+      ],
+      "type": "cours",
+      "nom": "Networking Basics (Cisco Networking Academy)",
+      "url": "https://www.netacad.com/courses/networking-basics",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Cisco Networking Academy"
+    },
+    {
+      "noeuds": [
+        "git-ci",
+        "ci-cd-integration"
+      ],
+      "type": "video",
+      "nom": "GITLAB : tutos et formation",
+      "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWrRoZZXv0xf71mvT4E0QDOF",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "xavki"
+    },
+    {
+      "noeuds": [
+        "git-ci"
+      ],
+      "type": "cours",
+      "nom": "Learn Git Branching : apprendre Git en visualisant les branches",
+      "url": "https://learngitbranching.js.org/?locale=fr_FR",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "Learn Git Branching"
+    },
+    {
+      "noeuds": [
+        "conteneurs"
+      ],
+      "type": "video",
+      "nom": "Docker formation de A à Z",
+      "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWq0iz59-px2z-qjDdZKEvWd",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "xavki"
+    },
+    {
+      "noeuds": [
+        "conteneurs"
+      ],
+      "type": "video",
+      "nom": "Podman : Tutoriels et Formation",
+      "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWo_IZ1s2v1Ijf-SnPQY8J57",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "xavki"
+    },
+    {
+      "noeuds": [
+        "conteneurs"
+      ],
+      "type": "video",
+      "nom": "Containers with Podman and UBI",
+      "url": "https://www.youtube.com/playlist?list=PLXJyD2dL4oqdPQ9VjgT2gj9q_HLZGPvUz",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Red Hat Enterprise Linux"
+    },
+    {
+      "noeuds": [
+        "conteneurs"
+      ],
+      "type": "cours",
+      "nom": "Play with Docker : ateliers interactifs dans le navigateur",
+      "url": "https://training.play-with-docker.com/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Docker"
+    },
+    {
+      "noeuds": [
+        "telco-101",
+        "tel-reseau-mobile"
+      ],
+      "type": "video",
+      "nom": "4G : Principes des réseaux mobiles MOOC",
+      "url": "https://www.youtube.com/playlist?list=PLjXls-kqM6JCu5jYPrRzX3glSfX6Bev3m",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "MOOC de l'IMT"
+    },
+    {
+      "noeuds": [
+        "telco-101",
+        "tel-reseau-mobile",
+        "archi-5g",
+        "5g-sba"
+      ],
+      "type": "cours",
+      "nom": "5G Network Fundamentals (Institut Mines-Télécom, Coursera, audit gratuit)",
+      "url": "https://www.coursera.org/learn/5g-network-fundamentals",
+      "acces": "freemium",
+      "langue": "en",
+      "auteur": "Institut Mines-Télécom"
+    },
+    {
+      "noeuds": [
+        "telco-101",
+        "tel-reseau-mobile",
+        "archi-5g"
+      ],
+      "type": "cours",
+      "nom": "MOOC de l'IMT Atlantique : 5G, réseaux mobiles",
+      "url": "https://www.imt-atlantique.fr/en/study/pedagogical-innovation/moocs",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "IMT Atlantique"
+    },
+    {
+      "noeuds": [
+        "telco-101",
+        "archi-5g",
+        "tel-reseau-mobile"
+      ],
+      "type": "video",
+      "nom": "Free 5G Training: 5G for Absolute Beginners",
+      "url": "https://www.youtube.com/playlist?list=PLBC3G7CyizTqRsMpP9dqv6MR7jbBiPXEm",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "3G4G"
+    },
+    {
+      "noeuds": [
+        "archi-5g",
+        "5g-sba",
+        "amf",
+        "smf-upf",
+        "nrf-scp",
+        "udm-udr-ausf",
+        "pcf-chf"
+      ],
+      "type": "video",
+      "nom": "5G Mobile Core Network Fundamentals",
+      "url": "https://www.youtube.com/playlist?list=PLRbUOpXOpZ2rTpT7xcaeCse8hbWbvV9bJ",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Hamidreza Bolhasani"
+    },
+    {
+      "noeuds": [
+        "enregistrement",
+        "session-pdu",
+        "kpi-5gc",
+        "procedures-5g-diagnostic"
+      ],
+      "type": "video",
+      "nom": "5G Call Flows & KPIs",
+      "url": "https://www.youtube.com/playlist?list=PL4OXTttOk9WhvApKwJBcZx0G4a2m8N-z6",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Our Technology Planet"
+    },
+    {
+      "noeuds": [
+        "ims-voix",
+        "interfonctionnement-4g"
+      ],
+      "type": "video",
+      "nom": "VoLTE - Complete IMS SIP Architecture and Call Flow - VoLTE Webinar , Course , Training and Tutorial",
+      "url": "https://www.youtube.com/playlist?list=PLAsc7YcX8FIdOReT6_DUXROf2XB6uB_ij",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "TelecomTutorial info"
+    },
+    {
+      "noeuds": [
+        "archi-5g",
+        "5g-sba",
+        "amf",
+        "smf-upf",
+        "enregistrement",
+        "session-pdu",
+        "traces",
+        "slicing"
+      ],
+      "type": "cours",
+      "nom": "ShareTechnote : références détaillées 4G/5G (procédures, messages)",
+      "url": "https://www.sharetechnote.com/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "ShareTechnote"
+    },
+    {
+      "noeuds": [
+        "archi-5g",
+        "5g-sba",
+        "sbi-http2",
+        "nrf-scp"
+      ],
+      "type": "cours",
+      "nom": "5G Service Based Architecture (Mpirical, accès en ligne)",
+      "url": "https://www.mpirical.com/courses/5g-service-based-architecture",
+      "acces": "payant",
+      "langue": "en",
+      "auteur": "Mpirical"
+    },
+    {
+      "noeuds": [
+        "archi-5g",
+        "5g-sba",
+        "sbi-http2",
+        "nrf-scp"
+      ],
+      "type": "cours",
+      "nom": "5G Service Based Architecture and Core Network, à la demande (Wray Castle)",
+      "url": "https://wraycastle.com/products/5g-service-based-architecture-and-core-network-on-demand",
+      "acces": "payant",
+      "langue": "en",
+      "auteur": "Wray Castle"
+    },
+    {
+      "noeuds": [
+        "deploiement-lab",
+        "session-pdu"
+      ],
+      "type": "video",
+      "nom": "free5GC installation",
+      "url": "https://www.youtube.com/playlist?list=PLeDUIabcS2_rQd3yVJrBAYb-MbcqNgjC9",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "free5GC"
+    },
+    {
+      "noeuds": [
+        "simulation-ran-ue",
+        "deploiement-lab"
+      ],
+      "type": "video",
+      "nom": "Open5GS & UeRANSim",
+      "url": "https://www.youtube.com/playlist?list=PLZqpS76PykwIoqMdUt6noAor7eJw83bbp",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Tech with Mohit"
+    },
+    {
+      "noeuds": [
+        "cnf-onboarding",
+        "cnf-exigences",
+        "cnf-ops",
+        "tel-nf",
+        "tel-exigences-continuite"
+      ],
+      "type": "video",
+      "nom": "Cloud Native Telco Day 2026 - Europe",
+      "url": "https://www.youtube.com/playlist?list=PLj6h78yzYM2N_B1HGXUyfn4HjjydZctPA",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "CNCF [Cloud Native Computing Foundation]"
+    },
+    {
+      "noeuds": [
+        "k8s-archi",
+        "k8s-workloads",
+        "k8s-services",
+        "k8s-stockage"
+      ],
+      "type": "video",
+      "nom": "Kubernetes v2 : formation et tutoriels pour débuter",
+      "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWo6wiy2G3SjBubF6zXjksap",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "xavki"
+    },
+    {
+      "noeuds": [
+        "k8s-archi",
+        "k8s-workloads",
+        "k8s-services",
+        "helm"
+      ],
+      "type": "video",
+      "nom": "La meilleure formation kubernetes en français (LMFK)",
+      "url": "https://www.youtube.com/playlist?list=PL1CpaUw4aBIxTPvr5l_pKoHxI0Tz2qoyK",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "khgcode"
+    },
+    {
+      "noeuds": [
+        "k8s-archi",
+        "k8s-workloads"
+      ],
+      "type": "video",
+      "nom": "Kubernetes 101",
+      "url": "https://www.youtube.com/playlist?list=PL2_OBreMn7FoYmfx27iSwocotjiikS5BD",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Jeff Geerling"
+    },
+    {
+      "noeuds": [
+        "k8s-troubleshoot"
+      ],
+      "type": "video",
+      "nom": "Troubleshooting Kubernetes",
+      "url": "https://www.youtube.com/playlist?list=PLdpzxOOAlwvIrFBI1farpLS_OSUBXJMLX",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Abhishek.Veeramalla"
+    },
+    {
+      "noeuds": [
+        "k8s-rbac",
+        "sec-reseau",
+        "cni"
+      ],
+      "type": "video",
+      "nom": "Kubernetes Security and Networking",
+      "url": "https://www.youtube.com/playlist?list=PLtO_OYBiEo6klZcU3HVfbrSgolnvnkCCB",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Packet Pushers"
+    },
+    {
+      "noeuds": [
+        "k8s-archi",
+        "k8s-workloads"
+      ],
+      "type": "cours",
+      "nom": "Introduction to Kubernetes (LFS158), cours en ligne gratuit",
+      "url": "https://training.linuxfoundation.org/training/introduction-to-kubernetes/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Linux Foundation"
+    },
+    {
+      "noeuds": [
+        "k8s-archi"
+      ],
+      "type": "cours",
+      "nom": "Kubernetes The Hard Way : monter un cluster pas à pas",
+      "url": "https://github.com/kelseyhightower/kubernetes-the-hard-way",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Kelsey Hightower"
+    },
+    {
+      "noeuds": [
+        "k8s-workloads",
+        "k8s-services",
+        "k8s-rbac",
+        "k8s-troubleshoot"
+      ],
+      "type": "cours",
+      "nom": "Killercoda : laboratoires Kubernetes interactifs dans le navigateur",
+      "url": "https://killercoda.com/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Killercoda"
+    },
+    {
+      "noeuds": [
+        "k8s-archi",
+        "k8s-workloads",
+        "k8s-troubleshoot",
+        "certifs"
+      ],
+      "type": "cours",
+      "nom": "Certified Kubernetes Administrator (CKA) : formation et examen",
+      "url": "https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/",
+      "acces": "payant",
+      "langue": "en",
+      "auteur": "Linux Foundation"
+    },
+    {
+      "noeuds": [
+        "k8s-archi",
+        "k8s-workloads",
+        "k8s-troubleshoot",
+        "certifs"
+      ],
+      "type": "cours",
+      "nom": "Certified Kubernetes Administrator (CKA) with Practice Tests",
+      "url": "https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/",
+      "acces": "payant",
+      "langue": "en",
+      "auteur": "Udemy (Mumshad Mannambeth)"
+    },
+    {
+      "noeuds": [
+        "sec-durcissement",
+        "k8s-rbac",
+        "sec-reseau"
+      ],
+      "type": "cours",
+      "nom": "Kubernetes Security Essentials (LFS260)",
+      "url": "https://training.linuxfoundation.org/training/kubernetes-security-essentials-lfs260/",
+      "acces": "payant",
+      "langue": "en",
+      "auteur": "Linux Foundation"
+    },
+    {
+      "noeuds": [
+        "ocp-install",
+        "ocp-operators",
+        "ocp-upgrade",
+        "ocp-rds"
+      ],
+      "type": "video",
+      "nom": "Ask an OpenShift Expert | Red Hat Livestreaming",
+      "url": "https://www.youtube.com/playlist?list=PLaR6Rq6Z4IqdsG6b09q4QIv_Yq5fNL7zh",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "OpenShift"
+    },
+    {
+      "noeuds": [
+        "ocp-multicluster"
+      ],
+      "type": "video",
+      "nom": "Advanced Cluster Management for Kubernetes (ACM)",
+      "url": "https://www.youtube.com/playlist?list=PLaR6Rq6Z4IqcKOKT4c0uGkBt3YSRQ9S5v",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "OpenShift"
+    },
+    {
+      "noeuds": [
+        "ocp-install",
+        "ocp-operators"
+      ],
+      "type": "video",
+      "nom": "OpenShift BootCamp - Free Course",
+      "url": "https://www.youtube.com/playlist?list=PLH5uDiXcw8tRG7_RJOe7leEvDBfC46Bl_",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "techbeatly"
+    },
+    {
+      "noeuds": [
+        "ocp-operators",
+        "k8s-workloads",
+        "ocp-install"
+      ],
+      "type": "cours",
+      "nom": "Developer Sandbox for Red Hat OpenShift : cluster gratuit pour s'entraîner",
+      "url": "https://developers.redhat.com/developer-sandbox",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Red Hat"
+    },
+    {
+      "noeuds": [
+        "ocp-install",
+        "ocp-operators",
+        "ocp-upgrade"
+      ],
+      "type": "cours",
+      "nom": "DO280 : Red Hat OpenShift Administration II",
+      "url": "https://www.redhat.com/en/services/training/red-hat-openshift-administration-ii-configuring-a-production-cluster",
+      "acces": "payant",
+      "langue": "en",
+      "auteur": "Red Hat"
+    },
+    {
+      "noeuds": [
+        "ocp-install",
+        "ocp-operators",
+        "certifs"
+      ],
+      "type": "cours",
+      "nom": "EX280 : examen Red Hat Certified OpenShift Administrator",
+      "url": "https://www.redhat.com/en/services/training/red-hat-certified-openshift-administrator-exam",
+      "acces": "payant",
+      "langue": "en",
+      "auteur": "Red Hat"
+    },
+    {
+      "noeuds": [
+        "ocp-multicluster"
+      ],
+      "type": "cours",
+      "nom": "Open Cluster Management : guide de démarrage rapide",
+      "url": "https://open-cluster-management.io/docs/getting-started/quick-start/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Open Cluster Management"
+    },
+    {
+      "noeuds": [
+        "ocp-multicluster"
+      ],
+      "type": "cours",
+      "nom": "DO432 : Multicluster Management with Red Hat Advanced Cluster Management",
+      "url": "https://www.redhat.com/en/services/training/do432-multicluster-management-red-hat-advanced-cluster-management-kubernetes",
+      "acces": "payant",
+      "langue": "en",
+      "auteur": "Red Hat"
+    },
+    {
+      "noeuds": [
+        "sriov",
+        "dpdk"
+      ],
+      "type": "video",
+      "nom": "Networking | DPDK / SR-IOV",
+      "url": "https://www.youtube.com/playlist?list=PL-E57_RQ89Wcr8qLKLxPLW6pNVOCzYzFg",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "David Walter"
+    },
+    {
+      "noeuds": [
+        "perf-hugepages",
+        "perf-profile"
+      ],
+      "type": "cours",
+      "nom": "RH442 : Red Hat Enterprise Performance Tuning",
+      "url": "https://www.redhat.com/en/services/training/rh442-red-hat-enterprise-performance-tuning",
+      "acces": "payant",
+      "langue": "en",
+      "auteur": "Red Hat"
+    },
+    {
+      "noeuds": [
+        "ceph"
+      ],
+      "type": "video",
+      "nom": "Ceph",
+      "url": "https://www.youtube.com/playlist?list=PLP2v7zU48xOJf5FMYrQepGkEwKHD7m7QA",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Daniel Persson"
+    },
+    {
+      "noeuds": [
+        "ceph"
+      ],
+      "type": "video",
+      "nom": "Rook Presentations",
+      "url": "https://www.youtube.com/playlist?list=PLP0uDo-ZFnQOCpYx1_uVCrx_bmyq7tdKr",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Rook"
+    },
+    {
+      "noeuds": [
+        "openstack"
+      ],
+      "type": "video",
+      "nom": "OpenStack Administrator's Guide",
+      "url": "https://www.youtube.com/playlist?list=PLT98CRl2KxKHCPoR1nHmG2Tl5Q4r1-aiJ",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Learn Linux TV"
+    },
+    {
+      "noeuds": [
+        "openstack"
+      ],
+      "type": "video",
+      "nom": "OPENSTACK",
+      "url": "https://www.youtube.com/playlist?list=PLWL9Oy30PVmUq-iFUlSSGuSJ9EJcbZO3V",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "eazytraining"
+    },
+    {
+      "noeuds": [
+        "helm",
+        "helm-cnf"
+      ],
+      "type": "video",
+      "nom": "TUTORIALS ET FORMATION HELM",
+      "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWqIeLqU1194K-LS1O5m2lDd",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "xavki"
+    },
+    {
+      "noeuds": [
+        "gitops"
+      ],
+      "type": "video",
+      "nom": "GitOps Guide to the Galaxy",
+      "url": "https://www.youtube.com/playlist?list=PLbMP1JcGBmSGKO8UreWpOBOhCqilejhtd",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Red Hat"
+    },
+    {
+      "noeuds": [
+        "gitops"
+      ],
+      "type": "video",
+      "nom": "Argo CD: Basics to Production Course",
+      "url": "https://www.youtube.com/playlist?list=PLmPit9IIdzwSR-4FP65oP3AoZCKBvbwXg",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Cloud With VarJosh"
+    },
+    {
+      "noeuds": [
+        "gitops"
+      ],
+      "type": "cours",
+      "nom": "OpenGitOps : principes du GitOps",
+      "url": "https://opengitops.dev/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "OpenGitOps (CNCF)"
+    },
+    {
+      "noeuds": [
+        "ansible-python",
+        "runbooks",
+        "toil"
+      ],
+      "type": "video",
+      "nom": "ANSIBLE - Tutos & Formation : automatiser vos configurations",
+      "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWoCpLKOSw3mXCqbRocnhrh-",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "xavki"
+    },
+    {
+      "noeuds": [
+        "ansible-python"
+      ],
+      "type": "video",
+      "nom": "Ansible 101",
+      "url": "https://www.youtube.com/playlist?list=PL2_OBreMn7FqZkvMYt6ATmgC0KAGGJNAN",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Jeff Geerling"
+    },
+    {
+      "noeuds": [
+        "obs-metrics",
+        "obs-dash",
+        "alerting-utile"
+      ],
+      "type": "video",
+      "nom": "PROMETHEUS / GRAFANA : tutos et formation sur l'observabilité",
+      "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWo3_2pj5Jflqwla62P5OI8n",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "xavki"
+    },
+    {
+      "noeuds": [
+        "obs-metrics",
+        "alerting-utile",
+        "sondes",
+        "capacite"
+      ],
+      "type": "video",
+      "nom": "Prometheus Fundamentals",
+      "url": "https://www.youtube.com/playlist?list=PLyBW7UHmEXgylLwxdVbrBQJ-fJ_jMvh8h",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Prometheus Monitoring with Julius | PromLabs"
+    },
+    {
+      "noeuds": [
+        "obs-logs"
+      ],
+      "type": "video",
+      "nom": "Zero to Hero: Loki",
+      "url": "https://www.youtube.com/playlist?list=PLDGkOdUX1Ujr9QOsM--ogwJAYu6JD48W7",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Grafana"
+    },
+    {
+      "noeuds": [
+        "obs-telemetry"
+      ],
+      "type": "video",
+      "nom": "OpenTelemetry Bootcamp Tutorials | Complete Course",
+      "url": "https://www.youtube.com/playlist?list=PLNxnp_rzlqf6z1cC0IkIwp6yjsBboX945",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Aspecto"
+    },
+    {
+      "noeuds": [
+        "obs-dash",
+        "obs-metrics",
+        "obs-logs"
+      ],
+      "type": "cours",
+      "nom": "Grafana : tutoriels pas à pas (dont « Grafana fundamentals »)",
+      "url": "https://grafana.com/tutorials/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Grafana Labs"
+    },
+    {
+      "noeuds": [
+        "obs-dash",
+        "obs-metrics",
+        "obs-logs"
+      ],
+      "type": "cours",
+      "nom": "Grafana : parcours d'apprentissage guidés (Learning Journeys)",
+      "url": "https://grafana.com/docs/learning-journeys/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Grafana Labs"
+    },
+    {
+      "noeuds": [
+        "sre-slo",
+        "alerting-utile",
+        "postmortem",
+        "niveaux-support",
+        "toil",
+        "incident-astreinte"
+      ],
+      "type": "cours",
+      "nom": "Google SRE : ressources, livres gratuits et études de cas",
+      "url": "https://sre.google/resources/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Google"
+    },
+    {
+      "noeuds": [
+        "postmortem",
+        "niveaux-support",
+        "toil",
+        "gestion-changement",
+        "incident-astreinte"
+      ],
+      "type": "video",
+      "nom": "SREcon25 Americas",
+      "url": "https://www.youtube.com/playlist?list=PLbRoZ5Rrl5letLDlvWuS1r8CZokFl-Is6",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "USENIX"
+    },
+    {
+      "noeuds": [
+        "chaos",
+        "resilience-nf"
+      ],
+      "type": "video",
+      "nom": "Getting started with LitmusChaos",
+      "url": "https://www.youtube.com/playlist?list=PLmM1fgu30seVxW-Oobc7VOfPHbQAzICvS",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "LitmusChaos"
+    },
+    {
+      "noeuds": [
+        "chaos",
+        "resilience-nf"
+      ],
+      "type": "video",
+      "nom": "Chaos Engineering",
+      "url": "https://www.youtube.com/playlist?list=PLLIx5ktghjqKGCCcYXQb9leb5zhlXvE0r",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Gremlin"
+    },
+    {
+      "noeuds": [
+        "reg-rgpd"
+      ],
+      "type": "cours",
+      "nom": "L'atelier RGPD de la CNIL : formation en ligne gratuite",
+      "url": "https://atelier-rgpd.cnil.fr/",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "CNIL"
+    },
+    {
+      "noeuds": [
+        "reg-anssi",
+        "sec-durcissement",
+        "reg-risque",
+        "reg-nis2"
+      ],
+      "type": "cours",
+      "nom": "SecNumAcadémie : MOOC gratuit de sensibilisation à la sécurité du numérique",
+      "url": "https://secnumacademie.gouv.fr/",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "ANSSI"
+    },
+    {
+      "noeuds": [
+        "reg-nis2"
+      ],
+      "type": "cours",
+      "nom": "La directive NIS 2 (page de l'ANSSI)",
+      "url": "https://cyber.gouv.fr/la-directive-nis-2",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "ANSSI"
+    },
+    {
+      "noeuds": [
+        "sec-supply",
+        "sec-durcissement",
+        "k8s-rbac"
+      ],
+      "type": "cours",
+      "nom": "Kubernetes Goat : laboratoire de vulnérabilités Kubernetes pour s'entraîner",
+      "url": "https://github.com/madhuakula/kubernetes-goat",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Madhu Akula"
+    },
+    {
+      "noeuds": [
+        "reg-risque"
+      ],
+      "type": "cours",
+      "nom": "ISO/IEC 27001 : la norme (achat de la norme)",
+      "url": "https://www.iso.org/standard/27001",
+      "acces": "payant",
+      "langue": "en",
+      "auteur": "ISO"
+    },
+    {
+      "noeuds": [
+        "sec-secrets"
+      ],
+      "type": "cours",
+      "nom": "Parcours d'apprentissage HashiCorp Vault",
+      "url": "https://developer.hashicorp.com/vault/tutorials",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "HashiCorp"
+    },
+    {
+      "noeuds": [
+        "hld-lld",
+        "adr"
+      ],
+      "type": "video",
+      "nom": "Software Architecture and Design",
+      "url": "https://www.youtube.com/playlist?list=PL4JxLacgYgqTgS8qQPC17fM-NWMTr5GW6",
+      "acces": "gratuit",
+      "langue": "fr",
+      "auteur": "A Dev' Story"
+    },
+    {
+      "noeuds": [
+        "hld-lld",
+        "adr"
+      ],
+      "type": "cours",
+      "nom": "Le modèle C4 : décrire une architecture logicielle",
+      "url": "https://c4model.com/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Simon Brown"
+    },
+    {
+      "noeuds": [
+        "cout-energie"
+      ],
+      "type": "cours",
+      "nom": "Green Software for Practitioners (Green Software Foundation)",
+      "url": "https://learn.greensoftware.foundation/",
+      "acces": "gratuit",
+      "langue": "en",
+      "auteur": "Green Software Foundation"
+    }
+  ]
+}

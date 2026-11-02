@@ -1,0 +1,35 @@
+{
+  "noeud": "stockage-dr",
+  "rappel": [
+    {
+      "id": "rappel-rbd-mirroring",
+      "enonce": "Quelle fonction Ceph réplique de façon asynchrone des volumes bloc (RBD) vers un second cluster ?",
+      "options": [
+        "RBD mirroring",
+        "CRUSH map",
+        "Scrubbing",
+        "PG autoscaler"
+      ],
+      "bonne": 0,
+      "explication": "Le RBD mirroring réplique les images RBD d'un cluster vers un autre, de façon asynchrone. C'est la base de la reprise après sinistre avec ODF.",
+      "source": "Documentation ODF (Disaster Recovery)",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-asynchrone",
+      "enonce": "Pourquoi une réplication asynchrone ne garantit-elle pas un RPO de zéro ?",
+      "options": [
+        "Parce que les dernières écritures peuvent ne pas être encore copiées au moment du sinistre",
+        "Parce qu'elle chiffre les données",
+        "Parce qu'elle ne copie que les volumes inactifs",
+        "Parce qu'elle n'utilise pas le réseau"
+      ],
+      "bonne": 0,
+      "explication": "L'écriture est acquittée avant d'être copiée : au moment du sinistre, les dernières écritures peuvent manquer sur le second site.",
+      "source": "Documentation ODF (Disaster Recovery)",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 2
+    }
+  ]
+}

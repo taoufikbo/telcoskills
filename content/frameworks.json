@@ -1,0 +1,65 @@
+{
+  "_aide": "Frameworks de l'auteur. `sujet` : portée du framework, en termes neutres. `questions` : questions directrices que l'auteur doit traiter (affichées comme brouillons, jamais publiées telles quelles). `noeuds` : compétences de roadmap liées (identifiants de nœud).",
+  "frameworks": [
+    {
+      "id": "matrice-exigences",
+      "titre": "Matrice d'exigences",
+      "sujet": "Relier les exigences d'un cœur 5G ou d'une fonction réseau aux capacités de la plateforme qui doit les porter.",
+      "noeuds": ["matrice-exigences"],
+      "questions": [
+        "Quelles exigences des éditeurs de fonctions réseau se retrouvent presque à l'identique d'un projet à l'autre, et lesquelles varient ?",
+        "Comment distinguer une exigence bloquante d'une exigence négociable ?",
+        "Quelle preuve attendre pour considérer qu'une exigence est satisfaite ?",
+        "À quel moment du projet la matrice se fige-t-elle, et qui peut la rouvrir ?"
+      ]
+    },
+    {
+      "id": "dimensionnement",
+      "titre": "Dimensionnement",
+      "sujet": "Chiffrer les nœuds, le processeur, la mémoire, le stockage et le réseau d'une plateforme à partir des besoins des fonctions réseau.",
+      "noeuds": ["dimensionnement"],
+      "questions": [
+        "Quelle charge retenir : nominale, de pointe, ou celle du pire incident ?",
+        "Quelle marge garder, et comment la justifier devant un financeur ?",
+        "Comment valider un dimensionnement par la mesure avant d'engager le matériel ?",
+        "Quelles hypothèses d'un éditeur faut-il vérifier systématiquement ?"
+      ]
+    },
+    {
+      "id": "geo-redondance",
+      "titre": "Géo-redondance",
+      "sujet": "Répartir une plateforme sur plusieurs sites pour qu'elle survive à la perte de l'un d'eux.",
+      "noeuds": ["ha-geo"],
+      "questions": [
+        "Quels objectifs de reprise (RPO, RTO) imposent vraiment deux sites, et lesquels s'en passent ?",
+        "Actif-actif ou actif-passif : sur quels critères trancher ?",
+        "Comment garder un quorum cohérent avec seulement deux sites ?",
+        "Quel est le coût réel de la réplication du stockage entre sites ?"
+      ]
+    },
+    {
+      "id": "evaluation-fournisseurs",
+      "titre": "Évaluation des fournisseurs",
+      "sujet": "Comparer des éditeurs ou des distributions sur des critères explicites : gouvernance, santé financière, dépendance, coût de sortie.",
+      "noeuds": ["evaluation-fournisseurs"],
+      "questions": [
+        "Quels critères pèsent le plus, et lesquels sont des faux signaux ?",
+        "Comment évaluer la dépendance à un éditeur avant de signer ?",
+        "Comment chiffrer le coût de sortie d'une plateforme ?",
+        "Que regarder dans la gouvernance d'un projet open source avant de bâtir dessus ?"
+      ]
+    },
+    {
+      "id": "cout-de-possession",
+      "titre": "Coût de possession",
+      "sujet": "Estimer ce que coûte une plateforme sur sa durée de vie : licences, support, énergie, exploitation, renouvellement.",
+      "noeuds": ["cout-energie", "cycle-vie-plateforme"],
+      "questions": [
+        "Quels postes de coût sont systématiquement oubliés dans un chiffrage initial ?",
+        "Comment intégrer l'énergie dans la comparaison de deux architectures ?",
+        "Sur quelle durée raisonner, et comment traiter le renouvellement des versions ?",
+        "Quelle part du coût vient de la complexité d'intégration plutôt que des licences ?"
+      ]
+    }
+  ]
+}

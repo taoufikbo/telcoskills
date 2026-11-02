@@ -1,0 +1,160 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.644
+Bienvenue dans la roadmap Ingénieur CaaS telco.
+
+00:00:03.644 --> 00:00:24.423
+Cette roadmap s'adresse à celles et ceux qui construisent et exploitent une plateforme Kubernetes pour héberger des fonctions réseau télécoms : de Linux et des conteneurs jusqu'à OpenShift, au réseau secondaire, à la sécurité et à la conformité en France et en Europe.
+
+00:00:24.423 --> 00:00:28.300
+Elle compte 63 compétences, réparties en 14 blocs.
+
+00:00:29.200 --> 00:00:33.720
+Le parcours suit 14 blocs, de Fondations à Design et dimensionnement.
+
+00:00:34.620 --> 00:00:35.930
+Fondations.
+
+00:00:35.930 --> 00:00:37.596
+5 compétences.
+
+00:00:37.596 --> 00:00:44.740
+Par exemple : Linux avancé et Réseau IP, VLAN, routage, VPN.
+
+00:00:45.640 --> 00:00:47.537
+Kubernetes cœur.
+
+00:00:47.537 --> 00:00:49.198
+6 compétences.
+
+00:00:49.198 --> 00:00:55.246
+Par exemple : Architecture Kubernetes et Workloads.
+
+00:00:55.246 --> 00:01:04.140
+Projet pratique : Provoquer 5 pannes en lab et rédiger un RCA pour chacune.
+
+00:01:05.040 --> 00:01:07.399
+Plateforme CaaS OpenShift.
+
+00:01:07.399 --> 00:01:08.669
+6 compétences.
+
+00:01:08.669 --> 00:01:13.840
+Par exemple : Installation OpenShift et Operators et OLM.
+
+00:01:14.740 --> 00:01:16.017
+Réseau telco.
+
+00:01:16.017 --> 00:01:17.392
+6 compétences.
+
+00:01:17.392 --> 00:01:24.170
+Par exemple : CNI et OVN-Kubernetes et Multus et réseaux secondaires.
+
+00:01:25.070 --> 00:01:27.161
+Performance temps réel.
+
+00:01:27.161 --> 00:01:28.435
+2 compétences.
+
+00:01:28.435 --> 00:01:34.800
+Par exemple : HugePages et NUMA et Performance Profile et CPU pinning.
+
+00:01:35.700 --> 00:01:36.510
+Stockage.
+
+00:01:36.510 --> 00:01:37.770
+2 compétences.
+
+00:01:37.770 --> 00:01:43.980
+Par exemple : Ceph Rook ODF et Sauvegarde et réplication inter-sites.
+
+00:01:44.880 --> 00:01:46.544
+Virtualisation.
+
+00:01:46.544 --> 00:01:48.098
+3 compétences.
+
+00:01:48.098 --> 00:01:54.090
+Par exemple : VMs sur Kubernetes et OpenStack et NFVI.
+
+00:01:54.990 --> 00:01:56.496
+Automatisation.
+
+00:01:56.496 --> 00:01:57.901
+4 compétences.
+
+00:01:57.901 --> 00:02:02.820
+Par exemple : Helm et packaging de CNF et GitOps.
+
+00:02:03.720 --> 00:02:04.993
+Observabilité.
+
+00:02:04.993 --> 00:02:06.266
+4 compétences.
+
+00:02:06.266 --> 00:02:13.360
+Par exemple : Prometheus, Alertmanager, Thanos et Grafana et tableaux de bord.
+
+00:02:14.260 --> 00:02:14.938
+Sécurité.
+
+00:02:14.938 --> 00:02:15.994
+5 compétences.
+
+00:02:15.994 --> 00:02:23.230
+Par exemple : Durcissement du cluster et des nœuds et Sécurité de la chaîne d'approvisionnement.
+
+00:02:24.130 --> 00:02:26.469
+Réglementation France et Europe.
+
+00:02:26.469 --> 00:02:27.565
+11 compétences.
+
+00:02:27.565 --> 00:02:34.070
+Par exemple : Cadre français des communications électroniques et Sécurité des réseaux 5G.
+
+00:02:34.970 --> 00:02:36.795
+CNF et 5G Core.
+
+00:02:36.795 --> 00:02:38.498
+4 compétences.
+
+00:02:38.498 --> 00:02:48.110
+Par exemple : Architecture 5G Core et Onboarding et exigences d'infra d'un CNF.
+
+00:02:48.110 --> 00:02:56.870
+Projet pratique : Déployer un cœur 5G open source sur un cluster de lab.
+
+00:02:57.770 --> 00:02:59.941
+Résilience et exploitation.
+
+00:02:59.941 --> 00:03:01.066
+2 compétences.
+
+00:03:01.066 --> 00:03:08.060
+Par exemple : Haute disponibilité et géo-redondance et Gestion d'incident et astreinte.
+
+00:03:08.960 --> 00:03:11.207
+Design et dimensionnement.
+
+00:03:11.207 --> 00:03:12.417
+3 compétences.
+
+00:03:12.417 --> 00:03:19.590
+Par exemple : Dimensionnement d'un cluster telco et Documents HLD LLD et plan d'IP.
+
+00:03:20.490 --> 00:03:39.938
+Sur le site, vous pouvez parcourir la roadmap en arbre ou en plan de métro, ouvrir chaque compétence pour voir ses prérequis et ses ressources ouvertes, suivre votre progression, et choisir un objectif pour obtenir les étapes à enchaîner avec le chemin critique.
+
+00:03:39.938 --> 00:03:46.990
+Les badges de demande donnent un ordre de grandeur issu d'offres d'emploi, pas une statistique.
+
+00:03:47.890 --> 00:03:55.112
+À vous de jouer : choisissez un objectif et commencez par les compétences disponibles.
+
+00:03:55.112 --> 00:04:03.761
+Cette vidéo a été générée automatiquement à partir du contenu de la roadmap, avec une voix de synthèse.
+
+00:04:03.761 --> 00:04:08.800
+Les références sont à vérifier dans leur version en vigueur.

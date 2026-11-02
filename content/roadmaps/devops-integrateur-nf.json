@@ -1,0 +1,1064 @@
+{
+  "id": "devops-integrateur-nf",
+  "titre": "Intégrateur DevOps : acculturation aux NF",
+  "type": "role",
+  "presentation": "Cette roadmap s'adresse aux profils DevOps ou IT sans passé télécom qui doivent intégrer des fonctions réseau : d'abord le vocabulaire et les exigences du monde opérateur, puis le cœur 5G, le packaging, les tests et l'exploitation.",
+  "version": "0.1",
+  "provenance": { "type": "editoriale" },
+  "source": "Rédaction éditoriale pour des profils DevOps ou IT sans passé télécom qui doivent intégrer des fonctions réseau (NF) ; elle réutilise des nœuds des roadmaps « Ingénieur CaaS telco » et « Intégrateur NF, domaine 5GC » et ne s'appuie pas sur une analyse d'offres d'emploi. Le champ 'demande' n'est donc pas renseigné. Les références juridiques et techniques sont à vérifier dans leur version en vigueur.",
+  "legende_demande": {
+    "forte": "présent dans la majorité des offres",
+    "moyenne": "présent dans plusieurs offres",
+    "faible": "mentionné ponctuellement ou implicite"
+  },
+  "blocs": [
+    "Acculturation télécom",
+    "Socle plateforme",
+    "Réseau pour DevOps",
+    "Cœur 5G pour non-spécialistes",
+    "Packaging, livraison et documentation",
+    "CI/CD et tests",
+    "Exploitation et observabilité",
+    "Sécurité et conformité"
+  ],
+  "noeuds": [
+    {
+      "id": "tel-reseau-mobile",
+      "titre": "Le réseau mobile en un schéma : abonné, radio, cœur, Internet",
+      "bloc": "Acculturation télécom",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "resume": "Terminal, antenne, cœur de réseau, Internet : ce qui ressemble à l'IT (IP, HTTP, conteneurs) et ce qui est propre au télécom (identité d'abonné, mobilité, qualité de service, continuité de service).",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Open5GS : démarrage rapide",
+          "url": "https://open5gs.org/open5gs/docs/guide/01-quickstart/"
+        }
+      ]
+    },
+    {
+      "id": "tel-vocabulaire",
+      "titre": "Vocabulaire opérateur : NF, PLMN, UE, gNB, DN, SLA",
+      "bloc": "Acculturation télécom",
+      "niveau": "fondamental",
+      "prerequis": [
+        "tel-reseau-mobile"
+      ],
+      "resume": "Les sigles qu'on entend dès le premier jour et ce qu'ils désignent ; constituer un glossaire d'équipe.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "3GPP TR 21.905 : vocabulaire (accès libre)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/21_series/21.905/"
+        }
+      ]
+    },
+    {
+      "id": "tel-nf",
+      "titre": "Qu'est-ce qu'une NF : VNF, CNF et cycle de vie",
+      "bloc": "Acculturation télécom",
+      "niveau": "fondamental",
+      "prerequis": [
+        "tel-vocabulaire"
+      ],
+      "resume": "Une fonction réseau est un logiciel qui remplit un rôle (AMF, UPF…) ; du boîtier dédié à la VNF puis à la CNF ; ce que livre l'éditeur et ce qu'exploite l'opérateur.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "ETSI : technologies NFV (accès libre)",
+          "url": "https://www.etsi.org/technologies/nfv"
+        },
+        {
+          "type": "opensource",
+          "nom": "ETSI OSM : orchestrateur MANO open source",
+          "url": "https://osm.etsi.org/docs/user-guide/latest/"
+        }
+      ]
+    },
+    {
+      "id": "tel-exigences-continuite",
+      "titre": "Exigences telco : haute disponibilité, latence et continuité de service",
+      "bloc": "Acculturation télécom",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "tel-nf"
+      ],
+      "resume": "Disponibilité très élevée, sessions à ne pas couper, latence du plan usager, maintenance sans interruption : pourquoi un déploiement applicatif classique ne suffit pas.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "Google SRE Book : objectifs de niveau de service (accès libre)",
+          "url": "https://sre.google/sre-book/service-level-objectives/"
+        },
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : PodDisruptionBudget",
+          "url": "https://kubernetes.io/docs/tasks/run-application/configure-pdb/"
+        }
+      ]
+    },
+    {
+      "id": "archi-5g",
+      "titre": "Architecture 5G : NG-RAN, 5GC et SBA",
+      "bloc": "Acculturation télécom",
+      "niveau": "fondamental",
+      "prerequis": [
+        "tel-nf"
+      ],
+      "resume": "Rôle du RAN et du cœur, séparation plan de contrôle et plan usager, architecture orientée services (SBA), points de référence N1 à N6 et interfaces de service.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "3GPP TS 23.501 : architecture du système 5G (accès libre)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.501/"
+        }
+      ]
+    },
+    {
+      "id": "dialogue-experts",
+      "titre": "Travailler avec les experts réseau et les éditeurs",
+      "bloc": "Acculturation télécom",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "tel-vocabulaire"
+      ],
+      "resume": "Poser les bonnes questions, lire une fiche d'exigences, formuler un incident de façon exploitable, partager un vocabulaire commun.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "3GPP TR 21.905 : vocabulaire (accès libre)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/21_series/21.905/"
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "titre": "Linux avancé (RHEL/CentOS)",
+      "bloc": "Socle plateforme",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "resume": "Systemd, processus, namespaces/cgroups, SELinux, diagnostic système. Base de tout le reste.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation du noyau Linux",
+          "url": "https://docs.kernel.org/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation RHEL (administration)",
+          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        },
+        {
+          "type": "certif",
+          "nom": "RHCSA (curriculum)",
+          "url": "https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "git-ci",
+      "titre": "Git et CI/CD",
+      "bloc": "Socle plateforme",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "resume": "Branches, revues, pipelines GitLab CI, artefacts.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Pro Git (livre libre, en français)",
+          "url": "https://git-scm.com/book/fr/v2"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation GitLab CI",
+          "url": "https://docs.gitlab.com/ci/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "GitLab"
+        }
+      ]
+    },
+    {
+      "id": "conteneurs",
+      "titre": "Conteneurs (OCI, Podman, CRI-O)",
+      "bloc": "Socle plateforme",
+      "niveau": "fondamental",
+      "prerequis": [
+        "linux"
+      ],
+      "resume": "Images, registries, runtime, différences Docker/Podman/CRI-O.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Podman : documentation",
+          "url": "https://podman.io/docs"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Podman",
+          "url": "https://docs.podman.io/en/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Podman"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation CRI-O",
+          "url": "https://cri-o.io/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "CRI-O"
+        }
+      ]
+    },
+    {
+      "id": "k8s-archi",
+      "titre": "Architecture Kubernetes",
+      "bloc": "Socle plateforme",
+      "niveau": "fondamental",
+      "prerequis": [
+        "conteneurs"
+      ],
+      "resume": "Control plane, etcd, kubelet, scheduler, API server, contrôleurs.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : architecture du cluster",
+          "url": "https://kubernetes.io/docs/concepts/architecture/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Kubernetes (Concepts)",
+          "url": "https://kubernetes.io/docs/concepts/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        },
+        {
+          "type": "certif",
+          "nom": "CKA (curriculum CNCF)",
+          "url": "https://github.com/cncf/curriculum",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "CNCF"
+        }
+      ]
+    },
+    {
+      "id": "k8s-workloads",
+      "titre": "Workloads : Pods, Deployments, StatefulSets, Jobs",
+      "bloc": "Socle plateforme",
+      "niveau": "fondamental",
+      "prerequis": [
+        "k8s-archi"
+      ],
+      "resume": "Cycle de vie, probes, ressources, affinités, PodDisruptionBudgets.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : workloads",
+          "url": "https://kubernetes.io/docs/concepts/workloads/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        }
+      ]
+    },
+    {
+      "id": "k8s-services",
+      "titre": "Services, Ingress, DNS",
+      "bloc": "Socle plateforme",
+      "niveau": "fondamental",
+      "prerequis": [
+        "k8s-archi",
+        "reseau-ip"
+      ],
+      "resume": "ClusterIP, NodePort, LoadBalancer, Ingress/Route, CoreDNS.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : services, load balancing et réseau",
+          "url": "https://kubernetes.io/docs/concepts/services-networking/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        }
+      ]
+    },
+    {
+      "id": "k8s-stockage",
+      "titre": "Stockage Kubernetes : PV, PVC, StorageClass",
+      "bloc": "Socle plateforme",
+      "niveau": "fondamental",
+      "prerequis": [
+        "k8s-archi"
+      ],
+      "resume": "Provisionnement dynamique, modes d'accès, snapshots.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : stockage",
+          "url": "https://kubernetes.io/docs/concepts/storage/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Kubernetes"
+        }
+      ]
+    },
+    {
+      "id": "reseau-ip",
+      "titre": "Réseau IP, VLAN, routage, VPN",
+      "bloc": "Réseau pour DevOps",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "resume": "Adressage, VLAN, trunk, routage statique/BGP, MTU, VRF, tunnels. Exigé pour supporter le plan d'IP des projets.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "FRRouting : suite de routage open source (BGP, OSPF, BFD)",
+          "url": "https://docs.frrouting.org/"
+        },
+        {
+          "type": "cours",
+          "nom": "Fondamentaux réseau (CCNA, curriculum)",
+          "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccna.html",
+          "langue": "en",
+          "auteur": "Cisco"
+        }
+      ]
+    },
+    {
+      "id": "cni",
+      "titre": "CNI et OVN-Kubernetes",
+      "bloc": "Réseau pour DevOps",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-services",
+        "reseau-ip"
+      ],
+      "resume": "Réseau de pods, OVN-Kubernetes, Open vSwitch, NetworkPolicy, egress.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OVN-Kubernetes : documentation",
+          "url": "https://ovn-kubernetes.io/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Networking)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/networking_overview/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "multus",
+      "titre": "Multus et réseaux secondaires",
+      "bloc": "Réseau pour DevOps",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "cni"
+      ],
+      "resume": "NetworkAttachmentDefinition, macvlan, ipvlan, séparation plan de contrôle / usager / gestion.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Multus CNI (dépôt source)",
+          "url": "https://github.com/k8snetworkplumbingwg/multus-cni",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "K8s Network Plumbing WG"
+        }
+      ]
+    },
+    {
+      "id": "sriov",
+      "titre": "SR-IOV",
+      "bloc": "Réseau pour DevOps",
+      "niveau": "avance",
+      "prerequis": [
+        "multus"
+      ],
+      "resume": "VF, opérateur SR-IOV, NIC supportées, accès direct pour l'UPF et les fonctions à haut débit.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "SR-IOV Network Operator (dépôt source)",
+          "url": "https://github.com/k8snetworkplumbingwg/sriov-network-operator"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (SR-IOV)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/hardware_networks/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "pieges-reseau",
+      "titre": "Réseau pour DevOps : interfaces multiples, MTU, VLAN et SR-IOV",
+      "bloc": "Réseau pour DevOps",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "reseau-ip",
+        "multus"
+      ],
+      "resume": "Les pièges classiques d'un pod qui a plusieurs interfaces : routes, MTU, VLAN, isolation des plans de contrôle, usager et gestion.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Multus CNI (dépôt source)",
+          "url": "https://github.com/k8snetworkplumbingwg/multus-cni"
+        }
+      ]
+    },
+    {
+      "id": "identifiants",
+      "titre": "Identifiants et numérotation (SUPI, SUCI, GUTI, PLMN, DNN)",
+      "bloc": "Cœur 5G pour non-spécialistes",
+      "niveau": "fondamental",
+      "prerequis": [
+        "archi-5g"
+      ],
+      "resume": "Comment un abonné, un réseau et une session sont identifiés ; protection de l'identité par le SUCI ; lire les identifiants dans une trace.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "3GPP TS 23.003 : numérotation, adressage et identification (accès libre)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.003/"
+        }
+      ]
+    },
+    {
+      "id": "sbi-http2",
+      "titre": "Interfaces de service (SBI) : HTTP/2, JSON, OpenAPI",
+      "bloc": "Cœur 5G pour non-spécialistes",
+      "niveau": "fondamental",
+      "prerequis": [
+        "archi-5g"
+      ],
+      "resume": "Les fonctions réseau dialoguent en HTTP/2 et JSON ; une spécification OpenAPI par service, codes de retour, en-têtes. Savoir lire un appel et sa réponse.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "5GC_APIs : spécifications OpenAPI des interfaces SBI 3GPP",
+          "url": "https://github.com/jdegre/5GC_APIs"
+        }
+      ]
+    },
+    {
+      "id": "traces",
+      "titre": "Capture et lecture de traces (Wireshark : NGAP, PFCP, HTTP/2, GTP-U)",
+      "bloc": "Cœur 5G pour non-spécialistes",
+      "niveau": "fondamental",
+      "prerequis": [
+        "archi-5g"
+      ],
+      "resume": "Où capturer, quels filtres appliquer, comment suivre une procédure message par message.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Wireshark : documentation",
+          "url": "https://www.wireshark.org/docs/"
+        }
+      ]
+    },
+    {
+      "id": "amf",
+      "titre": "AMF : enregistrement, mobilité et signalisation NAS/NGAP",
+      "bloc": "Cœur 5G pour non-spécialistes",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "archi-5g",
+        "identifiants"
+      ],
+      "resume": "Rôle de l'AMF, interfaces N1, N2 et Namf, gestion de l'état de l'UE, sélection et redondance de l'AMF.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "free5GC : AMF (code source)",
+          "url": "https://github.com/free5gc/amf"
+        }
+      ]
+    },
+    {
+      "id": "smf-upf",
+      "titre": "SMF et UPF : sessions PDU, PFCP, interfaces N4, N3 et N6",
+      "bloc": "Cœur 5G pour non-spécialistes",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "archi-5g",
+        "traces"
+      ],
+      "resume": "Séparation de la gestion de session (SMF) et du plan usager (UPF), règles PFCP (PDR, FAR, QER, URR), sélection d'UPF, adressage des UE.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "free5GC : UPF en Go (code source)",
+          "url": "https://github.com/free5gc/go-upf"
+        }
+      ]
+    },
+    {
+      "id": "nrf-scp",
+      "titre": "NRF et SCP : enregistrement, découverte et routage des services",
+      "bloc": "Cœur 5G pour non-spécialistes",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "sbi-http2"
+      ],
+      "resume": "Profil et enregistrement des fonctions, découverte, jetons d'accès, communication directe ou indirecte via le SCP.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "free5GC : NRF (code source)",
+          "url": "https://github.com/free5gc/nrf"
+        }
+      ]
+    },
+    {
+      "id": "enregistrement",
+      "titre": "Procédures d'enregistrement et d'authentification",
+      "bloc": "Cœur 5G pour non-spécialistes",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "amf"
+      ],
+      "resume": "Déroulé complet de l'enregistrement initial d'un UE : identité, authentification, sécurité NAS, contexte ; messages et fonctions impliquées.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "3GPP TS 23.502 : procédures du système 5G (accès libre)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.502/"
+        }
+      ]
+    },
+    {
+      "id": "session-pdu",
+      "titre": "Établissement de session PDU et chemin de données",
+      "bloc": "Cœur 5G pour non-spécialistes",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "smf-upf",
+        "enregistrement"
+      ],
+      "resume": "Demande de session, sélection du SMF et de l'UPF, règles PFCP, allocation d'adresse, premier paquet utilisateur ; où diagnostiquer une session qui ne s'établit pas.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "UERANSIM : simulateur d'UE et de gNB 5G",
+          "url": "https://github.com/aligungr/UERANSIM"
+        }
+      ]
+    },
+    {
+      "id": "deploiement-lab",
+      "titre": "Déployer un cœur 5G open source en lab",
+      "bloc": "Cœur 5G pour non-spécialistes",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "helm-cnf",
+        "session-pdu"
+      ],
+      "resume": "Mettre en pratique : déploiement, vérification de l'enregistrement des fonctions auprès de la NRF, premier test de bout en bout.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "towards5gs-helm : charts Helm free5GC",
+          "url": "https://github.com/Orange-OpenSource/towards5gs-helm"
+        }
+      ],
+      "projet": "Déployer free5GC ou Open5GS sur un cluster de lab, y connecter un simulateur de gNB et d'UE, et établir une session PDU avec capture de trace."
+    },
+    {
+      "id": "helm",
+      "titre": "Helm et packaging de CNF",
+      "bloc": "Packaging, livraison et documentation",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-workloads"
+      ],
+      "resume": "Charts, values, hooks, gestion de versions. Les CNF sont livrés en charts.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Helm : documentation",
+          "url": "https://helm.sh/docs/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Helm"
+        }
+      ]
+    },
+    {
+      "id": "helm-cnf",
+      "titre": "Packaging d'une NF : charts Helm et configuration",
+      "bloc": "Packaging, livraison et documentation",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "helm"
+      ],
+      "resume": "Structure d'un chart, values par environnement, hooks, dépendances ; livrer et rejouer un déploiement.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Helm : documentation",
+          "url": "https://helm.sh/docs/"
+        }
+      ]
+    },
+    {
+      "id": "config-nf",
+      "titre": "Configuration d'une NF : API, YANG/NETCONF, ConfigMaps",
+      "bloc": "Packaging, livraison et documentation",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "helm-cnf"
+      ],
+      "resume": "Paramétrage initial et à chaud, modèles de données, cohérence de configuration entre fonctions, versionnement.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "YangModels/yang : modèles YANG de référence",
+          "url": "https://github.com/YangModels/yang"
+        }
+      ]
+    },
+    {
+      "id": "etsi-sol",
+      "titre": "Cycle de vie d'une NF selon ETSI NFV (SOL, CSAR, CNF)",
+      "bloc": "Packaging, livraison et documentation",
+      "niveau": "avance",
+      "prerequis": [
+        "helm-cnf"
+      ],
+      "resume": "Descripteurs et paquets de fonctions normalisés, opérations de cycle de vie (instanciation, mise à l'échelle, mise à jour, terminaison), lien avec un orchestrateur.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OpenStack Tacker : orchestration NFV conforme ETSI",
+          "url": "https://docs.openstack.org/tacker/latest/"
+        }
+      ]
+    },
+    {
+      "id": "gitops",
+      "titre": "GitOps (ArgoCD / Flux)",
+      "bloc": "Packaging, livraison et documentation",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "helm",
+        "git-ci"
+      ],
+      "resume": "État désiré dans Git, synchronisation, gestion multi-environnements.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Argo CD : documentation",
+          "url": "https://argo-cd.readthedocs.io/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Argo CD"
+        }
+      ]
+    },
+    {
+      "id": "onboarding-editeur",
+      "titre": "Onboarding d'une NF éditeur : exigences, livrables, matrice de conformité",
+      "bloc": "Packaging, livraison et documentation",
+      "niveau": "avance",
+      "prerequis": [
+        "etsi-sol",
+        "config-nf"
+      ],
+      "resume": "Lire la documentation d'un éditeur, vérifier les livrables (images, charts, descripteurs), établir la matrice de conformité aux exigences de la plateforme.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "towards5gs-helm : exemple de livrable de NF",
+          "url": "https://github.com/Orange-OpenSource/towards5gs-helm"
+        }
+      ]
+    },
+    {
+      "id": "dossier-integration",
+      "titre": "Dossier d'intégration : schémas, flux, plan d'adressage",
+      "bloc": "Packaging, livraison et documentation",
+      "niveau": "avance",
+      "prerequis": [
+        "onboarding-editeur"
+      ],
+      "resume": "Livrables d'architecture : schéma applicatif et réseau, matrice de flux entre fonctions, plan d'adressage, hypothèses de dimensionnement.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "arc42 : modèle libre de documentation d'architecture",
+          "url": "https://arc42.org/overview"
+        }
+      ]
+    },
+    {
+      "id": "ci-cd-integration",
+      "titre": "CI/CD d'intégration : déploiement et non-régression automatisés",
+      "bloc": "CI/CD et tests",
+      "niveau": "avance",
+      "prerequis": [
+        "deploiement-lab",
+        "tests-fonctionnels"
+      ],
+      "resume": "Pipelines qui déploient une version, jouent les tests et publient un verdict ; environnements éphémères, gestion des versions.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Tekton : pipelines CI/CD Kubernetes",
+          "url": "https://tekton.dev/docs/"
+        }
+      ]
+    },
+    {
+      "id": "simulation-ran-ue",
+      "titre": "Simulation de RAN et d'UE",
+      "bloc": "CI/CD et tests",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "session-pdu"
+      ],
+      "resume": "Utiliser des simulateurs de gNB et d'UE pour exercer le cœur : scénarios d'enregistrement, de session, de mobilité ; limites d'un simulateur.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "gNBsim : simulateur de gNB et d'UE (OMEC)",
+          "url": "https://github.com/omec-project/gnbsim"
+        }
+      ]
+    },
+    {
+      "id": "tests-fonctionnels",
+      "titre": "Plan de tests fonctionnels et d'interopérabilité",
+      "bloc": "CI/CD et tests",
+      "niveau": "avance",
+      "prerequis": [
+        "simulation-ran-ue",
+        "enregistrement"
+      ],
+      "resume": "Construire un plan de tests par procédure, critères de réussite, automatisation, traçabilité des exigences vers les cas de test.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Robot Framework : automatisation de tests",
+          "url": "https://robotframework.org/"
+        }
+      ]
+    },
+    {
+      "id": "tests-perf",
+      "titre": "Tests de performance et de charge",
+      "bloc": "CI/CD et tests",
+      "niveau": "avance",
+      "prerequis": [
+        "simulation-ran-ue"
+      ],
+      "resume": "Débit, sessions par seconde, latence, saturation : générer du trafic, mesurer, interpréter ; lien avec le dimensionnement.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "TRex : générateur de trafic open source",
+          "url": "https://github.com/cisco-system-traffic-generator/trex-core"
+        }
+      ]
+    },
+    {
+      "id": "lab-as-code",
+      "titre": "Laboratoire reproductible : kind, charts et jeux de données",
+      "bloc": "CI/CD et tests",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-archi",
+        "helm"
+      ],
+      "resume": "Créer et détruire un banc d'essai à la demande pour intégrer une NF : cluster éphémère, charts, simulateurs, données de test.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "kind : Kubernetes dans Docker",
+          "url": "https://kind.sigs.k8s.io/"
+        }
+      ],
+      "projet": "Écrire un script qui crée un cluster kind, déploie un cœur 5G open source et lance un test de session PDU, en une seule commande."
+    },
+    {
+      "id": "tests-config",
+      "titre": "Tests de configuration et de non-régression d'une NF",
+      "bloc": "CI/CD et tests",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "config-nf",
+        "tests-fonctionnels"
+      ],
+      "resume": "Valider une configuration avant déploiement (lint des charts, schémas, tests de contrat), détecter les dérives entre environnements.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Helm : tests de charts",
+          "url": "https://helm.sh/docs/topics/chart_tests/"
+        },
+        {
+          "type": "opensource",
+          "nom": "kube-linter : analyse statique des manifestes",
+          "url": "https://github.com/stackrox/kube-linter"
+        }
+      ]
+    },
+    {
+      "id": "obs-metrics",
+      "titre": "Prometheus, Alertmanager, Thanos",
+      "bloc": "Exploitation et observabilité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-workloads"
+      ],
+      "resume": "Métriques, règles d'alerte, rétention longue, alerting basé sur les SLO.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Prometheus : documentation",
+          "url": "https://prometheus.io/docs/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Prometheus"
+        }
+      ]
+    },
+    {
+      "id": "obs-logs",
+      "titre": "Logs centralisés (EFK/ELK, Loki)",
+      "bloc": "Exploitation et observabilité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-workloads"
+      ],
+      "resume": "Collecte, indexation, rétention, corrélation avec les alertes.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Grafana Loki : documentation",
+          "url": "https://grafana.com/docs/loki/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Grafana Labs"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Elastic",
+          "url": "https://www.elastic.co/docs",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Elastic"
+        }
+      ]
+    },
+    {
+      "id": "kpi-5gc",
+      "titre": "Indicateurs et compteurs de performance du 5GC",
+      "bloc": "Exploitation et observabilité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "enregistrement",
+        "session-pdu"
+      ],
+      "resume": "Taux de réussite des procédures, compteurs par fonction, alertes et tableaux de bord ; distinguer un problème de plateforme d'un problème applicatif.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Prometheus : documentation",
+          "url": "https://prometheus.io/docs/"
+        }
+      ]
+    },
+    {
+      "id": "analyse-incident",
+      "titre": "Analyse d'incident : traces, journaux et corrélation multi-NF",
+      "bloc": "Exploitation et observabilité",
+      "niveau": "avance",
+      "prerequis": [
+        "traces",
+        "kpi-5gc"
+      ],
+      "resume": "Suivre un échec de procédure à travers les fonctions, corréler traces, journaux et métriques, remonter à la cause racine et la documenter.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OpenTelemetry : documentation",
+          "url": "https://opentelemetry.io/docs/"
+        }
+      ]
+    },
+    {
+      "id": "resilience-nf",
+      "titre": "Résilience d'une NF : redondance, état et reprise",
+      "bloc": "Exploitation et observabilité",
+      "niveau": "avance",
+      "prerequis": [
+        "amf"
+      ],
+      "resume": "Réplicas, gestion de l'état, comportement lors de la perte d'un nœud, d'un site ou d'une fonction voisine, budgets de disruption.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : PodDisruptionBudget",
+          "url": "https://kubernetes.io/docs/tasks/run-application/configure-pdb/"
+        }
+      ]
+    },
+    {
+      "id": "upgrade-nf",
+      "titre": "Mises à jour sans coupure et retour arrière",
+      "bloc": "Exploitation et observabilité",
+      "niveau": "avance",
+      "prerequis": [
+        "helm-cnf",
+        "resilience-nf"
+      ],
+      "resume": "Stratégies de mise à jour progressive, compatibilité entre versions de fonctions voisines, préparation et critères de retour arrière.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Argo Rollouts : déploiements progressifs",
+          "url": "https://argoproj.github.io/argo-rollouts/"
+        }
+      ]
+    },
+    {
+      "id": "sec-supply",
+      "titre": "Sécurité de la chaîne d'approvisionnement",
+      "bloc": "Sécurité et conformité",
+      "niveau": "avance",
+      "prerequis": [
+        "conteneurs"
+      ],
+      "resume": "Scan d'images (Trivy), signature, politiques d'admission, SBOM.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Trivy : scanner de vulnérabilités et de SBOM",
+          "url": "https://trivy.dev/"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Trivy",
+          "url": "https://trivy.dev/docs/latest/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Aqua Security"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Sigstore",
+          "url": "https://docs.sigstore.dev/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Sigstore"
+        }
+      ]
+    },
+    {
+      "id": "sec-secrets",
+      "titre": "Secrets, PKI et certificats",
+      "bloc": "Sécurité et conformité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-workloads"
+      ],
+      "resume": "Gestion des secrets (Vault, secrets chiffrés), autorité de certification interne, cert-manager, rotation et expiration des certificats, HSM.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "cert-manager : documentation",
+          "url": "https://cert-manager.io/docs/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "cert-manager"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation HashiCorp Vault",
+          "url": "https://developer.hashicorp.com/vault/docs",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "HashiCorp"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation OpenShift (Security : certificats)",
+          "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/security_and_compliance/index",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "sec-sba",
+      "titre": "Sécurité du SBA : TLS, OAuth2 et autorisation entre NF",
+      "bloc": "Sécurité et conformité",
+      "niveau": "avance",
+      "prerequis": [
+        "nrf-scp",
+        "sbi-http2"
+      ],
+      "resume": "Authentification mutuelle entre fonctions, jetons d'accès émis par la NRF, certificats et leur rotation, exigences de l'architecture de sécurité 5G.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "3GPP TS 33.501 : sécurité du système 5G (accès libre)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.501/"
+        }
+      ]
+    },
+    {
+      "id": "sec-plateforme",
+      "titre": "Isolation et privilèges d'une NF sur la plateforme",
+      "bloc": "Sécurité et conformité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-workloads"
+      ],
+      "resume": "Capacités Linux, contextes de sécurité, politiques réseau entre fonctions, cloisonnement des plans de contrôle, usager et gestion.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : contexte de sécurité d'un pod",
+          "url": "https://kubernetes.io/docs/tasks/configure-pod-container/security-context/"
+        }
+      ]
+    },
+    {
+      "id": "reglementation-5gc",
+      "titre": "Réglementation France et Europe applicable au 5GC",
+      "bloc": "Sécurité et conformité",
+      "niveau": "avance",
+      "prerequis": [
+        "sec-sba"
+      ],
+      "resume": "Ce qui s'applique à un cœur 5G hébergé : sécurité et intégrité des réseaux, données personnelles, interception légale, exigences sur les équipements. Voir le bloc dédié de la roadmap Ingénieur CaaS telco.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OpenLI : interception légale open source conforme ETSI",
+          "url": "https://github.com/OpenLI-NZ/openli"
+        }
+      ]
+    }
+  ]
+}

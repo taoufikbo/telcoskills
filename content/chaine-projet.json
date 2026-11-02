@@ -1,0 +1,174 @@
+{
+  "projet": "coeur-5g-sur-caas",
+  "etapes": [
+    {
+      "id": "besoin",
+      "titre": "Besoin et cadrage",
+      "court": "Besoin",
+      "icone": "cible",
+      "phases": ["cadrage"],
+      "sortie": "Note de cadrage et exigences de service chiffrées",
+      "outils": ["Disponibilité cible", "Deux sites", "NIS2 · RGPD"],
+      "actions": {
+        "chef-projet": "Fixe le périmètre, le planning et les jalons, et réunit les acteurs autour d'une même question : qui fait quoi ?",
+        "architecte": "Traduit le besoin en exigences chiffrées : disponibilité, capacité, latence, nombre de sites.",
+        "juridique": "Recense les obligations légales (RGPD, NIS2, interception légale) avant tout choix technique.",
+        "securite": "Pose les exigences de sécurité et de conformité propres à une infrastructure télécom.",
+        "editeur": "Donne les prérequis de ses fonctions réseau : versions, CPU, mémoire, réseau, stockage.",
+        "ingenieur-ia": "Cadre l'usage de l'IA : cas d'usage, données manipulées, obligations de l'AI Act."
+      }
+    },
+    {
+      "id": "design",
+      "titre": "Design et plan d'IP",
+      "court": "Design",
+      "icone": "plan",
+      "phases": ["design", "dimensionnement"],
+      "sortie": "HLD, LLD, plan d'IP et matrice de flux",
+      "outils": ["HLD", "LLD", "Plan d'IP", "Matrice de flux"],
+      "actions": {
+        "architecte": "Choisit la distribution, les sites, le stockage et la virtualisation, dimensionne chaque serveur et consigne chaque décision.",
+        "reseau": "Définit VLAN, VRF, sous-réseaux et interconnexions avec le réseau de l'opérateur.",
+        "ingenieur-caas": "Vérifie que le design est installable : nombre de nœuds, rôles, cartes réseau, disques.",
+        "editeur": "Confirme les besoins de plateforme de ses fonctions : SR-IOV, hugepages, synchronisation PTP.",
+        "securite": "Définit les zones de sécurité, la segmentation et le chiffrement cibles.",
+        "sre": "Définit les objectifs de service et la supervision cible.",
+        "ingenieur-ia": "Dimensionne les GPU et mesure le coût par requête de la plateforme d'inférence.",
+        "chef-projet": "Obtient la revue d'architecture et l'engagement des moyens : le matériel peut être commandé."
+      }
+    },
+    {
+      "id": "machines",
+      "titre": "Machines : racks, câblage, BMC",
+      "court": "Machines",
+      "icone": "serveur",
+      "phases": ["plateforme"],
+      "sortie": "Serveurs en rack, câblés, inventoriés et pilotables à distance par leur BMC",
+      "outils": ["Rack et câblage", "BMC · iDRAC · Redfish", "Firmware · BIOS"],
+      "actions": {
+        "ingenieur-caas": "Reçoit les serveurs, les inventorie, met à jour firmware et BIOS, règle le mode de démarrage et les options NUMA et SR-IOV, vérifie l'accès BMC de chacun.",
+        "reseau": "Câble les serveurs aux commutateurs, configure les ports (LACP, trunk VLAN, MTU) et l'accès au réseau de gestion.",
+        "securite": "Change les mots de passe par défaut des BMC et isole le réseau de gestion.",
+        "devops": "Alimente l'inventaire, source de vérité de la suite : adresses MAC, numéros de série, rôle prévu de chaque machine.",
+        "architecte": "Contrôle que le matériel reçu et son emplacement correspondent au LLD.",
+        "chef-projet": "Suit les livraisons et les accès au datacenter."
+      }
+    },
+    {
+      "id": "reseau",
+      "titre": "Réseau de support : VLAN, VRF, routage",
+      "court": "Réseau",
+      "icone": "reseau",
+      "phases": ["plateforme"],
+      "sortie": "Réseaux de support opérationnels, flux testés de bout en bout",
+      "outils": ["VLAN · VRF", "BGP · BFD", "DNS · NTP", "Pare-feux"],
+      "actions": {
+        "reseau": "Crée VLAN et VRF, configure BGP et BFD vers le réseau de l'opérateur, règle la MTU, ouvre les flux de la matrice et les teste de bout en bout.",
+        "ingenieur-caas": "Prépare DNS (API et wildcard des applications), NTP et passerelles, et vérifie que chaque serveur joint registre, DNS et NTP.",
+        "securite": "Valide un filtrage au plus juste : tout ce qui n'est pas dans la matrice de flux reste fermé.",
+        "architecte": "Arbitre les écarts entre le design et le réseau réel, et met le LLD à jour.",
+        "devops": "Écrit la configuration réseau en code pour la rejouer à l'identique sur chaque site."
+      }
+    },
+    {
+      "id": "cluster",
+      "titre": "Installation du cluster",
+      "court": "Cluster",
+      "icone": "cluster",
+      "phases": ["plateforme"],
+      "sortie": "Cluster Kubernetes sain : nœuds prêts, opérateurs sains, accès administrateur",
+      "outils": ["Installeur · PXE · ISO", "Ignition", "Registre miroir", "Opérateurs"],
+      "actions": {
+        "ingenieur-caas": "Génère la configuration d'installation, démarre les serveurs par leur BMC, suit l'amorçage des nœuds de contrôle puis des workers, vérifie etcd, opérateurs et certificats.",
+        "devops": "Automatise l'installation en pipeline rejouable, gère les secrets et le registre miroir d'un environnement déconnecté.",
+        "securite": "Vérifie la provenance des images, la gestion des certificats et des secrets.",
+        "sre": "Branche dès maintenant métriques et journaux : le cluster est observé dès sa naissance."
+      }
+    },
+    {
+      "id": "telco",
+      "titre": "Plateforme telco : SR-IOV, stockage, PTP",
+      "court": "Telco",
+      "icone": "puce",
+      "phases": ["plateforme"],
+      "sortie": "Plateforme prête à accueillir les fonctions réseau",
+      "outils": ["Multus · SR-IOV", "Hugepages · CPU pinning", "PTP", "Stockage répliqué"],
+      "actions": {
+        "ingenieur-caas": "Configure réseaux secondaires (Multus, SR-IOV), hugepages, isolation des CPU, PTP et stockage répliqué entre sites, puis mesure les performances.",
+        "reseau": "Aligne le réseau physique sur les interfaces secondaires : VLAN des interfaces N2, N3 et N4, routage vers l'accès et Internet.",
+        "ingenieur-ia": "Installe les GPU, le serveur d'inférence et la passerelle d'accès aux modèles.",
+        "sre": "Définit les alertes qui comptent pour la 5G : latence, perte de paquets, saturation.",
+        "architecte": "Compare la plateforme au dimensionnement et prononce le jalon « plateforme prête »."
+      }
+    },
+    {
+      "id": "durcissement",
+      "titre": "Durcissement et observabilité",
+      "court": "Durcir",
+      "icone": "bouclier",
+      "phases": ["plateforme"],
+      "sortie": "Plateforme durcie, supervisée et pilotée depuis Git",
+      "outils": ["RBAC · NetworkPolicy", "Référentiel CIS", "Prometheus · journaux", "GitOps"],
+      "actions": {
+        "securite": "Applique le durcissement, contrôle la conformité (CIS), impose politiques d'admission et segmentation, et remet un rapport d'écarts.",
+        "sre": "Met en place tableaux de bord, alertes, journaux centralisés et objectifs de service.",
+        "devops": "Passe la configuration en GitOps : le cluster se décrit dans Git et se corrige seul.",
+        "ingenieur-caas": "Restreint les accès d'administration, applique les correctifs et sauvegarde etcd."
+      }
+    },
+    {
+      "id": "fonctions",
+      "titre": "Fonctions réseau : livrables, CI/CD, déploiement",
+      "court": "Fonctions",
+      "icone": "paquets",
+      "phases": ["integration"],
+      "sortie": "Cœur 5G déployé en intégration, interfaces validées",
+      "outils": ["Charts Helm", "Scan d'images", "CI/CD", "N2 · N3 · N4"],
+      "actions": {
+        "editeur": "Livre charts Helm, images, documentation et notes de version, et assiste en cas d'écart.",
+        "integrateur-nf": "Contrôle les livrables, déploie AMF, SMF, UPF et les autres fonctions, et vérifie qu'elles s'enregistrent entre elles et sur le réseau.",
+        "devops": "Construit la chaîne CI/CD : réception, scan, déploiement et tests automatiques à chaque nouvelle version.",
+        "reseau": "Valide les interfaces avec l'accès radio et les autres domaines (N2, N3, Internet).",
+        "securite": "Sécurise les échanges entre fonctions : TLS mutuel, politiques réseau.",
+        "architecte": "Relit le dossier d'intégration."
+      }
+    },
+    {
+      "id": "tests",
+      "titre": "Tests et recette",
+      "court": "Recette",
+      "icone": "test",
+      "phases": ["tests", "recette"],
+      "sortie": "Go pour la recette, puis Go / No-go de mise en production",
+      "outils": ["Simulateur d'accès", "Pannes provoquées", "Tests de charge", "Runbooks"],
+      "actions": {
+        "integrateur-nf": "Simule terminaux et antennes, déroule les tests fonctionnels et d'interopérabilité, mesure débit et capacité.",
+        "sre": "Provoque des pannes (nœud, site, lien) pour prouver la résilience, écrit les runbooks, organise l'astreinte et teste le plan de reprise.",
+        "securite": "Teste la sécurité des images et de la plateforme et constitue le dossier de conformité.",
+        "chef-projet": "Pilote la recette sur critères d'acceptation et prépare le Go / No-go.",
+        "editeur": "Corrige les anomalies de ses fonctions et participe à la recette.",
+        "ingenieur-ia": "Teste l'assistant : injection de prompt, qualité des réponses, garde-fous.",
+        "juridique": "Valide le dossier de conformité."
+      }
+    },
+    {
+      "id": "production",
+      "titre": "Bascule et exploitation",
+      "court": "Production",
+      "icone": "courbe",
+      "phases": ["production", "exploitation"],
+      "sortie": "Trafic réel porté, exploitation en régime",
+      "outils": ["Bascule progressive", "Retour arrière", "Supervision", "Astreinte"],
+      "actions": {
+        "chef-projet": "Planifie la fenêtre de bascule et le retour arrière, et prononce le Go.",
+        "reseau": "Bascule progressivement le trafic par le routage et surveille les liens.",
+        "integrateur-nf": "Suit les fonctions pendant la montée en charge et analyse les causes en cas d'incident.",
+        "sre": "Assure le suivi renforcé, traite les incidents, suit capacité et coûts, réduit le travail manuel.",
+        "ingenieur-caas": "Met à jour la plateforme sans coupure et tient l'escalade de niveau 3.",
+        "securite": "Prépare la notification des incidents aux autorités.",
+        "juridique": "Assure la veille réglementaire.",
+        "ingenieur-ia": "Supervise l'assistant et mesure son apport à l'exploitation."
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "noeud": "ceph",
+  "rappel": [
+    {
+      "id": "rappel-crush",
+      "enonce": "Quel mécanisme Ceph utilise-t-il pour décider où placer les données, sans table centrale de correspondance ?",
+      "options": [
+        "L'algorithme CRUSH",
+        "Le service de métadonnées CephFS",
+        "Une table tenue par un nœud maître",
+        "Le round-robin entre les disques"
+      ],
+      "bonne": 0,
+      "explication": "CRUSH calcule le placement à partir de la carte du cluster : les clients retrouvent les données par le calcul, sans interroger une table centrale.",
+      "source": "Documentation Ceph",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-replication-defaut",
+      "enonce": "Quelle est la taille par défaut d'un pool répliqué Ceph ?",
+      "options": [
+        "1 copie",
+        "2 copies",
+        "3 copies",
+        "5 copies"
+      ],
+      "bonne": 2,
+      "explication": "Par défaut, un pool répliqué conserve 3 copies de chaque objet.",
+      "source": "Documentation Ceph",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    }
+  ]
+}

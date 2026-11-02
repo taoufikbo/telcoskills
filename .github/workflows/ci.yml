@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1" # chaque lundi : les liens publiés peuvent mourir sans qu'aucun commit ne le signale
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      - run: npm test
+      - name: Build
+        run: npm run build
+      - name: Le texte des pages de compétence est dans le HTML
+        run: node scripts/verifier-rendu.mjs
+
+  liens:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      # Échoue (code 1) si un lien publié répond 404, 410 ou ne répond pas ; les sites qui bloquent les robots sont listés à part.
+      - run: node scripts/verifier-liens.mjs --sans-youtube

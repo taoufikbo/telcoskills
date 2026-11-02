@@ -1,0 +1,134 @@
+{
+  "_aide": "Rubrique Sylva (/sylva). Chaque fait porte sa source. La liste des composants vient de content/sylva-units.json (importée de sylva-core) ; liensLandscape relie une unit au même logiciel dans le landscape général. Relu le 2026-11-02.",
+  "roadmap": "parcours-sylva",
+  "intro": "Sylva est la pile cloud télécom open source portée par Linux Foundation Europe : une plateforme pour déployer et gérer des clusters Kubernetes qui hébergent des fonctions réseau, sur OpenStack, OpenNebula, VMware ou bare metal.",
+  "sourceIntro": {
+    "nom": "Documentation Sylva : vue d'ensemble",
+    "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/getting-started/solution-overview.md"
+  },
+  "faits": [
+    {
+      "texte": "Annoncé le 15 novembre 2022 par Linux Foundation Europe, avec Deutsche Telekom, Ericsson, Nokia, Orange, Telecom Italia, Telefónica et Vodafone.",
+      "source": {
+        "nom": "The Linux Foundation, communiqué",
+        "url": "https://www.linuxfoundation.org/press/linux-foundation-europe-announces-project-sylva-to-create-open-source-telco-cloud-software-framework-to-complement-open-networking-momentum"
+      }
+    },
+    {
+      "texte": "Un fonds dédié, le Sylva Directed Fund, est lancé en septembre 2023 ; premiers souscripteurs : Deutsche Telekom, Orange, Telefónica, Vodafone, Ericsson, Nokia et 6WIND.",
+      "source": {
+        "nom": "Linux Foundation Europe, annonce du fonds",
+        "url": "https://linuxfoundation.eu/newsroom/announcing-sylva-directed-fund"
+      }
+    },
+    {
+      "texte": "Le code de référence, sylva-core, est publié sous licence Apache 2.0.",
+      "source": {
+        "nom": "sylva-core sur GitLab",
+        "url": "https://gitlab.com/sylva-projects/sylva-core"
+      }
+    },
+    {
+      "texte": "Des fonctions réseau sont validées dans des centres de validation : en 2025, PowerDNS fait reconnaître sa Cloud Control comme CNF validée, après des tests au centre de validation d'Orange.",
+      "source": {
+        "nom": "PowerDNS, annonce",
+        "url": "https://blog.powerdns.com/powerdns-achieves-sylva-project-validation"
+      }
+    }
+  ],
+  "fonctionnement": [
+    {
+      "texte": "Un cluster de gestion crée et gère de façon déclarative des clusters de charge, qui hébergent les CNF.",
+      "source": {
+        "nom": "Documentation Sylva : aperçu technique",
+        "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/_Design/01-technical-overview.md"
+      }
+    },
+    {
+      "texte": "Cluster API gère le cycle de vie de tous les clusters, y compris le cluster de gestion.",
+      "source": {
+        "nom": "Documentation Sylva : aperçu technique",
+        "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/_Design/01-technical-overview.md"
+      }
+    },
+    {
+      "texte": "Flux maintient clusters et composants alignés sur leur description dans Git ; le chart sylva-units déploie chaque composant (unit) sous forme de ressources Flux.",
+      "source": {
+        "nom": "sylva-core : README",
+        "url": "https://gitlab.com/sylva-projects/sylva-core/-/blob/main/README.md"
+      }
+    },
+    {
+      "texte": "Distributions : kubeadm, RKE2, Canonical Kubernetes. Fournisseurs : OpenStack (CAPO), bare metal avec Metal3 (CAPM3), vSphere (CAPV), OpenNebula (CAPONE), Docker (CAPD) pour les essais.",
+      "source": {
+        "nom": "sylva-core : valeurs d'exemple",
+        "url": "https://gitlab.com/sylva-projects/sylva-core/-/tree/main/environment-values"
+      }
+    }
+  ],
+  "limites": [
+    "Rédaction éditoriale à partir des sources publiques du projet ; ce n'est ni une formation officielle Sylva ni une documentation de référence.",
+    "La liste des composants suit le dépôt sylva-core au 2026-11-02 ; elle évolue à chaque version."
+  ],
+  "liensLandscape": {
+    "capi": "cluster-api",
+    "flux-system": "flux",
+    "capo": "openstack",
+    "okd-openshift-mce": "okd",
+    "calico": "calico",
+    "cilium": "cilium",
+    "multus": "multus",
+    "metallb": "metallb",
+    "sriov-network-operator": "sriov-operator",
+    "coredns": "coredns",
+    "cert-manager": "cert-manager",
+    "kyverno": "kyverno",
+    "openbao": "openbao",
+    "trivy-operator": "trivy",
+    "harbor": "harbor",
+    "kubevirt": "kubevirt",
+    "loki": "loki",
+    "logging": "fluent-bit",
+    "nvidia-gpu-operator": "nvidia-gpu-operator"
+  },
+  "suse": {
+    "intro": "Le projet Sylva héberge une variante « SUSE Telco Cloud » de sa pile, et une partie des composants de sylva-core vient des dépôts SUSE et Rancher.",
+    "faits": [
+      {
+        "texte": "Le dépôt susetelcocloud du projet Sylva fournit des exemples de configuration pour un cluster de gestion et des clusters de charge « à la SUSE », sous SUSE Linux Micro 6.2.",
+        "source": {
+          "nom": "Projet Sylva, susetelcocloud : README",
+          "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud/-/blob/main/README.md"
+        }
+      },
+      {
+        "texte": "Objectif : aligner Sylva 1.7 sur SUSE Edge 3.6, l'offre commerciale Telco Cloud de SUSE, au socle technique proche. Un cluster de gestion aligné a été déployé, et des clusters de charge validés avec le processus Sylva habituel.",
+        "source": {
+          "nom": "Projet Sylva, rapport d'alignement Sylva 1.7 / SUSE Edge 3.6",
+          "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud/-/blob/main/mgmt/mgmt_stc3.6_sylva1.7.md"
+        }
+      },
+      {
+        "texte": "Système d'exploitation : SUSE Linux Micro 6.2, configuré par Ignition plutôt que cloud-init.",
+        "source": {
+          "nom": "Projet Sylva, rapport d'alignement Sylva 1.7 / SUSE Edge 3.6",
+          "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud/-/blob/main/mgmt/mgmt_stc3.6_sylva1.7.md"
+        }
+      },
+      {
+        "texte": "Images construites en deux temps : KIWI pour l'image de base, puis Edge Image Builder, qui ajoute des paquets télécom (DPDK, tuned, cpupower…) et règle les paramètres du noyau.",
+        "source": {
+          "nom": "Projet Sylva, rapport d'alignement Sylva 1.7 / SUSE Edge 3.6",
+          "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud/-/blob/main/mgmt/mgmt_stc3.6_sylva1.7.md"
+        }
+      },
+      {
+        "texte": "Composants alignés sur SUSE Edge 3.6 : MetalLB et Metal3 (charts de registry.suse.com), Rancher (dépôt Prime), Longhorn et Cilium (images de registry.suse.com).",
+        "source": {
+          "nom": "Projet Sylva, rapport d'alignement Sylva 1.7 / SUSE Edge 3.6",
+          "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud/-/blob/main/mgmt/mgmt_stc3.6_sylva1.7.md"
+        }
+      }
+    ]
+  }
+}

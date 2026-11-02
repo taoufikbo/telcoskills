@@ -1,0 +1,202 @@
+@import "tailwindcss";
+@import "./theme-public.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Thème de l'instance interne (charte orange, #ff7900) :
+ * noir sur blanc, texte noir sur orange, bordures franches, coins carrés, Helvetica Neue.
+ * Le mode sombre suit la charte : fond #141414, texte et bordures blancs.
+ */
+@theme {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Couleur de marque et couleurs d'appui de la charte */
+  --color-orange: var(--accent);
+  --color-brand-yellow: #ffcc00;
+  --color-brand-cyan: #4bb4e6;
+  --color-brand-blue: #4170d8;
+  --color-brand-purple: #a885d8;
+  --color-brand-pink: #ffb4e6;
+  --color-brand-red: #cd3c14;
+  --color-brand-green: #228722;
+  --color-brand-green-light: #66cc66;
+
+  /* Neutres de la charte (remplacent les gris bleutés par défaut) */
+  --color-slate-50: #fafafa;
+  --color-slate-100: #f6f6f6;
+  --color-slate-200: #eeeeee;
+  --color-slate-300: #dddddd;
+  --color-slate-400: #999999;
+  --color-slate-500: #666666;
+  --color-slate-600: #595959;
+  --color-slate-700: #333333;
+  --color-slate-800: #292929;
+  --color-slate-900: #1f1f1f;
+  --color-slate-950: #141414;
+
+  /* Coins carrés ; les formes rondes (stations, pastilles) utilisent rounded-full */
+  --radius-xs: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+}
+
+body {
+  @apply bg-white text-black dark:bg-slate-950 dark:text-white;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-bold;
+}
+
+/* Focus visible : contour noir (blanc en sombre), décalé pour rester lisible sur l'orange */
+:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+.dark :focus-visible {
+  outline-color: #fff;
+}
+
+@layer components {
+  /* Bouton : bordure franche, inversion au survol ; orange et texte noir quand il est actif */
+  .bouton {
+    @apply border-2 border-black bg-white px-3 py-1.5 text-sm font-bold text-black hover:bg-black hover:text-white dark:border-white dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-black;
+  }
+  .bouton[aria-pressed="true"] {
+    @apply border-orange bg-orange text-black hover:border-orange hover:bg-orange hover:text-black dark:border-orange dark:bg-orange dark:text-black dark:hover:bg-orange dark:hover:text-black;
+  }
+  .bouton:disabled {
+    @apply opacity-60;
+  }
+
+  /* Puce : lien-bouton plus discret (prérequis, suggestions) */
+  .puce {
+    @apply border border-black px-3 py-1 text-left text-xs hover:border-orange hover:bg-orange hover:text-black dark:border-white;
+  }
+}
+
+/* Chaîne du projet (accueil) : pipeline horizontal, étape courante en orange, flèches qui se remplissent */
+.ch-role {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.ch-role:hover {
+  background: rgb(255 255 255 / 0.15);
+}
+.ch-role[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent) !important;
+  color: #000;
+}
+.ch-bande {
+  scrollbar-width: none;
+}
+.ch-bande::-webkit-scrollbar {
+  display: none;
+}
+.ch-etape {
+  transition: opacity 0.3s ease;
+}
+.ch-etape[data-dim="true"] {
+  opacity: 0.3;
+}
+.ch-icone {
+  border-color: rgb(255 255 255 / 0.55);
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+.ch-etape:hover .ch-icone {
+  border-color: var(--accent);
+}
+.ch-icone[data-passe="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.ch-icone[data-actif="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+  transform: translateY(-4px);
+  animation: ch-pouls 2.2s ease-in-out infinite;
+}
+.ch-fleche polygon {
+  fill: transparent;
+  stroke: rgb(255 255 255 / 0.55);
+  stroke-width: 1.5;
+  transition: fill 0.4s ease, stroke 0.4s ease;
+}
+.ch-fleche[data-passe="true"] polygon {
+  fill: var(--accent);
+  stroke: var(--accent);
+}
+.ch-fleche[data-cur="true"] {
+  animation: ch-avance 1s ease-in-out infinite;
+}
+.ch-progres {
+  width: 0;
+}
+.ch-progres[data-lecture="true"] {
+  animation-name: ch-remplit;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+.ch-monte,
+.ch-ligne {
+  animation: ch-monte 0.45s ease both;
+}
+.ch-ligne[data-choisi="true"] {
+  background: rgb(255 255 255 / 0.08);
+}
+.ch-ctrl {
+  display: inline-flex;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.ch-ctrl:hover:not(:disabled),
+.ch-ctrl[aria-pressed="true"] {
+  background: #fff;
+  color: #000;
+}
+.ch-ctrl:disabled {
+  opacity: 0.35;
+}
+
+@keyframes ch-pouls {
+  50% {
+    box-shadow: 0 0 0 8px rgb(255 121 0 / 0.18);
+  }
+}
+@keyframes ch-avance {
+  50% {
+    transform: translateX(calc(50% + 3px));
+  }
+}
+@keyframes ch-remplit {
+  to {
+    width: 100%;
+  }
+}
+@keyframes ch-monte {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ch *,
+  .ch-monte,
+  .ch-ligne {
+    animation: none !important;
+    transition: none !important;
+  }
+}

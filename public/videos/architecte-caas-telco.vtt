@@ -1,0 +1,112 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.343
+Bienvenue dans la roadmap Architecte cloud CaaS telco.
+
+00:00:04.343 --> 00:00:21.959
+Cette roadmap s'adresse à l'architecte d'une plateforme cloud télécom : concevoir, dimensionner, sécuriser et faire vivre un CaaS qui héberge un cœur 5G, en documentant ses choix et en respectant le cadre réglementaire.
+
+00:00:21.959 --> 00:00:25.900
+Elle compte 59 compétences, réparties en 9 blocs.
+
+00:00:26.800 --> 00:00:31.430
+Le parcours suit 9 blocs, de Fondations à Conception et gouvernance.
+
+00:00:32.330 --> 00:00:33.558
+Fondations.
+
+00:00:33.558 --> 00:00:35.121
+4 compétences.
+
+00:00:35.121 --> 00:00:41.820
+Par exemple : Linux avancé et Réseau IP, VLAN, routage, VPN.
+
+00:00:42.720 --> 00:00:45.016
+Kubernetes et OpenShift.
+
+00:00:45.016 --> 00:00:46.451
+12 compétences.
+
+00:00:46.451 --> 00:00:51.330
+Par exemple : Architecture Kubernetes et Workloads.
+
+00:00:52.230 --> 00:00:53.610
+Réseau telco.
+
+00:00:53.610 --> 00:00:55.096
+7 compétences.
+
+00:00:55.096 --> 00:01:02.420
+Par exemple : CNI et OVN-Kubernetes et Multus et réseaux secondaires.
+
+00:01:03.320 --> 00:01:06.097
+Performance et dimensionnement.
+
+00:01:06.097 --> 00:01:07.350
+4 compétences.
+
+00:01:07.350 --> 00:01:13.620
+Par exemple : HugePages et NUMA et Performance Profile et CPU pinning.
+
+00:01:14.520 --> 00:01:17.021
+Stockage et virtualisation.
+
+00:01:17.021 --> 00:01:18.318
+5 compétences.
+
+00:01:18.318 --> 00:01:24.710
+Par exemple : Ceph Rook ODF et Sauvegarde et réplication inter-sites.
+
+00:01:25.610 --> 00:01:28.109
+Résilience et exploitabilité.
+
+00:01:28.109 --> 00:01:29.316
+5 compétences.
+
+00:01:29.316 --> 00:01:36.900
+Par exemple : Haute disponibilité et géo-redondance et Prometheus, Alertmanager, Thanos.
+
+00:01:37.800 --> 00:01:39.802
+Sécurité et conformité.
+
+00:01:39.802 --> 00:01:41.108
+11 compétences.
+
+00:01:41.108 --> 00:01:48.420
+Par exemple : Durcissement du cluster et des nœuds et Segmentation et NetworkPolicy.
+
+00:01:49.320 --> 00:01:51.128
+Cœur 5G et CNF.
+
+00:01:51.128 --> 00:01:52.816
+5 compétences.
+
+00:01:52.816 --> 00:02:02.340
+Par exemple : Architecture 5G Core et Onboarding et exigences d'infra d'un CNF.
+
+00:02:02.340 --> 00:02:11.020
+Projet pratique : Déployer un cœur 5G open source sur un cluster de lab.
+
+00:02:11.920 --> 00:02:14.651
+Conception et gouvernance.
+
+00:02:14.651 --> 00:02:16.121
+6 compétences.
+
+00:02:16.121 --> 00:02:25.153
+Par exemple : Documents HLD LLD et plan d'IP et Décisions d'architecture et compromis.
+
+00:02:25.153 --> 00:02:37.020
+Projet pratique : Écrire trois ADR pour une plateforme fictive : choix de la distribution, du CNI et du stockage.
+
+00:02:37.920 --> 00:02:57.820
+Sur le site, vous pouvez parcourir la roadmap en arbre ou en plan de métro, ouvrir chaque compétence pour voir ses prérequis et ses ressources ouvertes, suivre votre progression, et choisir un objectif pour obtenir les étapes à enchaîner avec le chemin critique.
+
+00:02:58.720 --> 00:03:06.077
+À vous de jouer : choisissez un objectif et commencez par les compétences disponibles.
+
+00:03:06.077 --> 00:03:14.887
+Cette vidéo a été générée automatiquement à partir du contenu de la roadmap, avec une voix de synthèse.
+
+00:03:14.887 --> 00:03:20.020
+Les références sont à vérifier dans leur version en vigueur.

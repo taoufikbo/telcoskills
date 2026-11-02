@@ -1,0 +1,138 @@
+{
+  "noeud": "pra-rpo-rto",
+  "questionPrealable": {
+    "id": "prealable-rpo",
+    "enonce": "Un RPO de 15 minutes signifie que…",
+    "options": [
+      "la reprise du service doit durer 15 minutes au plus",
+      "on accepte de perdre au plus 15 minutes de données",
+      "la sauvegarde dure 15 minutes",
+      "le service peut être indisponible 15 minutes par mois"
+    ],
+    "bonne": 1,
+    "explication": "Le RPO (Recovery Point Objective) mesure la perte de données acceptable, exprimée en durée. La durée de reprise, c'est le RTO.",
+    "source": "Résumé du nœud (pra-rpo-rto) : définition standard, à compléter par une ressource",
+    "statut": "brouillon"
+  },
+  "contenu": {
+    "statut": "brouillon",
+    "vocabulaire": [
+      {
+        "terme": "RPO",
+        "definition": "Perte de données maximale acceptable, exprimée en durée (Recovery Point Objective)."
+      },
+      {
+        "terme": "RTO",
+        "definition": "Durée maximale acceptable d'arrêt du service (Recovery Time Objective)."
+      },
+      {
+        "terme": "PCA et PRA",
+        "definition": "PCA : plan de continuité, le service ne s'arrête pas. PRA : plan de reprise, le service reprend après un arrêt."
+      }
+    ],
+    "segments": [
+      {
+        "titre": "Deux objectifs",
+        "elements": [
+          "RPO : combien de données on accepte de perdre.",
+          "RTO : combien de temps on accepte d'être arrêté.",
+          "Ils se fixent par service, avec le métier.",
+          "Plus ils sont courts, plus l'architecture coûte cher."
+        ],
+        "schema": {
+          "alt": "Le RPO se mesure entre la dernière copie et le sinistre, le RTO entre le sinistre et le service rétabli.",
+          "boites": [
+            "Dernière copie des données",
+            "Sinistre",
+            "Service rétabli"
+          ],
+          "fleches": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      },
+      {
+        "titre": "Du RPO à l'architecture",
+        "elements": [
+          "RPO de quelques heures : sauvegardes ou snapshots réguliers.",
+          "RPO de quelques minutes : réplication asynchrone.",
+          "RPO proche de zéro : réplication synchrone.",
+          "Le coût et la latence augmentent à chaque palier."
+        ]
+      },
+      {
+        "titre": "Du RTO à l'architecture",
+        "elements": [
+          "RTO de plusieurs heures : restauration depuis une sauvegarde.",
+          "RTO de quelques minutes : site de secours prêt à démarrer.",
+          "RTO quasi nul : actif/actif.",
+          "Une bascule non testée ne vaut rien : testez-la."
+        ]
+      }
+    ]
+  },
+  "lienProjet": {
+    "phase": "recette",
+    "role": "architecte"
+  },
+  "pourquoi": {
+    "question": "Pourquoi un plan de reprise (PRA) plutôt qu'un plan de continuité (PCA) pour ce service ?",
+    "reference": "Un PCA maintient le service pendant la panne (redondance active), au prix d'une architecture et d'une exploitation plus coûteuses. Un PRA accepte un arrêt court et rétablit le service ensuite : il suffit quand le RTO exigé par le métier le permet. Le choix dépend du RTO, du RPO et du budget, et s'écrit dans une décision d'architecture.",
+    "source": "Résumé du nœud (pra-rpo-rto) : à compléter par une ressource",
+    "statut": "brouillon"
+  },
+  "rappel": [
+    {
+      "id": "rappel-rto",
+      "enonce": "Que mesure le RTO ?",
+      "options": [
+        "La quantité de données perdues",
+        "La durée maximale acceptable d'arrêt du service",
+        "Le temps de sauvegarde",
+        "Le délai d'alerte"
+      ],
+      "bonne": 1,
+      "explication": "Le RTO est la durée d'arrêt acceptable. La quantité de données perdues, c'est le RPO.",
+      "source": "Résumé du nœud (pra-rpo-rto) : définition standard",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 0
+    },
+    {
+      "id": "rappel-rpo-zero",
+      "enonce": "Quelle technique permet de viser un RPO proche de zéro ?",
+      "options": [
+        "Une sauvegarde quotidienne",
+        "Une réplication synchrone vers un second site",
+        "Un snapshot hebdomadaire",
+        "Une restauration manuelle plus rapide"
+      ],
+      "bonne": 1,
+      "explication": "Seule une réplication synchrone copie chaque écriture avant de l'acquitter. Les sauvegardes et snapshots laissent un intervalle de perte.",
+      "source": "Documentation ODF (Disaster Recovery)",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 0
+    },
+    {
+      "id": "rappel-test-bascule",
+      "enonce": "Pourquoi tester régulièrement la bascule d'un PRA ?",
+      "options": [
+        "Pour vérifier que le RTO et le RPO annoncés sont réellement tenus",
+        "Pour réduire le coût de l'infrastructure",
+        "Pour remplacer la supervision",
+        "Parce que les sites de secours se mettent à jour seuls"
+      ],
+      "bonne": 0,
+      "explication": "Un objectif non vérifié n'est qu'une intention : seul un test montre si la bascule tient dans le RTO et le RPO annoncés.",
+      "source": "Résumé du nœud (pra-rpo-rto) : à compléter par une ressource",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    }
+  ]
+}

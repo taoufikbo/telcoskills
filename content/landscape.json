@@ -1,0 +1,160 @@
+{
+  "version": "0.1",
+  "source": "Brouillon éditorial. Regroupement par fonction, sur le modèle de landscape.cncf.io, complété de deux sections propres au télécom (cœur 5G et IA). Seuls des projets ouverts figurent ici. Le champ « cncf » est relevé de mémoire : à vérifier sur landscape.cncf.io avant publication. L'association outil → rôle est une proposition à relire avec les équipes.",
+  "categories": [
+    {
+      "id": "provisionnement",
+      "libelle": "Provisionnement",
+      "intro": "Ce qui prépare et sécurise la plateforme avant qu'une fonction réseau n'y tourne : automatisation, registre d'images, secrets, politiques.",
+      "sous_categories": [
+        { "id": "automatisation", "libelle": "Automatisation et configuration" },
+        { "id": "registre", "libelle": "Registre d'images" },
+        { "id": "secrets", "libelle": "Secrets et certificats" },
+        { "id": "securite", "libelle": "Sécurité et conformité" }
+      ]
+    },
+    {
+      "id": "runtime",
+      "libelle": "Runtime",
+      "intro": "Ce qui exécute les charges : conteneurs, machines virtuelles, stockage et réseau des pods. C'est là que le télécom exige le plus (réseau secondaire, temps réel).",
+      "sous_categories": [
+        { "id": "conteneurs", "libelle": "Exécution de conteneurs" },
+        { "id": "stockage", "libelle": "Stockage" },
+        { "id": "reseau", "libelle": "Réseau des pods" },
+        { "id": "reseau-telco", "libelle": "Réseau télécom et performance" },
+        { "id": "virtualisation", "libelle": "Virtualisation" }
+      ]
+    },
+    {
+      "id": "orchestration",
+      "libelle": "Orchestration et gestion",
+      "intro": "Ce qui place, relie et cycle de vie les charges : Kubernetes et ses distributions, la découverte de services, le multi-cluster.",
+      "sous_categories": [
+        { "id": "distributions", "libelle": "Orchestration et distributions" },
+        { "id": "multicluster", "libelle": "Multi-cluster et cycle de vie" },
+        { "id": "decouverte", "libelle": "Coordination et découverte" },
+        { "id": "proxy", "libelle": "Proxy et maillage de services" }
+      ]
+    },
+    {
+      "id": "livraison",
+      "libelle": "Définition d'application et livraison",
+      "intro": "Ce qui décrit, empaquette et déploie une application : charts, GitOps, pipelines. Le trait d'union entre l'éditeur de la fonction réseau et la plateforme.",
+      "sous_categories": [
+        { "id": "paquetage", "libelle": "Paquetage" },
+        { "id": "gitops", "libelle": "GitOps" },
+        { "id": "ci-cd", "libelle": "CI/CD et tests" }
+      ]
+    },
+    {
+      "id": "observabilite",
+      "libelle": "Observabilité et analyse",
+      "intro": "Ce qui dit si la plateforme et les fonctions réseau vont bien : métriques, journaux, traces, protocoles, résilience éprouvée.",
+      "sous_categories": [
+        { "id": "metriques", "libelle": "Métriques et tableaux de bord" },
+        { "id": "logs", "libelle": "Journaux" },
+        { "id": "traces", "libelle": "Traces et télémétrie" },
+        { "id": "protocoles", "libelle": "Analyse de protocoles" },
+        { "id": "resilience", "libelle": "Tests de résilience" }
+      ]
+    },
+    {
+      "id": "telecom",
+      "libelle": "Cœur 5G et fonctions réseau",
+      "intro": "Ce qui est propre au télécom et absent du landscape CNCF : cœurs 5G ouverts pour apprendre et tester, simulateurs, orchestration de fonctions réseau, API réseau.",
+      "sous_categories": [
+        { "id": "coeur-5g", "libelle": "Cœurs 5G ouverts" },
+        { "id": "simulation", "libelle": "Simulation et tests" },
+        { "id": "nfv", "libelle": "Orchestration de fonctions réseau" },
+        { "id": "api-reseau", "libelle": "API réseau" }
+      ]
+    },
+    {
+      "id": "ia",
+      "libelle": "IA et inférence",
+      "intro": "Ce qui sert des modèles sur la plateforme : moteurs d'inférence, GPU, agents, données et suivi des coûts.",
+      "sous_categories": [
+        { "id": "inference", "libelle": "Moteurs et serveurs d'inférence" },
+        { "id": "gpu", "libelle": "Plateforme GPU" },
+        { "id": "agents", "libelle": "Agents et protocoles" },
+        { "id": "donnees-llmops", "libelle": "Données et LLMOps" }
+      ]
+    }
+  ],
+  "outils": [
+    { "id": "ansible", "nom": "Ansible", "categorie": "provisionnement", "sous_categorie": "automatisation", "url": "https://docs.ansible.com/", "roles": ["ingenieur-caas", "devops", "sre", "reseau"], "noeuds": ["ansible-python"] },
+    { "id": "opentofu", "nom": "OpenTofu", "categorie": "provisionnement", "sous_categorie": "automatisation", "url": "https://opentofu.org/docs/", "roles": ["architecte", "devops", "ingenieur-caas"], "noeuds": ["lab-as-code"] },
+    { "id": "harbor", "nom": "Harbor", "categorie": "provisionnement", "sous_categorie": "registre", "url": "https://goharbor.io/docs/", "cncf": "graduated", "roles": ["ingenieur-caas", "devops", "securite", "integrateur-nf"], "noeuds": ["sec-supply", "onboarding-editeur"] },
+    { "id": "openbao", "nom": "OpenBao", "categorie": "provisionnement", "sous_categorie": "secrets", "url": "https://openbao.org/docs/", "roles": ["securite", "ingenieur-caas", "architecte"], "noeuds": ["sec-secrets"] },
+    { "id": "cert-manager", "nom": "cert-manager", "categorie": "provisionnement", "sous_categorie": "secrets", "url": "https://cert-manager.io/docs/", "cncf": "graduated", "roles": ["securite", "ingenieur-caas", "integrateur-nf"], "noeuds": ["sec-secrets", "sec-sba"] },
+    { "id": "kyverno", "nom": "Kyverno", "categorie": "provisionnement", "sous_categorie": "securite", "url": "https://kyverno.io/docs/", "roles": ["securite", "ingenieur-caas", "sre"], "noeuds": ["sec-durcissement", "k8s-rbac"] },
+    { "id": "opa-gatekeeper", "nom": "OPA Gatekeeper", "categorie": "provisionnement", "sous_categorie": "securite", "url": "https://open-policy-agent.github.io/gatekeeper/website/docs/", "cncf": "graduated", "roles": ["securite", "ingenieur-caas", "architecte"], "noeuds": ["sec-durcissement", "k8s-rbac"] },
+    { "id": "falco", "nom": "Falco", "categorie": "provisionnement", "sous_categorie": "securite", "url": "https://falco.org/docs/", "cncf": "graduated", "roles": ["securite", "sre", "ingenieur-caas"], "noeuds": ["sec-detection"] },
+    { "id": "trivy", "nom": "Trivy", "categorie": "provisionnement", "sous_categorie": "securite", "url": "https://trivy.dev/latest/docs/", "roles": ["securite", "devops", "sre"], "noeuds": ["sec-supply", "gestion-vulns"] },
+    { "id": "sigstore", "nom": "Sigstore (cosign)", "categorie": "provisionnement", "sous_categorie": "securite", "url": "https://docs.sigstore.dev/", "roles": ["securite", "devops", "editeur"], "noeuds": ["sec-supply"] },
+
+    { "id": "cri-o", "nom": "CRI-O", "categorie": "runtime", "sous_categorie": "conteneurs", "url": "https://cri-o.io/", "cncf": "graduated", "roles": ["ingenieur-caas", "architecte"], "noeuds": ["conteneurs", "ocp-install"] },
+    { "id": "containerd", "nom": "containerd", "categorie": "runtime", "sous_categorie": "conteneurs", "url": "https://containerd.io/docs/", "cncf": "graduated", "roles": ["ingenieur-caas", "devops", "sre"], "noeuds": ["conteneurs"] },
+    { "id": "podman", "nom": "Podman", "categorie": "runtime", "sous_categorie": "conteneurs", "url": "https://docs.podman.io/", "roles": ["devops", "ingenieur-caas", "editeur"], "noeuds": ["conteneurs"] },
+    { "id": "ceph", "nom": "Ceph", "categorie": "runtime", "sous_categorie": "stockage", "url": "https://docs.ceph.com/", "roles": ["architecte", "ingenieur-caas", "sre"], "noeuds": ["ceph", "stockage-dr"] },
+    { "id": "rook", "nom": "Rook", "categorie": "runtime", "sous_categorie": "stockage", "url": "https://rook.io/docs/rook/latest-release/", "cncf": "graduated", "roles": ["ingenieur-caas", "architecte", "sre"], "noeuds": ["ceph", "k8s-stockage"] },
+    { "id": "csi", "nom": "CSI (Container Storage Interface)", "categorie": "runtime", "sous_categorie": "stockage", "url": "https://kubernetes-csi.github.io/docs/", "roles": ["ingenieur-caas", "architecte"], "noeuds": ["k8s-stockage"] },
+    { "id": "cilium", "nom": "Cilium", "categorie": "runtime", "sous_categorie": "reseau", "url": "https://docs.cilium.io/", "cncf": "graduated", "roles": ["ingenieur-caas", "architecte", "reseau", "securite"], "noeuds": ["cni"] },
+    { "id": "calico", "nom": "Calico", "categorie": "runtime", "sous_categorie": "reseau", "url": "https://docs.tigera.io/calico/latest/about/", "roles": ["ingenieur-caas", "reseau"], "noeuds": ["cni"] },
+    { "id": "ovn-kubernetes", "nom": "OVN-Kubernetes", "categorie": "runtime", "sous_categorie": "reseau", "url": "https://ovn-kubernetes.io/", "roles": ["ingenieur-caas", "architecte", "reseau"], "noeuds": ["cni"] },
+    { "id": "multus", "nom": "Multus CNI", "categorie": "runtime", "sous_categorie": "reseau-telco", "url": "https://github.com/k8snetworkplumbingwg/multus-cni", "roles": ["ingenieur-caas", "integrateur-nf", "devops", "reseau", "sre"], "noeuds": ["multus"] },
+    { "id": "sriov-operator", "nom": "SR-IOV Network Operator", "categorie": "runtime", "sous_categorie": "reseau-telco", "url": "https://github.com/k8snetworkplumbingwg/sriov-network-operator", "roles": ["ingenieur-caas", "reseau", "architecte"], "noeuds": ["sriov"] },
+    { "id": "dpdk", "nom": "DPDK", "categorie": "runtime", "sous_categorie": "reseau-telco", "url": "https://doc.dpdk.org/", "roles": ["ingenieur-caas", "reseau", "editeur", "architecte"], "noeuds": ["dpdk", "perf-hugepages"] },
+    { "id": "metallb", "nom": "MetalLB", "categorie": "runtime", "sous_categorie": "reseau-telco", "url": "https://metallb.io/", "roles": ["ingenieur-caas", "reseau", "architecte"], "noeuds": ["lb-bgp"] },
+    { "id": "frr", "nom": "FRRouting", "categorie": "runtime", "sous_categorie": "reseau-telco", "url": "https://docs.frrouting.org/", "roles": ["reseau", "ingenieur-caas"], "noeuds": ["reseau-ip", "lb-bgp"] },
+    { "id": "kubevirt", "nom": "KubeVirt", "categorie": "runtime", "sous_categorie": "virtualisation", "url": "https://kubevirt.io/user-guide/", "cncf": "incubating", "roles": ["architecte", "ingenieur-caas"], "noeuds": ["kubevirt"] },
+    { "id": "openstack", "nom": "OpenStack", "categorie": "runtime", "sous_categorie": "virtualisation", "url": "https://docs.openstack.org/", "roles": ["architecte", "ingenieur-caas", "reseau"], "noeuds": ["openstack", "nfv-etsi"] },
+
+    { "id": "kubernetes", "nom": "Kubernetes", "categorie": "orchestration", "sous_categorie": "distributions", "url": "https://kubernetes.io/docs/", "cncf": "graduated", "roles": ["architecte", "ingenieur-caas", "integrateur-nf", "devops", "sre", "ingenieur-ia", "securite"], "noeuds": ["k8s-archi", "k8s-workloads", "k8s-services"] },
+    { "id": "okd", "nom": "OpenShift / OKD", "categorie": "orchestration", "sous_categorie": "distributions", "url": "https://docs.okd.io/", "roles": ["architecte", "ingenieur-caas", "sre"], "noeuds": ["ocp-install", "ocp-operators", "ocp-upgrade"] },
+    { "id": "sylva", "nom": "Sylva", "categorie": "orchestration", "sous_categorie": "distributions", "url": "https://sylvaproject.org/", "roles": ["architecte", "ingenieur-caas"], "noeuds": ["distrib-alt"] },
+    { "id": "cluster-api", "nom": "Cluster API", "categorie": "orchestration", "sous_categorie": "multicluster", "url": "https://cluster-api.sigs.k8s.io/", "roles": ["architecte", "ingenieur-caas"], "noeuds": ["ocp-multicluster", "distrib-alt"] },
+    { "id": "ocm", "nom": "Open Cluster Management", "categorie": "orchestration", "sous_categorie": "multicluster", "url": "https://open-cluster-management.io/", "roles": ["architecte", "ingenieur-caas", "sre"], "noeuds": ["ocp-multicluster", "ztp"] },
+    { "id": "etcd", "nom": "etcd", "categorie": "orchestration", "sous_categorie": "decouverte", "url": "https://etcd.io/docs/", "cncf": "graduated", "roles": ["architecte", "ingenieur-caas", "sre"], "noeuds": ["k8s-archi"] },
+    { "id": "coredns", "nom": "CoreDNS", "categorie": "orchestration", "sous_categorie": "decouverte", "url": "https://coredns.io/manual/toc/", "cncf": "graduated", "roles": ["ingenieur-caas", "sre", "integrateur-nf"], "noeuds": ["k8s-services"] },
+    { "id": "envoy", "nom": "Envoy", "categorie": "orchestration", "sous_categorie": "proxy", "url": "https://www.envoyproxy.io/docs/envoy/latest/", "cncf": "graduated", "roles": ["integrateur-nf", "architecte", "editeur", "devops"], "noeuds": ["sbi-http2", "nrf-scp"] },
+    { "id": "istio", "nom": "Istio", "categorie": "orchestration", "sous_categorie": "proxy", "url": "https://istio.io/latest/docs/", "cncf": "graduated", "roles": ["architecte", "securite", "sre", "integrateur-nf"], "noeuds": ["sec-sba", "nrf-scp"] },
+
+    { "id": "helm", "nom": "Helm", "categorie": "livraison", "sous_categorie": "paquetage", "url": "https://helm.sh/docs/", "cncf": "graduated", "roles": ["devops", "integrateur-nf", "ingenieur-caas", "editeur"], "noeuds": ["helm", "helm-cnf"] },
+    { "id": "operator-framework", "nom": "Operator Framework", "categorie": "livraison", "sous_categorie": "paquetage", "url": "https://operatorframework.io/", "roles": ["ingenieur-caas", "editeur", "devops"], "noeuds": ["operators-dev", "ocp-operators"] },
+    { "id": "argo-cd", "nom": "Argo CD", "categorie": "livraison", "sous_categorie": "gitops", "url": "https://argo-cd.readthedocs.io/", "cncf": "graduated", "roles": ["devops", "ingenieur-caas", "sre", "architecte"], "noeuds": ["gitops"] },
+    { "id": "flux", "nom": "Flux", "categorie": "livraison", "sous_categorie": "gitops", "url": "https://fluxcd.io/flux/", "cncf": "graduated", "roles": ["devops", "ingenieur-caas", "sre"], "noeuds": ["gitops"] },
+    { "id": "tekton", "nom": "Tekton", "categorie": "livraison", "sous_categorie": "ci-cd", "url": "https://tekton.dev/docs/", "roles": ["devops", "ingenieur-caas", "editeur"], "noeuds": ["ci-cd-integration", "git-ci"] },
+    { "id": "gitlab-ci", "nom": "GitLab CI/CD", "categorie": "livraison", "sous_categorie": "ci-cd", "url": "https://docs.gitlab.com/ci/", "roles": ["devops", "ingenieur-caas", "sre", "editeur"], "noeuds": ["git-ci", "ci-cd-integration"] },
+    { "id": "robot-framework", "nom": "Robot Framework", "categorie": "livraison", "sous_categorie": "ci-cd", "url": "https://robotframework.org/", "roles": ["devops", "integrateur-nf", "editeur"], "noeuds": ["tests-fonctionnels", "tests-config"] },
+
+    { "id": "prometheus", "nom": "Prometheus", "categorie": "observabilite", "sous_categorie": "metriques", "url": "https://prometheus.io/docs/", "cncf": "graduated", "roles": ["sre", "ingenieur-caas", "devops", "architecte", "integrateur-nf", "ingenieur-ia"], "noeuds": ["obs-metrics", "alerting-utile", "kpi-5gc"] },
+    { "id": "grafana", "nom": "Grafana", "categorie": "observabilite", "sous_categorie": "metriques", "url": "https://grafana.com/docs/grafana/latest/", "roles": ["sre", "ingenieur-caas", "devops", "integrateur-nf"], "noeuds": ["obs-dash", "kpi-5gc"] },
+    { "id": "loki", "nom": "Loki", "categorie": "observabilite", "sous_categorie": "logs", "url": "https://grafana.com/docs/loki/latest/", "roles": ["sre", "ingenieur-caas", "devops"], "noeuds": ["obs-logs"] },
+    { "id": "fluent-bit", "nom": "Fluent Bit", "categorie": "observabilite", "sous_categorie": "logs", "url": "https://docs.fluentbit.io/manual", "cncf": "graduated", "roles": ["sre", "ingenieur-caas", "securite"], "noeuds": ["obs-logs"] },
+    { "id": "opentelemetry", "nom": "OpenTelemetry", "categorie": "observabilite", "sous_categorie": "traces", "url": "https://opentelemetry.io/docs/", "cncf": "incubating", "roles": ["sre", "ingenieur-caas", "devops", "ingenieur-ia", "editeur"], "noeuds": ["obs-telemetry", "llmops-obs"] },
+    { "id": "jaeger", "nom": "Jaeger", "categorie": "observabilite", "sous_categorie": "traces", "url": "https://www.jaegertracing.io/docs/", "cncf": "graduated", "roles": ["sre", "devops", "integrateur-nf"], "noeuds": ["obs-telemetry", "traces"] },
+    { "id": "wireshark", "nom": "Wireshark", "categorie": "observabilite", "sous_categorie": "protocoles", "url": "https://www.wireshark.org/docs/", "roles": ["integrateur-nf", "reseau", "sre", "devops", "editeur"], "noeuds": ["traces", "analyse-incident", "depannage-reseau-telco"] },
+    { "id": "litmus", "nom": "LitmusChaos", "categorie": "observabilite", "sous_categorie": "resilience", "url": "https://litmuschaos.io/docs/", "roles": ["sre", "integrateur-nf"], "noeuds": ["chaos", "resilience-nf"] },
+
+    { "id": "open5gs", "nom": "Open5GS", "categorie": "telecom", "sous_categorie": "coeur-5g", "url": "https://open5gs.org/open5gs/docs/", "roles": ["integrateur-nf", "devops", "editeur", "ingenieur-ia"], "noeuds": ["amf", "smf-upf", "deploiement-lab"] },
+    { "id": "free5gc", "nom": "free5GC", "categorie": "telecom", "sous_categorie": "coeur-5g", "url": "https://free5gc.org/guide/", "roles": ["integrateur-nf", "devops", "editeur"], "noeuds": ["amf", "udm-udr-ausf", "deploiement-lab"] },
+    { "id": "oai-5gc", "nom": "OpenAirInterface 5G Core", "categorie": "telecom", "sous_categorie": "coeur-5g", "url": "https://openairinterface.org/oai-5g-core-network-project/", "roles": ["integrateur-nf", "editeur", "devops"], "noeuds": ["archi-5g", "deploiement-lab"] },
+    { "id": "ueransim", "nom": "UERANSIM", "categorie": "telecom", "sous_categorie": "simulation", "url": "https://github.com/aligungr/UERANSIM", "roles": ["integrateur-nf", "devops", "editeur"], "noeuds": ["simulation-ran-ue", "enregistrement"] },
+    { "id": "trex", "nom": "TRex", "categorie": "telecom", "sous_categorie": "simulation", "url": "https://trex-tgn.cisco.com/trex/doc/", "roles": ["integrateur-nf", "reseau", "ingenieur-caas"], "noeuds": ["tests-perf", "bench-dimensionnement"] },
+    { "id": "osm", "nom": "Open Source MANO", "categorie": "telecom", "sous_categorie": "nfv", "url": "https://osm.etsi.org/docs/", "roles": ["architecte", "integrateur-nf", "editeur"], "noeuds": ["nfv-etsi", "etsi-sol"] },
+    { "id": "camara", "nom": "CAMARA", "categorie": "telecom", "sous_categorie": "api-reseau", "url": "https://camaraproject.org/", "roles": ["architecte", "ingenieur-ia", "editeur"], "noeuds": ["tel-camara"] },
+
+    { "id": "llama-cpp", "nom": "llama.cpp", "categorie": "ia", "sous_categorie": "inference", "url": "https://github.com/ggml-org/llama.cpp", "roles": ["ingenieur-ia"], "noeuds": ["inf-local", "ia-quantification"] },
+    { "id": "vllm", "nom": "vLLM", "categorie": "ia", "sous_categorie": "inference", "url": "https://docs.vllm.ai/", "roles": ["ingenieur-ia"], "noeuds": ["inf-vllm", "inf-bench"] },
+    { "id": "kserve", "nom": "KServe", "categorie": "ia", "sous_categorie": "inference", "url": "https://kserve.github.io/website/", "roles": ["ingenieur-ia", "ingenieur-caas"], "noeuds": ["inf-kserve"] },
+    { "id": "llm-d", "nom": "llm-d", "categorie": "ia", "sous_categorie": "inference", "url": "https://llm-d.ai/docs", "roles": ["ingenieur-ia", "architecte"], "noeuds": ["inf-llm-d"] },
+    { "id": "nvidia-gpu-operator", "nom": "NVIDIA GPU Operator", "categorie": "ia", "sous_categorie": "gpu", "url": "https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/", "roles": ["ingenieur-ia", "ingenieur-caas", "sre"], "noeuds": ["gpu-operator", "gpu-partage"] },
+    { "id": "kueue", "nom": "Kueue", "categorie": "ia", "sous_categorie": "gpu", "url": "https://kueue.sigs.k8s.io/docs/", "roles": ["ingenieur-ia", "ingenieur-caas"], "noeuds": ["gpu-ordonnancement"] },
+    { "id": "mcp", "nom": "Model Context Protocol", "categorie": "ia", "sous_categorie": "agents", "url": "https://modelcontextprotocol.io/docs", "roles": ["ingenieur-ia", "devops", "sre"], "noeuds": ["ag-mcp", "tel-agent-noc"] },
+    { "id": "a2a", "nom": "Agent2Agent (A2A)", "categorie": "ia", "sous_categorie": "agents", "url": "https://a2a-protocol.org/latest/", "roles": ["ingenieur-ia", "architecte"], "noeuds": ["ag-a2a"] },
+    { "id": "pgvector", "nom": "pgvector", "categorie": "ia", "sous_categorie": "donnees-llmops", "url": "https://github.com/pgvector/pgvector", "roles": ["ingenieur-ia"], "noeuds": ["rag-vectoriel"] },
+    { "id": "litellm", "nom": "LiteLLM", "categorie": "ia", "sous_categorie": "donnees-llmops", "url": "https://docs.litellm.ai/", "roles": ["ingenieur-ia", "securite"], "noeuds": ["llmops-gateway"] },
+    { "id": "langfuse", "nom": "Langfuse", "categorie": "ia", "sous_categorie": "donnees-llmops", "url": "https://langfuse.com/docs", "roles": ["ingenieur-ia", "sre"], "noeuds": ["llmops-obs", "llmops-eval"] }
+  ]
+}

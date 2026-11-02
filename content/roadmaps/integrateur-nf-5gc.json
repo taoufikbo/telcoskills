@@ -1,0 +1,658 @@
+{
+  "id": "integrateur-nf-5gc",
+  "titre": "Intégrateur NF, domaine 5GC",
+  "type": "role",
+  "presentation": "Cette roadmap s'adresse à l'intégrateur de fonctions réseau du cœur 5G : comprendre l'architecture et les procédures 5G, empaqueter et déployer les fonctions, les tester, les exploiter et les intégrer avec des éditeurs différents.",
+  "version": "0.1",
+  "provenance": { "type": "editoriale" },
+  "source": "Rédaction éditoriale initiale à partir des spécifications 3GPP et ETSI et de la pratique du domaine ; elle ne s'appuie pas sur une analyse d'offres d'emploi. Le champ 'demande' n'est donc pas renseigné. Les sujets de plateforme et de sécurité sont approfondis dans la roadmap « Ingénieur CaaS telco ». Les références juridiques et techniques sont à vérifier dans leur version en vigueur.",
+  "legende_demande": {
+    "forte": "présent dans la majorité des offres",
+    "moyenne": "présent dans plusieurs offres",
+    "faible": "mentionné ponctuellement ou implicite"
+  },
+  "blocs": [
+    "Fondations 5G",
+    "Fonctions du cœur 5G",
+    "Procédures et interconnexion",
+    "Plateforme et CNF",
+    "Tests et validation",
+    "Exploitation et supervision",
+    "Sécurité et conformité",
+    "Intégration multi-éditeurs"
+  ],
+  "noeuds": [
+    {
+      "id": "archi-5g",
+      "titre": "Architecture 5G : NG-RAN, 5GC et SBA",
+      "bloc": "Fondations 5G",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "resume": "Rôle du RAN et du cœur, séparation plan de contrôle et plan usager, architecture orientée services (SBA), points de référence N1 à N6 et interfaces de service.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "3GPP TS 23.501 : architecture du système 5G (accès libre)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.501/"
+        }
+      ]
+    },
+    {
+      "id": "identifiants",
+      "titre": "Identifiants et numérotation (SUPI, SUCI, GUTI, PLMN, DNN)",
+      "bloc": "Fondations 5G",
+      "niveau": "fondamental",
+      "prerequis": [
+        "archi-5g"
+      ],
+      "resume": "Comment un abonné, un réseau et une session sont identifiés ; protection de l'identité par le SUCI ; lire les identifiants dans une trace.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "3GPP TS 23.003 : numérotation, adressage et identification (accès libre)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.003/"
+        }
+      ]
+    },
+    {
+      "id": "sbi-http2",
+      "titre": "Interfaces de service (SBI) : HTTP/2, JSON, OpenAPI",
+      "bloc": "Fondations 5G",
+      "niveau": "fondamental",
+      "prerequis": [
+        "archi-5g"
+      ],
+      "resume": "Les fonctions réseau dialoguent en HTTP/2 et JSON ; une spécification OpenAPI par service, codes de retour, en-têtes. Savoir lire un appel et sa réponse.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "5GC_APIs : spécifications OpenAPI des interfaces SBI 3GPP",
+          "url": "https://github.com/jdegre/5GC_APIs"
+        }
+      ]
+    },
+    {
+      "id": "traces",
+      "titre": "Capture et lecture de traces (Wireshark : NGAP, PFCP, HTTP/2, GTP-U)",
+      "bloc": "Fondations 5G",
+      "niveau": "fondamental",
+      "prerequis": [
+        "archi-5g"
+      ],
+      "resume": "Où capturer, quels filtres appliquer, comment suivre une procédure message par message.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Wireshark : documentation",
+          "url": "https://www.wireshark.org/docs/"
+        }
+      ]
+    },
+    {
+      "id": "amf",
+      "titre": "AMF : enregistrement, mobilité et signalisation NAS/NGAP",
+      "bloc": "Fonctions du cœur 5G",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "archi-5g",
+        "identifiants"
+      ],
+      "resume": "Rôle de l'AMF, interfaces N1, N2 et Namf, gestion de l'état de l'UE, sélection et redondance de l'AMF.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "free5GC : AMF (code source)",
+          "url": "https://github.com/free5gc/amf"
+        }
+      ]
+    },
+    {
+      "id": "smf-upf",
+      "titre": "SMF et UPF : sessions PDU, PFCP, interfaces N4, N3 et N6",
+      "bloc": "Fonctions du cœur 5G",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "archi-5g",
+        "traces"
+      ],
+      "resume": "Séparation de la gestion de session (SMF) et du plan usager (UPF), règles PFCP (PDR, FAR, QER, URR), sélection d'UPF, adressage des UE.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "free5GC : UPF en Go (code source)",
+          "url": "https://github.com/free5gc/go-upf"
+        }
+      ]
+    },
+    {
+      "id": "udm-udr-ausf",
+      "titre": "UDM, UDR et AUSF : abonnés et authentification 5G-AKA",
+      "bloc": "Fonctions du cœur 5G",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "identifiants"
+      ],
+      "resume": "Stockage et exposition des données d'abonnement, vecteurs d'authentification, désanonymisation du SUCI, cohérence avec le HSS de la 4G.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Open5GS : cœur 4G/5G open source (code source)",
+          "url": "https://github.com/open5gs/open5gs"
+        }
+      ]
+    },
+    {
+      "id": "nrf-scp",
+      "titre": "NRF et SCP : enregistrement, découverte et routage des services",
+      "bloc": "Fonctions du cœur 5G",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "sbi-http2"
+      ],
+      "resume": "Profil et enregistrement des fonctions, découverte, jetons d'accès, communication directe ou indirecte via le SCP.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "free5GC : NRF (code source)",
+          "url": "https://github.com/free5gc/nrf"
+        }
+      ]
+    },
+    {
+      "id": "pcf-chf",
+      "titre": "PCF et CHF : politiques de service et facturation",
+      "bloc": "Fonctions du cœur 5G",
+      "niveau": "avance",
+      "prerequis": [
+        "smf-upf",
+        "nrf-scp"
+      ],
+      "resume": "Règles de politique (QoS, usage), interaction entre SMF et PCF, facturation convergente via le CHF, dépendances entre fonctions et impact sur les performances.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "free5GC : CHF (code source)",
+          "url": "https://github.com/free5gc/chf"
+        }
+      ]
+    },
+    {
+      "id": "slicing",
+      "titre": "Network slicing : S-NSSAI, NSSF et sélection de tranche",
+      "bloc": "Fonctions du cœur 5G",
+      "niveau": "avance",
+      "prerequis": [
+        "amf",
+        "nrf-scp"
+      ],
+      "resume": "Définition d'une tranche, sélection par l'AMF et le NSSF, découpage des fonctions et des ressources, conséquences sur le déploiement.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "free5GC : NSSF (code source)",
+          "url": "https://github.com/free5gc/nssf"
+        }
+      ]
+    },
+    {
+      "id": "sepp",
+      "titre": "SEPP et itinérance 5G (interface N32)",
+      "bloc": "Procédures et interconnexion",
+      "niveau": "avance",
+      "prerequis": [
+        "nrf-scp"
+      ],
+      "resume": "Interconnexion entre opérateurs : rôle du SEPP, protection des messages entre PLMN, cas d'itinérance.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "3GPP TS 29.573 : interconnexion de PLMN en 5G (accès libre)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/29_series/29.573/"
+        }
+      ]
+    },
+    {
+      "id": "enregistrement",
+      "titre": "Procédures d'enregistrement et d'authentification",
+      "bloc": "Procédures et interconnexion",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "amf",
+        "udm-udr-ausf"
+      ],
+      "resume": "Déroulé complet de l'enregistrement initial d'un UE : identité, authentification, sécurité NAS, contexte ; messages et fonctions impliquées.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "3GPP TS 23.502 : procédures du système 5G (accès libre)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.502/"
+        }
+      ]
+    },
+    {
+      "id": "session-pdu",
+      "titre": "Établissement de session PDU et chemin de données",
+      "bloc": "Procédures et interconnexion",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "smf-upf",
+        "enregistrement"
+      ],
+      "resume": "Demande de session, sélection du SMF et de l'UPF, règles PFCP, allocation d'adresse, premier paquet utilisateur ; où diagnostiquer une session qui ne s'établit pas.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "UERANSIM : simulateur d'UE et de gNB 5G",
+          "url": "https://github.com/aligungr/UERANSIM"
+        }
+      ]
+    },
+    {
+      "id": "interfonctionnement-4g",
+      "titre": "Interfonctionnement 4G/5G (EPC, N26, SMF+PGW-C)",
+      "bloc": "Procédures et interconnexion",
+      "niveau": "avance",
+      "prerequis": [
+        "amf",
+        "smf-upf"
+      ],
+      "resume": "Cohabitation avec le cœur 4G : mobilité entre systèmes, nœuds combinés (SMF+PGW-C, UPF+PGW-U, UDM+HSS), modes d'interfonctionnement.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Open5GS : documentation (EPC et 5GC)",
+          "url": "https://open5gs.org/open5gs/docs/"
+        }
+      ]
+    },
+    {
+      "id": "ims-voix",
+      "titre": "IMS et voix sur 5G (VoNR, repli, P-CSCF)",
+      "bloc": "Procédures et interconnexion",
+      "niveau": "avance",
+      "prerequis": [
+        "session-pdu"
+      ],
+      "resume": "Voix en 5G autonome et solutions de repli, rôle de l'IMS, signalisation SIP, exigences de qualité de service côté cœur.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kamailio : serveur SIP open source utilisé en IMS",
+          "url": "https://www.kamailio.org/"
+        }
+      ]
+    },
+    {
+      "id": "cnf-exigences",
+      "titre": "Exigences d'infrastructure d'une NF (réseaux, CPU, HugePages, SR-IOV)",
+      "bloc": "Plateforme et CNF",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "smf-upf"
+      ],
+      "resume": "Traduire les besoins d'une fonction en besoins de plateforme : interfaces réseau séparées, accélération du plan usager, CPU isolés, stockage, privilèges.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "SR-IOV Network Device Plugin (dépôt source)",
+          "url": "https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin"
+        }
+      ]
+    },
+    {
+      "id": "helm-cnf",
+      "titre": "Packaging d'une NF : charts Helm et configuration",
+      "bloc": "Plateforme et CNF",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "cnf-exigences"
+      ],
+      "resume": "Structure d'un chart, values par environnement, hooks, dépendances ; livrer et rejouer un déploiement.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Helm : documentation",
+          "url": "https://helm.sh/docs/"
+        }
+      ]
+    },
+    {
+      "id": "etsi-sol",
+      "titre": "Cycle de vie d'une NF selon ETSI NFV (SOL, CSAR, CNF)",
+      "bloc": "Plateforme et CNF",
+      "niveau": "avance",
+      "prerequis": [
+        "helm-cnf"
+      ],
+      "resume": "Descripteurs et paquets de fonctions normalisés, opérations de cycle de vie (instanciation, mise à l'échelle, mise à jour, terminaison), lien avec un orchestrateur.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OpenStack Tacker : orchestration NFV conforme ETSI",
+          "url": "https://docs.openstack.org/tacker/latest/"
+        }
+      ]
+    },
+    {
+      "id": "config-nf",
+      "titre": "Configuration d'une NF : API, YANG/NETCONF, ConfigMaps",
+      "bloc": "Plateforme et CNF",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "helm-cnf"
+      ],
+      "resume": "Paramétrage initial et à chaud, modèles de données, cohérence de configuration entre fonctions, versionnement.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "YangModels/yang : modèles YANG de référence",
+          "url": "https://github.com/YangModels/yang"
+        }
+      ]
+    },
+    {
+      "id": "deploiement-lab",
+      "titre": "Déployer un cœur 5G open source en lab",
+      "bloc": "Plateforme et CNF",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "helm-cnf",
+        "session-pdu"
+      ],
+      "resume": "Mettre en pratique : déploiement, vérification de l'enregistrement des fonctions auprès de la NRF, premier test de bout en bout.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "towards5gs-helm : charts Helm free5GC",
+          "url": "https://github.com/Orange-OpenSource/towards5gs-helm"
+        }
+      ],
+      "projet": "Déployer free5GC ou Open5GS sur un cluster de lab, y connecter un simulateur de gNB et d'UE, et établir une session PDU avec capture de trace."
+    },
+    {
+      "id": "upf-edge",
+      "titre": "UPF distribué et edge (accès local, MEC)",
+      "bloc": "Plateforme et CNF",
+      "niveau": "avance",
+      "prerequis": [
+        "smf-upf",
+        "cnf-exigences"
+      ],
+      "resume": "Placer des UPF au plus près des utilisateurs : sélection d'UPF, contraintes réseau et latence, exploitation de sites distants.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "eUPF : UPF open source en eBPF/XDP",
+          "url": "https://github.com/edgecomllc/eupf"
+        }
+      ]
+    },
+    {
+      "id": "simulation-ran-ue",
+      "titre": "Simulation de RAN et d'UE",
+      "bloc": "Tests et validation",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "session-pdu"
+      ],
+      "resume": "Utiliser des simulateurs de gNB et d'UE pour exercer le cœur : scénarios d'enregistrement, de session, de mobilité ; limites d'un simulateur.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "gNBsim : simulateur de gNB et d'UE (OMEC)",
+          "url": "https://github.com/omec-project/gnbsim"
+        }
+      ]
+    },
+    {
+      "id": "tests-fonctionnels",
+      "titre": "Plan de tests fonctionnels et d'interopérabilité",
+      "bloc": "Tests et validation",
+      "niveau": "avance",
+      "prerequis": [
+        "simulation-ran-ue",
+        "enregistrement"
+      ],
+      "resume": "Construire un plan de tests par procédure, critères de réussite, automatisation, traçabilité des exigences vers les cas de test.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Robot Framework : automatisation de tests",
+          "url": "https://robotframework.org/"
+        }
+      ]
+    },
+    {
+      "id": "tests-perf",
+      "titre": "Tests de performance et de charge",
+      "bloc": "Tests et validation",
+      "niveau": "avance",
+      "prerequis": [
+        "simulation-ran-ue",
+        "cnf-exigences"
+      ],
+      "resume": "Débit, sessions par seconde, latence, saturation : générer du trafic, mesurer, interpréter ; lien avec le dimensionnement.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "TRex : générateur de trafic open source",
+          "url": "https://github.com/cisco-system-traffic-generator/trex-core"
+        }
+      ]
+    },
+    {
+      "id": "recette",
+      "titre": "Recette, critères d'acceptation et rapports",
+      "bloc": "Tests et validation",
+      "niveau": "avance",
+      "prerequis": [
+        "tests-fonctionnels",
+        "tests-perf"
+      ],
+      "resume": "Définir les critères d'acceptation avec l'éditeur et le client, dérouler la recette, tracer les anomalies, rédiger un rapport de décision.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Robot Framework : guide utilisateur",
+          "url": "https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html"
+        }
+      ]
+    },
+    {
+      "id": "kpi-5gc",
+      "titre": "Indicateurs et compteurs de performance du 5GC",
+      "bloc": "Exploitation et supervision",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "enregistrement",
+        "session-pdu"
+      ],
+      "resume": "Taux de réussite des procédures, compteurs par fonction, alertes et tableaux de bord ; distinguer un problème de plateforme d'un problème applicatif.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Prometheus : documentation",
+          "url": "https://prometheus.io/docs/"
+        }
+      ]
+    },
+    {
+      "id": "analyse-incident",
+      "titre": "Analyse d'incident : traces, journaux et corrélation multi-NF",
+      "bloc": "Exploitation et supervision",
+      "niveau": "avance",
+      "prerequis": [
+        "traces",
+        "kpi-5gc"
+      ],
+      "resume": "Suivre un échec de procédure à travers les fonctions, corréler traces, journaux et métriques, remonter à la cause racine et la documenter.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OpenTelemetry : documentation",
+          "url": "https://opentelemetry.io/docs/"
+        }
+      ]
+    },
+    {
+      "id": "resilience-nf",
+      "titre": "Résilience d'une NF : redondance, état et reprise",
+      "bloc": "Exploitation et supervision",
+      "niveau": "avance",
+      "prerequis": [
+        "cnf-exigences",
+        "amf"
+      ],
+      "resume": "Réplicas, gestion de l'état, comportement lors de la perte d'un nœud, d'un site ou d'une fonction voisine, budgets de disruption.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : PodDisruptionBudget",
+          "url": "https://kubernetes.io/docs/tasks/run-application/configure-pdb/"
+        }
+      ]
+    },
+    {
+      "id": "upgrade-nf",
+      "titre": "Mises à jour sans coupure et retour arrière",
+      "bloc": "Exploitation et supervision",
+      "niveau": "avance",
+      "prerequis": [
+        "helm-cnf",
+        "resilience-nf"
+      ],
+      "resume": "Stratégies de mise à jour progressive, compatibilité entre versions de fonctions voisines, préparation et critères de retour arrière.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Argo Rollouts : déploiements progressifs",
+          "url": "https://argoproj.github.io/argo-rollouts/"
+        }
+      ]
+    },
+    {
+      "id": "sec-sba",
+      "titre": "Sécurité du SBA : TLS, OAuth2 et autorisation entre NF",
+      "bloc": "Sécurité et conformité",
+      "niveau": "avance",
+      "prerequis": [
+        "nrf-scp",
+        "sbi-http2"
+      ],
+      "resume": "Authentification mutuelle entre fonctions, jetons d'accès émis par la NRF, certificats et leur rotation, exigences de l'architecture de sécurité 5G.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "3GPP TS 33.501 : sécurité du système 5G (accès libre)",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.501/"
+        }
+      ]
+    },
+    {
+      "id": "sec-plateforme",
+      "titre": "Isolation et privilèges d'une NF sur la plateforme",
+      "bloc": "Sécurité et conformité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "cnf-exigences"
+      ],
+      "resume": "Capacités Linux, contextes de sécurité, politiques réseau entre fonctions, cloisonnement des plans de contrôle, usager et gestion.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : contexte de sécurité d'un pod",
+          "url": "https://kubernetes.io/docs/tasks/configure-pod-container/security-context/"
+        }
+      ]
+    },
+    {
+      "id": "reglementation-5gc",
+      "titre": "Réglementation France et Europe applicable au 5GC",
+      "bloc": "Sécurité et conformité",
+      "niveau": "avance",
+      "prerequis": [
+        "sec-sba"
+      ],
+      "resume": "Ce qui s'applique à un cœur 5G hébergé : sécurité et intégrité des réseaux, données personnelles, interception légale, exigences sur les équipements. Voir le bloc dédié de la roadmap Ingénieur CaaS telco.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OpenLI : interception légale open source conforme ETSI",
+          "url": "https://github.com/OpenLI-NZ/openli"
+        }
+      ]
+    },
+    {
+      "id": "onboarding-editeur",
+      "titre": "Onboarding d'une NF éditeur : exigences, livrables, matrice de conformité",
+      "bloc": "Intégration multi-éditeurs",
+      "niveau": "avance",
+      "prerequis": [
+        "cnf-exigences",
+        "etsi-sol",
+        "config-nf"
+      ],
+      "resume": "Lire la documentation d'un éditeur, vérifier les livrables (images, charts, descripteurs), établir la matrice de conformité aux exigences de la plateforme.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "towards5gs-helm : exemple de livrable de NF",
+          "url": "https://github.com/Orange-OpenSource/towards5gs-helm"
+        }
+      ]
+    },
+    {
+      "id": "multi-editeurs",
+      "titre": "Intégration multi-éditeurs et interopérabilité",
+      "bloc": "Intégration multi-éditeurs",
+      "niveau": "avance",
+      "prerequis": [
+        "onboarding-editeur",
+        "tests-fonctionnels"
+      ],
+      "resume": "Faire fonctionner ensemble des fonctions de fournisseurs différents : écarts d'interprétation des spécifications, options 3GPP, résolution des désaccords.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "OpenAirInterface : cœur 5G d'une autre implémentation, pour l'interopérabilité",
+          "url": "https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed"
+        }
+      ]
+    },
+    {
+      "id": "ci-cd-integration",
+      "titre": "CI/CD d'intégration : déploiement et non-régression automatisés",
+      "bloc": "Intégration multi-éditeurs",
+      "niveau": "avance",
+      "prerequis": [
+        "deploiement-lab",
+        "tests-fonctionnels"
+      ],
+      "resume": "Pipelines qui déploient une version, jouent les tests et publient un verdict ; environnements éphémères, gestion des versions.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Tekton : pipelines CI/CD Kubernetes",
+          "url": "https://tekton.dev/docs/"
+        }
+      ]
+    },
+    {
+      "id": "dossier-integration",
+      "titre": "Dossier d'intégration : schémas, flux, plan d'adressage",
+      "bloc": "Intégration multi-éditeurs",
+      "niveau": "avance",
+      "prerequis": [
+        "onboarding-editeur"
+      ],
+      "resume": "Livrables d'architecture : schéma applicatif et réseau, matrice de flux entre fonctions, plan d'adressage, hypothèses de dimensionnement.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "arc42 : modèle libre de documentation d'architecture",
+          "url": "https://arc42.org/overview"
+        }
+      ]
+    }
+  ]
+}

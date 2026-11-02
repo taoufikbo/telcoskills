@@ -1,0 +1,9 @@
+node_modules
+.next
+next-env.d.ts
+*.tsbuildinfo
+.env*
+.vercel
+
+# Modèle de voix téléchargé par scripts/videos/generer_videos.py
+scripts/videos/.voix/

@@ -1,0 +1,147 @@
+{
+  "_aide": "BROUILLON à relire par l'auteur. Chaque question propose quatre situations, du moins mûr (0 point) au plus mûr (3 points). Les blocs renvoient aux compétences de la roadmap Architecte. Passer `brouillon` à false publie le diagnostic.",
+  "brouillon": true,
+  "seuils": { "solide": 5, "enProgres": 3 },
+  "blocs": [
+    { "id": "socle-kubernetes", "titre": "Socle Kubernetes", "noeuds": ["k8s-archi", "k8s-workloads", "k8s-rbac", "gitops"] },
+    { "id": "reseau-telco", "titre": "Réseau télécom", "noeuds": ["cni", "multus", "sriov", "lb-bgp"] },
+    { "id": "onboarding-cnf", "titre": "Accueil des fonctions réseau", "noeuds": ["cnf-onboarding", "helm", "cnf-ops", "sctp-flux"] },
+    { "id": "resilience", "titre": "Résilience et exploitation", "noeuds": ["ha-geo", "pra-rpo-rto", "obs-metrics", "stockage-dr"] },
+    { "id": "securite-conformite", "titre": "Sécurité et conformité", "noeuds": ["sec-durcissement", "reg-nis2", "reg-anssi", "sec-supply"] },
+    { "id": "gouvernance", "titre": "Gouvernance d'architecture", "noeuds": ["adr", "hld-lld", "evaluation-fournisseurs", "cycle-vie-plateforme"] }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "bloc": "socle-kubernetes",
+      "texte": "Comment installez-vous et mettez-vous à jour vos clusters ?",
+      "options": [
+        "À la main, cluster par cluster, sans procédure écrite",
+        "Procédures écrites, mais exécutées à la main",
+        "Automatisé, mais chaque cluster a ses particularités",
+        "Automatisé et reproductible : un cluster se recrée à l'identique depuis un dépôt"
+      ]
+    },
+    {
+      "id": "q2",
+      "bloc": "socle-kubernetes",
+      "texte": "Qui sait diagnostiquer un incident au niveau de Kubernetes lui-même (plan de contrôle, nœuds, réseau des pods) ?",
+      "options": [
+        "Personne en interne : nous appelons l'éditeur",
+        "Une ou deux personnes, sans relève",
+        "Plusieurs personnes, avec des guides de dépannage",
+        "Toute l'équipe, entraînée régulièrement"
+      ]
+    },
+    {
+      "id": "q3",
+      "bloc": "reseau-telco",
+      "texte": "Comment vos pods obtiennent-ils leurs interfaces réseau secondaires (signalisation, plan usager) ?",
+      "options": [
+        "Nous n'avons pas encore de solution",
+        "Configuration manuelle sur chaque nœud",
+        "Par des définitions déclaratives (Multus)",
+        "Idem, avec SR-IOV ou accélération validés sur la charge réelle"
+      ]
+    },
+    {
+      "id": "q4",
+      "bloc": "reseau-telco",
+      "texte": "Le plan d'adressage et la matrice de flux de la plateforme sont-ils documentés et à jour ?",
+      "options": [
+        "Non",
+        "Documentés une fois, jamais mis à jour",
+        "À jour, mais dans des documents épars",
+        "À jour, versionnés, et validés avec l'équipe réseau à chaque changement"
+      ]
+    },
+    {
+      "id": "q5",
+      "bloc": "onboarding-cnf",
+      "texte": "Comment une nouvelle fonction réseau d'un éditeur arrive-t-elle sur la plateforme ?",
+      "options": [
+        "Livrée et installée par l'éditeur, sans notre contrôle",
+        "Installée par nous, d'après la documentation de l'éditeur",
+        "Contrôlée à la réception (charts, images, exigences), puis déployée par nos pipelines",
+        "Réception, tests d'intégration et déploiement automatisés, écarts tracés"
+      ]
+    },
+    {
+      "id": "q6",
+      "bloc": "onboarding-cnf",
+      "texte": "Les exigences de plateforme des éditeurs sont-elles comparées à ce que votre plateforme offre ?",
+      "options": [
+        "Non : nous découvrons les écarts en intégration",
+        "Partiellement, au cas par cas",
+        "Oui, dans un tableau tenu pour chaque projet",
+        "Oui, avec une matrice réutilisée d'un projet à l'autre"
+      ]
+    },
+    {
+      "id": "q7",
+      "bloc": "resilience",
+      "texte": "Que se passe-t-il si un site entier est perdu ?",
+      "options": [
+        "Nous ne savons pas précisément",
+        "Le service s'arrête ; la reprise est manuelle et jamais testée",
+        "Reprise prévue et documentée, testée rarement",
+        "Reprise testée régulièrement, avec des objectifs de reprise mesurés"
+      ]
+    },
+    {
+      "id": "q8",
+      "bloc": "resilience",
+      "texte": "Votre supervision détecte-t-elle un problème avant vos utilisateurs ?",
+      "options": [
+        "Rarement : nous l'apprenons par les utilisateurs",
+        "Pour les pannes franches seulement",
+        "Pour la plupart des dégradations, avec des alertes réglées",
+        "Oui, avec des objectifs de service mesurés et revus"
+      ]
+    },
+    {
+      "id": "q9",
+      "bloc": "securite-conformite",
+      "texte": "Comment le durcissement de la plateforme est-il appliqué et vérifié ?",
+      "options": [
+        "Il n'y a pas de référentiel de durcissement",
+        "Référentiel appliqué à l'installation, jamais revérifié",
+        "Appliqué et vérifié périodiquement",
+        "Appliqué par la configuration, vérifié en continu, écarts traités"
+      ]
+    },
+    {
+      "id": "q10",
+      "bloc": "securite-conformite",
+      "texte": "Savez-vous quelles obligations réglementaires (NIS 2, exigences nationales) s'appliquent à votre plateforme ?",
+      "options": [
+        "Non",
+        "En partie, sans responsable identifié",
+        "Oui, avec un responsable identifié",
+        "Oui, traduites en exigences suivies dans les projets"
+      ]
+    },
+    {
+      "id": "q11",
+      "bloc": "gouvernance",
+      "texte": "Comment les décisions d'architecture sont-elles consignées ?",
+      "options": [
+        "Elles ne le sont pas",
+        "Dans des échanges de messagerie",
+        "Dans un dossier d'architecture, parfois tenu à jour",
+        "En décisions datées et justifiées, relues à chaque évolution majeure"
+      ]
+    },
+    {
+      "id": "q12",
+      "bloc": "gouvernance",
+      "texte": "Comment évaluez-vous votre dépendance à un éditeur ou à une distribution ?",
+      "options": [
+        "Nous ne l'avons jamais évaluée",
+        "Intuitivement",
+        "Par un inventaire des composants propriétaires",
+        "Avec un coût de sortie estimé et une alternative identifiée"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,836 @@
+{
+  "id": "ia-agentique-telco",
+  "titre": "IA, agents et inférence sur plateforme télécom",
+  "type": "role",
+  "presentation": "Cette roadmap s'adresse à celles et ceux qui doivent héberger, exploiter ou sécuriser de l'IA générative sur une plateforme Kubernetes télécom : modèles ouverts, inférence, GPU, agents, RAG, observabilité, conformité (AI Act, ANSSI) et cas d'usage réseau. Tout part de briques open source.",
+  "version": "0.1",
+  "provenance": { "type": "editoriale" },
+  "source": "Rédaction éditoriale à partir de projets et documentations open source (Hugging Face, vLLM, KServe, llm-d, Kubernetes, Model Context Protocol, OpenTelemetry, OWASP) et de publications de l'ANSSI, de la CNIL et de l'Union européenne ; elle ne s'appuie pas sur une analyse d'offres d'emploi. Le champ 'demande' n'est donc pas renseigné. Ce domaine évolue très vite : vérifier la version et l'état de chaque projet avant de s'y engager.",
+  "legende_demande": {
+    "forte": "présent dans la majorité des offres",
+    "moyenne": "présent dans plusieurs offres",
+    "faible": "mentionné ponctuellement ou implicite"
+  },
+  "blocs": [
+    "Prérequis plateforme",
+    "Fondations IA",
+    "Inférence",
+    "Plateforme GPU",
+    "Agents et outils",
+    "RAG et données",
+    "LLMOps et observabilité",
+    "Sécurité et conformité IA",
+    "IA pour le réseau télécom"
+  ],
+  "noeuds": [
+    {
+      "id": "k8s-archi",
+      "titre": "Architecture Kubernetes",
+      "bloc": "Prérequis plateforme",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "resume": "Plan de contrôle, nœuds, scheduler, API. Base pour comprendre comment on place des charges d'IA gourmandes sur un cluster.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation Kubernetes : concepts",
+          "url": "https://kubernetes.io/docs/concepts/"
+        }
+      ]
+    },
+    {
+      "id": "k8s-workloads",
+      "titre": "Workloads : Pods, Deployments, StatefulSets, Jobs",
+      "bloc": "Prérequis plateforme",
+      "niveau": "fondamental",
+      "prerequis": [
+        "k8s-archi"
+      ],
+      "resume": "Les objets qui portent un serveur d'inférence (Deployment), un entraînement ou un traitement par lots (Job) et une base vectorielle (StatefulSet).",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation Kubernetes : workloads",
+          "url": "https://kubernetes.io/docs/concepts/workloads/"
+        }
+      ]
+    },
+    {
+      "id": "obs-metrics",
+      "titre": "Prometheus, Alertmanager, Thanos",
+      "bloc": "Prérequis plateforme",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-archi"
+      ],
+      "resume": "Collecte de métriques et alertes. Les serveurs d'inférence exposent leurs métriques au format Prometheus : latence, débit, file d'attente.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation Prometheus",
+          "url": "https://prometheus.io/docs/introduction/overview/"
+        }
+      ]
+    },
+    {
+      "id": "ia-llm-bases",
+      "titre": "Grands modèles de langage : comment ça marche",
+      "bloc": "Fondations IA",
+      "niveau": "fondamental",
+      "prerequis": [],
+      "resume": "Jetons, transformeurs, fenêtre de contexte, génération. Il faut comprendre ces notions pour dimensionner et diagnostiquer, pas pour entraîner un modèle.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "nanoGPT : un transformeur minimal pour comprendre",
+          "url": "https://github.com/karpathy/nanoGPT"
+        },
+        {
+          "type": "cours",
+          "nom": "Cours LLM de Hugging Face",
+          "url": "https://huggingface.co/learn/llm-course",
+          "acces": "gratuit",
+          "langue": "en"
+        }
+      ]
+    },
+    {
+      "id": "ia-modeles-ouverts",
+      "titre": "Modèles à poids ouverts, licences et provenance",
+      "bloc": "Fondations IA",
+      "niveau": "fondamental",
+      "prerequis": [
+        "ia-llm-bases"
+      ],
+      "resume": "Choisir un modèle ouvert, lire sa licence, vérifier sa provenance et son empreinte. « Poids ouverts » n'est pas toujours « open source » au sens strict.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Hugging Face Hub : modèles",
+          "url": "https://huggingface.co/models"
+        },
+        {
+          "type": "spec",
+          "nom": "Définition de l'IA open source (OSI)",
+          "url": "https://opensource.org/ai/open-source-ai-definition"
+        }
+      ]
+    },
+    {
+      "id": "ia-quantification",
+      "titre": "Quantification et formats de modèles",
+      "bloc": "Fondations IA",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "ia-llm-bases"
+      ],
+      "resume": "Réduire la précision (8 ou 4 bits) pour tenir sur moins de mémoire GPU, au prix d'une qualité parfois dégradée. Formats courants : safetensors, GGUF.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "llama.cpp : quantification et format GGUF",
+          "url": "https://github.com/ggml-org/llama.cpp"
+        }
+      ]
+    },
+    {
+      "id": "inf-local",
+      "titre": "Inférence locale : Ollama et llama.cpp",
+      "bloc": "Inférence",
+      "niveau": "fondamental",
+      "prerequis": [
+        "ia-llm-bases"
+      ],
+      "resume": "Faire tourner un modèle sur un poste ou un petit serveur pour apprendre et prototyper, avant de passer à une plateforme partagée.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Ollama",
+          "url": "https://ollama.com/"
+        },
+        {
+          "type": "opensource",
+          "nom": "llama.cpp",
+          "url": "https://github.com/ggml-org/llama.cpp"
+        }
+      ]
+    },
+    {
+      "id": "inf-vllm",
+      "titre": "Serveur d'inférence vLLM",
+      "bloc": "Inférence",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "inf-local",
+        "ia-quantification",
+        "k8s-workloads"
+      ],
+      "resume": "Serveur d'inférence open source à fort débit (batching continu, cache de clés-valeurs paginé, API compatible OpenAI). Réglages clés : mémoire GPU, longueur de contexte, parallélisme.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation vLLM",
+          "url": "https://docs.vllm.ai/"
+        }
+      ]
+    },
+    {
+      "id": "inf-kserve",
+      "titre": "Déployer des modèles avec KServe",
+      "bloc": "Inférence",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "inf-vllm"
+      ],
+      "resume": "Déclarer un service d'inférence comme ressource Kubernetes : versions, montée en charge, déploiements progressifs.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Documentation KServe",
+          "url": "https://kserve.github.io/website/"
+        }
+      ]
+    },
+    {
+      "id": "inf-llm-d",
+      "titre": "Inférence distribuée et routage intelligent (llm-d)",
+      "bloc": "Inférence",
+      "niveau": "avance",
+      "prerequis": [
+        "inf-kserve"
+      ],
+      "resume": "Séparer le traitement du prompt et la génération, router selon le cache et la charge. Approche récente : suivre l'état du projet avant de l'adopter en production.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "llm-d",
+          "url": "https://llm-d.ai/"
+        },
+        {
+          "type": "opensource",
+          "nom": "Gateway API Inference Extension",
+          "url": "https://gateway-api-inference-extension.sigs.k8s.io/"
+        }
+      ]
+    },
+    {
+      "id": "inf-bench",
+      "titre": "Mesurer et dimensionner l'inférence",
+      "bloc": "Inférence",
+      "niveau": "avance",
+      "prerequis": [
+        "inf-vllm"
+      ],
+      "resume": "Latence du premier jeton, débit, concurrence, coût par million de jetons. Sans mesure, aucun dimensionnement GPU n'est défendable.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "GuideLLM : évaluer un déploiement",
+          "url": "https://github.com/vllm-project/guidellm"
+        }
+      ]
+    },
+    {
+      "id": "gpu-operator",
+      "titre": "GPU sur Kubernetes : pilotes et opérateurs",
+      "bloc": "Plateforme GPU",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "k8s-archi"
+      ],
+      "resume": "Exposer les GPU aux pods : pilotes, plugin de périphérique, découverte des nœuds, supervision. Un opérateur évite d'installer tout cela à la main sur chaque nœud.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "NVIDIA GPU Operator",
+          "url": "https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/"
+        }
+      ]
+    },
+    {
+      "id": "gpu-partage",
+      "titre": "Partage de GPU : MIG, temps partagé, allocation dynamique",
+      "bloc": "Plateforme GPU",
+      "niveau": "avance",
+      "prerequis": [
+        "gpu-operator"
+      ],
+      "resume": "Un GPU entier par pod coûte cher. Partitionnement matériel (MIG), temps partagé et allocation dynamique de ressources (DRA) permettent de mutualiser, avec des compromis d'isolation.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kubernetes : allocation dynamique de ressources",
+          "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/"
+        }
+      ]
+    },
+    {
+      "id": "gpu-ordonnancement",
+      "titre": "Files d'attente et ordonnancement par lots (Kueue)",
+      "bloc": "Plateforme GPU",
+      "niveau": "avance",
+      "prerequis": [
+        "gpu-operator",
+        "k8s-workloads"
+      ],
+      "resume": "Quotas, priorités et équité entre équipes pour des GPU rares. Évite qu'une équipe monopolise la capacité.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Kueue",
+          "url": "https://kueue.sigs.k8s.io/"
+        }
+      ]
+    },
+    {
+      "id": "gpu-reseau",
+      "titre": "Réseau haut débit pour l'IA (RDMA, SR-IOV)",
+      "bloc": "Plateforme GPU",
+      "niveau": "avance",
+      "prerequis": [
+        "gpu-operator"
+      ],
+      "resume": "L'inférence répartie sur plusieurs nœuds est limitée par le réseau. On retrouve ici les techniques de la plateforme télécom : SR-IOV, interfaces secondaires, RDMA.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "NVIDIA Network Operator (code et documentation)",
+          "url": "https://github.com/Mellanox/network-operator"
+        },
+        {
+          "type": "doc",
+          "nom": "NVIDIA Network Operator (documentation)",
+          "url": "https://docs.nvidia.com/networking/display/COKAN10/Network+Operator",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "NVIDIA"
+        }
+      ]
+    },
+    {
+      "id": "ag-bases",
+      "titre": "Agents : boucle, outils, mémoire",
+      "bloc": "Agents et outils",
+      "niveau": "fondamental",
+      "prerequis": [
+        "ia-llm-bases"
+      ],
+      "resume": "Un agent est un modèle qui choisit des actions, appelle des outils et observe le résultat en boucle. Comprendre où il peut se tromper avant de lui donner des droits.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "smolagents : agents minimalistes",
+          "url": "https://github.com/huggingface/smolagents"
+        },
+        {
+          "type": "cours",
+          "nom": "Cours Agents de Hugging Face",
+          "url": "https://huggingface.co/learn/agents-course",
+          "acces": "gratuit",
+          "langue": "en"
+        }
+      ]
+    },
+    {
+      "id": "ag-mcp",
+      "titre": "Model Context Protocol (MCP)",
+      "bloc": "Agents et outils",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "ag-bases"
+      ],
+      "resume": "Protocole ouvert pour connecter un agent à des outils et des données : serveurs MCP, authentification, périmètre des droits.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Serveurs MCP de référence",
+          "url": "https://github.com/modelcontextprotocol/servers"
+        },
+        {
+          "type": "spec",
+          "nom": "Model Context Protocol",
+          "url": "https://modelcontextprotocol.io/"
+        }
+      ]
+    },
+    {
+      "id": "ag-a2a",
+      "titre": "Dialogue entre agents (A2A)",
+      "bloc": "Agents et outils",
+      "niveau": "avance",
+      "prerequis": [
+        "ag-mcp"
+      ],
+      "resume": "Protocole ouvert pour que des agents de fournisseurs différents se découvrent et collaborent. Utile dans un environnement multi-éditeurs.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Spécification et exemples A2A",
+          "url": "https://github.com/a2aproject/A2A"
+        },
+        {
+          "type": "spec",
+          "nom": "Agent2Agent protocol",
+          "url": "https://a2a-protocol.org/"
+        }
+      ]
+    },
+    {
+      "id": "ag-frameworks",
+      "titre": "Cadres de développement d'agents",
+      "bloc": "Agents et outils",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "ag-bases"
+      ],
+      "resume": "Orchestrer plusieurs étapes avec état et reprise : graphes d'exécution, agents qui écrivent du code. Choisir un cadre pour sa maturité et sa sobriété.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "LangGraph",
+          "url": "https://langchain-ai.github.io/langgraph/"
+        },
+        {
+          "type": "opensource",
+          "nom": "smolagents",
+          "url": "https://huggingface.co/docs/smolagents"
+        }
+      ]
+    },
+    {
+      "id": "ag-garde-fous",
+      "titre": "Garde-fous : droits minimaux et humain dans la boucle",
+      "bloc": "Agents et outils",
+      "niveau": "avance",
+      "prerequis": [
+        "ag-mcp"
+      ],
+      "resume": "Lecture seule par défaut, validation humaine avant toute action sur la production, journal complet des actions. Indispensable en exploitation télécom.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "NeMo Guardrails : règles de conduite pour agents",
+          "url": "https://github.com/NVIDIA/NeMo-Guardrails"
+        },
+        {
+          "type": "doc",
+          "nom": "OWASP : risques des applications d'IA générative",
+          "url": "https://genai.owasp.org/llm-top-10/"
+        }
+      ]
+    },
+    {
+      "id": "rag-bases",
+      "titre": "RAG : donner de la connaissance à un modèle",
+      "bloc": "RAG et données",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "ia-llm-bases"
+      ],
+      "resume": "Découper des documents, calculer des vecteurs, retrouver les passages utiles et les fournir au modèle. Applicable aux runbooks et aux spécifications 3GPP.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Haystack : assemblage de pipelines RAG",
+          "url": "https://github.com/deepset-ai/haystack"
+        },
+        {
+          "type": "cours",
+          "nom": "Livre de recettes Hugging Face (RAG)",
+          "url": "https://huggingface.co/learn/cookbook",
+          "acces": "gratuit",
+          "langue": "en"
+        }
+      ]
+    },
+    {
+      "id": "rag-vectoriel",
+      "titre": "Bases vectorielles : pgvector, Qdrant, Milvus",
+      "bloc": "RAG et données",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "rag-bases",
+        "k8s-workloads"
+      ],
+      "resume": "Stocker et interroger des vecteurs. pgvector convient quand PostgreSQL est déjà là ; une base dédiée se justifie à grande échelle.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "pgvector",
+          "url": "https://github.com/pgvector/pgvector"
+        },
+        {
+          "type": "opensource",
+          "nom": "Qdrant",
+          "url": "https://qdrant.tech/documentation/"
+        }
+      ]
+    },
+    {
+      "id": "rag-evaluation",
+      "titre": "Évaluer un RAG",
+      "bloc": "RAG et données",
+      "niveau": "avance",
+      "prerequis": [
+        "rag-bases"
+      ],
+      "resume": "Mesurer la pertinence des passages retrouvés et la fidélité des réponses. Sans jeu de test, on ne sait pas si une modification améliore ou dégrade.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Ragas",
+          "url": "https://docs.ragas.io/"
+        }
+      ]
+    },
+    {
+      "id": "llmops-gateway",
+      "titre": "Passerelle d'accès aux modèles",
+      "bloc": "LLMOps et observabilité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "inf-vllm"
+      ],
+      "resume": "Un point d'entrée unique : authentification, quotas par équipe, bascule entre modèles, journalisation. Évite que chaque application parle directement aux serveurs.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "LiteLLM",
+          "url": "https://docs.litellm.ai/"
+        },
+        {
+          "type": "opensource",
+          "nom": "Envoy AI Gateway",
+          "url": "https://aigateway.envoyproxy.io/"
+        }
+      ]
+    },
+    {
+      "id": "llmops-obs",
+      "titre": "Observabilité des applications d'IA",
+      "bloc": "LLMOps et observabilité",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "obs-metrics",
+        "llmops-gateway"
+      ],
+      "resume": "Traces des appels, jetons consommés, latence, erreurs. Les conventions OpenTelemetry pour l'IA générative rendent ces mesures comparables entre outils.",
+      "ressources": [
+        {
+          "type": "spec",
+          "nom": "OpenTelemetry : conventions pour l'IA générative",
+          "url": "https://opentelemetry.io/docs/specs/semconv/gen-ai/"
+        },
+        {
+          "type": "opensource",
+          "nom": "Langfuse",
+          "url": "https://langfuse.com/docs"
+        }
+      ]
+    },
+    {
+      "id": "llmops-eval",
+      "titre": "Évaluation continue des modèles",
+      "bloc": "LLMOps et observabilité",
+      "niveau": "avance",
+      "prerequis": [
+        "ia-modeles-ouverts"
+      ],
+      "resume": "Rejouer un jeu de tests à chaque changement de modèle, de prompt ou de quantification pour détecter les régressions.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "lm-evaluation-harness",
+          "url": "https://github.com/EleutherAI/lm-evaluation-harness"
+        }
+      ]
+    },
+    {
+      "id": "cout-energie",
+      "titre": "Coûts, énergie et efficacité d'une plateforme",
+      "bloc": "LLMOps et observabilité",
+      "niveau": "avance",
+      "prerequis": [
+        "inf-bench"
+      ],
+      "resume": "Les GPU dominent la facture et la consommation. Mesurer le coût par requête, choisir le plus petit modèle suffisant, éteindre ce qui ne sert pas.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "CodeCarbon : mesurer l'empreinte carbone du calcul",
+          "url": "https://github.com/mlco2/codecarbon"
+        },
+        {
+          "type": "opensource",
+          "nom": "Kepler : consommation d'énergie par pod",
+          "url": "https://github.com/sustainable-computing-io/kepler"
+        },
+        {
+          "type": "doc",
+          "nom": "Green Software Foundation",
+          "url": "https://greensoftware.foundation/"
+        },
+        {
+          "type": "opensource",
+          "nom": "Kepler : mesurer la consommation énergétique des charges Kubernetes",
+          "url": "https://sustainable-computing.io/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "CNCF"
+        },
+        {
+          "type": "doc",
+          "nom": "CNCF TAG Environmental Sustainability",
+          "url": "https://github.com/cncf/tag-env-sustainability",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "CNCF"
+        }
+      ]
+    },
+    {
+      "id": "ia-sec-owasp",
+      "titre": "Menaces propres à l'IA générative",
+      "bloc": "Sécurité et conformité IA",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "ag-bases"
+      ],
+      "resume": "Injection de prompt, fuite de données, outils trop permissifs, modèles ou dépendances piégés. Les agents multiplient la surface d'attaque.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "garak : tester la robustesse d'un modèle",
+          "url": "https://github.com/NVIDIA/garak"
+        },
+        {
+          "type": "doc",
+          "nom": "OWASP Top 10 pour les applications LLM",
+          "url": "https://genai.owasp.org/llm-top-10/"
+        }
+      ]
+    },
+    {
+      "id": "sec-supply",
+      "titre": "Sécurité de la chaîne d'approvisionnement",
+      "bloc": "Sécurité et conformité IA",
+      "niveau": "avance",
+      "prerequis": [
+        "ia-modeles-ouverts"
+      ],
+      "resume": "Un modèle téléchargé est un artefact comme un autre : provenance, signature, analyse. Éviter les formats qui exécutent du code au chargement.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "SLSA : niveaux de sécurité de la chaîne logicielle",
+          "url": "https://slsa.dev/"
+        }
+      ]
+    },
+    {
+      "id": "reg-ia-anssi",
+      "titre": "Recommandations de l'ANSSI pour l'IA générative",
+      "bloc": "Sécurité et conformité IA",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "ia-sec-owasp"
+      ],
+      "resume": "Recommandations françaises pour sécuriser un système d'IA générative, de l'entraînement au déploiement.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "garak : tester la robustesse d'un modèle",
+          "url": "https://github.com/NVIDIA/garak"
+        },
+        {
+          "type": "doc",
+          "nom": "ANSSI : recommandations de sécurité pour un système d'IA générative",
+          "url": "https://cyber.gouv.fr/publications/recommandations-de-securite-pour-un-systeme-dia-generative",
+          "acces": "gratuit",
+          "langue": "fr",
+          "auteur": "ANSSI"
+        }
+      ]
+    },
+    {
+      "id": "reg-ai-act",
+      "titre": "Règlement européen sur l'IA (AI Act)",
+      "bloc": "Sécurité et conformité IA",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "ia-modeles-ouverts"
+      ],
+      "resume": "Niveaux de risque, obligations des fournisseurs et des déployeurs, calendrier d'application. À relier aux obligations NIS 2 et RGPD.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "Règlement (UE) 2024/1689 sur EUR-Lex (accès libre)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+        },
+        {
+          "type": "doc",
+          "nom": "AI Act : texte et explications",
+          "url": "https://artificialintelligenceact.eu/"
+        },
+        {
+          "type": "doc",
+          "nom": "CNIL : intelligence artificielle",
+          "url": "https://www.cnil.fr/fr/intelligence-artificielle",
+          "acces": "gratuit",
+          "langue": "fr",
+          "auteur": "CNIL"
+        }
+      ]
+    },
+    {
+      "id": "reg-souverainete",
+      "titre": "Souveraineté et protection des données hors UE",
+      "bloc": "Sécurité et conformité IA",
+      "niveau": "avance",
+      "prerequis": [
+        "reg-ai-act"
+      ],
+      "resume": "Où tournent le modèle et les données, qui y accède, quelles lois extraterritoriales s'appliquent. Argument majeur en faveur de modèles ouverts hébergés en France.",
+      "ressources": [
+        {
+          "type": "libre",
+          "nom": "Règlement (UE) 2023/2854 (Data Act) sur EUR-Lex (accès libre)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/2854/oj"
+        },
+        {
+          "type": "doc",
+          "nom": "SecNumCloud : référentiel d'exigences",
+          "url": "https://cyber.gouv.fr/sites/default/files/document/secnumcloud-referentiel-exigences-v3.2.pdf",
+          "acces": "gratuit",
+          "langue": "fr",
+          "auteur": "ANSSI"
+        }
+      ]
+    },
+    {
+      "id": "tel-ia-usecases",
+      "titre": "Cas d'usage de l'IA dans un réseau télécom",
+      "bloc": "IA pour le réseau télécom",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "ia-llm-bases"
+      ],
+      "resume": "Prévision de charge, détection d'anomalies, assistance à l'exploitation, réseaux autonomes. Distinguer l'IA prédictive classique de l'IA générative.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Open Platform for Enterprise AI (OPEA) : briques d'IA générative",
+          "url": "https://opea.dev/"
+        },
+        {
+          "type": "doc",
+          "nom": "TM Forum : réseaux autonomes",
+          "url": "https://www.tmforum.org/autonomous-networks/"
+        }
+      ]
+    },
+    {
+      "id": "tel-nwdaf",
+      "titre": "NWDAF : l'analytique du cœur 5G",
+      "bloc": "IA pour le réseau télécom",
+      "niveau": "avance",
+      "prerequis": [
+        "tel-ia-usecases"
+      ],
+      "resume": "Fonction normalisée du cœur 5G qui collecte des données réseau et fournit des analyses aux autres fonctions (charge, mobilité, expérience de service).",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "free5GC : cœur 5G open source, dont NWDAF en développement",
+          "url": "https://free5gc.org/"
+        },
+        {
+          "type": "spec",
+          "nom": "3GPP TS 23.288 : analytique de données réseau",
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.288/"
+        }
+      ]
+    },
+    {
+      "id": "tel-aiops",
+      "titre": "AIOps : diagnostic assisté d'un cluster",
+      "bloc": "IA pour le réseau télécom",
+      "niveau": "intermediaire",
+      "prerequis": [
+        "ag-bases",
+        "obs-metrics"
+      ],
+      "resume": "Des outils open source interrogent le cluster et expliquent un incident à partir des événements, journaux et métriques. Gain réel en diagnostic, à condition de vérifier les conclusions.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "K8sGPT",
+          "url": "https://k8sgpt.ai/"
+        },
+        {
+          "type": "opensource",
+          "nom": "HolmesGPT",
+          "url": "https://github.com/robusta-dev/holmesgpt"
+        }
+      ]
+    },
+    {
+      "id": "tel-agent-noc",
+      "titre": "Agent d'assistance au NOC et à l'astreinte",
+      "bloc": "IA pour le réseau télécom",
+      "niveau": "avance",
+      "prerequis": [
+        "tel-aiops",
+        "rag-vectoriel",
+        "ag-garde-fous"
+      ],
+      "resume": "Projet type : un agent en lecture seule retrouve le runbook adapté, résume l'incident et propose des actions que l'humain valide. Mesurer le temps gagné et les erreurs évitées.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "HolmesGPT : point de départ d'un agent de diagnostic",
+          "url": "https://github.com/robusta-dev/holmesgpt"
+        },
+        {
+          "type": "retour-experience",
+          "nom": "À construire en laboratoire à partir des briques de cette roadmap"
+        }
+      ]
+    },
+    {
+      "id": "tel-camara",
+      "titre": "Ouverture des capacités réseau (CAMARA)",
+      "bloc": "IA pour le réseau télécom",
+      "niveau": "avance",
+      "prerequis": [
+        "ag-mcp"
+      ],
+      "resume": "API ouvertes d'accès aux capacités du réseau (localisation, qualité de service, vérification de numéro). Un agent peut les utiliser comme outils, avec le consentement de l'abonné.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "CAMARA Project",
+          "url": "https://camaraproject.org/"
+        }
+      ]
+    },
+    {
+      "id": "tel-edge-inference",
+      "titre": "Inférence en périphérie du réseau (edge)",
+      "bloc": "IA pour le réseau télécom",
+      "niveau": "avance",
+      "prerequis": [
+        "inf-vllm",
+        "ia-quantification"
+      ],
+      "resume": "Placer de petits modèles quantifiés près de l'utilisateur pour la latence et la souveraineté des données, sur des sites aux ressources limitées.",
+      "ressources": [
+        {
+          "type": "opensource",
+          "nom": "Open Platform for Enterprise AI (OPEA)",
+          "url": "https://opea.dev/"
+        }
+      ]
+    }
+  ]
+}

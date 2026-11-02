@@ -1,0 +1,245 @@
+{
+  "ordre": [
+    "devops-integrateur-nf",
+    "sre-exploitation-telco",
+    "ingenieur-caas-telco",
+    "integrateur-nf-5gc",
+    "architecte-caas-telco",
+    "ia-agentique-telco",
+    "parcours-sylva"
+  ],
+  "questions": [
+    {
+      "id": "metier",
+      "question": "Quel est votre métier aujourd'hui ?",
+      "aide": "Choisissez ce qui s'en rapproche le plus.",
+      "options": [
+        {
+          "id": "exploitation",
+          "libelle": "Exploitation, SRE, astreinte",
+          "poids": {
+            "sre-exploitation-telco": 3,
+            "ingenieur-caas-telco": 1
+          },
+          "raison": "Vous venez de l'exploitation : ce parcours est construit autour des incidents, de l'astreinte et de la fiabilité."
+        },
+        {
+          "id": "devops",
+          "libelle": "DevOps, développement, IT généraliste",
+          "poids": {
+            "devops-integrateur-nf": 3,
+            "integrateur-nf-5gc": 1
+          },
+          "raison": "Vous venez du DevOps ou de l'IT : ce parcours traduit vos acquis en télécom, sans prérequis télécom."
+        },
+        {
+          "id": "plateforme",
+          "libelle": "Administration système ou plateforme (Linux, Kubernetes)",
+          "poids": {
+            "ingenieur-caas-telco": 3,
+            "sre-exploitation-telco": 1,
+            "architecte-caas-telco": 1
+          },
+          "raison": "Vous administrez des plateformes : ce parcours va de l'installation du CaaS à la sécurité et à la conformité."
+        },
+        {
+          "id": "reseau",
+          "libelle": "Réseau ou télécom (cœur, transport)",
+          "poids": {
+            "integrateur-nf-5gc": 3,
+            "architecte-caas-telco": 1
+          },
+          "raison": "Vous connaissez le réseau ou le télécom : ce parcours se concentre sur le cœur 5G et ses fonctions.",
+          "role": "reseau"
+        },
+        {
+          "id": "architecture",
+          "libelle": "Architecture, conception, avant-vente",
+          "poids": {
+            "architecte-caas-telco": 3,
+            "ingenieur-caas-telco": 1
+          },
+          "raison": "Vous concevez des solutions : ce parcours couvre le design, le dimensionnement, la conformité et les décisions d'architecture."
+        },
+        {
+          "id": "data-ia",
+          "libelle": "Data, IA, développement d'applications d'IA",
+          "poids": {
+            "ia-agentique-telco": 3,
+            "devops-integrateur-nf": 1
+          },
+          "raison": "Vous venez de la data ou de l'IA : ce parcours part de l'inférence et des agents, puis les relie à la plateforme télécom."
+        },
+        {
+          "id": "pilotage",
+          "libelle": "Gestion de projet, pilotage de programme",
+          "poids": {
+            "architecte-caas-telco": 2,
+            "devops-integrateur-nf": 1
+          },
+          "raison": "Vous pilotez des projets : ce parcours donne la vue d'ensemble d'une plateforme télécom, sans entrer dans chaque outil.",
+          "role": "chef-projet"
+        },
+        {
+          "id": "securite",
+          "libelle": "Sécurité, conformité technique (RSSI, audit)",
+          "poids": {
+            "ingenieur-caas-telco": 2,
+            "architecte-caas-telco": 1
+          },
+          "raison": "Vous travaillez la sécurité : ce parcours contient les blocs sécurité et réglementation France et Europe.",
+          "role": "securite"
+        },
+        {
+          "id": "editeur",
+          "libelle": "Éditeur ou fournisseur de fonctions réseau",
+          "poids": {
+            "integrateur-nf-5gc": 2,
+            "devops-integrateur-nf": 1
+          },
+          "raison": "Vous fournissez des fonctions réseau : ce parcours montre ce que l'intégrateur attend d'elles.",
+          "role": "editeur"
+        },
+        {
+          "id": "juridique",
+          "libelle": "Juridique, réglementaire, conformité",
+          "poids": {
+            "architecte-caas-telco": 2
+          },
+          "raison": "Vous traitez la conformité : ce parcours relie les obligations légales aux décisions d'architecture.",
+          "role": "juridique"
+        }
+      ]
+    },
+    {
+      "id": "telecom",
+      "question": "Où en êtes-vous en télécom ?",
+      "aide": "4G/5G, cœur de réseau, vocabulaire opérateur.",
+      "options": [
+        {
+          "id": "aucune",
+          "libelle": "Je débute, je n'y connais rien",
+          "poids": {
+            "devops-integrateur-nf": 2,
+            "ia-agentique-telco": 1
+          },
+          "raison": "Vous découvrez le télécom : on commence par le vocabulaire et les bases, sans rien supposer."
+        },
+        {
+          "id": "notions",
+          "libelle": "J'ai des notions (je sais ce qu'est un cœur 5G)",
+          "poids": {
+            "sre-exploitation-telco": 1,
+            "ingenieur-caas-telco": 1,
+            "integrateur-nf-5gc": 1,
+            "architecte-caas-telco": 1
+          },
+          "raison": "Vous avez des notions de télécom : on saute les bases et on va vers le cœur du métier."
+        },
+        {
+          "id": "aise",
+          "libelle": "Je suis à l'aise, j'y travaille",
+          "poids": {
+            "integrateur-nf-5gc": 1,
+            "architecte-caas-telco": 1
+          },
+          "raison": "Vous êtes à l'aise en télécom : on démarre directement sur un sujet avancé de votre rôle."
+        }
+      ]
+    },
+    {
+      "id": "objectif",
+      "question": "Quel est votre objectif dans les trois prochains mois ?",
+      "aide": "Ce qui compte le plus pour vous maintenant.",
+      "options": [
+        {
+          "id": "decouvrir",
+          "libelle": "Découvrir le domaine",
+          "poids": {
+            "devops-integrateur-nf": 2
+          },
+          "raison": "Vous voulez découvrir le domaine : un parcours d'acculturation progressif."
+        },
+        {
+          "id": "poste",
+          "libelle": "Tenir mon poste ou ma mission actuelle",
+          "poids": {
+            "sre-exploitation-telco": 1,
+            "ingenieur-caas-telco": 1
+          },
+          "raison": "Vous voulez tenir votre poste : le parcours cible l'essentiel du rôle."
+        },
+        {
+          "id": "deployer",
+          "libelle": "Préparer un déploiement de bout en bout",
+          "poids": {
+            "integrateur-nf-5gc": 2,
+            "ingenieur-caas-telco": 1,
+            "architecte-caas-telco": 1
+          },
+          "raison": "Vous préparez un déploiement : le projet fil rouge relie les rôles et les compétences à chaque phase.",
+          "projet": "coeur-5g-sur-caas"
+        },
+        {
+          "id": "evoluer",
+          "libelle": "Évoluer vers l'architecture",
+          "poids": {
+            "architecte-caas-telco": 2
+          },
+          "raison": "Vous visez l'architecture : ce parcours donne la vue d'ensemble et les arbitrages."
+        },
+        {
+          "id": "ia",
+          "libelle": "Héberger ou utiliser de l'IA et des agents",
+          "poids": {
+            "ia-agentique-telco": 3
+          },
+          "raison": "Vous voulez héberger ou utiliser de l'IA générative et des agents : ce parcours couvre l'inférence, les GPU, la sécurité et les cas d'usage réseau."
+        }
+      ]
+    }
+  ],
+  "premiers_noeuds": {
+    "devops-integrateur-nf": {
+      "aucune": "tel-reseau-mobile",
+      "notions": "tel-nf",
+      "aise": "archi-5g"
+    },
+    "sre-exploitation-telco": {
+      "aucune": "telco-101",
+      "notions": "sre-slo",
+      "aise": "alerting-utile"
+    },
+    "ingenieur-caas-telco": {
+      "aucune": "telco-101",
+      "notions": "k8s-archi",
+      "aise": "ocp-install"
+    },
+    "integrateur-nf-5gc": {
+      "aucune": "archi-5g",
+      "notions": "amf",
+      "aise": "deploiement-lab"
+    },
+    "architecte-caas-telco": {
+      "aucune": "telco-101",
+      "notions": "k8s-archi",
+      "aise": "archi-reseau-support"
+    },
+    "ia-agentique-telco": {
+      "aucune": "ia-llm-bases",
+      "notions": "inf-vllm",
+      "aise": "tel-agent-noc"
+    },
+    "parcours-sylva": {
+      "aucune": "sylva-projet",
+      "notions": "sylva-projet",
+      "aise": "sylva-architecture"
+    }
+  },
+  "duree_par_niveau_heures": {
+    "fondamental": 4,
+    "intermediaire": 8,
+    "avance": 12,
+    "transverse": 4
+  }
+}
