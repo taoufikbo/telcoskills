@@ -104,6 +104,25 @@ node scripts/verifier-rendu.mjs                                   # après le bu
 
 15. **Consentement à la mesure d'audience (fait le 2026-11-02).** Produit src/produits/consentement (essai /labo/consentement) : bandeau, « Gérer mes choix » en pied de page, script Vercel Web Analytics chargé seulement après accord. Visible seulement si `NEXT_PUBLIC_ANALYTICS=vercel` est défini sur Vercel (sinon aucune mesure, donc aucun bandeau). Page Confidentialité mise à jour ; durée de conservation du choix (6 mois) et rédaction juridique à valider par l'auteur.
 
+16. **Paliers de maîtrise et heures de formation par palier (backlog, demandé le 2026-11-03).** Aujourd'hui, une compétence a un seul nombre d'heures (hypothèse par niveau de difficulté, `duree_par_niveau_heures`) et trois états de pratique (vu, acquis par un test, à revoir). L'auteur veut mesurer *jusqu'où* on maîtrise un composant ou un pattern, et afficher les heures par palier.
+    - **Vocabulaire** : « niveau » désigne déjà la difficulté d'une compétence (fondamental, intermédiaire, avancé, transverse). Appeler la maîtrise **palier** pour éviter la confusion.
+    - **Échelle proposée par l'auteur** : 1 = je sais dire à quoi ça sert et je comprends le rôle du composant dans l'architecture ; 2 = palier 1 + je vois comment l'utiliser ; 3 = j'ai suivi le parcours.
+    - **Échelle proposée en complément (à trancher)**, pensée pour couvrir les composants *et* les patterns (inspirée des taxonomies d'apprentissage classiques comme celle de Bloom et le modèle de Dreyfus, sans en reprendre le détail) :
+
+      | Palier | Pour un composant (ex. Multus, SR-IOV) | Pour un pattern (ex. résilience d'une CNF, mise à jour sans coupure) | Preuve possible |
+      |---|---|---|---|
+      | 1. Situer | dire à quoi il sert et sa place dans l'architecture | dire le problème résolu et le contexte où il s'applique | rappel (quiz), déjà en place (« acquis testé ») |
+      | 2. Utiliser | l'installer ou l'utiliser en suivant un guide | appliquer le pattern sur un cas guidé | segment pratique / exercice guidé |
+      | 3. Pratiquer | avoir suivi le parcours : le mettre en œuvre dans le projet fil rouge | l'avoir appliqué dans le projet fil rouge | étape du projet fil rouge réalisée (auto-déclarée) |
+      | 4. Diagnostiquer et arbitrer | dépanner une panne, choisir entre alternatives et justifier | dire quand ne pas l'utiliser, ses compromis et ses alternatives | cas de panne ou d'arbitrage corrigé |
+      | 5. Concevoir et transmettre | le dimensionner et l'intégrer dans une architecture, l'expliquer à d'autres | composer plusieurs patterns, écrire la décision d'architecture | revue ou livrable (hors site, honnête : non mesurable sans compte) |
+
+      Les paliers 1 à 3 correspondent à la demande de l'auteur ; 4 et 5 couvrent les patterns (arbitrage, compromis) et la conception, que 1 à 3 ne mesurent pas. Une compétence peut ne proposer que les paliers pour lesquels il existe une preuve (un bloc sans donnée se masque).
+    - **Lien avec l'existant** : palier 1 = l'« acquis (testé) » actuel (rappel réussi, révision espacée). Palier 2 : les segments pratiques de content/pratique. Palier 3 : le projet fil rouge (src/lib/projets.ts), déclaratif par nature. Aucun palier n'est atteint sur simple déclaration, sauf le 3 (à dire clairement) ; décision du modèle : un champ `palier` par compétence dans `tcr:pratique` (produit Progression), sans casser les états actuels.
+    - **Affichage des heures** : heures *par palier* (par exemple X h pour atteindre le palier 1, Y h de plus pour le 2) plutôt qu'un seul total ; le cockpit et le programme montrent le palier visé (réglable : « je vise le palier 2 »), les heures faites et restantes pour ce palier, et la barre de progression par palier. Toujours « estimation indicative ».
+    - **À décider par l'auteur avant de coder** : (a) l'échelle retenue (3 paliers ou 5) ; (b) la répartition des heures par palier : hypothèse éditoriale à poser dans content/orientation.json (aucune valeur inventée ici) ; (c) le palier visé par défaut ; (d) ce que vaut le palier 3 sans preuve (auto-déclaré) ; (e) quel palier compte pour « acquis » dans le décompte et pour débloquer les suites dans le chemin critique (aujourd'hui : le palier 1).
+    - **Pour le produit** : évolution du produit Progression (modèle et stockage), du produit Cockpit (`calculerProgramme`, `projeter` : heures par palier) et du schéma Zod d'orientation ; tests de non-régression sur les états existants ; page d'essai /labo/cockpit à étendre.
+
 ## Idées issues de l'analyse du parcours utilisateur (non demandées)
 
 Prochaine action visible sur chaque page de roadmap ; progression partagée entre parcours (les ids de nœud sont communs) ; tableau de bord « Reprendre » ; dates de relecture et signaux de confiance sur les ressources ; vue équipe ; mesure d'usage et entretiens utilisateurs. L'assistant d'orientation n'a pas été testé auprès de vrais utilisateurs.
