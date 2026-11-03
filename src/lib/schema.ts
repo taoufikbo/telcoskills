@@ -45,6 +45,8 @@ export const ProvenanceSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("editoriale") }),
 ]);
 
+export const PALIERS = [1, 2, 3, 4, 5] as const;
+
 export const NoeudSchema = z.object({
   id: slug,
   titre: z.string().min(1),
@@ -54,6 +56,8 @@ export const NoeudSchema = z.object({
   /** Absent quand la demande n'a pas été évaluée (roadmap non issue d'offres d'emploi). */
   demande: z.enum(DEMANDES).optional(),
   resume: z.string().min(1),
+  /** Palier de maîtrise à atteindre dans CE parcours (1 à 5). Absent tant que l'auteur ne l'a pas validé : le site ne déduit rien d'un palier non posé. */
+  cible: z.number().int().min(1).max(5).optional(),
   ressources: z.array(RessourceSchema),
   projet: z.string().min(1).optional(),
   /** Avis d'architecte : texte écrit par l'auteur, jamais généré. Affiché sur la page du nœud. */
