@@ -46,9 +46,16 @@ export function redirections(instance: string | undefined = process.env.NEXT_PUB
 
 const withMDX = createMDX({});
 
+/** Version du site (package.json) et commit déployé (fourni par Vercel au build) : affichées en bas de page. */
+const version: string = JSON.parse(fs.readFileSync(path.join(process.cwd(), "package.json"), "utf8")).version;
+
 const config: NextConfig = {
   // Dépôt du site public : l'instance « public » est la seule, y compris quand la variable n'est pas définie.
-  env: { NEXT_PUBLIC_INSTANCE: process.env.NEXT_PUBLIC_INSTANCE ?? "public" },
+  env: {
+    NEXT_PUBLIC_INSTANCE: process.env.NEXT_PUBLIC_INSTANCE ?? "public",
+    NEXT_PUBLIC_VERSION: version,
+    NEXT_PUBLIC_COMMIT: (process.env.VERCEL_GIT_COMMIT_SHA ?? "").slice(0, 7),
+  },
   async redirects() {
     return redirections();
   },

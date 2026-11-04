@@ -81,13 +81,20 @@ export function problemesOrientation(config: Orientation, roadmaps: Roadmap[], p
   return problemes;
 }
 
+/** Classement des parcours d'après les réponses déjà données (somme des poids, ex æquo départagés par l'ordre d'affichage). */
+export function classerParcours(config: Orientation, reponses: Partial<Reponses>): string[] {
+  const score = new Map<string, number>(config.ordre.map((id) => [id, 0]));
+  for (const q of config.questions) {
+    const option = q.options.find((o) => o.id === reponses[q.id]);
+    if (option) for (const [id, p] of Object.entries(option.poids)) score.set(id, (score.get(id) ?? 0) + p);
+  }
+  return [...score.keys()].sort((a, b) => score.get(b)! - score.get(a)! || config.ordre.indexOf(a) - config.ordre.indexOf(b));
+}
+
 /** Recommande un parcours (somme des poids des trois réponses, ex æquo départagés par l'ordre d'affichage) et un premier nœud. */
 export function recommander(config: Orientation, reponses: Reponses): Recommandation {
   const choisies = config.questions.map((q) => ({ question: q.id, option: q.options.find((o) => o.id === reponses[q.id]) }));
-  const score = new Map<string, number>(config.ordre.map((id) => [id, 0]));
-  for (const { option } of choisies) if (option) for (const [id, p] of Object.entries(option.poids)) score.set(id, (score.get(id) ?? 0) + p);
-
-  const classement = [...score.keys()].sort((a, b) => score.get(b)! - score.get(a)! || config.ordre.indexOf(a) - config.ordre.indexOf(b));
+  const classement = classerParcours(config, reponses);
   const roadmapId = classement[0];
   const niveau = (NIVEAUX_TELECOM as readonly string[]).includes(reponses.telecom) ? (reponses.telecom as NiveauTelecom) : "aucune";
 

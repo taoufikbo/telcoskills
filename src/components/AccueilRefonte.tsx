@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CarteHerosSuivie from "@/components/CarteHerosSuivie";
+import ChoixEtCarte from "@/components/ChoixEtCarte";
 import DiagnosticAvecCarte from "@/components/DiagnosticAvecCarte";
 import Draft from "@/components/Draft";
 import { LienSuivi } from "@/produits/mesure";
@@ -11,7 +12,7 @@ import { chargerProjets } from "@/lib/projets";
 import { chargerRoadmaps, getRoadmap } from "@/lib/roadmaps";
 import { roadmapsLegeres } from "@/lib/roadmapsLegeres";
 import { chargerSylva } from "@/lib/sylva";
-import { BASE_ROADMAPS, urlNoeud } from "@/lib/urls";
+import { BASE_ROADMAPS, urlNoeud, urlRoadmap } from "@/lib/urls";
 import { disposerCarte } from "@/produits/carte-heros";
 import { ANCRE_DIAGNOSTIC } from "@/produits/diagnostic";
 import { chiffresCatalogue, Preuve } from "@/produits/preuve";
@@ -21,7 +22,8 @@ import { SelonVisiteur } from "@/produits/visiteur";
 
 /**
  * Accueil de l'instance publique. Aucune logique propre : il demande l'état au produit Visiteur et pose des produits.
- * - Nouveau (et rendu serveur) : la carte, les chiffres du catalogue, le diagnostic ; un seul bouton principal, « Faire le diagnostic ».
+ * - Nouveau (et rendu serveur) : le diagnostic et la carte côte à côte dans le hero (on choisit tout de suite, la carte suit les réponses),
+ *   puis les chiffres du catalogue ; pas de bouton de contact en haut de page.
  * - Revenant : « Reprendre » à la place du bouton, la carte ; ni chiffres ni questionnaire (sauf résultat partagé dans l'adresse).
  * Les blocs sans donnée (phrase chiffrée de la bascule, nouveautés) ne sont pas affichés.
  */
@@ -53,6 +55,17 @@ export default function AccueilRefonte() {
 
   const chiffres = chiffresCatalogue({ roadmaps, projets: chargerProjets() });
 
+  const legendeCarte =
+    roadmapGraphe && noeudCible && carte ? (
+      <figcaption className="mono mt-3">
+        Ce qu&apos;il faut maîtriser avant{" "}
+        <Link href={urlNoeud(roadmapGraphe.id, noeudCible.id)} className="underline" style={{ color: "var(--fg)" }}>
+          {noeudCible.titre}
+        </Link>{" "}
+        : {carte.noeuds.find((n) => n.cible)!.amont.length} compétences.
+      </figcaption>
+    ) : null;
+
   const boutonDiagnostic = (
     <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
       <LienSuivi href={`#${ANCRE_DIAGNOSTIC}`} evenement="cta_clic" donnees={{ emplacement: "accueil-diagnostic" }} className="btn btn-primary">
@@ -66,59 +79,75 @@ export default function AccueilRefonte() {
 
   return (
     <main>
-      <section>
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-14 sm:px-6 lg:pb-24 lg:pt-20 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-          <div className="space-y-7">
-            <h1 className="text-5xl font-semibold leading-[1.02] sm:text-6xl">
+      <section aria-labelledby="titre-accueil">
+        <div className="mx-auto max-w-6xl space-y-8 px-4 pb-14 pt-10 sm:px-6 lg:pb-20 lg:pt-14">
+          <div className="max-w-3xl space-y-3">
+            <h1 id="titre-accueil" className="text-3xl font-semibold leading-tight sm:text-4xl">
               Architecture de plateformes télécom : cloud, 5G et IA.
             </h1>
             {carte && noeudCible && (
-              <p className="max-w-xl text-lg" style={{ color: "var(--muted)" }}>
+              <p style={{ color: "var(--muted)" }}>
                 {nbCompetences} compétences, reliées par leurs prérequis, en {parcoursMetier(roadmaps).length} parcours par métier. Choisissez votre parcours en trois questions : la carte
                 se redessine avec votre chemin.
               </p>
             )}
             <Draft titre="positionnement : le problème que vous résolvez, en une phrase" />
             <Draft titre="thèse centrale, en deux ou trois lignes" />
-            <SelonVisiteur
-              nouveau={boutonDiagnostic}
-              revenant={<Reprendre roadmaps={roadmapsLegeres()} config={o.config} sinon={boutonDiagnostic} />}
-            />
           </div>
-          {roadmapGraphe && noeudCible && carte && (
-            <figure className="panneau w-full max-w-3xl p-4 sm:p-5 xl:max-w-none">
-              <CarteHerosSuivie
-                defaut={carte}
-                config={o.config}
-                legendeDefaut={
-                  <figcaption className="mono mt-3">
-                    Ce qu&apos;il faut maîtriser avant{" "}
-                    <Link href={urlNoeud(roadmapGraphe.id, noeudCible.id)} className="underline" style={{ color: "var(--fg)" }}>
-                      {noeudCible.titre}
-                    </Link>{" "}
-                    : {carte.noeuds.find((n) => n.cible)!.amont.length} compétences.
-                  </figcaption>
-                }
-              />
-              <p className="mono mt-3 border-t pt-3" style={{ borderColor: "var(--filet)" }}>
-                Et les outils ?{" "}
-                <Link href="/ressources/landscape" className="underline" style={{ color: "var(--fg)" }}>
-                  {nbOutils} outils de la pile, par rôle : voir le landscape
-                </Link>
-              </p>
-            </figure>
+          {roadmapGraphe && noeudCible && carte ? (
+            <SelonVisiteur
+              nouveau={
+                <div id={ANCRE_DIAGNOSTIC} className="scroll-mt-24">
+                  <ChoixEtCarte
+                    config={o.config}
+                    parcours={o.parcours}
+                    titresNoeuds={o.titresNoeuds}
+                    projets={o.projets}
+                    durees={o.durees}
+                    rolesSansParcours={{}}
+                    testables={[]}
+                    carteParDefaut={carte}
+                    legendeCarte={legendeCarte}
+                    nbOutils={nbOutils}
+                  />
+                </div>
+              }
+              revenant={
+                <div className="grid items-center gap-10 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+                  <Reprendre roadmaps={roadmapsLegeres()} config={o.config} sinon={boutonDiagnostic} />
+                  <figure className="panneau w-full max-w-3xl p-4 sm:p-5 xl:max-w-none">
+                    <CarteHerosSuivie defaut={carte} config={o.config} legendeDefaut={legendeCarte} />
+                    <p className="mono mt-3 border-t pt-3" style={{ borderColor: "var(--filet)" }}>
+                      Et les outils ?{" "}
+                      <Link href="/ressources/landscape" className="underline" style={{ color: "var(--fg)" }}>
+                        {nbOutils} outils de la pile, par rôle : voir le landscape
+                      </Link>
+                    </p>
+                  </figure>
+                </div>
+              }
+            />
+          ) : (
+            boutonDiagnostic
           )}
+          {/* Sans JavaScript, et pour qui sait déjà : les parcours sont aussi des liens directs. */}
+          <nav aria-label="Parcours par métier" className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
+            <span className="mono">Ou directement :</span>
+            {parcoursMetier(roadmaps).map((r) => (
+              <Link key={r.id} href={urlRoadmap(r.id)} className="text-sm underline underline-offset-4">
+                {r.titre}
+              </Link>
+            ))}
+            <Link href={BASE_ROADMAPS} className="mono underline underline-offset-4">
+              Tout explorer
+            </Link>
+          </nav>
         </div>
       </section>
 
       <SelonVisiteur
         nouveau={
-          <>
-            <Preuve chiffres={chiffres} />
-            <div id={ANCRE_DIAGNOSTIC} className="mx-auto max-w-4xl scroll-mt-24 px-4 py-16 sm:px-6 sm:py-20">
-              {diagnostic(false)}
-            </div>
-          </>
+          <Preuve chiffres={chiffres} />
         }
         revenant={
           <div id={ANCRE_DIAGNOSTIC} className="mx-auto max-w-4xl scroll-mt-24 px-4 py-16 empty:hidden sm:px-6">

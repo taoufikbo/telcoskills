@@ -5,6 +5,7 @@ import { mesureActive } from "@/produits/mesure";
 import { depotPublic } from "@/lib/contribution";
 import { INSTANCE } from "@/lib/instance";
 import { lienVisible, sectionsVisibles } from "@/lib/sections";
+import { libelleVersion } from "@/lib/version";
 import { BASE_PROJET, BASE_ROADMAPS } from "@/lib/urls";
 
 const COLONNES = [
@@ -83,6 +84,12 @@ export default async function SiteFooter() {
           <>
             {" · "}
             <LienChoix />
+          </>
+        )}
+        {libelleVersion() && (
+          <>
+            {" · "}
+            <span title="Version du site et commit déployé">{libelleVersion()}</span>
           </>
         )}
       </p>

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { chargerOrientation, validerOrientation } from "./orientation";
-import { NIVEAUX_TELECOM, recommander, reponsesValides, type Reponses } from "./orientation-schema";
+import { NIVEAUX_TELECOM, classerParcours, recommander, reponsesValides, type Reponses } from "./orientation-schema";
 import { chargerProjets } from "./projets";
 import { chargerRoadmaps } from "./roadmaps";
 
@@ -116,5 +116,23 @@ describe("orientation : aucun rôle sans issue", () => {
     const c = copie();
     c.questions[0].options[0].role = "fantome";
     expect(() => validerOrientation(c, roadmaps, projets, ["chef-projet"])).toThrow(/rôle inconnu/);
+  });
+});
+
+describe("orientation : classement provisoire", () => {
+  it("donne le même premier parcours que la recommandation une fois les trois réponses données", () => {
+    const [qm, qt, qo] = config.questions;
+    for (const m of qm.options)
+      for (const t of qt.options)
+        for (const o of qo.options) {
+          const r = { metier: m.id, telecom: t.id, objectif: o.id };
+          expect(classerParcours(config, r)[0]).toBe(recommander(config, r).roadmapId);
+        }
+  });
+
+  it("classe déjà tous les parcours après la seule réponse « métier », celui du métier choisi en tête", () => {
+    const classement = classerParcours(config, { metier: "data-ia" });
+    expect([...classement].sort()).toEqual([...config.ordre].sort());
+    expect(classement[0]).toBe("ia-agentique-telco");
   });
 });

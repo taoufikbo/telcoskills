@@ -33,10 +33,12 @@ type Props = {
   seulementSiPartage?: boolean;
   /** Contenu affiché dans le résultat, sous la recommandation (sortie : le parcours et le premier pas recommandés). */
   apresResultat?: (reco: { roadmapId: string; noeudId: string }) => ReactNode;
+  /** Appelé à chaque réponse avec les réponses déjà données (vide quand on recommence) : la page peut montrer un aperçu avant la fin. */
+  onBrouillon?: (reponses: Partial<Reponses>) => void;
 };
 
 /** Le diagnostic personnel : trois questions, un parcours recommandé, un premier pas. Écrit les réponses dans le produit Parcours. */
-export default function Diagnostic({ config, parcours, titresNoeuds, projets, durees, rolesSansParcours, testables, seulementSiPartage = false, apresResultat }: Props) {
+export default function Diagnostic({ config, parcours, titresNoeuds, projets, durees, rolesSansParcours, testables, seulementSiPartage = false, apresResultat, onBrouillon }: Props) {
   const { muter } = usePratique();
   const { rythme } = useRythme();
   const { reponses: enregistrees } = useReponsesEnregistrees();
@@ -70,6 +72,7 @@ export default function Diagnostic({ config, parcours, titresNoeuds, projets, du
       ecrire(reponses);
       setBrouillon({});
       setEtape(0);
+      onBrouillon?.({});
     }
   };
   const avancer = (e: React.FormEvent) => {
@@ -223,6 +226,7 @@ export default function Diagnostic({ config, parcours, titresNoeuds, projets, du
                     if (Object.keys(brouillon).length === 0) suivre("quiz_start");
                     const reponses = { ...brouillon, [question.id]: o.id };
                     setBrouillon(reponses);
+                    onBrouillon?.(reponses);
                     passer(reponses);
                   }}
                   className="peer sr-only"

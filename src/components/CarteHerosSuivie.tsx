@@ -15,6 +15,8 @@ type Props = {
   choix?: { roadmapId: string; noeudId: string };
   /** Légende de la carte par défaut, masquée quand la carte devient celle de la personne. */
   legendeDefaut?: ReactNode;
+  /** Parcours probable pendant le diagnostic (après la première réponse) : la carte montre son chemin depuis le début, avant que les trois réponses ne soient données. */
+  apercu?: string | null;
 };
 
 let promesse: Promise<Record<string, CarteDepart>> | null = null;
@@ -26,17 +28,17 @@ const chargerCartes = () => (promesse ??= fetch("/cartes-parcours.json").then((r
  * Après le diagnostic, la carte se redessine : le chemin de la personne, de son point de départ à la compétence la plus avancée
  * qui s'appuie dessus. La Carte héros elle-même n'accède à aucun stockage.
  */
-export default function CarteHerosSuivie({ defaut, config, choix, legendeDefaut }: Props) {
+export default function CarteHerosSuivie({ defaut, config, choix, legendeDefaut, apercu }: Props) {
   const { etat, now, pret } = usePratique();
   const { reponses } = useReponsesEnregistrees();
   const [cartes, setCartes] = useState<Record<string, CarteDepart> | null>(null);
 
   const cle = useMemo(() => {
     if (choix) return `${choix.roadmapId}/${choix.noeudId}`;
-    if (!reponsesValides(config, reponses)) return null;
+    if (!reponsesValides(config, reponses)) return apercu && config.premiers_noeuds[apercu] ? `${apercu}/${config.premiers_noeuds[apercu].aucune}` : null;
     const r = recommander(config, reponses);
     return `${r.roadmapId}/${r.noeudId}`;
-  }, [choix, config, reponses]);
+  }, [choix, config, reponses, apercu]);
 
   useEffect(() => {
     if (!cle || cartes) return;
@@ -62,7 +64,7 @@ export default function CarteHerosSuivie({ defaut, config, choix, legendeDefaut 
     <div key={perso ? cle : "defaut"} className={perso ? "carte-apparait" : undefined}>
       {perso && (
         <p className="mono mb-2" data-carte-perso>
-          Votre chemin dans « {perso.titreRoadmap} »
+          {reponsesValides(config, reponses) || choix ? "Votre chemin dans" : "Parcours probable :"} « {perso.titreRoadmap} »
         </p>
       )}
       <CarteHeros disposition={disposition} progression={progression} />
