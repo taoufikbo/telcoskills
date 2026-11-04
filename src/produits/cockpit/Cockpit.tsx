@@ -50,7 +50,7 @@ function Mesure({ valeur, libelle }: { valeur: string; libelle: string }) {
 
 /** Le cockpit d'une roadmap : où j'en suis, l'investissement, la prochaine étape en un clic, les révisions, l'objectif, la date d'arrivée estimée. */
 export default function Cockpit({ donnees, titre, onOuvrir, onRythme, onObjectif, projetId, aide = false, parcours }: Props) {
-  const { programme: p, decompte: d, suite, revision, objectif, projection, rythme, aVenir } = donnees;
+  const { programme: p, paliers, decompte: d, suite, revision, objectif, projection, rythme, aVenir } = donnees;
   const aDecouvrir = Math.max(0, d.actifs - d.acquis - d.vus);
   const etiquette = suite.type === "debut" ? "Commencer ici" : suite.type === "termine" ? "Parcours terminé" : suite.enCours ? "Reprendre ici" : "Prochaine étape";
   // Une seule action principale : réviser quand des révisions sont dues, sinon la prochaine étape.
@@ -72,6 +72,15 @@ export default function Cockpit({ donnees, titre, onOuvrir, onRythme, onObjectif
             <span style={{ color: "var(--muted)" }}> sur {d.actifs}</span>
           </p>
           <Barre acquis={d.acquis} vus={d.vus} total={d.actifs} libelle={`Compétences acquises par un test et vues : ${titre}`} />
+          {paliers.vises > 0 && (
+            <div className="space-y-1.5">
+              <p className="text-sm">
+                <strong className="font-semibold tabular-nums">{paliers.atteints}</strong> compétence{paliers.atteints > 1 ? "s" : ""} au palier visé
+                <span style={{ color: "var(--muted)" }}> sur {paliers.vises}</span>
+              </p>
+              <Barre acquis={paliers.atteints} vus={0} total={paliers.vises} libelle={`Compétences au palier visé pour ce métier : ${titre}`} />
+            </div>
+          )}
           <dl className="grid grid-cols-3 gap-4 border-t pt-4" style={{ borderColor: "var(--filet)" }}>
             <Mesure valeur={`${p.acquis}`} libelle="acquises" />
             <Mesure valeur={`${p.restantes}`} libelle="restantes" />

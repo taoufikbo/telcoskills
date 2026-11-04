@@ -3,7 +3,9 @@
 import { useCallback, useMemo } from "react";
 import {
   compter,
+  compterPaliers,
   definirHorsParcours,
+  definirPalier,
   effacerDeclarations,
   marquerVu,
   reinitialiserRoadmap,
@@ -30,6 +32,7 @@ export function useProgression(roadmap: Roadmap) {
 
   const progression = useMemo(() => vueProgression(etat, roadmap, now), [etat, roadmap, now]);
   const decompte = useMemo(() => compter(etat, roadmap.id, roadmap.noeuds, now), [etat, roadmap, now]);
+  const paliers = useMemo(() => compterPaliers(etat, roadmap.id, roadmap.noeuds), [etat, roadmap]);
   const suivi = useCallback((id: string): SuiviNoeud => suiviNoeud(etat, roadmap.id, id, now), [etat, roadmap.id, now]);
 
   const definirStatut = useCallback(
@@ -42,6 +45,9 @@ export function useProgression(roadmap: Roadmap) {
       }),
     [muter, roadmap.id],
   );
+
+  /** Déclare le palier atteint pour une compétence (1 à 5), ou l'efface (null). */
+  const definirLePalier = useCallback((id: string, palier: number | null) => muter((e) => suivreParcours(definirPalier(e, id, palier), roadmap.id)), [muter, roadmap.id]);
 
   /** Import d'un fichier ou d'un lien : remplace les déclarations, jamais une compétence déjà acquise par un test. */
   const remplacer = useCallback(
@@ -57,5 +63,5 @@ export function useProgression(roadmap: Roadmap) {
 
   const migration = { declares: etat.declares, aAfficher: etat.migre && etat.declares > 0 && !etat.messageMigrationVu };
 
-  return { progression, decompte, suivi, monParcours, suivreCeParcours, definirStatut, remplacer, reinitialiser, enregistrerRappel, migration, marquerMigrationLue };
+  return { progression, decompte, paliers, definirLePalier, suivi, monParcours, suivreCeParcours, definirStatut, remplacer, reinitialiser, enregistrerRappel, migration, marquerMigrationLue };
 }

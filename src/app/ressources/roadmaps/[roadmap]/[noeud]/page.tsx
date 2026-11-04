@@ -14,6 +14,7 @@ import { estNoeudDeJugement } from "@/lib/jugement";
 import { LIBELLE_NIVEAU, LIBELLE_RESSOURCE } from "@/lib/libelles";
 import { dependants, occurrencesDuNoeud, roadmapDeReference } from "@/lib/noeuds";
 import { chargerOrientation } from "@/lib/orientation";
+import { DEFINITION_PALIER, LIBELLE_INVESTISSEMENT, investissementNoeud } from "@/lib/palier";
 import { lienCorrection } from "@/lib/contribution";
 import { exigerRefonte } from "@/lib/refonte";
 import { contactDisponible, frameworksRediges } from "@/lib/sections";
@@ -68,6 +69,8 @@ export default async function PageNoeud({ params }: { params: Params }) {
   // Parcours thématique (Sylva) : rattaché à son onglet, à part des roadmaps métier.
   const rubrique = rubriqueThematique(roadmap.id);
   const parent = rubrique ? { nom: rubrique.nom, chemin: rubrique.href } : { nom: "Roadmaps", chemin: BASE_ROADMAPS };
+
+  const investissement = investissementNoeud(chargerOrientation().investissement_par_palier, noeud);
 
   const sommaire = (
     <SommaireParcours
@@ -250,11 +253,22 @@ export default async function PageNoeud({ params }: { params: Params }) {
             lignes={[
               ["Bloc", noeud.bloc],
               ["Niveau", LIBELLE_NIVEAU[noeud.niveau]],
+              ...((noeud.cible !== undefined
+                ? [
+                    ["Palier visé", `${noeud.cible} sur 5`],
+                    ...(investissement !== undefined ? [["Investissement", LIBELLE_INVESTISSEMENT[investissement]]] : []),
+                  ]
+                : []) as [string, string | number][]),
               ["Prérequis", prerequis.length],
               ["Ressources", noeud.ressources.length],
               ["Roadmaps", ailleurs.length + 1],
             ]}
           >
+            {noeud.cible !== undefined && (
+              <p className="mb-3 text-xs" style={{ color: "var(--muted)" }}>
+                <strong style={{ color: "var(--fg)" }}>Palier {noeud.cible}</strong> pour ce métier : {DEFINITION_PALIER[noeud.cible as 1 | 2 | 3 | 4 | 5]}. Le palier dépend du métier : la même compétence peut être visée plus haut dans un autre parcours.
+              </p>
+            )}
             <Link href={`${urlRoadmap(roadmap.id)}?noeud=${noeud.id}`} className="btn btn-ghost btn-sm w-full">
               Voir dans la roadmap
             </Link>

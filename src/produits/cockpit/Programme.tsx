@@ -22,14 +22,14 @@ const STATUT: Record<StatutProgramme, { marque: string; texte: string } | null> 
   "hors-parcours": { marque: "–", texte: "sorti du parcours" },
 };
 
-function Competence({ n, onOuvrir, href }: { n: NoeudProgramme } & Pick<Props, "onOuvrir" | "href">) {
+function Competence({ n, onOuvrir, href, suivi }: { n: NoeudProgramme; suivi: boolean } & Pick<Props, "onOuvrir" | "href">) {
   const s = STATUT[n.statut];
   const contenu = (
     <>
       <span className={n.statut === "hors-parcours" ? "line-through opacity-60" : ""}>{n.titre}</span>
       <span className="mono ml-2 whitespace-nowrap" style={{ color: "var(--muted)" }}>
         {LIBELLE_NIVEAU[n.niveau].toLowerCase()}
-        {n.cible !== undefined && ` · palier ${n.cible}`}
+        {n.cible !== undefined && (suivi && n.palier !== undefined ? ` · palier ${n.palier}/${n.cible}` : ` · palier ${n.cible}`)}
         {n.investissement !== undefined && ` · ${LIBELLE_INVESTISSEMENT[n.investissement]}`}
       </span>
     </>
@@ -88,7 +88,7 @@ export default function Programme({ programme, onOuvrir, href, suivi = false }: 
               </summary>
               <ul className="pb-3 pl-9">
                 {b.noeuds.map((n) => (
-                  <Competence key={n.id} n={n} onOuvrir={onOuvrir} href={href} />
+                  <Competence key={n.id} n={n} onOuvrir={onOuvrir} href={href} suivi={suivi} />
                 ))}
               </ul>
             </details>

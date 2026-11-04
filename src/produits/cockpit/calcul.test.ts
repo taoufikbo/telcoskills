@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { chargerOrientation } from "@/lib/orientation";
 import { getRoadmap } from "@/lib/roadmaps";
-import { compter, etatVide, enregistrerRappel, marquerVu, definirHorsParcours, suiviNoeud, vueProgression } from "@/produits/progression";
+import { compter, etatVide, enregistrerRappel, marquerVu, definirHorsParcours, definirPalier, suiviNoeud, vueProgression } from "@/produits/progression";
 import { calculerCockpit, calculerProgramme, placerSemaines, projeter } from "./calcul";
 
 const now = new Date("2026-11-02T12:00:00");
@@ -93,6 +93,19 @@ describe("cockpit", () => {
     expect(c.revision).toEqual({ total: 0, premier: null });
     expect(c.objectif).toBeNull();
     expect(c.projection.semaines).toBe(Math.ceil(c.programme.restantes / c.rythme));
+  });
+  it("paliers : compte les compétences au palier visé pour ce rôle", () => {
+    const au = (c: ReturnType<typeof calculerCockpit>) => c.paliers;
+    expect(roadmap.noeuds.every((n) => n.cible !== undefined)).toBe(true);
+    expect(au(calculerCockpit(entree()))).toEqual({ vises: roadmap.noeuds.length, atteints: 0 });
+    // un palier déclaré au niveau visé compte ; un palier trop bas ne compte pas
+    const n0 = roadmap.noeuds[0];
+    const e = definirPalier(etatVide(now), n0.id, n0.cible!);
+    expect(au(calculerCockpit(entree(e))).atteints).toBe(1);
+    if (n0.cible! > 1) expect(au(calculerCockpit(entree(definirPalier(etatVide(now), n0.id, n0.cible! - 1)))).atteints).toBe(0);
+    // sorti du parcours : n'entre plus dans le décompte
+    const hors = definirHorsParcours(e, roadmap.id, n0.id, true);
+    expect(au(calculerCockpit(entree(hors)))).toEqual({ vises: roadmap.noeuds.length - 1, atteints: 0 });
   });
   it("ne garde que les révisions de cette roadmap", () => {
     const c = calculerCockpit(entree(etatVide(now), null, ["inconnu-ailleurs", roadmap.noeuds[2].id]));

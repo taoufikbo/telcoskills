@@ -18,7 +18,7 @@ export type RoadmapProgramme = { id: string; blocs: string[]; noeuds: NoeudEntre
 
 export type StatutProgramme = StatutPratique | "hors-parcours";
 
-export type NoeudProgramme = NoeudEntree & { /** Léger, moyen ou long au palier visé ; absent sans palier cible. */ investissement?: Investissement; statut: StatutProgramme };
+export type NoeudProgramme = NoeudEntree & { /** Léger, moyen ou long au palier visé ; absent sans palier cible. */ investissement?: Investissement; /** Palier atteint (0 à 5), seulement quand le suivi est fourni. */ palier?: number; statut: StatutProgramme };
 
 export type BlocProgramme = {
   bloc: string;
@@ -46,13 +46,13 @@ export type Programme = {
 const estFait = (s: StatutProgramme) => s === "acquis-teste" || s === "a-revoir";
 
 /** Les blocs dans l'ordre de la roadmap, leurs compétences, leur investissement. Sans `suivi` : rien n'est commencé. Un bloc vide est omis. */
-export function calculerProgramme(roadmap: RoadmapProgramme, table: TableInvestissement, suivi?: (id: string) => Pick<SuiviNoeud, "statut" | "horsParcours">): Programme {
+export function calculerProgramme(roadmap: RoadmapProgramme, table: TableInvestissement, suivi?: (id: string) => Pick<SuiviNoeud, "statut" | "horsParcours"> & Partial<Pick<SuiviNoeud, "palier">>): Programme {
   const blocs: BlocProgramme[] = roadmap.blocs.flatMap((bloc) => {
     const noeuds: NoeudProgramme[] = roadmap.noeuds
       .filter((n) => n.bloc === bloc)
       .map((n) => {
         const s = suivi?.(n.id);
-        return { id: n.id, titre: n.titre, bloc: n.bloc, niveau: n.niveau, cible: n.cible, investissement: investissementNoeud(table, n), statut: s?.horsParcours ? "hors-parcours" : (s?.statut ?? "a-decouvrir") };
+        return { id: n.id, titre: n.titre, bloc: n.bloc, niveau: n.niveau, cible: n.cible, investissement: investissementNoeud(table, n), ...(s?.palier !== undefined && { palier: s.palier }), statut: s?.horsParcours ? "hors-parcours" : (s?.statut ?? "a-decouvrir") };
       });
     if (noeuds.length === 0) return [];
     const actifs = noeuds.filter((n) => n.statut !== "hors-parcours");
@@ -99,6 +99,8 @@ export type ObjectifCockpit = {
 
 export type Cockpit = {
   programme: Programme;
+  /** Compétences au palier visé pour ce rôle, sur celles qui ont un palier visé (hors parcours exclues). */
+  paliers: { vises: number; atteints: number };
   decompte: Decompte;
   rythme: number;
   projection: Projection;
@@ -150,8 +152,17 @@ export function calculerCockpit({ roadmap, table, rythme, now, decompte, suivi, 
     };
   }
 
+  const paliers = { vises: 0, atteints: 0 };
+  for (const n of roadmap.noeuds) {
+    const s = suivi(n.id);
+    if (s.horsParcours || n.cible === undefined) continue;
+    paliers.vises++;
+    if (s.palier >= n.cible) paliers.atteints++;
+  }
+
   return {
     programme,
+    paliers,
     decompte,
     rythme,
     projection: projeter(programme.restantes, rythme, now),

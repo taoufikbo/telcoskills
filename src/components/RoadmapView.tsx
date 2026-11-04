@@ -44,7 +44,7 @@ export default function RoadmapView({ roadmap, video, projetId, table, entete }:
   const large = useEcranLarge();
   const [cheminActif, setCheminActif] = useState(false);
   const chemin = useMemo(() => (cheminActif ? cheminConseille(roadmap) : null), [cheminActif, roadmap]);
-  const { progression, decompte, suivi, monParcours, suivreCeParcours, definirStatut, remplacer, reinitialiser, migration, marquerMigrationLue } = useProgression(roadmap);
+  const { progression, decompte, definirLePalier, suivi, monParcours, suivreCeParcours, definirStatut, remplacer, reinitialiser, migration, marquerMigrationLue } = useProgression(roadmap);
   useEffect(() => suivre("roadmap_open", { roadmap: roadmap.id }), [roadmap.id]);
   const echeances = useEcheances();
   const calendrier = useCalendrier();
@@ -226,6 +226,7 @@ export default function RoadmapView({ roadmap, video, projetId, table, entete }:
           modal={!large}
           suivi={suivi(noeudOuvert.id)}
           onStatut={definirStatut}
+          onPalier={definirLePalier}
           estObjectif={vueObjectif && cibleId === noeudOuvert.id}
           onObjectif={() => choisirCible(noeudOuvert.id)}
           onOuvrir={ouvrir}

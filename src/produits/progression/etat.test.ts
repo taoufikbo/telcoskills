@@ -237,3 +237,74 @@ describe("rythme d'étude", () => {
     expect(lireEtat(JSON.stringify({ ...e, rythme: 0 }), J0).rythme).toBeUndefined();
   });
 });
+
+describe("palier atteint", () => {
+  it("vaut 0 sans rien, 1 après un rappel réussi, ou le palier déclaré s'il est plus haut", async () => {
+    const { palierAtteint, definirPalier } = await import("./etat");
+    expect(palierAtteint(etatVide(J0), a.id)).toBe(0);
+    const teste = enregistrerRappel(etatVide(J0), a.id, true, J0);
+    expect(palierAtteint(teste, a.id)).toBe(1);
+    expect(palierAtteint(definirPalier(teste, a.id, 3), a.id)).toBe(3);
+    // un palier déclaré ne rend jamais une compétence « acquise (testé) »
+    expect(statutPratique(definirPalier(etatVide(J0), a.id, 4), a.id, J0)).toBe("a-decouvrir");
+    expect(palierAtteint(definirPalier(etatVide(J0), a.id, 4), a.id)).toBe(4);
+  });
+
+  it("se déclare de 1 à 5 et s'efface, sans laisser d'entrée vide", async () => {
+    const { definirPalier, palierAtteint } = await import("./etat");
+    const e = definirPalier(etatVide(J0), a.id, 9);
+    expect(palierAtteint(e, a.id)).toBe(5);
+    const efface = definirPalier(e, a.id, null);
+    expect(efface.noeuds[a.id]).toBeUndefined();
+    const vu = definirPalier(marquerVu(etatVide(J0), a.id, J0), a.id, 2);
+    expect(definirPalier(vu, a.id, null).noeuds[a.id]).toEqual({ vu: "2026-10-22" });
+  });
+
+  it("compte les compétences au palier visé, sans celles sorties du parcours ni celles sans palier visé", async () => {
+    const { definirPalier, compterPaliers } = await import("./etat");
+    const noeuds = [
+      { id: a.id, cible: 3 },
+      { id: b.id, cible: 2 },
+      { id: c.id, cible: undefined },
+    ];
+    expect(compterPaliers(etatVide(J0), roadmap.id, noeuds)).toEqual({ vises: 2, atteints: 0 });
+    let e = definirPalier(etatVide(J0), a.id, 3);
+    e = enregistrerRappel(e, b.id, true, J0);
+    expect(compterPaliers(e, roadmap.id, noeuds)).toEqual({ vises: 2, atteints: 1 });
+    e = definirPalier(e, b.id, 2);
+    expect(compterPaliers(e, roadmap.id, noeuds)).toEqual({ vises: 2, atteints: 2 });
+    expect(compterPaliers(definirHorsParcours(e, roadmap.id, a.id, true), roadmap.id, noeuds)).toEqual({ vises: 1, atteints: 1 });
+  });
+
+  it("survit à la sérialisation du navigateur et rejette un palier hors bornes (état vide)", async () => {
+    const { definirPalier } = await import("./etat");
+    const e = definirPalier(etatVide(J0), a.id, 4);
+    expect(lireEtat(serialiserEtat(e), J0).noeuds[a.id].palier).toBe(4);
+    const faux = JSON.parse(serialiserEtat(e));
+    faux.noeuds[a.id].palier = 9;
+    expect(lireEtat(JSON.stringify(faux), J0).noeuds).toEqual({});
+  });
+});
+
+describe("palier atteint : lien de sauvegarde et fusion", () => {
+  it("est conservé par le lien ; un lien d'avant (sans palier) reste lu", async () => {
+    const { definirPalier } = await import("./etat");
+    const { encoderLienEtat, decoderLienEtat } = await import("./lien-etat");
+    const e = definirPalier(enregistrerRappel(etatVide(J0), a.id, true, J0), a.id, 3);
+    expect(decoderLienEtat(encoderLienEtat(e)).noeuds[a.id].palier).toBe(3);
+    const sans = enregistrerRappel(etatVide(J0), b.id, true, J0);
+    const lien = encoderLienEtat(sans);
+    expect(decoderLienEtat(lien).noeuds[b.id].palier).toBeUndefined();
+    expect(decoderLienEtat(lien).noeuds[b.id].boite).toBe(1);
+  });
+
+  it("garde le palier le plus haut des deux versions quand on importe une sauvegarde", async () => {
+    const { definirPalier } = await import("./etat");
+    const { fusionnerEtats } = await import("./lien-etat");
+    const local = definirPalier(etatVide(J0), a.id, 2);
+    const importe = definirPalier(enregistrerRappel(etatVide(J0), a.id, true, J0), a.id, 4);
+    expect(fusionnerEtats(local, importe).noeuds[a.id].palier).toBe(4);
+    expect(fusionnerEtats(importe, local).noeuds[a.id].palier).toBe(4);
+    expect(fusionnerEtats(importe, local).noeuds[a.id].boite).toBe(1);
+  });
+});

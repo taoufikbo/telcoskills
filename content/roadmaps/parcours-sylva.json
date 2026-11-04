@@ -52,6 +52,14 @@
         },
         {
           "type": "doc",
+          "nom": "Documentation SUSE Linux Micro 6.2",
+          "url": "https://documentation.suse.com/sle-micro/6.2/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "SUSE"
+        },
+        {
+          "type": "doc",
           "nom": "Documentation Ubuntu Server",
           "url": "https://ubuntu.com/server/docs",
           "acces": "gratuit",
@@ -405,6 +413,14 @@
           "acces": "gratuit",
           "langue": "en",
           "auteur": "Projet Sylva"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation SUSE Edge 3.6",
+          "url": "https://documentation.suse.com/suse-edge/3.6/",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "SUSE"
         },
         {
           "type": "opensource",

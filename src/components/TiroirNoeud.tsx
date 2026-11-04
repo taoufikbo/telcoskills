@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { DEFINITION_PALIER } from "@/lib/palier";
 import { urlPageNoeud } from "@/lib/urls";
 import { LIBELLE_NIVEAU, LIBELLE_RESSOURCE, STATUT_PRATIQUE } from "@/lib/libelles";
 import type { SuiviNoeud } from "@/produits/progression";
@@ -39,6 +40,7 @@ export default function TiroirNoeud({
   modal,
   suivi,
   onStatut,
+  onPalier,
   estObjectif,
   onObjectif,
   onOuvrir,
@@ -48,6 +50,8 @@ export default function TiroirNoeud({
   noeud: Noeud;
   suivi: SuiviNoeud;
   onStatut: (id: string, statut: StatutDeclarable) => void;
+  /** Déclare le palier atteint (1 à 5) ; `null` l'efface. */
+  onPalier: (id: string, palier: number | null) => void;
   estObjectif: boolean;
   onObjectif: () => void;
   /** Plein écran (mobile) : le focus reste dans le tiroir. */
@@ -184,6 +188,33 @@ export default function TiroirNoeud({
             </button>
           </div>
         </section>
+
+        {noeud.cible !== undefined && (
+          <section>
+            <h3 className="mb-2 font-semibold">Palier</h3>
+            <p className="text-xs">
+              <strong>Palier visé pour ce métier : {noeud.cible}.</strong> {DEFINITION_PALIER[noeud.cible as 1 | 2 | 3 | 4 | 5]}.
+            </p>
+            <div role="group" aria-label="Palier atteint" className="mt-2 flex flex-wrap items-center gap-1.5">
+              <span className="mono text-xs">Atteint :</span>
+              {[1, 2, 3, 4, 5].map((p) => (
+                <button
+                  key={p}
+                  type="button"
+                  aria-pressed={suivi.palier >= p}
+                  title={DEFINITION_PALIER[p as 1 | 2 | 3 | 4 | 5]}
+                  onClick={() => onPalier(noeud.id, suivi.palier === p ? (p > 1 ? p - 1 : null) : p)}
+                  className="bouton !px-2.5 !py-1 !text-xs"
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+            <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+              Déclaratif : le palier 1 vient d&apos;un rappel réussi ; au-delà, rien ne le vérifie, c&apos;est votre jugement.
+            </p>
+          </section>
+        )}
 
         <section>
           <h3 className="mb-2 font-semibold">Prérequis</h3>

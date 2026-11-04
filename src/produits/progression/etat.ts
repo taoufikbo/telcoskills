@@ -33,6 +33,8 @@ export const EtatNoeudSchema = z.object({
   tentatives: z.number().int().min(0).optional(),
   /** Vrai si la compétence était « maîtrisée » par simple déclaration dans l'ancien système : elle est « vue », à confirmer par un test. */
   declare: z.literal(true).optional(),
+  /** Palier atteint déclaré par la personne (1 à 5, voir DEFINITION_PALIER). Au-delà du palier 1 (rappel réussi), rien ne le vérifie : c'est une déclaration. */
+  palier: z.number().int().min(1).max(5).optional(),
 });
 
 export const EtatPratiqueSchema = z.object({
@@ -93,6 +95,29 @@ export function statutPratique(etat: EtatPratique, id: string, now: Date): Statu
   if (!n) return "a-decouvrir";
   if (n.boite) return n.dernier === "echec" || (n.echeance !== undefined && n.echeance <= jourLocal(now)) ? "a-revoir" : "acquis-teste";
   return n.vu ? "vu" : "a-decouvrir";
+}
+
+/** Palier atteint pour une compétence : 0 si rien, 1 après un rappel réussi, ou le palier déclaré s'il est plus haut. Indépendant du rôle : c'est ce que la personne sait faire. */
+export function palierAtteint(etat: EtatPratique, id: string): number {
+  const n = etat.noeuds[id];
+  if (!n) return 0;
+  return Math.max(n.boite ? 1 : 0, n.palier ?? 0);
+}
+
+/** Déclare le palier atteint (1 à 5), ou l'efface (`null`). N'écrit jamais « acquis (testé) » : seul un rappel réussi le fait. */
+export function definirPalier(etat: EtatPratique, id: string, palier: number | null): EtatPratique {
+  const n = etat.noeuds[id] ?? {};
+  const { palier: _ancien, ...reste } = n;
+  void _ancien;
+  if (palier === null || palier < 1) {
+    if (Object.keys(reste).length === 0) {
+      const { [id]: _retire, ...autres } = etat.noeuds;
+      void _retire;
+      return { ...etat, noeuds: autres };
+    }
+    return avec(etat, id, reste);
+  }
+  return avec(etat, id, { ...reste, palier: Math.min(5, Math.round(palier)) });
 }
 
 /** Met un parcours en tête de « mes parcours » : à appeler quand la personne **agit** (marquer, rappel, suivre), pas quand elle consulte. */
@@ -166,6 +191,21 @@ export function prochainesEcheances(etat: EtatPratique): { id: string; echeance:
     .filter(([, n]) => n.boite && n.echeance)
     .map(([id, n]) => ({ id, echeance: n.echeance! }))
     .sort((a, b) => a.echeance.localeCompare(b.echeance) || a.id.localeCompare(b.id));
+}
+
+export type DecomptePaliers = { /** Compétences du parcours qui ont un palier visé (hors celles sorties du parcours). */ vises: number; /** Parmi elles, celles dont le palier atteint est au moins le palier visé. */ atteints: number };
+
+/** Combien de compétences sont au palier visé pour ce rôle. Les compétences sans palier cible ne comptent pas, ni celles sorties du parcours. */
+export function compterPaliers(etat: EtatPratique, roadmapId: string, noeuds: Pick<Noeud, "id" | "cible">[]): DecomptePaliers {
+  const hors = new Set(etat.horsParcours[roadmapId] ?? []);
+  let vises = 0;
+  let atteints = 0;
+  for (const { id, cible } of noeuds) {
+    if (hors.has(id) || cible === undefined) continue;
+    vises++;
+    if (palierAtteint(etat, id) >= cible) atteints++;
+  }
+  return { vises, atteints };
 }
 
 export type Decompte = { total: number; horsParcours: number; actifs: number; acquis: number; aRevoir: number; vus: number; pourcentage: number };
@@ -252,7 +292,7 @@ export function reinitialiserRoadmap(etat: EtatPratique, roadmap: Pick<Roadmap, 
 }
 
 /** Ce que l'interface affiche pour une compétence. */
-export type SuiviNoeud = { statut: StatutPratique; echeance?: string; declare: boolean; horsParcours: boolean };
+export type SuiviNoeud = { statut: StatutPratique; echeance?: string; declare: boolean; horsParcours: boolean; /** Palier atteint (0 à 5). */ palier: number };
 
 export function suiviNoeud(etat: EtatPratique, roadmapId: string, id: string, now: Date): SuiviNoeud {
   const n = etat.noeuds[id];
@@ -261,6 +301,7 @@ export function suiviNoeud(etat: EtatPratique, roadmapId: string, id: string, no
     echeance: n?.boite ? n.echeance : undefined,
     declare: n?.declare === true,
     horsParcours: (etat.horsParcours[roadmapId] ?? []).includes(id),
+    palier: palierAtteint(etat, id),
   };
 }
 

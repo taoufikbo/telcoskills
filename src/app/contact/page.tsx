@@ -7,7 +7,7 @@ import { exigerRefonte } from "@/lib/refonte";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Prendre rendez-vous pour parler de votre plateforme.",
+  description: "Me contacter : une question sur un parcours, une remarque, un besoin pour votre équipe.",
 };
 
 export default function PageContact() {
@@ -16,7 +16,7 @@ export default function PageContact() {
   const linkedin = INSTANCE.auteur.linkedin;
   const pret = Boolean(calendlyUrl || email || linkedin);
   return (
-    <PageEbauche titre="Contact" intro="Prendre rendez-vous pour parler de votre plateforme." enCours={!pret}>
+    <PageEbauche titre="Contact" intro={calendlyUrl ? "Prendre rendez-vous pour parler de votre plateforme." : "Une question sur un parcours, une remarque, un besoin pour votre équipe : écrivez-moi."} enCours={!pret}>
       {calendlyUrl && (
         <div className="panneau space-y-3 p-6">
           <h2 className="text-xl font-semibold">Réserver un créneau</h2>
