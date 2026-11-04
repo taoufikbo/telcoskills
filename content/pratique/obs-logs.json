@@ -1,5 +1,42 @@
 {
   "noeud": "obs-logs",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer la chaîne de collecte, d'indexation et de rétention des journaux.",
+      "Interroger les journaux pour retrouver un événement.",
+      "Corréler journaux et alertes."
+    ],
+    "notions": [
+      "Collecte (agents), indexation, rétention",
+      "EFK/ELK et Loki : différences d'approche",
+      "Requêtes et filtres",
+      "Corrélation avec les alertes et les métriques"
+    ],
+    "validation": {
+      "1": [
+        "Dire d'où viennent les journaux d'une plateforme et où ils sont stockés."
+      ],
+      "2": [
+        "Retrouver un événement par filtre sur une période."
+      ],
+      "3": [
+        "Corréler une alerte avec les journaux de la même période.",
+        "Régler la rétention selon l'usage et le coût."
+      ]
+    },
+    "situation": {
+      "contexte": "Un incident a eu lieu à 14 h et l'équipe doit retrouver ce qui s'est passé à partir des journaux.",
+      "etapes": [
+        "Délimiter la période et les composants concernés.",
+        "Filtrer les journaux par namespace et par niveau.",
+        "Repérer le premier message d'erreur de la période.",
+        "Rapprocher ce message des alertes et des métriques.",
+        "Vérifier que la rétention couvre la période.",
+        "Noter les requêtes utiles pour le post-mortem."
+      ]
+    }
+  },
   "questionPrealable": {
     "id": "prealable-loki",
     "enonce": "Pourquoi Loki coûte-t-il en général moins cher à exploiter qu'Elasticsearch pour des logs ?",

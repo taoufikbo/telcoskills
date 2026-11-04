@@ -308,3 +308,69 @@ describe("palier atteint : lien de sauvegarde et fusion", () => {
     expect(fusionnerEtats(importe, local).noeuds[a.id].boite).toBe(1);
   });
 });
+
+describe("notions cochées (EX-09)", () => {
+  it("se cochent et se décochent, par indice, sans entrée vide ensuite", async () => {
+    const { basculerNotion, notionsCochees } = await import("./etat");
+    let e = basculerNotion(etatVide(J0), a.id, 2);
+    e = basculerNotion(e, a.id, 0);
+    expect(notionsCochees(e, a.id)).toEqual([0, 2]);
+    e = basculerNotion(basculerNotion(e, a.id, 0), a.id, 2);
+    expect(notionsCochees(e, a.id)).toEqual([]);
+    expect(e.noeuds[a.id]).toBeUndefined();
+    expect(basculerNotion(etatVide(J0), a.id, 30).noeuds[a.id]).toBeUndefined();
+    expect(basculerNotion(etatVide(J0), a.id, -1).noeuds[a.id]).toBeUndefined();
+  });
+
+  it("ne change ni le palier atteint ni le statut : c'est une auto-évaluation, pas une preuve", async () => {
+    const { basculerNotion, palierAtteint } = await import("./etat");
+    let e = etatVide(J0);
+    for (let i = 0; i < 8; i++) e = basculerNotion(e, a.id, i);
+    expect(palierAtteint(e, a.id)).toBe(0);
+    expect(statutPratique(e, a.id, J0)).toBe("a-decouvrir");
+    expect(compter(e, roadmap.id, roadmap.noeuds, J0).acquis).toBe(0);
+  });
+
+  it("survit à la sérialisation du navigateur et rejette un masque hors bornes (état vide)", async () => {
+    const { basculerNotion } = await import("./etat");
+    const e = basculerNotion(etatVide(J0), a.id, 5);
+    expect(lireEtat(serialiserEtat(e), J0).noeuds[a.id].notions).toBe(32);
+    const faux = JSON.parse(serialiserEtat(e));
+    faux.noeuds[a.id].notions = 2 ** 31;
+    expect(lireEtat(JSON.stringify(faux), J0).noeuds).toEqual({});
+  });
+
+  it("survit à l'import d'une progression (qui ne remplace que les statuts déclarés)", async () => {
+    const { basculerNotion, definirPalier, effacerDeclarations } = await import("./etat");
+    let e = definirPalier(basculerNotion(marquerVu(etatVide(J0), a.id, J0), a.id, 1), a.id, 3);
+    e = effacerDeclarations(e, roadmap);
+    expect(e.noeuds[a.id]).toEqual({ palier: 3, notions: 2 });
+  });
+});
+
+describe("notions cochées : lien de sauvegarde et fusion (EX-09)", () => {
+  it("sont conservées par le lien, seules ou avec un palier ; les liens d'avant restent identiques et lus", async () => {
+    const { basculerNotion, definirPalier } = await import("./etat");
+    const { encoderLienEtat, decoderLienEtat } = await import("./lien-etat");
+    const seule = basculerNotion(marquerVu(etatVide(J0), a.id, J0), a.id, 3);
+    expect(decoderLienEtat(encoderLienEtat(seule)).noeuds[a.id].notions).toBe(8);
+    expect(decoderLienEtat(encoderLienEtat(seule)).noeuds[a.id].palier).toBeUndefined();
+    const avecPalier = definirPalier(seule, a.id, 2);
+    const lu = decoderLienEtat(encoderLienEtat(avecPalier)).noeuds[a.id];
+    expect(lu).toMatchObject({ palier: 2, notions: 8 });
+    // sans palier ni notions, l'élément de compétence ne change pas de forme
+    const sans = encoderLienEtat(marquerVu(etatVide(J0), b.id, J0));
+    const elementCompetence = sans.slice(3).split("_")[1];
+    expect(elementCompetence.split(".")).toHaveLength(8);
+    expect(decoderLienEtat(sans).noeuds[b.id].notions).toBeUndefined();
+  });
+
+  it("s'unissent à l'import d'une sauvegarde", async () => {
+    const { basculerNotion, notionsCochees } = await import("./etat");
+    const { fusionnerEtats } = await import("./lien-etat");
+    const local = basculerNotion(etatVide(J0), a.id, 0);
+    const importe = basculerNotion(basculerNotion(etatVide(J0), a.id, 1), a.id, 4);
+    expect(notionsCochees(fusionnerEtats(local, importe), a.id)).toEqual([0, 1, 4]);
+    expect(notionsCochees(fusionnerEtats(importe, local), a.id)).toEqual([0, 1, 4]);
+  });
+});

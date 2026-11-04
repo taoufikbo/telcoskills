@@ -1,0 +1,37 @@
+{
+  "noeud": "reg-nis2",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Savoir si l'on est entité essentielle ou importante.",
+      "Connaître les mesures de gestion des risques et l'obligation de notification.",
+      "Savoir qui est responsable chez l'opérateur."
+    ],
+    "notions": [
+      "Entités essentielles et importantes",
+      "Mesures de gestion des risques",
+      "Notification des incidents significatifs",
+      "Responsabilité de la direction",
+      "Transposition française"
+    ],
+    "validation": {
+      "1": [
+        "Dire à qui s'applique NIS 2 et ce qu'elle impose en notification."
+      ],
+      "2": [
+        "Classer un incident comme notifiable ou non selon les critères."
+      ]
+    },
+    "situation": {
+      "contexte": "Une équipe d'exploitation doit savoir quand un incident devient notifiable.",
+      "etapes": [
+        "Qualifier le caractère significatif de l'incident.",
+        "Repérer les délais de notification.",
+        "Identifier l'autorité et le contact.",
+        "Préparer le contenu de la notification.",
+        "Faire valider par la direction.",
+        "Consigner le dossier."
+      ]
+    }
+  }
+}

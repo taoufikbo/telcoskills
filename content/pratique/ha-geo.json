@@ -1,5 +1,52 @@
 {
   "noeud": "ha-geo",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Identifier les zones de défaillance et les points de défaillance uniques.",
+      "Comparer des architectures bi-site selon leur coût et leur risque.",
+      "Expliquer le quorum et le risque de scission.",
+      "Justifier un choix d'architecture devant un décideur."
+    ],
+    "notions": [
+      "Zones de défaillance",
+      "Absence de point de défaillance unique",
+      "Actif-actif et actif-passif",
+      "Quorum, arbitre, scission (split-brain)",
+      "Arbitrage coût et risque"
+    ],
+    "situation": {
+      "contexte": "Une plateforme sur deux sites doit survivre à la perte d'un site sans perdre le plan de contrôle.",
+      "etapes": [
+        "Lister les composants et leur emplacement.",
+        "Repérer ceux qui n'existent qu'à un endroit.",
+        "Examiner le quorum de chaque composant clustérisé.",
+        "Proposer une variante avec arbitre ou troisième emplacement.",
+        "Chiffrer le coût de chaque option.",
+        "Présenter le risque résiduel."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Définir une zone de défaillance et un point de défaillance unique."
+      ],
+      "2": [
+        "Repérer ces points sur un schéma d'architecture."
+      ],
+      "3": [
+        "Concevoir une architecture bi-site avec quorum et justifier le compromis.",
+        "Expliquer le risque de scission et sa prévention."
+      ],
+      "4": [
+        "Concevoir et défendre une architecture géo-redondante complète, avec ses scénarios de panne.",
+        "Chiffrer l'écart de coût entre deux options et en tirer une recommandation."
+      ]
+    },
+    "exercice": {
+      "consigne": "Pour une plateforme sur deux sites, concevoir l'architecture de haute disponibilité : composants, quorum, scénarios de perte d'un site, coût.",
+      "livrable": "Un schéma, un tableau de scénarios de panne avec comportement attendu, et une recommandation chiffrée."
+    }
+  },
   "questionPrealable": {
     "id": "prealable-quorum",
     "enonce": "Un plan de contrôle à trois nœuds est réparti sur deux sites : deux nœuds sur le site A, un sur le site B. Le site A tombe. Que devient le plan de contrôle ?",

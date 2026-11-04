@@ -1,0 +1,31 @@
+{
+  "noeud": "sre-slo",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Définir un indicateur de niveau de service (SLI) à partir de ce que vit l'utilisateur.",
+      "Fixer un objectif (SLO) réaliste et calculer le budget d'erreur correspondant.",
+      "Utiliser le budget d'erreur pour arbitrer entre livrer un changement et stabiliser.",
+      "Expliquer la différence entre SLI, SLO et engagement contractuel (SLA)."
+    ],
+    "notions": [
+      "SLI : disponibilité, latence, taux d'erreur",
+      "SLO et fenêtre de mesure",
+      "Budget d'erreur et politique associée",
+      "SLA et pénalités",
+      "Alerter sur la consommation du budget"
+    ],
+    "validation": {
+      "1": [
+        "Définir SLI, SLO et budget d'erreur."
+      ],
+      "2": [
+        "Calculer le budget d'erreur d'un SLO donné sur une période."
+      ],
+      "3": [
+        "Proposer un SLI et un SLO pour un service de la plateforme, avec leur fenêtre de mesure.",
+        "Décider, chiffres à l'appui, de geler ou non les changements quand le budget est consommé."
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "noeud": "toil",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Reconnaître et mesurer le travail répétitif manuel.",
+      "Décider quoi automatiser en comparant gain et coût.",
+      "Éviter une automatisation fragile."
+    ],
+    "notions": [
+      "Définition du toil",
+      "Mesure du temps passé",
+      "Gain et coût d'automatisation",
+      "Automatisation fragile et dette",
+      "Suivi du toil dans le temps"
+    ],
+    "situation": {
+      "contexte": "L'équipe passe six heures par semaine à redémarrer manuellement un composant.",
+      "etapes": [
+        "Mesurer le temps passé sur un mois.",
+        "Chercher la cause du redémarrage.",
+        "Estimer le coût d'une automatisation.",
+        "Décider entre corriger la cause et automatiser.",
+        "Livrer avec garde-fous.",
+        "Mesurer le gain."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Définir le toil."
+      ],
+      "2": [
+        "Mesurer le toil d'une équipe."
+      ],
+      "3": [
+        "Décider quoi automatiser en justifiant par les chiffres."
+      ]
+    }
+  }
+}

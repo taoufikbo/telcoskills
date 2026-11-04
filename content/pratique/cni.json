@@ -1,0 +1,42 @@
+{
+  "noeud": "cni",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer comment un pod obtient son adresse et communique avec les autres.",
+      "Décrire le rôle d'OVN-Kubernetes et d'Open vSwitch.",
+      "Lire et écrire une NetworkPolicy simple.",
+      "Reconnaître les symptômes d'un problème de réseau de pods."
+    ],
+    "notions": [
+      "Réseau de pods et adresses",
+      "OVN-Kubernetes et Open vSwitch (vue d'ensemble)",
+      "NetworkPolicy : entrée et sortie",
+      "Egress : adresse source des flux sortants",
+      "Outils : ping depuis un pod, état du réseau du nœud"
+    ],
+    "situation": {
+      "contexte": "Une équipe signale qu'un pod ne joint plus une base de données après l'application d'une politique réseau.",
+      "etapes": [
+        "Identifier le pod source et la destination.",
+        "Lire les NetworkPolicy qui s'appliquent aux deux.",
+        "Tester la connexion depuis le pod.",
+        "Corriger la politique avec la règle minimale.",
+        "Vérifier que les autres flux restent bloqués.",
+        "Consigner le changement."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que fait le CNI et ce qu'est une NetworkPolicy."
+      ],
+      "2": [
+        "Lire une NetworkPolicy et prévoir quels flux elle autorise.",
+        "Écrire une politique simple et la tester en laboratoire."
+      ],
+      "3": [
+        "Diagnostiquer un flux bloqué entre deux pods (politique, route, état du réseau du nœud) et le corriger."
+      ]
+    }
+  }
+}

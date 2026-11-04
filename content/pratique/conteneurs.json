@@ -1,0 +1,31 @@
+{
+  "noeud": "conteneurs",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer ce qu'est une image de conteneur et comment elle est construite.",
+      "Distinguer image, conteneur et registre.",
+      "Situer les moteurs d'exécution courants (Docker, Podman, CRI-O) et leurs différences.",
+      "Lire un état de conteneur (état, journaux, ressources) pour un premier diagnostic."
+    ],
+    "notions": [
+      "Images OCI, couches et étiquettes",
+      "Registres d'images",
+      "Moteurs d'exécution : Docker, Podman, CRI-O",
+      "Isolation : namespaces et cgroups",
+      "Commandes de base : run, ps, logs, exec"
+    ],
+    "validation": {
+      "1": [
+        "Dire ce qu'est une image, un conteneur et un registre."
+      ],
+      "2": [
+        "Lancer un conteneur, lire ses journaux et y entrer pour inspecter son état.",
+        "Expliquer la différence entre Docker, Podman et CRI-O."
+      ],
+      "3": [
+        "Construire une image, la publier dans un registre et diagnostiquer un conteneur qui sort immédiatement."
+      ]
+    }
+  }
+}

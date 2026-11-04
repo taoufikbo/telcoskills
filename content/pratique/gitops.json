@@ -1,0 +1,40 @@
+{
+  "noeud": "gitops",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire le principe : état désiré dans Git, synchronisation par un contrôleur.",
+      "Gérer plusieurs environnements.",
+      "Traiter une dérive entre Git et le cluster."
+    ],
+    "notions": [
+      "État désiré dans Git",
+      "Contrôleur de synchronisation (ArgoCD, Flux)",
+      "Environnements et structure du dépôt",
+      "Dérive et correction",
+      "Revue et traçabilité"
+    ],
+    "situation": {
+      "contexte": "Un changement manuel sur le cluster est écrasé par le contrôleur de synchronisation.",
+      "etapes": [
+        "Constater la dérive.",
+        "Identifier qui a modifié et pourquoi.",
+        "Faire le changement dans Git.",
+        "Vérifier la synchronisation.",
+        "Documenter la règle.",
+        "Surveiller les dérives futures."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que change l'approche GitOps."
+      ],
+      "2": [
+        "Suivre une synchronisation et lire son état."
+      ],
+      "3": [
+        "Organiser un dépôt pour deux environnements et traiter une dérive."
+      ]
+    }
+  }
+}

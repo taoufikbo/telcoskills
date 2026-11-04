@@ -35,6 +35,8 @@ export const EtatNoeudSchema = z.object({
   declare: z.literal(true).optional(),
   /** Palier atteint déclaré par la personne (1 à 5, voir DEFINITION_PALIER). Au-delà du palier 1 (rappel réussi), rien ne le vérifie : c'est une déclaration. */
   palier: z.number().int().min(1).max(5).optional(),
+  /** Notions cochées d'une fiche, en masque de bits (bit i = notion i, 30 au plus). Auto-évaluation : ne compte ni dans le palier atteint ni dans « acquis (testé) ». */
+  notions: z.number().int().min(1).max(2 ** 30 - 1).optional(),
 });
 
 export const EtatPratiqueSchema = z.object({
@@ -118,6 +120,30 @@ export function definirPalier(etat: EtatPratique, id: string, palier: number | n
     return avec(etat, id, reste);
   }
   return avec(etat, id, { ...reste, palier: Math.min(5, Math.round(palier)) });
+}
+
+/** Indices des notions cochées pour une compétence. */
+export function notionsCochees(etat: EtatPratique, id: string): number[] {
+  const masque = etat.noeuds[id]?.notions ?? 0;
+  return Array.from({ length: 30 }, (_, i) => i).filter((i) => (masque & (1 << i)) !== 0);
+}
+
+/** Coche ou décoche une notion. N'a aucun effet sur le palier atteint ni sur le statut : c'est une auto-évaluation, pas une preuve. */
+export function basculerNotion(etat: EtatPratique, id: string, index: number): EtatPratique {
+  if (!Number.isInteger(index) || index < 0 || index > 29) return etat;
+  const n = etat.noeuds[id] ?? {};
+  const masque = (n.notions ?? 0) ^ (1 << index);
+  const { notions: _ancien, ...reste } = n;
+  void _ancien;
+  if (masque === 0) {
+    if (Object.keys(reste).length === 0) {
+      const { [id]: _retire, ...autres } = etat.noeuds;
+      void _retire;
+      return { ...etat, noeuds: autres };
+    }
+    return avec(etat, id, reste);
+  }
+  return avec(etat, id, { ...reste, notions: masque });
 }
 
 /** Met un parcours en tête de « mes parcours » : à appeler quand la personne **agit** (marquer, rappel, suivre), pas quand elle consulte. */
@@ -308,7 +334,12 @@ export function suiviNoeud(etat: EtatPratique, roadmapId: string, id: string, no
 /** Retire les statuts déclarés (vu, déclaré, hors parcours) des compétences d'une roadmap, mais **jamais** celles acquises par un test. */
 export function effacerDeclarations(etat: EtatPratique, roadmap: Pick<Roadmap, "id" | "noeuds">): EtatPratique {
   const ids = new Set(roadmap.noeuds.map((n) => n.id));
-  const noeuds = Object.fromEntries(Object.entries(etat.noeuds).filter(([id, n]) => !ids.has(id) || n.boite));
+  const noeuds: Record<string, EtatNoeud> = {};
+  for (const [id, n] of Object.entries(etat.noeuds)) {
+    if (!ids.has(id) || n.boite) noeuds[id] = n;
+    // Un palier déclaré et des notions cochées ne sont pas des statuts (« vu », « maîtrisé ») : ils survivent à l'import d'une progression.
+    else if (n.palier || n.notions) noeuds[id] = { ...(n.palier ? { palier: n.palier } : {}), ...(n.notions ? { notions: n.notions } : {}) };
+  }
   const horsParcours = { ...etat.horsParcours };
   delete horsParcours[roadmap.id];
   return { ...etat, noeuds, horsParcours };

@@ -1,0 +1,36 @@
+{
+  "noeud": "obs-telemetry",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer ce qu'apporte la télémétrie en continu par rapport à SNMP.",
+      "Situer gRPC et OpenTelemetry dans une chaîne d'observabilité.",
+      "Identifier les données utiles à collecter."
+    ],
+    "notions": [
+      "Limites de SNMP (interrogation périodique)",
+      "Télémétrie en continu (gRPC, gNMI)",
+      "OpenTelemetry : métriques, traces, journaux",
+      "Collecteurs et formats"
+    ],
+    "situation": {
+      "contexte": "Une équipe veut remplacer la supervision SNMP d'équipements par de la télémétrie en continu.",
+      "etapes": [
+        "Lister les indicateurs actuellement collectés.",
+        "Identifier ceux disponibles en télémétrie.",
+        "Choisir un collecteur et un format.",
+        "Piloter sur un équipement.",
+        "Comparer fraîcheur et charge.",
+        "Planifier le déploiement."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi la télémétrie en continu remplace progressivement SNMP."
+      ],
+      "2": [
+        "Situer gRPC et OpenTelemetry dans la chaîne de collecte."
+      ]
+    }
+  }
+}

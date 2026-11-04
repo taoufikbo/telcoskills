@@ -1,0 +1,89 @@
+{
+  "noeud": "alerting-utile",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Distinguer une alerte sur un symptôme d'une alerte sur une cause.",
+      "Régler seuils, durées et regroupements.",
+      "Mesurer et réduire le bruit d'alerte.",
+      "Router chaque alerte vers la bonne personne."
+    ],
+    "notions": [
+      "Symptôme et cause",
+      "Seuils, durée de maintien, hystérésis",
+      "Regroupement, inhibition, silence",
+      "Routage et sévérité",
+      "Mesure du bruit : alertes par semaine, taux d'action"
+    ],
+    "situation": {
+      "contexte": "L'équipe d'astreinte reçoit plus de cinquante alertes par nuit, dont presque aucune ne demande d'action.",
+      "etapes": [
+        "Compter les alertes par règle sur une semaine.",
+        "Classer : action, information, bruit.",
+        "Supprimer ou transformer les alertes sans action.",
+        "Alerter sur les symptômes du service.",
+        "Regrouper et router par équipe.",
+        "Mesurer à nouveau après deux semaines."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi trop d'alertes nuisent à la détection."
+      ],
+      "2": [
+        "Classer des alertes en action, information et bruit."
+      ],
+      "3": [
+        "Transformer des alertes de cause en alertes de symptôme.",
+        "Mesurer le bruit avant et après une réduction."
+      ]
+    }
+  },
+  "rappel": [
+    {
+      "id": "rappel-alerting-symptome",
+      "enonce": "Quelle alerte est la plus utile à une personne d'astreinte ?",
+      "options": [
+        "Le taux d'erreur des requêtes d'un service dépasse son objectif",
+        "Le CPU d'un nœud dépasse 70 %",
+        "Un pod a redémarré une fois",
+        "L'espace disque d'un nœud a augmenté"
+      ],
+      "bonne": 0,
+      "explication": "Une alerte sur ce que vit l'utilisateur demande une action. Les causes possibles servent au diagnostic, pas au réveil.",
+      "source": "Alertmanager : documentation",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-alerting-regroupement",
+      "enonce": "À quoi sert le regroupement d'alertes dans Alertmanager ?",
+      "options": [
+        "À envoyer une notification unique pour des alertes liées",
+        "À supprimer définitivement les alertes",
+        "À augmenter la sévérité",
+        "À changer le seuil de la règle"
+      ],
+      "bonne": 0,
+      "explication": "Le regroupement évite d'envoyer cent notifications pour un même incident.",
+      "source": "Alertmanager : documentation",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-alerting-bruit",
+      "enonce": "Quel indicateur mesure le bruit d'alerte ?",
+      "options": [
+        "La part des alertes qui ont déclenché une action",
+        "Le nombre de règles",
+        "La durée moyenne d'une alerte",
+        "Le nombre de tableaux de bord"
+      ],
+      "bonne": 0,
+      "explication": "Si peu d'alertes mènent à une action, la plupart sont du bruit.",
+      "source": "Alertmanager : documentation",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    }
+  ]
+}

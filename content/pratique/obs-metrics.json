@@ -1,5 +1,44 @@
 {
   "noeud": "obs-metrics",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer le modèle de Prometheus : métriques, étiquettes, collecte.",
+      "Écrire une règle d'alerte simple et la router avec Alertmanager.",
+      "Comprendre le rôle de Thanos pour la rétention longue.",
+      "Alerter à partir d'un objectif de niveau de service."
+    ],
+    "notions": [
+      "Métriques, étiquettes, séries temporelles",
+      "Collecte (scrape) et cibles",
+      "PromQL de base : taux, agrégation",
+      "Règles d'alerte et Alertmanager",
+      "Thanos : stockage long terme et requêtes globales"
+    ],
+    "situation": {
+      "contexte": "Une alerte de latence se déclenche toutes les nuits sans impact utilisateur.",
+      "etapes": [
+        "Lire la règle et l'expression PromQL.",
+        "Visualiser la métrique sur plusieurs jours.",
+        "Identifier la cause du pic (sauvegarde, tâche planifiée).",
+        "Ajuster le seuil ou la durée, ou alerter sur le symptôme.",
+        "Vérifier que l'alerte reste utile.",
+        "Documenter le changement."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que sont une métrique, une étiquette et une alerte."
+      ],
+      "2": [
+        "Lire une expression PromQL simple et une règle d'alerte."
+      ],
+      "3": [
+        "Écrire une règle d'alerte avec seuil et durée et la router.",
+        "Expliquer ce qu'apporte Thanos et quand l'utiliser."
+      ]
+    }
+  },
   "questionPrealable": {
     "id": "prealable-retention",
     "enonce": "Une instance Prometheus garde ses métriques sur son disque local pendant quelques jours ou semaines. Quel composant permet de conserver des mois de métriques et d'interroger plusieurs Prometheus ensemble ?",

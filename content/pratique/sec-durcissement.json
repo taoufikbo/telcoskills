@@ -1,0 +1,40 @@
+{
+  "noeud": "sec-durcissement",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Appliquer des règles de durcissement sur les nœuds et le cluster.",
+      "Lire les profils de sécurité (SCC, politiques de pods).",
+      "Vérifier la conformité à un référentiel."
+    ],
+    "notions": [
+      "Politiques de sécurité des pods",
+      "SCC (OpenShift)",
+      "SELinux",
+      "Référentiels CIS",
+      "Vérification de conformité"
+    ],
+    "validation": {
+      "1": [
+        "Dire ce que durcir veut dire et citer un référentiel."
+      ],
+      "2": [
+        "Lire les profils de sécurité d'un pod et dire ce qu'il peut faire."
+      ],
+      "3": [
+        "Appliquer un profil restreint à une charge et vérifier qu'elle fonctionne."
+      ]
+    },
+    "situation": {
+      "contexte": "Un audit de sécurité signale que des pods du cluster s'exécutent avec des droits excessifs.",
+      "etapes": [
+        "Lister les pods et leurs profils de sécurité.",
+        "Identifier ceux qui dépassent le besoin.",
+        "Définir le profil minimal.",
+        "Tester en laboratoire.",
+        "Appliquer progressivement.",
+        "Vérifier la conformité au référentiel."
+      ]
+    }
+  }
+}

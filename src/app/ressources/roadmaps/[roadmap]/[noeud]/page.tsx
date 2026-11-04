@@ -16,6 +16,7 @@ import { LIBELLE_NIVEAU, LIBELLE_RESSOURCE } from "@/lib/libelles";
 import { dependants, occurrencesDuNoeud, roadmapDeReference } from "@/lib/noeuds";
 import { chargerOrientation } from "@/lib/orientation";
 import { DEFINITION_PALIER, LIBELLE_INVESTISSEMENT, investissementNoeud } from "@/lib/palier";
+import { grouperParEtape } from "@/lib/ressources-etapes";
 import { lienCorrection } from "@/lib/contribution";
 import { chargerProjets } from "@/lib/projets";
 import { exigerRefonte } from "@/lib/refonte";
@@ -210,23 +211,30 @@ export default async function PageNoeud({ params }: { params: Params }) {
             </section>
           )}
 
-          {noeud.pratique && <FichePratique noeudId={noeud.id} pratique={noeud.pratique} projet={libellesProjet} />}
+          {noeud.pratique && <FichePratique noeudId={noeud.id} pratique={noeud.pratique} projet={libellesProjet} cible={noeud.cible} />}
 
           {noeud.ressources.length > 0 && (
             <section aria-labelledby="titre-ressources" className="space-y-3">
               <h2 id="titre-ressources" className="text-2xl font-semibold">
                 Ressources
               </h2>
-              <ul className="panneau divide-y" style={{ borderColor: "var(--filet)" }}>
-                {noeud.ressources.map((r) => (
-                  <li key={r.url ?? r.nom} className="p-4" style={{ borderColor: "var(--filet)" }}>
-                    <a href={r.url} target="_blank" rel="noopener noreferrer" className="font-medium underline underline-offset-4">
-                      {r.nom}
-                    </a>
-                    <p className="mono mt-1">{[LIBELLE_RESSOURCE[r.type] ?? r.type, r.acces, r.langue?.toUpperCase(), r.auteur].filter(Boolean).join(" · ")}</p>
-                  </li>
+              <div className="space-y-5">
+                {grouperParEtape(noeud.ressources).map((g) => (
+                  <div key={g.libelle} className="space-y-2">
+                    <h3 className="text-lg font-semibold">{g.libelle}</h3>
+                    <ul className="panneau divide-y" style={{ borderColor: "var(--filet)" }}>
+                      {g.items.map((r) => (
+                        <li key={r.url ?? r.nom} className="p-4" style={{ borderColor: "var(--filet)" }}>
+                          <a href={r.url} target="_blank" rel="noopener noreferrer" className="font-medium underline underline-offset-4">
+                            {r.nom}
+                          </a>
+                          <p className="mono mt-1">{[LIBELLE_RESSOURCE[r.type] ?? r.type, r.acces, r.langue?.toUpperCase(), r.auteur].filter(Boolean).join(" · ")}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </section>
           )}
 

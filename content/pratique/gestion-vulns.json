@@ -1,0 +1,37 @@
+{
+  "noeud": "gestion-vulns",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Suivre les vulnérabilités des images et des nœuds.",
+      "Prioriser par exposition et gravité.",
+      "Tester et déployer les correctifs dans les fenêtres de maintenance."
+    ],
+    "notions": [
+      "Analyse d'images",
+      "CVE, gravité, exposition",
+      "Priorisation",
+      "Correctifs et tests",
+      "Fenêtres de maintenance"
+    ],
+    "situation": {
+      "contexte": "Une vulnérabilité critique est publiée sur un composant présent dans plusieurs images.",
+      "etapes": [
+        "Retrouver les images concernées.",
+        "Évaluer l'exposition réelle.",
+        "Prioriser.",
+        "Tester le correctif.",
+        "Déployer dans la fenêtre.",
+        "Contrôler et documenter."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est une CVE."
+      ],
+      "2": [
+        "Prioriser des vulnérabilités selon l'exposition."
+      ]
+    }
+  }
+}

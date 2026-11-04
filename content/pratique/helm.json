@@ -1,0 +1,40 @@
+{
+  "noeud": "helm",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Lire un chart Helm et ses valeurs.",
+      "Installer, mettre à jour et revenir en arrière avec Helm.",
+      "Préparer des valeurs spécifiques à un environnement."
+    ],
+    "notions": [
+      "Chart, release, values",
+      "Modèles",
+      "Hooks",
+      "Versions et historique",
+      "Dépôts de charts"
+    ],
+    "situation": {
+      "contexte": "Un éditeur livre un chart de CNF et les valeurs par défaut ne conviennent pas.",
+      "etapes": [
+        "Lire les valeurs par défaut.",
+        "Écrire un fichier de valeurs propre à l'environnement.",
+        "Générer les manifestes avant installation.",
+        "Installer et vérifier.",
+        "Mettre à jour avec une nouvelle valeur.",
+        "Revenir en arrière si besoin."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est un chart et une release."
+      ],
+      "2": [
+        "Lire un chart et ses valeurs."
+      ],
+      "3": [
+        "Installer, mettre à jour et revenir en arrière avec des valeurs d'environnement."
+      ]
+    }
+  }
+}

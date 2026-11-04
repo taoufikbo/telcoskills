@@ -1,0 +1,40 @@
+{
+  "noeud": "procedures-5g-diagnostic",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire l'enregistrement, l'authentification et la session PDU.",
+      "Identifier les fonctions du cœur à chaque étape.",
+      "Savoir où chercher quand une procédure échoue."
+    ],
+    "notions": [
+      "Enregistrement d'un terminal",
+      "Authentification",
+      "Établissement d'une session PDU",
+      "Fonctions du cœur impliquées (AMF, SMF, UPF, AUSF, UDM)",
+      "Codes d'échec courants"
+    ],
+    "situation": {
+      "contexte": "Des terminaux ne parviennent pas à établir de session de données à partir d'un site précis.",
+      "etapes": [
+        "Identifier l'étape qui échoue.",
+        "Retrouver les fonctions impliquées.",
+        "Consulter leurs journaux et leurs compteurs.",
+        "Comparer avec un site qui fonctionne.",
+        "Formuler une hypothèse.",
+        "Remonter au bon interlocuteur."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer les étapes d'une connexion 5G."
+      ],
+      "2": [
+        "Associer chaque étape aux fonctions du cœur."
+      ],
+      "3": [
+        "Localiser l'étape et la fonction en cause à partir de journaux de laboratoire."
+      ]
+    }
+  }
+}

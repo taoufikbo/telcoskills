@@ -1,0 +1,40 @@
+{
+  "noeud": "gestion-changement",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Classer un changement selon son risque.",
+      "Préparer une fenêtre, des vérifications et un retour arrière.",
+      "Mesurer l'effet d'un changement."
+    ],
+    "notions": [
+      "Classes de changement",
+      "Fenêtre de maintenance",
+      "Plan de retour arrière",
+      "Déploiement progressif",
+      "Revue des changements"
+    ],
+    "situation": {
+      "contexte": "Un changement de configuration réseau doit être appliqué sur tous les sites.",
+      "etapes": [
+        "Classer le changement par risque.",
+        "Rédiger le plan et le retour arrière.",
+        "Faire valider par les parties concernées.",
+        "Appliquer sur un site pilote.",
+        "Déployer progressivement.",
+        "Évaluer l'effet sur les indicateurs."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi classer les changements par risque."
+      ],
+      "2": [
+        "Lire un plan de changement."
+      ],
+      "3": [
+        "Rédiger un plan de changement avec retour arrière."
+      ]
+    }
+  }
+}

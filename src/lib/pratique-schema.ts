@@ -47,10 +47,31 @@ export const SegmentSchema = z.object({
   schema: SchemaSegmentSchema.optional(),
 });
 
+const PALIERS_VALIDATION = ["1", "2", "3", "4", "5"] as const;
+
+/**
+ * Fiche pédagogique d'une compétence (docs/SPEC-FICHE-COMPETENCE.md, EX-01 à EX-06). Écrite par l'assistant : `brouillon` jusqu'à l'audit de l'auteur.
+ * `validation` est cumulative par palier : les critères du palier N supposent ceux des paliers inférieurs ; la page n'en montre que jusqu'au palier visé du parcours.
+ */
+export const FicheSchema = z.object({
+  statut: StatutContenuSchema,
+  /** « Vous saurez… » : 3 à 7 phrases commençant par un verbe d'action. */
+  objectifs: z.array(texte).min(3, "3 objectifs au moins").max(7, "7 objectifs au plus"),
+  /** Notions à maîtriser, courtes, cochables par la personne (auto-évaluation : ne compte ni dans le palier atteint ni dans « acquis (testé) »). 30 au plus pour tenir dans le masque d'état. */
+  notions: z.array(texte).min(3, "3 notions au moins").max(8, "8 notions au plus"),
+  /** Un contexte et des étapes numérotées, dans un environnement télécom. */
+  situation: z.object({ contexte: texte, etapes: z.array(texte).min(3, "3 étapes au moins").max(7, "7 étapes au plus") }).optional(),
+  /** Ce qu'on sait faire à chaque palier (cumulatif). Seuls les paliers utiles à au moins un rôle sont renseignés. */
+  validation: z.record(z.enum(PALIERS_VALIDATION), z.array(texte).min(1).max(4)).optional(),
+  /** Compétences critiques (palier visé 4 ou 5 dans au moins un rôle) : un exercice pratique ou un mini-laboratoire. */
+  exercice: z.object({ consigne: texte, livrable: texte }).optional(),
+});
+
 export const PratiqueSchema = z.object({
   /** Identifiant du nœud : une compétence partagée entre roadmaps n'a qu'un seul contenu. */
   noeud: slug,
   questionPrealable: QuestionSchema.optional(),
+  fiche: FicheSchema.optional(),
   contenu: z
     .object({
       statut: StatutContenuSchema,
@@ -66,6 +87,7 @@ export const PratiqueSchema = z.object({
   rappel: z.array(RappelSchema).min(1).max(3, "3 questions de rappel au plus").optional(),
 });
 
+export type Fiche = z.infer<typeof FicheSchema>;
 export type Question = z.infer<typeof QuestionSchema>;
 export type Rappel = z.infer<typeof RappelSchema>;
 export type Segment = z.infer<typeof SegmentSchema>;

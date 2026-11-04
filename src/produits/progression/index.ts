@@ -18,6 +18,8 @@ export {
   definirRythme,
   rythmeDe,
   palierAtteint,
+  basculerNotion,
+  notionsCochees,
   definirPalier,
   compterPaliers,
   type DecomptePaliers,

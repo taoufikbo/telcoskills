@@ -1,0 +1,41 @@
+{
+  "noeud": "chaos",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Concevoir une expérience de panne contrôlée.",
+      "Définir l'état stable et l'hypothèse avant l'expérience.",
+      "Limiter le rayon d'impact.",
+      "Corriger ce que l'expérience révèle."
+    ],
+    "notions": [
+      "Hypothèse et état stable",
+      "Panne de nœud, de pod, de réseau",
+      "Rayon d'impact et arrêt d'urgence",
+      "Vérification des SLO, des alertes et des runbooks",
+      "Jours d'exercice"
+    ],
+    "situation": {
+      "contexte": "On veut vérifier qu'une perte de nœud n'affecte pas le SLO d'un service critique.",
+      "etapes": [
+        "Définir l'état stable mesuré.",
+        "Formuler l'hypothèse.",
+        "Limiter l'expérience à un environnement et à une heure.",
+        "Arrêter un nœud.",
+        "Comparer l'état stable observé.",
+        "Corriger puis rejouer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est une expérience de panne contrôlée."
+      ],
+      "2": [
+        "Lire un plan d'expérience et son rayon d'impact."
+      ],
+      "3": [
+        "Réaliser une expérience simple en laboratoire et en tirer des corrections."
+      ]
+    }
+  }
+}

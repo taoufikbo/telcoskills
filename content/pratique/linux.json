@@ -1,0 +1,94 @@
+{
+  "noeud": "linux",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Lire l'état d'un système Linux en production : processus, services, ressources, système de fichiers.",
+      "Comprendre le fonctionnement des services et du démarrage avec systemd.",
+      "Diagnostiquer une saturation de CPU, de mémoire ou de disque.",
+      "Expliquer ce que les namespaces et les cgroups isolent et limitent, et leur lien avec les conteneurs.",
+      "Analyser les journaux système pour retrouver l'origine d'un échec.",
+      "Reconnaître un refus lié aux droits ou au contrôle d'accès obligatoire (SELinux, AppArmor selon la distribution).",
+      "Collecter les informations utiles à l'analyse d'un incident de production."
+    ],
+    "notions": [
+      "Système de fichiers, utilisateurs, groupes, permissions",
+      "Processus et signaux",
+      "Services et unités systemd, dépendances, journaux (systemctl, journalctl)",
+      "Ressources : CPU, mémoire, swap, disque, entrées-sorties (free, df, vmstat, iostat)",
+      "Namespaces (PID, réseau, montages, utilisateurs) et cgroups",
+      "Contrôle d'accès obligatoire : contextes, refus, politiques (SELinux ou AppArmor)"
+    ],
+    "situation": {
+      "contexte": "Un service critique d'une plateforme télécom ne redémarre plus après une opération de maintenance, et des alertes signalent une forte consommation de mémoire sur le serveur.",
+      "etapes": [
+        "Lire l'état du service avec systemd et noter l'heure de l'échec.",
+        "Consulter les journaux du service autour de cet instant pour comprendre l'origine de l'échec.",
+        "Vérifier l'utilisation de la mémoire, du disque et du processeur du serveur.",
+        "Chercher un problème de droits, de configuration ou de contrôle d'accès obligatoire.",
+        "Proposer une action corrective sans perturber les autres services du serveur.",
+        "Documenter le diagnostic et les éléments collectés."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi servent systemd, les namespaces et les cgroups, et situer un service, un processus et un volume sur un serveur."
+      ],
+      "2": [
+        "Lire l'état d'un service et ses journaux, et repérer une saturation de CPU, de mémoire ou de disque.",
+        "Expliquer en quelques phrases ce que les namespaces et les cgroups isolent ou limitent."
+      ],
+      "3": [
+        "Diagnostiquer seul, en laboratoire, un service qui ne démarre plus : unité, dépendances, droits, contrôle d'accès, ressources.",
+        "Rassembler les éléments d'un incident (journaux, état des ressources, version) sans perturber le service."
+      ]
+    }
+  },
+  "rappel": [
+    {
+      "id": "rappel-linux-journal",
+      "enonce": "Un service échoue au démarrage. Quelle commande donne les journaux associés à ce service ?",
+      "options": [
+        "ps aux",
+        "journalctl -u nom-du-service",
+        "df -h",
+        "ip addr"
+      ],
+      "bonne": 1,
+      "explication": "journalctl -u filtre le journal systemd sur une unité. ps liste les processus, df l'espace disque, ip addr les adresses réseau.",
+      "source": "À ajouter : documentation systemd (systemd.io), absente des ressources de ce nœud",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 0
+    },
+    {
+      "id": "rappel-linux-cgroups",
+      "enonce": "Que permettent de limiter les cgroups pour un conteneur ?",
+      "options": [
+        "Les ressources qu'il consomme (CPU, mémoire, entrées-sorties)",
+        "Ce qu'il voit des autres processus et des interfaces réseau",
+        "Les droits de l'utilisateur root dans le conteneur",
+        "L'adresse IP qui lui est attribuée"
+      ],
+      "bonne": 0,
+      "explication": "Les cgroups limitent et comptabilisent les ressources. Ce que le conteneur voit (processus, réseau, montages) relève des namespaces.",
+      "source": "Documentation du noyau Linux",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-linux-memoire",
+      "enonce": "Un serveur affiche peu de mémoire « libre » mais beaucoup de mémoire « disponible ». Que faut-il en conclure ?",
+      "options": [
+        "Le noyau utilise la mémoire libre comme cache : elle est récupérable, il n'y a pas de saturation",
+        "La mémoire est saturée et un redémarrage est nécessaire",
+        "Une fuite de mémoire est certaine",
+        "Le swap est désactivé"
+      ],
+      "bonne": 0,
+      "explication": "Linux remplit la mémoire inutilisée avec du cache de fichiers, restituable à la demande. La colonne « disponible » estime ce qui reste réellement utilisable.",
+      "source": "Documentation du noyau Linux",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    }
+  ]
+}

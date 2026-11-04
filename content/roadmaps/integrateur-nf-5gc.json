@@ -35,7 +35,8 @@
         {
           "type": "libre",
           "nom": "3GPP TS 23.501 : architecture du système 5G (accès libre)",
-          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.501/"
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.501/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -53,7 +54,8 @@
         {
           "type": "libre",
           "nom": "3GPP TS 23.003 : numérotation, adressage et identification (accès libre)",
-          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.003/"
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.003/",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -71,7 +73,8 @@
         {
           "type": "opensource",
           "nom": "5GC_APIs : spécifications OpenAPI des interfaces SBI 3GPP",
-          "url": "https://github.com/jdegre/5GC_APIs"
+          "url": "https://github.com/jdegre/5GC_APIs",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -89,7 +92,8 @@
         {
           "type": "opensource",
           "nom": "Wireshark : documentation",
-          "url": "https://www.wireshark.org/docs/"
+          "url": "https://www.wireshark.org/docs/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -108,7 +112,8 @@
         {
           "type": "opensource",
           "nom": "free5GC : AMF (code source)",
-          "url": "https://github.com/free5gc/amf"
+          "url": "https://github.com/free5gc/amf",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -127,7 +132,8 @@
         {
           "type": "opensource",
           "nom": "free5GC : UPF en Go (code source)",
-          "url": "https://github.com/free5gc/go-upf"
+          "url": "https://github.com/free5gc/go-upf",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -145,7 +151,8 @@
         {
           "type": "opensource",
           "nom": "Open5GS : cœur 4G/5G open source (code source)",
-          "url": "https://github.com/open5gs/open5gs"
+          "url": "https://github.com/open5gs/open5gs",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -163,7 +170,8 @@
         {
           "type": "opensource",
           "nom": "free5GC : NRF (code source)",
-          "url": "https://github.com/free5gc/nrf"
+          "url": "https://github.com/free5gc/nrf",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -182,7 +190,8 @@
         {
           "type": "opensource",
           "nom": "free5GC : CHF (code source)",
-          "url": "https://github.com/free5gc/chf"
+          "url": "https://github.com/free5gc/chf",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -201,7 +210,8 @@
         {
           "type": "opensource",
           "nom": "free5GC : NSSF (code source)",
-          "url": "https://github.com/free5gc/nssf"
+          "url": "https://github.com/free5gc/nssf",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -219,7 +229,8 @@
         {
           "type": "libre",
           "nom": "3GPP TS 29.573 : interconnexion de PLMN en 5G (accès libre)",
-          "url": "https://www.3gpp.org/ftp/Specs/archive/29_series/29.573/"
+          "url": "https://www.3gpp.org/ftp/Specs/archive/29_series/29.573/",
+          "etape": "approfondir"
         }
       ],
       "cible": 1
@@ -238,7 +249,8 @@
         {
           "type": "libre",
           "nom": "3GPP TS 23.502 : procédures du système 5G (accès libre)",
-          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.502/"
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.502/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -257,7 +269,8 @@
         {
           "type": "opensource",
           "nom": "UERANSIM : simulateur d'UE et de gNB 5G",
-          "url": "https://github.com/aligungr/UERANSIM"
+          "url": "https://github.com/aligungr/UERANSIM",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -276,7 +289,8 @@
         {
           "type": "opensource",
           "nom": "Open5GS : documentation (EPC et 5GC)",
-          "url": "https://open5gs.org/open5gs/docs/"
+          "url": "https://open5gs.org/open5gs/docs/",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -294,7 +308,8 @@
         {
           "type": "opensource",
           "nom": "Kamailio : serveur SIP open source utilisé en IMS",
-          "url": "https://www.kamailio.org/"
+          "url": "https://www.kamailio.org/",
+          "etape": "approfondir"
         }
       ],
       "cible": 1
@@ -312,7 +327,8 @@
         {
           "type": "opensource",
           "nom": "SR-IOV Network Device Plugin (dépôt source)",
-          "url": "https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin"
+          "url": "https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -330,7 +346,8 @@
         {
           "type": "opensource",
           "nom": "Helm : documentation",
-          "url": "https://helm.sh/docs/"
+          "url": "https://helm.sh/docs/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -348,7 +365,8 @@
         {
           "type": "opensource",
           "nom": "OpenStack Tacker : orchestration NFV conforme ETSI",
-          "url": "https://docs.openstack.org/tacker/latest/"
+          "url": "https://docs.openstack.org/tacker/latest/",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -366,7 +384,8 @@
         {
           "type": "opensource",
           "nom": "YangModels/yang : modèles YANG de référence",
-          "url": "https://github.com/YangModels/yang"
+          "url": "https://github.com/YangModels/yang",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -385,7 +404,8 @@
         {
           "type": "opensource",
           "nom": "towards5gs-helm : charts Helm free5GC",
-          "url": "https://github.com/Orange-OpenSource/towards5gs-helm"
+          "url": "https://github.com/Orange-OpenSource/towards5gs-helm",
+          "etape": "approfondir"
         }
       ],
       "projet": "Déployer free5GC ou Open5GS sur un cluster de lab, y connecter un simulateur de gNB et d'UE, et établir une session PDU avec capture de trace.",
@@ -405,7 +425,8 @@
         {
           "type": "opensource",
           "nom": "eUPF : UPF open source en eBPF/XDP",
-          "url": "https://github.com/edgecomllc/eupf"
+          "url": "https://github.com/edgecomllc/eupf",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -423,7 +444,8 @@
         {
           "type": "opensource",
           "nom": "gNBsim : simulateur de gNB et d'UE (OMEC)",
-          "url": "https://github.com/omec-project/gnbsim"
+          "url": "https://github.com/omec-project/gnbsim",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -442,7 +464,8 @@
         {
           "type": "opensource",
           "nom": "Robot Framework : automatisation de tests",
-          "url": "https://robotframework.org/"
+          "url": "https://robotframework.org/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -461,7 +484,8 @@
         {
           "type": "opensource",
           "nom": "TRex : générateur de trafic open source",
-          "url": "https://github.com/cisco-system-traffic-generator/trex-core"
+          "url": "https://github.com/cisco-system-traffic-generator/trex-core",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -480,7 +504,8 @@
         {
           "type": "opensource",
           "nom": "Robot Framework : guide utilisateur",
-          "url": "https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html"
+          "url": "https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -499,7 +524,8 @@
         {
           "type": "opensource",
           "nom": "Prometheus : documentation",
-          "url": "https://prometheus.io/docs/"
+          "url": "https://prometheus.io/docs/",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -518,7 +544,8 @@
         {
           "type": "opensource",
           "nom": "OpenTelemetry : documentation",
-          "url": "https://opentelemetry.io/docs/"
+          "url": "https://opentelemetry.io/docs/",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -537,7 +564,8 @@
         {
           "type": "opensource",
           "nom": "Kubernetes : PodDisruptionBudget",
-          "url": "https://kubernetes.io/docs/tasks/run-application/configure-pdb/"
+          "url": "https://kubernetes.io/docs/tasks/run-application/configure-pdb/",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -556,7 +584,8 @@
         {
           "type": "opensource",
           "nom": "Argo Rollouts : déploiements progressifs",
-          "url": "https://argoproj.github.io/argo-rollouts/"
+          "url": "https://argoproj.github.io/argo-rollouts/",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -575,7 +604,8 @@
         {
           "type": "libre",
           "nom": "3GPP TS 33.501 : sécurité du système 5G (accès libre)",
-          "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.501/"
+          "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.501/",
+          "etape": "approfondir"
         }
       ],
       "cible": 1
@@ -593,7 +623,8 @@
         {
           "type": "opensource",
           "nom": "Kubernetes : contexte de sécurité d'un pod",
-          "url": "https://kubernetes.io/docs/tasks/configure-pod-container/security-context/"
+          "url": "https://kubernetes.io/docs/tasks/configure-pod-container/security-context/",
+          "etape": "approfondir"
         }
       ],
       "cible": 1
@@ -611,7 +642,8 @@
         {
           "type": "opensource",
           "nom": "OpenLI : interception légale open source conforme ETSI",
-          "url": "https://github.com/OpenLI-NZ/openli"
+          "url": "https://github.com/OpenLI-NZ/openli",
+          "etape": "approfondir"
         }
       ],
       "cible": 1
@@ -631,7 +663,8 @@
         {
           "type": "opensource",
           "nom": "towards5gs-helm : exemple de livrable de NF",
-          "url": "https://github.com/Orange-OpenSource/towards5gs-helm"
+          "url": "https://github.com/Orange-OpenSource/towards5gs-helm",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -650,7 +683,8 @@
         {
           "type": "opensource",
           "nom": "OpenAirInterface : cœur 5G d'une autre implémentation, pour l'interopérabilité",
-          "url": "https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed"
+          "url": "https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -669,7 +703,8 @@
         {
           "type": "opensource",
           "nom": "Tekton : pipelines CI/CD Kubernetes",
-          "url": "https://tekton.dev/docs/"
+          "url": "https://tekton.dev/docs/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -687,7 +722,8 @@
         {
           "type": "opensource",
           "nom": "arc42 : modèle libre de documentation d'architecture",
-          "url": "https://arc42.org/overview"
+          "url": "https://arc42.org/overview",
+          "etape": "approfondir"
         }
       ],
       "cible": 3

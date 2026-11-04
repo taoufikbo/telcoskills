@@ -1,0 +1,28 @@
+{
+  "noeud": "telco-101",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Situer l'accès radio, le cœur de réseau et les plans de contrôle et d'usager.",
+      "Utiliser le vocabulaire des opérateurs (RAN, cœur, UE, PLMN) pour dialoguer avec les experts réseau.",
+      "Expliquer pourquoi un réseau télécom a des exigences particulières de disponibilité et de latence.",
+      "Placer une alerte ou un incident dans l'architecture 4G/5G."
+    ],
+    "notions": [
+      "Architecture 4G/5G : RAN, cœur, transport",
+      "Plan de contrôle et plan d'usager",
+      "Fonctions du cœur (vue d'ensemble)",
+      "Vocabulaire : UE, gNB, PLMN, slice",
+      "Exigences opérateur : disponibilité, latence, supervision"
+    ],
+    "validation": {
+      "1": [
+        "Décrire la chaîne UE, antenne, cœur, Internet et nommer les deux plans."
+      ],
+      "2": [
+        "Replacer une alerte du cœur ou du transport dans l'architecture 4G/5G.",
+        "Dialoguer avec un expert réseau avec le bon vocabulaire."
+      ]
+    }
+  }
+}

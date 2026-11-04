@@ -1,5 +1,42 @@
 {
   "noeud": "ceph",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire l'architecture de Ceph : moniteurs, OSD, pools, placement.",
+      "Lire l'état d'un cluster Ceph et comprendre un état dégradé.",
+      "Régler la réplication selon le besoin de résilience."
+    ],
+    "notions": [
+      "Moniteurs, OSD, gestionnaires",
+      "Pools, réplication et codage d'effacement",
+      "Placement et domaines de défaillance",
+      "État du cluster : OK, avertissement, erreur",
+      "Rook et ODF dans Kubernetes"
+    ],
+    "situation": {
+      "contexte": "Un cluster Ceph signale un état dégradé après la perte d'un nœud de stockage.",
+      "etapes": [
+        "Lire l'état global et le nombre de groupes de placement affectés.",
+        "Identifier les OSD hors service.",
+        "Vérifier que la reconstruction progresse.",
+        "Surveiller l'impact sur les performances.",
+        "Décider de remplacer ou de réintégrer le nœud.",
+        "Documenter la durée de la reconstruction."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi servent moniteurs, OSD et pools."
+      ],
+      "2": [
+        "Lire l'état d'un cluster et dire s'il est dégradé."
+      ],
+      "3": [
+        "Dépanner un cluster dégradé en laboratoire et régler la réplication."
+      ]
+    }
+  },
   "rappel": [
     {
       "id": "rappel-crush",

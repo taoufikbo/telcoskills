@@ -1,0 +1,90 @@
+{
+  "noeud": "ocp-upgrade",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer comment un cluster est mis à jour : canaux, chemins de mise à jour, MachineConfig.",
+      "Préparer une mise à jour : prérequis, sauvegarde, fenêtre de maintenance, impact sur les CNF.",
+      "Suivre le déroulement d'une mise à jour et repérer un blocage.",
+      "Décider de poursuivre, suspendre ou revenir en arrière."
+    ],
+    "notions": [
+      "Canaux et chemins de mise à jour",
+      "Cluster Version Operator",
+      "MachineConfig et redémarrage des nœuds",
+      "Budgets d'interruption et CNF pendant la mise à jour",
+      "Prérequis : état des opérateurs, sauvegarde etcd",
+      "Fenêtre de maintenance et plan de retour arrière"
+    ],
+    "situation": {
+      "contexte": "Une mise à jour mineure doit être appliquée à une plateforme qui héberge des CNF, avec une seule nuit de maintenance.",
+      "etapes": [
+        "Vérifier l'état des opérateurs et des nœuds avant de commencer.",
+        "Contrôler le chemin de mise à jour proposé et les prérequis.",
+        "Sauvegarder etcd et informer les équipes des CNF.",
+        "Lancer la mise à jour et suivre l'avancement des opérateurs puis des nœuds.",
+        "Traiter un blocage éventuel (nœud, opérateur, budget d'interruption).",
+        "Valider le retour à la normale et clôturer le changement."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est un canal de mise à jour et pourquoi les nœuds redémarrent."
+      ],
+      "2": [
+        "Lire un chemin de mise à jour et ses prérequis, et dire ce qui sera impacté."
+      ],
+      "3": [
+        "Préparer et suivre une mise à jour en laboratoire, jusqu'à la validation.",
+        "Expliquer ce qui bloque une mise à jour et comment s'en sortir."
+      ]
+    }
+  },
+  "rappel": [
+    {
+      "id": "rappel-upgrade-redemarrage",
+      "enonce": "Pourquoi les nœuds redémarrent-ils pendant une mise à jour de cluster ?",
+      "options": [
+        "Parce que la configuration du système (MachineConfig) est mise à jour avec le cluster",
+        "Parce que le serveur d'API doit être relancé",
+        "Parce que etcd change de version",
+        "Parce que le réseau est reconfiguré"
+      ],
+      "bonne": 0,
+      "explication": "Les nœuds appliquent une nouvelle configuration du système d'exploitation, ce qui impose un redémarrage contrôlé, nœud par nœud.",
+      "source": "Documentation OpenShift (Updating clusters)",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-upgrade-pdb",
+      "enonce": "Que fait un budget d'interruption pendant la mise à jour ?",
+      "options": [
+        "Il limite le nombre de pods d'une charge arrêtés en même temps lors du vidage d'un nœud",
+        "Il accélère la mise à jour",
+        "Il sauvegarde etcd",
+        "Il choisit le canal de mise à jour"
+      ],
+      "bonne": 0,
+      "explication": "Le vidage d'un nœud respecte les budgets d'interruption : si l'arrêt d'un pod les violerait, la mise à jour attend, ce qui peut la bloquer.",
+      "source": "Documentation OpenShift (Updating clusters)",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-upgrade-cvo",
+      "enonce": "Quel composant orchestre la mise à jour des opérateurs du cluster ?",
+      "options": [
+        "Le Cluster Version Operator",
+        "Le kubelet",
+        "L'ordonnanceur",
+        "Le registre d'images"
+      ],
+      "bonne": 0,
+      "explication": "Le Cluster Version Operator applique la version cible et met à jour les opérateurs dans l'ordre.",
+      "source": "Cluster Version Operator (dépôt source…)",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    }
+  ]
+}

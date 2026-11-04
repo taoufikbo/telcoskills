@@ -1,0 +1,97 @@
+{
+  "noeud": "k8s-troubleshoot",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Appliquer une démarche d'analyse en entonnoir pour isoler une panne : service, pod, nœud, plan de contrôle.",
+      "Exploiter les événements, les journaux et l'état des nœuds pour orienter un diagnostic.",
+      "Traiter les pannes types : pod en attente, nœud NotReady, etcd dégradé.",
+      "Mener et rédiger une analyse de cause racine."
+    ],
+    "notions": [
+      "Démarche : symptôme, hypothèse, test, conclusion",
+      "Événements, describe, journaux de pods et de composants",
+      "Nœuds NotReady : kubelet, runtime, réseau, ressources",
+      "Pods en attente : ordonnancement, volumes, quotas",
+      "etcd : quorum, latence, sauvegarde",
+      "Rapport d'analyse de cause racine"
+    ],
+    "situation": {
+      "contexte": "Un nœud d'une plateforme passe NotReady en pleine journée et des pods d'un CNF sont replanifiés ailleurs.",
+      "etapes": [
+        "Confirmer l'état du nœud et la liste des pods concernés.",
+        "Consulter les événements et les conditions du nœud.",
+        "Vérifier le kubelet et le runtime sur le nœud.",
+        "Regarder les ressources (mémoire, disque) et le réseau du nœud.",
+        "Décider : remettre en service, isoler ou remplacer le nœud.",
+        "Rédiger l'analyse de cause racine avec chronologie et actions correctives."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire dans quel ordre examiner une panne : service, pod, nœud, plan de contrôle."
+      ],
+      "2": [
+        "Lire les événements et les conditions d'un nœud pour orienter un diagnostic."
+      ],
+      "3": [
+        "Isoler seul, en laboratoire, une panne de nœud ou de pod et la corriger."
+      ],
+      "4": [
+        "Diagnostiquer sous contrainte de temps une panne combinée, et arbitrer entre réparer et remplacer.",
+        "Rédiger une analyse de cause racine avec chronologie, causes et facteurs contributifs, et actions suivies."
+      ]
+    },
+    "exercice": {
+      "consigne": "Dans un cluster de laboratoire, on provoque trois pannes : un nœud NotReady, un pod en attente et une dégradation d'etcd. Pour chacune, établir le diagnostic sans qu'on vous dise la cause.",
+      "livrable": "Un rapport d'analyse de cause racine par panne : chronologie, cause, facteurs contributifs, correction et actions de prévention."
+    }
+  },
+  "rappel": [
+    {
+      "id": "rappel-troubleshoot-pending",
+      "enonce": "Un pod reste en état Pending. Où trouver en premier la raison ?",
+      "options": [
+        "Dans les événements du pod (kubectl describe pod)",
+        "Dans les journaux de son conteneur",
+        "Dans la base etcd directement",
+        "Dans les journaux du système d'un nœud choisi au hasard"
+      ],
+      "bonne": 0,
+      "explication": "Un pod en attente n'a généralement pas de conteneur démarré : les événements de l'ordonnanceur (ressources insuffisantes, volume, affinité) indiquent la cause.",
+      "source": "Kubernetes : dépannage et débogage",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-troubleshoot-notready",
+      "enonce": "Un nœud est NotReady. Quel composant du nœud signale d'abord son état au plan de contrôle ?",
+      "options": [
+        "Le kubelet",
+        "L'ordonnanceur",
+        "Le serveur d'API",
+        "Le contrôleur de réplication"
+      ],
+      "bonne": 0,
+      "explication": "Le kubelet envoie les battements et l'état du nœud. S'il s'arrête ou n'atteint plus l'API, le nœud passe NotReady.",
+      "source": "Kubernetes : dépannage et débogage",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-troubleshoot-rca",
+      "enonce": "Dans une analyse de cause racine, que doit-on distinguer ?",
+      "options": [
+        "La cause racine et les facteurs contributifs",
+        "Le coupable et les témoins",
+        "Les alertes et les journaux",
+        "Les pods et les nœuds"
+      ],
+      "bonne": 0,
+      "explication": "Une panne a rarement une cause unique : on sépare ce qui l'a déclenchée des conditions qui l'ont aggravée, pour agir sur les deux.",
+      "source": "Kubernetes : dépannage et débogage",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "noeud": "runbooks",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Écrire un runbook utilisable à trois heures du matin.",
+      "Identifier les étapes sûres à automatiser.",
+      "Tenir les runbooks à jour après chaque incident."
+    ],
+    "notions": [
+      "Structure : symptôme, vérifications, action, retour arrière",
+      "Critères d'utilisation",
+      "Étapes automatisables et garde-fous",
+      "Mise à jour après incident",
+      "Test en conditions réelles"
+    ],
+    "situation": {
+      "contexte": "Un runbook existe pour un nœud NotReady mais personne n'arrive à le suivre pendant un incident.",
+      "etapes": [
+        "Rejouer le runbook sur une panne simulée.",
+        "Noter les étapes ambiguës.",
+        "Réécrire les étapes en actions vérifiables.",
+        "Ajouter symptômes, vérifications et retour arrière.",
+        "Identifier ce qui peut être automatisé.",
+        "Faire relire par un pair."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que doit contenir un runbook."
+      ],
+      "2": [
+        "Suivre un runbook et signaler ses ambiguïtés."
+      ],
+      "3": [
+        "Écrire un runbook testé pour une panne courante."
+      ],
+      "4": [
+        "Écrire et automatiser les étapes sûres, avec garde-fous.",
+        "Mettre en place la revue des runbooks après incident."
+      ]
+    },
+    "exercice": {
+      "consigne": "Choisir une panne fréquente de la plateforme et produire un runbook, puis automatiser une étape sûre.",
+      "livrable": "Un runbook relu par un pair et un script de remédiation avec ses garde-fous."
+    }
+  }
+}

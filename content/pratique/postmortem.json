@@ -1,0 +1,41 @@
+{
+  "noeud": "postmortem",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Reconstituer la chronologie d'un incident.",
+      "Distinguer cause racine et facteurs contributifs.",
+      "Rédiger des actions correctives vérifiables et suivies."
+    ],
+    "notions": [
+      "Chronologie",
+      "Cause racine et facteurs contributifs",
+      "Culture sans culpabilité",
+      "Actions correctives mesurables",
+      "Suivi et partage"
+    ],
+    "situation": {
+      "contexte": "Un incident de trois heures vient d'être clos et l'équipe doit produire son post-mortem.",
+      "etapes": [
+        "Rassembler journaux, alertes et messages.",
+        "Établir la chronologie.",
+        "Identifier cause racine et facteurs contributifs.",
+        "Rédiger les actions avec un responsable et une date.",
+        "Relire en équipe sans désigner de coupable.",
+        "Suivre les actions jusqu'à leur fermeture."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est un post-mortem sans culpabilité."
+      ],
+      "2": [
+        "Établir une chronologie à partir de journaux."
+      ],
+      "3": [
+        "Rédiger un post-mortem complet, avec actions vérifiables.",
+        "Animer la relecture en équipe."
+      ]
+    }
+  }
+}

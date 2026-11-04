@@ -1,0 +1,28 @@
+{
+  "noeud": "obs-dash",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Construire un tableau de bord lisible pour la plateforme et un CNF.",
+      "Choisir les graphiques adaptés à une question d'exploitation.",
+      "Relier un tableau de bord aux alertes et aux SLO."
+    ],
+    "notions": [
+      "Sources de données et panneaux",
+      "Variables et filtres",
+      "Tableaux de bord de plateforme et de CNF",
+      "Les quatre signaux : latence, trafic, erreurs, saturation"
+    ],
+    "validation": {
+      "1": [
+        "Lire un tableau de bord et dire ce que montre chaque panneau."
+      ],
+      "2": [
+        "Construire un tableau de bord avec les signaux principaux d'un service."
+      ],
+      "3": [
+        "Fournir un tableau de bord utilisable en incident : question, panneau, seuil visible."
+      ]
+    }
+  }
+}

@@ -36,7 +36,8 @@
         {
           "type": "opensource",
           "nom": "Documentation du noyau Linux",
-          "url": "https://docs.kernel.org/"
+          "url": "https://docs.kernel.org/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -44,14 +45,16 @@
           "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         },
         {
           "type": "certif",
           "nom": "RHCSA (curriculum)",
           "url": "https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 2
@@ -67,14 +70,16 @@
         {
           "type": "opensource",
           "nom": "FRRouting : suite de routage open source (BGP, OSPF, BFD)",
-          "url": "https://docs.frrouting.org/"
+          "url": "https://docs.frrouting.org/",
+          "etape": "approfondir"
         },
         {
           "type": "cours",
           "nom": "Fondamentaux réseau (CCNA, curriculum)",
           "url": "https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccna.html",
           "langue": "en",
-          "auteur": "Cisco"
+          "auteur": "Cisco",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -92,7 +97,8 @@
         {
           "type": "opensource",
           "nom": "Podman : documentation",
-          "url": "https://podman.io/docs"
+          "url": "https://podman.io/docs",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -100,7 +106,8 @@
           "url": "https://docs.podman.io/en/latest/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Podman"
+          "auteur": "Podman",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -108,7 +115,8 @@
           "url": "https://cri-o.io/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "CRI-O"
+          "auteur": "CRI-O",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -124,7 +132,8 @@
         {
           "type": "opensource",
           "nom": "Open5GS : cœur 4G/5G open source, documentation",
-          "url": "https://open5gs.org/open5gs/docs/"
+          "url": "https://open5gs.org/open5gs/docs/",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
@@ -132,7 +141,8 @@
           "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.501/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "3GPP"
+          "auteur": "3GPP",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 2
@@ -150,7 +160,8 @@
         {
           "type": "opensource",
           "nom": "Kubernetes : architecture du cluster",
-          "url": "https://kubernetes.io/docs/concepts/architecture/"
+          "url": "https://kubernetes.io/docs/concepts/architecture/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -158,7 +169,8 @@
           "url": "https://kubernetes.io/docs/concepts/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes"
+          "auteur": "Kubernetes",
+          "etape": "approfondir"
         },
         {
           "type": "certif",
@@ -166,7 +178,8 @@
           "url": "https://github.com/cncf/curriculum",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "CNCF"
+          "auteur": "CNCF",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 3
@@ -187,7 +200,8 @@
           "url": "https://kubernetes.io/docs/concepts/workloads/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes"
+          "auteur": "Kubernetes",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -209,7 +223,8 @@
           "url": "https://kubernetes.io/docs/concepts/services-networking/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes"
+          "auteur": "Kubernetes",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -230,7 +245,8 @@
           "url": "https://kubernetes.io/docs/concepts/storage/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes"
+          "auteur": "Kubernetes",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -251,7 +267,8 @@
           "url": "https://kubernetes.io/docs/reference/access-authn-authz/rbac/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes"
+          "auteur": "Kubernetes",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -272,7 +289,8 @@
           "url": "https://helm.sh/docs/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Helm"
+          "auteur": "Helm",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -290,7 +308,8 @@
         {
           "type": "opensource",
           "nom": "Argo CD : documentation",
-          "url": "https://argo-cd.readthedocs.io/"
+          "url": "https://argo-cd.readthedocs.io/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -310,7 +329,8 @@
         {
           "type": "opensource",
           "nom": "Installateur OpenShift / OKD (dépôt source)",
-          "url": "https://github.com/openshift/installer"
+          "url": "https://github.com/openshift/installer",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -318,7 +338,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/installation_overview/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -336,7 +357,8 @@
         {
           "type": "opensource",
           "nom": "Operator Lifecycle Manager (OLM)",
-          "url": "https://olm.operatorframework.io/docs/"
+          "url": "https://olm.operatorframework.io/docs/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -344,7 +366,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/operators/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -362,7 +385,8 @@
         {
           "type": "opensource",
           "nom": "Cluster Version Operator (dépôt source, logique des mises à jour)",
-          "url": "https://github.com/openshift/cluster-version-operator"
+          "url": "https://github.com/openshift/cluster-version-operator",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -370,7 +394,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/updating_clusters/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -388,7 +413,8 @@
         {
           "type": "opensource",
           "nom": "Open Cluster Management : gestion multi-clusters",
-          "url": "https://open-cluster-management.io/"
+          "url": "https://open-cluster-management.io/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -396,7 +422,8 @@
           "url": "https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -418,7 +445,8 @@
           "url": "https://cluster-api.sigs.k8s.io/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes SIGs"
+          "auteur": "Kubernetes SIGs",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -426,7 +454,8 @@
           "url": "https://book.metal3.io/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Metal³"
+          "auteur": "Metal³",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -434,7 +463,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/edge_computing/ztp-deploying-far-edge-clusters-at-scale",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -442,7 +472,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/installing_an_on-premise_cluster_with_the_agent-based_installer/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -461,7 +492,8 @@
         {
           "type": "opensource",
           "nom": "Telco reference configuration (dépôt openshift-kni)",
-          "url": "https://github.com/openshift-kni/telco-reference"
+          "url": "https://github.com/openshift-kni/telco-reference",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -469,7 +501,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/telco-core-ref-design-specs",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -487,7 +520,8 @@
         {
           "type": "opensource",
           "nom": "Sylva : pile CaaS telco open source",
-          "url": "https://gitlab.com/sylva-projects/sylva-core"
+          "url": "https://gitlab.com/sylva-projects/sylva-core",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -495,11 +529,13 @@
           "url": "https://sylva-projects.gitlab.io/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Sylva"
+          "auteur": "Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
-          "nom": "Documentation des éditeurs respectifs"
+          "nom": "Documentation des éditeurs respectifs",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -518,7 +554,8 @@
         {
           "type": "opensource",
           "nom": "OVN-Kubernetes : documentation",
-          "url": "https://ovn-kubernetes.io/"
+          "url": "https://ovn-kubernetes.io/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -526,7 +563,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/networking_overview/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -547,7 +585,8 @@
           "url": "https://github.com/k8snetworkplumbingwg/multus-cni",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "K8s Network Plumbing WG"
+          "auteur": "K8s Network Plumbing WG",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -565,7 +604,8 @@
         {
           "type": "opensource",
           "nom": "SR-IOV Network Operator (dépôt source)",
-          "url": "https://github.com/k8snetworkplumbingwg/sriov-network-operator"
+          "url": "https://github.com/k8snetworkplumbingwg/sriov-network-operator",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -573,7 +613,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/hardware_networks/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -592,7 +633,8 @@
         {
           "type": "opensource",
           "nom": "DPDK : guides de la documentation",
-          "url": "https://doc.dpdk.org/guides/"
+          "url": "https://doc.dpdk.org/guides/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -600,7 +642,8 @@
           "url": "https://doc.dpdk.org/guides/linux_gsg/index.html",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "DPDK"
+          "auteur": "DPDK",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -622,7 +665,8 @@
           "url": "https://metallb.io/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "MetalLB"
+          "auteur": "MetalLB",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -641,7 +685,8 @@
         {
           "type": "opensource",
           "nom": "Wireshark : analyse des protocoles SCTP, GTP et PFCP",
-          "url": "https://www.wireshark.org/docs/"
+          "url": "https://www.wireshark.org/docs/",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
@@ -649,7 +694,8 @@
           "url": "https://www.3gpp.org/ftp/Specs/archive/29_series/29.244/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "3GPP"
+          "auteur": "3GPP",
+          "etape": "aller-plus-loin"
         },
         {
           "type": "spec",
@@ -657,7 +703,8 @@
           "url": "https://www.3gpp.org/ftp/Specs/archive/29_series/29.281/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "3GPP"
+          "auteur": "3GPP",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 2
@@ -677,12 +724,14 @@
         {
           "type": "opensource",
           "nom": "Open vSwitch : documentation",
-          "url": "https://docs.openvswitch.org/"
+          "url": "https://docs.openvswitch.org/",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
           "nom": "FRRouting : documentation",
-          "url": "https://docs.frrouting.org/"
+          "url": "https://docs.frrouting.org/",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -701,7 +750,8 @@
         {
           "type": "opensource",
           "nom": "Noyau Linux : HugeTLB pages",
-          "url": "https://docs.kernel.org/admin-guide/mm/hugetlbpage.html"
+          "url": "https://docs.kernel.org/admin-guide/mm/hugetlbpage.html",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -709,7 +759,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -727,7 +778,8 @@
         {
           "type": "opensource",
           "nom": "Kubernetes : politiques du CPU Manager",
-          "url": "https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/"
+          "url": "https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -735,7 +787,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -758,11 +811,13 @@
           "url": "https://kubernetes.io/docs/setup/best-practices/cluster-large/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes"
+          "auteur": "Kubernetes",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
-          "nom": "Guides de dimensionnement OpenShift et des éditeurs"
+          "nom": "Guides de dimensionnement OpenShift et des éditeurs",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -770,7 +825,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/planning-your-environment-according-to-object-maximums",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -778,7 +834,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/telco-core-ref-design-specs",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 5
@@ -796,7 +853,8 @@
         {
           "type": "opensource",
           "nom": "TRex : générateur de trafic open source",
-          "url": "https://github.com/cisco-system-traffic-generator/trex-core"
+          "url": "https://github.com/cisco-system-traffic-generator/trex-core",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -814,7 +872,8 @@
         {
           "type": "opensource",
           "nom": "Rook : stockage Ceph pour Kubernetes",
-          "url": "https://rook.io/docs/rook/latest/"
+          "url": "https://rook.io/docs/rook/latest/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -822,7 +881,8 @@
           "url": "https://docs.ceph.com/en/latest/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Ceph"
+          "auteur": "Ceph",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -830,7 +890,8 @@
           "url": "https://rook.io/docs/rook/latest-release/Getting-Started/intro/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Rook"
+          "auteur": "Rook",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -838,7 +899,8 @@
           "url": "https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.18",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -856,7 +918,8 @@
         {
           "type": "opensource",
           "nom": "Velero : sauvegarde et restauration Kubernetes",
-          "url": "https://velero.io/docs/"
+          "url": "https://velero.io/docs/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -864,7 +927,8 @@
           "url": "https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.18",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -883,7 +947,8 @@
         {
           "type": "opensource",
           "nom": "KubeVirt : guide utilisateur",
-          "url": "https://kubevirt.io/user-guide/"
+          "url": "https://kubevirt.io/user-guide/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -891,7 +956,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/virtualization/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -910,7 +976,8 @@
         {
           "type": "opensource",
           "nom": "OpenStack : documentation",
-          "url": "https://docs.openstack.org/"
+          "url": "https://docs.openstack.org/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -918,7 +985,8 @@
           "url": "https://docs.openstack.org/install-guide/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "OpenStack"
+          "auteur": "OpenStack",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -939,7 +1007,8 @@
           "url": "https://osm.etsi.org/docs/user-guide/latest/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "ETSI OSM"
+          "auteur": "ETSI OSM",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
@@ -947,7 +1016,8 @@
           "url": "https://www.etsi.org/deliver/etsi_gs/NFV/001_099/002/01.02.01_60/gs_NFV002v010201p.pdf",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "ETSI"
+          "auteur": "ETSI",
+          "etape": "aller-plus-loin"
         },
         {
           "type": "doc",
@@ -955,7 +1025,8 @@
           "url": "https://docs.onap.org/en/latest/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "ONAP"
+          "auteur": "ONAP",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -974,7 +1045,8 @@
         {
           "type": "opensource",
           "nom": "Kubernetes : topologies de haute disponibilité",
-          "url": "https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/"
+          "url": "https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -982,7 +1054,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/backup_and_restore/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -990,7 +1063,8 @@
           "url": "https://kubernetes.io/docs/setup/best-practices/multiple-zones/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes"
+          "auteur": "Kubernetes",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -998,7 +1072,8 @@
           "url": "https://etcd.io/docs/latest/op-guide/failures/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "etcd"
+          "auteur": "etcd",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -1006,7 +1081,8 @@
           "url": "https://docs.ceph.com/en/latest/rados/operations/stretch-mode/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Ceph"
+          "auteur": "Ceph",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -1027,7 +1103,8 @@
           "url": "https://prometheus.io/docs/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Prometheus"
+          "auteur": "Prometheus",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -1048,7 +1125,8 @@
           "url": "https://grafana.com/docs/loki/latest/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Grafana Labs"
+          "auteur": "Grafana Labs",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1056,7 +1134,8 @@
           "url": "https://www.elastic.co/docs",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Elastic"
+          "auteur": "Elastic",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -1075,7 +1154,8 @@
         {
           "type": "opensource",
           "nom": "Velero : sauvegarde et restauration Kubernetes",
-          "url": "https://velero.io/docs/"
+          "url": "https://velero.io/docs/",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -1094,7 +1174,8 @@
         {
           "type": "opensource",
           "nom": "OpenTelemetry : documentation",
-          "url": "https://opentelemetry.io/docs/"
+          "url": "https://opentelemetry.io/docs/",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -1112,7 +1193,8 @@
         {
           "type": "opensource",
           "nom": "kube-bench : contrôle des bonnes pratiques CIS Kubernetes",
-          "url": "https://github.com/aquasecurity/kube-bench"
+          "url": "https://github.com/aquasecurity/kube-bench",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1120,14 +1202,16 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/security_and_compliance/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
           "nom": "CIS Kubernetes Benchmark",
           "url": "https://www.cisecurity.org/benchmark/kubernetes",
           "langue": "en",
-          "auteur": "CIS"
+          "auteur": "CIS",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -1148,7 +1232,8 @@
           "url": "https://kubernetes.io/docs/concepts/services-networking/network-policies/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes"
+          "auteur": "Kubernetes",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -1167,7 +1252,8 @@
         {
           "type": "opensource",
           "nom": "Trivy : scanner de vulnérabilités et de SBOM",
-          "url": "https://trivy.dev/"
+          "url": "https://trivy.dev/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1175,7 +1261,8 @@
           "url": "https://trivy.dev/docs/latest/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Aqua Security"
+          "auteur": "Aqua Security",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1183,7 +1270,8 @@
           "url": "https://docs.sigstore.dev/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Sigstore"
+          "auteur": "Sigstore",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -1204,7 +1292,8 @@
           "url": "https://cert-manager.io/docs/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "cert-manager"
+          "auteur": "cert-manager",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1212,7 +1301,8 @@
           "url": "https://developer.hashicorp.com/vault/docs",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "HashiCorp"
+          "auteur": "HashiCorp",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1220,7 +1310,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/security_and_compliance/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -1241,11 +1332,13 @@
           "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006070987/",
           "acces": "gratuit",
           "langue": "fr",
-          "auteur": "Légifrance"
+          "auteur": "Légifrance",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
-          "nom": "Publications de l'ARCEP sur la sécurité et l'intégrité des réseaux"
+          "nom": "Publications de l'ARCEP sur la sécurité et l'intégrité des réseaux",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -1267,11 +1360,13 @@
           "url": "https://digital-strategy.ec.europa.eu/en/library/cybersecurity-5g-networks-eu-toolbox-risk-mitigating-measures",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Commission européenne"
+          "auteur": "Commission européenne",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
-          "nom": "Loi n° 2019-810 du 1er août 2019"
+          "nom": "Loi n° 2019-810 du 1er août 2019",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 2
@@ -1293,7 +1388,8 @@
           "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "EUR-Lex"
+          "auteur": "EUR-Lex",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1301,7 +1397,8 @@
           "url": "https://cyber.gouv.fr/reglementation/cybersecurite-systemes-dinformation/directives-nis-nis2-et-dispositif-saiv/",
           "acces": "gratuit",
           "langue": "fr",
-          "auteur": "ANSSI"
+          "auteur": "ANSSI",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -1319,7 +1416,8 @@
         {
           "type": "opensource",
           "nom": "ComplianceAsCode : profils de conformité automatisés, dont ANSSI BP-028",
-          "url": "https://github.com/ComplianceAsCode/content"
+          "url": "https://github.com/ComplianceAsCode/content",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1327,7 +1425,8 @@
           "url": "https://messervices.cyber.gouv.fr/guides/en-guideline-healthy-information-system-42-measures",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "ANSSI"
+          "auteur": "ANSSI",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1335,7 +1434,8 @@
           "url": "https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-relatives-un-systeme-gnulinux",
           "acces": "gratuit",
           "langue": "fr",
-          "auteur": "ANSSI"
+          "auteur": "ANSSI",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1343,7 +1443,8 @@
           "url": "https://cyber.gouv.fr/sites/default/files/document/secnumcloud-referentiel-exigences-v3.2.pdf",
           "acces": "gratuit",
           "langue": "fr",
-          "auteur": "ANSSI"
+          "auteur": "ANSSI",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -1361,7 +1462,8 @@
         {
           "type": "opensource",
           "nom": "Logiciel PIA de la CNIL (analyse d'impact, open source)",
-          "url": "https://github.com/LINCnil/pia"
+          "url": "https://github.com/LINCnil/pia",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
@@ -1369,7 +1471,8 @@
           "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "EUR-Lex"
+          "auteur": "EUR-Lex",
+          "etape": "aller-plus-loin"
         },
         {
           "type": "spec",
@@ -1377,7 +1480,8 @@
           "url": "https://eur-lex.europa.eu/eli/dir/2002/58/oj",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "EUR-Lex"
+          "auteur": "EUR-Lex",
+          "etape": "aller-plus-loin"
         },
         {
           "type": "doc",
@@ -1385,7 +1489,8 @@
           "url": "https://www.cnil.fr/fr/guide-de-la-securite-des-donnees-personnelles-nouvelle-edition-2024",
           "acces": "gratuit",
           "langue": "fr",
-          "auteur": "CNIL"
+          "auteur": "CNIL",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -1407,11 +1512,13 @@
           "url": "https://eur-lex.europa.eu/eli/reg/2023/2854/oj",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "EUR-Lex"
+          "auteur": "EUR-Lex",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
-          "nom": "Loi n° 2024-449 du 21 mai 2024 (SREN)"
+          "nom": "Loi n° 2024-449 du 21 mai 2024 (SREN)",
+          "etape": "aller-plus-loin"
         },
         {
           "type": "doc",
@@ -1419,7 +1526,8 @@
           "url": "https://cyber.gouv.fr/sites/default/files/document/secnumcloud-referentiel-exigences-v3.2.pdf",
           "acces": "gratuit",
           "langue": "fr",
-          "auteur": "ANSSI"
+          "auteur": "ANSSI",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -1437,7 +1545,8 @@
         {
           "type": "opensource",
           "nom": "MONARC : analyse de risques open source",
-          "url": "https://www.monarc.lu/"
+          "url": "https://www.monarc.lu/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1445,7 +1554,8 @@
           "url": "https://cyber.gouv.fr/securisation/analyse-des-risques/methode-ebios-rm/",
           "acces": "gratuit",
           "langue": "fr",
-          "auteur": "ANSSI"
+          "auteur": "ANSSI",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
@@ -1453,17 +1563,20 @@
           "url": "https://www.iso.org/standard/27001",
           "acces": "payant",
           "langue": "en",
-          "auteur": "ISO"
+          "auteur": "ISO",
+          "etape": "aller-plus-loin"
         },
         {
           "type": "spec",
           "nom": "ISO/IEC 27011",
-          "auteur": "ISO"
+          "auteur": "ISO",
+          "etape": "aller-plus-loin"
         },
         {
           "type": "spec",
           "nom": "GSMA NESAS",
-          "auteur": "GSMA"
+          "auteur": "GSMA",
+          "etape": "aller-plus-loin"
         },
         {
           "type": "spec",
@@ -1471,7 +1584,8 @@
           "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.117/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "3GPP"
+          "auteur": "3GPP",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 3
@@ -1489,7 +1603,8 @@
         {
           "type": "opensource",
           "nom": "free5GC : cœur 5G open source (guide)",
-          "url": "https://free5gc.org/guide/"
+          "url": "https://free5gc.org/guide/",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
@@ -1497,7 +1612,8 @@
           "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.501/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "3GPP"
+          "auteur": "3GPP",
+          "etape": "aller-plus-loin"
         },
         {
           "type": "spec",
@@ -1505,7 +1621,8 @@
           "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.502/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "3GPP"
+          "auteur": "3GPP",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 3
@@ -1525,11 +1642,13 @@
         {
           "type": "opensource",
           "nom": "towards5gs-helm : charts Helm free5GC",
-          "url": "https://github.com/Orange-OpenSource/towards5gs-helm"
+          "url": "https://github.com/Orange-OpenSource/towards5gs-helm",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
-          "nom": "Guides d'onboarding des éditeurs de CNF"
+          "nom": "Guides d'onboarding des éditeurs de CNF",
+          "etape": "approfondir"
         }
       ],
       "projet": "Déployer un cœur 5G open source (free5GC ou Open5GS) sur un cluster de lab.",
@@ -1548,11 +1667,13 @@
         {
           "type": "opensource",
           "nom": "OpenAirInterface : cœur 5G open source (déploiement)",
-          "url": "https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed"
+          "url": "https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed",
+          "etape": "approfondir"
         },
         {
           "type": "retour-experience",
-          "nom": "Documentation d'exploitation des éditeurs"
+          "nom": "Documentation d'exploitation des éditeurs",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 3
@@ -1571,7 +1692,8 @@
         {
           "type": "opensource",
           "nom": "Open5GS : code source du cœur 5G open source",
-          "url": "https://github.com/open5gs/open5gs"
+          "url": "https://github.com/open5gs/open5gs",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
@@ -1579,7 +1701,8 @@
           "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.501/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "3GPP"
+          "auteur": "3GPP",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 2
@@ -1598,7 +1721,8 @@
         {
           "type": "opensource",
           "nom": "towards5gs-helm : exemple de livrable de NF",
-          "url": "https://github.com/Orange-OpenSource/towards5gs-helm"
+          "url": "https://github.com/Orange-OpenSource/towards5gs-helm",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
@@ -1606,7 +1730,8 @@
           "url": "https://cntt.readthedocs.io/projects/ra2/en/latest/chapters/chapter01.html",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Anuket (Linux Foundation Networking)"
+          "auteur": "Anuket (Linux Foundation Networking)",
+          "etape": "aller-plus-loin"
         },
         {
           "type": "spec",
@@ -1614,7 +1739,8 @@
           "url": "https://www.gsma.com/newsroom/gsma_resources/ng-126-cloud-infrastructure-reference-model-v4-0/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "GSMA"
+          "auteur": "GSMA",
+          "etape": "aller-plus-loin"
         },
         {
           "type": "doc",
@@ -1622,7 +1748,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/telco-core-ref-design-specs",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -1641,7 +1768,8 @@
         {
           "type": "opensource",
           "nom": "arc42 : modèle libre de documentation d'architecture",
-          "url": "https://arc42.org/overview"
+          "url": "https://arc42.org/overview",
+          "etape": "approfondir"
         }
       ],
       "cible": 5
@@ -1659,7 +1787,8 @@
         {
           "type": "opensource",
           "nom": "Architecture Decision Records",
-          "url": "https://adr.github.io/"
+          "url": "https://adr.github.io/",
+          "etape": "approfondir"
         }
       ],
       "projet": "Écrire trois ADR pour une plateforme fictive : choix de la distribution, du CNI et du stockage.",
@@ -1679,12 +1808,14 @@
         {
           "type": "opensource",
           "nom": "Sylva : pile CaaS telco open source",
-          "url": "https://gitlab.com/sylva-projects/sylva-core"
+          "url": "https://gitlab.com/sylva-projects/sylva-core",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
           "nom": "CNCF Landscape",
-          "url": "https://landscape.cncf.io/"
+          "url": "https://landscape.cncf.io/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1692,7 +1823,8 @@
           "url": "https://github.com/cncf/toc/blob/main/process/graduation_criteria.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "CNCF"
+          "auteur": "CNCF",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1700,7 +1832,8 @@
           "url": "https://chaoss.community/kb/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "CHAOSS"
+          "auteur": "CHAOSS",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -1708,7 +1841,8 @@
           "url": "https://scorecard.dev/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "OpenSSF"
+          "auteur": "OpenSSF",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -1726,12 +1860,14 @@
         {
           "type": "opensource",
           "nom": "OpenCost : coût des ressources Kubernetes",
-          "url": "https://www.opencost.io/"
+          "url": "https://www.opencost.io/",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
           "nom": "Kepler : métriques énergétiques pour Kubernetes",
-          "url": "https://github.com/sustainable-computing-io/kepler"
+          "url": "https://github.com/sustainable-computing-io/kepler",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -1739,7 +1875,8 @@
           "url": "https://sustainable-computing.io/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "CNCF"
+          "auteur": "CNCF",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1747,7 +1884,8 @@
           "url": "https://github.com/cncf/tag-env-sustainability",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "CNCF"
+          "auteur": "CNCF",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -1769,12 +1907,14 @@
           "url": "https://kubernetes.io/releases/version-skew-policy/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes"
+          "auteur": "Kubernetes",
+          "etape": "approfondir"
         },
         {
           "type": "libre",
           "nom": "endoflife.date : fins de support des produits",
-          "url": "https://endoflife.date/"
+          "url": "https://endoflife.date/",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -1782,7 +1922,8 @@
           "url": "https://kubernetes.io/releases/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes"
+          "auteur": "Kubernetes",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -1790,7 +1931,8 @@
           "url": "https://access.redhat.com/support/policy/updates/openshift",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -1806,11 +1948,13 @@
         {
           "type": "opensource",
           "nom": "Curriculums des certifications CNCF (CKA, CKAD, CKS)",
-          "url": "https://github.com/cncf/curriculum"
+          "url": "https://github.com/cncf/curriculum",
+          "etape": "approfondir"
         },
         {
           "type": "certif",
-          "nom": "CKA, EX280, EX380 (curriculums)"
+          "nom": "CKA, EX280, EX380 (curriculums)",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 1

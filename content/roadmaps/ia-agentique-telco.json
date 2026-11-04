@@ -36,7 +36,8 @@
         {
           "type": "opensource",
           "nom": "Documentation Kubernetes : concepts",
-          "url": "https://kubernetes.io/docs/concepts/"
+          "url": "https://kubernetes.io/docs/concepts/",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -54,7 +55,8 @@
         {
           "type": "opensource",
           "nom": "Documentation Kubernetes : workloads",
-          "url": "https://kubernetes.io/docs/concepts/workloads/"
+          "url": "https://kubernetes.io/docs/concepts/workloads/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -72,7 +74,8 @@
         {
           "type": "opensource",
           "nom": "Documentation Prometheus",
-          "url": "https://prometheus.io/docs/introduction/overview/"
+          "url": "https://prometheus.io/docs/introduction/overview/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -88,14 +91,16 @@
         {
           "type": "opensource",
           "nom": "nanoGPT : un transformeur minimal pour comprendre",
-          "url": "https://github.com/karpathy/nanoGPT"
+          "url": "https://github.com/karpathy/nanoGPT",
+          "etape": "approfondir"
         },
         {
           "type": "cours",
           "nom": "Cours LLM de Hugging Face",
           "url": "https://huggingface.co/learn/llm-course",
           "acces": "gratuit",
-          "langue": "en"
+          "langue": "en",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -113,12 +118,14 @@
         {
           "type": "opensource",
           "nom": "Hugging Face Hub : modèles",
-          "url": "https://huggingface.co/models"
+          "url": "https://huggingface.co/models",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
           "nom": "Définition de l'IA open source (OSI)",
-          "url": "https://opensource.org/ai/open-source-ai-definition"
+          "url": "https://opensource.org/ai/open-source-ai-definition",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 3
@@ -136,7 +143,8 @@
         {
           "type": "opensource",
           "nom": "llama.cpp : quantification et format GGUF",
-          "url": "https://github.com/ggml-org/llama.cpp"
+          "url": "https://github.com/ggml-org/llama.cpp",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -154,12 +162,14 @@
         {
           "type": "opensource",
           "nom": "Ollama",
-          "url": "https://ollama.com/"
+          "url": "https://ollama.com/",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
           "nom": "llama.cpp",
-          "url": "https://github.com/ggml-org/llama.cpp"
+          "url": "https://github.com/ggml-org/llama.cpp",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -179,7 +189,8 @@
         {
           "type": "opensource",
           "nom": "Documentation vLLM",
-          "url": "https://docs.vllm.ai/"
+          "url": "https://docs.vllm.ai/",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -197,7 +208,8 @@
         {
           "type": "opensource",
           "nom": "Documentation KServe",
-          "url": "https://kserve.github.io/website/"
+          "url": "https://kserve.github.io/website/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -215,12 +227,14 @@
         {
           "type": "opensource",
           "nom": "llm-d",
-          "url": "https://llm-d.ai/"
+          "url": "https://llm-d.ai/",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
           "nom": "Gateway API Inference Extension",
-          "url": "https://gateway-api-inference-extension.sigs.k8s.io/"
+          "url": "https://gateway-api-inference-extension.sigs.k8s.io/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -238,7 +252,8 @@
         {
           "type": "opensource",
           "nom": "GuideLLM : évaluer un déploiement",
-          "url": "https://github.com/vllm-project/guidellm"
+          "url": "https://github.com/vllm-project/guidellm",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -256,7 +271,8 @@
         {
           "type": "opensource",
           "nom": "NVIDIA GPU Operator",
-          "url": "https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/"
+          "url": "https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -274,7 +290,8 @@
         {
           "type": "opensource",
           "nom": "Kubernetes : allocation dynamique de ressources",
-          "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/"
+          "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -293,7 +310,8 @@
         {
           "type": "opensource",
           "nom": "Kueue",
-          "url": "https://kueue.sigs.k8s.io/"
+          "url": "https://kueue.sigs.k8s.io/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -311,7 +329,8 @@
         {
           "type": "opensource",
           "nom": "NVIDIA Network Operator (code et documentation)",
-          "url": "https://github.com/Mellanox/network-operator"
+          "url": "https://github.com/Mellanox/network-operator",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -319,7 +338,8 @@
           "url": "https://docs.nvidia.com/networking/display/COKAN10/Network+Operator",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "NVIDIA"
+          "auteur": "NVIDIA",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -337,14 +357,16 @@
         {
           "type": "opensource",
           "nom": "smolagents : agents minimalistes",
-          "url": "https://github.com/huggingface/smolagents"
+          "url": "https://github.com/huggingface/smolagents",
+          "etape": "approfondir"
         },
         {
           "type": "cours",
           "nom": "Cours Agents de Hugging Face",
           "url": "https://huggingface.co/learn/agents-course",
           "acces": "gratuit",
-          "langue": "en"
+          "langue": "en",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -362,12 +384,14 @@
         {
           "type": "opensource",
           "nom": "Serveurs MCP de référence",
-          "url": "https://github.com/modelcontextprotocol/servers"
+          "url": "https://github.com/modelcontextprotocol/servers",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
           "nom": "Model Context Protocol",
-          "url": "https://modelcontextprotocol.io/"
+          "url": "https://modelcontextprotocol.io/",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 3
@@ -385,12 +409,14 @@
         {
           "type": "opensource",
           "nom": "Spécification et exemples A2A",
-          "url": "https://github.com/a2aproject/A2A"
+          "url": "https://github.com/a2aproject/A2A",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
           "nom": "Agent2Agent protocol",
-          "url": "https://a2a-protocol.org/"
+          "url": "https://a2a-protocol.org/",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 1
@@ -408,12 +434,14 @@
         {
           "type": "opensource",
           "nom": "LangGraph",
-          "url": "https://langchain-ai.github.io/langgraph/"
+          "url": "https://langchain-ai.github.io/langgraph/",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
           "nom": "smolagents",
-          "url": "https://huggingface.co/docs/smolagents"
+          "url": "https://huggingface.co/docs/smolagents",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -431,12 +459,14 @@
         {
           "type": "opensource",
           "nom": "NeMo Guardrails : règles de conduite pour agents",
-          "url": "https://github.com/NVIDIA/NeMo-Guardrails"
+          "url": "https://github.com/NVIDIA/NeMo-Guardrails",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
           "nom": "OWASP : risques des applications d'IA générative",
-          "url": "https://genai.owasp.org/llm-top-10/"
+          "url": "https://genai.owasp.org/llm-top-10/",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -454,14 +484,16 @@
         {
           "type": "opensource",
           "nom": "Haystack : assemblage de pipelines RAG",
-          "url": "https://github.com/deepset-ai/haystack"
+          "url": "https://github.com/deepset-ai/haystack",
+          "etape": "approfondir"
         },
         {
           "type": "cours",
           "nom": "Livre de recettes Hugging Face (RAG)",
           "url": "https://huggingface.co/learn/cookbook",
           "acces": "gratuit",
-          "langue": "en"
+          "langue": "en",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -480,12 +512,14 @@
         {
           "type": "opensource",
           "nom": "pgvector",
-          "url": "https://github.com/pgvector/pgvector"
+          "url": "https://github.com/pgvector/pgvector",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
           "nom": "Qdrant",
-          "url": "https://qdrant.tech/documentation/"
+          "url": "https://qdrant.tech/documentation/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -503,7 +537,8 @@
         {
           "type": "opensource",
           "nom": "Ragas",
-          "url": "https://docs.ragas.io/"
+          "url": "https://docs.ragas.io/",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -521,12 +556,14 @@
         {
           "type": "opensource",
           "nom": "LiteLLM",
-          "url": "https://docs.litellm.ai/"
+          "url": "https://docs.litellm.ai/",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
           "nom": "Envoy AI Gateway",
-          "url": "https://aigateway.envoyproxy.io/"
+          "url": "https://aigateway.envoyproxy.io/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -545,12 +582,14 @@
         {
           "type": "spec",
           "nom": "OpenTelemetry : conventions pour l'IA générative",
-          "url": "https://opentelemetry.io/docs/specs/semconv/gen-ai/"
+          "url": "https://opentelemetry.io/docs/specs/semconv/gen-ai/",
+          "etape": "aller-plus-loin"
         },
         {
           "type": "opensource",
           "nom": "Langfuse",
-          "url": "https://langfuse.com/docs"
+          "url": "https://langfuse.com/docs",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -568,7 +607,8 @@
         {
           "type": "opensource",
           "nom": "lm-evaluation-harness",
-          "url": "https://github.com/EleutherAI/lm-evaluation-harness"
+          "url": "https://github.com/EleutherAI/lm-evaluation-harness",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -586,17 +626,20 @@
         {
           "type": "opensource",
           "nom": "CodeCarbon : mesurer l'empreinte carbone du calcul",
-          "url": "https://github.com/mlco2/codecarbon"
+          "url": "https://github.com/mlco2/codecarbon",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
           "nom": "Kepler : consommation d'énergie par pod",
-          "url": "https://github.com/sustainable-computing-io/kepler"
+          "url": "https://github.com/sustainable-computing-io/kepler",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
           "nom": "Green Software Foundation",
-          "url": "https://greensoftware.foundation/"
+          "url": "https://greensoftware.foundation/",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -604,7 +647,8 @@
           "url": "https://sustainable-computing.io/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "CNCF"
+          "auteur": "CNCF",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -612,7 +656,8 @@
           "url": "https://github.com/cncf/tag-env-sustainability",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "CNCF"
+          "auteur": "CNCF",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -630,12 +675,14 @@
         {
           "type": "opensource",
           "nom": "garak : tester la robustesse d'un modèle",
-          "url": "https://github.com/NVIDIA/garak"
+          "url": "https://github.com/NVIDIA/garak",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
           "nom": "OWASP Top 10 pour les applications LLM",
-          "url": "https://genai.owasp.org/llm-top-10/"
+          "url": "https://genai.owasp.org/llm-top-10/",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -653,7 +700,8 @@
         {
           "type": "opensource",
           "nom": "SLSA : niveaux de sécurité de la chaîne logicielle",
-          "url": "https://slsa.dev/"
+          "url": "https://slsa.dev/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -671,7 +719,8 @@
         {
           "type": "opensource",
           "nom": "garak : tester la robustesse d'un modèle",
-          "url": "https://github.com/NVIDIA/garak"
+          "url": "https://github.com/NVIDIA/garak",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -679,7 +728,8 @@
           "url": "https://cyber.gouv.fr/publications/recommandations-de-securite-pour-un-systeme-dia-generative",
           "acces": "gratuit",
           "langue": "fr",
-          "auteur": "ANSSI"
+          "auteur": "ANSSI",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -697,12 +747,14 @@
         {
           "type": "libre",
           "nom": "Règlement (UE) 2024/1689 sur EUR-Lex (accès libre)",
-          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+          "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
           "nom": "AI Act : texte et explications",
-          "url": "https://artificialintelligenceact.eu/"
+          "url": "https://artificialintelligenceact.eu/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -710,7 +762,8 @@
           "url": "https://www.cnil.fr/fr/intelligence-artificielle",
           "acces": "gratuit",
           "langue": "fr",
-          "auteur": "CNIL"
+          "auteur": "CNIL",
+          "etape": "approfondir"
         }
       ],
       "cible": 1
@@ -728,7 +781,8 @@
         {
           "type": "libre",
           "nom": "Règlement (UE) 2023/2854 (Data Act) sur EUR-Lex (accès libre)",
-          "url": "https://eur-lex.europa.eu/eli/reg/2023/2854/oj"
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/2854/oj",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -736,7 +790,8 @@
           "url": "https://cyber.gouv.fr/sites/default/files/document/secnumcloud-referentiel-exigences-v3.2.pdf",
           "acces": "gratuit",
           "langue": "fr",
-          "auteur": "ANSSI"
+          "auteur": "ANSSI",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -754,12 +809,14 @@
         {
           "type": "opensource",
           "nom": "Open Platform for Enterprise AI (OPEA) : briques d'IA générative",
-          "url": "https://opea.dev/"
+          "url": "https://opea.dev/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
           "nom": "TM Forum : réseaux autonomes",
-          "url": "https://www.tmforum.org/autonomous-networks/"
+          "url": "https://www.tmforum.org/autonomous-networks/",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -777,12 +834,14 @@
         {
           "type": "opensource",
           "nom": "free5GC : cœur 5G open source, dont NWDAF en développement",
-          "url": "https://free5gc.org/"
+          "url": "https://free5gc.org/",
+          "etape": "approfondir"
         },
         {
           "type": "spec",
           "nom": "3GPP TS 23.288 : analytique de données réseau",
-          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.288/"
+          "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.288/",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 1
@@ -801,12 +860,14 @@
         {
           "type": "opensource",
           "nom": "K8sGPT",
-          "url": "https://k8sgpt.ai/"
+          "url": "https://k8sgpt.ai/",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
           "nom": "HolmesGPT",
-          "url": "https://github.com/robusta-dev/holmesgpt"
+          "url": "https://github.com/robusta-dev/holmesgpt",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -826,11 +887,13 @@
         {
           "type": "opensource",
           "nom": "HolmesGPT : point de départ d'un agent de diagnostic",
-          "url": "https://github.com/robusta-dev/holmesgpt"
+          "url": "https://github.com/robusta-dev/holmesgpt",
+          "etape": "approfondir"
         },
         {
           "type": "retour-experience",
-          "nom": "À construire en laboratoire à partir des briques de cette roadmap"
+          "nom": "À construire en laboratoire à partir des briques de cette roadmap",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 3
@@ -848,7 +911,8 @@
         {
           "type": "opensource",
           "nom": "CAMARA Project",
-          "url": "https://camaraproject.org/"
+          "url": "https://camaraproject.org/",
+          "etape": "approfondir"
         }
       ],
       "cible": 1
@@ -867,7 +931,8 @@
         {
           "type": "opensource",
           "nom": "Open Platform for Enterprise AI (OPEA)",
-          "url": "https://opea.dev/"
+          "url": "https://opea.dev/",
+          "etape": "approfondir"
         }
       ],
       "cible": 2

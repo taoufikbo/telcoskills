@@ -1,0 +1,39 @@
+{
+  "noeud": "sondes",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Choisir le type de sonde (HTTP, TCP, ICMP, synthétique) selon ce qu'on veut vérifier.",
+      "Mesurer le service tel que le voit l'utilisateur.",
+      "Vérifier les chemins complets entre sites."
+    ],
+    "notions": [
+      "Sondes HTTP, TCP, ICMP",
+      "Tests synthétiques de bout en bout",
+      "Mesure depuis plusieurs emplacements",
+      "Alerter sur l'échec de la sonde"
+    ],
+    "situation": {
+      "contexte": "Une application répond bien depuis le site principal, mais des utilisateurs d'un autre site se plaignent.",
+      "etapes": [
+        "Placer une sonde sur le site distant.",
+        "Comparer les temps de réponse des deux sites.",
+        "Tracer le chemin entre les sites.",
+        "Identifier le segment fautif.",
+        "Alerter sur la sonde distante.",
+        "Informer l'équipe concernée."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que mesure une sonde et en quoi elle diffère d'une métrique interne."
+      ],
+      "2": [
+        "Choisir et placer des sondes pour un service."
+      ],
+      "3": [
+        "Mettre en place une sonde de bout en bout et alerter sur son échec, en laboratoire."
+      ]
+    }
+  }
+}

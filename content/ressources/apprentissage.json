@@ -10,7 +10,8 @@
       "url": "https://cyber.gouv.fr/reglementation/cybersecurite-systemes-dinformation/directives-nis-nis2-et-dispositif-saiv/dispositif-saiv/",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "ANSSI"
+      "auteur": "ANSSI",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -22,7 +23,8 @@
       "url": "https://cyber.gouv.fr/sites/default/files/document/secnumcloud-referentiel-exigences-v3.2.pdf",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "ANSSI"
+      "auteur": "ANSSI",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -34,7 +36,8 @@
       "url": "https://www.arcep.fr/la-regulation/grands-dossiers-reseaux-mobiles/la-5g.html",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "ARCEP"
+      "auteur": "ARCEP",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -45,7 +48,8 @@
       "url": "https://training.linuxfoundation.org/training/understanding-the-eu-cyber-resilience-act-cra-lfel1001/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Linux Foundation / OpenSSF"
+      "auteur": "Linux Foundation / OpenSSF",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -56,7 +60,8 @@
       "url": "https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Commission européenne"
+      "auteur": "Commission européenne",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -67,7 +72,8 @@
       "url": "https://digital-strategy.ec.europa.eu/en/policies/data-act",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Commission européenne"
+      "auteur": "Commission européenne",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -78,7 +84,8 @@
       "url": "https://www.etsi.org/technologies/lawful-interception",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "ETSI"
+      "auteur": "ETSI",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -89,7 +96,8 @@
       "url": "https://cyber.gouv.fr/la-methode-ebios-risk-manager",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "ANSSI"
+      "auteur": "ANSSI",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -101,7 +109,8 @@
       "url": "https://cyber.gouv.fr/publications/guide-dhygiene-informatique",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "ANSSI"
+      "auteur": "ANSSI",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -114,7 +123,8 @@
       "url": "https://cyber.gouv.fr/publications/recommandations-de-securite-relatives-un-systeme-gnulinux",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "ANSSI"
+      "auteur": "ANSSI",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -126,7 +136,8 @@
       "url": "https://messervices.cyber.gouv.fr/documents-guides/anssi-guide-openstack_v1-0.pdf",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "ANSSI"
+      "auteur": "ANSSI",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -138,7 +149,8 @@
       "url": "https://sylvaproject.org/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Sylva"
+      "auteur": "Sylva",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -150,7 +162,8 @@
       "url": "https://www.youtube.com/playlist?list=PL_KV1BsedfgnHJrQvtVqZHqOMQjip9Gda",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Sylva"
+      "auteur": "Sylva",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -163,7 +176,8 @@
       "url": "https://www.youtube.com/playlist?list=PLFqLBTy_ZDShg1BxNXgpRrma2ULvIAu39",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Open Source MANO"
+      "auteur": "Open Source MANO",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -174,7 +188,8 @@
       "url": "https://www.youtube.com/playlist?list=PLj6h78yzYM2PHiIU_qr729UCWibWvtcQB",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "CNCF [Cloud Native Computing Foundation]"
+      "auteur": "CNCF [Cloud Native Computing Foundation]",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -185,7 +200,8 @@
       "url": "https://www.youtube.com/playlist?list=PLnLpXX8KHIYy8VOalYQ7FnLTOR0eZ5KxD",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "KubeVirt"
+      "auteur": "KubeVirt",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -197,7 +213,8 @@
       "url": "https://www.youtube.com/playlist?list=PL7bmigfV0EqT82eQaVCslWWM4k4d63KyK",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "VMware Cloud Native Apps"
+      "auteur": "VMware Cloud Native Apps",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -208,7 +225,8 @@
       "url": "https://www.youtube.com/playlist?list=PLgVVUpW8NIJCTTM0PH5Xecp_gO85IyvMf",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Falco"
+      "auteur": "Falco",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -221,7 +239,8 @@
       "url": "https://www.youtube.com/playlist?list=PLW8bTPfXNGdC5Co0VnBK1yVzAwSSphzpJ",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Chris Greer"
+      "auteur": "Chris Greer",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -233,7 +252,8 @@
       "url": "https://www.youtube.com/playlist?list=PL4GZKvvcjS3u9FP3F9zW4ZbZB8pti2k37",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Robot Framework Tutorials"
+      "auteur": "Robot Framework Tutorials",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -244,7 +264,8 @@
       "url": "https://www.youtube.com/playlist?list=PL1xPpLHBFNWvKPI0ofmFzJn9lrWiqGukT",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "KubeSkills"
+      "auteur": "KubeSkills",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -256,7 +277,8 @@
       "url": "https://www.youtube.com/playlist?list=PLJ9A48W0kpRJKmVeurt7ltKfrOdr8ZBdt",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "QAInsights"
+      "auteur": "QAInsights",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -267,7 +289,8 @@
       "url": "https://www.youtube.com/playlist?list=PLOocymQm7YWaJX5l5SgfkAvHQYUS-Xr1Q",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "NetworkEvolution"
+      "auteur": "NetworkEvolution",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -278,7 +301,8 @@
       "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWp1yRsq3-PyyisSIDg94ct9",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "xavki"
+      "auteur": "xavki",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -290,7 +314,8 @@
       "url": "https://www.youtube.com/playlist?list=PLSuzYIVSEUT6SE-5dSZq-zbtItfHqWdqv",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "IT-Connect - Florian"
+      "auteur": "IT-Connect - Florian",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -301,7 +326,8 @@
       "url": "https://www.youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Learn Linux TV"
+      "auteur": "Learn Linux TV",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -312,7 +338,8 @@
       "url": "https://training.linuxfoundation.org/training/introduction-to-linux/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Linux Foundation"
+      "auteur": "Linux Foundation",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -323,7 +350,8 @@
       "url": "https://linuxjourney.com/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Linux Journey"
+      "auteur": "Linux Journey",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -337,7 +365,8 @@
       "auteur": "Red Hat",
       "sauf": [
         "parcours-sylva"
-      ]
+      ],
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -348,7 +377,8 @@
       "url": "https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Practical Networking"
+      "auteur": "Practical Networking",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -359,7 +389,8 @@
       "url": "https://www.youtube.com/playlist?list=PLKGPGznq6a-X2J8dTThYPsnshJmiYbZy2",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "MOOC NSI : Numérique et Sciences Informatiques"
+      "auteur": "MOOC NSI : Numérique et Sciences Informatiques",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -370,7 +401,8 @@
       "url": "https://www.youtube.com/playlist?list=PLw6kwOJVj3MbMZ8B72ZgUryj8OSETC0ds",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "David Bombal Tech"
+      "auteur": "David Bombal Tech",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -381,7 +413,8 @@
       "url": "https://www.netacad.com/courses/networking-basics",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Cisco Networking Academy"
+      "auteur": "Cisco Networking Academy",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -393,7 +426,8 @@
       "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWrRoZZXv0xf71mvT4E0QDOF",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "xavki"
+      "auteur": "xavki",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -404,7 +438,8 @@
       "url": "https://learngitbranching.js.org/?locale=fr_FR",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "Learn Git Branching"
+      "auteur": "Learn Git Branching",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -415,7 +450,8 @@
       "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWq0iz59-px2z-qjDdZKEvWd",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "xavki"
+      "auteur": "xavki",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -426,7 +462,8 @@
       "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWo_IZ1s2v1Ijf-SnPQY8J57",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "xavki"
+      "auteur": "xavki",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -437,7 +474,8 @@
       "url": "https://www.youtube.com/playlist?list=PLXJyD2dL4oqdPQ9VjgT2gj9q_HLZGPvUz",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Red Hat Enterprise Linux"
+      "auteur": "Red Hat Enterprise Linux",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -448,7 +486,8 @@
       "url": "https://training.play-with-docker.com/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Docker"
+      "auteur": "Docker",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -460,7 +499,8 @@
       "url": "https://www.youtube.com/playlist?list=PLjXls-kqM6JCu5jYPrRzX3glSfX6Bev3m",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "MOOC de l'IMT"
+      "auteur": "MOOC de l'IMT",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -474,7 +514,8 @@
       "url": "https://www.coursera.org/learn/5g-network-fundamentals",
       "acces": "freemium",
       "langue": "en",
-      "auteur": "Institut Mines-Télécom"
+      "auteur": "Institut Mines-Télécom",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -487,7 +528,8 @@
       "url": "https://www.imt-atlantique.fr/en/study/pedagogical-innovation/moocs",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "IMT Atlantique"
+      "auteur": "IMT Atlantique",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -500,7 +542,8 @@
       "url": "https://www.youtube.com/playlist?list=PLBC3G7CyizTqRsMpP9dqv6MR7jbBiPXEm",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "3G4G"
+      "auteur": "3G4G",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -517,7 +560,8 @@
       "url": "https://www.youtube.com/playlist?list=PLRbUOpXOpZ2rTpT7xcaeCse8hbWbvV9bJ",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Hamidreza Bolhasani"
+      "auteur": "Hamidreza Bolhasani",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -531,7 +575,8 @@
       "url": "https://www.youtube.com/playlist?list=PL4OXTttOk9WhvApKwJBcZx0G4a2m8N-z6",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Our Technology Planet"
+      "auteur": "Our Technology Planet",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -543,7 +588,8 @@
       "url": "https://www.youtube.com/playlist?list=PLAsc7YcX8FIdOReT6_DUXROf2XB6uB_ij",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "TelecomTutorial info"
+      "auteur": "TelecomTutorial info",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -561,7 +607,8 @@
       "url": "https://www.sharetechnote.com/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "ShareTechnote"
+      "auteur": "ShareTechnote",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -575,7 +622,8 @@
       "url": "https://www.mpirical.com/courses/5g-service-based-architecture",
       "acces": "payant",
       "langue": "en",
-      "auteur": "Mpirical"
+      "auteur": "Mpirical",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -589,7 +637,8 @@
       "url": "https://wraycastle.com/products/5g-service-based-architecture-and-core-network-on-demand",
       "acces": "payant",
       "langue": "en",
-      "auteur": "Wray Castle"
+      "auteur": "Wray Castle",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -601,7 +650,8 @@
       "url": "https://www.youtube.com/playlist?list=PLeDUIabcS2_rQd3yVJrBAYb-MbcqNgjC9",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "free5GC"
+      "auteur": "free5GC",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -613,7 +663,8 @@
       "url": "https://www.youtube.com/playlist?list=PLZqpS76PykwIoqMdUt6noAor7eJw83bbp",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Tech with Mohit"
+      "auteur": "Tech with Mohit",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -628,7 +679,8 @@
       "url": "https://www.youtube.com/playlist?list=PLj6h78yzYM2N_B1HGXUyfn4HjjydZctPA",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "CNCF [Cloud Native Computing Foundation]"
+      "auteur": "CNCF [Cloud Native Computing Foundation]",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -642,7 +694,8 @@
       "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWo6wiy2G3SjBubF6zXjksap",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "xavki"
+      "auteur": "xavki",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -656,7 +709,8 @@
       "url": "https://www.youtube.com/playlist?list=PL1CpaUw4aBIxTPvr5l_pKoHxI0Tz2qoyK",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "khgcode"
+      "auteur": "khgcode",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -668,7 +722,8 @@
       "url": "https://www.youtube.com/playlist?list=PL2_OBreMn7FoYmfx27iSwocotjiikS5BD",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Jeff Geerling"
+      "auteur": "Jeff Geerling",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -679,7 +734,8 @@
       "url": "https://www.youtube.com/playlist?list=PLdpzxOOAlwvIrFBI1farpLS_OSUBXJMLX",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Abhishek.Veeramalla"
+      "auteur": "Abhishek.Veeramalla",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -692,7 +748,8 @@
       "url": "https://www.youtube.com/playlist?list=PLtO_OYBiEo6klZcU3HVfbrSgolnvnkCCB",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Packet Pushers"
+      "auteur": "Packet Pushers",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -704,7 +761,8 @@
       "url": "https://training.linuxfoundation.org/training/introduction-to-kubernetes/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Linux Foundation"
+      "auteur": "Linux Foundation",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -715,7 +773,8 @@
       "url": "https://github.com/kelseyhightower/kubernetes-the-hard-way",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Kelsey Hightower"
+      "auteur": "Kelsey Hightower",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -729,7 +788,8 @@
       "url": "https://killercoda.com/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Killercoda"
+      "auteur": "Killercoda",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -743,7 +803,8 @@
       "url": "https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/",
       "acces": "payant",
       "langue": "en",
-      "auteur": "Linux Foundation"
+      "auteur": "Linux Foundation",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -757,7 +818,8 @@
       "url": "https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/",
       "acces": "payant",
       "langue": "en",
-      "auteur": "Udemy (Mumshad Mannambeth)"
+      "auteur": "Udemy (Mumshad Mannambeth)",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -770,7 +832,8 @@
       "url": "https://training.linuxfoundation.org/training/kubernetes-security-essentials-lfs260/",
       "acces": "payant",
       "langue": "en",
-      "auteur": "Linux Foundation"
+      "auteur": "Linux Foundation",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -784,7 +847,8 @@
       "url": "https://www.youtube.com/playlist?list=PLaR6Rq6Z4IqdsG6b09q4QIv_Yq5fNL7zh",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "OpenShift"
+      "auteur": "OpenShift",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -795,7 +859,8 @@
       "url": "https://www.youtube.com/playlist?list=PLaR6Rq6Z4IqcKOKT4c0uGkBt3YSRQ9S5v",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "OpenShift"
+      "auteur": "OpenShift",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -807,7 +872,8 @@
       "url": "https://www.youtube.com/playlist?list=PLH5uDiXcw8tRG7_RJOe7leEvDBfC46Bl_",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "techbeatly"
+      "auteur": "techbeatly",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -820,7 +886,8 @@
       "url": "https://developers.redhat.com/developer-sandbox",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Red Hat"
+      "auteur": "Red Hat",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -833,7 +900,8 @@
       "url": "https://www.redhat.com/en/services/training/red-hat-openshift-administration-ii-configuring-a-production-cluster",
       "acces": "payant",
       "langue": "en",
-      "auteur": "Red Hat"
+      "auteur": "Red Hat",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -846,7 +914,8 @@
       "url": "https://www.redhat.com/en/services/training/red-hat-certified-openshift-administrator-exam",
       "acces": "payant",
       "langue": "en",
-      "auteur": "Red Hat"
+      "auteur": "Red Hat",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -857,7 +926,8 @@
       "url": "https://open-cluster-management.io/docs/getting-started/quick-start/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Open Cluster Management"
+      "auteur": "Open Cluster Management",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -868,7 +938,8 @@
       "url": "https://www.redhat.com/en/services/training/do432-multicluster-management-red-hat-advanced-cluster-management-kubernetes",
       "acces": "payant",
       "langue": "en",
-      "auteur": "Red Hat"
+      "auteur": "Red Hat",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -880,7 +951,8 @@
       "url": "https://www.youtube.com/playlist?list=PL-E57_RQ89Wcr8qLKLxPLW6pNVOCzYzFg",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "David Walter"
+      "auteur": "David Walter",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -892,7 +964,8 @@
       "url": "https://www.redhat.com/en/services/training/rh442-red-hat-enterprise-performance-tuning",
       "acces": "payant",
       "langue": "en",
-      "auteur": "Red Hat"
+      "auteur": "Red Hat",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -903,7 +976,8 @@
       "url": "https://www.youtube.com/playlist?list=PLP2v7zU48xOJf5FMYrQepGkEwKHD7m7QA",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Daniel Persson"
+      "auteur": "Daniel Persson",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -914,7 +988,8 @@
       "url": "https://www.youtube.com/playlist?list=PLP0uDo-ZFnQOCpYx1_uVCrx_bmyq7tdKr",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Rook"
+      "auteur": "Rook",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -925,7 +1000,8 @@
       "url": "https://www.youtube.com/playlist?list=PLT98CRl2KxKHCPoR1nHmG2Tl5Q4r1-aiJ",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Learn Linux TV"
+      "auteur": "Learn Linux TV",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -936,7 +1012,8 @@
       "url": "https://www.youtube.com/playlist?list=PLWL9Oy30PVmUq-iFUlSSGuSJ9EJcbZO3V",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "eazytraining"
+      "auteur": "eazytraining",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -948,7 +1025,8 @@
       "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWqIeLqU1194K-LS1O5m2lDd",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "xavki"
+      "auteur": "xavki",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -959,7 +1037,8 @@
       "url": "https://www.youtube.com/playlist?list=PLbMP1JcGBmSGKO8UreWpOBOhCqilejhtd",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Red Hat"
+      "auteur": "Red Hat",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -970,7 +1049,8 @@
       "url": "https://www.youtube.com/playlist?list=PLmPit9IIdzwSR-4FP65oP3AoZCKBvbwXg",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Cloud With VarJosh"
+      "auteur": "Cloud With VarJosh",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -981,7 +1061,8 @@
       "url": "https://opengitops.dev/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "OpenGitOps (CNCF)"
+      "auteur": "OpenGitOps (CNCF)",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -994,7 +1075,8 @@
       "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWoCpLKOSw3mXCqbRocnhrh-",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "xavki"
+      "auteur": "xavki",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1005,7 +1087,8 @@
       "url": "https://www.youtube.com/playlist?list=PL2_OBreMn7FqZkvMYt6ATmgC0KAGGJNAN",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Jeff Geerling"
+      "auteur": "Jeff Geerling",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -1018,7 +1101,8 @@
       "url": "https://www.youtube.com/playlist?list=PLn6POgpklwWo3_2pj5Jflqwla62P5OI8n",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "xavki"
+      "auteur": "xavki",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1032,7 +1116,8 @@
       "url": "https://www.youtube.com/playlist?list=PLyBW7UHmEXgylLwxdVbrBQJ-fJ_jMvh8h",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Prometheus Monitoring with Julius | PromLabs"
+      "auteur": "Prometheus Monitoring with Julius | PromLabs",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -1043,7 +1128,8 @@
       "url": "https://www.youtube.com/playlist?list=PLDGkOdUX1Ujr9QOsM--ogwJAYu6JD48W7",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Grafana"
+      "auteur": "Grafana",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1054,7 +1140,8 @@
       "url": "https://www.youtube.com/playlist?list=PLNxnp_rzlqf6z1cC0IkIwp6yjsBboX945",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Aspecto"
+      "auteur": "Aspecto",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1067,7 +1154,8 @@
       "url": "https://grafana.com/tutorials/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Grafana Labs"
+      "auteur": "Grafana Labs",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -1080,7 +1168,8 @@
       "url": "https://grafana.com/docs/learning-journeys/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Grafana Labs"
+      "auteur": "Grafana Labs",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1096,7 +1185,8 @@
       "url": "https://sre.google/resources/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Google"
+      "auteur": "Google",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1111,7 +1201,8 @@
       "url": "https://www.youtube.com/playlist?list=PLbRoZ5Rrl5letLDlvWuS1r8CZokFl-Is6",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "USENIX"
+      "auteur": "USENIX",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1123,7 +1214,8 @@
       "url": "https://www.youtube.com/playlist?list=PLmM1fgu30seVxW-Oobc7VOfPHbQAzICvS",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "LitmusChaos"
+      "auteur": "LitmusChaos",
+      "etape": "commencer"
     },
     {
       "noeuds": [
@@ -1135,7 +1227,8 @@
       "url": "https://www.youtube.com/playlist?list=PLLIx5ktghjqKGCCcYXQb9leb5zhlXvE0r",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Gremlin"
+      "auteur": "Gremlin",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1146,7 +1239,8 @@
       "url": "https://atelier-rgpd.cnil.fr/",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "CNIL"
+      "auteur": "CNIL",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1160,7 +1254,8 @@
       "url": "https://secnumacademie.gouv.fr/",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "ANSSI"
+      "auteur": "ANSSI",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1171,7 +1266,8 @@
       "url": "https://cyber.gouv.fr/la-directive-nis-2",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "ANSSI"
+      "auteur": "ANSSI",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1184,7 +1280,8 @@
       "url": "https://github.com/madhuakula/kubernetes-goat",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Madhu Akula"
+      "auteur": "Madhu Akula",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1195,7 +1292,8 @@
       "url": "https://www.iso.org/standard/27001",
       "acces": "payant",
       "langue": "en",
-      "auteur": "ISO"
+      "auteur": "ISO",
+      "etape": "aller-plus-loin"
     },
     {
       "noeuds": [
@@ -1206,7 +1304,8 @@
       "url": "https://developer.hashicorp.com/vault/tutorials",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "HashiCorp"
+      "auteur": "HashiCorp",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1218,7 +1317,8 @@
       "url": "https://www.youtube.com/playlist?list=PL4JxLacgYgqTgS8qQPC17fM-NWMTr5GW6",
       "acces": "gratuit",
       "langue": "fr",
-      "auteur": "A Dev' Story"
+      "auteur": "A Dev' Story",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1230,7 +1330,8 @@
       "url": "https://c4model.com/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Simon Brown"
+      "auteur": "Simon Brown",
+      "etape": "approfondir"
     },
     {
       "noeuds": [
@@ -1241,7 +1342,8 @@
       "url": "https://learn.greensoftware.foundation/",
       "acces": "gratuit",
       "langue": "en",
-      "auteur": "Green Software Foundation"
+      "auteur": "Green Software Foundation",
+      "etape": "approfondir"
     }
   ]
 }

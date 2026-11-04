@@ -32,7 +32,8 @@
         {
           "type": "opensource",
           "nom": "Documentation du noyau Linux",
-          "url": "https://docs.kernel.org/"
+          "url": "https://docs.kernel.org/",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -40,7 +41,8 @@
           "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -48,7 +50,8 @@
           "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud/-/blob/main/mgmt/mgmt_stc3.6_sylva1.7.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -56,7 +59,8 @@
           "url": "https://documentation.suse.com/sle-micro/6.2/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "SUSE"
+          "auteur": "SUSE",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -64,7 +68,8 @@
           "url": "https://ubuntu.com/server/docs",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Canonical"
+          "auteur": "Canonical",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -82,7 +87,8 @@
         {
           "type": "opensource",
           "nom": "Podman : documentation",
-          "url": "https://podman.io/docs"
+          "url": "https://podman.io/docs",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -90,7 +96,8 @@
           "url": "https://docs.podman.io/en/latest/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Podman"
+          "auteur": "Podman",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -98,7 +105,8 @@
           "url": "https://cri-o.io/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "CRI-O"
+          "auteur": "CRI-O",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -116,7 +124,8 @@
         {
           "type": "opensource",
           "nom": "Kubernetes : architecture du cluster",
-          "url": "https://kubernetes.io/docs/concepts/architecture/"
+          "url": "https://kubernetes.io/docs/concepts/architecture/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -124,7 +133,8 @@
           "url": "https://kubernetes.io/docs/concepts/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes"
+          "auteur": "Kubernetes",
+          "etape": "approfondir"
         },
         {
           "type": "certif",
@@ -132,7 +142,8 @@
           "url": "https://github.com/cncf/curriculum",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "CNCF"
+          "auteur": "CNCF",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 3
@@ -151,7 +162,8 @@
           "url": "https://helm.sh/docs/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Helm"
+          "auteur": "Helm",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -169,7 +181,8 @@
         {
           "type": "opensource",
           "nom": "Argo CD : documentation",
-          "url": "https://argo-cd.readthedocs.io/"
+          "url": "https://argo-cd.readthedocs.io/",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -188,7 +201,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-core",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -196,7 +210,8 @@
           "url": "https://www.linuxfoundation.org/press/linux-foundation-europe-announces-project-sylva-to-create-open-source-telco-cloud-software-framework-to-complement-open-networking-momentum",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "The Linux Foundation"
+          "auteur": "The Linux Foundation",
+          "etape": "approfondir"
         },
         {
           "type": "retour-experience",
@@ -204,7 +219,8 @@
           "url": "https://blog.powerdns.com/powerdns-achieves-sylva-project-validation",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "PowerDNS"
+          "auteur": "PowerDNS",
+          "etape": "aller-plus-loin"
         }
       ],
       "cible": 2
@@ -226,7 +242,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/getting-started/solution-overview.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -234,7 +251,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/_Design/01-technical-overview.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -255,7 +273,8 @@
           "url": "https://cluster-api.sigs.k8s.io/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Kubernetes SIG Cluster Lifecycle"
+          "auteur": "Kubernetes SIG Cluster Lifecycle",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -263,7 +282,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/_Design/01-technical-overview.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -286,7 +306,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-core/-/blob/main/README.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -294,7 +315,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/units.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -302,7 +324,8 @@
           "url": "https://fluxcd.io/flux/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "CNCF"
+          "auteur": "CNCF",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -324,7 +347,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/prerequisites.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -345,7 +369,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-core/-/tree/main/environment-values",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -353,7 +378,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/providers.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -375,7 +401,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/devzone/03-developer-perspectives/00-relevant-units/metal3.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -383,7 +410,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/runtime-operations/cli-workload-cluster-operations/okd-deployment.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -404,7 +432,8 @@
           "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -412,7 +441,8 @@
           "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud/-/blob/main/mgmt/mgmt_stc3.6_sylva1.7.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -420,7 +450,8 @@
           "url": "https://documentation.suse.com/suse-edge/3.6/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "SUSE"
+          "auteur": "SUSE",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -428,7 +459,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-core/-/blob/main/charts/sylva-units/units-description.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -450,7 +482,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/getting-started/quickstart.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -458,7 +491,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/installation/installation.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -466,7 +500,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/installation/validation.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -485,7 +520,8 @@
           "url": "https://prometheus.io/docs/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Prometheus"
+          "auteur": "Prometheus",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -504,7 +540,8 @@
           "url": "https://grafana.com/docs/loki/latest/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Grafana Labs"
+          "auteur": "Grafana Labs",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -512,7 +549,8 @@
           "url": "https://www.elastic.co/docs",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Elastic"
+          "auteur": "Elastic",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -530,7 +568,8 @@
         {
           "type": "opensource",
           "nom": "Trivy : scanner de vulnérabilités et de SBOM",
-          "url": "https://trivy.dev/"
+          "url": "https://trivy.dev/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -538,7 +577,8 @@
           "url": "https://trivy.dev/docs/latest/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Aqua Security"
+          "auteur": "Aqua Security",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -546,7 +586,8 @@
           "url": "https://docs.sigstore.dev/",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Sigstore"
+          "auteur": "Sigstore",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -568,7 +609,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/runtime-operations/gitops-workload-cluster-operations/overview.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -576,7 +618,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/runtime-operations/cli-workload-cluster-operations/addition.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 3
@@ -597,7 +640,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/runtime-operations/cli-workload-cluster-operations/upgrade-kubernetes.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 4
@@ -618,7 +662,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/post-deployment/available-services.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -641,7 +686,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/advanced/logging-monitoring/README.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -663,7 +709,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/advanced/security/README.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -671,7 +718,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/devzone/03-developer-perspectives/01-security/cosign.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -687,7 +735,8 @@
         {
           "type": "opensource",
           "nom": "OVN-Kubernetes : documentation",
-          "url": "https://ovn-kubernetes.io/"
+          "url": "https://ovn-kubernetes.io/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -695,7 +744,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/networking_overview/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -716,7 +766,8 @@
           "url": "https://github.com/k8snetworkplumbingwg/multus-cni",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "K8s Network Plumbing WG"
+          "auteur": "K8s Network Plumbing WG",
+          "etape": "approfondir"
         }
       ],
       "cible": 2
@@ -734,7 +785,8 @@
         {
           "type": "opensource",
           "nom": "SR-IOV Network Operator (dépôt source)",
-          "url": "https://github.com/k8snetworkplumbingwg/sriov-network-operator"
+          "url": "https://github.com/k8snetworkplumbingwg/sriov-network-operator",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -742,7 +794,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/hardware_networks/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 1
@@ -760,7 +813,8 @@
         {
           "type": "opensource",
           "nom": "Noyau Linux : HugeTLB pages",
-          "url": "https://docs.kernel.org/admin-guide/mm/hugetlbpage.html"
+          "url": "https://docs.kernel.org/admin-guide/mm/hugetlbpage.html",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -768,7 +822,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 1
@@ -786,7 +841,8 @@
         {
           "type": "opensource",
           "nom": "Kubernetes : politiques du CPU Manager",
-          "url": "https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/"
+          "url": "https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/",
+          "etape": "approfondir"
         },
         {
           "type": "doc",
@@ -794,7 +850,8 @@
           "url": "https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/scalability_and_performance/index",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Red Hat",
+          "etape": "approfondir"
         }
       ],
       "cible": 1
@@ -818,7 +875,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/advanced/node-classes/README.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         },
         {
           "type": "opensource",
@@ -826,7 +884,8 @@
           "url": "https://gitlab.com/sylva-projects/sylva-projects.gitlab.io/-/blob/main/website/docs/configuration/advanced/node-classes/cpu-isolation.md",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Projet Sylva"
+          "auteur": "Projet Sylva",
+          "etape": "approfondir"
         }
       ],
       "cible": 2

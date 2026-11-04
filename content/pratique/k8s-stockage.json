@@ -1,0 +1,31 @@
+{
+  "noeud": "k8s-stockage",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer le lien entre PersistentVolume, PersistentVolumeClaim et StorageClass.",
+      "Choisir un mode d'accès adapté à la charge.",
+      "Comprendre le provisionnement dynamique et les instantanés.",
+      "Reconnaître un volume qui ne se monte pas."
+    ],
+    "notions": [
+      "PV, PVC, StorageClass",
+      "Modes d'accès : RWO, RWX, ROX",
+      "Provisionnement dynamique",
+      "Instantanés de volume",
+      "Pilotes CSI (vue d'ensemble)"
+    ],
+    "validation": {
+      "1": [
+        "Définir PV, PVC et StorageClass."
+      ],
+      "2": [
+        "Lire un PVC et dire quel volume il obtiendra et avec quels droits d'accès."
+      ],
+      "3": [
+        "Faire provisionner un volume et le monter dans une charge, en laboratoire.",
+        "Expliquer pourquoi un PVC reste en attente (classe absente, capacité, mode d'accès)."
+      ]
+    }
+  }
+}

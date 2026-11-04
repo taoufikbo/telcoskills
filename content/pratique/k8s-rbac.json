@@ -1,0 +1,41 @@
+{
+  "noeud": "k8s-rbac",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Lire un Role, un ClusterRole et leurs liaisons pour savoir qui peut faire quoi.",
+      "Isoler des équipes par namespaces, quotas et limites.",
+      "Appliquer le principe du moindre privilège à un compte de service.",
+      "Reconnaître un refus d'accès lié aux droits."
+    ],
+    "notions": [
+      "Role, ClusterRole, RoleBinding, ClusterRoleBinding",
+      "Comptes de service",
+      "ResourceQuota et LimitRange",
+      "Namespaces et isolation",
+      "Vérifier un droit : kubectl auth can-i"
+    ],
+    "situation": {
+      "contexte": "Une équipe d'exploitation ne peut plus créer de pods dans son namespace après une revue de sécurité des droits.",
+      "etapes": [
+        "Identifier l'identité utilisée et le namespace concerné.",
+        "Vérifier ses droits avec kubectl auth can-i.",
+        "Lire les Role et RoleBinding qui s'appliquent.",
+        "Repérer ce qui a changé et le droit manquant.",
+        "Proposer le droit minimal à rétablir.",
+        "Faire valider la correction par la revue de sécurité."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que contrôle le RBAC et ce qu'est un compte de service."
+      ],
+      "2": [
+        "Lire un Role et sa liaison et dire ce qu'ils autorisent."
+      ],
+      "3": [
+        "Concevoir, en laboratoire, des droits minimaux pour une équipe, avec quotas, et les vérifier."
+      ]
+    }
+  }
+}

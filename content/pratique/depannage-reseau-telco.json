@@ -1,0 +1,90 @@
+{
+  "noeud": "depannage-reseau-telco",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Isoler une panne réseau par couche : interface, VLAN, MTU, route, politique réseau.",
+      "Capturer des paquets au bon endroit (pod, nœud, interface physique) et les lire.",
+      "Reconnaître les spécificités des plateformes telco : multi-interfaces, SR-IOV, plans séparés.",
+      "Rédiger un diagnostic réseau exploitable par l'équipe réseau ou l'éditeur."
+    ],
+    "notions": [
+      "Démarche par couche, du pod à l'interface physique",
+      "MTU, fragmentation et tunnels",
+      "VLAN et trunks sur les nœuds",
+      "SR-IOV : fonctions virtuelles et leurs limites de visibilité",
+      "tcpdump et Wireshark",
+      "Politiques réseau et pare-feu"
+    ],
+    "situation": {
+      "contexte": "Les appels de signalisation d'un CNF échouent par intermittence entre deux sites, alors que les pings fonctionnent.",
+      "etapes": [
+        "Qualifier le symptôme : quels flux, quelles heures, quels sites.",
+        "Tester la MTU de bout en bout avec des paquets de taille croissante.",
+        "Vérifier VLAN et routes sur les nœuds et sur le site distant.",
+        "Capturer les paquets à deux points pour situer la perte.",
+        "Lire la capture : retransmissions, fragmentation, ICMP.",
+        "Remonter un dossier précis à l'équipe réseau."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer les causes courantes d'une perte de connectivité : VLAN, MTU, route, politique."
+      ],
+      "2": [
+        "Mener un diagnostic couche par couche sur un cas simple, avec ping et traceroute."
+      ],
+      "3": [
+        "Capturer et lire des paquets pour confirmer ou écarter une hypothèse en laboratoire.",
+        "Isoler une panne de MTU ou de VLAN sur une plateforme multi-interfaces et rédiger le dossier de diagnostic."
+      ]
+    }
+  },
+  "rappel": [
+    {
+      "id": "rappel-reseau-mtu",
+      "enonce": "Des pings courts passent mais les échanges applicatifs échouent par intermittence. Quelle cause faut-il vérifier tôt ?",
+      "options": [
+        "Une MTU trop petite sur le chemin, qui fragmente ou perd les gros paquets",
+        "Une adresse IP en double sur le pod",
+        "Une limite de CPU du pod",
+        "Un certificat expiré"
+      ],
+      "bonne": 0,
+      "explication": "Les petits paquets passent, les gros dépassent la MTU d'un tunnel ou d'un lien. Un test avec des tailles croissantes le confirme.",
+      "source": "Wireshark : documentation",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-reseau-capture",
+      "enonce": "Pourquoi capturer à deux points d'un chemin ?",
+      "options": [
+        "Pour situer où les paquets disparaissent ou sont modifiés",
+        "Pour doubler le débit",
+        "Pour réduire la MTU",
+        "Pour contourner une politique réseau"
+      ],
+      "bonne": 0,
+      "explication": "Comparer l'entrée et la sortie d'un segment montre si la perte est avant ou après.",
+      "source": "tcpdump : manuel",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-reseau-sriov",
+      "enonce": "Sur une interface SR-IOV attachée directement au pod, que devient la visibilité depuis le nœud ?",
+      "options": [
+        "Elle est limitée : le trafic ne passe plus par le pont logiciel du nœud",
+        "Elle est identique à celle d'un pod ordinaire",
+        "Elle est meilleure car tout est journalisé",
+        "Elle dépend du CNI du cluster"
+      ],
+      "bonne": 0,
+      "explication": "Le trafic SR-IOV contourne la pile réseau logicielle du nœud ; il faut capturer dans le pod ou sur la fonction physique.",
+      "source": "Wireshark : documentation",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    }
+  ]
+}

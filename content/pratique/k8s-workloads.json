@@ -1,0 +1,32 @@
+{
+  "noeud": "k8s-workloads",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Choisir entre Deployment, StatefulSet, DaemonSet et Job selon la charge.",
+      "Régler les ressources, les sondes de santé et les budgets d'interruption d'un pod.",
+      "Expliquer comment un déploiement progresse et comment revenir en arrière.",
+      "Lire pourquoi un pod ne démarre pas (état, événements)."
+    ],
+    "notions": [
+      "Pod, ReplicaSet, Deployment",
+      "StatefulSet, DaemonSet, Job",
+      "Requêtes et limites de ressources",
+      "Sondes de démarrage, de vivacité et de disponibilité",
+      "PodDisruptionBudget",
+      "Stratégies de mise à jour et retour arrière"
+    ],
+    "validation": {
+      "1": [
+        "Dire quand utiliser un Deployment, un StatefulSet, un DaemonSet ou un Job."
+      ],
+      "2": [
+        "Lire un manifeste et en déduire les ressources, sondes et règles de mise à jour."
+      ],
+      "3": [
+        "Déployer une charge avec ressources, sondes et budget d'interruption, puis la mettre à jour et revenir en arrière.",
+        "Diagnostiquer un pod en attente, en erreur ou redémarré en boucle à partir de son état et de ses événements."
+      ]
+    }
+  }
+}

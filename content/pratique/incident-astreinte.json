@@ -1,0 +1,98 @@
+{
+  "noeud": "incident-astreinte",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Piloter un incident : détecter, qualifier, communiquer, résoudre, clôturer.",
+      "Escalader au bon moment vers les bonnes personnes.",
+      "Tenir la communication pendant l'incident.",
+      "Utiliser les runbooks sous pression.",
+      "Préparer le post-mortem dès l'incident."
+    ],
+    "notions": [
+      "Rôles : responsable d'incident, communication, exécution",
+      "Sévérité et critères d'escalade",
+      "Communication interne et vers le client",
+      "Runbooks et journal d'incident",
+      "Astreinte soutenable : rotation, relais",
+      "Clôture et post-mortem"
+    ],
+    "situation": {
+      "contexte": "À 3 h du matin, le taux d'erreur d'un service de signalisation monte et l'alerte réveille l'astreinte.",
+      "etapes": [
+        "Accuser réception et qualifier la sévérité.",
+        "Ouvrir le journal d'incident et prévenir les parties concernées.",
+        "Appliquer le runbook correspondant.",
+        "Escalader si le temps cible est dépassé.",
+        "Rétablir le service et vérifier les indicateurs.",
+        "Clore l'incident et planifier le post-mortem."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer les phases d'un incident et les rôles."
+      ],
+      "2": [
+        "Qualifier la sévérité et décider d'escalader."
+      ],
+      "3": [
+        "Tenir un rôle dans un incident simulé avec journal et communication."
+      ],
+      "4": [
+        "Piloter un incident majeur simulé de bout en bout, escalade et communication comprises.",
+        "Faire évoluer rotation et runbooks à partir de l'analyse de l'incident."
+      ]
+    },
+    "exercice": {
+      "consigne": "Lors d'un exercice, un incident majeur est simulé sur une plateforme de laboratoire. Vous êtes responsable d'incident et devez le piloter jusqu'à la clôture.",
+      "livrable": "Un journal d'incident horodaté, les messages de communication envoyés et un compte rendu d'une page."
+    }
+  },
+  "rappel": [
+    {
+      "id": "rappel-incident-roles",
+      "enonce": "Pourquoi séparer le responsable d'incident de ceux qui exécutent les actions ?",
+      "options": [
+        "Pour garder une vue d'ensemble et décider pendant que d'autres agissent",
+        "Pour réduire le nombre de personnes mobilisées",
+        "Pour éviter de documenter",
+        "Pour que le responsable gagne du temps"
+      ],
+      "bonne": 0,
+      "explication": "Celui qui coordonne ne doit pas être absorbé par le diagnostic : il suit la situation et décide.",
+      "source": "Google SRE Book : gestion des incidents",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-incident-escalade",
+      "enonce": "Quand escalader ?",
+      "options": [
+        "Quand le temps cible est dépassé ou que la sévérité dépasse son périmètre",
+        "Seulement en cas d'échec total",
+        "Jamais avant d'avoir trouvé la cause",
+        "Uniquement le matin"
+      ],
+      "bonne": 0,
+      "explication": "On escalade sur des critères posés d'avance, sans attendre d'avoir tout essayé.",
+      "source": "PagerDuty Incident Response…",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    },
+    {
+      "id": "rappel-incident-postmortem",
+      "enonce": "Que doit éviter un post-mortem ?",
+      "options": [
+        "Chercher un coupable plutôt que des causes et des actions",
+        "Dresser la chronologie",
+        "Lister les actions correctives",
+        "Nommer les facteurs contributifs"
+      ],
+      "bonne": 0,
+      "explication": "Un post-mortem sans culpabilité cherche des causes systémiques et des actions suivies.",
+      "source": "Google SRE Book : culture du post-mortem",
+      "statut": "brouillon",
+      "mauvaisChoixPlausible": 1
+    }
+  ]
+}

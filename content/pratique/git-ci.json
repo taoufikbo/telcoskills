@@ -1,0 +1,27 @@
+{
+  "noeud": "git-ci",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Utiliser Git au quotidien : branches, fusions, revues.",
+      "Lire et modifier un pipeline d'intégration continue.",
+      "Comprendre ce qu'est un artefact et d'où il vient.",
+      "Relier un changement d'infrastructure ou de configuration à sa revue et à son déploiement."
+    ],
+    "notions": [
+      "Branches, commits, fusions et demandes de revue",
+      "Pipelines CI/CD : étapes, jobs, variables",
+      "Artefacts et registres",
+      "Revues de code et protection des branches"
+    ],
+    "validation": {
+      "1": [
+        "Dire à quoi servent une branche, une revue et un pipeline."
+      ],
+      "2": [
+        "Suivre un exemple de pipeline et en lire les étapes, les variables et les artefacts.",
+        "Proposer une modification de configuration par branche et demande de revue."
+      ]
+    }
+  }
+}

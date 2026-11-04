@@ -19,7 +19,7 @@ for (const f of fs.readdirSync(dossier).filter((x) => x.endsWith(".json")).sort(
   const texte = fs.readFileSync(path.join(dossier, f), "utf8");
   const p = JSON.parse(texte);
   let n = 0;
-  for (const s of [p.questionPrealable, p.contenu, p.pourquoi, ...(p.rappel ?? [])]) {
+  for (const s of [p.questionPrealable, p.fiche, p.contenu, p.pourquoi, ...(p.rappel ?? [])]) {
     if (s && s.statut !== "valide") {
       s.statut = "valide";
       n++;

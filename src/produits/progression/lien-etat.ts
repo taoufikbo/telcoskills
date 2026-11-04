@@ -6,7 +6,7 @@ import { EtatNoeudSchema, EtatPratiqueSchema, type EtatNoeud, type EtatPratique 
  * Format compact, uniquement des caractères sûrs dans une adresse ([a-z0-9._~-]) :
  *   p1.<création>_<compétences>_<parcours>_<hors parcours>_<somme de contrôle>
  * La somme de contrôle de fin fait refuser un lien coupé à la copie (sans elle, un lien tronqué se lirait comme un état partiel).
- *   compétence = id.vu.boîte.réussi.échéance.dernier.tentatives.déclaré[.palier]   (dates en jours depuis 2024-01-01, base 36 ; le palier n'est écrit que s'il existe, donc les liens d'avant restent lus)
+ *   compétence = id.vu.boîte.réussi.échéance.dernier.tentatives.déclaré[.palier[.notions]]   (dates en jours depuis 2024-01-01, base 36 ; palier et notions (masque de bits, base 36) ne sont écrits que s'ils existent, donc les liens d'avant restent lus)
  * Un ancien lien (`?etat=<roadmap>~…`) reste lu par `progression.ts`.
  */
 export const PREFIXE_LIEN = "p1.";
@@ -31,9 +31,16 @@ function somme(texte: string): string {
 
 export const estLienEtat = (texte: string | null | undefined): texte is string => !!texte && texte.startsWith(PREFIXE_LIEN);
 
+/** Éléments facultatifs en fin de compétence : palier, puis notions ; ceux de fin vides sont omis (les anciens liens restent identiques). */
+function supplements(n: EtatNoeud): string[] {
+  const s = [n.palier ? String(n.palier) : "", n.notions ? n.notions.toString(36) : ""];
+  while (s.length > 0 && s[s.length - 1] === "") s.pop();
+  return s;
+}
+
 export function encoderLienEtat(etat: EtatPratique): string {
   const noeuds = Object.entries(etat.noeuds).map(([id, n]) =>
-    [id, optJours(n.vu), n.boite ?? "", optJours(n.reussi), optJours(n.echeance), n.dernier === "ok" ? "o" : n.dernier === "echec" ? "e" : "", n.tentatives ?? "", n.declare ? "1" : "", ...(n.palier ? [n.palier] : [])].join("."),
+    [id, optJours(n.vu), n.boite ?? "", optJours(n.reussi), optJours(n.echeance), n.dernier === "ok" ? "o" : n.dernier === "echec" ? "e" : "", n.tentatives ?? "", n.declare ? "1" : "", ...supplements(n)].join("."),
   );
   const hors = Object.entries(etat.horsParcours).map(([roadmap, ids]) => [roadmap, ...ids].join("."));
   const corps = [versJours(etat.creeLe), noeuds.join("~"), etat.parcours.join("~"), hors.join("~")].join("_");
@@ -49,7 +56,7 @@ export function decoderLienEtat(texte: string): EtatPratique {
     const [cree, noeudsBrut, parcoursBrut, horsBrut] = sections;
     const noeuds: Record<string, EtatNoeud> = {};
     for (const t of noeudsBrut ? noeudsBrut.split("~") : []) {
-      const [id, vu, boite, reussi, echeance, dernier, tentatives, declare, palier, ...surplus] = t.split(".");
+      const [id, vu, boite, reussi, echeance, dernier, tentatives, declare, palier, notions, ...surplus] = t.split(".");
       if (!id || surplus.length > 0) throw new Error("format");
       noeuds[id] = {
         ...(vu ? { vu: depuisJours(vu) } : {}),
@@ -60,6 +67,7 @@ export function decoderLienEtat(texte: string): EtatPratique {
         ...(tentatives ? { tentatives: Number(tentatives) } : {}),
         ...(declare ? { declare: true as const } : {}),
         ...(palier ? { palier: Number(palier) } : {}),
+        ...(notions ? { notions: parseInt(notions, 36) } : {}),
       };
     }
     const horsParcours: Record<string, string[]> = {};
@@ -86,11 +94,12 @@ function meilleurSansPalier(a: EtatNoeud, b: EtatNoeud): EtatNoeud {
   return (a.vu ?? "9") <= (b.vu ?? "9") ? a : b;
 }
 
-/** Idem, et le palier déclaré le plus haut des deux est conservé (on ne perd pas un palier en important une sauvegarde). */
+/** Idem, et on garde le palier déclaré le plus haut et l'union des notions cochées (on ne perd rien en important une sauvegarde). */
 function meilleur(a: EtatNoeud, b: EtatNoeud): EtatNoeud {
   const gagnant = meilleurSansPalier(a, b);
   const palier = Math.max(a.palier ?? 0, b.palier ?? 0);
-  return palier > 0 ? { ...gagnant, palier } : gagnant;
+  const notions = (a.notions ?? 0) | (b.notions ?? 0);
+  return { ...gagnant, ...(palier > 0 ? { palier } : {}), ...(notions > 0 ? { notions } : {}) };
 }
 
 /**

@@ -1,0 +1,49 @@
+{
+  "noeud": "niveaux-support",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Dire ce que traite chaque niveau de support (N1, N2, N3).",
+      "Appliquer des critères d'escalade explicites.",
+      "Organiser le passage de relais et l'interface avec l'éditeur.",
+      "Garder une astreinte soutenable."
+    ],
+    "notions": [
+      "Rôles N1, N2, N3",
+      "Critères d'escalade",
+      "Passage de relais et information minimale",
+      "Interface avec l'éditeur et les équipes réseau",
+      "Charge d'astreinte"
+    ],
+    "situation": {
+      "contexte": "Un incident passe de N1 à N3 sans information utile sur ce qui a déjà été essayé.",
+      "etapes": [
+        "Lire la fiche transmise.",
+        "Identifier les informations manquantes.",
+        "Reconstituer les vérifications faites.",
+        "Définir le modèle de transmission minimal.",
+        "Le partager aux niveaux inférieurs.",
+        "Mesurer la qualité des transmissions."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que traite chaque niveau."
+      ],
+      "2": [
+        "Appliquer des critères d'escalade à des cas simples."
+      ],
+      "3": [
+        "Rédiger un modèle de transmission."
+      ],
+      "4": [
+        "Définir niveaux, critères et interface avec l'éditeur pour une équipe.",
+        "Mesurer et améliorer la soutenabilité de l'astreinte."
+      ]
+    },
+    "exercice": {
+      "consigne": "Définir l'organisation du support pour une plateforme hébergeant des CNF de deux éditeurs.",
+      "livrable": "Un document d'une page : niveaux, critères d'escalade, modèle de transmission, contacts éditeur."
+    }
+  }
+}

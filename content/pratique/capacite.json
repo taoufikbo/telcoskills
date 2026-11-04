@@ -1,0 +1,40 @@
+{
+  "noeud": "capacite",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Suivre l'utilisation des ressources dans le temps.",
+      "Prévoir la saturation et déclencher l'extension assez tôt.",
+      "Relier la capacité aux SLO."
+    ],
+    "notions": [
+      "Indicateurs : CPU, mémoire, stockage, réseau",
+      "Tendance et saisonnalité",
+      "Marge et seuil de déclenchement",
+      "Délais d'approvisionnement",
+      "Rapport de capacité"
+    ],
+    "situation": {
+      "contexte": "Le stockage d'une plateforme grandit de 4 % par mois et l'approvisionnement prend trois mois.",
+      "etapes": [
+        "Mesurer la croissance sur six mois.",
+        "Calculer la date de saturation.",
+        "Soustraire le délai d'approvisionnement.",
+        "Fixer le seuil de déclenchement.",
+        "Alerter sur ce seuil.",
+        "Présenter le rapport aux décideurs."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire quels indicateurs suivre."
+      ],
+      "2": [
+        "Lire une tendance et estimer la date de saturation."
+      ],
+      "3": [
+        "Produire un rapport de capacité avec seuil de déclenchement."
+      ]
+    }
+  }
+}

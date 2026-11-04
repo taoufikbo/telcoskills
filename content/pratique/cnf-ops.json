@@ -1,0 +1,41 @@
+{
+  "noeud": "cnf-ops",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Mettre un CNF à l'échelle.",
+      "Mettre à jour un CNF sans coupure.",
+      "Analyser le comportement d'un CNF quand la plateforme défaille."
+    ],
+    "notions": [
+      "Mise à l'échelle horizontale et verticale",
+      "Mise à jour progressive et retour arrière",
+      "Disponibilité du CNF et budgets d'interruption",
+      "État conservé et reprise de session",
+      "Journaux et métriques du CNF"
+    ],
+    "situation": {
+      "contexte": "Une mise à jour de CNF doit être faite pendant la nuit sans interrompre les sessions.",
+      "etapes": [
+        "Lire le plan de mise à jour de l'éditeur.",
+        "Vérifier les budgets d'interruption.",
+        "Mettre à jour une instance puis valider.",
+        "Poursuivre par étapes.",
+        "Surveiller les sessions.",
+        "Retour arrière si besoin."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que signifie mettre un CNF à l'échelle."
+      ],
+      "2": [
+        "Suivre un plan de mise à jour d'un CNF."
+      ],
+      "3": [
+        "Réaliser une mise à jour de CNF et un test de mise à l'échelle en laboratoire.",
+        "Analyser le comportement du CNF lors de la perte d'un nœud."
+      ]
+    }
+  }
+}

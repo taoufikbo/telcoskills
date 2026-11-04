@@ -1,0 +1,41 @@
+{
+  "noeud": "capacite-noeuds",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Vider un nœud pour maintenance sans violer les budgets d'interruption.",
+      "Planifier un redémarrage contrôlé de nœuds.",
+      "Expliquer comment la configuration d'un nœud évolue sans le recréer à la main.",
+      "Reconnaître ce qui bloque un drain."
+    ],
+    "notions": [
+      "Cordon, drain et uncordon",
+      "PodDisruptionBudget et drain",
+      "Redémarrages en séquence",
+      "Configuration des nœuds gérée de façon déclarative",
+      "Pods bloquants : stockage local, DaemonSet"
+    ],
+    "situation": {
+      "contexte": "Un correctif noyau doit être appliqué à tous les nœuds d'une plateforme qui héberge un CNF sensible.",
+      "etapes": [
+        "Vérifier les budgets d'interruption du CNF.",
+        "Isoler le premier nœud (cordon), puis le vider (drain).",
+        "Appliquer le correctif et redémarrer le nœud.",
+        "Remettre le nœud en service et vérifier que les pods reviennent.",
+        "Enchaîner nœud par nœud en surveillant le service.",
+        "Documenter la durée et les anomalies."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que font cordon et drain."
+      ],
+      "2": [
+        "Lire un budget d'interruption et dire combien de pods on peut arrêter."
+      ],
+      "3": [
+        "Vider, mettre à jour et remettre en service un nœud en laboratoire sans coupure, puis expliquer ce qui bloque un drain."
+      ]
+    }
+  }
+}

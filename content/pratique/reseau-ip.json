@@ -1,0 +1,32 @@
+{
+  "noeud": "reseau-ip",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Lire un plan d'adressage IP et un schéma de VLAN.",
+      "Expliquer le rôle d'un VLAN, d'un trunk, d'une route et d'un tunnel.",
+      "Reconnaître les causes courantes d'une perte de connectivité : mauvais VLAN, MTU, route manquante.",
+      "Comprendre ce qu'apportent le routage dynamique (BGP) et les VRF à une plateforme telco."
+    ],
+    "notions": [
+      "Adressage IPv4/IPv6, masques, passerelles",
+      "VLAN et trunks",
+      "Routage statique et BGP (notions)",
+      "MTU et fragmentation",
+      "VRF (instances de routage) et tunnels",
+      "Outils de base : ip, ping, traceroute"
+    ],
+    "validation": {
+      "1": [
+        "Décrire en une phrase le rôle d'un VLAN, d'une route et d'un masque de sous-réseau."
+      ],
+      "2": [
+        "Lire une table de routage et un plan d'adressage pour situer une machine.",
+        "Repérer sur un schéma l'endroit où un défaut de VLAN ou de MTU casse la communication."
+      ],
+      "3": [
+        "Reproduire en laboratoire une panne simple (VLAN, route, MTU) et la corriger avec ip, ping et traceroute."
+      ]
+    }
+  }
+}

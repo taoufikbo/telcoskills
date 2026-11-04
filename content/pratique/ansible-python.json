@@ -1,0 +1,40 @@
+{
+  "noeud": "ansible-python",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Écrire un playbook Ansible avec inventaire et rôles.",
+      "Écrire un script Python d'exploitation.",
+      "Choisir entre playbook et script."
+    ],
+    "notions": [
+      "Inventaire, playbook, rôle",
+      "Idempotence",
+      "Variables et modèles",
+      "Scripts Python : fichiers, API, sous-processus",
+      "Gestion des erreurs et journalisation"
+    ],
+    "situation": {
+      "contexte": "Il faut appliquer la même configuration à cinquante nœuds en vérifiant le résultat.",
+      "etapes": [
+        "Définir l'inventaire.",
+        "Écrire le playbook idempotent.",
+        "Tester sur un nœud.",
+        "Déployer par lots.",
+        "Vérifier l'état final.",
+        "Consigner la sortie."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est l'idempotence."
+      ],
+      "2": [
+        "Lire un playbook et un script."
+      ],
+      "3": [
+        "Écrire un playbook idempotent et un script de vérification."
+      ]
+    }
+  }
+}

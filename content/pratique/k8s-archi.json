@@ -1,0 +1,31 @@
+{
+  "noeud": "k8s-archi",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire les composants du plan de contrôle et d'un nœud.",
+      "Expliquer ce qui se passe entre une demande à l'API et le démarrage d'un pod.",
+      "Situer le rôle d'etcd et l'effet de sa perte de quorum.",
+      "Lire l'état d'un cluster pour un premier diagnostic."
+    ],
+    "notions": [
+      "Serveur d'API, etcd, ordonnanceur, contrôleurs",
+      "Kubelet, runtime de conteneurs, kube-proxy",
+      "Boucle de réconciliation : état désiré et état observé",
+      "Quorum etcd",
+      "Commandes kubectl de lecture : get, describe, logs"
+    ],
+    "validation": {
+      "1": [
+        "Nommer les composants du plan de contrôle et d'un nœud et leur rôle."
+      ],
+      "2": [
+        "Suivre le chemin d'un pod de la demande à l'exécution et dire où regarder si le pod reste en attente."
+      ],
+      "3": [
+        "Lire l'état d'un cluster et isoler le composant en cause dans une panne simple, en laboratoire.",
+        "Expliquer l'effet d'une perte de quorum etcd sur le cluster."
+      ]
+    }
+  }
+}

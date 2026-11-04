@@ -30,6 +30,8 @@ export const RessourceSchema = z.object({
   langue: z.enum(["fr", "en"]).optional(),
   /** Organisme, chaîne ou auteur. */
   auteur: z.string().min(1).optional(),
+  /** Quand la consulter : pour commencer, pour approfondir, pour aller plus loin (règles de classement : docs/SPEC-FICHE-COMPETENCE.md, CD-05). */
+  etape: z.enum(["commencer", "approfondir", "aller-plus-loin"]).optional(),
 });
 
 /** Origine d'une roadmap : analyse d'offres d'emploi (avec effectif et mois de collecte) ou rédaction éditoriale. */

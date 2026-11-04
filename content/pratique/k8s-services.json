@@ -1,0 +1,30 @@
+{
+  "noeud": "k8s-services",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer comment un service expose des pods et comment la résolution de noms fonctionne.",
+      "Choisir entre ClusterIP, NodePort et LoadBalancer.",
+      "Comprendre le rôle d'un Ingress ou d'une Route.",
+      "Diagnostiquer un service injoignable (sélecteur, points de terminaison, DNS)."
+    ],
+    "notions": [
+      "Service et sélecteurs, points de terminaison",
+      "Types de service : ClusterIP, NodePort, LoadBalancer",
+      "Ingress et Route",
+      "CoreDNS et noms de services",
+      "Vérifications : endpoints, nslookup depuis un pod"
+    ],
+    "validation": {
+      "1": [
+        "Dire à quoi servent un Service, un Ingress et le DNS du cluster."
+      ],
+      "2": [
+        "Lire un Service et son Ingress et prévoir qui peut l'atteindre."
+      ],
+      "3": [
+        "Retrouver, sur un cas de laboratoire, pourquoi un service ne répond pas (sélecteur, endpoints, DNS ou politique réseau)."
+      ]
+    }
+  }
+}

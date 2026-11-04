@@ -49,10 +49,11 @@ export function problemesPratique(entrees: Pratique[], roadmaps: Roadmap[]): str
 
 /** Retire ce qui n'est pas validé. Un contenu qu'il ne reste plus rien à montrer disparaît ; `lienProjet` n'est pas un contenu écrit, il reste. */
 export function retirerBrouillons(p: PratiqueNoeud): PratiqueNoeud {
-  const { questionPrealable, contenu, pourquoi, rappel, ...reste } = p;
+  const { questionPrealable, fiche, contenu, pourquoi, rappel, ...reste } = p;
   const rappelValide = rappel?.filter((q) => q.statut === "valide");
   const sortie: PratiqueNoeud = { ...reste };
   if (questionPrealable?.statut === "valide") sortie.questionPrealable = questionPrealable;
+  if (fiche?.statut === "valide") sortie.fiche = fiche;
   if (contenu?.statut === "valide") sortie.contenu = contenu;
   if (pourquoi?.statut === "valide") sortie.pourquoi = pourquoi;
   if (rappelValide && rappelValide.length > 0) sortie.rappel = rappelValide;
@@ -82,11 +83,11 @@ export function fusionnerPratique(roadmap: Roadmap, entrees: Pratique[], avecBro
 
 /** Tout ce que l'écran de relecture peut demander. */
 export type ActionRelecture =
-  | { action: "valider"; section: "questionPrealable" | "contenu" | "pourquoi" }
+  | { action: "valider"; section: "questionPrealable" | "fiche" | "contenu" | "pourquoi" }
   | { action: "valider"; section: "rappel"; index: number }
-  | { action: "rejeter"; section: "questionPrealable" | "contenu" | "pourquoi" }
+  | { action: "rejeter"; section: "questionPrealable" | "fiche" | "contenu" | "pourquoi" }
   | { action: "rejeter"; section: "rappel"; index: number }
-  | { action: "corriger"; section: "questionPrealable" | "contenu" | "pourquoi"; valeur: unknown }
+  | { action: "corriger"; section: "questionPrealable" | "fiche" | "contenu" | "pourquoi"; valeur: unknown }
   | { action: "corriger"; section: "rappel"; index: number; valeur: unknown };
 
 /** Applique une décision de relecture à un contenu brut ; lève une erreur si le résultat n'est pas valide. Pure : l'écriture est faite par l'appelant. */

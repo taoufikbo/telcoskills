@@ -1,0 +1,37 @@
+{
+  "noeud": "sec-detection",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Activer l'audit Kubernetes et celui des nœuds.",
+      "Envoyer les journaux de sécurité vers un SIEM.",
+      "Détecter des comportements anormaux à l'exécution."
+    ],
+    "notions": [
+      "Journal d'audit",
+      "Journaux de sécurité des nœuds",
+      "SIEM",
+      "Détection à l'exécution (Falco)",
+      "Conservation et preuve"
+    ],
+    "validation": {
+      "1": [
+        "Dire à quoi sert un journal d'audit."
+      ],
+      "2": [
+        "Lire un événement d'audit et comprendre qui a fait quoi."
+      ]
+    },
+    "situation": {
+      "contexte": "Une équipe de sécurité demande qui a supprimé un déploiement hier soir.",
+      "etapes": [
+        "Retrouver l'événement dans le journal d'audit.",
+        "Lire l'identité et l'heure.",
+        "Rapprocher des journaux du nœud.",
+        "Vérifier la conservation des journaux.",
+        "Documenter la conclusion.",
+        "Proposer une alerte sur ce type d'action."
+      ]
+    }
+  }
+}

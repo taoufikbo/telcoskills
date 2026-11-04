@@ -1,5 +1,51 @@
 {
   "noeud": "stockage-dr",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Distinguer sauvegarde, instantané et réplication.",
+      "Fixer un RPO et un RTO et choisir la technique adaptée.",
+      "Tester une restauration.",
+      "Mesurer l'impact de la réplication inter-sites."
+    ],
+    "notions": [
+      "RPO et RTO",
+      "Instantanés et sauvegardes",
+      "Réplication synchrone et asynchrone",
+      "Test de restauration",
+      "Impact sur la latence et la bande passante"
+    ],
+    "situation": {
+      "contexte": "Le contrat impose un RPO de cinq minutes entre deux sites éloignés.",
+      "etapes": [
+        "Mesurer la latence entre sites.",
+        "Choisir synchrone ou asynchrone selon la latence.",
+        "Dimensionner la bande passante.",
+        "Mettre en place la réplication.",
+        "Provoquer une bascule de test.",
+        "Mesurer le RPO et le RTO réels."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Définir RPO et RTO."
+      ],
+      "2": [
+        "Choisir entre sauvegarde, instantané et réplication pour un besoin donné."
+      ],
+      "3": [
+        "Mettre en place une réplication et tester une restauration.",
+        "Dimensionner la bande passante pour un RPO donné."
+      ],
+      "4": [
+        "Concevoir la stratégie de sauvegarde et de reprise d'une plateforme à partir des RPO et RTO exigés, et la défendre."
+      ]
+    },
+    "exercice": {
+      "consigne": "En laboratoire, mettre en place une réplication entre deux sites et provoquer une bascule.",
+      "livrable": "Un rapport avec RPO et RTO mesurés et les écarts constatés."
+    }
+  },
   "rappel": [
     {
       "id": "rappel-rbd-mirroring",

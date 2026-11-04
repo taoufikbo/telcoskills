@@ -1,0 +1,42 @@
+{
+  "noeud": "multus",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer pourquoi un pod télécom a plusieurs interfaces.",
+      "Lire une NetworkAttachmentDefinition (macvlan, ipvlan).",
+      "Séparer les flux de contrôle, d'usager et de gestion.",
+      "Vérifier les interfaces effectives d'un pod."
+    ],
+    "notions": [
+      "Multus et interface secondaire",
+      "NetworkAttachmentDefinition",
+      "macvlan et ipvlan",
+      "Séparation des plans de contrôle, d'usager et de gestion",
+      "Annotations de réseau d'un pod et vérification"
+    ],
+    "situation": {
+      "contexte": "Un CNF attend trois interfaces (gestion, signalisation, usager) mais ne démarre qu'avec une seule.",
+      "etapes": [
+        "Lire l'annotation de réseau du pod.",
+        "Vérifier que les NetworkAttachmentDefinition existent dans le bon namespace.",
+        "Contrôler l'interface parente sur le nœud.",
+        "Lire les événements et les journaux de Multus.",
+        "Corriger la définition manquante.",
+        "Vérifier les trois interfaces dans le pod."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi un pod télécom a plusieurs interfaces."
+      ],
+      "2": [
+        "Lire une NetworkAttachmentDefinition et prévoir les interfaces obtenues.",
+        "Rattacher un pod à un réseau secondaire en laboratoire."
+      ],
+      "3": [
+        "Mettre en place un réseau secondaire pour un pod, vérifier ses interfaces et séparer les plans de flux."
+      ]
+    }
+  }
+}

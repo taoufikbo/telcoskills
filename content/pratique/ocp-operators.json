@@ -1,0 +1,42 @@
+{
+  "noeud": "ocp-operators",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer le rôle des Cluster Operators et de l'Operator Lifecycle Manager.",
+      "Lire l'état d'un opérateur (disponible, dégradé, en progression).",
+      "Installer et mettre à jour un opérateur depuis un catalogue.",
+      "Repérer un opérateur dégradé qui bloque une opération sur la plateforme."
+    ],
+    "notions": [
+      "Cluster Operators et leur état",
+      "Operator Lifecycle Manager (OLM)",
+      "Catalogues, abonnements, canaux",
+      "Plan d'installation et approbation manuelle",
+      "Opérateurs dégradés : où regarder"
+    ],
+    "situation": {
+      "contexte": "Un opérateur installé par l'équipe réseau reste en état dégradé après une mise à jour.",
+      "etapes": [
+        "Lister les opérateurs et repérer celui qui est dégradé.",
+        "Lire ses conditions et ses événements.",
+        "Consulter les journaux du pod de l'opérateur.",
+        "Vérifier l'abonnement, le canal et le plan d'installation.",
+        "Décider : attendre, approuver, ou revenir à une version antérieure.",
+        "Documenter la cause et l'action."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est un opérateur et ce que fait l'OLM."
+      ],
+      "2": [
+        "Lire l'état des Cluster Operators et d'un abonnement OLM.",
+        "Installer un opérateur depuis un catalogue en laboratoire."
+      ],
+      "3": [
+        "Diagnostiquer seul un opérateur dégradé et mener une mise à jour d'opérateur avec approbation, en laboratoire."
+      ]
+    }
+  }
+}
