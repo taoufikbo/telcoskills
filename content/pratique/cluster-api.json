@@ -1,0 +1,36 @@
+{
+  "noeud": "cluster-api",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer Cluster API.",
+      "Lire les ressources d'un cluster.",
+      "Suivre un cycle de vie."
+    ],
+    "notions": [
+      "Ressources Cluster API",
+      "Fournisseurs",
+      "Machines",
+      "Cycle de vie"
+    ],
+    "situation": {
+      "contexte": "Un nœud doit être remplacé.",
+      "etapes": [
+        "Lire l'état.",
+        "Supprimer la machine.",
+        "Vérifier le remplacement."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire le principe."
+      ],
+      "2": [
+        "Lire les ressources."
+      ],
+      "3": [
+        "Créer un cluster de laboratoire."
+      ]
+    }
+  }
+}

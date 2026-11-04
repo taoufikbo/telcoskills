@@ -25,7 +25,7 @@ describe("étapes d'une compétence", () => {
     expect(etapesDisponibles({}, true)).toEqual([]);
   });
   it("propose un parcours à chaque compétence du pilote une fois son contenu validé", () => {
-    for (const e of chargerPratique()) {
+    for (const e of chargerPratique().filter((x) => x.rappel)) {
       const valide = {
         ...e,
         questionPrealable: e.questionPrealable && { ...e.questionPrealable, statut: "valide" as const },

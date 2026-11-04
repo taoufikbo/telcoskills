@@ -1,0 +1,34 @@
+{
+  "noeud": "sylva-suse",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire la variante SUSE de Sylva.",
+      "Situer SL Micro, RKE2, Rancher, Longhorn, NeuVector.",
+      "Comparer avec la variante Canonical."
+    ],
+    "notions": [
+      "SUSE Linux Micro",
+      "RKE2",
+      "Rancher",
+      "Longhorn",
+      "NeuVector"
+    ],
+    "situation": {
+      "contexte": "Un opérateur choisit la variante SUSE.",
+      "etapes": [
+        "Lister les composants.",
+        "Évaluer le support.",
+        "Décider."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire les composants."
+      ],
+      "2": [
+        "Comparer les variantes."
+      ]
+    }
+  }
+}

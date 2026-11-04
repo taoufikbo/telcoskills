@@ -1,0 +1,35 @@
+{
+  "noeud": "cnf-exigences",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Lire les exigences d'une NF.",
+      "Les traduire en besoins de plateforme.",
+      "Vérifier qu'une plateforme répond à ces exigences."
+    ],
+    "notions": [
+      "Réseaux",
+      "CPU et HugePages",
+      "SR-IOV"
+    ],
+    "situation": {
+      "contexte": "Une NF exige SR-IOV et HugePages.",
+      "etapes": [
+        "Lire l'exigence.",
+        "Préparer.",
+        "Vérifier."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Lister les exigences."
+      ],
+      "2": [
+        "Les traduire en besoins."
+      ],
+      "3": [
+        "Vérifier la plateforme."
+      ]
+    }
+  }
+}

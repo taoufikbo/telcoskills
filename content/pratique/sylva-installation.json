@@ -1,0 +1,35 @@
+{
+  "noeud": "sylva-installation",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Déployer le cluster de gestion.",
+      "Valider son état.",
+      "Dépanner un déploiement."
+    ],
+    "notions": [
+      "Déploiement",
+      "Validation",
+      "Journaux"
+    ],
+    "situation": {
+      "contexte": "Le cluster de gestion ne devient pas prêt.",
+      "etapes": [
+        "Lire l'état.",
+        "Chercher le blocage.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire les étapes."
+      ],
+      "2": [
+        "Lire l'état."
+      ],
+      "3": [
+        "Déployer et valider."
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "noeud": "reg-cra",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Résumer le Cyber Resilience Act.",
+      "Identifier les obligations des fabricants.",
+      "Savoir ce qu'un opérateur peut exiger d'un éditeur."
+    ],
+    "notions": [
+      "Produits avec éléments numériques",
+      "Obligations",
+      "Calendrier"
+    ],
+    "situation": {
+      "contexte": "Un éditeur livre un produit à l'opérateur.",
+      "etapes": [
+        "Vérifier la conformité annoncée.",
+        "Lire les obligations.",
+        "Documenter."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que vise le règlement."
+      ]
+    }
+  }
+}

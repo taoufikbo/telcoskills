@@ -1,0 +1,24 @@
+{
+  "noeud": "sylva-projet",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire le projet Sylva.",
+      "Situer ses objectifs.",
+      "Identifier ses acteurs."
+    ],
+    "notions": [
+      "Pile commune",
+      "Contributeurs",
+      "Objectifs"
+    ],
+    "validation": {
+      "1": [
+        "Dire ce qu'est Sylva."
+      ],
+      "2": [
+        "Situer son intérêt pour les opérateurs."
+      ]
+    }
+  }
+}

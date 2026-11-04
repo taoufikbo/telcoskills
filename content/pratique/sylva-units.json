@@ -1,0 +1,36 @@
+{
+  "noeud": "sylva-units",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Activer et configurer des units.",
+      "Lire les dépendances.",
+      "Dépanner une unit."
+    ],
+    "notions": [
+      "Chart",
+      "Valeurs",
+      "Dépendances",
+      "État"
+    ],
+    "situation": {
+      "contexte": "Une unit reste en échec.",
+      "etapes": [
+        "Lire l'état.",
+        "Lire les dépendances.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est une unit."
+      ],
+      "2": [
+        "Activer une unit."
+      ],
+      "3": [
+        "Dépanner une unit en échec."
+      ]
+    }
+  }
+}

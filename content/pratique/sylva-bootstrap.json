@@ -1,0 +1,35 @@
+{
+  "noeud": "sylva-bootstrap",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Préparer la machine d'amorçage.",
+      "Vérifier les prérequis.",
+      "Lancer le déploiement."
+    ],
+    "notions": [
+      "Machine d'amorçage",
+      "Prérequis",
+      "Outils"
+    ],
+    "situation": {
+      "contexte": "Le déploiement échoue au démarrage.",
+      "etapes": [
+        "Vérifier les prérequis.",
+        "Lire les journaux.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire le rôle de l'amorçage."
+      ],
+      "2": [
+        "Vérifier les prérequis."
+      ],
+      "3": [
+        "Préparer une machine d'amorçage."
+      ]
+    }
+  }
+}

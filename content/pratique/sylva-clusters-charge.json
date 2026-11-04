@@ -1,0 +1,35 @@
+{
+  "noeud": "sylva-clusters-charge",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Créer un cluster de charge.",
+      "Passer du script à SylvaWorkloadCluster.",
+      "Valider le cluster."
+    ],
+    "notions": [
+      "Cluster de charge",
+      "Valeurs",
+      "Validation"
+    ],
+    "situation": {
+      "contexte": "Une équipe réclame son cluster.",
+      "etapes": [
+        "Définir.",
+        "Créer.",
+        "Valider."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi sert un cluster de charge."
+      ],
+      "2": [
+        "Lire sa définition."
+      ],
+      "3": [
+        "Créer un cluster de charge."
+      ]
+    }
+  }
+}

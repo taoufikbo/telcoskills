@@ -1,0 +1,36 @@
+{
+  "noeud": "slicing",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire le découpage en tranches.",
+      "Lire S-NSSAI et NSSF.",
+      "Diagnostiquer une sélection de tranche."
+    ],
+    "notions": [
+      "S-NSSAI",
+      "NSSF",
+      "Sélection",
+      "Isolation"
+    ],
+    "situation": {
+      "contexte": "Un terminal n'obtient pas la tranche attendue.",
+      "etapes": [
+        "Lire les identifiants.",
+        "Vérifier la sélection.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Définir une tranche."
+      ],
+      "2": [
+        "Lire une sélection."
+      ],
+      "3": [
+        "Diagnostiquer un échec de sélection."
+      ]
+    }
+  }
+}

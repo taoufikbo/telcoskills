@@ -1,0 +1,29 @@
+{
+  "noeud": "reg-oiv",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Situer OIV, SIIV et entités critiques.",
+      "Savoir quand le régime s'applique.",
+      "Repérer les obligations qui en découlent pour l'exploitation."
+    ],
+    "notions": [
+      "OIV",
+      "SIIV",
+      "Entités critiques"
+    ],
+    "situation": {
+      "contexte": "Un opérateur est désigné OIV.",
+      "etapes": [
+        "Identifier les systèmes concernés.",
+        "Lire les obligations.",
+        "Documenter."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est un OIV."
+      ]
+    }
+  }
+}

@@ -62,7 +62,7 @@ export const FicheSchema = z.object({
   /** Un contexte et des étapes numérotées, dans un environnement télécom. */
   situation: z.object({ contexte: texte, etapes: z.array(texte).min(3, "3 étapes au moins").max(7, "7 étapes au plus") }).optional(),
   /** Ce qu'on sait faire à chaque palier (cumulatif). Seuls les paliers utiles à au moins un rôle sont renseignés. */
-  validation: z.record(z.enum(PALIERS_VALIDATION), z.array(texte).min(1).max(4)).optional(),
+  validation: z.partialRecord(z.enum(PALIERS_VALIDATION), z.array(texte).min(1).max(4)).optional(),
   /** Compétences critiques (palier visé 4 ou 5 dans au moins un rôle) : un exercice pratique ou un mini-laboratoire. */
   exercice: z.object({ consigne: texte, livrable: texte }).optional(),
 });

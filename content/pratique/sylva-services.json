@@ -1,0 +1,34 @@
+{
+  "noeud": "sylva-services",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire Rancher, Keycloak, Harbor, Vault et Flux.",
+      "Situer leur rôle.",
+      "Savoir où chercher quand l'un d'eux est indisponible."
+    ],
+    "notions": [
+      "Rancher",
+      "Keycloak",
+      "Harbor",
+      "Vault",
+      "Flux"
+    ],
+    "situation": {
+      "contexte": "Un service de la plateforme est indisponible.",
+      "etapes": [
+        "Identifier le service.",
+        "Lire son état.",
+        "Rétablir."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer le rôle de chaque service."
+      ],
+      "2": [
+        "Lire leur état."
+      ]
+    }
+  }
+}

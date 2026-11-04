@@ -1,0 +1,32 @@
+{
+  "noeud": "sylva-node-classes",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire les classes de nœuds.",
+      "Choisir une classe selon la charge.",
+      "Vérifier qu'un nœud a la bonne classe."
+    ],
+    "notions": [
+      "generic",
+      "intensive",
+      "SR-IOV"
+    ],
+    "situation": {
+      "contexte": "Un CNF exige SR-IOV.",
+      "etapes": [
+        "Choisir la classe.",
+        "Préparer les nœuds.",
+        "Valider."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire les classes."
+      ],
+      "2": [
+        "Choisir pour une charge."
+      ]
+    }
+  }
+}

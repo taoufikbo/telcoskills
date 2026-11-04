@@ -1,0 +1,47 @@
+{
+  "noeud": "sylva-upgrade",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Monter de version Kubernetes.",
+      "Planifier la mise à jour.",
+      "Gérer les risques.",
+      "Piloter plusieurs clusters."
+    ],
+    "notions": [
+      "Compatibilité",
+      "Ordre de mise à jour",
+      "Retour arrière",
+      "Fenêtre"
+    ],
+    "situation": {
+      "contexte": "Une version approche de sa fin de support.",
+      "etapes": [
+        "Vérifier la compatibilité.",
+        "Planifier.",
+        "Mettre à jour par étapes."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi planifier."
+      ],
+      "2": [
+        "Lire un plan de mise à jour."
+      ],
+      "3": [
+        "Mettre à jour un cluster de laboratoire."
+      ],
+      "4": [
+        "Planifier la montée de version d'un parc."
+      ],
+      "5": [
+        "Défendre la trajectoire et le retour arrière."
+      ]
+    },
+    "exercice": {
+      "consigne": "Planifier la montée de version d'un parc de clusters.",
+      "livrable": "Un plan avec ordre, fenêtres et retour arrière."
+    }
+  }
+}

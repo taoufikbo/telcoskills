@@ -1,0 +1,36 @@
+{
+  "noeud": "recette",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Définir critères d'acceptation.",
+      "Conduire une recette.",
+      "Rédiger le rapport."
+    ],
+    "notions": [
+      "Critères",
+      "Plan de recette",
+      "Rapport",
+      "Réserves"
+    ],
+    "situation": {
+      "contexte": "Une NF doit être acceptée.",
+      "etapes": [
+        "Définir les critères.",
+        "Exécuter.",
+        "Rapporter."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est une recette."
+      ],
+      "2": [
+        "Lire un rapport."
+      ],
+      "3": [
+        "Conduire une recette."
+      ]
+    }
+  }
+}

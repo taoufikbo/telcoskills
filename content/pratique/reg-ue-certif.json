@@ -1,0 +1,29 @@
+{
+  "noeud": "reg-ue-certif",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Résumer le Cybersecurity Act et l'EUCC.",
+      "Situer les Critères Communs.",
+      "Vérifier la validité d'un certificat sur un produit."
+    ],
+    "notions": [
+      "Cybersecurity Act",
+      "EUCC",
+      "Critères Communs"
+    ],
+    "situation": {
+      "contexte": "Un produit est exigé certifié.",
+      "etapes": [
+        "Identifier le schéma.",
+        "Lire le niveau.",
+        "Vérifier le certificat."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Situer chaque dispositif."
+      ]
+    }
+  }
+}

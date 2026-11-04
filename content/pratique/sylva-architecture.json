@@ -1,0 +1,27 @@
+{
+  "noeud": "sylva-architecture",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire cluster de gestion et clusters de charge.",
+      "Expliquer les units.",
+      "Lire l'architecture."
+    ],
+    "notions": [
+      "Cluster de gestion",
+      "Clusters de charge",
+      "Units"
+    ],
+    "validation": {
+      "1": [
+        "Dire les rôles des clusters."
+      ],
+      "2": [
+        "Lire une architecture."
+      ],
+      "3": [
+        "Expliquer le rôle des units."
+      ]
+    }
+  }
+}

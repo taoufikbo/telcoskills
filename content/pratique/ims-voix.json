@@ -1,0 +1,29 @@
+{
+  "noeud": "ims-voix",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire la voix sur 5G.",
+      "Situer IMS et P-CSCF.",
+      "Reconnaître l'étape où un appel vocal échoue."
+    ],
+    "notions": [
+      "VoNR",
+      "Repli",
+      "P-CSCF"
+    ],
+    "validation": {
+      "1": [
+        "Dire comment la voix traverse le réseau."
+      ]
+    },
+    "situation": {
+      "contexte": "Les appels vocaux échouent sur 5G mais passent après repli.",
+      "etapes": [
+        "Identifier l'étape de l'échec.",
+        "Vérifier le P-CSCF.",
+        "Corriger ou remonter."
+      ]
+    }
+  }
+}

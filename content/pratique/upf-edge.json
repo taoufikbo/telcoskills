@@ -1,0 +1,32 @@
+{
+  "noeud": "upf-edge",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire l'UPF distribué.",
+      "Situer l'accès local et MEC.",
+      "Mesurer l'effet de la distribution sur la latence."
+    ],
+    "notions": [
+      "UPF local",
+      "MEC",
+      "Sélection d'UPF"
+    ],
+    "situation": {
+      "contexte": "Un site de bordure héberge un UPF.",
+      "etapes": [
+        "Vérifier la sélection.",
+        "Contrôler le chemin.",
+        "Mesurer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi distribuer l'UPF."
+      ],
+      "2": [
+        "Lire une architecture."
+      ]
+    }
+  }
+}

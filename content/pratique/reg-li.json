@@ -1,0 +1,29 @@
+{
+  "noeud": "reg-li",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Situer interceptions légales et réquisitions.",
+      "Savoir à qui s'adresser.",
+      "Connaître la conduite à tenir en exploitation."
+    ],
+    "notions": [
+      "Cadre légal",
+      "Fonctions d'interception",
+      "Confidentialité"
+    ],
+    "situation": {
+      "contexte": "Une réquisition arrive à l'exploitation.",
+      "etapes": [
+        "Identifier le cadre.",
+        "Prévenir les habilités.",
+        "Consigner."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est une interception légale."
+      ]
+    }
+  }
+}

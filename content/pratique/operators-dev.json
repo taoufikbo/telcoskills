@@ -1,0 +1,36 @@
+{
+  "noeud": "operators-dev",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire le modèle d'un opérateur Kubernetes.",
+      "Écrire un contrôleur simple en Go.",
+      "Tester et déployer l'opérateur."
+    ],
+    "notions": [
+      "Ressource personnalisée",
+      "Contrôleur et réconciliation",
+      "Cadre de développement",
+      "Tests"
+    ],
+    "situation": {
+      "contexte": "Une équipe veut automatiser l'exploitation d'une application.",
+      "etapes": [
+        "Définir la ressource.",
+        "Écrire la réconciliation.",
+        "Tester."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est un opérateur."
+      ],
+      "2": [
+        "Lire un contrôleur."
+      ],
+      "3": [
+        "Écrire un opérateur simple et le tester."
+      ]
+    }
+  }
+}

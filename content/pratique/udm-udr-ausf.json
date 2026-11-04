@@ -1,0 +1,36 @@
+{
+  "noeud": "udm-udr-ausf",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire UDM, UDR et AUSF.",
+      "Suivre l'authentification 5G-AKA.",
+      "Diagnostiquer un rejet d'abonné."
+    ],
+    "notions": [
+      "UDM",
+      "UDR",
+      "AUSF",
+      "5G-AKA"
+    ],
+    "situation": {
+      "contexte": "Un abonné est rejeté à l'authentification.",
+      "etapes": [
+        "Lire le code.",
+        "Identifier la fonction.",
+        "Vérifier les données."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire le rôle de chaque fonction."
+      ],
+      "2": [
+        "Suivre la séquence."
+      ],
+      "3": [
+        "Diagnostiquer un rejet."
+      ]
+    }
+  }
+}

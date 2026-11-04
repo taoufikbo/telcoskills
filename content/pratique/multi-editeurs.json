@@ -1,0 +1,47 @@
+{
+  "noeud": "multi-editeurs",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Intégrer plusieurs éditeurs sur une plateforme.",
+      "Gérer l'interopérabilité.",
+      "Arbitrer les conflits d'exigences.",
+      "Piloter les essais croisés."
+    ],
+    "notions": [
+      "Interopérabilité",
+      "Exigences croisées",
+      "Responsabilités",
+      "Essais"
+    ],
+    "situation": {
+      "contexte": "Deux éditeurs se renvoient la responsabilité d'un défaut.",
+      "etapes": [
+        "Rassembler les traces.",
+        "Localiser.",
+        "Faire arbitrer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire les difficultés du multi-éditeurs."
+      ],
+      "2": [
+        "Lister les interfaces."
+      ],
+      "3": [
+        "Conduire un essai croisé."
+      ],
+      "4": [
+        "Piloter une intégration à plusieurs éditeurs."
+      ],
+      "5": [
+        "Défendre les arbitrages."
+      ]
+    },
+    "exercice": {
+      "consigne": "Piloter une intégration entre deux éditeurs sur un cas de laboratoire.",
+      "livrable": "Un dossier avec interfaces, essais croisés et arbitrages."
+    }
+  }
+}

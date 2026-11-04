@@ -1,0 +1,35 @@
+{
+  "noeud": "sylva-fournisseurs",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Comparer les fournisseurs d'infrastructure et distributions.",
+      "Choisir selon le contexte.",
+      "Justifier le choix par des critères écrits."
+    ],
+    "notions": [
+      "Fournisseurs d'infrastructure",
+      "Distributions Kubernetes",
+      "Compatibilité"
+    ],
+    "situation": {
+      "contexte": "Un opérateur choisit son socle.",
+      "etapes": [
+        "Définir les critères.",
+        "Comparer.",
+        "Décider."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer les fournisseurs."
+      ],
+      "2": [
+        "Comparer."
+      ],
+      "3": [
+        "Choisir pour un contexte."
+      ]
+    }
+  }
+}

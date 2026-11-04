@@ -1,0 +1,29 @@
+{
+  "noeud": "sepp",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire le SEPP et l'itinérance.",
+      "Lire N32.",
+      "Diagnostiquer un échec d'itinérance entre deux opérateurs."
+    ],
+    "notions": [
+      "SEPP",
+      "N32",
+      "Itinérance"
+    ],
+    "validation": {
+      "1": [
+        "Dire le rôle du SEPP."
+      ]
+    },
+    "situation": {
+      "contexte": "Un abonné en itinérance n'obtient pas de données.",
+      "etapes": [
+        "Identifier le SEPP concerné.",
+        "Lire l'échange sur N32.",
+        "Remonter à l'opérateur partenaire."
+      ]
+    }
+  }
+}

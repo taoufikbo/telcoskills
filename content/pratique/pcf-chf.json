@@ -1,0 +1,33 @@
+{
+  "noeud": "pcf-chf",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire PCF et CHF.",
+      "Relier politiques et facturation.",
+      "Diagnostiquer un refus de service."
+    ],
+    "notions": [
+      "PCF",
+      "CHF",
+      "Politiques",
+      "Facturation"
+    ],
+    "situation": {
+      "contexte": "Un service est refusé à un abonné.",
+      "etapes": [
+        "Lire la décision.",
+        "Vérifier la politique.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire le rôle de chacune."
+      ],
+      "2": [
+        "Lire une politique."
+      ]
+    }
+  }
+}

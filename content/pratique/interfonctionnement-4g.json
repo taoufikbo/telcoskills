@@ -1,0 +1,33 @@
+{
+  "noeud": "interfonctionnement-4g",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire l'interfonctionnement 4G/5G.",
+      "Lire les interfaces concernées.",
+      "Diagnostiquer un transfert."
+    ],
+    "notions": [
+      "EPC",
+      "N26",
+      "SMF+PGW-C",
+      "Transferts"
+    ],
+    "situation": {
+      "contexte": "Un transfert 4G vers 5G échoue.",
+      "etapes": [
+        "Trouver l'étape.",
+        "Identifier la fonction.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est l'interfonctionnement."
+      ],
+      "2": [
+        "Lire un transfert."
+      ]
+    }
+  }
+}

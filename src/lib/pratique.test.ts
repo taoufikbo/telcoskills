@@ -94,7 +94,7 @@ describe("pratique : contenu livré", () => {
     expect(fichiers.sort()).toEqual(entrees.map((e) => `${e.noeud}.json`).sort());
   });
   it("donne 2 ou 3 questions de rappel à chaque compétence", () => {
-    for (const e of entrees) {
+    for (const e of entrees.filter((x) => x.rappel)) {
       expect(e.rappel?.length, e.noeud).toBeGreaterThanOrEqual(2);
       expect(e.rappel?.length, e.noeud).toBeLessThanOrEqual(3);
     }

@@ -1,0 +1,34 @@
+{
+  "noeud": "sylva-securite",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire signatures, PKI, NeuVector, SBOM et WireGuard.",
+      "Vérifier la sécurité d'un cluster.",
+      "Vérifier que ces mesures sont actives sur un cluster."
+    ],
+    "notions": [
+      "Signatures d'images",
+      "PKI",
+      "NeuVector",
+      "SBOM",
+      "WireGuard"
+    ],
+    "situation": {
+      "contexte": "Un audit demande les mesures de sécurité.",
+      "etapes": [
+        "Lister.",
+        "Vérifier.",
+        "Documenter."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer les mesures."
+      ],
+      "2": [
+        "Vérifier un cluster."
+      ]
+    }
+  }
+}

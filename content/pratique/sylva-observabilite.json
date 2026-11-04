@@ -1,0 +1,32 @@
+{
+  "noeud": "sylva-observabilite",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Situer journaux et supervision dans Sylva.",
+      "Lire les tableaux de bord.",
+      "Retrouver un événement passé à partir des journaux."
+    ],
+    "notions": [
+      "Supervision",
+      "Journaux",
+      "Tableaux de bord"
+    ],
+    "situation": {
+      "contexte": "Il faut retrouver une erreur de la veille.",
+      "etapes": [
+        "Choisir le composant.",
+        "Chercher dans les journaux.",
+        "Conclure."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire où sont les journaux."
+      ],
+      "2": [
+        "Lire un tableau de bord."
+      ]
+    }
+  }
+}

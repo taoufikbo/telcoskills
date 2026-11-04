@@ -1,0 +1,36 @@
+{
+  "noeud": "sylva-metal3",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire Metal3.",
+      "Gérer des serveurs nus.",
+      "Dépanner l'inspection."
+    ],
+    "notions": [
+      "Metal3",
+      "BMC",
+      "Inspection",
+      "Provisionnement"
+    ],
+    "situation": {
+      "contexte": "Un serveur reste en inspection.",
+      "etapes": [
+        "Vérifier le BMC.",
+        "Lire l'état.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire le rôle de Metal3."
+      ],
+      "2": [
+        "Lire un inventaire."
+      ],
+      "3": [
+        "Provisionner un serveur."
+      ]
+    }
+  }
+}
