@@ -49,7 +49,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "conteneurs",
@@ -82,7 +83,8 @@
           "langue": "en",
           "auteur": "CRI-O"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "k8s-archi",
@@ -115,7 +117,8 @@
           "langue": "en",
           "auteur": "CNCF"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "helm",
@@ -133,7 +136,8 @@
           "langue": "en",
           "auteur": "Helm"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "gitops",
@@ -150,7 +154,8 @@
           "nom": "Argo CD : documentation",
           "url": "https://argo-cd.readthedocs.io/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sylva-projet",
@@ -184,7 +189,8 @@
           "langue": "en",
           "auteur": "PowerDNS"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sylva-architecture",
@@ -213,7 +219,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "cluster-api",
@@ -241,7 +248,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sylva-units",
@@ -279,7 +287,8 @@
           "langue": "en",
           "auteur": "CNCF"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sylva-bootstrap",
@@ -300,7 +309,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sylva-fournisseurs",
@@ -328,7 +338,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sylva-metal3",
@@ -357,7 +368,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sylva-suse",
@@ -393,7 +405,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sylva-installation",
@@ -430,7 +443,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "obs-metrics",
@@ -448,7 +462,8 @@
           "langue": "en",
           "auteur": "Prometheus"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "obs-logs",
@@ -474,7 +489,8 @@
           "langue": "en",
           "auteur": "Elastic"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sec-supply",
@@ -507,7 +523,8 @@
           "langue": "en",
           "auteur": "Sigstore"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "sylva-clusters-charge",
@@ -536,7 +553,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sylva-upgrade",
@@ -556,7 +574,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sylva-services",
@@ -576,7 +595,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sylva-observabilite",
@@ -598,7 +618,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sylva-securite",
@@ -627,7 +648,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "cni",
@@ -650,7 +672,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "multus",
@@ -670,7 +693,8 @@
           "langue": "en",
           "auteur": "K8s Network Plumbing WG"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sriov",
@@ -695,7 +719,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "perf-hugepages",
@@ -720,7 +745,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "perf-profile",
@@ -745,7 +771,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "sylva-node-classes",
@@ -776,7 +803,8 @@
           "langue": "en",
           "auteur": "Projet Sylva"
         }
-      ]
+      ],
+      "cible": 2
     }
   ]
 }

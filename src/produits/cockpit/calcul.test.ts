@@ -5,7 +5,7 @@ import { compter, etatVide, enregistrerRappel, marquerVu, definirHorsParcours, s
 import { calculerCockpit, calculerProgramme, placerSemaines, projeter } from "./calcul";
 
 const now = new Date("2026-11-02T12:00:00");
-const h = chargerOrientation().duree_par_niveau_heures;
+const h = chargerOrientation().investissement_par_palier;
 const roadmap = getRoadmap("ingenieur-caas-telco")!;
 
 describe("programme", () => {
@@ -14,13 +14,20 @@ describe("programme", () => {
     expect(p.blocs.map((b) => b.bloc)).toEqual(roadmap.blocs.filter((b) => roadmap.noeuds.some((n) => n.bloc === b)));
     expect(p.blocs.flatMap((b) => b.noeuds.map((n) => n.id)).sort()).toEqual(roadmap.noeuds.map((n) => n.id).sort());
   });
-  it("les heures viennent de l'hypothèse par niveau et le total est la somme des blocs", () => {
+  it("l'investissement vient du niveau et du palier visé de chaque compétence, et le total est la somme des blocs", () => {
     const p = calculerProgramme(roadmap, h);
-    const attendu = roadmap.noeuds.reduce((t, n) => t + h[n.niveau], 0);
-    expect(p.heures).toBe(attendu);
-    expect(p.blocs.reduce((t, b) => t + b.heures, 0)).toBe(attendu);
-    expect(p.restantes).toBe(attendu);
-    expect(p.faites).toBe(0);
+    expect(roadmap.noeuds.every((n) => n.cible !== undefined)).toBe(true);
+    const somme = (e: { legers: number; moyens: number; longs: number }) => e.legers + e.moyens + e.longs;
+    expect(somme(p.effort)).toBe(roadmap.noeuds.length);
+    expect(p.blocs.reduce((t, b) => t + somme(b.effort), 0)).toBe(roadmap.noeuds.length);
+    expect(p.restantes).toBe(roadmap.noeuds.length);
+    expect(p.acquis).toBe(0);
+  });
+  it("chaque compétence porte son palier visé et un investissement de 1 à 3", () => {
+    for (const b of calculerProgramme(roadmap, h).blocs) for (const n of b.noeuds) {
+      expect(n.cible).toBeGreaterThanOrEqual(1);
+      expect([1, 2, 3]).toContain(n.investissement);
+    }
   });
   it("sans suivi, tout est à découvrir", () => {
     expect(calculerProgramme(roadmap, h).blocs.every((b) => b.noeuds.every((n) => n.statut === "a-decouvrir"))).toBe(true);
@@ -31,10 +38,7 @@ describe("programme", () => {
     e = marquerVu(e, b.id, now);
     e = definirHorsParcours(e, roadmap.id, c.id, true);
     const p = calculerProgramme(roadmap, h, (id) => suiviNoeud(e, roadmap.id, id, now));
-    const total = roadmap.noeuds.reduce((t, n) => t + h[n.niveau], 0);
-    expect(p.faites).toBe(h[a.niveau]);
-    expect(p.heures).toBe(total - h[c.niveau]);
-    expect(p.restantes).toBe(p.heures - p.faites);
+    expect(p.restantes).toBe(roadmap.noeuds.length - 1 - 1);
     expect(p.acquis).toBe(1);
     expect(p.actifs).toBe(roadmap.noeuds.length - 1);
     expect(d).toBeDefined();
@@ -54,7 +58,7 @@ describe("projection", () => {
   it("un rythme plus élevé raccourcit la projection", () => {
     expect(projeter(100, 10, now).semaines).toBeLessThan(projeter(100, 4, now).semaines);
   });
-  it("numérote la semaine de fin de chaque bloc en cumulant les heures restantes", () => {
+  it("numérote la semaine de fin de chaque bloc en cumulant les compétences restantes", () => {
     const p = placerSemaines(calculerProgramme(roadmap, h), 4);
     let cumul = 0;
     for (const b of p.blocs) expect(b.semaineFin).toBe(Math.ceil((cumul += b.restantes) / 4));
@@ -73,7 +77,7 @@ describe("projection", () => {
 describe("cockpit", () => {
   const entree = (e = etatVide(now), cibleId: string | null = null, echeances: string[] = []) => ({
     roadmap,
-    parNiveau: h,
+    table: h,
     rythme: 4,
     now,
     decompte: compter(e, roadmap.id, roadmap.noeuds, now),
@@ -88,7 +92,7 @@ describe("cockpit", () => {
     expect(c.suite.type).toBe("debut");
     expect(c.revision).toEqual({ total: 0, premier: null });
     expect(c.objectif).toBeNull();
-    expect(c.projection.semaines).toBe(Math.ceil(c.programme.heures / 4));
+    expect(c.projection.semaines).toBe(Math.ceil(c.programme.restantes / c.rythme));
   });
   it("ne garde que les révisions de cette roadmap", () => {
     const c = calculerCockpit(entree(etatVide(now), null, ["inconnu-ailleurs", roadmap.noeuds[2].id]));
@@ -107,13 +111,14 @@ describe("cockpit", () => {
     expect(cockpit.aVenir.map((r) => r.id)).toEqual([b.id, c.id]);
     expect(cockpit.aVenir[0].jour).toBe("2026-11-09");
   });
-  it("objectif : compétences à acquérir, heures, chemin critique jusqu'à la cible", () => {
+  it("objectif : compétences à acquérir, répartition léger / moyen / long, chemin critique jusqu'à la cible", () => {
     const cible = roadmap.noeuds.find((n) => n.prerequis.length > 0)!;
     const c = calculerCockpit(entree(etatVide(now), cible.id));
     expect(c.objectif!.chemin.at(-1)!.id).toBe(cible.id);
     expect(c.objectif!.restantes).toBeGreaterThanOrEqual(c.objectif!.etapesCritiques);
-    expect(c.objectif!.heures).toBeGreaterThan(0);
-    expect(c.objectif!.heures).toBeLessThanOrEqual(c.programme.heures);
+    const n = (e: { legers: number; moyens: number; longs: number }) => e.legers + e.moyens + e.longs;
+    expect(n(c.objectif!.effort)).toBe(c.objectif!.restantes);
+    expect(c.objectif!.restantes).toBeLessThanOrEqual(c.programme.restantes);
   });
   it("objectif : ce qui est acquis ne compte plus", () => {
     const cible = roadmap.noeuds.find((n) => n.prerequis.length > 0)!;
@@ -121,7 +126,7 @@ describe("cockpit", () => {
     const e = enregistrerRappel(etatVide(now), cible.prerequis[0], true, now);
     const apres = calculerCockpit(entree(e, cible.id)).objectif!;
     expect(apres.restantes).toBe(avant.restantes - 1);
-    expect(apres.heures).toBeLessThan(avant.heures);
+    expect(apres.effort.legers + apres.effort.moyens + apres.effort.longs).toBeLessThan(avant.effort.legers + avant.effort.moyens + avant.effort.longs);
   });
   it("une cible inconnue est ignorée", () => {
     expect(calculerCockpit(entree(etatVide(now), "nimporte-quoi")).objectif).toBeNull();
@@ -129,14 +134,14 @@ describe("cockpit", () => {
 });
 
 describe("programmes servis au diagnostic", () => {
-  it("couvrent chaque parcours recommandable avec les mêmes heures que la roadmap", async () => {
+  it("couvrent chaque parcours recommandable avec la même répartition que la roadmap", async () => {
     const { programmesDesParcours } = await import("@/lib/programmes");
     const progs = programmesDesParcours();
     const ids = Object.keys(chargerOrientation().premiers_noeuds);
     expect(Object.keys(progs).sort()).toEqual([...ids].sort());
     for (const id of ids) {
       const r = getRoadmap(id)!;
-      expect(progs[id].heures).toBe(r.noeuds.reduce((t, n) => t + h[n.niveau], 0));
+      expect(progs[id].actifs).toBe(r.noeuds.length);
       expect(progs[id].blocs.flatMap((b) => b.noeuds).length).toBe(r.noeuds.length);
     }
   });

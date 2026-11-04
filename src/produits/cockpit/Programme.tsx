@@ -2,13 +2,11 @@
 
 import Link from "next/link";
 import { LIBELLE_NIVEAU } from "@/lib/libelles";
-import type { Orientation } from "@/lib/orientation-schema";
+import { DEFINITION_PALIER, LIBELLE_INVESTISSEMENT, libelleEffort } from "@/lib/palier";
 import type { NoeudProgramme, Programme as DonneesProgramme, StatutProgramme } from "./calcul";
 
 type Props = {
   programme: DonneesProgramme;
-  /** Hypothèse éditoriale de heures par niveau (orientation.json), rappelée sous la liste. */
-  parNiveau: Orientation["duree_par_niveau_heures"];
   /** Événement de sortie « ouvrir la compétence X ». Sans lui, chaque compétence est un lien (`href`). */
   onOuvrir?: (id: string) => void;
   href?: (id: string) => string;
@@ -30,7 +28,9 @@ function Competence({ n, onOuvrir, href }: { n: NoeudProgramme } & Pick<Props, "
     <>
       <span className={n.statut === "hors-parcours" ? "line-through opacity-60" : ""}>{n.titre}</span>
       <span className="mono ml-2 whitespace-nowrap" style={{ color: "var(--muted)" }}>
-        {LIBELLE_NIVEAU[n.niveau].toLowerCase()} · {n.heures} h
+        {LIBELLE_NIVEAU[n.niveau].toLowerCase()}
+        {n.cible !== undefined && ` · palier ${n.cible}`}
+        {n.investissement !== undefined && ` · ${LIBELLE_INVESTISSEMENT[n.investissement]}`}
       </span>
     </>
   );
@@ -56,8 +56,8 @@ function Competence({ n, onOuvrir, href }: { n: NoeudProgramme } & Pick<Props, "
   );
 }
 
-/** Le programme : les blocs dans l'ordre, les compétences de chacun, les heures estimées (indicatives) par bloc et au total. */
-export default function Programme({ programme, parNiveau, onOuvrir, href, suivi = false }: Props) {
+/** Le programme : les blocs dans l'ordre, les compétences de chacun, le palier visé et l'investissement (léger, moyen, long) par bloc et au total. */
+export default function Programme({ programme, onOuvrir, href, suivi = false }: Props) {
   return (
     <section aria-labelledby="titre-programme">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
@@ -65,18 +65,20 @@ export default function Programme({ programme, parNiveau, onOuvrir, href, suivi 
           Programme
         </h2>
         <p className="text-sm" style={{ color: "var(--muted)" }}>
-          {programme.blocs.length} blocs · {programme.actifs} compétences · <strong className="font-semibold" style={{ color: "var(--fg)" }}>{programme.heures} h</strong> estimées (estimation indicative)
+          {programme.blocs.length} blocs · {programme.actifs} compétences{libelleEffort(programme.effort) && <> · <strong className="font-semibold" style={{ color: "var(--fg)" }}>{libelleEffort(programme.effort)}</strong></>}
         </p>
       </div>
       <ol className="mt-3 border-t" style={{ borderColor: "var(--filet)" }}>
         {programme.blocs.map((b, i) => (
           <li key={b.bloc} className="border-b" style={{ borderColor: "var(--filet)" }}>
             <details>
-              <summary className={`flex min-h-11 cursor-pointer select-none flex-wrap items-baseline gap-x-4 gap-y-0.5 py-2 text-sm sm:grid sm:items-baseline ${suivi ? "sm:grid-cols-[1.5rem_minmax(0,1fr)_7rem_3.5rem_14rem]" : "sm:grid-cols-[1.5rem_minmax(0,1fr)_7rem_3.5rem]"}`}>
+              <summary className={`flex min-h-11 cursor-pointer select-none flex-wrap items-baseline gap-x-4 gap-y-0.5 py-2 text-sm sm:grid sm:items-baseline ${suivi ? "sm:grid-cols-[1.5rem_minmax(0,1fr)_7rem_13rem_14rem]" : "sm:grid-cols-[1.5rem_minmax(0,1fr)_7rem_13rem]"}`}>
                 <span className="mono w-6 shrink-0">{i + 1}</span>
                 <span className="min-w-0 flex-1 basis-48 font-semibold sm:basis-auto">{b.bloc}</span>
                 <span className="whitespace-nowrap tabular-nums sm:text-right">{b.actifs} compétences</span>
-                <span className="whitespace-nowrap text-right font-semibold tabular-nums sm:w-auto">{b.heures} h</span>
+                <span className="whitespace-nowrap text-right tabular-nums sm:w-auto" style={{ color: "var(--muted)" }}>
+                  {libelleEffort(b.effort)}
+                </span>
                 {suivi && (
                   <span className="whitespace-nowrap tabular-nums sm:text-right" style={{ color: "var(--muted)" }}>
                     {b.acquis}/{b.actifs} acquises
@@ -93,9 +95,22 @@ export default function Programme({ programme, parNiveau, onOuvrir, href, suivi 
           </li>
         ))}
       </ol>
-      <p className="mt-2 text-xs" style={{ color: "var(--muted)" }}>
-        Heures : hypothèse éditoriale par niveau de compétence ({LIBELLE_NIVEAU.fondamental.toLowerCase()} {parNiveau.fondamental} h, {LIBELLE_NIVEAU.intermediaire.toLowerCase()} {parNiveau.intermediaire} h, {LIBELLE_NIVEAU.avance.toLowerCase()} {parNiveau.avance} h, {LIBELLE_NIVEAU.transverse.toLowerCase()} {parNiveau.transverse} h), pas une mesure de votre temps réel.
-      </p>
+      <details className="mt-3 text-xs" style={{ color: "var(--muted)" }}>
+        <summary className="cursor-pointer select-none py-1">Que veulent dire « palier » et « léger, moyen, long » ?</summary>
+        <div className="space-y-2 pt-1">
+          <p>
+            Le palier est ce qu&apos;il faut savoir faire pour ce métier. Il se pose compétence par compétence, et change d&apos;un métier à l&apos;autre. L&apos;investissement (léger, moyen, long) dépend du niveau de la
+            compétence et du palier visé : c&apos;est une échelle, pas une durée.
+          </p>
+          <ol className="space-y-0.5">
+            {([1, 2, 3, 4, 5] as const).map((p) => (
+              <li key={p}>
+                <strong className="font-semibold">Palier {p}</strong> : {DEFINITION_PALIER[p]}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </details>
     </section>
   );
 }

@@ -1,4 +1,4 @@
-import { heuresEstimees } from "./duree";
+import { effort, investissementNoeud, type InvestissementsDeparts } from "./palier";
 import { chargerOrientation } from "./orientation";
 import { chargerProjets } from "./projets";
 import { blocsTestables } from "./positionnement";
@@ -20,18 +20,15 @@ export function proprietesOrientation() {
     titre: p.titre,
     roles: Object.fromEntries(p.roles.filter((r) => r.roadmap).map((r) => [r.roadmap!, r.id])),
   }));
-  const h = config.duree_par_niveau_heures;
-  const durees = {
-    // Pour chaque nœud de départ possible : sa durée, et celle du bloc de compétences auquel il appartient.
+  const table = config.investissement_par_palier;
+  const investissements: InvestissementsDeparts = {
+    // Pour chaque nœud de départ possible : son investissement, et la répartition de son bloc de compétences.
     noeuds: Object.fromEntries(
       Object.entries(config.premiers_noeuds).flatMap(([roadmapId, departs]) =>
         Object.values(departs).map((noeudId) => {
           const roadmap = parId.get(roadmapId)!;
           const noeud = roadmap.noeuds.find((n) => n.id === noeudId)!;
-          return [
-            `${roadmapId}/${noeudId}`,
-            { noeud: heuresEstimees([noeud], h), bloc: noeud.bloc, heuresBloc: heuresEstimees(roadmap.noeuds.filter((n) => n.bloc === noeud.bloc), h) },
-          ] as const;
+          return [`${roadmapId}/${noeudId}`, { noeud: investissementNoeud(table, noeud), bloc: noeud.bloc, effortBloc: effort(roadmap.noeuds.filter((n) => n.bloc === noeud.bloc), table) }] as const;
         }),
       ),
     ),
@@ -40,5 +37,5 @@ export function proprietesOrientation() {
   const rolesSansParcours = Object.fromEntries((projets[0]?.roles ?? []).filter((r) => !r.roadmap).map((r) => [r.id, r.libelle]));
   /** Blocs qu'on peut tester (assez de questions) : le résultat du quiz propose d'en tester un. */
   const testables = blocsTestables(roadmaps).map(({ roadmapId, bloc, slug }) => ({ roadmapId, bloc, slug }));
-  return { config, parcours, titresNoeuds, projets: projetsPourAssistant, durees, rolesSansParcours, testables };
+  return { config, parcours, titresNoeuds, projets: projetsPourAssistant, investissements, rolesSansParcours, testables };
 }

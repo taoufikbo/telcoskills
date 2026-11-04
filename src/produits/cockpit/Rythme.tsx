@@ -5,15 +5,15 @@ import { formaterArrivee, libelleSemaines } from "./format";
 import type { Projection } from "./calcul";
 
 type Props = {
-  /** Heures par semaine. */
+  /** Compétences par semaine. */
   rythme: number;
   /** Événement de sortie : la personne change son rythme. */
-  onChange: (heuresParSemaine: number) => void;
-  /** Projection des heures restantes à ce rythme. */
+  onChange: (competencesParSemaine: number) => void;
+  /** Projection des compétences restantes à ce rythme. */
   projection: Projection;
 };
 
-/** Le rythme d'étude (réglable, 1 à 40 h par semaine) et ce qu'il donne : des semaines, une date d'arrivée. Estimation, jamais une promesse. */
+/** Le rythme d'étude (réglable, en compétences par semaine) et ce qu'il donne : des semaines, une date d'arrivée. Estimation, jamais une promesse. */
 export default function Rythme({ rythme, onChange, projection }: Props) {
   const bouton = "bouton !flex !h-9 !w-9 !items-center !justify-center !p-0 !text-base";
   return (
@@ -22,13 +22,13 @@ export default function Rythme({ rythme, onChange, projection }: Props) {
         Rythme
       </span>
       <div className="flex items-center gap-2">
-        <button type="button" className={bouton} onClick={() => onChange(rythme - 1)} disabled={rythme <= RYTHME_MIN} aria-label="Une heure de moins par semaine">
+        <button type="button" className={bouton} onClick={() => onChange(rythme - 1)} disabled={rythme <= RYTHME_MIN} aria-label="Une compétence de moins par semaine">
           −
         </button>
-        <output aria-labelledby="rythme-libelle" className="min-w-[6.5rem] text-center text-sm font-semibold tabular-nums">
-          {rythme} h par semaine
+        <output aria-labelledby="rythme-libelle" className="min-w-[10rem] text-center text-sm font-semibold tabular-nums">
+          {rythme} compétence{rythme > 1 ? "s" : ""} par semaine
         </output>
-        <button type="button" className={bouton} onClick={() => onChange(rythme + 1)} disabled={rythme >= RYTHME_MAX} aria-label="Une heure de plus par semaine">
+        <button type="button" className={bouton} onClick={() => onChange(rythme + 1)} disabled={rythme >= RYTHME_MAX} aria-label="Une compétence de plus par semaine">
           +
         </button>
       </div>

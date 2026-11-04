@@ -4,7 +4,12 @@
   "type": "role",
   "presentation": "Cette roadmap s'adresse à celles et ceux qui construisent et exploitent une plateforme Kubernetes pour héberger des fonctions réseau télécoms : de Linux et des conteneurs jusqu'à OpenShift, au réseau secondaire, à la sécurité et à la conformité en France et en Europe.",
   "version": "0.3",
-  "provenance": { "type": "offres", "nombre": 14, "approximatif": true, "date": "2026-10" },
+  "provenance": {
+    "type": "offres",
+    "nombre": 14,
+    "approximatif": true,
+    "date": "2026-10"
+  },
   "source": "Synthèse d'environ 14 offres (Red Hat, Ericsson, Nokia/LTTS, Accenture, Capgemini, Infosys, Deutsche Telekom, Slovak Telekom, Monaco Telecom, Dice) consultées en octobre 2026. Le champ 'demande' est un ordre de grandeur sur cet échantillon, pas une statistique. Le bloc « Réglementation France et Europe » et les nœuds de sécurité ajoutés en version 0.2 (sec-secrets, sec-detection, sec-5g) sont un ajout éditorial, hors de cet échantillon : leur demande est fixée à « faible » par défaut, en attendant une analyse des offres, et les références juridiques sont à vérifier dans leur version en vigueur. Depuis la version 0.3, chaque nœud porte au moins une référence ouverte avec lien (type « opensource » : projet ou documentation d'un projet libre ; type « libre » : texte officiel en accès libre, pour les nœuds réglementaires sans logiciel libre équivalent).",
   "legende_demande": {
     "forte": "présent dans la majorité des offres",
@@ -57,7 +62,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "reseau-ip",
@@ -80,7 +86,8 @@
           "langue": "en",
           "auteur": "Cisco"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "git-ci",
@@ -104,7 +111,8 @@
           "langue": "en",
           "auteur": "GitLab"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "conteneurs",
@@ -138,7 +146,8 @@
           "langue": "en",
           "auteur": "CRI-O"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "telco-101",
@@ -162,7 +171,8 @@
           "langue": "en",
           "auteur": "3GPP"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "k8s-archi",
@@ -196,7 +206,8 @@
           "langue": "en",
           "auteur": "CNCF"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "k8s-workloads",
@@ -217,7 +228,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "k8s-services",
@@ -239,7 +251,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "k8s-stockage",
@@ -260,7 +273,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "k8s-rbac",
@@ -281,7 +295,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "k8s-troubleshoot",
@@ -304,7 +319,8 @@
           "auteur": "Kubernetes"
         }
       ],
-      "projet": "Provoquer 5 pannes en lab et rédiger un RCA pour chacune."
+      "projet": "Provoquer 5 pannes en lab et rédiger un RCA pour chacune.",
+      "cible": 4
     },
     {
       "id": "ocp-install",
@@ -332,7 +348,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ocp-operators",
@@ -358,7 +375,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ocp-upgrade",
@@ -384,7 +402,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ocp-multicluster",
@@ -410,7 +429,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ocp-rds",
@@ -437,7 +457,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "distrib-alt",
@@ -467,7 +488,8 @@
           "type": "doc",
           "nom": "Documentation des éditeurs respectifs"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "cni",
@@ -494,7 +516,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "multus",
@@ -515,7 +538,8 @@
           "langue": "en",
           "auteur": "K8s Network Plumbing WG"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sriov",
@@ -541,7 +565,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "dpdk",
@@ -568,7 +593,8 @@
           "langue": "en",
           "auteur": "DPDK"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "lb-bgp",
@@ -590,7 +616,8 @@
           "langue": "en",
           "auteur": "MetalLB"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sctp-flux",
@@ -625,7 +652,8 @@
           "langue": "en",
           "auteur": "3GPP"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "perf-hugepages",
@@ -652,7 +680,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "perf-profile",
@@ -678,7 +707,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "ceph",
@@ -720,7 +750,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "stockage-dr",
@@ -746,7 +777,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "kubevirt",
@@ -773,7 +805,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "openstack",
@@ -800,7 +833,8 @@
           "langue": "en",
           "auteur": "OpenStack"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "nfv-etsi",
@@ -837,7 +871,8 @@
           "langue": "en",
           "auteur": "ONAP"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "helm",
@@ -858,7 +893,8 @@
           "langue": "en",
           "auteur": "Helm"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "gitops",
@@ -880,7 +916,8 @@
           "langue": "en",
           "auteur": "Argo CD"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ansible-python",
@@ -901,7 +938,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "operators-dev",
@@ -930,7 +968,8 @@
           "langue": "en",
           "auteur": "Operator Framework"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "obs-metrics",
@@ -951,7 +990,8 @@
           "langue": "en",
           "auteur": "Prometheus"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "obs-dash",
@@ -972,7 +1012,8 @@
           "langue": "en",
           "auteur": "Grafana Labs"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "obs-logs",
@@ -1001,7 +1042,8 @@
           "langue": "en",
           "auteur": "Elastic"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "obs-telemetry",
@@ -1022,7 +1064,8 @@
           "langue": "en",
           "auteur": "OpenTelemetry"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sec-durcissement",
@@ -1055,7 +1098,8 @@
           "langue": "en",
           "auteur": "CIS"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sec-supply",
@@ -1090,7 +1134,8 @@
           "langue": "en",
           "auteur": "Sigstore"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sec-reseau",
@@ -1111,7 +1156,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sec-secrets",
@@ -1148,7 +1194,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sec-detection",
@@ -1178,7 +1225,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "reg-cadre-fr",
@@ -1203,7 +1251,8 @@
           "type": "doc",
           "nom": "Publications de l'ARCEP sur la sécurité et l'intégrité des réseaux"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "reg-5g-securite",
@@ -1229,7 +1278,8 @@
           "type": "spec",
           "nom": "Loi n° 2019-810 du 1er août 2019"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "reg-nis2",
@@ -1259,7 +1309,8 @@
           "langue": "fr",
           "auteur": "ANSSI"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "reg-oiv",
@@ -1289,7 +1340,8 @@
           "langue": "fr",
           "auteur": "ANSSI"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "reg-anssi",
@@ -1331,7 +1383,8 @@
           "langue": "fr",
           "auteur": "ANSSI"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "reg-ue-certif",
@@ -1360,7 +1413,8 @@
           "langue": "en",
           "auteur": "EUR-Lex"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "reg-cra",
@@ -1386,7 +1440,8 @@
           "langue": "en",
           "auteur": "EUR-Lex"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "reg-rgpd",
@@ -1428,7 +1483,8 @@
           "langue": "fr",
           "auteur": "CNIL"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "reg-souverainete",
@@ -1462,7 +1518,8 @@
           "langue": "fr",
           "auteur": "ANSSI"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "reg-li",
@@ -1505,7 +1562,8 @@
           "langue": "en",
           "auteur": "ETSI"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "reg-risque",
@@ -1557,7 +1615,8 @@
           "langue": "en",
           "auteur": "3GPP"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "5g-sba",
@@ -1591,7 +1650,8 @@
           "langue": "en",
           "auteur": "3GPP"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "cnf-onboarding",
@@ -1616,7 +1676,8 @@
           "nom": "Guides d'onboarding des éditeurs de CNF"
         }
       ],
-      "projet": "Déployer un cœur 5G open source (free5GC ou Open5GS) sur un cluster de lab."
+      "projet": "Déployer un cœur 5G open source (free5GC ou Open5GS) sur un cluster de lab.",
+      "cible": 2
     },
     {
       "id": "cnf-ops",
@@ -1639,7 +1700,8 @@
           "type": "retour-experience",
           "nom": "Documentation d'exploitation des éditeurs"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sec-5g",
@@ -1666,7 +1728,8 @@
           "langue": "en",
           "auteur": "3GPP"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "ha-geo",
@@ -1717,7 +1780,8 @@
           "langue": "en",
           "auteur": "Ceph"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "incident-astreinte",
@@ -1752,7 +1816,8 @@
           "langue": "en",
           "auteur": "Google"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "dimensionnement",
@@ -1795,7 +1860,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "hld-lld",
@@ -1814,7 +1880,8 @@
           "nom": "arc42 : modèle libre de documentation d'architecture",
           "url": "https://arc42.org/overview"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "certifs",
@@ -1834,7 +1901,8 @@
           "type": "certif",
           "nom": "CKA, EX280, EX380 (curriculums)"
         }
-      ]
+      ],
+      "cible": 1
     }
   ]
 }

@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <>
       <h1 className="text-3xl font-semibold">Diagnostic</h1>
-      <Diagnostic config={o.config} parcours={o.parcours} titresNoeuds={o.titresNoeuds} projets={o.projets} durees={o.durees} rolesSansParcours={{}} testables={[]} />
+      <Diagnostic config={o.config} parcours={o.parcours} titresNoeuds={o.titresNoeuds} projets={o.projets} investissements={o.investissements} rolesSansParcours={{}} testables={[]} />
     </>
   );
 }

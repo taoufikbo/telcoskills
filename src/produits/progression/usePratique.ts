@@ -123,10 +123,10 @@ export function useEcheances(): string[] {
   return useMemo(() => (pret ? echues(etat, now) : []), [etat, now, pret]);
 }
 
-/** Rythme d'étude (heures par semaine), mémorisé dans l'état de pratique. Le défaut s'applique tant que rien n'est choisi. */
+/** Rythme d'étude (compétences par semaine), mémorisé dans l'état de pratique. Le défaut s'applique tant que rien n'est choisi. */
 export function useRythme() {
   const { etat, muter, pret } = usePratique();
-  const definir = useCallback((h: number) => muter((e) => definirRythme(e, h)), [muter]);
+  const definir = useCallback((n: number) => muter((e) => definirRythme(e, n)), [muter]);
   return { rythme: pret ? rythmeDe(etat) : RYTHME_DEFAUT, definir };
 }
 

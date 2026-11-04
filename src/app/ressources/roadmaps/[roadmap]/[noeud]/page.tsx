@@ -71,9 +71,9 @@ export default async function PageNoeud({ params }: { params: Params }) {
 
   const sommaire = (
     <SommaireParcours
-      roadmap={{ id: roadmap.id, blocs: roadmap.blocs, noeuds: roadmap.noeuds.map(({ id, titre, bloc, niveau }) => ({ id, titre, bloc, niveau })) }}
+      roadmap={{ id: roadmap.id, blocs: roadmap.blocs, noeuds: roadmap.noeuds.map(({ id, titre, bloc, niveau, cible }) => ({ id, titre, bloc, niveau, cible })) }}
       titre={roadmap.titre}
-      parNiveau={chargerOrientation().duree_par_niveau_heures}
+      table={chargerOrientation().investissement_par_palier}
       courant={noeud.id}
     />
   );

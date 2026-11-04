@@ -222,7 +222,7 @@ describe("stockage", () => {
 
 describe("rythme d'étude", () => {
   it("vaut 4 h par semaine tant que rien n'est choisi", () => {
-    expect(rythmeDe(etatVide(J0))).toBe(4);
+    expect(rythmeDe(etatVide(J0))).toBe(2);
   });
   it("se fixe à l'heure près, borné de 1 à 40, sans toucher aux compétences", () => {
     const e = marquerVu(etatVide(J0), "a", J0);

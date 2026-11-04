@@ -15,8 +15,8 @@ export type NoeudDispose = {
   cible: boolean;
   /** Toutes les compétences de la carte à maîtriser avant celle-ci (prérequis transitifs). */
   amont: string[];
-  /** Heures d'étude estimées pour la compétence et tout son amont ; absent sans estimation fournie. */
-  heures?: number;
+  /** Léger, moyen, long : l'investissement de la compétence et de tout son amont, à leur palier visé ; absent sans investissement fourni. */
+  effort?: { legers: number; moyens: number; longs: number };
 };
 export type AreteDisposee = { de: string; a: string; d: string; surChemin: boolean };
 
@@ -93,7 +93,7 @@ function cheminLePlusLong(roadmap: RoadmapCarte, cible: string, depart?: string)
 }
 
 /** Dispose le graphe des prérequis des cibles (la dernière est « la » cible). Lève une erreur si une cible n'existe pas. */
-export function disposerCarte(roadmap: RoadmapCarte, cibles: string[], options: { heures?: (id: string) => number; depart?: string } = {}): Disposition {
+export function disposerCarte(roadmap: RoadmapCarte, cibles: string[], options: { investissement?: (id: string) => 1 | 2 | 3 | undefined; depart?: string } = {}): Disposition {
   const parId = new Map(roadmap.noeuds.map((n) => [n.id, n]));
   for (const c of cibles) if (!parId.has(c)) throw new Error(`Carte : la compétence « ${c} » n'existe pas dans « ${roadmap.id} ».`);
   const ids = ancetres(roadmap, cibles);
@@ -121,7 +121,16 @@ export function disposerCarte(roadmap: RoadmapCarte, cibles: string[], options: 
     noeuds: noeuds.map((n) => {
       const { x, y, width: l, height: h } = g.node(n.id);
       const amont = [...ancetres(roadmap, [n.id])].filter((id) => id !== n.id);
-      const heures = options.heures ? [n.id, ...amont].reduce((s, id) => s + options.heures!(id), 0) : undefined;
+      let effort: { legers: number; moyens: number; longs: number } | undefined;
+      if (options.investissement) {
+        effort = { legers: 0, moyens: 0, longs: 0 };
+        for (const id of [n.id, ...amont]) {
+          const i = options.investissement(id);
+          if (i === 1) effort.legers++;
+          else if (i === 2) effort.moyens++;
+          else if (i === 3) effort.longs++;
+        }
+      }
       return {
         id: n.id,
         titre: n.titre,
@@ -133,7 +142,7 @@ export function disposerCarte(roadmap: RoadmapCarte, cibles: string[], options: 
         surChemin: surChemin.has(n.id),
         cible: n.id === cible,
         amont,
-        ...(heures !== undefined && { heures }),
+        ...(effort && { effort }),
       };
     }),
     aretes: g.edges().map((e) => {

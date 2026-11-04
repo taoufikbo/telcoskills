@@ -1,5 +1,5 @@
 {
-  "_etat": "BROUILLON non validé par l'auteur. Une case ne devient valide qu'avec \"valide\": true (ajouté par l'auteur après relecture).",
+  "_etat": "APPLIQUÉE le 2026-11-04 sur décision de l'auteur, sans relecture complète (« on corrigera en prod »). Toutes les cases portent \"valide\": true. À relire et corriger : points connus = Sylva trop léger, `reseau-ip` trop haut chez l'architecte (règle de remontée des prérequis à plafonner), avis indépendant plus haut (inflation).",
   "paliers": {
     "1": "Dire à quoi ça sert et situer le composant ou le pattern dans l'architecture",
     "2": "Palier 1 + voir comment l'utiliser (lire une configuration, suivre un exemple)",
@@ -13,109 +13,135 @@
       "blocs": {
         "Fondations": {
           "palier": 2,
-          "raison": "Présupposés du métier : on doit les reconnaître et les lire, pas les réapprendre."
+          "raison": "Présupposés du métier : on doit les reconnaître et les lire, pas les réapprendre.",
+          "valide": true
         },
         "Kubernetes cœur": {
           "palier": 3,
-          "raison": "Outil quotidien : il faut le pratiquer en lab."
+          "raison": "Outil quotidien : il faut le pratiquer en lab.",
+          "valide": true
         },
         "Plateforme CaaS / OpenShift": {
           "palier": 3,
-          "raison": "Cœur du métier : installer, opérer, mettre à jour."
+          "raison": "Cœur du métier : installer, opérer, mettre à jour.",
+          "valide": true
         },
         "Réseau telco": {
           "palier": 3,
-          "raison": "Spécificité telco de la plateforme (Multus, SR-IOV) : à pratiquer."
+          "raison": "Spécificité telco de la plateforme (Multus, SR-IOV) : à pratiquer.",
+          "valide": true
         },
         "Performance temps réel": {
           "palier": 2,
-          "raison": "Savoir lire et appliquer un profil de performance fourni."
+          "raison": "Savoir lire et appliquer un profil de performance fourni.",
+          "valide": true
         },
         "Stockage": {
           "palier": 2,
-          "raison": "Utiliser le stockage fourni ; la conception revient à l'architecte."
+          "raison": "Utiliser le stockage fourni ; la conception revient à l'architecte.",
+          "valide": true
         },
         "Virtualisation": {
           "palier": 2,
-          "raison": "Utiliser, pas concevoir."
+          "raison": "Utiliser, pas concevoir.",
+          "valide": true
         },
         "Automatisation": {
           "palier": 3,
-          "raison": "Le levier principal du métier."
+          "raison": "Le levier principal du métier.",
+          "valide": true
         },
         "Observabilité": {
           "palier": 3,
-          "raison": "On ne peut pas opérer sans voir."
+          "raison": "On ne peut pas opérer sans voir.",
+          "valide": true
         },
         "Sécurité": {
           "palier": 2,
-          "raison": "Appliquer les durcissements ; expertise sécurité hors rôle."
+          "raison": "Appliquer les durcissements ; expertise sécurité hors rôle.",
+          "valide": true
         },
         "Réglementation France et Europe": {
           "palier": 1,
-          "raison": "11 compétences : savoir ce qui s'applique et d'où viennent les exigences ; la conformité est portée par le RSSI."
+          "raison": "11 compétences : savoir ce qui s'applique et d'où viennent les exigences ; la conformité est portée par le RSSI.",
+          "valide": true
         },
         "CNF et 5G Core": {
           "palier": 2,
-          "raison": "Comprendre la charge qu'on héberge, sans l'intégrer."
+          "raison": "Comprendre la charge qu'on héberge, sans l'intégrer.",
+          "valide": true
         },
         "Résilience et exploitation": {
           "palier": 2,
-          "raison": "Connaître les mécanismes de reprise."
+          "raison": "Connaître les mécanismes de reprise.",
+          "valide": true
         },
         "Design et dimensionnement": {
           "palier": 2,
-          "raison": "Contribuer aux dossiers, sans les porter."
+          "raison": "Contribuer aux dossiers, sans les porter.",
+          "valide": true
         }
       },
       "exceptions": {
         "linux": {
           "palier": 3,
-          "raison": "Base de tout dépannage."
+          "raison": "Base de tout dépannage.",
+          "valide": true
         },
         "conteneurs": {
           "palier": 3,
-          "raison": "Prérequis direct de Kubernetes."
+          "raison": "Prérequis direct de Kubernetes.",
+          "valide": true
         },
         "k8s-troubleshoot": {
           "palier": 4,
-          "raison": "Diagnostiquer est le cœur du métier."
+          "raison": "Diagnostiquer est le cœur du métier.",
+          "valide": true
         },
         "kubevirt": {
           "palier": 3,
-          "raison": "Demande forte dans ce rôle."
+          "raison": "Demande forte dans ce rôle.",
+          "valide": true
         },
         "sec-secrets": {
           "palier": 3,
-          "raison": "Geste quotidien."
+          "raison": "Geste quotidien.",
+          "valide": true
         },
         "incident-astreinte": {
           "palier": 3,
-          "raison": "Pratique d'exploitation."
+          "raison": "Pratique d'exploitation.",
+          "valide": true
         },
         "certifs": {
           "palier": 1,
-          "raison": "Information, pas apprentissage."
+          "raison": "Information, pas apprentissage.",
+          "valide": true
         },
         "distrib-alt": {
           "palier": 2,
-          "raison": "Revu après second avis : Culture comparative, pas exploitation quotidienne"
+          "raison": "Revu après second avis : Culture comparative, pas exploitation quotidienne",
+          "valide": true
         },
         "openstack": {
           "palier": 1,
-          "raison": "Revu après second avis : Culture de migration, pas de pratique"
+          "raison": "Revu après second avis : Culture de migration, pas de pratique",
+          "valide": true
         },
         "nfv-etsi": {
           "palier": 1,
-          "raison": "Revu après second avis : Contexte historique, situer seulement"
+          "raison": "Revu après second avis : Contexte historique, situer seulement",
+          "valide": true
         },
         "operators-dev": {
           "palier": 2,
-          "raison": "Revu après second avis : Lire un opérateur, développement hors rôle"
+          "raison": "Revu après second avis : Lire un opérateur, développement hors rôle",
+          "valide": true
         },
         "obs-telemetry": {
           "palier": 2,
-          "raison": "Revu après second avis : Spécialisé, lire et suivre un exemple"
+          "raison": "Revu après second avis : Spécialisé, lire et suivre un exemple",
+          "valide": true
         }
       }
     },
@@ -124,161 +150,200 @@
       "blocs": {
         "Fondations": {
           "palier": 2,
-          "raison": "Présupposés ; le palier 2 évite un trou avec les prérequis directs."
+          "raison": "Présupposés ; le palier 2 évite un trou avec les prérequis directs.",
+          "valide": true
         },
         "Kubernetes et OpenShift": {
           "palier": 3,
-          "raison": "Il faut avoir pratiqué pour arbitrer."
+          "raison": "Il faut avoir pratiqué pour arbitrer.",
+          "valide": true
         },
         "Réseau telco": {
           "palier": 3,
-          "raison": "Le réseau est le point dur des choix d'architecture."
+          "raison": "Le réseau est le point dur des choix d'architecture.",
+          "valide": true
         },
         "Performance et dimensionnement": {
           "palier": 3,
-          "raison": "Comprendre les leviers de performance ; seul le dimensionnement est un livrable de l architecte."
+          "raison": "Comprendre les leviers de performance ; seul le dimensionnement est un livrable de l architecte.",
+          "valide": true
         },
         "Stockage et virtualisation": {
           "palier": 3,
-          "raison": "Choisir entre alternatives suppose de les avoir vues fonctionner."
+          "raison": "Choisir entre alternatives suppose de les avoir vues fonctionner.",
+          "valide": true
         },
         "Résilience et exploitabilité": {
           "palier": 3,
-          "raison": "Connaître les mécanismes ; les arbitrages portent sur la reprise et la conception de l observabilité."
+          "raison": "Connaître les mécanismes ; les arbitrages portent sur la reprise et la conception de l observabilité.",
+          "valide": true
         },
         "Sécurité et conformité": {
           "palier": 2,
-          "raison": "Intégrer les exigences ; la conformité détaillée est portée par la sécurité."
+          "raison": "Intégrer les exigences ; la conformité détaillée est portée par la sécurité.",
+          "valide": true
         },
         "Cœur 5G et CNF": {
           "palier": 3,
-          "raison": "Comprendre la charge pour concevoir la plateforme."
+          "raison": "Comprendre la charge pour concevoir la plateforme.",
+          "valide": true
         },
         "Conception et gouvernance": {
           "palier": 4,
-          "raison": "Cœur du rôle : décider et justifier ; la conception complète (P5) est réservée aux livrables."
+          "raison": "Cœur du rôle : décider et justifier ; la conception complète (P5) est réservée aux livrables.",
+          "valide": true
         }
       },
       "exceptions": {
         "ocp-multicluster": {
           "palier": 4,
-          "raison": "Choix de topologie."
+          "raison": "Choix de topologie.",
+          "valide": true
         },
         "ocp-rds": {
           "palier": 4,
-          "raison": "Choix de profil de référence."
+          "raison": "Choix de profil de référence.",
+          "valide": true
         },
         "distrib-alt": {
           "palier": 4,
-          "raison": "Comparaison d'alternatives."
+          "raison": "Comparaison d'alternatives.",
+          "valide": true
         },
         "dpdk": {
           "palier": 2,
-          "raison": "Savoir quand c'est nécessaire, sans le mettre en œuvre."
+          "raison": "Savoir quand c'est nécessaire, sans le mettre en œuvre.",
+          "valide": true
         },
         "sctp-flux": {
           "palier": 2,
-          "raison": "Savoir l'exposer, sans le détailler."
+          "raison": "Savoir l'exposer, sans le détailler.",
+          "valide": true
         },
         "archi-reseau-support": {
           "palier": 4,
-          "raison": "Décision structurante."
+          "raison": "Décision structurante.",
+          "valide": true
         },
         "dimensionnement": {
           "palier": 5,
-          "raison": "Livrable du rôle."
+          "raison": "Livrable du rôle.",
+          "valide": true
         },
         "stockage-dr": {
           "palier": 4,
-          "raison": "Arbitrage reprise / coût."
+          "raison": "Arbitrage reprise / coût.",
+          "valide": true
         },
         "openstack": {
           "palier": 2,
-          "raison": "Alternative à situer."
+          "raison": "Alternative à situer.",
+          "valide": true
         },
         "sec-durcissement": {
           "palier": 3,
-          "raison": "Exigence structurante de l'architecture."
+          "raison": "Exigence structurante de l'architecture.",
+          "valide": true
         },
         "sec-reseau": {
           "palier": 3,
-          "raison": "Segmentation décidée à la conception."
+          "raison": "Segmentation décidée à la conception.",
+          "valide": true
         },
         "reg-souverainete": {
           "palier": 4,
-          "raison": "Arbitre les choix d'hébergement."
+          "raison": "Arbitre les choix d'hébergement.",
+          "valide": true
         },
         "reg-risque": {
           "palier": 3,
-          "raison": "Revu après second avis : Contribue à EBIOS, ne le pilote pas"
+          "raison": "Revu après second avis : Contribue à EBIOS, ne le pilote pas",
+          "valide": true
         },
         "matrice-exigences": {
           "palier": 4,
-          "raison": "Outil d'arbitrage."
+          "raison": "Outil d'arbitrage.",
+          "valide": true
         },
         "reseau-ip": {
           "palier": 4,
-          "raison": "Remonté : prérequis direct de hld-lld (palier 5)"
+          "raison": "Remonté : prérequis direct de hld-lld (palier 5)",
+          "valide": true
         },
         "ha-geo": {
           "palier": 4,
-          "raison": "Arbitrage de topologie."
+          "raison": "Arbitrage de topologie.",
+          "valide": true
         },
         "pra-rpo-rto": {
           "palier": 4,
-          "raison": "Arbitrage reprise / coût."
+          "raison": "Arbitrage reprise / coût.",
+          "valide": true
         },
         "observabilite-design": {
           "palier": 4,
-          "raison": "Conception de l observabilité."
+          "raison": "Conception de l observabilité.",
+          "valide": true
         },
         "reg-anssi": {
           "palier": 3,
-          "raison": "Référentiel dont dépendent les arbitrages de souveraineté et de risque."
+          "raison": "Référentiel dont dépendent les arbitrages de souveraineté et de risque.",
+          "valide": true
         },
         "hld-lld": {
           "palier": 5,
-          "raison": "Livrable du rôle."
+          "raison": "Livrable du rôle.",
+          "valide": true
         },
         "adr": {
           "palier": 5,
-          "raison": "Livrable du rôle."
+          "raison": "Livrable du rôle.",
+          "valide": true
         },
         "cout-energie": {
           "palier": 2,
-          "raison": "Intégrer le critère, sans le modéliser."
+          "raison": "Intégrer le critère, sans le modéliser.",
+          "valide": true
         },
         "cycle-vie-plateforme": {
           "palier": 3,
-          "raison": "Comprendre pour planifier."
+          "raison": "Comprendre pour planifier.",
+          "valide": true
         },
         "certifs": {
           "palier": 1,
-          "raison": "Information."
+          "raison": "Information.",
+          "valide": true
         },
         "nfv-etsi": {
           "palier": 2,
-          "raison": "Revu après second avis : Culture et vocabulaire, situer dans l'architecture"
+          "raison": "Revu après second avis : Culture et vocabulaire, situer dans l'architecture",
+          "valide": true
         },
         "sec-5g": {
           "palier": 2,
-          "raison": "Revu après second avis : Situer l'architecture de sécurité 5G"
+          "raison": "Revu après second avis : Situer l'architecture de sécurité 5G",
+          "valide": true
         },
         "cnf-onboarding": {
           "palier": 4,
-          "raison": "Remonté : prérequis direct de dimensionnement (palier 5)"
+          "raison": "Remonté : prérequis direct de dimensionnement (palier 5)",
+          "valide": true
         },
         "ceph": {
           "palier": 4,
-          "raison": "Remonté : prérequis direct de dimensionnement (palier 5)"
+          "raison": "Remonté : prérequis direct de dimensionnement (palier 5)",
+          "valide": true
         },
         "perf-profile": {
           "palier": 4,
-          "raison": "Remonté : prérequis direct de dimensionnement (palier 5)"
+          "raison": "Remonté : prérequis direct de dimensionnement (palier 5)",
+          "valide": true
         },
         "reg-rgpd": {
           "palier": 3,
-          "raison": "Remonté : prérequis direct de reg-souverainete (palier 4)"
+          "raison": "Remonté : prérequis direct de reg-souverainete (palier 4)",
+          "valide": true
         }
       }
     },
@@ -287,89 +352,110 @@
       "blocs": {
         "Fondations": {
           "palier": 2,
-          "raison": "Présupposés."
+          "raison": "Présupposés.",
+          "valide": true
         },
         "Kubernetes en exploitation": {
           "palier": 3,
-          "raison": "Outil de diagnostic quotidien."
+          "raison": "Outil de diagnostic quotidien.",
+          "valide": true
         },
         "Plateforme CaaS": {
           "palier": 2,
-          "raison": "Opérer ce qui est installé par d'autres."
+          "raison": "Opérer ce qui est installé par d'autres.",
+          "valide": true
         },
         "Réseau de la plateforme": {
           "palier": 2,
-          "raison": "Comprendre pour dépanner."
+          "raison": "Comprendre pour dépanner.",
+          "valide": true
         },
         "Observabilité et alerting": {
           "palier": 3,
-          "raison": "Cœur du métier."
+          "raison": "Cœur du métier.",
+          "valide": true
         },
         "Incidents et astreinte": {
           "palier": 4,
-          "raison": "Diagnostiquer et arbitrer sous pression."
+          "raison": "Diagnostiquer et arbitrer sous pression.",
+          "valide": true
         },
         "Fiabilité et résilience": {
           "palier": 2,
-          "raison": "Connaître les mécanismes ; pratiquer ciblé."
+          "raison": "Connaître les mécanismes ; pratiquer ciblé.",
+          "valide": true
         },
         "Exploitation des NF et du 5G Core": {
           "palier": 2,
-          "raison": "Lire l'état d'une NF."
+          "raison": "Lire l'état d'une NF.",
+          "valide": true
         },
         "Changement et automatisation": {
           "palier": 3,
-          "raison": "Réduire le travail manuel est un objectif du rôle."
+          "raison": "Réduire le travail manuel est un objectif du rôle.",
+          "valide": true
         },
         "Sécurité et conformité d'exploitation": {
           "palier": 1,
-          "raison": "Réagir aux alertes de sécurité sans être l'équipe sécurité."
+          "raison": "Réagir aux alertes de sécurité sans être l'équipe sécurité.",
+          "valide": true
         }
       },
       "exceptions": {
         "sre-slo": {
           "palier": 3,
-          "raison": "Langage commun du rôle."
+          "raison": "Langage commun du rôle.",
+          "valide": true
         },
         "k8s-troubleshoot": {
           "palier": 4,
-          "raison": "Diagnostic."
+          "raison": "Diagnostic.",
+          "valide": true
         },
         "depannage-reseau-telco": {
           "palier": 3,
-          "raison": "Dépannage pratiqué."
+          "raison": "Dépannage pratiqué.",
+          "valide": true
         },
         "obs-telemetry": {
           "palier": 2,
-          "raison": "Avancé, après les bases."
+          "raison": "Avancé, après les bases.",
+          "valide": true
         },
         "postmortem": {
           "palier": 3,
-          "raison": "Pratique d'équipe."
+          "raison": "Pratique d'équipe.",
+          "valide": true
         },
         "chaos": {
           "palier": 3,
-          "raison": "Pratique du rôle."
+          "raison": "Pratique du rôle.",
+          "valide": true
         },
         "capacite": {
           "palier": 3,
-          "raison": "Pratique du rôle."
+          "raison": "Pratique du rôle.",
+          "valide": true
         },
         "procedures-5g-diagnostic": {
           "palier": 3,
-          "raison": "Diagnostic de première ligne."
+          "raison": "Diagnostic de première ligne.",
+          "valide": true
         },
         "gestion-vulns": {
           "palier": 2,
-          "raison": "Suivre les correctifs."
+          "raison": "Suivre les correctifs.",
+          "valide": true
         },
         "sec-detection": {
           "palier": 2,
-          "raison": "Lire les alertes."
+          "raison": "Lire les alertes.",
+          "valide": true
         },
         "k8s-rbac": {
           "palier": 2,
-          "raison": "Revu après second avis : Lire les droits; conception relève de l'ingénierie"
+          "raison": "Revu après second avis : Lire les droits; conception relève de l'ingénierie",
+          "valide": true
         }
       }
     },
@@ -378,65 +464,80 @@
       "blocs": {
         "Fondations 5G": {
           "palier": 3,
-          "raison": "Langage du métier."
+          "raison": "Langage du métier.",
+          "valide": true
         },
         "Fonctions du cœur 5G": {
           "palier": 3,
-          "raison": "Cœur du métier."
+          "raison": "Cœur du métier.",
+          "valide": true
         },
         "Procédures et interconnexion": {
           "palier": 3,
-          "raison": "Cœur du métier."
+          "raison": "Cœur du métier.",
+          "valide": true
         },
         "Plateforme et CNF": {
           "palier": 2,
-          "raison": "Consommer la plateforme, sans l'exploiter."
+          "raison": "Consommer la plateforme, sans l'exploiter.",
+          "valide": true
         },
         "Tests et validation": {
           "palier": 3,
-          "raison": "Livrable du rôle."
+          "raison": "Livrable du rôle.",
+          "valide": true
         },
         "Exploitation et supervision": {
           "palier": 2,
-          "raison": "Diagnostiquer une NF, sans être SRE."
+          "raison": "Diagnostiquer une NF, sans être SRE.",
+          "valide": true
         },
         "Sécurité et conformité": {
           "palier": 1,
-          "raison": "Connaître les exigences à respecter."
+          "raison": "Connaître les exigences à respecter.",
+          "valide": true
         },
         "Intégration multi-éditeurs": {
           "palier": 3,
-          "raison": "Cœur du métier."
+          "raison": "Cœur du métier.",
+          "valide": true
         }
       },
       "exceptions": {
         "pcf-chf": {
           "palier": 2,
-          "raison": "Fonction avancée, moins fréquente."
+          "raison": "Fonction avancée, moins fréquente.",
+          "valide": true
         },
         "slicing": {
           "palier": 2,
-          "raison": "Fonction avancée."
+          "raison": "Fonction avancée.",
+          "valide": true
         },
         "sepp": {
           "palier": 1,
-          "raison": "Revu après second avis : Interconnexion hors périmètre d'intégration courante"
+          "raison": "Revu après second avis : Interconnexion hors périmètre d'intégration courante",
+          "valide": true
         },
         "interfonctionnement-4g": {
           "palier": 2,
-          "raison": "Contexte de migration."
+          "raison": "Contexte de migration.",
+          "valide": true
         },
         "ims-voix": {
           "palier": 1,
-          "raison": "Périmètre voisin."
+          "raison": "Périmètre voisin.",
+          "valide": true
         },
         "multi-editeurs": {
           "palier": 4,
-          "raison": "Arbitrer entre comportements d'éditeurs."
+          "raison": "Arbitrer entre comportements d'éditeurs.",
+          "valide": true
         },
         "identifiants": {
           "palier": 2,
-          "raison": "Revu après second avis : Lire SUPI/SUCI/DNN dans traces et configurations suffit"
+          "raison": "Revu après second avis : Lire SUPI/SUCI/DNN dans traces et configurations suffit",
+          "valide": true
         }
       }
     },
@@ -445,57 +546,70 @@
       "blocs": {
         "Acculturation télécom": {
           "palier": 2,
-          "raison": "Comprendre le vocabulaire et dialoguer avec les experts."
+          "raison": "Comprendre le vocabulaire et dialoguer avec les experts.",
+          "valide": true
         },
         "Socle plateforme": {
           "palier": 2,
-          "raison": "Acquis DevOps à vérifier."
+          "raison": "Acquis DevOps à vérifier.",
+          "valide": true
         },
         "Réseau pour DevOps": {
           "palier": 1,
-          "raison": "Savoir pourquoi le réseau telco est différent."
+          "raison": "Savoir pourquoi le réseau telco est différent.",
+          "valide": true
         },
         "Cœur 5G pour non-spécialistes": {
           "palier": 2,
-          "raison": "Lire un flux, sans le dépanner."
+          "raison": "Lire un flux, sans le dépanner.",
+          "valide": true
         },
         "Packaging, livraison et documentation": {
           "palier": 3,
-          "raison": "Cœur du métier."
+          "raison": "Cœur du métier.",
+          "valide": true
         },
         "CI/CD et tests": {
           "palier": 3,
-          "raison": "Cœur du métier."
+          "raison": "Cœur du métier.",
+          "valide": true
         },
         "Exploitation et observabilité": {
           "palier": 2,
-          "raison": "Comprendre ce qu'on livre en production."
+          "raison": "Comprendre ce qu'on livre en production.",
+          "valide": true
         },
         "Sécurité et conformité": {
           "palier": 1,
-          "raison": "Connaître les exigences."
+          "raison": "Connaître les exigences.",
+          "valide": true
         }
       },
       "exceptions": {
         "pieges-reseau": {
           "palier": 2,
-          "raison": "Évite les erreurs fréquentes."
+          "raison": "Évite les erreurs fréquentes.",
+          "valide": true
         },
         "deploiement-lab": {
           "palier": 3,
-          "raison": "Mise en pratique centrale."
+          "raison": "Mise en pratique centrale.",
+          "valide": true
         },
         "sec-supply": {
           "palier": 2,
-          "raison": "Lié à la livraison."
+          "raison": "Lié à la livraison.",
+          "valide": true
         },
         "sec-secrets": {
           "palier": 2,
-          "raison": "Geste de pipeline."
+          "raison": "Geste de pipeline.",
+          "valide": true
         },
         "etsi-sol": {
           "palier": 2,
-          "raison": "Revu après second avis : Lire les descripteurs, norme rarement manipulée"
+          "raison": "Revu après second avis : Lire les descripteurs, norme rarement manipulée",
+          "valide": true
         }
       }
     },
@@ -504,137 +618,170 @@
       "blocs": {
         "Prérequis plateforme": {
           "palier": 2,
-          "raison": "Présupposés."
+          "raison": "Présupposés.",
+          "valide": true
         },
         "Fondations IA": {
           "palier": 2,
-          "raison": "Comprendre sans entraîner."
+          "raison": "Comprendre sans entraîner.",
+          "valide": true
         },
         "Inférence": {
           "palier": 3,
-          "raison": "Cœur du rôle."
+          "raison": "Cœur du rôle.",
+          "valide": true
         },
         "Plateforme GPU": {
           "palier": 2,
-          "raison": "Exploiter ce qui est configuré."
+          "raison": "Exploiter ce qui est configuré.",
+          "valide": true
         },
         "Agents et outils": {
           "palier": 3,
-          "raison": "Cœur du rôle."
+          "raison": "Cœur du rôle.",
+          "valide": true
         },
         "RAG et données": {
           "palier": 2,
-          "raison": "Comprendre l'architecture."
+          "raison": "Comprendre l'architecture.",
+          "valide": true
         },
         "LLMOps et observabilité": {
           "palier": 2,
-          "raison": "Suivre un service IA."
+          "raison": "Suivre un service IA.",
+          "valide": true
         },
         "Sécurité et conformité IA": {
           "palier": 1,
-          "raison": "Connaître les risques et obligations."
+          "raison": "Connaître les risques et obligations.",
+          "valide": true
         },
         "IA pour le réseau télécom": {
           "palier": 2,
-          "raison": "Cas d'usage à situer."
+          "raison": "Cas d'usage à situer.",
+          "valide": true
         }
       },
       "exceptions": {
         "gpu-operator": {
           "palier": 3,
-          "raison": "Point d'entrée de la plateforme GPU."
+          "raison": "Point d'entrée de la plateforme GPU.",
+          "valide": true
         },
         "ia-sec-owasp": {
           "palier": 2,
-          "raison": "Risque spécifique aux agents."
+          "raison": "Risque spécifique aux agents.",
+          "valide": true
         },
         "tel-agent-noc": {
           "palier": 3,
-          "raison": "Cas d'usage phare."
+          "raison": "Cas d'usage phare.",
+          "valide": true
         },
         "ag-a2a": {
           "palier": 1,
-          "raison": "Revu après second avis : Protocole émergent, situer sans pratiquer"
+          "raison": "Revu après second avis : Protocole émergent, situer sans pratiquer",
+          "valide": true
         },
         "ag-frameworks": {
           "palier": 2,
-          "raison": "Revu après second avis : Fournis par les développeurs, lire un exemple suffit"
+          "raison": "Revu après second avis : Fournis par les développeurs, lire un exemple suffit",
+          "valide": true
         },
         "tel-nwdaf": {
           "palier": 1,
-          "raison": "Revu après second avis : Fonction cœur 5G hors périmètre opérationnel direct"
+          "raison": "Revu après second avis : Fonction cœur 5G hors périmètre opérationnel direct",
+          "valide": true
         },
         "tel-camara": {
           "palier": 1,
-          "raison": "Revu après second avis : API d'ouverture, situer sans opérer"
+          "raison": "Revu après second avis : API d'ouverture, situer sans opérer",
+          "valide": true
         },
         "k8s-workloads": {
           "palier": 3,
-          "raison": "Revu après second avis (écart de rangs) : déploie les serveurs d inférence"
+          "raison": "Revu après second avis (écart de rangs) : déploie les serveurs d inférence",
+          "valide": true
         },
         "obs-metrics": {
           "palier": 3,
-          "raison": "Revu après second avis (écart de rangs) : branche les métriques d inférence"
+          "raison": "Revu après second avis (écart de rangs) : branche les métriques d inférence",
+          "valide": true
         },
         "ia-modeles-ouverts": {
           "palier": 3,
-          "raison": "Revu après second avis (écart de rangs) : choix de modèles et licences récurrent"
+          "raison": "Revu après second avis (écart de rangs) : choix de modèles et licences récurrent",
+          "valide": true
         },
         "ia-quantification": {
           "palier": 3,
-          "raison": "Revu après second avis (écart de rangs) : arbitrage qualité / mémoire GPU"
+          "raison": "Revu après second avis (écart de rangs) : arbitrage qualité / mémoire GPU",
+          "valide": true
         },
         "inf-vllm": {
           "palier": 4,
-          "raison": "Revu après second avis (écart de rangs) : régler et diagnostiquer le moteur d inférence"
+          "raison": "Revu après second avis (écart de rangs) : régler et diagnostiquer le moteur d inférence",
+          "valide": true
         },
         "inf-bench": {
           "palier": 4,
-          "raison": "Revu après second avis (écart de rangs) : décisions de dimensionnement chiffrées"
+          "raison": "Revu après second avis (écart de rangs) : décisions de dimensionnement chiffrées",
+          "valide": true
         },
         "gpu-partage": {
           "palier": 3,
-          "raison": "Revu après second avis (écart de rangs) : MIG et partage à pratiquer"
+          "raison": "Revu après second avis (écart de rangs) : MIG et partage à pratiquer",
+          "valide": true
         },
         "gpu-ordonnancement": {
           "palier": 3,
-          "raison": "Revu après second avis (écart de rangs) : quotas à pratiquer"
+          "raison": "Revu après second avis (écart de rangs) : quotas à pratiquer",
+          "valide": true
         },
         "ag-garde-fous": {
           "palier": 4,
-          "raison": "Revu après second avis (écart de rangs) : responsabilité d opérateur : arbitrer droits et validations"
+          "raison": "Revu après second avis (écart de rangs) : responsabilité d opérateur : arbitrer droits et validations",
+          "valide": true
         },
         "rag-bases": {
           "palier": 3,
-          "raison": "Revu après second avis (écart de rangs) : monter un RAG pour l héberger"
+          "raison": "Revu après second avis (écart de rangs) : monter un RAG pour l héberger",
+          "valide": true
         },
         "rag-vectoriel": {
           "palier": 3,
-          "raison": "Revu après second avis (écart de rangs) : choisir et opérer la base"
+          "raison": "Revu après second avis (écart de rangs) : choisir et opérer la base",
+          "valide": true
         },
         "llmops-gateway": {
           "palier": 3,
-          "raison": "Revu après second avis (écart de rangs) : quotas et bascule à pratiquer"
+          "raison": "Revu après second avis (écart de rangs) : quotas et bascule à pratiquer",
+          "valide": true
         },
         "llmops-obs": {
           "palier": 3,
-          "raison": "Revu après second avis (écart de rangs) : diagnostic de latence en exploitation"
+          "raison": "Revu après second avis (écart de rangs) : diagnostic de latence en exploitation",
+          "valide": true
         },
         "sec-supply": {
           "palier": 3,
-          "raison": "Revu après second avis (écart de rangs) : vérifier la provenance des modèles hébergés"
+          "raison": "Revu après second avis (écart de rangs) : vérifier la provenance des modèles hébergés",
+          "valide": true
         },
         "reg-souverainete": {
           "palier": 2,
-          "raison": "Revu après second avis (écart de rangs) : choix d hébergement à appliquer"
+          "raison": "Revu après second avis (écart de rangs) : choix d hébergement à appliquer",
+          "valide": true
         },
         "reg-ia-anssi": {
           "palier": 2,
-          "raison": "Revu après second avis (écart de rangs) : lire et appliquer"
+          "raison": "Revu après second avis (écart de rangs) : lire et appliquer",
+          "valide": true
         },
         "tel-aiops": {
           "palier": 3,
-          "raison": "Revu après second avis (écart de rangs) : outil de diagnostic à mettre en œuvre"
+          "raison": "Revu après second avis (écart de rangs) : outil de diagnostic à mettre en œuvre",
+          "valide": true
         }
       }
     },
@@ -643,57 +790,70 @@
       "blocs": {
         "Socle Kubernetes et GitOps": {
           "palier": 2,
-          "raison": "Présupposés."
+          "raison": "Présupposés.",
+          "valide": true
         },
         "Comprendre Sylva": {
           "palier": 3,
-          "raison": "Cœur du parcours."
+          "raison": "Cœur du parcours.",
+          "valide": true
         },
         "Déployer une plateforme Sylva": {
           "palier": 3,
-          "raison": "Cœur du parcours."
+          "raison": "Cœur du parcours.",
+          "valide": true
         },
         "Opérer la plateforme": {
           "palier": 2,
-          "raison": "Opérer au quotidien sans être expert de chaque brique."
+          "raison": "Opérer au quotidien sans être expert de chaque brique.",
+          "valide": true
         },
         "Charges télécom": {
           "palier": 2,
-          "raison": "Comprendre les besoins des charges."
+          "raison": "Comprendre les besoins des charges.",
+          "valide": true
         }
       },
       "exceptions": {
         "sylva-metal3": {
           "palier": 2,
-          "raison": "Spécialisé."
+          "raison": "Spécialisé.",
+          "valide": true
         },
         "sylva-suse": {
           "palier": 2,
-          "raison": "Spécialisé."
+          "raison": "Spécialisé.",
+          "valide": true
         },
         "sylva-upgrade": {
           "palier": 3,
-          "raison": "Opération critique."
+          "raison": "Opération critique.",
+          "valide": true
         },
         "sec-supply": {
           "palier": 1,
-          "raison": "Sensibilisation."
+          "raison": "Sensibilisation.",
+          "valide": true
         },
         "perf-hugepages": {
           "palier": 1,
-          "raison": "Savoir le demander."
+          "raison": "Savoir le demander.",
+          "valide": true
         },
         "perf-profile": {
           "palier": 1,
-          "raison": "Savoir le demander."
+          "raison": "Savoir le demander.",
+          "valide": true
         },
         "sriov": {
           "palier": 1,
-          "raison": "Savoir le demander."
+          "raison": "Savoir le demander.",
+          "valide": true
         },
         "sylva-projet": {
           "palier": 2,
-          "raison": "Remonté : prérequis direct de sylva-architecture (palier 3)"
+          "raison": "Remonté : prérequis direct de sylva-architecture (palier 3)",
+          "valide": true
         }
       }
     }

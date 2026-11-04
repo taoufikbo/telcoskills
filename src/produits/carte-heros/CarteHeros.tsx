@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type MouseEvent } from "react";
 import type { Progression, Statut } from "@/produits/progression";
+import { libelleEffort } from "@/lib/palier";
 import { urlNoeud, urlRoadmap } from "@/lib/urls";
 import { LIGNE_TEXTE, MARGE_TEXTE, type Disposition } from "./disposition";
 
@@ -99,7 +100,7 @@ export default function CarteHeros({ disposition: d, progression = {}, onOuvrir 
           ) : (
             <>
               <strong style={{ color: "var(--fg)" }}>{actif.titre}</strong> : {actif.amont.length} compétence{actif.amont.length > 1 ? "s" : ""} à maîtriser
-              avant{actif.heures !== undefined && <>, environ {Math.round(actif.heures)} h d&apos;étude en tout (estimation indicative)</>}.
+              avant{actif.effort && libelleEffort(actif.effort) && <>, dont {libelleEffort(actif.effort)}</>}.
             </>
           )
         ) : (
@@ -107,7 +108,10 @@ export default function CarteHeros({ disposition: d, progression = {}, onOuvrir 
             <>
               Votre chemin : de <strong style={{ color: "var(--fg)" }}>{d.depart.titre}</strong> à <strong style={{ color: "var(--fg)" }}>{d.cible.titre}</strong>,{" "}
               {d.noeuds.length} compétences
-              {parId.get(d.cible.id)?.heures !== undefined && <>, environ {Math.round(parId.get(d.cible.id)!.heures!)} h d&apos;étude (estimation indicative)</>}.
+              {(() => {
+                const e = parId.get(d.cible.id)?.effort;
+                return e && libelleEffort(e) ? <> ({libelleEffort(e)})</> : null;
+              })()}.
               Survolez une compétence pour voir ce qu&apos;elle demande.
             </>
           ) : (

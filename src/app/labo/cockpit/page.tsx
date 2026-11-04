@@ -8,5 +8,5 @@ export const metadata: Metadata = { title: "Labo : Cockpit" };
 export default function Page() {
   const r = getRoadmap("ingenieur-caas-telco");
   if (!r) return <p>Roadmap absente du catalogue.</p>;
-  return <LaboCockpit roadmap={r} parNiveau={chargerOrientation().duree_par_niveau_heures} />;
+  return <LaboCockpit roadmap={r} table={chargerOrientation().investissement_par_palier} />;
 }

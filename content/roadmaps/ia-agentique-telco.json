@@ -4,7 +4,9 @@
   "type": "role",
   "presentation": "Cette roadmap s'adresse à celles et ceux qui doivent héberger, exploiter ou sécuriser de l'IA générative sur une plateforme Kubernetes télécom : modèles ouverts, inférence, GPU, agents, RAG, observabilité, conformité (AI Act, ANSSI) et cas d'usage réseau. Tout part de briques open source.",
   "version": "0.1",
-  "provenance": { "type": "editoriale" },
+  "provenance": {
+    "type": "editoriale"
+  },
   "source": "Rédaction éditoriale à partir de projets et documentations open source (Hugging Face, vLLM, KServe, llm-d, Kubernetes, Model Context Protocol, OpenTelemetry, OWASP) et de publications de l'ANSSI, de la CNIL et de l'Union européenne ; elle ne s'appuie pas sur une analyse d'offres d'emploi. Le champ 'demande' n'est donc pas renseigné. Ce domaine évolue très vite : vérifier la version et l'état de chaque projet avant de s'y engager.",
   "legende_demande": {
     "forte": "présent dans la majorité des offres",
@@ -36,7 +38,8 @@
           "nom": "Documentation Kubernetes : concepts",
           "url": "https://kubernetes.io/docs/concepts/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "k8s-workloads",
@@ -53,7 +56,8 @@
           "nom": "Documentation Kubernetes : workloads",
           "url": "https://kubernetes.io/docs/concepts/workloads/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "obs-metrics",
@@ -70,7 +74,8 @@
           "nom": "Documentation Prometheus",
           "url": "https://prometheus.io/docs/introduction/overview/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ia-llm-bases",
@@ -92,7 +97,8 @@
           "acces": "gratuit",
           "langue": "en"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "ia-modeles-ouverts",
@@ -114,7 +120,8 @@
           "nom": "Définition de l'IA open source (OSI)",
           "url": "https://opensource.org/ai/open-source-ai-definition"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ia-quantification",
@@ -131,7 +138,8 @@
           "nom": "llama.cpp : quantification et format GGUF",
           "url": "https://github.com/ggml-org/llama.cpp"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "inf-local",
@@ -153,7 +161,8 @@
           "nom": "llama.cpp",
           "url": "https://github.com/ggml-org/llama.cpp"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "inf-vllm",
@@ -172,7 +181,8 @@
           "nom": "Documentation vLLM",
           "url": "https://docs.vllm.ai/"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "inf-kserve",
@@ -189,7 +199,8 @@
           "nom": "Documentation KServe",
           "url": "https://kserve.github.io/website/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "inf-llm-d",
@@ -211,7 +222,8 @@
           "nom": "Gateway API Inference Extension",
           "url": "https://gateway-api-inference-extension.sigs.k8s.io/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "inf-bench",
@@ -228,7 +240,8 @@
           "nom": "GuideLLM : évaluer un déploiement",
           "url": "https://github.com/vllm-project/guidellm"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "gpu-operator",
@@ -245,7 +258,8 @@
           "nom": "NVIDIA GPU Operator",
           "url": "https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "gpu-partage",
@@ -262,7 +276,8 @@
           "nom": "Kubernetes : allocation dynamique de ressources",
           "url": "https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "gpu-ordonnancement",
@@ -280,7 +295,8 @@
           "nom": "Kueue",
           "url": "https://kueue.sigs.k8s.io/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "gpu-reseau",
@@ -305,7 +321,8 @@
           "langue": "en",
           "auteur": "NVIDIA"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "ag-bases",
@@ -329,7 +346,8 @@
           "acces": "gratuit",
           "langue": "en"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ag-mcp",
@@ -351,7 +369,8 @@
           "nom": "Model Context Protocol",
           "url": "https://modelcontextprotocol.io/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ag-a2a",
@@ -373,7 +392,8 @@
           "nom": "Agent2Agent protocol",
           "url": "https://a2a-protocol.org/"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "ag-frameworks",
@@ -395,7 +415,8 @@
           "nom": "smolagents",
           "url": "https://huggingface.co/docs/smolagents"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "ag-garde-fous",
@@ -417,7 +438,8 @@
           "nom": "OWASP : risques des applications d'IA générative",
           "url": "https://genai.owasp.org/llm-top-10/"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "rag-bases",
@@ -441,7 +463,8 @@
           "acces": "gratuit",
           "langue": "en"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "rag-vectoriel",
@@ -464,7 +487,8 @@
           "nom": "Qdrant",
           "url": "https://qdrant.tech/documentation/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "rag-evaluation",
@@ -481,7 +505,8 @@
           "nom": "Ragas",
           "url": "https://docs.ragas.io/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "llmops-gateway",
@@ -503,7 +528,8 @@
           "nom": "Envoy AI Gateway",
           "url": "https://aigateway.envoyproxy.io/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "llmops-obs",
@@ -526,7 +552,8 @@
           "nom": "Langfuse",
           "url": "https://langfuse.com/docs"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "llmops-eval",
@@ -543,7 +570,8 @@
           "nom": "lm-evaluation-harness",
           "url": "https://github.com/EleutherAI/lm-evaluation-harness"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "cout-energie",
@@ -586,7 +614,8 @@
           "langue": "en",
           "auteur": "CNCF"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "ia-sec-owasp",
@@ -608,7 +637,8 @@
           "nom": "OWASP Top 10 pour les applications LLM",
           "url": "https://genai.owasp.org/llm-top-10/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sec-supply",
@@ -625,7 +655,8 @@
           "nom": "SLSA : niveaux de sécurité de la chaîne logicielle",
           "url": "https://slsa.dev/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "reg-ia-anssi",
@@ -650,7 +681,8 @@
           "langue": "fr",
           "auteur": "ANSSI"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "reg-ai-act",
@@ -680,7 +712,8 @@
           "langue": "fr",
           "auteur": "CNIL"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "reg-souverainete",
@@ -705,7 +738,8 @@
           "langue": "fr",
           "auteur": "ANSSI"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "tel-ia-usecases",
@@ -727,7 +761,8 @@
           "nom": "TM Forum : réseaux autonomes",
           "url": "https://www.tmforum.org/autonomous-networks/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "tel-nwdaf",
@@ -749,7 +784,8 @@
           "nom": "3GPP TS 23.288 : analytique de données réseau",
           "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.288/"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "tel-aiops",
@@ -772,7 +808,8 @@
           "nom": "HolmesGPT",
           "url": "https://github.com/robusta-dev/holmesgpt"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "tel-agent-noc",
@@ -795,7 +832,8 @@
           "type": "retour-experience",
           "nom": "À construire en laboratoire à partir des briques de cette roadmap"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "tel-camara",
@@ -812,7 +850,8 @@
           "nom": "CAMARA Project",
           "url": "https://camaraproject.org/"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "tel-edge-inference",
@@ -830,7 +869,8 @@
           "nom": "Open Platform for Enterprise AI (OPEA)",
           "url": "https://opea.dev/"
         }
-      ]
+      ],
+      "cible": 2
     }
   ]
 }

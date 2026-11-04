@@ -45,7 +45,7 @@ export default async function PageRoadmap({ params }: { params: Promise<{ roadma
         ])}
       />
       <Suspense fallback={<RoadmapStatique roadmap={roadmap} entete={<BadgeProvenance roadmap={roadmap} />} />}>
-        <RoadmapView roadmap={roadmap} video={infoVideo(roadmap.id)} projetId={chargerProjets()[0]?.id} parNiveau={chargerOrientation().duree_par_niveau_heures} entete={<BadgeProvenance roadmap={roadmap} />} />
+        <RoadmapView roadmap={roadmap} video={infoVideo(roadmap.id)} projetId={chargerProjets()[0]?.id} table={chargerOrientation().investissement_par_palier} entete={<BadgeProvenance roadmap={roadmap} />} />
       </Suspense>
     </main>
   );

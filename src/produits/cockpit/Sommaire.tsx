@@ -33,7 +33,7 @@ export default function Sommaire({ programme: p, titre, hrefParcours, courant, h
             <div className="h-full" style={{ width: `${p.actifs ? (p.acquis / p.actifs) * 100 : 0}%`, background: "var(--fg)" }} />
           </div>
           <p className="mt-1.5 tabular-nums" style={{ color: "var(--muted)" }}>
-            {p.acquis}/{p.actifs} acquises · {p.restantes} h restantes
+            {p.acquis}/{p.actifs} acquises · {p.restantes} restantes
           </p>
         </>
       )}

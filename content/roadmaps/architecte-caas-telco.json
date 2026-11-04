@@ -4,7 +4,9 @@
   "type": "role",
   "presentation": "Cette roadmap s'adresse à l'architecte d'une plateforme cloud télécom : concevoir, dimensionner, sécuriser et faire vivre un CaaS qui héberge un cœur 5G, en documentant ses choix et en respectant le cadre réglementaire.",
   "version": "0.1",
-  "provenance": { "type": "editoriale" },
+  "provenance": {
+    "type": "editoriale"
+  },
   "source": "Rédaction éditoriale à partir des roadmaps « Ingénieur CaaS telco » et « Intégrateur NF, domaine 5GC » et de la pratique de l'architecture de plateformes ; elle ne s'appuie pas sur une analyse d'offres d'emploi. Le champ 'demande' n'est donc pas renseigné. Les références juridiques et techniques sont à vérifier dans leur version en vigueur.",
   "legende_demande": {
     "forte": "présent dans la majorité des offres",
@@ -51,7 +53,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "reseau-ip",
@@ -73,7 +76,8 @@
           "langue": "en",
           "auteur": "Cisco"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "conteneurs",
@@ -106,7 +110,8 @@
           "langue": "en",
           "auteur": "CRI-O"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "telco-101",
@@ -129,7 +134,8 @@
           "langue": "en",
           "auteur": "3GPP"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "k8s-archi",
@@ -162,7 +168,8 @@
           "langue": "en",
           "auteur": "CNCF"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "k8s-workloads",
@@ -182,7 +189,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "k8s-services",
@@ -203,7 +211,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "k8s-stockage",
@@ -223,7 +232,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "k8s-rbac",
@@ -243,7 +253,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "helm",
@@ -263,7 +274,8 @@
           "langue": "en",
           "auteur": "Helm"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "gitops",
@@ -280,7 +292,8 @@
           "nom": "Argo CD : documentation",
           "url": "https://argo-cd.readthedocs.io/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ocp-install",
@@ -307,7 +320,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ocp-operators",
@@ -332,7 +346,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ocp-upgrade",
@@ -357,7 +372,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ocp-multicluster",
@@ -382,7 +398,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "ztp",
@@ -427,7 +444,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ocp-rds",
@@ -453,7 +471,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "distrib-alt",
@@ -482,7 +501,8 @@
           "type": "doc",
           "nom": "Documentation des éditeurs respectifs"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "cni",
@@ -508,7 +528,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "multus",
@@ -528,7 +549,8 @@
           "langue": "en",
           "auteur": "K8s Network Plumbing WG"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sriov",
@@ -553,7 +575,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "dpdk",
@@ -579,7 +602,8 @@
           "langue": "en",
           "auteur": "DPDK"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "lb-bgp",
@@ -600,7 +624,8 @@
           "langue": "en",
           "auteur": "MetalLB"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sctp-flux",
@@ -634,7 +659,8 @@
           "langue": "en",
           "auteur": "3GPP"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "archi-reseau-support",
@@ -658,7 +684,8 @@
           "nom": "FRRouting : documentation",
           "url": "https://docs.frrouting.org/"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "perf-hugepages",
@@ -684,7 +711,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "perf-profile",
@@ -709,7 +737,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "dimensionnement",
@@ -751,7 +780,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 5
     },
     {
       "id": "bench-dimensionnement",
@@ -768,7 +798,8 @@
           "nom": "TRex : générateur de trafic open source",
           "url": "https://github.com/cisco-system-traffic-generator/trex-core"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ceph",
@@ -809,7 +840,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "stockage-dr",
@@ -834,7 +866,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "kubevirt",
@@ -860,7 +893,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "openstack",
@@ -886,7 +920,8 @@
           "langue": "en",
           "auteur": "OpenStack"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "nfv-etsi",
@@ -922,7 +957,8 @@
           "langue": "en",
           "auteur": "ONAP"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "ha-geo",
@@ -972,7 +1008,8 @@
           "langue": "en",
           "auteur": "Ceph"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "obs-metrics",
@@ -992,7 +1029,8 @@
           "langue": "en",
           "auteur": "Prometheus"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "obs-logs",
@@ -1020,7 +1058,8 @@
           "langue": "en",
           "auteur": "Elastic"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "pra-rpo-rto",
@@ -1038,7 +1077,8 @@
           "nom": "Velero : sauvegarde et restauration Kubernetes",
           "url": "https://velero.io/docs/"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "observabilite-design",
@@ -1056,7 +1096,8 @@
           "nom": "OpenTelemetry : documentation",
           "url": "https://opentelemetry.io/docs/"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "sec-durcissement",
@@ -1088,7 +1129,8 @@
           "langue": "en",
           "auteur": "CIS"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sec-reseau",
@@ -1108,7 +1150,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sec-supply",
@@ -1142,7 +1185,8 @@
           "langue": "en",
           "auteur": "Sigstore"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sec-secrets",
@@ -1178,7 +1222,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "reg-cadre-fr",
@@ -1202,7 +1247,8 @@
           "type": "doc",
           "nom": "Publications de l'ARCEP sur la sécurité et l'intégrité des réseaux"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "reg-5g-securite",
@@ -1227,7 +1273,8 @@
           "type": "spec",
           "nom": "Loi n° 2019-810 du 1er août 2019"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "reg-nis2",
@@ -1256,7 +1303,8 @@
           "langue": "fr",
           "auteur": "ANSSI"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "reg-anssi",
@@ -1297,7 +1345,8 @@
           "langue": "fr",
           "auteur": "ANSSI"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "reg-rgpd",
@@ -1338,7 +1387,8 @@
           "langue": "fr",
           "auteur": "CNIL"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "reg-souverainete",
@@ -1371,7 +1421,8 @@
           "langue": "fr",
           "auteur": "ANSSI"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "reg-risque",
@@ -1422,7 +1473,8 @@
           "langue": "en",
           "auteur": "3GPP"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "5g-sba",
@@ -1455,7 +1507,8 @@
           "langue": "en",
           "auteur": "3GPP"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "cnf-onboarding",
@@ -1479,7 +1532,8 @@
           "nom": "Guides d'onboarding des éditeurs de CNF"
         }
       ],
-      "projet": "Déployer un cœur 5G open source (free5GC ou Open5GS) sur un cluster de lab."
+      "projet": "Déployer un cœur 5G open source (free5GC ou Open5GS) sur un cluster de lab.",
+      "cible": 4
     },
     {
       "id": "cnf-ops",
@@ -1500,7 +1554,8 @@
           "type": "retour-experience",
           "nom": "Documentation d'exploitation des éditeurs"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "sec-5g",
@@ -1526,7 +1581,8 @@
           "langue": "en",
           "auteur": "3GPP"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "matrice-exigences",
@@ -1568,7 +1624,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "hld-lld",
@@ -1586,7 +1643,8 @@
           "nom": "arc42 : modèle libre de documentation d'architecture",
           "url": "https://arc42.org/overview"
         }
-      ]
+      ],
+      "cible": 5
     },
     {
       "id": "adr",
@@ -1604,7 +1662,8 @@
           "url": "https://adr.github.io/"
         }
       ],
-      "projet": "Écrire trois ADR pour une plateforme fictive : choix de la distribution, du CNI et du stockage."
+      "projet": "Écrire trois ADR pour une plateforme fictive : choix de la distribution, du CNI et du stockage.",
+      "cible": 5
     },
     {
       "id": "evaluation-fournisseurs",
@@ -1651,7 +1710,8 @@
           "langue": "en",
           "auteur": "OpenSSF"
         }
-      ]
+      ],
+      "cible": 4
     },
     {
       "id": "cout-energie",
@@ -1689,7 +1749,8 @@
           "langue": "en",
           "auteur": "CNCF"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "cycle-vie-plateforme",
@@ -1731,7 +1792,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "certifs",
@@ -1750,7 +1812,8 @@
           "type": "certif",
           "nom": "CKA, EX280, EX380 (curriculums)"
         }
-      ]
+      ],
+      "cible": 1
     }
   ]
 }

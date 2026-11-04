@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState, type ReactNode } from "react";
+import type { Investissement } from "@/lib/palier";
 import { classerParcours, type Orientation, type Reponses } from "@/lib/orientation-schema";
 import type { Disposition } from "@/produits/carte-heros";
 import CarteHerosSuivie from "./CarteHerosSuivie";
@@ -12,7 +13,7 @@ type Props = {
   config: Orientation;
   parcours: Record<string, { titre: string }>;
   titresNoeuds: Record<string, string>;
-  durees: Record<string, { noeud: number }>;
+  investissements: Record<string, { noeud?: Investissement }>;
   /** Carte affichée avant toute réponse, et sa légende. */
   carteParDefaut: Disposition;
   legendeCarte: ReactNode;
@@ -23,10 +24,10 @@ type Props = {
 
 /**
  * Raccord de page : la conversation et la carte du hero côte à côte. Dès la première réponse, la carte montre le parcours
- * probable ; à la fin, le chemin exact, avec le programme et ses heures. Les produits Diagnostic (calcul), Parcours
+ * probable ; à la fin, le chemin exact, avec le programme et son investissement. Les produits Diagnostic (calcul), Parcours
  * (stockage) et Carte héros ne se connaissent pas : seul ce raccord les relie.
  */
-export default function ChoixEtCarte({ config, parcours, titresNoeuds, durees, carteParDefaut, legendeCarte, nbOutils, exemples }: Props) {
+export default function ChoixEtCarte({ config, parcours, titresNoeuds, investissements, carteParDefaut, legendeCarte, nbOutils, exemples }: Props) {
   const [brouillon, setBrouillon] = useState<Partial<Reponses>>({});
   const [resultat, setResultat] = useState<{ roadmapId: string; noeudId: string } | null>(null);
   const [aInteragi, setAInteragi] = useState(false);
@@ -48,11 +49,11 @@ export default function ChoixEtCarte({ config, parcours, titresNoeuds, durees, c
   return (
     <div className="grid items-start gap-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-12">
       <div className="space-y-5">
-        <ConversationParcours config={config} parcours={parcours} titresNoeuds={titresNoeuds} durees={durees} onBrouillon={(r) => {
+        <ConversationParcours config={config} parcours={parcours} titresNoeuds={titresNoeuds} investissements={investissements} onBrouillon={(r) => {
             setBrouillon(r);
             setAInteragi(true);
           }} onResultat={setResultat} />
-        {resultat && <ProgrammeChoisi roadmapId={resultat.roadmapId} parNiveau={config.duree_par_niveau_heures} />}
+        {resultat && <ProgrammeChoisi roadmapId={resultat.roadmapId} />}
       </div>
       <figure className="panneau w-full p-4 sm:p-5 xl:sticky xl:top-20">
         <CarteHerosSuivie defaut={carteParDefaut} config={config} legendeDefaut={legendeCarte} choix={resultat ?? undefined} apercu={apercu} exemple={!apercuReel && !resultat && exempleVisible} />

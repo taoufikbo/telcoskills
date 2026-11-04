@@ -15,7 +15,7 @@ export default function DiagnosticAvecCarte(props: Omit<ComponentProps<typeof Di
       {...props}
       apresResultat={(reco) => (
         <>
-          <ProgrammeChoisi roadmapId={reco.roadmapId} parNiveau={props.config.duree_par_niveau_heures} />
+          <ProgrammeChoisi roadmapId={reco.roadmapId} />
           <figure className="panneau p-4 sm:p-5">
             <CarteHerosSuivie config={props.config} choix={reco} />
           </figure>

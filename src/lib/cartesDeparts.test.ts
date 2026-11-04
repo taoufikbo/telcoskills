@@ -18,7 +18,8 @@ describe("cartes des points de départ du diagnostic", () => {
       expect(d.chemin[0].id, cle).toBe(c.depart);
       expect(d.chemin.at(-1)!.id, cle).toBe(d.cible.id);
       expect(d.noeuds.length, cle).toBeLessThanOrEqual(TAILLE_MAX_CARTE);
-      expect(d.noeuds.find((n) => n.cible)!.heures, cle).toBeGreaterThan(0);
+      const e = d.noeuds.find((n) => n.cible)!.effort!;
+      expect(e.legers + e.moyens + e.longs, cle).toBeGreaterThan(0);
     }
   });
 });

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LandscapeSylva from "@/components/LandscapeSylva";
+import { investissementDe } from "@/lib/palier";
 import { chargerOrientation } from "@/lib/orientation";
 import { exigerRefonte } from "@/lib/refonte";
 import { getRoadmap } from "@/lib/roadmaps";
@@ -40,11 +41,10 @@ export default function PageSylva() {
   exigerRefonte();
   const { sylva: s, units: u } = chargerSylva();
   const roadmap = getRoadmap(s.roadmap)!;
-  const heures = chargerOrientation().duree_par_niveau_heures;
-  const niveaux = new Map(roadmap.noeuds.map((n) => [n.id, n.niveau]));
+  const table = chargerOrientation().investissement_par_palier;
   // Carte : de la présentation du projet à la compétence la plus avancée qui s'appuie dessus (sans « Vous commencez ici » :
   // cette mention est réservée à la carte personnelle, après le diagnostic).
-  const carte = disposerCarte(roadmap, [choisirCible(roadmap, "sylva-projet")], { heures: (id) => heures[niveaux.get(id)!] });
+  const carte = disposerCarte(roadmap, [choisirCible(roadmap, "sylva-projet")], { investissement: investissementDe(roadmap, table) });
   const liens = Object.fromEntries(Object.entries(s.liensLandscape).map(([unit, outil]) => [unit, `/ressources/landscape?outil=${outil}`]));
   const suse = u.units.filter((x) => x.suse);
 

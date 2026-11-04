@@ -49,25 +49,25 @@ export const EtatPratiqueSchema = z.object({
   parcours: z.array(z.string()).default([]),
   /** Compétences sorties du parcours, par roadmap (ce n'est pas un statut). */
   horsParcours: z.record(z.string(), z.array(z.string())),
-  /** Rythme d'étude choisi, en heures par semaine (absent : RYTHME_DEFAUT). Sert aux projections du cockpit, jamais à un statut. */
+  /** Rythme d'étude choisi, en compétences par semaine (absent : RYTHME_DEFAUT). Sert aux projections du cockpit, jamais à un statut. Les états enregistrés quand le rythme se comptait en heures (jusqu'à 40) restent lisibles : la valeur est ramenée dans les bornes à la lecture. */
   rythme: z.number().int().min(1).max(40).optional(),
 });
 
 export type EtatNoeud = z.infer<typeof EtatNoeudSchema>;
 export type EtatPratique = z.infer<typeof EtatPratiqueSchema>;
 
-/** Rythme d'étude : défaut et bornes (heures par semaine). */
-export const RYTHME_DEFAUT = 4;
+/** Rythme d'étude : défaut et bornes (compétences par semaine). */
+export const RYTHME_DEFAUT = 2;
 export const RYTHME_MIN = 1;
-export const RYTHME_MAX = 40;
+export const RYTHME_MAX = 10;
 
 /** Rythme choisi, ou le défaut. */
-export const rythmeDe = (etat: Pick<EtatPratique, "rythme">): number => etat.rythme ?? RYTHME_DEFAUT;
+export const rythmeDe = (etat: Pick<EtatPratique, "rythme">): number => Math.min(RYTHME_MAX, Math.max(RYTHME_MIN, etat.rythme ?? RYTHME_DEFAUT));
 
-/** Fixe le rythme (arrondi à l'heure, borné). */
-export function definirRythme(etat: EtatPratique, heuresParSemaine: number): EtatPratique {
-  const h = Math.min(RYTHME_MAX, Math.max(RYTHME_MIN, Math.round(heuresParSemaine)));
-  return { ...etat, rythme: h };
+/** Fixe le rythme (arrondi à la compétence, borné). */
+export function definirRythme(etat: EtatPratique, competencesParSemaine: number): EtatPratique {
+  const n = Math.min(RYTHME_MAX, Math.max(RYTHME_MIN, Math.round(competencesParSemaine)));
+  return { ...etat, rythme: n };
 }
 
 export const etatVide = (now: Date): EtatPratique => ({ version: 1, creeLe: jourLocal(now), migre: false, declares: 0, messageMigrationVu: false, noeuds: {}, parcours: [], horsParcours: {} });

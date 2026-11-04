@@ -9,6 +9,7 @@ import ProduitsAnimes from "@/components/ProduitsAnimes";
 import Subscribe from "@/components/Subscribe";
 import { INSTANCE } from "@/lib/instance";
 import { TEXTES_ACCUEIL } from "@/lib/accueil-textes";
+import { investissementDe } from "@/lib/palier";
 import { chargerMondes, partCloud, repartition } from "@/lib/mondes";
 import { contactDisponible } from "@/lib/sections";
 import { proprietesOrientation } from "@/lib/orientationProps";
@@ -42,16 +43,15 @@ export default function AccueilRefonte() {
   const nbOutils = chargerLandscape().outils.length;
   // Compétences des parcours métier : la phrase les rattache à ces parcours (Sylva a son onglet à part).
   const nbCompetences = new Set(parcoursMetier(roadmaps).flatMap((r) => r.noeuds.map((n) => n.id))).size;
-  const niveaux = new Map(roadmapGraphe?.noeuds.map((n) => [n.id, n.niveau]));
-  // Heures : l'hypothèse éditoriale de content/orientation.json (par niveau), la même que celle du diagnostic.
-  const carte = roadmapGraphe && noeudCible ? disposerCarte(roadmapGraphe, ["sriov", cibleGraphe], { heures: (id) => o.config.duree_par_niveau_heures[niveaux.get(id)!] }) : null;
+  // Investissement léger, moyen ou long : la table de content/orientation.json et le palier visé de chaque compétence, comme pour le diagnostic.
+  const carte = roadmapGraphe && noeudCible ? disposerCarte(roadmapGraphe, ["sriov", cibleGraphe], { investissement: investissementDe(roadmapGraphe, o.config.investissement_par_palier) }) : null;
   const diagnostic = (seulementSiPartage: boolean) => (
     <DiagnosticAvecCarte
       config={o.config}
       parcours={o.parcours}
       titresNoeuds={o.titresNoeuds}
       projets={o.projets}
-      durees={o.durees}
+      investissements={o.investissements}
       rolesSansParcours={{}}
       testables={[]}
       seulementSiPartage={seulementSiPartage}
@@ -113,7 +113,7 @@ export default function AccueilRefonte() {
                     config={o.config}
                     parcours={o.parcours}
                     titresNoeuds={o.titresNoeuds}
-                    durees={o.durees.noeuds}
+                    investissements={o.investissements.noeuds}
                     carteParDefaut={carte}
                     legendeCarte={legendeCarte}
                     nbOutils={nbOutils}

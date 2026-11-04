@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Orientation } from "@/lib/orientation-schema";
 import type { DonneesProgramme as Donnees } from "@/produits/cockpit";
 import { Programme, Rythme, placerSemaines, projeter } from "@/produits/cockpit";
 import { urlNoeud } from "@/lib/urls";
@@ -16,7 +15,7 @@ const charger = () => (promesse ??= fetch("/programmes.json").then((r) => (r.ok 
  * Raccord de page (pas un produit) : le programme du parcours recommandé, avec le rythme mémorisé par le produit Progression.
  * Se masque tant que les données ne sont pas là (hors ligne : le résultat du diagnostic reste complet sans lui).
  */
-export default function ProgrammeChoisi({ roadmapId, parNiveau }: { roadmapId: string; parNiveau: Orientation["duree_par_niveau_heures"] }) {
+export default function ProgrammeChoisi({ roadmapId }: { roadmapId: string }) {
   const [programmes, setProgrammes] = useState<Record<string, Avec> | null>(null);
   const { rythme, definir } = useRythme();
   useEffect(() => {
@@ -35,7 +34,7 @@ export default function ProgrammeChoisi({ roadmapId, parNiveau }: { roadmapId: s
   const programme = placerSemaines(base, rythme);
   return (
     <div className="space-y-4">
-      <Programme programme={programme} parNiveau={parNiveau} href={(id) => urlNoeud(roadmapId, id)} />
+      <Programme programme={programme} href={(id) => urlNoeud(roadmapId, id)} />
       <Rythme rythme={rythme} onChange={definir} projection={projeter(programme.restantes, rythme, new Date())} />
     </div>
   );

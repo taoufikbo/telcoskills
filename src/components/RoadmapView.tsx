@@ -9,7 +9,7 @@ import { LIBELLE_NIVEAU } from "@/lib/libelles";
 import type { Roadmap } from "@/lib/schema";
 import { PASTILLE_NIVEAU } from "@/lib/styles";
 import { Cockpit, Programme, calculerCockpit } from "@/produits/cockpit";
-import type { Orientation } from "@/lib/orientation-schema";
+import type { TableInvestissement } from "@/produits/cockpit";
 import { estLienEtat, useCalendrier, useEcheances, useProgression, useRythme } from "@/produits/progression";
 import { useVisiteur } from "@/produits/visiteur";
 import type { InfoVideo } from "@/lib/formatVideo";
@@ -37,7 +37,7 @@ function useEcranLarge(): boolean {
   );
 }
 
-export default function RoadmapView({ roadmap, video, projetId, parNiveau, entete }: { roadmap: Roadmap; video: InfoVideo | null; projetId?: string; /** Heures estimées par niveau (hypothèse éditoriale de orientation.json). */ parNiveau: Orientation["duree_par_niveau_heures"]; /** Rendu serveur sous le titre (origine de la roadmap). */ entete?: ReactNode }) {
+export default function RoadmapView({ roadmap, video, projetId, table, entete }: { roadmap: Roadmap; video: InfoVideo | null; projetId?: string; /** Investissement léger, moyen, long par niveau et palier (hypothèse éditoriale de orientation.json). */ table: TableInvestissement; /** Rendu serveur sous le titre (origine de la roadmap). */ entete?: ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
@@ -93,8 +93,8 @@ export default function RoadmapView({ roadmap, video, projetId, parNiveau, entet
   };
 
   const cockpit = useMemo(
-    () => calculerCockpit({ roadmap, parNiveau, rythme, now: new Date(), decompte, suivi, echeances, calendrier, cibleId, progression }),
-    [roadmap, parNiveau, rythme, decompte, suivi, echeances, calendrier, cibleId, progression],
+    () => calculerCockpit({ roadmap, table, rythme, now: new Date(), decompte, suivi, echeances, calendrier, cibleId, progression }),
+    [roadmap, table, rythme, decompte, suivi, echeances, calendrier, cibleId, progression],
   );
 
   const noeudOuvert = roadmap.noeuds.find((n) => n.id === selection);
@@ -117,7 +117,6 @@ export default function RoadmapView({ roadmap, video, projetId, parNiveau, entet
       <Cockpit
         donnees={cockpit}
         titre={roadmap.titre}
-        parNiveau={parNiveau}
         onOuvrir={ouvrir}
         onRythme={definirRythme}
         onObjectif={voirObjectif}
@@ -135,7 +134,7 @@ export default function RoadmapView({ roadmap, video, projetId, parNiveau, entet
       />
 
       <div className="border-b px-4 py-5" style={{ borderColor: "var(--filet)" }}>
-        <Programme programme={cockpit.programme} parNiveau={parNiveau} suivi onOuvrir={ouvrir} />
+        <Programme programme={cockpit.programme} suivi onOuvrir={ouvrir} />
       </div>
 
       <div ref={carteRef} className="scroll-mt-2">

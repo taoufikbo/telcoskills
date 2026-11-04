@@ -35,17 +35,17 @@ describe("disposerCarte", () => {
   });
   it("est sérialisable (passée telle quelle du serveur au composant)", () => expect(JSON.parse(JSON.stringify(d))).toEqual(d));
   it("refuse une cible inconnue", () => expect(() => disposerCarte(roadmap, ["inconnue"])).toThrow(/inconnue/));
-  it("donne à chaque compétence son amont (prérequis transitifs dans la carte) et, si demandé, les heures cumulées", () => {
-    const avecHeures = disposerCarte(roadmap, ["sriov", "ocp-rds"], { heures: () => 2 });
+  it("donne à chaque compétence son amont (prérequis transitifs dans la carte) et, si demandé, la répartition léger / moyen / long cumulée", () => {
+    const avecHeures = disposerCarte(roadmap, ["sriov", "ocp-rds"], { investissement: () => 2 });
     const ids = new Set(avecHeures.noeuds.map((n) => n.id));
     for (const n of avecHeures.noeuds) {
       expect(n.amont).not.toContain(n.id);
       for (const a of n.amont) expect(ids.has(a)).toBe(true);
       const directs = roadmap.noeuds.find((x) => x.id === n.id)!.prerequis.filter((p) => ids.has(p));
       for (const p of directs) expect(n.amont).toContain(p);
-      expect(n.heures).toBe(2 * (n.amont.length + 1));
+      expect(n.effort).toEqual({ legers: 0, moyens: n.amont.length + 1, longs: 0 });
     }
-    expect(d.noeuds.every((n) => n.heures === undefined)).toBe(true);
+    expect(d.noeuds.every((n) => n.effort === undefined)).toBe(true);
   });
 });
 

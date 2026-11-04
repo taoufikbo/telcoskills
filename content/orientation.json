@@ -265,11 +265,5 @@
       "notions": "sylva-projet",
       "aise": "sylva-architecture"
     }
-  },
-  "duree_par_niveau_heures": {
-    "fondamental": 4,
-    "intermediaire": 8,
-    "avance": 12,
-    "transverse": 4
   }
 }

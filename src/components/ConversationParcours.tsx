@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
-import { libelleDuree } from "@/lib/duree";
+import { LIBELLE_INVESTISSEMENT, type Investissement } from "@/lib/palier";
 import { prochaineQuestion, recommander, reponsesValides, type Orientation, type Reponses } from "@/lib/orientation-schema";
 import { urlNoeud, urlRoadmap } from "@/lib/urls";
 import { ANCRE_DIAGNOSTIC, PARAM_PROFIL, decoderProfil, encoderProfil } from "@/produits/diagnostic";
@@ -14,8 +14,8 @@ type Props = {
   parcours: Record<string, { titre: string }>;
   /** Titre du nœud de départ, par « parcours/nœud ». */
   titresNoeuds: Record<string, string>;
-  /** Heures du nœud de départ, par « parcours/nœud ». */
-  durees: Record<string, { noeud: number }>;
+  /** Investissement (léger, moyen, long) du nœud de départ, par « parcours/nœud ». */
+  investissements: Record<string, { noeud?: Investissement }>;
   /** Réponses données jusqu'ici : la page en déduit le parcours probable. */
   onBrouillon: (reponses: Partial<Reponses>) => void;
   /** Parcours et premier pas recommandés une fois les trois réponses données (null quand on recommence). */
@@ -36,7 +36,7 @@ type Message = { auteur: "assistant" | "vous"; texte: string };
  * viennent de content/orientation.json ; chaque réponse est un bouton. Même calcul que le diagnostic, présenté comme une
  * discussion : c'est elle qui choisit le parcours, la carte voisine le dessine.
  */
-export default function ConversationParcours({ config, parcours, titresNoeuds, durees, onBrouillon, onResultat }: Props) {
+export default function ConversationParcours({ config, parcours, titresNoeuds, investissements, onBrouillon, onResultat }: Props) {
   const [locales, setLocales] = useState<Partial<Reponses>>({});
   const [enAttente, setEnAttente] = useState(false);
   const [copie, setCopie] = useState(false);
@@ -124,7 +124,7 @@ export default function ConversationParcours({ config, parcours, titresNoeuds, d
     messages.push({ auteur: "assistant", texte: q.question }, { auteur: "vous", texte: option.libelle });
   }
   const noeud = reco ? titresNoeuds[`${reco.roadmapId}/${reco.noeudId}`] : "";
-  const depart = reco ? durees[`${reco.roadmapId}/${reco.noeudId}`] : undefined;
+  const depart = reco ? investissements[`${reco.roadmapId}/${reco.noeudId}`] : undefined;
 
   return (
     <section aria-labelledby="titre-conversation" className="panneau overflow-hidden">
@@ -208,7 +208,7 @@ export default function ConversationParcours({ config, parcours, titresNoeuds, d
               </span>
               <br />
               <strong>{noeud}</strong>
-              {depart && <span style={{ color: "var(--muted)" }}> : {libelleDuree(depart.noeud)}</span>}
+              {depart?.noeud && <span style={{ color: "var(--muted)" }}> : investissement {LIBELLE_INVESTISSEMENT[depart.noeud]}</span>}
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Link href={urlNoeud(reco.roadmapId, reco.noeudId)} className="btn btn-primary">

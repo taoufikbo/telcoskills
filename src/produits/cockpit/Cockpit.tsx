@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import type { Orientation } from "@/lib/orientation-schema";
+import { libelleEffort } from "@/lib/palier";
 import { urlProjet } from "@/lib/urls";
 import type { Cockpit as Donnees } from "./calcul";
 import { formaterArrivee, libelleSemaines } from "./format";
@@ -12,11 +12,9 @@ type Props = {
   donnees: Donnees;
   /** Titre de la roadmap (pour le texte alternatif de la barre). */
   titre: string;
-  /** Hypothèse éditoriale d'heures par niveau, rappelée en note. */
-  parNiveau: Orientation["duree_par_niveau_heures"];
   /** Événements de sortie. */
   onOuvrir: (id: string) => void;
-  onRythme: (heuresParSemaine: number) => void;
+  onRythme: (competencesParSemaine: number) => void;
   /** Ouvre la vue Objectif ; `null` : sans cible encore choisie. */
   onObjectif: (id: string | null) => void;
   /** Parcours terminé : renvoie vers le projet fil rouge. */
@@ -50,8 +48,8 @@ function Mesure({ valeur, libelle }: { valeur: string; libelle: string }) {
   );
 }
 
-/** Le cockpit d'une roadmap : où j'en suis, les heures, la prochaine étape en un clic, les révisions, l'objectif, la date d'arrivée estimée. */
-export default function Cockpit({ donnees, titre, parNiveau, onOuvrir, onRythme, onObjectif, projetId, aide = false, parcours }: Props) {
+/** Le cockpit d'une roadmap : où j'en suis, l'investissement, la prochaine étape en un clic, les révisions, l'objectif, la date d'arrivée estimée. */
+export default function Cockpit({ donnees, titre, onOuvrir, onRythme, onObjectif, projetId, aide = false, parcours }: Props) {
   const { programme: p, decompte: d, suite, revision, objectif, projection, rythme, aVenir } = donnees;
   const aDecouvrir = Math.max(0, d.actifs - d.acquis - d.vus);
   const etiquette = suite.type === "debut" ? "Commencer ici" : suite.type === "termine" ? "Parcours terminé" : suite.enCours ? "Reprendre ici" : "Prochaine étape";
@@ -75,15 +73,16 @@ export default function Cockpit({ donnees, titre, parNiveau, onOuvrir, onRythme,
           </p>
           <Barre acquis={d.acquis} vus={d.vus} total={d.actifs} libelle={`Compétences acquises par un test et vues : ${titre}`} />
           <dl className="grid grid-cols-3 gap-4 border-t pt-4" style={{ borderColor: "var(--filet)" }}>
-            <Mesure valeur={`${p.faites} h`} libelle="faites" />
-            <Mesure valeur={`${p.restantes} h`} libelle="restantes" />
-            <Mesure valeur={`${p.heures} h`} libelle="au total" />
+            <Mesure valeur={`${p.acquis}`} libelle="acquises" />
+            <Mesure valeur={`${p.restantes}`} libelle="restantes" />
+            <Mesure valeur={`${p.actifs}`} libelle="au total" />
           </dl>
           <Rythme rythme={rythme} onChange={onRythme} projection={projection} />
-          <p className="text-xs" style={{ color: "var(--muted)" }}>
-            Estimation indicative : heures supposées par niveau ({parNiveau.fondamental} h fondamental, {parNiveau.intermediaire} h intermédiaire, {parNiveau.avance} h avancé, {parNiveau.transverse} h transverse), comptées pour les
-            compétences acquises par un test. Ce n&apos;est pas une mesure de votre temps.
-          </p>
+          {libelleEffort(p.effort) && (
+            <p className="text-xs" style={{ color: "var(--muted)" }}>
+              Au palier visé pour ce métier : {libelleEffort(p.effort)}. Une échelle d&apos;investissement, pas une durée : le rythme ci-dessus compte des compétences.
+            </p>
+          )}
         </div>
 
         <div className="space-y-5">
@@ -146,12 +145,12 @@ export default function Cockpit({ donnees, titre, parNiveau, onOuvrir, onRythme,
                   <p className="text-sm">Objectif atteint : toutes ses compétences sont acquises.</p>
                 ) : (
                   <p className="text-sm">
-                    {objectif.restantes} compétence{objectif.restantes > 1 ? "s" : ""} à acquérir, soit environ {objectif.heures} h (estimation indicative) ; chemin critique : {objectif.etapesCritiques} étape
+                    {objectif.restantes} compétence{objectif.restantes > 1 ? "s" : ""} à acquérir, {libelleEffort(objectif.effort) && <> ({libelleEffort(objectif.effort)})</>} ; chemin critique : {objectif.etapesCritiques} étape
                     {objectif.etapesCritiques > 1 ? "s" : ""} à la suite.
                     {objectif.projection.arrivee && (
                       <>
                         {" "}
-                        À {rythme} h par semaine : {libelleSemaines(objectif.projection.semaines)}, vers le {formaterArrivee(objectif.projection.arrivee)}.
+                        À {rythme} compétence{rythme > 1 ? "s" : ""} par semaine : {libelleSemaines(objectif.projection.semaines)}, vers le {formaterArrivee(objectif.projection.arrivee)}.
                       </>
                     )}
                   </p>

@@ -32,10 +32,8 @@ export const OrientationSchema = z.object({
   ordre: z.array(slug).min(1),
   questions: z.array(QuestionSchema).length(3),
   /** Premier nœud conseillé, par parcours et par niveau en télécom. */
-  /** Heures d'étude supposées par compétence, selon son niveau : hypothèse éditoriale, jamais une mesure. */
-  duree_par_niveau_heures: z.object({ fondamental: z.number().positive(), intermediaire: z.number().positive(), avance: z.number().positive(), transverse: z.number().positive() }),
-  /** Investissement (1 léger, 2 moyen, 3 long) selon le niveau de difficulté et le palier visé : échelle ordinale, hypothèse éditoriale, sans durée en heures. */
-  investissement_par_palier: z.record(z.enum(["fondamental", "intermediaire", "avance", "transverse"]), z.record(z.enum(["1", "2", "3", "4", "5"]), z.number().int().min(1).max(3))).optional(),
+  /** Investissement (1 léger, 2 moyen, 3 long) selon le niveau de difficulté et le palier visé : échelle ordinale, hypothèse éditoriale, jamais une durée. */
+  investissement_par_palier: z.record(z.enum(["fondamental", "intermediaire", "avance", "transverse"]), z.record(z.enum(["1", "2", "3", "4", "5"]), z.number().int().min(1).max(3))),
   premiers_noeuds: z.record(slug, z.object({ aucune: slug, notions: slug, aise: slug })),
 });
 

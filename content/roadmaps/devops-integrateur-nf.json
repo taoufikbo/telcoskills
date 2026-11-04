@@ -4,7 +4,9 @@
   "type": "role",
   "presentation": "Cette roadmap s'adresse aux profils DevOps ou IT sans passé télécom qui doivent intégrer des fonctions réseau : d'abord le vocabulaire et les exigences du monde opérateur, puis le cœur 5G, le packaging, les tests et l'exploitation.",
   "version": "0.1",
-  "provenance": { "type": "editoriale" },
+  "provenance": {
+    "type": "editoriale"
+  },
   "source": "Rédaction éditoriale pour des profils DevOps ou IT sans passé télécom qui doivent intégrer des fonctions réseau (NF) ; elle réutilise des nœuds des roadmaps « Ingénieur CaaS telco » et « Intégrateur NF, domaine 5GC » et ne s'appuie pas sur une analyse d'offres d'emploi. Le champ 'demande' n'est donc pas renseigné. Les références juridiques et techniques sont à vérifier dans leur version en vigueur.",
   "legende_demande": {
     "forte": "présent dans la majorité des offres",
@@ -35,7 +37,8 @@
           "nom": "Open5GS : démarrage rapide",
           "url": "https://open5gs.org/open5gs/docs/guide/01-quickstart/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "tel-vocabulaire",
@@ -52,7 +55,8 @@
           "nom": "3GPP TR 21.905 : vocabulaire (accès libre)",
           "url": "https://www.3gpp.org/ftp/Specs/archive/21_series/21.905/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "tel-nf",
@@ -74,7 +78,8 @@
           "nom": "ETSI OSM : orchestrateur MANO open source",
           "url": "https://osm.etsi.org/docs/user-guide/latest/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "tel-exigences-continuite",
@@ -96,7 +101,8 @@
           "nom": "Kubernetes : PodDisruptionBudget",
           "url": "https://kubernetes.io/docs/tasks/run-application/configure-pdb/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "archi-5g",
@@ -113,7 +119,8 @@
           "nom": "3GPP TS 23.501 : architecture du système 5G (accès libre)",
           "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.501/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "dialogue-experts",
@@ -130,7 +137,8 @@
           "nom": "3GPP TR 21.905 : vocabulaire (accès libre)",
           "url": "https://www.3gpp.org/ftp/Specs/archive/21_series/21.905/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "linux",
@@ -160,7 +168,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "git-ci",
@@ -183,7 +192,8 @@
           "langue": "en",
           "auteur": "GitLab"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "conteneurs",
@@ -216,7 +226,8 @@
           "langue": "en",
           "auteur": "CRI-O"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "k8s-archi",
@@ -249,7 +260,8 @@
           "langue": "en",
           "auteur": "CNCF"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "k8s-workloads",
@@ -269,7 +281,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "k8s-services",
@@ -290,7 +303,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "k8s-stockage",
@@ -310,7 +324,8 @@
           "langue": "en",
           "auteur": "Kubernetes"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "reseau-ip",
@@ -332,7 +347,8 @@
           "langue": "en",
           "auteur": "Cisco"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "cni",
@@ -358,7 +374,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "multus",
@@ -378,7 +395,8 @@
           "langue": "en",
           "auteur": "K8s Network Plumbing WG"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "sriov",
@@ -403,7 +421,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "pieges-reseau",
@@ -421,7 +440,8 @@
           "nom": "Multus CNI (dépôt source)",
           "url": "https://github.com/k8snetworkplumbingwg/multus-cni"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "identifiants",
@@ -438,7 +458,8 @@
           "nom": "3GPP TS 23.003 : numérotation, adressage et identification (accès libre)",
           "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.003/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sbi-http2",
@@ -455,7 +476,8 @@
           "nom": "5GC_APIs : spécifications OpenAPI des interfaces SBI 3GPP",
           "url": "https://github.com/jdegre/5GC_APIs"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "traces",
@@ -472,7 +494,8 @@
           "nom": "Wireshark : documentation",
           "url": "https://www.wireshark.org/docs/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "amf",
@@ -490,7 +513,8 @@
           "nom": "free5GC : AMF (code source)",
           "url": "https://github.com/free5gc/amf"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "smf-upf",
@@ -508,7 +532,8 @@
           "nom": "free5GC : UPF en Go (code source)",
           "url": "https://github.com/free5gc/go-upf"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "nrf-scp",
@@ -525,7 +550,8 @@
           "nom": "free5GC : NRF (code source)",
           "url": "https://github.com/free5gc/nrf"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "enregistrement",
@@ -542,7 +568,8 @@
           "nom": "3GPP TS 23.502 : procédures du système 5G (accès libre)",
           "url": "https://www.3gpp.org/ftp/Specs/archive/23_series/23.502/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "session-pdu",
@@ -560,7 +587,8 @@
           "nom": "UERANSIM : simulateur d'UE et de gNB 5G",
           "url": "https://github.com/aligungr/UERANSIM"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "deploiement-lab",
@@ -579,7 +607,8 @@
           "url": "https://github.com/Orange-OpenSource/towards5gs-helm"
         }
       ],
-      "projet": "Déployer free5GC ou Open5GS sur un cluster de lab, y connecter un simulateur de gNB et d'UE, et établir une session PDU avec capture de trace."
+      "projet": "Déployer free5GC ou Open5GS sur un cluster de lab, y connecter un simulateur de gNB et d'UE, et établir une session PDU avec capture de trace.",
+      "cible": 3
     },
     {
       "id": "helm",
@@ -599,7 +628,8 @@
           "langue": "en",
           "auteur": "Helm"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "helm-cnf",
@@ -616,7 +646,8 @@
           "nom": "Helm : documentation",
           "url": "https://helm.sh/docs/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "config-nf",
@@ -633,7 +664,8 @@
           "nom": "YangModels/yang : modèles YANG de référence",
           "url": "https://github.com/YangModels/yang"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "etsi-sol",
@@ -650,7 +682,8 @@
           "nom": "OpenStack Tacker : orchestration NFV conforme ETSI",
           "url": "https://docs.openstack.org/tacker/latest/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "gitops",
@@ -671,7 +704,8 @@
           "langue": "en",
           "auteur": "Argo CD"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "onboarding-editeur",
@@ -689,7 +723,8 @@
           "nom": "towards5gs-helm : exemple de livrable de NF",
           "url": "https://github.com/Orange-OpenSource/towards5gs-helm"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "dossier-integration",
@@ -706,7 +741,8 @@
           "nom": "arc42 : modèle libre de documentation d'architecture",
           "url": "https://arc42.org/overview"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "ci-cd-integration",
@@ -724,7 +760,8 @@
           "nom": "Tekton : pipelines CI/CD Kubernetes",
           "url": "https://tekton.dev/docs/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "simulation-ran-ue",
@@ -741,7 +778,8 @@
           "nom": "gNBsim : simulateur de gNB et d'UE (OMEC)",
           "url": "https://github.com/omec-project/gnbsim"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "tests-fonctionnels",
@@ -759,7 +797,8 @@
           "nom": "Robot Framework : automatisation de tests",
           "url": "https://robotframework.org/"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "tests-perf",
@@ -776,7 +815,8 @@
           "nom": "TRex : générateur de trafic open source",
           "url": "https://github.com/cisco-system-traffic-generator/trex-core"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "lab-as-code",
@@ -795,7 +835,8 @@
           "url": "https://kind.sigs.k8s.io/"
         }
       ],
-      "projet": "Écrire un script qui crée un cluster kind, déploie un cœur 5G open source et lance un test de session PDU, en une seule commande."
+      "projet": "Écrire un script qui crée un cluster kind, déploie un cœur 5G open source et lance un test de session PDU, en une seule commande.",
+      "cible": 3
     },
     {
       "id": "tests-config",
@@ -818,7 +859,8 @@
           "nom": "kube-linter : analyse statique des manifestes",
           "url": "https://github.com/stackrox/kube-linter"
         }
-      ]
+      ],
+      "cible": 3
     },
     {
       "id": "obs-metrics",
@@ -838,7 +880,8 @@
           "langue": "en",
           "auteur": "Prometheus"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "obs-logs",
@@ -866,7 +909,8 @@
           "langue": "en",
           "auteur": "Elastic"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "kpi-5gc",
@@ -884,7 +928,8 @@
           "nom": "Prometheus : documentation",
           "url": "https://prometheus.io/docs/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "analyse-incident",
@@ -902,7 +947,8 @@
           "nom": "OpenTelemetry : documentation",
           "url": "https://opentelemetry.io/docs/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "resilience-nf",
@@ -919,7 +965,8 @@
           "nom": "Kubernetes : PodDisruptionBudget",
           "url": "https://kubernetes.io/docs/tasks/run-application/configure-pdb/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "upgrade-nf",
@@ -937,7 +984,8 @@
           "nom": "Argo Rollouts : déploiements progressifs",
           "url": "https://argoproj.github.io/argo-rollouts/"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sec-supply",
@@ -970,7 +1018,8 @@
           "langue": "en",
           "auteur": "Sigstore"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sec-secrets",
@@ -1006,7 +1055,8 @@
           "langue": "en",
           "auteur": "Red Hat"
         }
-      ]
+      ],
+      "cible": 2
     },
     {
       "id": "sec-sba",
@@ -1024,7 +1074,8 @@
           "nom": "3GPP TS 33.501 : sécurité du système 5G (accès libre)",
           "url": "https://www.3gpp.org/ftp/Specs/archive/33_series/33.501/"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "sec-plateforme",
@@ -1041,7 +1092,8 @@
           "nom": "Kubernetes : contexte de sécurité d'un pod",
           "url": "https://kubernetes.io/docs/tasks/configure-pod-container/security-context/"
         }
-      ]
+      ],
+      "cible": 1
     },
     {
       "id": "reglementation-5gc",
@@ -1058,7 +1110,8 @@
           "nom": "OpenLI : interception légale open source conforme ETSI",
           "url": "https://github.com/OpenLI-NZ/openli"
         }
-      ]
+      ],
+      "cible": 1
     }
   ]
 }

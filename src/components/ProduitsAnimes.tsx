@@ -89,7 +89,7 @@ export default function ProduitsAnimes({ nbCompetences, nbOutils, outils, phases
           </div>
         </Carte>
 
-        <Carte titre="Un programme, avec des heures" texte="Pour chaque parcours : un programme, des heures estimées et un rythme que vous réglez." href={BASE_ROADMAPS}>
+        <Carte titre="Un programme, avec le palier visé" texte="Pour chaque parcours : un programme par bloc, le palier visé pour votre métier, léger, moyen ou long, et un rythme que vous réglez." href={BASE_ROADMAPS}>
           <div className="w-full max-w-[16rem] space-y-3">
             {blocs.slice(0, 3).map((b, i) => (
               <div key={b} className="space-y-1">
