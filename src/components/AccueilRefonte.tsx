@@ -1,13 +1,14 @@
 import Link from "next/link";
 import CarteHerosSuivie from "@/components/CarteHerosSuivie";
-import ChoixEtCarte, { type MetierSurAxe } from "@/components/ChoixEtCarte";
+import ChoixEtCarte from "@/components/ChoixEtCarte";
+import ConvergenceMetiers from "@/components/ConvergenceMetiers";
 import DiagnosticAvecCarte from "@/components/DiagnosticAvecCarte";
 import Draft from "@/components/Draft";
 import { LienSuivi } from "@/produits/mesure";
+import ProduitsAnimes from "@/components/ProduitsAnimes";
 import Subscribe from "@/components/Subscribe";
 import { INSTANCE } from "@/lib/instance";
 import { TEXTES_ACCUEIL } from "@/lib/accueil-textes";
-import { chargerMondes, partCloud, repartition } from "@/lib/mondes";
 import { contactDisponible } from "@/lib/sections";
 import { proprietesOrientation } from "@/lib/orientationProps";
 import { parcoursMetier } from "@/lib/rubriques";
@@ -58,28 +59,6 @@ export default function AccueilRefonte() {
 
   const chiffres = chiffresCatalogue({ roadmaps, projets: chargerProjets() });
 
-  // Les métiers placés sur l'axe cloud, télécom : du plus proche du cloud au plus proche du télécom.
-  const mondes = chargerMondes();
-  const metiers: MetierSurAxe[] = parcoursMetier(roadmaps)
-    .map((r) => {
-      const rep = repartition(r, mondes);
-      const noeudId = o.config.premiers_noeuds[r.id].aucune;
-      return {
-        parts: { cloud: rep.cloud, convergence: rep.convergence, telecom: rep.telecom },
-        part: partCloud(rep),
-        metier: {
-          id: r.id,
-          titre: r.titre.split(" (")[0],
-          presentation: r.presentation,
-          nbCompetences: r.noeuds.length,
-          transverses: rep.transverse,
-          depart: { noeudId, titre: o.titresNoeuds[`${r.id}/${noeudId}`], heures: o.durees.noeuds[`${r.id}/${noeudId}`].noeud },
-        },
-      };
-    })
-    .sort((a, b) => b.part - a.part)
-    .map(({ metier, parts }) => ({ ...metier, parts }));
-
   const legendeCarte =
     roadmapGraphe && noeudCible && carte ? (
       <figcaption className="mono mt-3">
@@ -125,12 +104,7 @@ export default function AccueilRefonte() {
                     config={o.config}
                     parcours={o.parcours}
                     titresNoeuds={o.titresNoeuds}
-                    projets={o.projets}
-                    durees={o.durees}
-                    rolesSansParcours={{}}
-                    testables={[]}
-                    metiers={metiers}
-                    these={TEXTES_ACCUEIL.these}
+                    durees={o.durees.noeuds}
                     carteParDefaut={carte}
                     legendeCarte={legendeCarte}
                     nbOutils={nbOutils}
@@ -172,7 +146,19 @@ export default function AccueilRefonte() {
 
       <SelonVisiteur
         nouveau={
-          <Preuve chiffres={chiffres} />
+          <>
+            <ConvergenceMetiers roadmaps={roadmaps} these={TEXTES_ACCUEIL.these} />
+            <ProduitsAnimes
+              nbCompetences={nbCompetences}
+              nbOutils={nbOutils}
+              outils={chargerLandscape().outils.map((x) => x.nom)}
+              phases={chargerProjets()[0]?.phases.map((ph) => ph.titre) ?? []}
+              nbRoles={chargerProjets()[0]?.roles.length ?? 0}
+              competences={(roadmapGraphe?.noeuds ?? []).slice(0, 3).map((n) => n.titre)}
+              blocs={[...new Set((roadmapGraphe?.noeuds ?? []).map((n) => n.bloc))]}
+            />
+            <Preuve chiffres={chiffres} />
+          </>
         }
         revenant={
           <div id={ANCRE_DIAGNOSTIC} className="mx-auto max-w-4xl scroll-mt-24 px-4 py-16 empty:hidden sm:px-6">

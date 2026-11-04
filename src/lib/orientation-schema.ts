@@ -112,3 +112,8 @@ export function recommander(config: Orientation, reponses: Reponses): Recommanda
 export function reponsesValides(config: Orientation, r: Partial<Reponses> | null): r is Reponses {
   return !!r && config.questions.every((q) => q.options.some((o) => o.id === r[q.id]));
 }
+
+/** Prochaine question à poser d'après les réponses déjà données, dans l'ordre de la configuration ; undefined quand tout est répondu. */
+export function prochaineQuestion(config: Orientation, reponses: Partial<Reponses>) {
+  return config.questions.find((q) => !q.options.some((o) => o.id === reponses[q.id]));
+}

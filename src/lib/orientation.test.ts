@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { chargerOrientation, validerOrientation } from "./orientation";
-import { NIVEAUX_TELECOM, classerParcours, recommander, reponsesValides, type Reponses } from "./orientation-schema";
+import { NIVEAUX_TELECOM, classerParcours, prochaineQuestion, recommander, reponsesValides, type Reponses } from "./orientation-schema";
 import { chargerProjets } from "./projets";
 import { chargerRoadmaps } from "./roadmaps";
 
@@ -134,5 +134,18 @@ describe("orientation : classement provisoire", () => {
     const classement = classerParcours(config, { metier: "data-ia" });
     expect([...classement].sort()).toEqual([...config.ordre].sort());
     expect(classement[0]).toBe("ia-agentique-telco");
+  });
+});
+
+describe("orientation : prochaine question", () => {
+  it("suit l'ordre de la configuration, puis s'arrête", () => {
+    const [qm, qt, qo] = config.questions;
+    expect(prochaineQuestion(config, {})?.id).toBe(qm.id);
+    expect(prochaineQuestion(config, { metier: qm.options[0].id })?.id).toBe(qt.id);
+    expect(prochaineQuestion(config, { metier: qm.options[0].id, telecom: qt.options[0].id })?.id).toBe(qo.id);
+    expect(prochaineQuestion(config, { metier: qm.options[0].id, telecom: qt.options[0].id, objectif: qo.options[0].id })).toBeUndefined();
+  });
+  it("redemande une réponse qui ne correspond à aucune option", () => {
+    expect(prochaineQuestion(config, { metier: "inconnu" })?.id).toBe(config.questions[0].id);
   });
 });

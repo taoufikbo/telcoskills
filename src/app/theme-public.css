@@ -637,3 +637,161 @@ a.panneau:hover {
     display: none !important;
   }
 }
+
+/* ---------- Assistant de l'accueil : les trois points de saisie ---------- */
+.points-saisie {
+  display: inline-flex;
+  gap: 4px;
+}
+.points-saisie i {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--muted);
+  animation: saisie 1s ease-in-out infinite;
+}
+.points-saisie i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.points-saisie i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes saisie {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: none;
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .points-saisie i {
+    animation: none;
+    opacity: 0.6;
+  }
+}
+
+/* ---------- Vignettes animées de l'accueil (état final par défaut ; mouvement seulement si le visiteur l'accepte) ---------- */
+.pa-saisie {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  border-right: 1px solid var(--fg);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pa-noeud {
+    animation: pa-allume 6s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.7s);
+  }
+  .pa-saisie {
+    width: 0;
+    animation: pa-frappe 6s steps(6) infinite;
+  }
+  .pa-resultat {
+    opacity: 0;
+    animation: pa-apparait 6s ease infinite;
+    animation-delay: calc(2s + var(--i) * 0.4s);
+  }
+  .pa-barre {
+    transform-origin: left;
+    animation: pa-remplit 6s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.5s);
+  }
+  .pa-puce {
+    opacity: 0;
+    animation: pa-apparait 7s ease infinite;
+    animation-delay: calc(var(--i) * 0.25s);
+  }
+  .pa-phase {
+    animation: pa-balaye 6s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.45s);
+  }
+  .pa-coche {
+    opacity: 0;
+    animation: pa-apparait 6s ease infinite;
+    animation-delay: calc(var(--i) * 1.1s);
+  }
+}
+.pa-barre {
+  transform: scaleX(var(--p));
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pa-barre {
+    transform: scaleX(0);
+  }
+}
+@keyframes pa-allume {
+  0%,
+  8% {
+    fill: var(--surface);
+  }
+  20%,
+  80% {
+    fill: color-mix(in srgb, var(--accent) 22%, var(--surface));
+  }
+  100% {
+    fill: var(--surface);
+  }
+}
+@keyframes pa-frappe {
+  0%,
+  8% {
+    width: 0;
+  }
+  30%,
+  85% {
+    width: 6ch;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes pa-apparait {
+  0%,
+  5% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  15%,
+  85% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pa-remplit {
+  0%,
+  5% {
+    transform: scaleX(0);
+  }
+  40%,
+  88% {
+    transform: scaleX(var(--p));
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+@keyframes pa-balaye {
+  0%,
+  100% {
+    background: transparent;
+    color: var(--fg);
+  }
+  10%,
+  22% {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+  40% {
+    background: transparent;
+    color: var(--fg);
+  }
+}
