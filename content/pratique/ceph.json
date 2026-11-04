@@ -13,7 +13,7 @@
       "bonne": 0,
       "explication": "CRUSH calcule le placement à partir de la carte du cluster : les clients retrouvent les données par le calcul, sans interroger une table centrale.",
       "source": "Documentation Ceph",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -28,7 +28,7 @@
       "bonne": 2,
       "explication": "Par défaut, un pool répliqué conserve 3 copies de chaque objet.",
       "source": "Documentation Ceph",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     }
   ]

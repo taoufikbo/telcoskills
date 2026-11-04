@@ -59,8 +59,9 @@ describe("blocs testables du contenu livré", () => {
     const seul = { ...architecte, blocs: ["Fondations"], noeuds: architecte.noeuds.filter((n) => n.bloc === "Fondations") };
     expect(blocsTestables([seul])).toEqual([]);
   });
-  it("en production (brouillons retirés), aucun bloc n'est testable : aucun test ne peut s'afficher", () => {
-    const prod = fusionnerPratique(getRoadmap("architecte-caas-telco")!, entrees, false);
+  it("en production, des questions en brouillon ne rendent jamais un bloc testable, quel que soit le contenu actuel", () => {
+    const tousEnBrouillon = entrees.map((e) => ({ ...e, rappel: e.rappel?.map((q) => ({ ...q, statut: "brouillon" as const })), questionPrealable: e.questionPrealable && { ...e.questionPrealable, statut: "brouillon" as const } }));
+    const prod = fusionnerPratique(getRoadmap("architecte-caas-telco")!, tousEnBrouillon, false);
     expect(blocsTestables([prod])).toEqual([]);
   });
 });

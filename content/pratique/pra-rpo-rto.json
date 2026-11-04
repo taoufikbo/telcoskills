@@ -12,10 +12,10 @@
     "bonne": 1,
     "explication": "Le RPO (Recovery Point Objective) mesure la perte de données acceptable, exprimée en durée. La durée de reprise, c'est le RTO.",
     "source": "Résumé du nœud (pra-rpo-rto) : définition standard, à compléter par une ressource",
-    "statut": "brouillon"
+    "statut": "valide"
   },
   "contenu": {
-    "statut": "brouillon",
+    "statut": "valide",
     "vocabulaire": [
       {
         "terme": "RPO",
@@ -86,7 +86,7 @@
     "question": "Pourquoi un plan de reprise (PRA) plutôt qu'un plan de continuité (PCA) pour ce service ?",
     "reference": "Un PCA maintient le service pendant la panne (redondance active), au prix d'une architecture et d'une exploitation plus coûteuses. Un PRA accepte un arrêt court et rétablit le service ensuite : il suffit quand le RTO exigé par le métier le permet. Le choix dépend du RTO, du RPO et du budget, et s'écrit dans une décision d'architecture.",
     "source": "Résumé du nœud (pra-rpo-rto) : à compléter par une ressource",
-    "statut": "brouillon"
+    "statut": "valide"
   },
   "rappel": [
     {
@@ -101,7 +101,7 @@
       "bonne": 1,
       "explication": "Le RTO est la durée d'arrêt acceptable. La quantité de données perdues, c'est le RPO.",
       "source": "Résumé du nœud (pra-rpo-rto) : définition standard",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 0
     },
     {
@@ -116,7 +116,7 @@
       "bonne": 1,
       "explication": "Seule une réplication synchrone copie chaque écriture avant de l'acquitter. Les sauvegardes et snapshots laissent un intervalle de perte.",
       "source": "Documentation ODF (Disaster Recovery)",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 0
     },
     {
@@ -131,7 +131,7 @@
       "bonne": 0,
       "explication": "Un objectif non vérifié n'est qu'une intention : seul un test montre si la bascule tient dans le RTO et le RPO annoncés.",
       "source": "Résumé du nœud (pra-rpo-rto) : à compléter par une ressource",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     }
   ]

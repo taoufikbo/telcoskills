@@ -12,10 +12,10 @@
     "bonne": 1,
     "explication": "Thanos ajoute un stockage long terme sur un stockage objet et une requête globale sur plusieurs Prometheus. Alertmanager traite les alertes, Loki stocke des logs. Un second Prometheus qui copie le premier double le stockage local sans résoudre la rétention longue ni la requête globale.",
     "source": "À ajouter : documentation Thanos (thanos.io), absente des ressources de ce nœud",
-    "statut": "brouillon"
+    "statut": "valide"
   },
   "contenu": {
-    "statut": "brouillon",
+    "statut": "valide",
     "vocabulaire": [
       {
         "terme": "Série temporelle",
@@ -135,7 +135,7 @@
       "bonne": 1,
       "explication": "Prometheus évalue les règles et envoie les alertes déclenchées à Alertmanager. Alertmanager ne les évalue pas : il les regroupe, les déduplique et les achemine.",
       "source": "Prometheus : documentation",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 0
     },
     {
@@ -150,7 +150,7 @@
       "bonne": 1,
       "explication": "Alertmanager regroupe les alertes selon les labels choisis (group_by) et envoie une notification par groupe, pour ne pas noyer l'astreinte.",
       "source": "Prometheus : documentation",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 0
     },
     {
@@ -165,7 +165,7 @@
       "bonne": 1,
       "explication": "Le Sidecar, installé à côté de Prometheus, téléverse ses blocs vers le stockage objet. Query interroge, Ruler évalue des règles globales, Compactor compacte et réduit la résolution des données stockées.",
       "source": "À ajouter : documentation Thanos (thanos.io), absente des ressources de ce nœud",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 3
     }
   ]

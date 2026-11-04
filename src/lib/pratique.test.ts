@@ -61,14 +61,27 @@ describe("pratique : brouillons", () => {
       }
     }
   });
-  it("garde en brouillon tout le contenu écrit par l'assistant tant que l'auteur ne l'a pas validé", () => {
-    // Garde-fou de processus : ce test échouera le jour où l'auteur valide du contenu ; il faudra alors le retirer.
+  it("ne laisse sortir en production aucun contenu qui serait en brouillon, quel que soit le contenu actuel", () => {
+    // Garde-fou de processus, indépendant de ce que l'auteur a validé : on force tout en brouillon et on vérifie que rien ne reste.
+    const tousEnBrouillon = entrees.map((e) => ({
+      ...e,
+      questionPrealable: e.questionPrealable && { ...e.questionPrealable, statut: "brouillon" as const },
+      contenu: e.contenu && { ...e.contenu, statut: "brouillon" as const },
+      pourquoi: e.pourquoi && { ...e.pourquoi, statut: "brouillon" as const },
+      rappel: e.rappel?.map((q) => ({ ...q, statut: "brouillon" as const })),
+    }));
+    for (const r of chargerRoadmaps()) {
+      const prod = fusionnerPratique(r, tousEnBrouillon, false);
+      for (const n of prod.noeuds) {
+        const p = n.pratique;
+        expect(p === undefined || (!p.questionPrealable && !p.contenu && !p.pourquoi && !p.rappel), `${r.id}/${n.id}`).toBe(true);
+      }
+    }
+  });
+  it("n'a que des statuts connus (brouillon ou valide)", () => {
     for (const e of entrees) {
       const statuts = [e.questionPrealable?.statut, e.contenu?.statut, e.pourquoi?.statut, ...(e.rappel ?? []).map((x) => x.statut)].filter(Boolean);
-      expect(
-        statuts.every((s) => s === "brouillon"),
-        e.noeud,
-      ).toBe(true);
+      for (const s of statuts) expect(["brouillon", "valide"]).toContain(s);
     }
   });
 });

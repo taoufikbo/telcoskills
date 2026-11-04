@@ -12,10 +12,10 @@
     "bonne": 1,
     "explication": "etcd exige la majorité des membres (2 sur 3). Avec un seul membre restant, il n'y a plus de quorum : le plan de contrôle ne peut plus fonctionner et la reprise demande une intervention. Deux sites ne suffisent donc pas à répartir proprement trois membres.",
     "source": "etcd : modes de défaillance",
-    "statut": "brouillon"
+    "statut": "valide"
   },
   "contenu": {
-    "statut": "brouillon",
+    "statut": "valide",
     "vocabulaire": [
       {
         "terme": "Quorum",
@@ -86,7 +86,7 @@
     "question": "Pourquoi choisir deux clusters indépendants (un par site) plutôt qu'un seul cluster étiré sur deux sites ?",
     "reference": "Un cluster étiré sur deux sites ne survit pas à la perte du site qui porte la majorité du plan de contrôle (quorum), et la latence entre sites pèse sur etcd. Deux clusters indépendants isolent les pannes : la perte d'un site n'arrête pas l'autre. Contrepartie : il faut répliquer les données et orchestrer la bascule, avec un RPO et un RTO à définir.",
     "source": "etcd : modes de défaillance ; Kubernetes : topologies de haute disponibilité",
-    "statut": "brouillon"
+    "statut": "valide"
   },
   "rappel": [
     {
@@ -101,7 +101,7 @@
       "bonne": 1,
       "explication": "Le quorum est la majorité : 3 membres sur 5. Le cluster tolère donc la perte de 2 membres.",
       "source": "etcd : modes de défaillance",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 2
     },
     {
@@ -116,7 +116,7 @@
       "bonne": 0,
       "explication": "L'écriture n'est acquittée qu'après copie sur le second site : on ne perd presque rien, mais chaque écriture subit la latence du lien. Le RTO dépend en plus de la bascule.",
       "source": "Ceph : clusters étirés sur deux sites (stretch mode)",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 2
     },
     {
@@ -131,7 +131,7 @@
       "bonne": 0,
       "explication": "C'est un composant sans remplaçant : sa panne arrête le service. La haute disponibilité consiste à les supprimer ou à les redonder.",
       "source": "Kubernetes : topologies de haute disponibilité",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 3
     }
   ]

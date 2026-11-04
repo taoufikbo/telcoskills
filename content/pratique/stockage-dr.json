@@ -13,7 +13,7 @@
       "bonne": 0,
       "explication": "Le RBD mirroring réplique les images RBD d'un cluster vers un autre, de façon asynchrone. C'est la base de la reprise après sinistre avec ODF.",
       "source": "Documentation ODF (Disaster Recovery)",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -28,7 +28,7 @@
       "bonne": 0,
       "explication": "L'écriture est acquittée avant d'être copiée : au moment du sinistre, les dernières écritures peuvent manquer sur le second site.",
       "source": "Documentation ODF (Disaster Recovery)",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 2
     }
   ]

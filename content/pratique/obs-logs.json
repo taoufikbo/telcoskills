@@ -12,10 +12,10 @@
     "bonne": 0,
     "explication": "Loki indexe seulement les labels (métadonnées) et stocke les lignes de log compressées en blocs. Elasticsearch indexe le texte complet, ce qui demande plus de CPU, de mémoire et de disque. Contrepartie : la recherche plein texte est plus lente dans Loki.",
     "source": "Grafana Loki : documentation",
-    "statut": "brouillon"
+    "statut": "valide"
   },
   "contenu": {
-    "statut": "brouillon",
+    "statut": "valide",
     "vocabulaire": [
       {
         "terme": "Label",
@@ -95,7 +95,7 @@
       "bonne": 2,
       "explication": "Un DaemonSet garantit un pod par nœud, ce qui convient à un agent qui lit les logs locaux. Un Deployment place les pods où le planificateur le décide, sans garantie d'un par nœud.",
       "source": "À ajouter : documentation Kubernetes (DaemonSet), absente des ressources de ce nœud",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 0
     },
     {
@@ -110,7 +110,7 @@
       "bonne": 1,
       "explication": "Loki indexe les labels. On sélectionne d'abord les flux par leurs labels, puis on filtre le contenu des lignes de ces flux.",
       "source": "Grafana Loki : documentation",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 0
     },
     {
@@ -125,7 +125,7 @@
       "bonne": 1,
       "explication": "Chaque valeur distincte crée un nouveau flux : l'index et la mémoire grossissent. Les labels doivent rester peu nombreux et à valeurs limitées.",
       "source": "Grafana Loki : documentation",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 0
     }
   ]
