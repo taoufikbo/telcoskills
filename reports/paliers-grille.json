@@ -1,5 +1,5 @@
 {
-  "_etat": "APPLIQUÉE le 2026-11-04 sur décision de l'auteur, sans relecture complète (« on corrigera en prod »). Toutes les cases portent \"valide\": true. À relire et corriger : points connus = Sylva trop léger, `reseau-ip` trop haut chez l'architecte (règle de remontée des prérequis à plafonner), avis indépendant plus haut (inflation).",
+  "_etat": "APPLIQUÉE le 2026-11-04 sur décision de l'auteur, sans relecture complète (« on corrigera en prod »). Toutes les cases portent \"valide\": true. À relire et corriger : points connus = Sylva trop léger, `reseau-ip` trop haut chez l'architecte (règle de remontée des prérequis à plafonner), avis indépendant plus haut (inflation). Relecture avec l'auteur le 2026-11-04 : Sylva (8 compétences relevées) et la règle de remontée plafonnée à P3 (4 compétences de l'architecte, dont reseau-ip). Reste à relire : les autres blocs.",
   "paliers": {
     "1": "Dire à quoi ça sert et situer le composant ou le pattern dans l'architecture",
     "2": "Palier 1 + voir comment l'utiliser (lire une configuration, suivre un exemple)",
@@ -266,8 +266,8 @@
           "valide": true
         },
         "reseau-ip": {
-          "palier": 4,
-          "raison": "Remonté : prérequis direct de hld-lld (palier 5)",
+          "palier": 3,
+          "raison": "Remonté (prérequis direct d'un palier 5), plafonné à P3 : relu avec l'auteur le 2026-11-04.",
           "valide": true
         },
         "ha-geo": {
@@ -326,18 +326,18 @@
           "valide": true
         },
         "cnf-onboarding": {
-          "palier": 4,
-          "raison": "Remonté : prérequis direct de dimensionnement (palier 5)",
+          "palier": 3,
+          "raison": "Remonté (prérequis direct d'un palier 5), plafonné à P3 : relu avec l'auteur le 2026-11-04.",
           "valide": true
         },
         "ceph": {
-          "palier": 4,
-          "raison": "Remonté : prérequis direct de dimensionnement (palier 5)",
+          "palier": 3,
+          "raison": "Remonté (prérequis direct d'un palier 5), plafonné à P3 : relu avec l'auteur le 2026-11-04.",
           "valide": true
         },
         "perf-profile": {
-          "palier": 4,
-          "raison": "Remonté : prérequis direct de dimensionnement (palier 5)",
+          "palier": 3,
+          "raison": "Remonté (prérequis direct d'un palier 5), plafonné à P3 : relu avec l'auteur le 2026-11-04.",
           "valide": true
         },
         "reg-rgpd": {
@@ -826,13 +826,13 @@
           "valide": true
         },
         "sylva-upgrade": {
-          "palier": 3,
-          "raison": "Opération critique.",
+          "palier": 4,
+          "raison": "Relu avec l'auteur le 2026-11-04 : on y décide d'un retour arrière (diagnostiquer et arbitrer).",
           "valide": true
         },
         "sec-supply": {
-          "palier": 1,
-          "raison": "Sensibilisation.",
+          "palier": 2,
+          "raison": "Relu avec l'auteur le 2026-11-04 : le rôle déploie et opère, aligné sur l'ingénieur CaaS et le SRE.",
           "valide": true
         },
         "perf-hugepages": {
@@ -853,6 +853,36 @@
         "sylva-projet": {
           "palier": 2,
           "raison": "Remonté : prérequis direct de sylva-architecture (palier 3)",
+          "valide": true
+        },
+        "k8s-archi": {
+          "palier": 3,
+          "raison": "Relu avec l'auteur le 2026-11-04 : le rôle déploie et opère, aligné sur l'ingénieur CaaS et le SRE.",
+          "valide": true
+        },
+        "helm": {
+          "palier": 3,
+          "raison": "Relu avec l'auteur le 2026-11-04 : le rôle déploie et opère, aligné sur l'ingénieur CaaS et le SRE.",
+          "valide": true
+        },
+        "gitops": {
+          "palier": 3,
+          "raison": "Relu avec l'auteur le 2026-11-04 : le rôle déploie et opère, aligné sur l'ingénieur CaaS et le SRE.",
+          "valide": true
+        },
+        "obs-metrics": {
+          "palier": 3,
+          "raison": "Relu avec l'auteur le 2026-11-04 : le rôle déploie et opère, aligné sur l'ingénieur CaaS et le SRE.",
+          "valide": true
+        },
+        "obs-logs": {
+          "palier": 3,
+          "raison": "Relu avec l'auteur le 2026-11-04 : le rôle déploie et opère, aligné sur l'ingénieur CaaS et le SRE.",
+          "valide": true
+        },
+        "sylva-clusters-charge": {
+          "palier": 3,
+          "raison": "Relu avec l'auteur le 2026-11-04 : le rôle déploie et opère, aligné sur l'ingénieur CaaS et le SRE.",
           "valide": true
         }
       }

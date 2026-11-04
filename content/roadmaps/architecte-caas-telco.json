@@ -77,7 +77,7 @@
           "auteur": "Cisco"
         }
       ],
-      "cible": 4
+      "cible": 3
     },
     {
       "id": "conteneurs",
@@ -738,7 +738,7 @@
           "auteur": "Red Hat"
         }
       ],
-      "cible": 4
+      "cible": 3
     },
     {
       "id": "dimensionnement",
@@ -841,7 +841,7 @@
           "auteur": "Red Hat"
         }
       ],
-      "cible": 4
+      "cible": 3
     },
     {
       "id": "stockage-dr",
@@ -1533,7 +1533,7 @@
         }
       ],
       "projet": "Déployer un cœur 5G open source (free5GC ou Open5GS) sur un cluster de lab.",
-      "cible": 4
+      "cible": 3
     },
     {
       "id": "cnf-ops",

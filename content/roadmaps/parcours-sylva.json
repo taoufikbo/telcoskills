@@ -135,7 +135,7 @@
           "auteur": "CNCF"
         }
       ],
-      "cible": 2
+      "cible": 3
     },
     {
       "id": "helm",
@@ -154,7 +154,7 @@
           "auteur": "Helm"
         }
       ],
-      "cible": 2
+      "cible": 3
     },
     {
       "id": "gitops",
@@ -172,7 +172,7 @@
           "url": "https://argo-cd.readthedocs.io/"
         }
       ],
-      "cible": 2
+      "cible": 3
     },
     {
       "id": "sylva-projet",
@@ -488,7 +488,7 @@
           "auteur": "Prometheus"
         }
       ],
-      "cible": 2
+      "cible": 3
     },
     {
       "id": "obs-logs",
@@ -515,7 +515,7 @@
           "auteur": "Elastic"
         }
       ],
-      "cible": 2
+      "cible": 3
     },
     {
       "id": "sec-supply",
@@ -549,7 +549,7 @@
           "auteur": "Sigstore"
         }
       ],
-      "cible": 1
+      "cible": 2
     },
     {
       "id": "sylva-clusters-charge",
@@ -579,7 +579,7 @@
           "auteur": "Projet Sylva"
         }
       ],
-      "cible": 2
+      "cible": 3
     },
     {
       "id": "sylva-upgrade",
@@ -600,7 +600,7 @@
           "auteur": "Projet Sylva"
         }
       ],
-      "cible": 3
+      "cible": 4
     },
     {
       "id": "sylva-services",
