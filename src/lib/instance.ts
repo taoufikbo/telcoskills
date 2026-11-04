@@ -69,7 +69,7 @@ const INSTANCES: Record<Instance["id"], Instance> = {
     indexable: true,
     refonte: true,
     // Bio courte et LinkedIn : à fournir par l'auteur (la page À propos garde un emplacement de brouillon, invisible en production).
-    auteur: { nom: "Taoufik Bouazza", fictif: false, bioCourte: null, linkedin: null },
+    auteur: { nom: "Taoufik Bouazza", fictif: false, bioCourte: null, linkedin: "https://www.linkedin.com/in/taoufik-bouazza-75b063178/" },
     contact: SANS_CONTACT,
     newsletterUrl: null,
     // Explicite : avec deux domaines de même longueur (.com et .fr), Vercel pourrait désigner l'un ou l'autre.
