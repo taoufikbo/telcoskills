@@ -333,7 +333,7 @@
           "url": "https://helm.sh/docs/"
         }
       ],
-      "cible": 2
+      "cible": 3
     },
     {
       "id": "etsi-sol",
@@ -369,7 +369,7 @@
           "url": "https://github.com/YangModels/yang"
         }
       ],
-      "cible": 2
+      "cible": 3
     },
     {
       "id": "deploiement-lab",
@@ -389,7 +389,7 @@
         }
       ],
       "projet": "Déployer free5GC ou Open5GS sur un cluster de lab, y connecter un simulateur de gNB et d'UE, et établir une session PDU avec capture de trace.",
-      "cible": 2
+      "cible": 3
     },
     {
       "id": "upf-edge",

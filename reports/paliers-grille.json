@@ -1,5 +1,5 @@
 {
-  "_etat": "APPLIQUÉE le 2026-11-04 sur décision de l'auteur, sans relecture complète (« on corrigera en prod »). Toutes les cases portent \"valide\": true. À relire et corriger : points connus = Sylva trop léger, `reseau-ip` trop haut chez l'architecte (règle de remontée des prérequis à plafonner), avis indépendant plus haut (inflation). Relecture avec l'auteur le 2026-11-04 : Sylva (8 compétences relevées) et la règle de remontée plafonnée à P3 (4 compétences de l'architecte, dont reseau-ip). Reste à relire : les autres blocs.",
+  "_etat": "APPLIQUÉE le 2026-11-04 sur décision de l'auteur, sans relecture complète (« on corrigera en prod »). Toutes les cases portent \"valide\": true. À relire et corriger : points connus = Sylva trop léger, `reseau-ip` trop haut chez l'architecte (règle de remontée des prérequis à plafonner), avis indépendant plus haut (inflation). Relecture avec l'auteur le 2026-11-04 : Sylva (8 compétences relevées) et la règle de remontée plafonnée à P3 (4 compétences de l'architecte, dont reseau-ip). Reste à relire : les autres blocs. Relecture complète des autres parcours le 2026-11-04 (architecte sans changement ; 8 paliers relevés : Intégrateur NF 3, SRE 2, Intégrateur DevOps 3) ; contrôles automatiques : aucune incohérence de prérequis. Laissés à trancher : voir HANDOFF.md.",
   "paliers": {
     "1": "Dire à quoi ça sert et situer le composant ou le pattern dans l'architecture",
     "2": "Palier 1 + voir comment l'utiliser (lire une configuration, suivre un exemple)",
@@ -456,6 +456,16 @@
           "palier": 2,
           "raison": "Revu après second avis : Lire les droits; conception relève de l'ingénierie",
           "valide": true
+        },
+        "ha-geo": {
+          "palier": 3,
+          "raison": "Relecture complète du 2026-11-04 : le rôle « répond aux incidents » ; le basculement et la reprise sont à faire soi-même en lab.",
+          "valide": true
+        },
+        "stockage-dr": {
+          "palier": 3,
+          "raison": "Relecture complète du 2026-11-04 : le rôle « répond aux incidents » ; le basculement et la reprise sont à faire soi-même en lab.",
+          "valide": true
         }
       }
     },
@@ -538,6 +548,21 @@
           "palier": 2,
           "raison": "Revu après second avis : Lire SUPI/SUCI/DNN dans traces et configurations suffit",
           "valide": true
+        },
+        "helm-cnf": {
+          "palier": 3,
+          "raison": "Relecture complète du 2026-11-04 (parité) : même compétence que l'Intégrateur DevOps, où elle est P3 « cœur du métier » ; ici elle est l'intégration elle-même.",
+          "valide": true
+        },
+        "deploiement-lab": {
+          "palier": 3,
+          "raison": "Relecture complète du 2026-11-04 (parité) : même compétence que l'Intégrateur DevOps, où elle est P3 « cœur du métier » ; ici elle est l'intégration elle-même.",
+          "valide": true
+        },
+        "config-nf": {
+          "palier": 3,
+          "raison": "Relecture complète du 2026-11-04 : le rôle intègre des fonctions réseau d'éditeurs, donc configure les NF lui-même.",
+          "valide": true
         }
       }
     },
@@ -609,6 +634,21 @@
         "etsi-sol": {
           "palier": 2,
           "raison": "Revu après second avis : Lire les descripteurs, norme rarement manipulée",
+          "valide": true
+        },
+        "cni": {
+          "palier": 2,
+          "raison": "Relecture complète du 2026-11-04 : le rôle intègre des NF, dont les charts déclarent des réseaux secondaires ; lire cette configuration (palier 2) est nécessaire.",
+          "valide": true
+        },
+        "multus": {
+          "palier": 2,
+          "raison": "Relecture complète du 2026-11-04 : le rôle intègre des NF, dont les charts déclarent des réseaux secondaires ; lire cette configuration (palier 2) est nécessaire.",
+          "valide": true
+        },
+        "sriov": {
+          "palier": 2,
+          "raison": "Relecture complète du 2026-11-04 : le rôle intègre des NF, dont les charts déclarent des réseaux secondaires ; lire cette configuration (palier 2) est nécessaire.",
           "valide": true
         }
       }

@@ -375,7 +375,7 @@
           "auteur": "Red Hat"
         }
       ],
-      "cible": 1
+      "cible": 2
     },
     {
       "id": "multus",
@@ -396,7 +396,7 @@
           "auteur": "K8s Network Plumbing WG"
         }
       ],
-      "cible": 1
+      "cible": 2
     },
     {
       "id": "sriov",
@@ -422,7 +422,7 @@
           "auteur": "Red Hat"
         }
       ],
-      "cible": 1
+      "cible": 2
     },
     {
       "id": "pieges-reseau",
