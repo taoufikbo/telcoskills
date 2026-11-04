@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Cartouche from "@/components/Cartouche";
+import FichePratique from "@/components/FichePratique";
 import Draft, { BROUILLONS_VISIBLES } from "@/components/Draft";
 import JsonLd from "@/components/JsonLd";
 import { LienSuivi } from "@/produits/mesure";
@@ -16,6 +17,7 @@ import { dependants, occurrencesDuNoeud, roadmapDeReference } from "@/lib/noeuds
 import { chargerOrientation } from "@/lib/orientation";
 import { DEFINITION_PALIER, LIBELLE_INVESTISSEMENT, investissementNoeud } from "@/lib/palier";
 import { lienCorrection } from "@/lib/contribution";
+import { chargerProjets } from "@/lib/projets";
 import { exigerRefonte } from "@/lib/refonte";
 import { contactDisponible, frameworksRediges } from "@/lib/sections";
 import { chargerRoadmaps, getRoadmap } from "@/lib/roadmaps";
@@ -71,6 +73,16 @@ export default async function PageNoeud({ params }: { params: Params }) {
   const parent = rubrique ? { nom: rubrique.nom, chemin: rubrique.href } : { nom: "Roadmaps", chemin: BASE_ROADMAPS };
 
   const investissement = investissementNoeud(chargerOrientation().investissement_par_palier, noeud);
+
+  const projetFilRouge = chargerProjets()[0];
+  const lienProjet = noeud.pratique?.lienProjet;
+  const libellesProjet =
+    lienProjet && projetFilRouge
+      ? {
+          phase: projetFilRouge.phases.find((x) => x.id === lienProjet.phase)?.titre ?? lienProjet.phase,
+          role: projetFilRouge.roles.find((x) => x.id === lienProjet.role)?.libelle ?? lienProjet.role,
+        }
+      : undefined;
 
   const sommaire = (
     <SommaireParcours
@@ -197,6 +209,8 @@ export default async function PageNoeud({ params }: { params: Params }) {
               </div>
             </section>
           )}
+
+          {noeud.pratique && <FichePratique noeudId={noeud.id} pratique={noeud.pratique} projet={libellesProjet} />}
 
           {noeud.ressources.length > 0 && (
             <section aria-labelledby="titre-ressources" className="space-y-3">
