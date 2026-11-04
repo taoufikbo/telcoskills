@@ -1,0 +1,29 @@
+{
+  "noeud": "sec-plateforme",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Appliquer le moindre privilège à une NF.",
+      "Isoler les NF entre elles.",
+      "Vérifier le profil de sécurité d'un pod."
+    ],
+    "notions": [
+      "Privilèges",
+      "Isolation",
+      "Profil de sécurité"
+    ],
+    "validation": {
+      "1": [
+        "Dire pourquoi limiter les privilèges d'une NF."
+      ]
+    },
+    "situation": {
+      "contexte": "Une NF demande des droits étendus.",
+      "etapes": [
+        "Lire sa demande.",
+        "Évaluer le besoin réel.",
+        "Limiter les droits."
+      ]
+    }
+  }
+}

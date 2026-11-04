@@ -1,0 +1,33 @@
+{
+  "noeud": "tel-exigences-continuite",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer les exigences de disponibilité et de latence.",
+      "Relier ces exigences aux choix de plateforme.",
+      "Convertir un taux de disponibilité en durée d'arrêt."
+    ],
+    "notions": [
+      "Disponibilité de cinq neuf",
+      "Latence",
+      "Continuité de service",
+      "Redondance"
+    ],
+    "situation": {
+      "contexte": "Un CNF exige une disponibilité de 99,999 %.",
+      "etapes": [
+        "Convertir en minutes d'arrêt par an.",
+        "Identifier les composants concernés.",
+        "Proposer la redondance."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi la disponibilité télécom est particulière."
+      ],
+      "2": [
+        "Relier une exigence à un choix technique."
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "noeud": "identifiants",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Lire SUPI, SUCI, GUTI, PLMN et DNN.",
+      "Savoir quand chacun est utilisé.",
+      "Retrouver un identifiant dans une trace."
+    ],
+    "notions": [
+      "SUPI et SUCI",
+      "GUTI",
+      "PLMN",
+      "DNN"
+    ],
+    "validation": {
+      "1": [
+        "Définir chaque identifiant."
+      ],
+      "2": [
+        "Retrouver un identifiant dans une trace."
+      ]
+    }
+  }
+}

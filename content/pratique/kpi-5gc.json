@@ -1,0 +1,33 @@
+{
+  "noeud": "kpi-5gc",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Lire les compteurs de performance du cœur.",
+      "Identifier les indicateurs clés.",
+      "Alerter sur une dégradation."
+    ],
+    "notions": [
+      "Compteurs",
+      "Taux de réussite",
+      "Latence",
+      "Seuils"
+    ],
+    "situation": {
+      "contexte": "Le taux de réussite d'enregistrement baisse.",
+      "etapes": [
+        "Lire le compteur.",
+        "Comparer à l'historique.",
+        "Remonter."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer des indicateurs."
+      ],
+      "2": [
+        "Lire un tableau de bord d'indicateurs."
+      ]
+    }
+  }
+}

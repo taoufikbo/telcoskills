@@ -1,0 +1,29 @@
+{
+  "noeud": "traces",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Capturer le trafic d'un cœur 5G.",
+      "Lire NGAP, PFCP, HTTP/2 et GTP-U dans Wireshark.",
+      "Retrouver une procédure dans une trace."
+    ],
+    "notions": [
+      "Captures",
+      "Filtres Wireshark",
+      "NGAP",
+      "PFCP",
+      "GTP-U"
+    ],
+    "validation": {
+      "1": [
+        "Ouvrir une trace et appliquer un filtre."
+      ],
+      "2": [
+        "Retrouver une procédure."
+      ],
+      "3": [
+        "Retrouver une procédure complète dans une trace et expliquer chaque message."
+      ]
+    }
+  }
+}

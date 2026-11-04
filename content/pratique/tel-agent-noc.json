@@ -1,0 +1,36 @@
+{
+  "noeud": "tel-agent-noc",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Concevoir un agent d'assistance à l'astreinte.",
+      "Fixer ses droits.",
+      "Évaluer ses réponses."
+    ],
+    "notions": [
+      "Rôle de l'agent",
+      "Droits",
+      "Sources",
+      "Évaluation"
+    ],
+    "situation": {
+      "contexte": "L'astreinte veut un assistant.",
+      "etapes": [
+        "Définir le périmètre.",
+        "Limiter les droits.",
+        "Évaluer sur des incidents passés."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'un agent peut faire."
+      ],
+      "2": [
+        "Lire ses droits."
+      ],
+      "3": [
+        "Concevoir un agent en lecture seule."
+      ]
+    }
+  }
+}

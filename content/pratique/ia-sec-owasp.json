@@ -1,0 +1,35 @@
+{
+  "noeud": "ia-sec-owasp",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Citer les menaces propres à l'IA générative.",
+      "Évaluer une application.",
+      "Choisir des mesures."
+    ],
+    "notions": [
+      "Injection de consignes",
+      "Fuite de données",
+      "Agents excessifs"
+    ],
+    "situation": {
+      "contexte": "Un assistant lit des documents non fiables.",
+      "etapes": [
+        "Identifier le risque.",
+        "Cloisonner.",
+        "Tester."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer les menaces."
+      ],
+      "2": [
+        "Évaluer une application."
+      ],
+      "3": [
+        "Choisir des contre-mesures."
+      ]
+    }
+  }
+}

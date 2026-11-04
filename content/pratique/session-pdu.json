@@ -1,0 +1,36 @@
+{
+  "noeud": "session-pdu",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire l'établissement d'une session de données.",
+      "Suivre le chemin de données.",
+      "Localiser un échec."
+    ],
+    "notions": [
+      "Requête de session",
+      "Sélection d'UPF",
+      "Chemin de données",
+      "Codes d'échec"
+    ],
+    "situation": {
+      "contexte": "Une session est rejetée.",
+      "etapes": [
+        "Lire la cause.",
+        "Identifier la fonction.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer les étapes."
+      ],
+      "2": [
+        "Suivre une session dans une trace."
+      ],
+      "3": [
+        "Diagnostiquer un échec."
+      ]
+    }
+  }
+}

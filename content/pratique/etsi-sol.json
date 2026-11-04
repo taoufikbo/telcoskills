@@ -1,0 +1,33 @@
+{
+  "noeud": "etsi-sol",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire le cycle de vie selon ETSI NFV.",
+      "Lire un CSAR.",
+      "Situer les interfaces SOL."
+    ],
+    "notions": [
+      "SOL",
+      "CSAR",
+      "Cycle de vie",
+      "Descripteur"
+    ],
+    "situation": {
+      "contexte": "Un éditeur livre un CSAR.",
+      "etapes": [
+        "Lire le descripteur.",
+        "Identifier les exigences.",
+        "Préparer l'instanciation."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est un CSAR."
+      ],
+      "2": [
+        "Lire un CSAR et ses étapes."
+      ]
+    }
+  }
+}

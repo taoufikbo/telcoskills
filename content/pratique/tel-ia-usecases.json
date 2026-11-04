@@ -1,0 +1,33 @@
+{
+  "noeud": "tel-ia-usecases",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Citer les usages de l'IA dans un réseau télécom.",
+      "Évaluer l'intérêt d'un cas d'usage.",
+      "Identifier les risques associés."
+    ],
+    "notions": [
+      "Prédiction",
+      "Détection d'anomalies",
+      "Optimisation",
+      "Assistance"
+    ],
+    "situation": {
+      "contexte": "Un opérateur veut un cas d'usage IA.",
+      "etapes": [
+        "Lister les options.",
+        "Évaluer valeur et risque.",
+        "Choisir."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer des usages."
+      ],
+      "2": [
+        "Évaluer un cas d'usage."
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "noeud": "gpu-partage",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Comparer MIG et temps partagé.",
+      "Allouer des fractions de GPU.",
+      "Choisir selon l'isolation voulue."
+    ],
+    "notions": [
+      "MIG",
+      "Temps partagé",
+      "Allocation dynamique",
+      "Isolation"
+    ],
+    "situation": {
+      "contexte": "Dix petits modèles se partagent un GPU.",
+      "etapes": [
+        "Choisir le mode.",
+        "Configurer.",
+        "Mesurer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire les modes de partage."
+      ],
+      "2": [
+        "Choisir un mode."
+      ],
+      "3": [
+        "Configurer un partage."
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "noeud": "config-nf",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Configurer une NF par API, YANG/NETCONF ou ConfigMap.",
+      "Choisir le bon mode de configuration.",
+      "Versionner la configuration."
+    ],
+    "notions": [
+      "API",
+      "YANG et NETCONF",
+      "ConfigMap",
+      "Versionnage"
+    ],
+    "situation": {
+      "contexte": "Une NF doit être configurée sans redémarrage.",
+      "etapes": [
+        "Choisir le mode.",
+        "Appliquer.",
+        "Vérifier."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire les modes de configuration."
+      ],
+      "2": [
+        "Lire une configuration YANG simple."
+      ],
+      "3": [
+        "Appliquer une configuration par API ou ConfigMap."
+      ]
+    }
+  }
+}

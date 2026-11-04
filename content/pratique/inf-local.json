@@ -1,0 +1,28 @@
+{
+  "noeud": "inf-local",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Lancer un modèle en local.",
+      "Interroger un modèle par API.",
+      "Comparer Ollama et llama.cpp."
+    ],
+    "notions": [
+      "Ollama",
+      "llama.cpp",
+      "Interface compatible",
+      "Ressources locales"
+    ],
+    "validation": {
+      "1": [
+        "Dire ce qu'est l'inférence locale."
+      ],
+      "2": [
+        "Lancer un modèle et lui poser une question."
+      ],
+      "3": [
+        "Intégrer un modèle local dans un script."
+      ]
+    }
+  }
+}

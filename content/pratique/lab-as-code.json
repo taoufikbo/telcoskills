@@ -1,0 +1,36 @@
+{
+  "noeud": "lab-as-code",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire un laboratoire reproductible.",
+      "Utiliser kind et des charts.",
+      "Fournir des jeux de données."
+    ],
+    "notions": [
+      "kind",
+      "Charts",
+      "Jeux de données",
+      "Reproductibilité"
+    ],
+    "situation": {
+      "contexte": "Le laboratoire de test est détruit à chaque campagne.",
+      "etapes": [
+        "Scripter la création.",
+        "Charger les données.",
+        "Valider."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi reproduire le laboratoire."
+      ],
+      "2": [
+        "Recréer un laboratoire depuis le dépôt."
+      ],
+      "3": [
+        "Recréer un laboratoire complet et reproductible à partir du dépôt."
+      ]
+    }
+  }
+}

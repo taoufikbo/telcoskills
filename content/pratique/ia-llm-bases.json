@@ -1,0 +1,28 @@
+{
+  "noeud": "ia-llm-bases",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer ce qu'est un grand modèle de langage.",
+      "Décrire jetons, contexte et température.",
+      "Reconnaître ses limites : erreurs, biais, coût."
+    ],
+    "notions": [
+      "Jetons",
+      "Fenêtre de contexte",
+      "Paramètres d'échantillonnage",
+      "Limites"
+    ],
+    "validation": {
+      "1": [
+        "Définir un LLM, un jeton et le contexte."
+      ],
+      "2": [
+        "Expliquer pourquoi un modèle se trompe."
+      ],
+      "3": [
+        "Choisir des paramètres adaptés à un usage."
+      ]
+    }
+  }
+}

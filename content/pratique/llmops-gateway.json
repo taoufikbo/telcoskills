@@ -1,0 +1,36 @@
+{
+  "noeud": "llmops-gateway",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Centraliser l'accès aux modèles.",
+      "Gérer clés, quotas et journalisation.",
+      "Router vers plusieurs modèles."
+    ],
+    "notions": [
+      "Passerelle",
+      "Clés et quotas",
+      "Routage",
+      "Journaux"
+    ],
+    "situation": {
+      "contexte": "Plusieurs équipes appellent directement un modèle.",
+      "etapes": [
+        "Centraliser.",
+        "Fixer les quotas.",
+        "Journaliser."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi sert la passerelle."
+      ],
+      "2": [
+        "Configurer un accès."
+      ],
+      "3": [
+        "Router entre deux modèles."
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "noeud": "sbi-http2",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Lire un appel d'interface de service.",
+      "Comprendre le rôle d'OpenAPI.",
+      "Interpréter les codes de réponse."
+    ],
+    "notions": [
+      "HTTP/2",
+      "JSON",
+      "OpenAPI",
+      "Codes de réponse"
+    ],
+    "validation": {
+      "1": [
+        "Dire ce qu'est une interface de service."
+      ],
+      "2": [
+        "Lire un appel et sa réponse."
+      ],
+      "3": [
+        "Lire un appel de service dans une trace et le rapprocher de sa spécification."
+      ]
+    }
+  }
+}

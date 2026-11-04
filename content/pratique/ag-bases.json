@@ -1,0 +1,28 @@
+{
+  "noeud": "ag-bases",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire la boucle d'un agent.",
+      "Expliquer outils et mémoire.",
+      "Reconnaître les modes d'échec."
+    ],
+    "notions": [
+      "Boucle observer, décider, agir",
+      "Outils",
+      "Mémoire",
+      "Échecs"
+    ],
+    "validation": {
+      "1": [
+        "Définir un agent."
+      ],
+      "2": [
+        "Suivre la boucle sur un exemple."
+      ],
+      "3": [
+        "Construire un agent simple avec un outil."
+      ]
+    }
+  }
+}

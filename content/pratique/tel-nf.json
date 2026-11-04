@@ -1,0 +1,24 @@
+{
+  "noeud": "tel-nf",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer ce qu'est une fonction réseau, VNF ou CNF.",
+      "Décrire son cycle de vie.",
+      "Distinguer NF et plateforme."
+    ],
+    "notions": [
+      "NF, VNF, CNF",
+      "Instanciation, mise à l'échelle, mise à jour",
+      "Fournisseur et plateforme"
+    ],
+    "validation": {
+      "1": [
+        "Définir NF, VNF et CNF."
+      ],
+      "2": [
+        "Décrire le cycle de vie d'une NF."
+      ]
+    }
+  }
+}

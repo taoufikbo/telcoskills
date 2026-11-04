@@ -1,0 +1,36 @@
+{
+  "noeud": "rag-vectoriel",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Comparer pgvector, Qdrant et Milvus.",
+      "Choisir un index.",
+      "Dimensionner la base."
+    ],
+    "notions": [
+      "Index vectoriels",
+      "Distance",
+      "Filtrage",
+      "Dimensionnement"
+    ],
+    "situation": {
+      "contexte": "Un RAG ralentit avec le volume.",
+      "etapes": [
+        "Mesurer.",
+        "Changer d'index.",
+        "Remesurer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est une base vectorielle."
+      ],
+      "2": [
+        "Comparer deux bases."
+      ],
+      "3": [
+        "Mettre en place une base."
+      ]
+    }
+  }
+}

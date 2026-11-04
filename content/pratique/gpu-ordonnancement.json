@@ -1,0 +1,36 @@
+{
+  "noeud": "gpu-ordonnancement",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Gérer des files de travaux avec Kueue.",
+      "Fixer quotas et priorités.",
+      "Éviter la famine."
+    ],
+    "notions": [
+      "Files",
+      "Quotas",
+      "Priorités",
+      "Préemption"
+    ],
+    "situation": {
+      "contexte": "Les travaux d'entraînement bloquent l'inférence.",
+      "etapes": [
+        "Définir les files.",
+        "Fixer les priorités.",
+        "Vérifier."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi ordonnancer."
+      ],
+      "2": [
+        "Lire une file."
+      ],
+      "3": [
+        "Configurer files et quotas."
+      ]
+    }
+  }
+}

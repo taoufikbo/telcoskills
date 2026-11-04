@@ -1,0 +1,36 @@
+{
+  "noeud": "tel-aiops",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Assister le diagnostic d'un cluster par IA.",
+      "Cadrer les limites.",
+      "Mesurer l'apport."
+    ],
+    "notions": [
+      "Corrélation",
+      "Recommandation",
+      "Limites",
+      "Évaluation"
+    ],
+    "situation": {
+      "contexte": "Un assistant propose un diagnostic.",
+      "etapes": [
+        "Vérifier.",
+        "Comparer à l'avis humain.",
+        "Retenir ou rejeter."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que l'IA apporte au diagnostic."
+      ],
+      "2": [
+        "Lire une recommandation."
+      ],
+      "3": [
+        "Mesurer l'apport sur des incidents passés."
+      ]
+    }
+  }
+}

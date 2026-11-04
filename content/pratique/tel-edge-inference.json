@@ -1,0 +1,32 @@
+{
+  "noeud": "tel-edge-inference",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire l'inférence en périphérie.",
+      "Peser latence et coût.",
+      "Choisir les sites."
+    ],
+    "notions": [
+      "Périphérie",
+      "Latence",
+      "Ressources limitées"
+    ],
+    "situation": {
+      "contexte": "Une application exige une réponse en dix millisecondes.",
+      "etapes": [
+        "Mesurer la latence.",
+        "Choisir le site.",
+        "Dimensionner."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi inférer en périphérie."
+      ],
+      "2": [
+        "Comparer central et périphérie."
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "noeud": "nrf-scp",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire l'enregistrement et la découverte.",
+      "Comprendre le routage par SCP.",
+      "Lire un enregistrement de service."
+    ],
+    "notions": [
+      "NRF",
+      "SCP",
+      "Découverte",
+      "Profil de service"
+    ],
+    "situation": {
+      "contexte": "Une fonction n'est plus découverte.",
+      "etapes": [
+        "Vérifier l'enregistrement.",
+        "Contrôler le profil.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire le rôle du NRF et du SCP."
+      ],
+      "2": [
+        "Lire un profil de service."
+      ],
+      "3": [
+        "Diagnostiquer une fonction introuvable."
+      ]
+    }
+  }
+}

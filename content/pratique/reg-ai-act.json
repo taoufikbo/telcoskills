@@ -1,0 +1,29 @@
+{
+  "noeud": "reg-ai-act",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Situer le règlement européen sur l'IA.",
+      "Classer un système par niveau de risque.",
+      "Identifier les obligations associées."
+    ],
+    "notions": [
+      "Niveaux de risque",
+      "Obligations",
+      "Calendrier"
+    ],
+    "situation": {
+      "contexte": "Un système d'IA est proposé pour le NOC.",
+      "etapes": [
+        "Classer.",
+        "Lire les obligations.",
+        "Documenter."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est le règlement."
+      ]
+    }
+  }
+}

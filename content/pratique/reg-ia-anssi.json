@@ -1,0 +1,32 @@
+{
+  "noeud": "reg-ia-anssi",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Résumer les recommandations de l'ANSSI pour l'IA générative.",
+      "Les appliquer à un projet.",
+      "Documenter les écarts."
+    ],
+    "notions": [
+      "Recommandations",
+      "Risques",
+      "Mesures"
+    ],
+    "situation": {
+      "contexte": "Un projet d'IA doit passer en revue de sécurité.",
+      "etapes": [
+        "Lire les recommandations.",
+        "Comparer.",
+        "Rédiger les écarts."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer les recommandations."
+      ],
+      "2": [
+        "Évaluer un projet."
+      ]
+    }
+  }
+}

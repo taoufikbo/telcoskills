@@ -1,0 +1,36 @@
+{
+  "noeud": "enregistrement",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire l'enregistrement et l'authentification.",
+      "Lire la séquence 5G-AKA.",
+      "Localiser un échec."
+    ],
+    "notions": [
+      "Enregistrement",
+      "Authentification",
+      "Clés",
+      "Codes de rejet"
+    ],
+    "situation": {
+      "contexte": "Un abonné est rejeté à l'enregistrement.",
+      "etapes": [
+        "Lire le code de rejet.",
+        "Identifier la fonction.",
+        "Vérifier l'abonné."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer les étapes."
+      ],
+      "2": [
+        "Lire la séquence dans une trace."
+      ],
+      "3": [
+        "Localiser un échec d'authentification."
+      ]
+    }
+  }
+}

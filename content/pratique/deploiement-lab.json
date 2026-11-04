@@ -1,0 +1,36 @@
+{
+  "noeud": "deploiement-lab",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Déployer un cœur 5G open source.",
+      "Vérifier l'enregistrement de bout en bout.",
+      "Reproduire le laboratoire."
+    ],
+    "notions": [
+      "Cœur open source",
+      "Charts et configuration",
+      "Simulation de RAN",
+      "Validation"
+    ],
+    "situation": {
+      "contexte": "Il faut un cœur 5G de test pour une équipe.",
+      "etapes": [
+        "Choisir le cœur.",
+        "Déployer.",
+        "Valider avec un UE simulé."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi sert un laboratoire."
+      ],
+      "2": [
+        "Lire les charts du cœur."
+      ],
+      "3": [
+        "Déployer et valider un cœur de laboratoire."
+      ]
+    }
+  }
+}

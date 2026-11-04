@@ -1,0 +1,35 @@
+{
+  "noeud": "inf-llm-d",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer l'inférence distribuée.",
+      "Décrire le routage intelligent.",
+      "Comprendre séparation des phases."
+    ],
+    "notions": [
+      "Phases de prompt et de génération",
+      "Routage par cache",
+      "Distribution sur plusieurs nœuds"
+    ],
+    "situation": {
+      "contexte": "Un modèle ne tient pas sur un seul nœud.",
+      "etapes": [
+        "Choisir le découpage.",
+        "Router.",
+        "Mesurer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi distribuer l'inférence."
+      ],
+      "2": [
+        "Lire une architecture llm-d."
+      ],
+      "3": [
+        "Déployer une inférence distribuée simple et comparer son débit à un nœud unique."
+      ]
+    }
+  }
+}

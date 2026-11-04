@@ -1,0 +1,28 @@
+{
+  "noeud": "archi-5g",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire NG-RAN, 5GC et SBA.",
+      "Situer les interfaces principales.",
+      "Lire un schéma d'architecture 5G."
+    ],
+    "notions": [
+      "NG-RAN et gNB",
+      "5GC et fonctions",
+      "SBA",
+      "Interfaces N1, N2, N3, N4, N6"
+    ],
+    "validation": {
+      "1": [
+        "Nommer les blocs."
+      ],
+      "2": [
+        "Associer interfaces et blocs."
+      ],
+      "3": [
+        "Lire un schéma d'architecture 5G et y replacer une procédure."
+      ]
+    }
+  }
+}

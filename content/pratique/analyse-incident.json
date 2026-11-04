@@ -1,0 +1,33 @@
+{
+  "noeud": "analyse-incident",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Corréler traces, journaux et compteurs de plusieurs NF.",
+      "Reconstituer une chronologie.",
+      "Isoler la fonction en cause."
+    ],
+    "notions": [
+      "Traces",
+      "Journaux",
+      "Chronologie",
+      "Corrélation"
+    ],
+    "situation": {
+      "contexte": "Une procédure échoue sans erreur évidente.",
+      "etapes": [
+        "Collecter les traces.",
+        "Aligner les horloges.",
+        "Isoler la fonction."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire comment corréler des sources."
+      ],
+      "2": [
+        "Reconstituer une chronologie."
+      ]
+    }
+  }
+}

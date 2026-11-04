@@ -1,0 +1,36 @@
+{
+  "noeud": "helm-cnf",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Packager une NF avec Helm.",
+      "Configurer par valeurs.",
+      "Gérer les versions."
+    ],
+    "notions": [
+      "Chart",
+      "Valeurs",
+      "Modèles",
+      "Versions"
+    ],
+    "situation": {
+      "contexte": "Une NF doit être livrée en chart.",
+      "etapes": [
+        "Écrire les modèles.",
+        "Définir les valeurs.",
+        "Tester l'installation."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Lire un chart de NF."
+      ],
+      "2": [
+        "Adapter les valeurs."
+      ],
+      "3": [
+        "Packager une NF."
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "noeud": "ia-quantification",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer la quantification.",
+      "Choisir un format selon la mémoire disponible.",
+      "Mesurer la perte de qualité."
+    ],
+    "notions": [
+      "Précision des poids",
+      "Formats de modèles",
+      "Mémoire nécessaire",
+      "Perte de qualité"
+    ],
+    "situation": {
+      "contexte": "Un modèle ne tient pas sur la carte disponible.",
+      "etapes": [
+        "Estimer la mémoire.",
+        "Choisir une quantification.",
+        "Mesurer la qualité."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que fait la quantification."
+      ],
+      "2": [
+        "Estimer la mémoire d'un modèle."
+      ],
+      "3": [
+        "Comparer deux quantifications sur une tâche."
+      ]
+    }
+  }
+}

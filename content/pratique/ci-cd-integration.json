@@ -1,0 +1,36 @@
+{
+  "noeud": "ci-cd-integration",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Automatiser le déploiement et la non-régression.",
+      "Construire un pipeline d'intégration.",
+      "Interpréter un échec."
+    ],
+    "notions": [
+      "Pipeline",
+      "Déploiement automatisé",
+      "Tests de non-régression",
+      "Rapports"
+    ],
+    "situation": {
+      "contexte": "Chaque version d'une NF est testée à la main.",
+      "etapes": [
+        "Définir les étapes.",
+        "Automatiser.",
+        "Publier le rapport."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'apporte la CI/CD d'intégration."
+      ],
+      "2": [
+        "Lire un pipeline."
+      ],
+      "3": [
+        "Construire un pipeline de déploiement et de test."
+      ]
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "noeud": "inf-vllm",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Déployer un serveur vLLM.",
+      "Régler le traitement par lots et la mémoire.",
+      "Mesurer débit et latence.",
+      "Dimensionner le serveur selon la charge."
+    ],
+    "notions": [
+      "Serveur d'inférence",
+      "Traitement par lots continu",
+      "Cache KV",
+      "Parallélisme",
+      "Métriques"
+    ],
+    "situation": {
+      "contexte": "Un serveur vLLM sature à dix utilisateurs.",
+      "etapes": [
+        "Mesurer.",
+        "Régler.",
+        "Remesurer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi sert un serveur d'inférence."
+      ],
+      "2": [
+        "Lancer vLLM avec un modèle."
+      ],
+      "3": [
+        "Régler mémoire et lots."
+      ],
+      "4": [
+        "Dimensionner et valider sous charge."
+      ]
+    },
+    "exercice": {
+      "consigne": "Déployer vLLM et trouver la charge maximale pour un objectif de latence.",
+      "livrable": "Un rapport avec réglages, mesures et capacité."
+    }
+  }
+}

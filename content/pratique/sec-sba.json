@@ -1,0 +1,32 @@
+{
+  "noeud": "sec-sba",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire TLS et OAuth2 entre NF.",
+      "Lire un jeton d'autorisation.",
+      "Diagnostiquer un refus."
+    ],
+    "notions": [
+      "TLS mutuel",
+      "OAuth2",
+      "Jetons"
+    ],
+    "validation": {
+      "1": [
+        "Dire ce que protège TLS entre NF."
+      ],
+      "2": [
+        "Lire un jeton d'autorisation."
+      ]
+    },
+    "situation": {
+      "contexte": "Un appel entre deux fonctions est refusé après un changement de certificats.",
+      "etapes": [
+        "Lire le code de refus.",
+        "Vérifier le certificat et le jeton.",
+        "Corriger."
+      ]
+    }
+  }
+}

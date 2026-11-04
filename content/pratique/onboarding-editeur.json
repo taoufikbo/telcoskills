@@ -1,0 +1,36 @@
+{
+  "noeud": "onboarding-editeur",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Intégrer une NF d'éditeur.",
+      "Rassembler exigences et livrables.",
+      "Remplir une matrice de conformité."
+    ],
+    "notions": [
+      "Exigences",
+      "Livrables",
+      "Matrice de conformité",
+      "Critères d'acceptation"
+    ],
+    "situation": {
+      "contexte": "Un nouvel éditeur livre sa première NF.",
+      "etapes": [
+        "Lire les livrables.",
+        "Remplir la matrice.",
+        "Valider."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que contient un onboarding."
+      ],
+      "2": [
+        "Lire une matrice de conformité."
+      ],
+      "3": [
+        "Conduire un onboarding complet."
+      ]
+    }
+  }
+}

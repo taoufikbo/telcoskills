@@ -1,0 +1,36 @@
+{
+  "noeud": "inf-kserve",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Déployer un modèle avec KServe.",
+      "Gérer versions et mise à l'échelle.",
+      "Exposer le service."
+    ],
+    "notions": [
+      "InferenceService",
+      "Runtimes",
+      "Mise à l'échelle",
+      "Exposition"
+    ],
+    "situation": {
+      "contexte": "Un modèle doit être publié sur le cluster.",
+      "etapes": [
+        "Écrire la définition.",
+        "Déployer.",
+        "Tester."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire le rôle de KServe."
+      ],
+      "2": [
+        "Lire une InferenceService."
+      ],
+      "3": [
+        "Déployer un modèle et le mettre à l'échelle."
+      ]
+    }
+  }
+}

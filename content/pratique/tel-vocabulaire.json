@@ -1,0 +1,25 @@
+{
+  "noeud": "tel-vocabulaire",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Employer correctement NF, PLMN, UE, gNB, DN et SLA.",
+      "Lire un document d'opérateur sans se perdre.",
+      "Reformuler un terme à un collègue."
+    ],
+    "notions": [
+      "NF et PLMN",
+      "UE et gNB",
+      "DN",
+      "SLA"
+    ],
+    "validation": {
+      "1": [
+        "Définir chaque terme en une phrase."
+      ],
+      "2": [
+        "Utiliser le vocabulaire dans un échange avec un expert."
+      ]
+    }
+  }
+}

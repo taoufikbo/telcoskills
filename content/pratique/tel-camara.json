@@ -1,0 +1,29 @@
+{
+  "noeud": "tel-camara",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire l'ouverture des capacités réseau.",
+      "Situer CAMARA.",
+      "Identifier les cas d'usage."
+    ],
+    "notions": [
+      "Interfaces ouvertes",
+      "CAMARA",
+      "Cas d'usage"
+    ],
+    "validation": {
+      "1": [
+        "Dire à quoi sert CAMARA."
+      ]
+    },
+    "situation": {
+      "contexte": "Un développeur veut utiliser une interface réseau ouverte.",
+      "etapes": [
+        "Identifier l'interface.",
+        "Lire ses conditions.",
+        "Évaluer le cas d'usage."
+      ]
+    }
+  }
+}

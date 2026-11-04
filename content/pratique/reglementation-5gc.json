@@ -1,0 +1,29 @@
+{
+  "noeud": "reglementation-5gc",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Situer la réglementation applicable.",
+      "Repérer les obligations du cœur 5G.",
+      "Savoir qui contacter pour une question réglementaire."
+    ],
+    "notions": [
+      "Loi de 2019",
+      "Interceptions légales",
+      "NIS 2"
+    ],
+    "validation": {
+      "1": [
+        "Situer les textes applicables."
+      ]
+    },
+    "situation": {
+      "contexte": "Une demande de réquisition arrive à l'exploitation.",
+      "etapes": [
+        "Identifier le cadre légal.",
+        "Prévenir les personnes habilitées.",
+        "Consigner."
+      ]
+    }
+  }
+}

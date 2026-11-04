@@ -1,0 +1,35 @@
+{
+  "noeud": "llmops-eval",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Évaluer en continu.",
+      "Détecter une régression de modèle.",
+      "Intégrer l'évaluation à la CI."
+    ],
+    "notions": [
+      "Jeux d'évaluation",
+      "Régression",
+      "Pipeline"
+    ],
+    "situation": {
+      "contexte": "Un changement de modèle dégrade les réponses.",
+      "etapes": [
+        "Rejouer le jeu.",
+        "Comparer.",
+        "Décider."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi évaluer en continu."
+      ],
+      "2": [
+        "Lire un rapport."
+      ],
+      "3": [
+        "Intégrer l'évaluation à un pipeline."
+      ]
+    }
+  }
+}

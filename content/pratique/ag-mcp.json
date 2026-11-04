@@ -1,0 +1,36 @@
+{
+  "noeud": "ag-mcp",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer le protocole MCP.",
+      "Écrire ou configurer un serveur.",
+      "Sécuriser l'accès."
+    ],
+    "notions": [
+      "Serveur et client",
+      "Outils exposés",
+      "Authentification",
+      "Droits"
+    ],
+    "situation": {
+      "contexte": "Un agent doit lire l'état d'un cluster.",
+      "etapes": [
+        "Choisir les outils.",
+        "Limiter à la lecture.",
+        "Tester."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est MCP."
+      ],
+      "2": [
+        "Configurer un serveur existant."
+      ],
+      "3": [
+        "Écrire un serveur MCP simple."
+      ]
+    }
+  }
+}

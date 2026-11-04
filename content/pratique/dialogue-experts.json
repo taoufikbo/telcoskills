@@ -1,0 +1,36 @@
+{
+  "noeud": "dialogue-experts",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Préparer un échange avec un expert réseau ou un éditeur.",
+      "Poser des questions précises et reformuler.",
+      "Formaliser un résultat d'échange."
+    ],
+    "notions": [
+      "Questions de cadrage",
+      "Reformulation",
+      "Compte rendu",
+      "Hypothèses à confirmer"
+    ],
+    "situation": {
+      "contexte": "Un éditeur impose une exigence que vous ne comprenez pas.",
+      "etapes": [
+        "Préparer les questions.",
+        "Reformuler.",
+        "Rédiger le compte rendu."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'on attend d'un expert."
+      ],
+      "2": [
+        "Préparer une liste de questions."
+      ],
+      "3": [
+        "Conduire une réunion technique avec un éditeur."
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "noeud": "resilience-nf",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire la redondance d'une NF.",
+      "Comprendre l'état et la reprise.",
+      "Tester la panne d'une instance."
+    ],
+    "notions": [
+      "Redondance",
+      "État partagé",
+      "Reprise de session",
+      "Test de panne"
+    ],
+    "situation": {
+      "contexte": "Une instance de NF est arrêtée.",
+      "etapes": [
+        "Observer la reprise.",
+        "Mesurer l'impact.",
+        "Documenter."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire comment une NF résiste à une panne."
+      ],
+      "2": [
+        "Tester la perte d'une instance."
+      ]
+    }
+  }
+}

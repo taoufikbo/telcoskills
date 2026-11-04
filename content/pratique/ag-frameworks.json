@@ -1,0 +1,33 @@
+{
+  "noeud": "ag-frameworks",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Comparer des cadres de développement d'agents.",
+      "Choisir selon le besoin.",
+      "Évaluer maturité et observabilité."
+    ],
+    "notions": [
+      "Cadres",
+      "Orchestration",
+      "Mémoire",
+      "Observabilité"
+    ],
+    "situation": {
+      "contexte": "Une équipe hésite entre deux cadres.",
+      "etapes": [
+        "Définir le besoin.",
+        "Comparer.",
+        "Choisir."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer deux cadres."
+      ],
+      "2": [
+        "Comparer selon le besoin."
+      ]
+    }
+  }
+}

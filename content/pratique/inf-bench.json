@@ -1,0 +1,47 @@
+{
+  "noeud": "inf-bench",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Concevoir un test d'inférence.",
+      "Interpréter débit, latence et coût.",
+      "Dimensionner une plateforme d'inférence.",
+      "Justifier le dimensionnement."
+    ],
+    "notions": [
+      "Débit en jetons",
+      "Latence jusqu'au premier jeton",
+      "Concurrence",
+      "Coût par jeton"
+    ],
+    "situation": {
+      "contexte": "Il faut dimensionner pour cent utilisateurs simultanés.",
+      "etapes": [
+        "Définir le profil.",
+        "Mesurer.",
+        "Calculer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'on mesure."
+      ],
+      "2": [
+        "Lire un rapport."
+      ],
+      "3": [
+        "Concevoir un test."
+      ],
+      "4": [
+        "Dimensionner pour une charge cible."
+      ],
+      "5": [
+        "Défendre le dimensionnement et ses marges."
+      ]
+    },
+    "exercice": {
+      "consigne": "Mesurer un modèle et dimensionner pour une charge cible.",
+      "livrable": "Un rapport avec méthode, mesures, dimensionnement."
+    }
+  }
+}

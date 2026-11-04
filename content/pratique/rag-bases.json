@@ -1,0 +1,36 @@
+{
+  "noeud": "rag-bases",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer le principe du RAG.",
+      "Construire une chaîne de base.",
+      "Savoir quand le RAG n'est pas adapté."
+    ],
+    "notions": [
+      "Découpage",
+      "Plongements",
+      "Recherche",
+      "Génération"
+    ],
+    "situation": {
+      "contexte": "Un assistant doit répondre à partir de documents internes.",
+      "etapes": [
+        "Découper.",
+        "Indexer.",
+        "Interroger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est le RAG."
+      ],
+      "2": [
+        "Lire une chaîne."
+      ],
+      "3": [
+        "Construire un RAG simple."
+      ]
+    }
+  }
+}

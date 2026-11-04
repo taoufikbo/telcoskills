@@ -1,0 +1,29 @@
+{
+  "noeud": "ag-a2a",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire le dialogue entre agents.",
+      "Situer A2A par rapport à MCP.",
+      "Identifier les risques d'un dialogue entre agents."
+    ],
+    "notions": [
+      "Agents coopérants",
+      "Cartes d'agents",
+      "Tâches"
+    ],
+    "validation": {
+      "1": [
+        "Dire à quoi sert A2A."
+      ]
+    },
+    "situation": {
+      "contexte": "Deux agents d'équipes différentes doivent se déléguer des tâches.",
+      "etapes": [
+        "Définir leurs cartes.",
+        "Fixer les droits échangés.",
+        "Tracer les échanges."
+      ]
+    }
+  }
+}

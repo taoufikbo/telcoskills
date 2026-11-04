@@ -1,0 +1,33 @@
+{
+  "noeud": "upgrade-nf",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Mettre à jour une NF sans coupure.",
+      "Préparer le retour arrière.",
+      "Valider après mise à jour."
+    ],
+    "notions": [
+      "Mise à jour progressive",
+      "Compatibilité",
+      "Retour arrière",
+      "Validation"
+    ],
+    "situation": {
+      "contexte": "Une NF doit être mise à jour en heures ouvrées.",
+      "etapes": [
+        "Préparer le plan.",
+        "Mettre à jour une instance.",
+        "Valider."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est une mise à jour sans coupure."
+      ],
+      "2": [
+        "Dérouler une mise à jour de laboratoire."
+      ]
+    }
+  }
+}

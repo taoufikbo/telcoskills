@@ -1,0 +1,35 @@
+{
+  "noeud": "tests-config",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Tester la configuration d'une NF.",
+      "Détecter la régression.",
+      "Automatiser la comparaison."
+    ],
+    "notions": [
+      "Configuration de référence",
+      "Comparaison",
+      "Non-régression"
+    ],
+    "situation": {
+      "contexte": "Une mise à jour change une configuration sans prévenir.",
+      "etapes": [
+        "Capturer la référence.",
+        "Comparer.",
+        "Alerter."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est la non-régression."
+      ],
+      "2": [
+        "Écrire un test de configuration."
+      ],
+      "3": [
+        "Automatiser une comparaison de configuration dans un pipeline."
+      ]
+    }
+  }
+}

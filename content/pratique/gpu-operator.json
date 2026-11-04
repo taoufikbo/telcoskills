@@ -1,0 +1,36 @@
+{
+  "noeud": "gpu-operator",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Installer le pilote et l'opérateur GPU.",
+      "Vérifier la visibilité des cartes.",
+      "Dépanner un GPU non vu."
+    ],
+    "notions": [
+      "Pilote",
+      "Opérateur GPU",
+      "Ressource GPU du pod",
+      "Surveillance"
+    ],
+    "situation": {
+      "contexte": "Un pod ne voit pas le GPU.",
+      "etapes": [
+        "Vérifier le nœud.",
+        "Vérifier l'opérateur.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que fait l'opérateur."
+      ],
+      "2": [
+        "Vérifier un nœud GPU."
+      ],
+      "3": [
+        "Dépanner un pod sans GPU."
+      ]
+    }
+  }
+}

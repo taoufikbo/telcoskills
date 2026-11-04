@@ -1,0 +1,36 @@
+{
+  "noeud": "simulation-ran-ue",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Utiliser un simulateur de RAN et d'UE.",
+      "Générer du trafic de test.",
+      "Interpréter les résultats."
+    ],
+    "notions": [
+      "Simulateur",
+      "Scénarios",
+      "Charge",
+      "Résultats"
+    ],
+    "situation": {
+      "contexte": "Il faut tester un cœur sans radio réelle.",
+      "etapes": [
+        "Choisir le simulateur.",
+        "Écrire le scénario.",
+        "Lire les résultats."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi sert la simulation."
+      ],
+      "2": [
+        "Lancer un scénario simple."
+      ],
+      "3": [
+        "Écrire un scénario de charge."
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "noeud": "dossier-integration",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Rédiger un dossier d'intégration.",
+      "Produire schémas, flux et plan d'adressage.",
+      "Maintenir le dossier à jour."
+    ],
+    "notions": [
+      "Schémas",
+      "Matrice de flux",
+      "Plan d'adressage",
+      "Mises à jour"
+    ],
+    "situation": {
+      "contexte": "Une NF est livrée sans dossier.",
+      "etapes": [
+        "Collecter.",
+        "Dessiner.",
+        "Valider."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que contient le dossier."
+      ],
+      "2": [
+        "Lire un dossier."
+      ],
+      "3": [
+        "Rédiger un dossier complet."
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "noeud": "pieges-reseau",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Reconnaître les pièges d'un pod multi-interfaces.",
+      "Vérifier MTU et VLAN d'un CNF.",
+      "Expliquer les limites de SR-IOV."
+    ],
+    "notions": [
+      "Interfaces multiples",
+      "MTU",
+      "VLAN",
+      "SR-IOV"
+    ],
+    "situation": {
+      "contexte": "Un CNF perd des paquets sur son interface secondaire.",
+      "etapes": [
+        "Lister les interfaces.",
+        "Tester la MTU.",
+        "Vérifier le VLAN."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer les pièges courants."
+      ],
+      "2": [
+        "Vérifier la MTU d'un chemin."
+      ],
+      "3": [
+        "Corriger un défaut de VLAN ou de MTU en laboratoire."
+      ]
+    }
+  }
+}

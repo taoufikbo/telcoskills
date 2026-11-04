@@ -1,0 +1,33 @@
+{
+  "noeud": "gpu-reseau",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer RDMA.",
+      "Situer SR-IOV pour l'IA.",
+      "Identifier les goulets réseau."
+    ],
+    "notions": [
+      "RDMA",
+      "SR-IOV",
+      "Bande passante",
+      "Topologie"
+    ],
+    "situation": {
+      "contexte": "Un entraînement distribué est lent.",
+      "etapes": [
+        "Mesurer le réseau.",
+        "Repérer le goulet.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi le réseau compte pour l'IA."
+      ],
+      "2": [
+        "Lire une topologie."
+      ]
+    }
+  }
+}

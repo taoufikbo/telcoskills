@@ -1,0 +1,25 @@
+{
+  "noeud": "tel-reseau-mobile",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire la chaîne abonné, radio, cœur, Internet.",
+      "Situer chaque bloc et son rôle.",
+      "Expliquer le trajet d'un appel de données."
+    ],
+    "notions": [
+      "Terminal (UE)",
+      "Réseau d'accès radio",
+      "Cœur de réseau",
+      "Réseau de données"
+    ],
+    "validation": {
+      "1": [
+        "Redessiner le schéma du réseau mobile de mémoire."
+      ],
+      "2": [
+        "Replacer un incident sur le schéma."
+      ]
+    }
+  }
+}

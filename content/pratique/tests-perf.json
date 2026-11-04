@@ -1,0 +1,36 @@
+{
+  "noeud": "tests-perf",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Concevoir un test de charge.",
+      "Mesurer débit, latence et saturation.",
+      "Conclure sur la capacité."
+    ],
+    "notions": [
+      "Profil de charge",
+      "Indicateurs",
+      "Seuils",
+      "Rapport"
+    ],
+    "situation": {
+      "contexte": "Une NF doit tenir un nombre d'abonnés cible.",
+      "etapes": [
+        "Définir la charge.",
+        "Exécuter.",
+        "Comparer aux seuils."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est un test de charge."
+      ],
+      "2": [
+        "Lire un rapport."
+      ],
+      "3": [
+        "Concevoir et exécuter un test de charge."
+      ]
+    }
+  }
+}

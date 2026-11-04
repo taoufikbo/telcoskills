@@ -1,0 +1,36 @@
+{
+  "noeud": "smf-upf",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire SMF et UPF.",
+      "Lire PFCP et le chemin de données.",
+      "Situer N4, N3 et N6."
+    ],
+    "notions": [
+      "SMF",
+      "UPF",
+      "PFCP",
+      "Interfaces N3, N4, N6"
+    ],
+    "situation": {
+      "contexte": "Une session est établie mais aucune donnée ne circule.",
+      "etapes": [
+        "Vérifier PFCP.",
+        "Vérifier l'UPF.",
+        "Contrôler N6."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire le rôle de la SMF et de l'UPF."
+      ],
+      "2": [
+        "Lire un échange PFCP."
+      ],
+      "3": [
+        "Diagnostiquer une session sans données."
+      ]
+    }
+  }
+}

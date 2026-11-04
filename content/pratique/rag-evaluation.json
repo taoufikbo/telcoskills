@@ -1,0 +1,32 @@
+{
+  "noeud": "rag-evaluation",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Évaluer un RAG.",
+      "Construire un jeu de questions.",
+      "Mesurer pertinence et fidélité."
+    ],
+    "notions": [
+      "Jeu d'évaluation",
+      "Pertinence",
+      "Fidélité"
+    ],
+    "situation": {
+      "contexte": "Les réponses sont parfois fausses.",
+      "etapes": [
+        "Constituer un jeu.",
+        "Mesurer.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi évaluer."
+      ],
+      "2": [
+        "Construire un jeu de questions."
+      ]
+    }
+  }
+}

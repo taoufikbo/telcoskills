@@ -1,0 +1,29 @@
+{
+  "noeud": "tel-nwdaf",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire le NWDAF et sa place dans le cœur 5G.",
+      "Situer ses analyses.",
+      "Identifier ses consommateurs."
+    ],
+    "notions": [
+      "NWDAF",
+      "Analyses",
+      "Consommateurs"
+    ],
+    "validation": {
+      "1": [
+        "Dire le rôle du NWDAF."
+      ]
+    },
+    "situation": {
+      "contexte": "Un opérateur envisage d'activer le NWDAF.",
+      "etapes": [
+        "Identifier les données collectées.",
+        "Lister les consommateurs.",
+        "Évaluer l'intérêt."
+      ]
+    }
+  }
+}

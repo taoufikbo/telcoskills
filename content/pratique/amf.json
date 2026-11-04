@@ -1,0 +1,36 @@
+{
+  "noeud": "amf",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire le rôle de l'AMF.",
+      "Lire un échange NAS/NGAP.",
+      "Expliquer la mobilité."
+    ],
+    "notions": [
+      "Enregistrement",
+      "NAS et NGAP",
+      "Mobilité",
+      "Contexte du terminal"
+    ],
+    "situation": {
+      "contexte": "Des terminaux n'arrivent pas à s'enregistrer.",
+      "etapes": [
+        "Trouver le message d'échec.",
+        "Identifier la cause.",
+        "Remonter l'information."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi sert l'AMF."
+      ],
+      "2": [
+        "Lire un échange NAS/NGAP."
+      ],
+      "3": [
+        "Diagnostiquer un échec d'enregistrement."
+      ]
+    }
+  }
+}

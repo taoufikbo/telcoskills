@@ -1,0 +1,28 @@
+{
+  "noeud": "ia-modeles-ouverts",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Distinguer modèle ouvert et modèle fermé.",
+      "Lire une licence de modèle.",
+      "Vérifier la provenance."
+    ],
+    "notions": [
+      "Poids ouverts",
+      "Licences",
+      "Provenance et intégrité",
+      "Famille de modèles"
+    ],
+    "validation": {
+      "1": [
+        "Dire ce que veut dire poids ouverts."
+      ],
+      "2": [
+        "Lire une licence."
+      ],
+      "3": [
+        "Vérifier la provenance et l'usage permis."
+      ]
+    }
+  }
+}

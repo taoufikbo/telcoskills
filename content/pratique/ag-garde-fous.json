@@ -1,0 +1,47 @@
+{
+  "noeud": "ag-garde-fous",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Appliquer le moindre privilège à un agent.",
+      "Placer l'humain dans la boucle.",
+      "Limiter l'impact d'une erreur.",
+      "Auditer les actions."
+    ],
+    "notions": [
+      "Droits minimaux",
+      "Validation humaine",
+      "Journal des actions",
+      "Limites"
+    ],
+    "situation": {
+      "contexte": "Un agent propose de supprimer des ressources.",
+      "etapes": [
+        "Classer l'action.",
+        "Exiger validation.",
+        "Journaliser."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi limiter un agent."
+      ],
+      "2": [
+        "Lire les droits d'un agent."
+      ],
+      "3": [
+        "Mettre une validation humaine."
+      ],
+      "4": [
+        "Concevoir les garde-fous d'un agent d'exploitation."
+      ],
+      "5": [
+        "Défendre le modèle de risques."
+      ]
+    },
+    "exercice": {
+      "consigne": "Concevoir les garde-fous d'un agent d'exploitation.",
+      "livrable": "Un document avec droits, validations et journal."
+    }
+  }
+}
