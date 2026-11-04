@@ -1,0 +1,46 @@
+{
+  "noeud": "reg-souverainete",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Évaluer l'exposition aux lois hors UE.",
+      "Choisir des mesures techniques et contractuelles.",
+      "Argumenter un choix de souveraineté."
+    ],
+    "notions": [
+      "Lois extraterritoriales",
+      "Chiffrement et clés",
+      "Hébergement et opérateur",
+      "Certifications de confiance"
+    ],
+    "situation": {
+      "contexte": "Un fournisseur d'outre-Atlantique est proposé pour un service d'administration.",
+      "etapes": [
+        "Identifier les données exposées.",
+        "Évaluer les mesures.",
+        "Recommander."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est la souveraineté des données."
+      ],
+      "2": [
+        "Repérer une exposition."
+      ],
+      "3": [
+        "Comparer des options."
+      ],
+      "4": [
+        "Concevoir une réponse technique et contractuelle."
+      ],
+      "5": [
+        "Défendre l'analyse devant un comité."
+      ]
+    },
+    "exercice": {
+      "consigne": "Évaluer l'exposition d'un service à un fournisseur hors UE.",
+      "livrable": "Une analyse avec options et recommandation."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "noeud": "reg-cadre-fr",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Situer le rôle du CPCE et de l'ARCEP.",
+      "Repérer les obligations de sécurité et de continuité des opérateurs.",
+      "Savoir quand une obligation s'applique à une plateforme."
+    ],
+    "notions": [
+      "CPCE",
+      "ARCEP",
+      "Obligations de sécurité et continuité",
+      "Autorisations"
+    ],
+    "validation": {
+      "1": [
+        "Situer le rôle de l'ARCEP."
+      ],
+      "2": [
+        "Associer une obligation à une situation concrète."
+      ]
+    }
+  }
+}

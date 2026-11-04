@@ -1,0 +1,36 @@
+{
+  "noeud": "perf-hugepages",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer HugePages et NUMA.",
+      "Réserver HugePages pour un CNF.",
+      "Aligner mémoire et CPU sur le même nœud NUMA."
+    ],
+    "notions": [
+      "HugePages",
+      "Topologie NUMA",
+      "Réservation et demande du pod",
+      "Gestionnaire de topologie"
+    ],
+    "situation": {
+      "contexte": "Un CNF montre des latences irrégulières.",
+      "etapes": [
+        "Vérifier l'alignement NUMA.",
+        "Contrôler les HugePages.",
+        "Corriger la réservation."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi servent HugePages."
+      ],
+      "2": [
+        "Lire une demande HugePages dans un manifeste."
+      ],
+      "3": [
+        "Régler HugePages et vérifier l'alignement NUMA."
+      ]
+    }
+  }
+}

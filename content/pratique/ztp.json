@@ -1,0 +1,37 @@
+{
+  "noeud": "ztp",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer le déploiement sans intervention locale d'un site.",
+      "Décrire les éléments d'une chaîne ZTP : inventaire, images, politiques.",
+      "Dépanner un site qui ne s'installe pas."
+    ],
+    "notions": [
+      "Déploiement piloté depuis le hub",
+      "Inventaire du site et BMC",
+      "Images et configuration par site",
+      "Politiques appliquées après installation",
+      "Échecs courants : BMC, réseau, registre"
+    ],
+    "situation": {
+      "contexte": "Un site distant reste bloqué à l'amorçage depuis le hub.",
+      "etapes": [
+        "Vérifier l'accès au BMC.",
+        "Vérifier le réseau et le registre.",
+        "Relire la définition du site et relancer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est le déploiement sans intervention."
+      ],
+      "2": [
+        "Lire la définition d'un site."
+      ],
+      "3": [
+        "Déployer un site de laboratoire de bout en bout."
+      ]
+    }
+  }
+}

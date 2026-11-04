@@ -1,0 +1,32 @@
+{
+  "noeud": "sec-5g",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire les menaces sur le cœur 5G.",
+      "Appliquer les mesures de sécurité de base.",
+      "Situer les exigences de l'ANSSI."
+    ],
+    "notions": [
+      "Menaces sur le cœur",
+      "Sécurité des interfaces",
+      "Chiffrement entre fonctions"
+    ],
+    "validation": {
+      "1": [
+        "Citer des menaces."
+      ],
+      "2": [
+        "Lire une mesure de sécurité."
+      ]
+    },
+    "situation": {
+      "contexte": "Une revue de sécurité du cœur 5G est demandée.",
+      "etapes": [
+        "Cartographier les interfaces.",
+        "Vérifier le chiffrement entre fonctions.",
+        "Lister les écarts."
+      ]
+    }
+  }
+}

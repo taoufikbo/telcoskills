@@ -1,0 +1,36 @@
+{
+  "noeud": "kubevirt",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer l'exécution de machines virtuelles sur Kubernetes.",
+      "Créer et exploiter une machine virtuelle.",
+      "Identifier les cas d'usage télécom."
+    ],
+    "notions": [
+      "Machine virtuelle comme ressource Kubernetes",
+      "Disques et réseau",
+      "Migration à chaud",
+      "Cas d'usage : VNF historiques"
+    ],
+    "situation": {
+      "contexte": "Une VNF historique doit coexister avec des CNF.",
+      "etapes": [
+        "Définir la machine virtuelle.",
+        "Attacher les réseaux nécessaires.",
+        "Valider l'accès et la performance."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que permet la virtualisation sur Kubernetes."
+      ],
+      "2": [
+        "Lire la définition d'une machine virtuelle."
+      ],
+      "3": [
+        "Créer une machine virtuelle et la migrer en laboratoire."
+      ]
+    }
+  }
+}

@@ -1,5 +1,49 @@
 {
   "noeud": "pra-rpo-rto",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Définir RPO et RTO avec le métier.",
+      "Concevoir l'architecture qui les respecte.",
+      "Planifier et tester un plan de reprise."
+    ],
+    "notions": [
+      "PCA et PRA",
+      "RPO et RTO",
+      "Architectures de reprise",
+      "Tests de bascule",
+      "Coût de chaque option"
+    ],
+    "situation": {
+      "contexte": "Le métier exige une reprise en une heure après la perte d'un site.",
+      "etapes": [
+        "Fixer RPO et RTO.",
+        "Choisir l'architecture.",
+        "Planifier un test de bascule."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Définir PCA, PRA, RPO et RTO."
+      ],
+      "2": [
+        "Associer une architecture à un RPO/RTO."
+      ],
+      "3": [
+        "Rédiger un plan de reprise."
+      ],
+      "4": [
+        "Concevoir la reprise d'une plateforme et ses tests."
+      ],
+      "5": [
+        "Défendre le choix avec son coût."
+      ]
+    },
+    "exercice": {
+      "consigne": "Concevoir le plan de reprise d'une plateforme.",
+      "livrable": "Un plan chiffré avec RPO, RTO, architecture et calendrier de tests."
+    }
+  },
   "questionPrealable": {
     "id": "prealable-rpo",
     "enonce": "Un RPO de 15 minutes signifie que…",

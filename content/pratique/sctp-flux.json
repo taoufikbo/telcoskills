@@ -1,0 +1,37 @@
+{
+  "noeud": "sctp-flux",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Reconnaître les protocoles du cœur 5G.",
+      "Prévoir le traitement de SCTP et GTP par la plateforme.",
+      "Lire un flux dans une capture."
+    ],
+    "notions": [
+      "SCTP",
+      "GTP-U",
+      "PFCP",
+      "HTTP/2",
+      "Équilibrage et traversée de pare-feu"
+    ],
+    "situation": {
+      "contexte": "Le trafic SCTP d'un CNF est coupé par un équipement intermédiaire.",
+      "etapes": [
+        "Identifier le flux.",
+        "Capturer des deux côtés.",
+        "Corriger la règle."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Associer chaque protocole à son interface."
+      ],
+      "2": [
+        "Dire les contraintes de la plateforme pour SCTP et GTP."
+      ],
+      "3": [
+        "Lire une capture SCTP ou GTP et localiser la perte d'un flux."
+      ]
+    }
+  }
+}

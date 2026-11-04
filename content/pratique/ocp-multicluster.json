@@ -1,0 +1,47 @@
+{
+  "noeud": "ocp-multicluster",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Concevoir une topologie hub/spoke pour de nombreux sites.",
+      "Gérer politiques et applications à l'échelle avec ACM.",
+      "Traiter la perte de liaison avec un site distant."
+    ],
+    "notions": [
+      "Hub et spoke",
+      "Politiques de conformité",
+      "Placement des applications",
+      "Cycle de vie des clusters gérés",
+      "Liaison dégradée avec le site"
+    ],
+    "situation": {
+      "contexte": "Un correctif de configuration doit atteindre 200 sites en bordure de réseau.",
+      "etapes": [
+        "Regrouper les clusters par étiquettes.",
+        "Écrire la politique et la tester sur un groupe pilote.",
+        "Étendre par vagues en surveillant la conformité."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Définir hub et spoke."
+      ],
+      "2": [
+        "Lire une politique de conformité et son effet."
+      ],
+      "3": [
+        "Appliquer une politique à un groupe de clusters."
+      ],
+      "4": [
+        "Concevoir la gestion de plusieurs centaines de sites."
+      ],
+      "5": [
+        "Défendre l'architecture de gestion multi-clusters, dimensionnée pour une flotte."
+      ]
+    },
+    "exercice": {
+      "consigne": "Concevoir la gestion d'une flotte de 200 clusters en bordure : hub, politiques, vagues de déploiement.",
+      "livrable": "Un schéma, une stratégie de vagues et un plan de reprise si le hub est perdu."
+    }
+  }
+}

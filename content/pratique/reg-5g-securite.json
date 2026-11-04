@@ -1,0 +1,33 @@
+{
+  "noeud": "reg-5g-securite",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Résumer la loi du 1er août 2019.",
+      "Situer la boîte à outils européenne.",
+      "Dire l'impact sur le choix d'équipements."
+    ],
+    "notions": [
+      "Loi du 1er août 2019",
+      "Autorisation préalable",
+      "Boîte à outils UE",
+      "Impact sur les équipements"
+    ],
+    "situation": {
+      "contexte": "Un opérateur veut ajouter un équipement dans son cœur 5G.",
+      "etapes": [
+        "Vérifier si l'autorisation est requise.",
+        "Préparer le dossier.",
+        "Anticiper les délais."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que prévoit la loi de 2019."
+      ],
+      "2": [
+        "Situer ses effets sur les achats."
+      ]
+    }
+  }
+}

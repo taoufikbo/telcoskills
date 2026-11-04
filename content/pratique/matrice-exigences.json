@@ -1,0 +1,46 @@
+{
+  "noeud": "matrice-exigences",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Transformer les exigences d'une NF en besoins de plateforme.",
+      "Détecter les incompatibilités.",
+      "Produire une matrice d'exigences."
+    ],
+    "notions": [
+      "Exigences d'éditeurs",
+      "Besoins de plateforme",
+      "Écarts",
+      "Traçabilité"
+    ],
+    "situation": {
+      "contexte": "Deux éditeurs exigent des réglages incompatibles.",
+      "etapes": [
+        "Aligner les exigences.",
+        "Repérer le conflit.",
+        "Négocier une solution."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi sert la matrice."
+      ],
+      "2": [
+        "Lire une matrice."
+      ],
+      "3": [
+        "Remplir une matrice."
+      ],
+      "4": [
+        "Construire une matrice pour plusieurs éditeurs."
+      ],
+      "5": [
+        "Défendre les arbitrages issus de la matrice."
+      ]
+    },
+    "exercice": {
+      "consigne": "Construire la matrice d'exigences pour deux CNF.",
+      "livrable": "Une matrice avec écarts et décisions."
+    }
+  }
+}

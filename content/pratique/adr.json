@@ -1,0 +1,46 @@
+{
+  "noeud": "adr",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Rédiger une décision d'architecture.",
+      "Documenter alternatives et conséquences.",
+      "Faire vivre le journal des décisions."
+    ],
+    "notions": [
+      "Contexte, décision, conséquences",
+      "Alternatives écartées",
+      "Statut",
+      "Revue"
+    ],
+    "situation": {
+      "contexte": "Le choix d'une distribution n'est pas documenté.",
+      "etapes": [
+        "Rappeler le contexte.",
+        "Lister les alternatives.",
+        "Rédiger la décision."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est un ADR."
+      ],
+      "2": [
+        "Lire un ADR."
+      ],
+      "3": [
+        "Rédiger un ADR."
+      ],
+      "4": [
+        "Animer la revue des décisions."
+      ],
+      "5": [
+        "Défendre une décision et ses compromis."
+      ]
+    },
+    "exercice": {
+      "consigne": "Rédiger deux ADR sur des choix de la plateforme.",
+      "livrable": "Deux ADR relus par un pair."
+    }
+  }
+}

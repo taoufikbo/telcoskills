@@ -1,0 +1,36 @@
+{
+  "noeud": "sriov",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer le partage d'une carte réseau en fonctions virtuelles.",
+      "Configurer SR-IOV pour un pod.",
+      "Reconnaître ses limites : visibilité, migration."
+    ],
+    "notions": [
+      "Fonctions physiques et virtuelles",
+      "Pilotes et opérateur SR-IOV",
+      "Réseau secondaire attaché au pod",
+      "Isolation et limites de visibilité"
+    ],
+    "situation": {
+      "contexte": "Un CNF n'obtient pas sa fonction virtuelle.",
+      "etapes": [
+        "Vérifier le nombre de fonctions virtuelles.",
+        "Vérifier la politique et le nœud.",
+        "Corriger et redéployer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi sert SR-IOV."
+      ],
+      "2": [
+        "Lire la configuration d'une politique SR-IOV."
+      ],
+      "3": [
+        "Configurer une interface SR-IOV pour un pod en laboratoire."
+      ]
+    }
+  }
+}

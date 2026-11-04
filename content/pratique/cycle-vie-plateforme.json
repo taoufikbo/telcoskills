@@ -1,0 +1,35 @@
+{
+  "noeud": "cycle-vie-plateforme",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Planifier les montées de version.",
+      "Anticiper l'obsolescence.",
+      "Construire une trajectoire."
+    ],
+    "notions": [
+      "Fin de support",
+      "Trajectoire de versions",
+      "Compatibilité avec les CNF"
+    ],
+    "situation": {
+      "contexte": "Une version arrive en fin de support dans six mois.",
+      "etapes": [
+        "Évaluer l'impact.",
+        "Planifier.",
+        "Communiquer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est la fin de support."
+      ],
+      "2": [
+        "Lire une trajectoire."
+      ],
+      "3": [
+        "Construire une trajectoire sur deux ans."
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "noeud": "certifs",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Choisir les certifications utiles à son rôle.",
+      "Comparer certifications d'éditeur et neutres.",
+      "Planifier sa préparation."
+    ],
+    "notions": [
+      "Certifications d'éditeur",
+      "Certifications neutres",
+      "Coût et durée"
+    ],
+    "validation": {
+      "1": [
+        "Choisir une certification selon son rôle."
+      ]
+    }
+  }
+}

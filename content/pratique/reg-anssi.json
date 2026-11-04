@@ -1,0 +1,35 @@
+{
+  "noeud": "reg-anssi",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Identifier les guides utiles de l'ANSSI.",
+      "Appliquer leurs recommandations à une plateforme.",
+      "Documenter les écarts."
+    ],
+    "notions": [
+      "Guides et référentiels",
+      "Recommandations pour virtualisation et conteneurs",
+      "Écarts et mesures compensatoires"
+    ],
+    "situation": {
+      "contexte": "Un audit demande la conformité à un guide.",
+      "etapes": [
+        "Choisir le guide.",
+        "Comparer point par point.",
+        "Documenter les écarts."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer des guides de l'ANSSI."
+      ],
+      "2": [
+        "Lire une recommandation."
+      ],
+      "3": [
+        "Évaluer une plateforme par rapport à un guide."
+      ]
+    }
+  }
+}

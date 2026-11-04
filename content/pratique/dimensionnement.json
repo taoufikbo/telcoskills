@@ -1,0 +1,48 @@
+{
+  "noeud": "dimensionnement",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Dimensionner un cluster à partir des exigences des CNF.",
+      "Calculer les marges et la perte de capacité en panne.",
+      "Justifier chaque hypothèse.",
+      "Produire une note de dimensionnement."
+    ],
+    "notions": [
+      "Exigences CPU, mémoire, réseau, stockage",
+      "Marge et réserve en cas de panne",
+      "Sur-allocation",
+      "Hypothèses documentées",
+      "Validation par tests"
+    ],
+    "situation": {
+      "contexte": "Trois CNF doivent être hébergés sur un cluster de dix nœuds.",
+      "etapes": [
+        "Additionner les exigences.",
+        "Appliquer la marge et simuler la perte d'un nœud.",
+        "Ajuster et documenter."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Lister les exigences d'une charge."
+      ],
+      "2": [
+        "Calculer le nombre de nœuds pour une charge simple."
+      ],
+      "3": [
+        "Calculer avec marge et panne."
+      ],
+      "4": [
+        "Produire une note de dimensionnement complète."
+      ],
+      "5": [
+        "Défendre et faire valider le dimensionnement par un tiers."
+      ]
+    },
+    "exercice": {
+      "consigne": "Dimensionner un cluster pour un ensemble de CNF donné.",
+      "livrable": "Une note avec calculs, hypothèses, marges et scénarios de panne."
+    }
+  }
+}

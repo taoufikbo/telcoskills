@@ -1,0 +1,36 @@
+{
+  "noeud": "lb-bgp",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Exposer un service sur serveurs nus avec un équilibreur logiciel.",
+      "Configurer l'annonce BGP des adresses de service.",
+      "Diagnostiquer une adresse non annoncée."
+    ],
+    "notions": [
+      "Équilibreur logiciel (MetalLB)",
+      "Modes L2 et BGP",
+      "Pairs BGP et annonces",
+      "Pools d'adresses"
+    ],
+    "situation": {
+      "contexte": "L'adresse d'un service n'est pas joignable depuis le réseau extérieur.",
+      "etapes": [
+        "Vérifier l'attribution de l'adresse.",
+        "Vérifier la session BGP.",
+        "Contrôler l'annonce côté routeur."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi un équilibreur est nécessaire sans cloud."
+      ],
+      "2": [
+        "Lire une configuration BGP d'équilibreur."
+      ],
+      "3": [
+        "Mettre en place un équilibreur en BGP en laboratoire."
+      ]
+    }
+  }
+}

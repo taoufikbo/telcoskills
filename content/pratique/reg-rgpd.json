@@ -1,0 +1,36 @@
+{
+  "noeud": "reg-rgpd",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Situer RGPD et ePrivacy pour un opérateur.",
+      "Identifier les données de connexion et leur conservation.",
+      "Prévoir les effets sur la conception."
+    ],
+    "notions": [
+      "Données personnelles",
+      "Données de connexion",
+      "Durées de conservation",
+      "Droits des personnes"
+    ],
+    "situation": {
+      "contexte": "Une plateforme journalise des identifiants d'abonnés.",
+      "etapes": [
+        "Identifier les données.",
+        "Fixer la durée.",
+        "Limiter l'accès."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est une donnée personnelle."
+      ],
+      "2": [
+        "Repérer les données personnelles d'une plateforme."
+      ],
+      "3": [
+        "Intégrer les contraintes à la conception."
+      ]
+    }
+  }
+}

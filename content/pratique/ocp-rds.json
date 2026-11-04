@@ -1,0 +1,47 @@
+{
+  "noeud": "ocp-rds",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Situer le profil de référence télécom et son périmètre.",
+      "Appliquer ses réglages de performance et de réseau.",
+      "Mesurer l'écart entre un cluster et la référence."
+    ],
+    "notions": [
+      "Profil de référence télécom",
+      "Réglages de performance et d'isolation CPU",
+      "Configuration réseau de référence",
+      "Écarts et dérogations",
+      "Mise à jour de la référence"
+    ],
+    "situation": {
+      "contexte": "Un éditeur de CNF conteste les performances d'un site.",
+      "etapes": [
+        "Comparer le site à la référence.",
+        "Lister les écarts.",
+        "Corriger ou documenter chaque écart."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que contient un profil de référence."
+      ],
+      "2": [
+        "Lire la configuration de référence."
+      ],
+      "3": [
+        "Comparer un cluster à la référence."
+      ],
+      "4": [
+        "Appliquer la référence à un nouveau site et gérer les dérogations."
+      ],
+      "5": [
+        "Justifier un écart à la référence devant l'éditeur."
+      ]
+    },
+    "exercice": {
+      "consigne": "Auditer un cluster de laboratoire par rapport au profil de référence.",
+      "livrable": "Une liste d'écarts classés par impact et une proposition de remédiation."
+    }
+  }
+}

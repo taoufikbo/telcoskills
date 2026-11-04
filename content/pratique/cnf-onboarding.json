@@ -1,0 +1,35 @@
+{
+  "noeud": "cnf-onboarding",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Lire les exigences d'infrastructure d'un CNF.",
+      "Préparer la plateforme.",
+      "Valider l'onboarding."
+    ],
+    "notions": [
+      "Exigences réseau, CPU, stockage",
+      "Livrables de l'éditeur",
+      "Critères d'acceptation"
+    ],
+    "situation": {
+      "contexte": "Un nouveau CNF doit être intégré.",
+      "etapes": [
+        "Lire les exigences.",
+        "Préparer la plateforme.",
+        "Valider."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est l'onboarding."
+      ],
+      "2": [
+        "Lire les exigences d'un CNF."
+      ],
+      "3": [
+        "Dérouler un onboarding de laboratoire."
+      ]
+    }
+  }
+}

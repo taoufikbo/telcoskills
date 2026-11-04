@@ -1,0 +1,47 @@
+{
+  "noeud": "hld-lld",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Rédiger un document de haut niveau.",
+      "Rédiger le document détaillé.",
+      "Maintenir la cohérence entre les deux."
+    ],
+    "notions": [
+      "HLD",
+      "LLD",
+      "Plan d'IP",
+      "Revue et approbation",
+      "Mise à jour"
+    ],
+    "situation": {
+      "contexte": "Une plateforme est livrée sans documentation à jour.",
+      "etapes": [
+        "Collecter l'existant.",
+        "Rédiger le HLD.",
+        "Dériver le LLD."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Distinguer HLD et LLD."
+      ],
+      "2": [
+        "Lire un HLD."
+      ],
+      "3": [
+        "Rédiger un LLD pour un sous-système."
+      ],
+      "4": [
+        "Rédiger HLD et LLD cohérents pour une plateforme."
+      ],
+      "5": [
+        "Piloter la revue et les évolutions."
+      ]
+    },
+    "exercice": {
+      "consigne": "Rédiger HLD et LLD d'une plateforme de laboratoire.",
+      "livrable": "Deux documents cohérents, avec plan d'IP."
+    }
+  }
+}

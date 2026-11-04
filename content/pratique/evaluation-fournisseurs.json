@@ -1,0 +1,46 @@
+{
+  "noeud": "evaluation-fournisseurs",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Définir les critères d'évaluation.",
+      "Conduire un essai de faisabilité.",
+      "Rédiger un appel d'offres technique."
+    ],
+    "notions": [
+      "Critères pondérés",
+      "Essai de faisabilité",
+      "Appel d'offres",
+      "Réversibilité"
+    ],
+    "situation": {
+      "contexte": "Deux distributions sont en concurrence.",
+      "etapes": [
+        "Définir les critères.",
+        "Faire l'essai.",
+        "Comparer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi sert un essai de faisabilité."
+      ],
+      "2": [
+        "Lire une grille d'évaluation."
+      ],
+      "3": [
+        "Établir une grille."
+      ],
+      "4": [
+        "Conduire une évaluation complète."
+      ],
+      "5": [
+        "Défendre la recommandation."
+      ]
+    },
+    "exercice": {
+      "consigne": "Conduire l'évaluation de deux fournisseurs.",
+      "livrable": "Un rapport avec grille, résultats d'essai et recommandation."
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "noeud": "archi-reseau-support",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Concevoir les réseaux de support d'une plateforme.",
+      "Séparer plans de gestion, de contrôle et d'usager avec VRF.",
+      "Dimensionner les liens et l'adressage.",
+      "Justifier l'architecture réseau devant l'équipe réseau."
+    ],
+    "notions": [
+      "Réseaux de support",
+      "VRF et séparation des plans",
+      "Plan d'adressage",
+      "Redondance des liens",
+      "Interfaces avec le réseau du site"
+    ],
+    "situation": {
+      "contexte": "Un nouveau site doit accueillir un cluster et trois CNF d'éditeurs différents.",
+      "etapes": [
+        "Lister les flux.",
+        "Attribuer réseaux et VRF.",
+        "Valider avec l'équipe réseau."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Nommer les réseaux d'une plateforme."
+      ],
+      "2": [
+        "Lire un schéma réseau de plateforme."
+      ],
+      "3": [
+        "Concevoir un plan d'adressage pour un cluster."
+      ],
+      "4": [
+        "Concevoir l'architecture réseau complète d'un site et ses interconnexions."
+      ],
+      "5": [
+        "Défendre l'architecture, ses redondances et ses compromis."
+      ]
+    },
+    "exercice": {
+      "consigne": "Concevoir l'architecture réseau d'un site de plateforme télécom.",
+      "livrable": "Un schéma, un plan d'adressage et une matrice de flux."
+    }
+  }
+}

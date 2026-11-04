@@ -1,0 +1,33 @@
+{
+  "noeud": "nfv-etsi",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire l'architecture ETSI NFV.",
+      "Situer MANO, VNFM et NFVO.",
+      "Lire un descripteur de NF."
+    ],
+    "notions": [
+      "Architecture ETSI NFV",
+      "MANO",
+      "Descripteurs de NF",
+      "Outils d'orchestration"
+    ],
+    "validation": {
+      "1": [
+        "Nommer les blocs de l'architecture."
+      ],
+      "2": [
+        "Lire un descripteur et situer MANO."
+      ]
+    },
+    "situation": {
+      "contexte": "Un éditeur livre un descripteur de NF à intégrer.",
+      "etapes": [
+        "Lire le descripteur.",
+        "Identifier les exigences.",
+        "Les rapprocher de la plateforme."
+      ]
+    }
+  }
+}

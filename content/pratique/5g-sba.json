@@ -1,0 +1,36 @@
+{
+  "noeud": "5g-sba",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire les fonctions de l'architecture orientée services.",
+      "Lire une procédure d'appels entre fonctions.",
+      "Situer NRF et SCP."
+    ],
+    "notions": [
+      "Fonctions du cœur 5G",
+      "Interfaces de service",
+      "NRF et SCP",
+      "Procédures"
+    ],
+    "situation": {
+      "contexte": "Une fonction ne trouve pas sa voisine.",
+      "etapes": [
+        "Vérifier l'enregistrement.",
+        "Vérifier le routage.",
+        "Corriger."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Nommer les fonctions principales."
+      ],
+      "2": [
+        "Lire une procédure."
+      ],
+      "3": [
+        "Expliquer le choix de l'approche par services."
+      ]
+    }
+  }
+}

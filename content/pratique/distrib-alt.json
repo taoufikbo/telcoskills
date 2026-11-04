@@ -1,0 +1,47 @@
+{
+  "noeud": "distrib-alt",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Comparer les distributions télécom (Sylva, éditeurs de CNIS, Rancher).",
+      "Dégager les critères de choix.",
+      "Dire les conséquences d'un choix sur l'exploitation."
+    ],
+    "notions": [
+      "Distributions télécom",
+      "Critères de choix : support, maturité, écosystème",
+      "Coût de possession",
+      "Réversibilité et dépendance",
+      "Compatibilité avec les CNF"
+    ],
+    "situation": {
+      "contexte": "Un opérateur hésite entre deux distributions pour ses sites en bordure.",
+      "etapes": [
+        "Définir les critères.",
+        "Noter chaque option.",
+        "Présenter la recommandation et ses risques."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Citer deux distributions alternatives."
+      ],
+      "2": [
+        "Comparer des distributions selon des critères posés."
+      ],
+      "3": [
+        "Établir une grille de comparaison."
+      ],
+      "4": [
+        "Recommander une distribution selon le contexte."
+      ],
+      "5": [
+        "Défendre un choix devant un comité, avec sa réversibilité."
+      ]
+    },
+    "exercice": {
+      "consigne": "Comparer deux distributions pour un cas d'usage donné.",
+      "livrable": "Une grille de critères pondérée et une recommandation."
+    }
+  }
+}

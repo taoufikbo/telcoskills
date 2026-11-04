@@ -1,0 +1,37 @@
+{
+  "noeud": "dpdk",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer ce qu'apporte DPDK.",
+      "Identifier les prérequis du nœud.",
+      "Décider quand DPDK est justifié."
+    ],
+    "notions": [
+      "Contournement du noyau",
+      "HugePages et CPU dédiés",
+      "Pilotes dédiés",
+      "Cas d'usage",
+      "Coûts de complexité"
+    ],
+    "situation": {
+      "contexte": "Un éditeur exige DPDK sur le plan usager.",
+      "etapes": [
+        "Vérifier les prérequis du nœud.",
+        "Réserver CPU et mémoire.",
+        "Valider le débit attendu."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que fait DPDK."
+      ],
+      "2": [
+        "Lire les prérequis d'un pod DPDK."
+      ],
+      "3": [
+        "Préparer un nœud et un pod DPDK en laboratoire et mesurer le gain."
+      ]
+    }
+  }
+}

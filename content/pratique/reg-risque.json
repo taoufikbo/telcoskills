@@ -1,0 +1,36 @@
+{
+  "noeud": "reg-risque",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Présenter EBIOS RM, ISO 27001 et NESAS.",
+      "Conduire une analyse de risques simple.",
+      "Relier risques et mesures."
+    ],
+    "notions": [
+      "EBIOS RM",
+      "ISO 27001",
+      "NESAS",
+      "Scénarios de risque"
+    ],
+    "situation": {
+      "contexte": "Un nouveau service doit être homologué.",
+      "etapes": [
+        "Identifier les biens essentiels.",
+        "Décrire les scénarios.",
+        "Choisir les mesures."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Situer chaque référentiel."
+      ],
+      "2": [
+        "Lire un scénario de risque."
+      ],
+      "3": [
+        "Conduire une analyse simple sur une plateforme."
+      ]
+    }
+  }
+}

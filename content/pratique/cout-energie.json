@@ -1,0 +1,33 @@
+{
+  "noeud": "cout-energie",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Estimer le coût d'une plateforme.",
+      "Mesurer la consommation énergétique.",
+      "Proposer des leviers d'optimisation."
+    ],
+    "notions": [
+      "Coût de possession",
+      "Consommation",
+      "Efficacité",
+      "Leviers"
+    ],
+    "validation": {
+      "1": [
+        "Dire les postes de coût."
+      ],
+      "2": [
+        "Estimer un coût simple."
+      ]
+    },
+    "situation": {
+      "contexte": "La direction demande une estimation du coût annuel d'un site.",
+      "etapes": [
+        "Lister les postes de coût.",
+        "Estimer la consommation.",
+        "Proposer deux leviers."
+      ]
+    }
+  }
+}

@@ -1,5 +1,45 @@
 {
   "noeud": "observabilite-design",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Prévoir l'observabilité dès la conception.",
+      "Définir les indicateurs et les alertes avec le métier.",
+      "Spécifier la supervision d'une plateforme."
+    ],
+    "notions": [
+      "Indicateurs de service",
+      "Journaux et métriques exigés",
+      "Supervision de bout en bout",
+      "Exigences vers les éditeurs"
+    ],
+    "situation": {
+      "contexte": "Un nouveau service est conçu sans plan de supervision.",
+      "etapes": [
+        "Définir les indicateurs.",
+        "Définir alertes et tableaux de bord.",
+        "Intégrer au cahier des charges."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi prévoir l'observabilité tôt."
+      ],
+      "2": [
+        "Lire une spécification de supervision."
+      ],
+      "3": [
+        "Spécifier la supervision d'un service."
+      ],
+      "4": [
+        "Définir un cahier des charges d'observabilité pour une plateforme."
+      ]
+    },
+    "exercice": {
+      "consigne": "Rédiger les exigences d'observabilité d'une plateforme.",
+      "livrable": "Un document d'exigences avec indicateurs, alertes, journaux."
+    }
+  },
   "questionPrealable": {
     "id": "prealable-moment",
     "enonce": "À quel moment faut-il décider quelles métriques, alertes et tableaux de bord l'exploitation devra avoir ?",

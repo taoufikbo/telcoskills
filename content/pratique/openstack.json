@@ -1,0 +1,33 @@
+{
+  "noeud": "openstack",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Situer OpenStack dans l'histoire de la virtualisation télécom.",
+      "Comparer NFVI OpenStack et Kubernetes.",
+      "Décrire les enjeux d'une migration."
+    ],
+    "notions": [
+      "NFVI",
+      "Composants d'OpenStack (vue d'ensemble)",
+      "VNF et CNF",
+      "Migration progressive"
+    ],
+    "validation": {
+      "1": [
+        "Dire ce qu'est un NFVI."
+      ],
+      "2": [
+        "Comparer OpenStack et Kubernetes pour la NF."
+      ]
+    },
+    "situation": {
+      "contexte": "Un opérateur veut migrer des VNF d'OpenStack vers Kubernetes.",
+      "etapes": [
+        "Inventorier les VNF.",
+        "Classer celles migrables.",
+        "Planifier par vagues."
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "noeud": "bench-dimensionnement",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Concevoir un test de charge.",
+      "Interpréter résultats et marges.",
+      "Corriger le dimensionnement."
+    ],
+    "notions": [
+      "Charge cible et profil de trafic",
+      "Indicateurs mesurés",
+      "Seuils d'acceptation",
+      "Marge de sécurité"
+    ],
+    "situation": {
+      "contexte": "Le dimensionnement théorique doit être validé avant la mise en service.",
+      "etapes": [
+        "Définir le profil de charge.",
+        "Exécuter le test.",
+        "Comparer aux seuils et conclure."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire pourquoi tester un dimensionnement."
+      ],
+      "2": [
+        "Lire un rapport de test de charge."
+      ],
+      "3": [
+        "Concevoir un test et valider la marge."
+      ]
+    }
+  }
+}

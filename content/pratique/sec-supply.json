@@ -1,0 +1,36 @@
+{
+  "noeud": "sec-supply",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Décrire les risques de la chaîne d'approvisionnement logicielle.",
+      "Vérifier signatures et SBOM.",
+      "Maîtriser les registres."
+    ],
+    "notions": [
+      "Signature d'images",
+      "SBOM",
+      "Registre interne",
+      "Provenance"
+    ],
+    "situation": {
+      "contexte": "Une image d'éditeur doit être acceptée sur la plateforme.",
+      "etapes": [
+        "Vérifier la signature.",
+        "Lire le SBOM.",
+        "Décider de l'accepter."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce qu'est la chaîne d'approvisionnement."
+      ],
+      "2": [
+        "Vérifier une signature d'image."
+      ],
+      "3": [
+        "Mettre en place la vérification de signature à l'admission des images."
+      ]
+    }
+  }
+}

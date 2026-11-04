@@ -1,0 +1,36 @@
+{
+  "noeud": "sec-reseau",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Segmenter la plateforme par NetworkPolicy.",
+      "Appliquer le moindre privilège aux flux.",
+      "Vérifier l'efficacité de la segmentation."
+    ],
+    "notions": [
+      "NetworkPolicy",
+      "Refus par défaut",
+      "Segmentation par namespace",
+      "Vérification par test"
+    ],
+    "situation": {
+      "contexte": "Tout flux est ouvert entre namespaces.",
+      "etapes": [
+        "Cartographier les flux nécessaires.",
+        "Écrire le refus par défaut.",
+        "Ajouter les exceptions et tester."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire à quoi sert la segmentation."
+      ],
+      "2": [
+        "Lire une politique."
+      ],
+      "3": [
+        "Écrire une politique de refus par défaut avec exceptions."
+      ]
+    }
+  }
+}

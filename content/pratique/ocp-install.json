@@ -1,0 +1,37 @@
+{
+  "noeud": "ocp-install",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Choisir une méthode d'installation selon l'environnement (assistée, agent, bare metal).",
+      "Préparer les prérequis : DNS, adressage, accès, registre.",
+      "Vérifier qu'une installation est saine."
+    ],
+    "notions": [
+      "Méthodes d'installation : assistée, agent, UPI/IPI",
+      "Prérequis : DNS, DHCP, équilibreur, NTP",
+      "Fichier de configuration d'installation",
+      "Nœuds de contrôle et de calcul",
+      "Contrôles après installation"
+    ],
+    "situation": {
+      "contexte": "Une installation sur serveurs nus échoue avant la fin de l'amorçage.",
+      "etapes": [
+        "Vérifier DNS et adressage.",
+        "Lire les journaux d'amorçage.",
+        "Corriger le prérequis manquant et relancer."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire les grandes méthodes d'installation."
+      ],
+      "2": [
+        "Lire une configuration d'installation et ses prérequis."
+      ],
+      "3": [
+        "Installer un cluster de laboratoire et valider son état."
+      ]
+    }
+  }
+}

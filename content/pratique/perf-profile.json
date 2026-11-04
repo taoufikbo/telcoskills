@@ -1,0 +1,36 @@
+{
+  "noeud": "perf-profile",
+  "fiche": {
+    "statut": "brouillon",
+    "objectifs": [
+      "Expliquer le profil de performance et l'épinglage CPU.",
+      "Séparer CPU réservés et isolés.",
+      "Valider le profil par des mesures."
+    ],
+    "notions": [
+      "Profil de performance",
+      "CPU réservés et isolés",
+      "Épinglage de CPU",
+      "Noyau temps réel (notions)"
+    ],
+    "situation": {
+      "contexte": "Un CNF partage ses CPU avec le système.",
+      "etapes": [
+        "Repérer les CPU concernés.",
+        "Écrire le profil.",
+        "Mesurer la gigue avant et après."
+      ]
+    },
+    "validation": {
+      "1": [
+        "Dire ce que fait un profil de performance."
+      ],
+      "2": [
+        "Lire un profil."
+      ],
+      "3": [
+        "Écrire et appliquer un profil, puis le valider."
+      ]
+    }
+  }
+}
