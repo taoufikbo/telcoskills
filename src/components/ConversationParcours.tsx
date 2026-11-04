@@ -132,14 +132,9 @@ export default function ConversationParcours({ config, parcours, titresNoeuds, d
         <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold" style={{ background: "var(--accent)", color: "var(--accent-fg)" }}>
           T
         </span>
-        <div className="flex-1">
-          <h2 id="titre-conversation" className="text-sm font-semibold leading-tight">
-            Trouver mon parcours
-          </h2>
-          <p className="mono" style={{ fontSize: "0.75rem" }}>
-            Assistant sans IA : des questions fixes, pas de compte
-          </p>
-        </div>
+        <h2 id="titre-conversation" className="flex-1 text-sm font-semibold leading-tight">
+          Trouver mon parcours
+        </h2>
         {(nbRepondues > 0 || termine) && (
           <button type="button" onClick={recommencer} className="mono underline underline-offset-4" style={{ fontSize: "0.75rem" }}>
             Recommencer
