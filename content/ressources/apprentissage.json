@@ -334,7 +334,10 @@
       "url": "https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i",
       "acces": "payant",
       "langue": "en",
-      "auteur": "Red Hat"
+      "auteur": "Red Hat",
+      "sauf": [
+        "parcours-sylva"
+      ]
     },
     {
       "noeuds": [

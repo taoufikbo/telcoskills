@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import LandscapeSylva from "@/components/LandscapeSylva";
 import { investissementDe } from "@/lib/palier";
@@ -51,6 +52,8 @@ export default function PageSylva() {
   return (
     <main className="mx-auto max-w-7xl space-y-14 px-4 py-10 sm:px-6 sm:py-14">
       <header className="max-w-3xl space-y-4">
+        <Image src="/logos/sylva-logo-color.svg" alt="Logo du projet Sylva" width={404} height={341} unoptimized priority className="h-16 w-auto dark:hidden" />
+        <Image src="/logos/sylva-logo-white.svg" alt="Logo du projet Sylva" width={454} height={384} unoptimized priority className="hidden h-16 w-auto dark:block" />
         <h1 className="text-4xl font-semibold sm:text-5xl">Parcours Sylva</h1>
         <p className="text-lg" style={{ color: "var(--muted)" }}>
           {s.intro} <span className="mono text-xs">Source : <Source {...s.sourceIntro} /></span>

@@ -1,5 +1,5 @@
 /**
- * Textes de l'accueil qui relèvent de l'auteur : positionnement, thèse, invitation à prendre contact.
+ * Textes de l'accueil qui relèvent de l'auteur : positionnement et thèse.
  * Première rédaction (cadrage « convergence des mondes cloud et télécom ») :
  * à relire et à corriger par l'auteur. Un seul endroit à modifier.
  */
@@ -10,9 +10,4 @@ export const TEXTES_ACCUEIL = {
   /** Sous le visuel de la convergence : l'idée directrice. */
   these:
     "Un cœur 5G tourne aujourd'hui sur une plateforme Kubernetes. L'ingénieur cloud doit comprendre le télécom, l'ingénieur télécom doit comprendre le cloud. Aucun des deux ne part de zéro, mais chacun a besoin d'un ordre différent : c'est cet ordre que ce site rend visible.",
-  contact: {
-    titre: "Prendre contact",
-    corps: "Une question sur un parcours, une remarque, un besoin pour votre équipe ? Écrivez-moi sur LinkedIn.",
-    bouton: "Me contacter sur LinkedIn",
-  },
 } as const;

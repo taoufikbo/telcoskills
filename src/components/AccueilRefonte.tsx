@@ -3,15 +3,12 @@ import CarteHerosSuivie from "@/components/CarteHerosSuivie";
 import ChoixEtCarte from "@/components/ChoixEtCarte";
 import ConvergenceMetiers from "@/components/ConvergenceMetiers";
 import DiagnosticAvecCarte from "@/components/DiagnosticAvecCarte";
-import Draft from "@/components/Draft";
 import { LienSuivi } from "@/produits/mesure";
 import ProduitsAnimes from "@/components/ProduitsAnimes";
 import Subscribe from "@/components/Subscribe";
-import { INSTANCE } from "@/lib/instance";
 import { TEXTES_ACCUEIL } from "@/lib/accueil-textes";
 import { investissementDe } from "@/lib/palier";
 import { chargerMondes, partCloud, repartition } from "@/lib/mondes";
-import { contactDisponible } from "@/lib/sections";
 import { proprietesOrientation } from "@/lib/orientationProps";
 import { parcoursMetier } from "@/lib/rubriques";
 import { chargerProjets } from "@/lib/projets";
@@ -199,25 +196,6 @@ export default function AccueilRefonte() {
 
       <Subscribe />
 
-      {contactDisponible() && (
-        <section aria-labelledby="titre-contact" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <div className="space-y-3 border-t pt-8" style={{ borderColor: "var(--filet)" }}>
-            <h2 id="titre-contact" className="text-2xl font-semibold">
-              {TEXTES_ACCUEIL.contact.titre}
-            </h2>
-            <p className="max-w-3xl" style={{ color: "var(--muted)" }}>
-              {TEXTES_ACCUEIL.contact.corps}
-            </p>
-            {INSTANCE.auteur.linkedin ? (
-              <LienSuivi href={INSTANCE.auteur.linkedin} externe evenement="contact_clic" donnees={{ canal: "linkedin", emplacement: "accueil-bas" }} className="btn btn-primary">
-                {TEXTES_ACCUEIL.contact.bouton}
-              </LienSuivi>
-            ) : (
-              <Draft titre="adresse de votre profil LinkedIn (auteur.linkedin dans src/lib/instance.ts)" />
-            )}
-          </div>
-        </section>
-      )}
     </main>
   );
 }

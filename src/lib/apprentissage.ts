@@ -8,6 +8,8 @@ const FICHIER = path.join(/*turbopackIgnore: true*/ process.cwd(), "content", "r
 /** Une ressource d'apprentissage rattachée à un ou plusieurs nœuds (par identifiant de nœud). */
 export const EntreeApprentissageSchema = RessourceSchema.extend({
   noeuds: z.array(z.string().min(1)).min(1),
+  /** Roadmaps où cette ressource ne doit pas apparaître (par exemple une formation propre à une distribution, hors d'un parcours qui en utilise une autre). */
+  sauf: z.array(z.string().min(1)).optional(),
   type: z.enum(["cours", "video", "doc"]),
   url: z.string().url().startsWith("https://"),
   acces: z.enum(["gratuit", "freemium", "payant"]),
@@ -57,9 +59,9 @@ export function fusionnerApprentissage(roadmap: Roadmap, entrees: EntreeApprenti
     ...roadmap,
     noeuds: roadmap.noeuds.map((n) => {
       const ajouts = entrees
-        .filter((e) => e.noeuds.includes(n.id))
+        .filter((e) => e.noeuds.includes(n.id) && !e.sauf?.includes(roadmap.id))
         .sort((a, b) => RANG_ACCES[a.acces] - RANG_ACCES[b.acces] || RANG_LANGUE[a.langue] - RANG_LANGUE[b.langue])
-        .map(({ noeuds: _noeuds, ...ressource }) => ressource);
+        .map(({ noeuds: _noeuds, sauf: _sauf, ...ressource }) => ressource);
       return ajouts.length === 0 ? n : { ...n, ressources: [...n.ressources, ...ajouts] };
     }),
   };

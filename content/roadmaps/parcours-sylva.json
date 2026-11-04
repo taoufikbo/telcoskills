@@ -23,11 +23,11 @@
   "noeuds": [
     {
       "id": "linux",
-      "titre": "Linux avancé (RHEL/CentOS)",
+      "titre": "Linux avancé (SUSE Linux Micro, Ubuntu)",
       "bloc": "Socle Kubernetes et GitOps",
       "niveau": "fondamental",
       "prerequis": [],
-      "resume": "Systemd, processus, namespaces/cgroups, SELinux, diagnostic système. Base de tout le reste.",
+      "resume": "Systemd, processus, namespaces et cgroups, diagnostic système. Sur Sylva : SUSE Linux Micro pour les nœuds de la variante SUSE (configuré par Ignition), Ubuntu 22.04 LTS pour la VM de bootstrap. Base de tout le reste.",
       "ressources": [
         {
           "type": "opensource",
@@ -35,19 +35,28 @@
           "url": "https://docs.kernel.org/"
         },
         {
-          "type": "doc",
-          "nom": "Documentation RHEL (administration)",
-          "url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9",
+          "type": "opensource",
+          "nom": "Projet Sylva : variante SUSE Telco Cloud (susetelcocloud)",
+          "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud",
           "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Projet Sylva"
         },
         {
-          "type": "certif",
-          "nom": "RHCSA (curriculum)",
-          "url": "https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam",
+          "type": "opensource",
+          "nom": "Projet Sylva : rapport d'alignement Sylva 1.7 / SUSE Edge 3.6 (SUSE Linux Micro 6.2)",
+          "url": "https://gitlab.com/sylva-projects/third-party-integrations/susetelcocloud/-/blob/main/mgmt/mgmt_stc3.6_sylva1.7.md",
+          "acces": "gratuit",
           "langue": "en",
-          "auteur": "Red Hat"
+          "auteur": "Projet Sylva"
+        },
+        {
+          "type": "doc",
+          "nom": "Documentation Ubuntu Server",
+          "url": "https://ubuntu.com/server/docs",
+          "acces": "gratuit",
+          "langue": "en",
+          "auteur": "Canonical"
         }
       ],
       "cible": 2

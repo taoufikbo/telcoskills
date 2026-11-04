@@ -30,7 +30,7 @@ export default async function SiteHeader() {
           <Marque />
           {INSTANCE.nom}
         </Link>
-        <NavPrincipale liens={LIENS_NAVIGATION.filter(([, href]) => lienVisible(sections, href))} contact={sections.contact} />
+        <NavPrincipale liens={LIENS_NAVIGATION.filter(([, href]) => lienVisible(sections, href))} contact={sections.contact} linkedin={INSTANCE.auteur.linkedin} />
         <div className="order-3 flex items-center gap-3 md:ml-auto">
           <BoutonRecherche surNoir={false} className="hidden w-44 lg:flex" />
           <ThemeToggle />

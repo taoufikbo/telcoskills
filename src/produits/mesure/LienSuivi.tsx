@@ -15,9 +15,9 @@ export default function LienSuivi({ evenement, donnees, externe, href, onClick, 
     onClick?.(e);
   };
   if (externe) {
-    const { children, className } = reste;
+    const { children, className, title, "aria-label": ariaLabel } = reste;
     return (
-      <a href={String(href)} target="_blank" rel="noopener noreferrer" className={className} onClick={clic as never}>
+      <a href={String(href)} target="_blank" rel="noopener noreferrer" className={className} title={title} aria-label={ariaLabel} onClick={clic as never}>
         {children}
       </a>
     );

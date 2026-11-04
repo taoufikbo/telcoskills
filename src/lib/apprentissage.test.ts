@@ -29,6 +29,17 @@ describe("catalogue d'apprentissage", () => {
     for (const e of catalogue.filter((x) => x.acces === "payant")) expect(e.type, e.nom).toBe("cours");
   });
 
+  it("n'ajoute pas une ressource à une roadmap qu'elle exclut (la formation Red Hat n'apparaît pas dans Sylva, qui n'utilise pas RHEL)", () => {
+    const rh = catalogue.find((e) => e.nom.startsWith("RH124"))!;
+    expect(rh.sauf).toContain("parcours-sylva");
+    const dansSylva = getRoadmap("parcours-sylva")!.noeuds.find((n) => n.id === "linux")!;
+    expect(dansSylva.ressources.some((r) => r.nom.startsWith("RH124"))).toBe(false);
+    const dansCaas = getRoadmap("ingenieur-caas-telco")!.noeuds.find((n) => n.id === "linux")!;
+    expect(dansCaas.ressources.some((r) => r.nom.startsWith("RH124"))).toBe(true);
+    const x = fusionnerApprentissage({ ...getRoadmap("parcours-sylva")!, noeuds: [{ ...dansSylva, ressources: [] }] }, [rh]);
+    expect(x.noeuds[0].ressources).toEqual([]);
+  });
+
   it("ajoute les ressources aux nœuds des roadmaps : gratuites d'abord, puis en français", () => {
     const r = getRoadmap("ingenieur-caas-telco")!;
     const n = r.noeuds.find((x) => x.id === "k8s-archi")!;
