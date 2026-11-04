@@ -1,10 +1,11 @@
 import Link from "next/link";
 import CarteHerosSuivie from "@/components/CarteHerosSuivie";
-import ChoixEtCarte from "@/components/ChoixEtCarte";
+import ChoixEtCarte, { type MetierSurAxe } from "@/components/ChoixEtCarte";
 import DiagnosticAvecCarte from "@/components/DiagnosticAvecCarte";
-import Draft from "@/components/Draft";
 import { LienSuivi } from "@/produits/mesure";
 import Subscribe from "@/components/Subscribe";
+import { TEXTES_ACCUEIL } from "@/lib/accueil-textes";
+import { chargerMondes, partCloud, repartition } from "@/lib/mondes";
 import { contactDisponible } from "@/lib/sections";
 import { proprietesOrientation } from "@/lib/orientationProps";
 import { parcoursMetier } from "@/lib/rubriques";
@@ -55,6 +56,28 @@ export default function AccueilRefonte() {
 
   const chiffres = chiffresCatalogue({ roadmaps, projets: chargerProjets() });
 
+  // Les métiers placés sur l'axe cloud, télécom : du plus proche du cloud au plus proche du télécom.
+  const mondes = chargerMondes();
+  const metiers: MetierSurAxe[] = parcoursMetier(roadmaps)
+    .map((r) => {
+      const rep = repartition(r, mondes);
+      const noeudId = o.config.premiers_noeuds[r.id].aucune;
+      return {
+        parts: { cloud: rep.cloud, convergence: rep.convergence, telecom: rep.telecom },
+        part: partCloud(rep),
+        metier: {
+          id: r.id,
+          titre: r.titre.split(" (")[0],
+          presentation: r.presentation,
+          nbCompetences: r.noeuds.length,
+          transverses: rep.transverse,
+          depart: { noeudId, titre: o.titresNoeuds[`${r.id}/${noeudId}`], heures: o.durees.noeuds[`${r.id}/${noeudId}`].noeud },
+        },
+      };
+    })
+    .sort((a, b) => b.part - a.part)
+    .map(({ metier, parts }) => ({ ...metier, parts }));
+
   const legendeCarte =
     roadmapGraphe && noeudCible && carte ? (
       <figcaption className="mono mt-3">
@@ -85,14 +108,12 @@ export default function AccueilRefonte() {
             <h1 id="titre-accueil" className="text-3xl font-semibold leading-tight sm:text-4xl">
               Architecture de plateformes télécom : cloud, 5G et IA.
             </h1>
+            <p className="max-w-3xl">{TEXTES_ACCUEIL.positionnement}</p>
             {carte && noeudCible && (
-              <p style={{ color: "var(--muted)" }}>
-                {nbCompetences} compétences, reliées par leurs prérequis, en {parcoursMetier(roadmaps).length} parcours par métier. Choisissez votre parcours en trois questions : la carte
-                se redessine avec votre chemin.
+              <p className="mono">
+                {nbCompetences} compétences, reliées par leurs prérequis, en {parcoursMetier(roadmaps).length} parcours par métier.
               </p>
             )}
-            <Draft titre="positionnement : le problème que vous résolvez, en une phrase" />
-            <Draft titre="thèse centrale, en deux ou trois lignes" />
           </div>
           {roadmapGraphe && noeudCible && carte ? (
             <SelonVisiteur
@@ -106,6 +127,8 @@ export default function AccueilRefonte() {
                     durees={o.durees}
                     rolesSansParcours={{}}
                     testables={[]}
+                    metiers={metiers}
+                    these={TEXTES_ACCUEIL.these}
                     carteParDefaut={carte}
                     legendeCarte={legendeCarte}
                     nbOutils={nbOutils}
@@ -182,11 +205,11 @@ export default function AccueilRefonte() {
         <section aria-labelledby="titre-offre" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <div className="space-y-3 border-t pt-8" style={{ borderColor: "var(--filet)" }}>
             <h2 id="titre-offre" className="text-2xl font-semibold">
-              Parler de votre plateforme
+              {TEXTES_ACCUEIL.offre.titre}
             </h2>
-            <Draft titre="offre d'entrée : pour qui, situation déclenchante, durée" />
+            <p className="max-w-3xl">{TEXTES_ACCUEIL.offre.corps}</p>
             <p style={{ color: "var(--muted)" }}>
-              Un échange pour cadrer votre situation et voir si je peux vous aider.{" "}
+              {TEXTES_ACCUEIL.offre.suite}{" "}
               <LienSuivi href="/contact" evenement="cta_clic" donnees={{ emplacement: "accueil-bas" }} className="underline underline-offset-4" style={{ color: "var(--fg)" }}>
                 Prendre contact
               </LienSuivi>
