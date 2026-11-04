@@ -13,7 +13,8 @@ export const metadata: Metadata = {
 export default function PageContact() {
   exigerRefonte();
   const { calendlyUrl, email } = INSTANCE.contact;
-  const pret = Boolean(calendlyUrl || email);
+  const linkedin = INSTANCE.auteur.linkedin;
+  const pret = Boolean(calendlyUrl || email || linkedin);
   return (
     <PageEbauche titre="Contact" intro="Prendre rendez-vous pour parler de votre plateforme." enCours={!pret}>
       {calendlyUrl && (
@@ -25,7 +26,16 @@ export default function PageContact() {
           </LienSuivi>
         </div>
       )}
-      {!calendlyUrl && <Draft titre="lien de réservation Calendly (champ contact.calendlyUrl de src/lib/instance.ts)" />}
+      {linkedin && (
+        <div className="panneau space-y-3 p-6">
+          <h2 className="text-xl font-semibold">Écrire sur LinkedIn</h2>
+          <p style={{ color: "var(--muted)" }}>Un message direct suffit : vous quittez ce site pour LinkedIn.</p>
+          <LienSuivi href={linkedin} externe evenement="contact_clic" donnees={{ canal: "linkedin" }} className="btn btn-primary">
+            Me contacter sur LinkedIn
+          </LienSuivi>
+        </div>
+      )}
+      {!pret && <Draft titre="un canal de contact : profil LinkedIn (auteur.linkedin), lien Calendly ou e-mail (src/lib/instance.ts)" />}
       {email && (
         <p>
           Ou par e-mail :{" "}

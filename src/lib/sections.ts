@@ -13,8 +13,8 @@ const BROUILLONS_VISIBLES = process.env.NODE_ENV !== "production" || process.env
 /** Les offres n'ont pas de fichier de données : passer à `true` quand les rubriques de src/app/offres/page.tsx sont rédigées. */
 export const OFFRES_REDIGEES = false;
 
-/** Un canal de contact existe (réservation ou e-mail, src/lib/instance.ts). */
-export const contactDisponible = () => BROUILLONS_VISIBLES || Boolean(INSTANCE.contact.calendlyUrl || INSTANCE.contact.email);
+/** Un canal de contact existe (réservation, e-mail ou profil LinkedIn de l'auteur, src/lib/instance.ts). */
+export const contactDisponible = () => BROUILLONS_VISIBLES || Boolean(INSTANCE.contact.calendlyUrl || INSTANCE.contact.email || INSTANCE.auteur.linkedin);
 /** Au moins un framework est rédigé (champ `redige` de content/frameworks.json). */
 export const frameworksRediges = () => BROUILLONS_VISIBLES || chargerFrameworks().some((f) => f.redige);
 

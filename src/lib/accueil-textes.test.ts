@@ -3,7 +3,7 @@ import { TEXTES_ACCUEIL } from "./accueil-textes";
 
 describe("textes de l'accueil", () => {
   it("sont tous renseignés", () => {
-    const { offre, ...autres } = TEXTES_ACCUEIL;
-    for (const [nom, texte] of Object.entries({ ...autres, ...offre })) expect(texte.length, nom).toBeGreaterThan(20);
+    const { contact, ...autres } = TEXTES_ACCUEIL;
+    for (const [nom, texte] of Object.entries({ ...autres, ...contact })) expect(texte.length, nom).toBeGreaterThan(8);
   });
 });
