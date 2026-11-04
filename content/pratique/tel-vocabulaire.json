@@ -1,7 +1,7 @@
 {
   "noeud": "tel-vocabulaire",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Employer correctement NF, PLMN, UE, gNB, DN et SLA.",
       "Lire un document d'opérateur sans se perdre.",

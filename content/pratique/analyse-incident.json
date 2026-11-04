@@ -1,7 +1,7 @@
 {
   "noeud": "analyse-incident",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Corréler traces, journaux et compteurs de plusieurs NF.",
       "Reconstituer une chronologie.",

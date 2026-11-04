@@ -1,7 +1,7 @@
 {
   "noeud": "sylva-units",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Activer et configurer des units.",
       "Lire les dépendances.",

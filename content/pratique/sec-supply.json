@@ -1,7 +1,7 @@
 {
   "noeud": "sec-supply",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire les risques de la chaîne d'approvisionnement logicielle.",
       "Vérifier signatures et SBOM.",

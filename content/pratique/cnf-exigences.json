@@ -1,7 +1,7 @@
 {
   "noeud": "cnf-exigences",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Lire les exigences d'une NF.",
       "Les traduire en besoins de plateforme.",

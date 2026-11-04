@@ -1,7 +1,7 @@
 {
   "noeud": "git-ci",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Utiliser Git au quotidien : branches, fusions, revues.",
       "Lire et modifier un pipeline d'intégration continue.",

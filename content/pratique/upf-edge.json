@@ -1,7 +1,7 @@
 {
   "noeud": "upf-edge",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire l'UPF distribué.",
       "Situer l'accès local et MEC.",

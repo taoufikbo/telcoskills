@@ -1,7 +1,7 @@
 {
   "noeud": "distrib-alt",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Comparer les distributions télécom (Sylva, éditeurs de CNIS, Rancher).",
       "Dégager les critères de choix.",

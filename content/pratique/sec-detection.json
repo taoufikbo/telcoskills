@@ -1,7 +1,7 @@
 {
   "noeud": "sec-detection",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Activer l'audit Kubernetes et celui des nœuds.",
       "Envoyer les journaux de sécurité vers un SIEM.",

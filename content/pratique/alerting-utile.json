@@ -1,7 +1,7 @@
 {
   "noeud": "alerting-utile",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Distinguer une alerte sur un symptôme d'une alerte sur une cause.",
       "Régler seuils, durées et regroupements.",
@@ -52,7 +52,7 @@
       "bonne": 0,
       "explication": "Une alerte sur ce que vit l'utilisateur demande une action. Les causes possibles servent au diagnostic, pas au réveil.",
       "source": "Alertmanager : documentation",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -67,7 +67,7 @@
       "bonne": 0,
       "explication": "Le regroupement évite d'envoyer cent notifications pour un même incident.",
       "source": "Alertmanager : documentation",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -82,7 +82,7 @@
       "bonne": 0,
       "explication": "Si peu d'alertes mènent à une action, la plupart sont du bruit.",
       "source": "Alertmanager : documentation",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     }
   ]

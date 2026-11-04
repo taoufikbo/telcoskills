@@ -1,7 +1,7 @@
 {
   "noeud": "inf-bench",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Concevoir un test d'inférence.",
       "Interpréter débit, latence et coût.",

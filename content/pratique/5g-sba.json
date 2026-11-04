@@ -1,7 +1,7 @@
 {
   "noeud": "5g-sba",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire les fonctions de l'architecture orientée services.",
       "Lire une procédure d'appels entre fonctions.",

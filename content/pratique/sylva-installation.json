@@ -1,7 +1,7 @@
 {
   "noeud": "sylva-installation",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Déployer le cluster de gestion.",
       "Valider son état.",

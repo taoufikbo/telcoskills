@@ -1,7 +1,7 @@
 {
   "noeud": "dimensionnement",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Dimensionner un cluster à partir des exigences des CNF.",
       "Calculer les marges et la perte de capacité en panne.",

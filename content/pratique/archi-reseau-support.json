@@ -1,7 +1,7 @@
 {
   "noeud": "archi-reseau-support",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Concevoir les réseaux de support d'une plateforme.",
       "Séparer plans de gestion, de contrôle et d'usager avec VRF.",

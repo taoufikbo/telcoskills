@@ -1,7 +1,7 @@
 {
   "noeud": "config-nf",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Configurer une NF par API, YANG/NETCONF ou ConfigMap.",
       "Choisir le bon mode de configuration.",

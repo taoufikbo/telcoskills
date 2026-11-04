@@ -1,7 +1,7 @@
 {
   "noeud": "llmops-obs",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Observer une application d'IA.",
       "Suivre latence, coût et qualité.",

@@ -1,7 +1,7 @@
 {
   "noeud": "lab-as-code",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire un laboratoire reproductible.",
       "Utiliser kind et des charts.",

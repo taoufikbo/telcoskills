@@ -1,7 +1,7 @@
 {
   "noeud": "ocp-install",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Choisir une méthode d'installation selon l'environnement (assistée, agent, bare metal).",
       "Préparer les prérequis : DNS, adressage, accès, registre.",

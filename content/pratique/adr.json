@@ -1,7 +1,7 @@
 {
   "noeud": "adr",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Rédiger une décision d'architecture.",
       "Documenter alternatives et conséquences.",

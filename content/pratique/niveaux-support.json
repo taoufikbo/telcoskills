@@ -1,7 +1,7 @@
 {
   "noeud": "niveaux-support",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Dire ce que traite chaque niveau de support (N1, N2, N3).",
       "Appliquer des critères d'escalade explicites.",

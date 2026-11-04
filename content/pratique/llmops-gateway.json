@@ -1,7 +1,7 @@
 {
   "noeud": "llmops-gateway",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Centraliser l'accès aux modèles.",
       "Gérer clés, quotas et journalisation.",

@@ -1,7 +1,7 @@
 {
   "noeud": "procedures-5g-diagnostic",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire l'enregistrement, l'authentification et la session PDU.",
       "Identifier les fonctions du cœur à chaque étape.",

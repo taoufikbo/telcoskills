@@ -1,7 +1,7 @@
 {
   "noeud": "simulation-ran-ue",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Utiliser un simulateur de RAN et d'UE.",
       "Générer du trafic de test.",

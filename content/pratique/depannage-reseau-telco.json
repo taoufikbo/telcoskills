@@ -1,7 +1,7 @@
 {
   "noeud": "depannage-reseau-telco",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Isoler une panne réseau par couche : interface, VLAN, MTU, route, politique réseau.",
       "Capturer des paquets au bon endroit (pod, nœud, interface physique) et les lire.",
@@ -53,7 +53,7 @@
       "bonne": 0,
       "explication": "Les petits paquets passent, les gros dépassent la MTU d'un tunnel ou d'un lien. Un test avec des tailles croissantes le confirme.",
       "source": "Wireshark : documentation",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -68,7 +68,7 @@
       "bonne": 0,
       "explication": "Comparer l'entrée et la sortie d'un segment montre si la perte est avant ou après.",
       "source": "tcpdump : manuel",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -83,7 +83,7 @@
       "bonne": 0,
       "explication": "Le trafic SR-IOV contourne la pile réseau logicielle du nœud ; il faut capturer dans le pod ou sur la fonction physique.",
       "source": "Wireshark : documentation",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     }
   ]

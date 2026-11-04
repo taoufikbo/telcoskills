@@ -1,7 +1,7 @@
 {
   "noeud": "tel-agent-noc",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Concevoir un agent d'assistance à l'astreinte.",
       "Fixer ses droits.",

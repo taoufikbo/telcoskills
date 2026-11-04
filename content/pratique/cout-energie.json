@@ -1,7 +1,7 @@
 {
   "noeud": "cout-energie",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Estimer le coût d'une plateforme.",
       "Mesurer la consommation énergétique.",

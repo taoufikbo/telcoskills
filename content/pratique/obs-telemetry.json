@@ -1,7 +1,7 @@
 {
   "noeud": "obs-telemetry",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer ce qu'apporte la télémétrie en continu par rapport à SNMP.",
       "Situer gRPC et OpenTelemetry dans une chaîne d'observabilité.",

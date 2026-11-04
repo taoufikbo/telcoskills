@@ -1,7 +1,7 @@
 {
   "noeud": "deploiement-lab",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Déployer un cœur 5G open source.",
       "Vérifier l'enregistrement de bout en bout.",

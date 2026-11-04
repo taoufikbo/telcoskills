@@ -1,7 +1,7 @@
 {
   "noeud": "operators-dev",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire le modèle d'un opérateur Kubernetes.",
       "Écrire un contrôleur simple en Go.",

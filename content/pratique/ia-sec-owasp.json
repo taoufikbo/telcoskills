@@ -1,7 +1,7 @@
 {
   "noeud": "ia-sec-owasp",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Citer les menaces propres à l'IA générative.",
       "Évaluer une application.",

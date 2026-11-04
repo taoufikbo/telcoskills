@@ -1,7 +1,7 @@
 {
   "noeud": "onboarding-editeur",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Intégrer une NF d'éditeur.",
       "Rassembler exigences et livrables.",

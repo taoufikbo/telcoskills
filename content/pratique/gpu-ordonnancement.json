@@ -1,7 +1,7 @@
 {
   "noeud": "gpu-ordonnancement",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Gérer des files de travaux avec Kueue.",
       "Fixer quotas et priorités.",

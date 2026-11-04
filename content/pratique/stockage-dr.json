@@ -1,7 +1,7 @@
 {
   "noeud": "stockage-dr",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Distinguer sauvegarde, instantané et réplication.",
       "Fixer un RPO et un RTO et choisir la technique adaptée.",

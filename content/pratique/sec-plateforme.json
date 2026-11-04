@@ -1,7 +1,7 @@
 {
   "noeud": "sec-plateforme",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Appliquer le moindre privilège à une NF.",
       "Isoler les NF entre elles.",

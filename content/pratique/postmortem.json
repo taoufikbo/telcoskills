@@ -1,7 +1,7 @@
 {
   "noeud": "postmortem",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Reconstituer la chronologie d'un incident.",
       "Distinguer cause racine et facteurs contributifs.",

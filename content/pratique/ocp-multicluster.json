@@ -1,7 +1,7 @@
 {
   "noeud": "ocp-multicluster",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Concevoir une topologie hub/spoke pour de nombreux sites.",
       "Gérer politiques et applications à l'échelle avec ACM.",

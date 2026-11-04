@@ -1,7 +1,7 @@
 {
   "noeud": "multus",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer pourquoi un pod télécom a plusieurs interfaces.",
       "Lire une NetworkAttachmentDefinition (macvlan, ipvlan).",

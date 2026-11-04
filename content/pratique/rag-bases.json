@@ -1,7 +1,7 @@
 {
   "noeud": "rag-bases",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer le principe du RAG.",
       "Construire une chaîne de base.",

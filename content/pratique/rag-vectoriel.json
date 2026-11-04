@@ -1,7 +1,7 @@
 {
   "noeud": "rag-vectoriel",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Comparer pgvector, Qdrant et Milvus.",
       "Choisir un index.",

@@ -1,7 +1,7 @@
 {
   "noeud": "ag-a2a",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire le dialogue entre agents.",
       "Situer A2A par rapport à MCP.",

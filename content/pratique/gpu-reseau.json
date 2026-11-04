@@ -1,7 +1,7 @@
 {
   "noeud": "gpu-reseau",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer RDMA.",
       "Situer SR-IOV pour l'IA.",

@@ -1,7 +1,7 @@
 {
   "noeud": "gestion-vulns",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Suivre les vulnérabilités des images et des nœuds.",
       "Prioriser par exposition et gravité.",

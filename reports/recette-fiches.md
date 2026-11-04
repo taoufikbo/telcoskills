@@ -6,7 +6,7 @@ Généré par `scripts/couverture-fiches.mjs`. Source : `docs/SPEC-FICHE-COMPETE
 
 - Compétences : 178
 - Avec fiche : 178
-- Fiches encore en brouillon (non publiées) : 178
+- Fiches encore en brouillon (non publiées) : 0
 - Avec mise en situation : 153
 - Avec exercice : 23
 - Avec mini-quiz de 3 questions ou plus : 11

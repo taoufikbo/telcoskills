@@ -1,7 +1,7 @@
 {
   "noeud": "sriov",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer le partage d'une carte réseau en fonctions virtuelles.",
       "Configurer SR-IOV pour un pod.",

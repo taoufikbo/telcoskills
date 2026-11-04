@@ -1,7 +1,7 @@
 {
   "noeud": "toil",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Reconnaître et mesurer le travail répétitif manuel.",
       "Décider quoi automatiser en comparant gain et coût.",

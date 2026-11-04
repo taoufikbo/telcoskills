@@ -1,7 +1,7 @@
 {
   "noeud": "lb-bgp",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Exposer un service sur serveurs nus avec un équilibreur logiciel.",
       "Configurer l'annonce BGP des adresses de service.",

@@ -1,7 +1,7 @@
 {
   "noeud": "recette",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Définir critères d'acceptation.",
       "Conduire une recette.",

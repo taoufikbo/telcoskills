@@ -1,7 +1,7 @@
 {
   "noeud": "ceph",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire l'architecture de Ceph : moniteurs, OSD, pools, placement.",
       "Lire l'état d'un cluster Ceph et comprendre un état dégradé.",

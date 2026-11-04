@@ -1,7 +1,7 @@
 {
   "noeud": "tel-nf",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer ce qu'est une fonction réseau, VNF ou CNF.",
       "Décrire son cycle de vie.",

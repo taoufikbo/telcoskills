@@ -1,7 +1,7 @@
 {
   "noeud": "dpdk",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer ce qu'apporte DPDK.",
       "Identifier les prérequis du nœud.",

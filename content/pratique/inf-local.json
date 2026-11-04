@@ -1,7 +1,7 @@
 {
   "noeud": "inf-local",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Lancer un modèle en local.",
       "Interroger un modèle par API.",

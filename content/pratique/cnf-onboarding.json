@@ -1,7 +1,7 @@
 {
   "noeud": "cnf-onboarding",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Lire les exigences d'infrastructure d'un CNF.",
       "Préparer la plateforme.",

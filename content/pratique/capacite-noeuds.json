@@ -1,7 +1,7 @@
 {
   "noeud": "capacite-noeuds",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Vider un nœud pour maintenance sans violer les budgets d'interruption.",
       "Planifier un redémarrage contrôlé de nœuds.",

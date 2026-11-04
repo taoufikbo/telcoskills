@@ -1,7 +1,7 @@
 {
   "noeud": "pcf-chf",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire PCF et CHF.",
       "Relier politiques et facturation.",

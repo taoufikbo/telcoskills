@@ -1,7 +1,7 @@
 {
   "noeud": "sylva-securite",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire signatures, PKI, NeuVector, SBOM et WireGuard.",
       "Vérifier la sécurité d'un cluster.",

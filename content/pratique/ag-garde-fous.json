@@ -1,7 +1,7 @@
 {
   "noeud": "ag-garde-fous",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Appliquer le moindre privilège à un agent.",
       "Placer l'humain dans la boucle.",

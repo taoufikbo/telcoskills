@@ -1,7 +1,7 @@
 {
   "noeud": "cluster-api",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer Cluster API.",
       "Lire les ressources d'un cluster.",

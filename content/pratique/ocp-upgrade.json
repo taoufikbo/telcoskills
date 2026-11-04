@@ -1,7 +1,7 @@
 {
   "noeud": "ocp-upgrade",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer comment un cluster est mis à jour : canaux, chemins de mise à jour, MachineConfig.",
       "Préparer une mise à jour : prérequis, sauvegarde, fenêtre de maintenance, impact sur les CNF.",
@@ -53,7 +53,7 @@
       "bonne": 0,
       "explication": "Les nœuds appliquent une nouvelle configuration du système d'exploitation, ce qui impose un redémarrage contrôlé, nœud par nœud.",
       "source": "Documentation OpenShift (Updating clusters)",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -68,7 +68,7 @@
       "bonne": 0,
       "explication": "Le vidage d'un nœud respecte les budgets d'interruption : si l'arrêt d'un pod les violerait, la mise à jour attend, ce qui peut la bloquer.",
       "source": "Documentation OpenShift (Updating clusters)",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -83,7 +83,7 @@
       "bonne": 0,
       "explication": "Le Cluster Version Operator applique la version cible et met à jour les opérateurs dans l'ordre.",
       "source": "Cluster Version Operator (dépôt source…)",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     }
   ]

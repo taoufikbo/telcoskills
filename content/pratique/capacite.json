@@ -1,7 +1,7 @@
 {
   "noeud": "capacite",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Suivre l'utilisation des ressources dans le temps.",
       "Prévoir la saturation et déclencher l'extension assez tôt.",

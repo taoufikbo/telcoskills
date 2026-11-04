@@ -1,7 +1,7 @@
 {
   "noeud": "bench-dimensionnement",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Concevoir un test de charge.",
       "Interpréter résultats et marges.",

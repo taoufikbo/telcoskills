@@ -1,7 +1,7 @@
 {
   "noeud": "k8s-workloads",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Choisir entre Deployment, StatefulSet, DaemonSet et Job selon la charge.",
       "Régler les ressources, les sondes de santé et les budgets d'interruption d'un pod.",

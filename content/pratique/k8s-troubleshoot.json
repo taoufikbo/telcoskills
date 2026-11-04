@@ -1,7 +1,7 @@
 {
   "noeud": "k8s-troubleshoot",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Appliquer une démarche d'analyse en entonnoir pour isoler une panne : service, pod, nœud, plan de contrôle.",
       "Exploiter les événements, les journaux et l'état des nœuds pour orienter un diagnostic.",
@@ -60,7 +60,7 @@
       "bonne": 0,
       "explication": "Un pod en attente n'a généralement pas de conteneur démarré : les événements de l'ordonnanceur (ressources insuffisantes, volume, affinité) indiquent la cause.",
       "source": "Kubernetes : dépannage et débogage",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -75,7 +75,7 @@
       "bonne": 0,
       "explication": "Le kubelet envoie les battements et l'état du nœud. S'il s'arrête ou n'atteint plus l'API, le nœud passe NotReady.",
       "source": "Kubernetes : dépannage et débogage",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -90,7 +90,7 @@
       "bonne": 0,
       "explication": "Une panne a rarement une cause unique : on sépare ce qui l'a déclenchée des conditions qui l'ont aggravée, pour agir sur les deux.",
       "source": "Kubernetes : dépannage et débogage",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     }
   ]

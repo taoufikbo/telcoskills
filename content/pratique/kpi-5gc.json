@@ -1,7 +1,7 @@
 {
   "noeud": "kpi-5gc",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Lire les compteurs de performance du cœur.",
       "Identifier les indicateurs clés.",

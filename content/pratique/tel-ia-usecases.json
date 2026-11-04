@@ -1,7 +1,7 @@
 {
   "noeud": "tel-ia-usecases",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Citer les usages de l'IA dans un réseau télécom.",
       "Évaluer l'intérêt d'un cas d'usage.",

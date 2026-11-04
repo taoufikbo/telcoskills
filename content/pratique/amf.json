@@ -1,7 +1,7 @@
 {
   "noeud": "amf",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire le rôle de l'AMF.",
       "Lire un échange NAS/NGAP.",

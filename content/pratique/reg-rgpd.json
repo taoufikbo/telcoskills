@@ -1,7 +1,7 @@
 {
   "noeud": "reg-rgpd",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Situer RGPD et ePrivacy pour un opérateur.",
       "Identifier les données de connexion et leur conservation.",

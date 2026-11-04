@@ -1,7 +1,7 @@
 {
   "noeud": "obs-metrics",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer le modèle de Prometheus : métriques, étiquettes, collecte.",
       "Écrire une règle d'alerte simple et la router avec Alertmanager.",

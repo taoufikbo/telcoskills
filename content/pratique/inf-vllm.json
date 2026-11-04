@@ -1,7 +1,7 @@
 {
   "noeud": "inf-vllm",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Déployer un serveur vLLM.",
       "Régler le traitement par lots et la mémoire.",

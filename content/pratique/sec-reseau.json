@@ -1,7 +1,7 @@
 {
   "noeud": "sec-reseau",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Segmenter la plateforme par NetworkPolicy.",
       "Appliquer le moindre privilège aux flux.",

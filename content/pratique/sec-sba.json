@@ -1,7 +1,7 @@
 {
   "noeud": "sec-sba",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire TLS et OAuth2 entre NF.",
       "Lire un jeton d'autorisation.",

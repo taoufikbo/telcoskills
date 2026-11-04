@@ -1,7 +1,7 @@
 {
   "noeud": "k8s-stockage",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer le lien entre PersistentVolume, PersistentVolumeClaim et StorageClass.",
       "Choisir un mode d'accès adapté à la charge.",

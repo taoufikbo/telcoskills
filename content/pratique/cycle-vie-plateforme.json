@@ -1,7 +1,7 @@
 {
   "noeud": "cycle-vie-plateforme",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Planifier les montées de version.",
       "Anticiper l'obsolescence.",

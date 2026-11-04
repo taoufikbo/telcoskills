@@ -1,7 +1,7 @@
 {
   "noeud": "matrice-exigences",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Transformer les exigences d'une NF en besoins de plateforme.",
       "Détecter les incompatibilités.",

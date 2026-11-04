@@ -1,7 +1,7 @@
 {
   "noeud": "pieges-reseau",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Reconnaître les pièges d'un pod multi-interfaces.",
       "Vérifier MTU et VLAN d'un CNF.",

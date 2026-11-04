@@ -1,7 +1,7 @@
 {
   "noeud": "k8s-rbac",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Lire un Role, un ClusterRole et leurs liaisons pour savoir qui peut faire quoi.",
       "Isoler des équipes par namespaces, quotas et limites.",

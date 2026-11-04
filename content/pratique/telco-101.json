@@ -1,7 +1,7 @@
 {
   "noeud": "telco-101",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Situer l'accès radio, le cœur de réseau et les plans de contrôle et d'usager.",
       "Utiliser le vocabulaire des opérateurs (RAN, cœur, UE, PLMN) pour dialoguer avec les experts réseau.",

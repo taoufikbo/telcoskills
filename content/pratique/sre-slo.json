@@ -1,7 +1,7 @@
 {
   "noeud": "sre-slo",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Définir un indicateur de niveau de service (SLI) à partir de ce que vit l'utilisateur.",
       "Fixer un objectif (SLO) réaliste et calculer le budget d'erreur correspondant.",

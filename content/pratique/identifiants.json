@@ -1,7 +1,7 @@
 {
   "noeud": "identifiants",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Lire SUPI, SUCI, GUTI, PLMN et DNN.",
       "Savoir quand chacun est utilisé.",

@@ -1,7 +1,7 @@
 {
   "noeud": "linux",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Lire l'état d'un système Linux en production : processus, services, ressources, système de fichiers.",
       "Comprendre le fonctionnement des services et du démarrage avec systemd.",
@@ -57,7 +57,7 @@
       "bonne": 1,
       "explication": "journalctl -u filtre le journal systemd sur une unité. ps liste les processus, df l'espace disque, ip addr les adresses réseau.",
       "source": "À ajouter : documentation systemd (systemd.io), absente des ressources de ce nœud",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 0
     },
     {
@@ -72,7 +72,7 @@
       "bonne": 0,
       "explication": "Les cgroups limitent et comptabilisent les ressources. Ce que le conteneur voit (processus, réseau, montages) relève des namespaces.",
       "source": "Documentation du noyau Linux",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -87,7 +87,7 @@
       "bonne": 0,
       "explication": "Linux remplit la mémoire inutilisée avec du cache de fichiers, restituable à la demande. La colonne « disponible » estime ce qui reste réellement utilisable.",
       "source": "Documentation du noyau Linux",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     }
   ]

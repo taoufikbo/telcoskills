@@ -1,7 +1,7 @@
 {
   "noeud": "ci-cd-integration",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Automatiser le déploiement et la non-régression.",
       "Construire un pipeline d'intégration.",

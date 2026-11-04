@@ -1,7 +1,7 @@
 {
   "noeud": "gestion-changement",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Classer un changement selon son risque.",
       "Préparer une fenêtre, des vérifications et un retour arrière.",

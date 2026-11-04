@@ -1,7 +1,7 @@
 {
   "noeud": "obs-logs",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer la chaîne de collecte, d'indexation et de rétention des journaux.",
       "Interroger les journaux pour retrouver un événement.",

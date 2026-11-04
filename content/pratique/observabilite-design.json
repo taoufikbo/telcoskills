@@ -1,7 +1,7 @@
 {
   "noeud": "observabilite-design",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Prévoir l'observabilité dès la conception.",
       "Définir les indicateurs et les alertes avec le métier.",

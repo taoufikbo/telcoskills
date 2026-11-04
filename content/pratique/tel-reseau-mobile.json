@@ -1,7 +1,7 @@
 {
   "noeud": "tel-reseau-mobile",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire la chaîne abonné, radio, cœur, Internet.",
       "Situer chaque bloc et son rôle.",

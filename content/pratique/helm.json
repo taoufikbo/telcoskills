@@ -1,7 +1,7 @@
 {
   "noeud": "helm",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Lire un chart Helm et ses valeurs.",
       "Installer, mettre à jour et revenir en arrière avec Helm.",

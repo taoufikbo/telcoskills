@@ -1,7 +1,7 @@
 {
   "noeud": "sondes",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Choisir le type de sonde (HTTP, TCP, ICMP, synthétique) selon ce qu'on veut vérifier.",
       "Mesurer le service tel que le voit l'utilisateur.",

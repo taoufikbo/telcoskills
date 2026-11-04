@@ -1,7 +1,7 @@
 {
   "noeud": "etsi-sol",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire le cycle de vie selon ETSI NFV.",
       "Lire un CSAR.",

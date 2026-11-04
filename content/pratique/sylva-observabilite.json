@@ -1,7 +1,7 @@
 {
   "noeud": "sylva-observabilite",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Situer journaux et supervision dans Sylva.",
       "Lire les tableaux de bord.",

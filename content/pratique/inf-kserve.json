@@ -1,7 +1,7 @@
 {
   "noeud": "inf-kserve",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Déployer un modèle avec KServe.",
       "Gérer versions et mise à l'échelle.",

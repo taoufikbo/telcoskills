@@ -1,7 +1,7 @@
 {
   "noeud": "ansible-python",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Écrire un playbook Ansible avec inventaire et rôles.",
       "Écrire un script Python d'exploitation.",

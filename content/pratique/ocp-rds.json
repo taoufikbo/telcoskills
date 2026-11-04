@@ -1,7 +1,7 @@
 {
   "noeud": "ocp-rds",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Situer le profil de référence télécom et son périmètre.",
       "Appliquer ses réglages de performance et de réseau.",

@@ -1,7 +1,7 @@
 {
   "noeud": "helm-cnf",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Packager une NF avec Helm.",
       "Configurer par valeurs.",

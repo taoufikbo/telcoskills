@@ -1,7 +1,7 @@
 {
   "noeud": "udm-udr-ausf",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire UDM, UDR et AUSF.",
       "Suivre l'authentification 5G-AKA.",

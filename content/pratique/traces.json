@@ -1,7 +1,7 @@
 {
   "noeud": "traces",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Capturer le trafic d'un cœur 5G.",
       "Lire NGAP, PFCP, HTTP/2 et GTP-U dans Wireshark.",

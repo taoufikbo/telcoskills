@@ -1,7 +1,7 @@
 {
   "noeud": "gpu-partage",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Comparer MIG et temps partagé.",
       "Allouer des fractions de GPU.",

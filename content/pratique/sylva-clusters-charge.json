@@ -1,7 +1,7 @@
 {
   "noeud": "sylva-clusters-charge",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Créer un cluster de charge.",
       "Passer du script à SylvaWorkloadCluster.",

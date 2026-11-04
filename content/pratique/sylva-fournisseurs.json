@@ -1,7 +1,7 @@
 {
   "noeud": "sylva-fournisseurs",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Comparer les fournisseurs d'infrastructure et distributions.",
       "Choisir selon le contexte.",

@@ -1,7 +1,7 @@
 {
   "noeud": "reg-ia-anssi",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Résumer les recommandations de l'ANSSI pour l'IA générative.",
       "Les appliquer à un projet.",

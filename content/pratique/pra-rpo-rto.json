@@ -1,7 +1,7 @@
 {
   "noeud": "pra-rpo-rto",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Définir RPO et RTO avec le métier.",
       "Concevoir l'architecture qui les respecte.",

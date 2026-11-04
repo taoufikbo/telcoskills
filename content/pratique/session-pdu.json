@@ -1,7 +1,7 @@
 {
   "noeud": "session-pdu",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire l'établissement d'une session de données.",
       "Suivre le chemin de données.",

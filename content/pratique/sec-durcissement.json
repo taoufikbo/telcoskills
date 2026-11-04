@@ -1,7 +1,7 @@
 {
   "noeud": "sec-durcissement",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Appliquer des règles de durcissement sur les nœuds et le cluster.",
       "Lire les profils de sécurité (SCC, politiques de pods).",

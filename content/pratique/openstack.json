@@ -1,7 +1,7 @@
 {
   "noeud": "openstack",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Situer OpenStack dans l'histoire de la virtualisation télécom.",
       "Comparer NFVI OpenStack et Kubernetes.",

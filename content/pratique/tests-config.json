@@ -1,7 +1,7 @@
 {
   "noeud": "tests-config",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Tester la configuration d'une NF.",
       "Détecter la régression.",

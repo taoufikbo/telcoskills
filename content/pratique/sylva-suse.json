@@ -1,7 +1,7 @@
 {
   "noeud": "sylva-suse",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire la variante SUSE de Sylva.",
       "Situer SL Micro, RKE2, Rancher, Longhorn, NeuVector.",

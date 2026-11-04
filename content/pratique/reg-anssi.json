@@ -1,7 +1,7 @@
 {
   "noeud": "reg-anssi",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Identifier les guides utiles de l'ANSSI.",
       "Appliquer leurs recommandations à une plateforme.",

@@ -1,7 +1,7 @@
 {
   "noeud": "nrf-scp",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire l'enregistrement et la découverte.",
       "Comprendre le routage par SCP.",

@@ -1,7 +1,7 @@
 {
   "noeud": "gpu-operator",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Installer le pilote et l'opérateur GPU.",
       "Vérifier la visibilité des cartes.",

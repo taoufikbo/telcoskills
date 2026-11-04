@@ -1,7 +1,7 @@
 {
   "noeud": "sec-5g",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire les menaces sur le cœur 5G.",
       "Appliquer les mesures de sécurité de base.",

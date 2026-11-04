@@ -1,7 +1,7 @@
 {
   "noeud": "cnf-ops",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Mettre un CNF à l'échelle.",
       "Mettre à jour un CNF sans coupure.",

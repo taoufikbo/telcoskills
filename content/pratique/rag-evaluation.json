@@ -1,7 +1,7 @@
 {
   "noeud": "rag-evaluation",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Évaluer un RAG.",
       "Construire un jeu de questions.",

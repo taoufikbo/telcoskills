@@ -1,7 +1,7 @@
 {
   "noeud": "interfonctionnement-4g",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire l'interfonctionnement 4G/5G.",
       "Lire les interfaces concernées.",

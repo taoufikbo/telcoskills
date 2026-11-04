@@ -1,7 +1,7 @@
 {
   "noeud": "multi-editeurs",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Intégrer plusieurs éditeurs sur une plateforme.",
       "Gérer l'interopérabilité.",

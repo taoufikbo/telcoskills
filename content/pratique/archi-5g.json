@@ -1,7 +1,7 @@
 {
   "noeud": "archi-5g",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire NG-RAN, 5GC et SBA.",
       "Situer les interfaces principales.",

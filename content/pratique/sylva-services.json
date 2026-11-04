@@ -1,7 +1,7 @@
 {
   "noeud": "sylva-services",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire Rancher, Keycloak, Harbor, Vault et Flux.",
       "Situer leur rôle.",

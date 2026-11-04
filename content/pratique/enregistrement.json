@@ -1,7 +1,7 @@
 {
   "noeud": "enregistrement",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire l'enregistrement et l'authentification.",
       "Lire la séquence 5G-AKA.",

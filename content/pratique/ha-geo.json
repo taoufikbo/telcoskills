@@ -1,7 +1,7 @@
 {
   "noeud": "ha-geo",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Identifier les zones de défaillance et les points de défaillance uniques.",
       "Comparer des architectures bi-site selon leur coût et leur risque.",

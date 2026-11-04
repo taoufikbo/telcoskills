@@ -1,7 +1,7 @@
 {
   "noeud": "sbi-http2",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Lire un appel d'interface de service.",
       "Comprendre le rôle d'OpenAPI.",

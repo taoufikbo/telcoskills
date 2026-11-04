@@ -1,7 +1,7 @@
 {
   "noeud": "ims-voix",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire la voix sur 5G.",
       "Situer IMS et P-CSCF.",

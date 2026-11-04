@@ -1,7 +1,7 @@
 {
   "noeud": "incident-astreinte",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Piloter un incident : détecter, qualifier, communiquer, résoudre, clôturer.",
       "Escalader au bon moment vers les bonnes personnes.",
@@ -61,7 +61,7 @@
       "bonne": 0,
       "explication": "Celui qui coordonne ne doit pas être absorbé par le diagnostic : il suit la situation et décide.",
       "source": "Google SRE Book : gestion des incidents",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -76,7 +76,7 @@
       "bonne": 0,
       "explication": "On escalade sur des critères posés d'avance, sans attendre d'avoir tout essayé.",
       "source": "PagerDuty Incident Response…",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     },
     {
@@ -91,7 +91,7 @@
       "bonne": 0,
       "explication": "Un post-mortem sans culpabilité cherche des causes systémiques et des actions suivies.",
       "source": "Google SRE Book : culture du post-mortem",
-      "statut": "brouillon",
+      "statut": "valide",
       "mauvaisChoixPlausible": 1
     }
   ]

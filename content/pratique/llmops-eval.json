@@ -1,7 +1,7 @@
 {
   "noeud": "llmops-eval",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Évaluer en continu.",
       "Détecter une régression de modèle.",

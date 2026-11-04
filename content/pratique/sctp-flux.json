@@ -1,7 +1,7 @@
 {
   "noeud": "sctp-flux",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Reconnaître les protocoles du cœur 5G.",
       "Prévoir le traitement de SCTP et GTP par la plateforme.",

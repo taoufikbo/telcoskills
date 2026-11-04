@@ -1,7 +1,7 @@
 {
   "noeud": "k8s-archi",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire les composants du plan de contrôle et d'un nœud.",
       "Expliquer ce qui se passe entre une demande à l'API et le démarrage d'un pod.",

@@ -1,7 +1,7 @@
 {
   "noeud": "tel-edge-inference",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire l'inférence en périphérie.",
       "Peser latence et coût.",

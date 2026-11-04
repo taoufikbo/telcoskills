@@ -1,7 +1,7 @@
 {
   "noeud": "tel-aiops",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Assister le diagnostic d'un cluster par IA.",
       "Cadrer les limites.",

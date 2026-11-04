@@ -1,7 +1,7 @@
 {
   "noeud": "reseau-ip",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Lire un plan d'adressage IP et un schéma de VLAN.",
       "Expliquer le rôle d'un VLAN, d'un trunk, d'une route et d'un tunnel.",

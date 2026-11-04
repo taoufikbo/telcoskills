@@ -1,7 +1,7 @@
 {
   "noeud": "k8s-services",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer comment un service expose des pods et comment la résolution de noms fonctionne.",
       "Choisir entre ClusterIP, NodePort et LoadBalancer.",

@@ -1,7 +1,7 @@
 {
   "noeud": "sylva-metal3",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire Metal3.",
       "Gérer des serveurs nus.",

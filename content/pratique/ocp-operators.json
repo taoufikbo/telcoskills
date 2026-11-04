@@ -1,7 +1,7 @@
 {
   "noeud": "ocp-operators",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Expliquer le rôle des Cluster Operators et de l'Operator Lifecycle Manager.",
       "Lire l'état d'un opérateur (disponible, dégradé, en progression).",

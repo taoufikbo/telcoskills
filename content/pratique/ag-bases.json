@@ -1,7 +1,7 @@
 {
   "noeud": "ag-bases",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Décrire la boucle d'un agent.",
       "Expliquer outils et mémoire.",

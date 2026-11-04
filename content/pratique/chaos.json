@@ -1,7 +1,7 @@
 {
   "noeud": "chaos",
   "fiche": {
-    "statut": "brouillon",
+    "statut": "valide",
     "objectifs": [
       "Concevoir une expérience de panne contrôlée.",
       "Définir l'état stable et l'hypothèse avant l'expérience.",
