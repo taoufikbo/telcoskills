@@ -571,7 +571,7 @@
           "url": "https://github.com/EleutherAI/lm-evaluation-harness"
         }
       ],
-      "cible": 2
+      "cible": 3
     },
     {
       "id": "cout-energie",

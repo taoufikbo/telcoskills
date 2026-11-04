@@ -1,5 +1,5 @@
 {
-  "_etat": "APPLIQUÉE le 2026-11-04 sur décision de l'auteur, sans relecture complète (« on corrigera en prod »). Toutes les cases portent \"valide\": true. À relire et corriger : points connus = Sylva trop léger, `reseau-ip` trop haut chez l'architecte (règle de remontée des prérequis à plafonner), avis indépendant plus haut (inflation). Relecture avec l'auteur le 2026-11-04 : Sylva (8 compétences relevées) et la règle de remontée plafonnée à P3 (4 compétences de l'architecte, dont reseau-ip). Reste à relire : les autres blocs. Relecture complète des autres parcours le 2026-11-04 (architecte sans changement ; 8 paliers relevés : Intégrateur NF 3, SRE 2, Intégrateur DevOps 3) ; contrôles automatiques : aucune incohérence de prérequis. Laissés à trancher : voir HANDOFF.md.",
+  "_etat": "APPLIQUÉE le 2026-11-04 sur décision de l'auteur, sans relecture complète (« on corrigera en prod »). Toutes les cases portent \"valide\": true. À relire et corriger : points connus = Sylva trop léger, `reseau-ip` trop haut chez l'architecte (règle de remontée des prérequis à plafonner), avis indépendant plus haut (inflation). Relecture avec l'auteur le 2026-11-04 : Sylva (8 compétences relevées) et la règle de remontée plafonnée à P3 (4 compétences de l'architecte, dont reseau-ip). Reste à relire : les autres blocs. Relecture complète des autres parcours le 2026-11-04 (architecte sans changement ; 8 paliers relevés : Intégrateur NF 3, SRE 2, Intégrateur DevOps 3) ; contrôles automatiques : aucune incohérence de prérequis. Laissés à trancher : voir HANDOFF.md. Arbitrages du 2026-11-04 (délégation « fait au mieux ») : relevés SRE ocp-upgrade et IA llmops-eval à P3 ; CONSERVÉS tels quels, avec leur raison : Ingénieur CaaS perf-hugepages et perf-profile à P2 (ordre opérateur Sylva P1, ingénieur P2, architecte P3), Intégrateur DevOps bloc Exploitation et observabilité à P2 (il intègre et livre, il n'opère pas), SRE sécurité à P1 (le durcissement est appliqué par l'ingénieur ; le SRE réagit aux alertes).",
   "paliers": {
     "1": "Dire à quoi ça sert et situer le composant ou le pattern dans l'architecture",
     "2": "Palier 1 + voir comment l'utiliser (lire une configuration, suivre un exemple)",
@@ -466,6 +466,11 @@
           "palier": 3,
           "raison": "Relecture complète du 2026-11-04 : le rôle « répond aux incidents » ; le basculement et la reprise sont à faire soi-même en lab.",
           "valide": true
+        },
+        "ocp-upgrade": {
+          "palier": 3,
+          "raison": "Arbitrage du 2026-11-04 : la montée de version est l'opération critique de l'opérateur (même raisonnement que Sylva) ; « Changement » est un objectif du rôle.",
+          "valide": true
         }
       }
     },
@@ -821,6 +826,11 @@
         "tel-aiops": {
           "palier": 3,
           "raison": "Revu après second avis (écart de rangs) : outil de diagnostic à mettre en œuvre",
+          "valide": true
+        },
+        "llmops-eval": {
+          "palier": 3,
+          "raison": "Arbitrage du 2026-11-04 : parité avec llmops-obs et llmops-gateway (P3, même bloc) ; le rôle opère les charges IA, donc rejoue lui-même les évaluations.",
           "valide": true
         }
       }
