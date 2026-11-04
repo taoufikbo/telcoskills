@@ -9,6 +9,7 @@ import ProduitsAnimes from "@/components/ProduitsAnimes";
 import Subscribe from "@/components/Subscribe";
 import { INSTANCE } from "@/lib/instance";
 import { TEXTES_ACCUEIL } from "@/lib/accueil-textes";
+import { chargerMondes, partCloud, repartition } from "@/lib/mondes";
 import { contactDisponible } from "@/lib/sections";
 import { proprietesOrientation } from "@/lib/orientationProps";
 import { parcoursMetier } from "@/lib/rubriques";
@@ -59,6 +60,14 @@ export default function AccueilRefonte() {
 
   const chiffres = chiffresCatalogue({ roadmaps, projets: chargerProjets() });
 
+  // Parcours joués en exemple sur la carte : le plus proche du cloud, un du milieu, le plus proche du télécom.
+  const mondes = chargerMondes();
+  const parAxe = parcoursMetier(roadmaps)
+    .map((r) => ({ id: r.id, part: partCloud(repartition(r, mondes)) }))
+    .sort((a, b) => b.part - a.part)
+    .map((x) => x.id);
+  const exemples = parAxe.length >= 3 ? [parAxe[0], parAxe[Math.floor(parAxe.length / 2)], parAxe[parAxe.length - 1]] : parAxe;
+
   const legendeCarte =
     roadmapGraphe && noeudCible && carte ? (
       <figcaption className="mono mt-3">
@@ -108,6 +117,7 @@ export default function AccueilRefonte() {
                     carteParDefaut={carte}
                     legendeCarte={legendeCarte}
                     nbOutils={nbOutils}
+                    exemples={exemples}
                   />
                 </div>
               }

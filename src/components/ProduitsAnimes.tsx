@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BASE_PROJET, BASE_ROADMAPS } from "@/lib/urls";
+import VignettesVisibles from "./VignettesVisibles";
 
 type Props = {
   nbCompetences: number;
@@ -61,6 +62,7 @@ export default function ProduitsAnimes({ nbCompetences, nbOutils, outils, phases
       <h2 id="titre-produits" className="text-2xl font-semibold sm:text-3xl">
         Ce que vous trouvez ici
       </h2>
+      <VignettesVisibles>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Carte large titre="La carte des prérequis" texte={`${nbCompetences} compétences, chacune reliée à ce qu'il faut maîtriser avant. Survolez-en une : son chemin s'allume.`} href={BASE_ROADMAPS}>
           <svg viewBox="0 0 240 110" className="h-full w-full max-w-md">
@@ -140,6 +142,7 @@ export default function ProduitsAnimes({ nbCompetences, nbOutils, outils, phases
           </ul>
         </Carte>
       </div>
+      </VignettesVisibles>
     </section>
   );
 }

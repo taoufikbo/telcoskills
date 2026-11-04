@@ -29,6 +29,8 @@ export default function CarteHeros({ disposition: d, progression = {}, onOuvrir 
   };
   const statut = (id: string) => LIBELLE_STATUT[progression[id] ?? "a-faire"];
   const [focus, setFocus] = useState<string | null>(null);
+  // Rang le long du chemin (du premier pas à la cible) : sert au tracé quand la carte se redessine.
+  const rang = useMemo(() => new Map(d.chemin.map((n, i) => [n.id, i])), [d]);
   const parId = useMemo(() => new Map(d.noeuds.map((n) => [n.id, n])), [d]);
   const actif = focus ? parId.get(focus) : undefined;
   const allumes = useMemo(() => (actif ? new Set([actif.id, ...actif.amont]) : null), [actif]);
@@ -51,6 +53,7 @@ export default function CarteHeros({ disposition: d, progression = {}, onOuvrir 
             key={`${a.de}-${a.a}`}
             d={a.d}
             className={["arete", !allumes && a.surChemin && "chemin", allumes && (allumes.has(a.de) && allumes.has(a.a) ? "allume" : "eteint")].filter(Boolean).join(" ")}
+            style={rang.has(a.a) ? ({ "--i": rang.get(a.a) } as React.CSSProperties) : undefined}
           />
         ))}
         {d.noeuds.map((n) => {
@@ -65,6 +68,7 @@ export default function CarteHeros({ disposition: d, progression = {}, onOuvrir 
               onMouseEnter={() => setFocus(n.id)}
               onFocus={() => setFocus(n.id)}
               onBlur={() => setFocus(null)}
+              style={rang.has(n.id) ? ({ "--i": rang.get(n.id) } as React.CSSProperties) : undefined}
               className={["noeud", !allumes && n.surChemin && "chemin", n.cible && "cible", n.id === d.depart?.id && "depart", s && `statut-${progression[n.id]}`, etat(n.id)].filter(Boolean).join(" ")}
             >
               <title>{s ? `${n.titre} (${s})` : n.titre}</title>

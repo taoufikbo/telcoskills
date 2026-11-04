@@ -675,7 +675,25 @@ a.panneau:hover {
   }
 }
 
-/* ---------- Vignettes animées de l'accueil (état final par défaut ; mouvement seulement si le visiteur l'accepte) ---------- */
+/* Tracé du chemin : quand la carte se redessine, ses compétences apparaissent dans l'ordre d'apprentissage (information, pas décor). */
+@media (prefers-reduced-motion: no-preference) {
+  .carte-apparait .carte-heros .noeud.chemin,
+  .carte-apparait .carte-heros .arete.chemin {
+    opacity: 0;
+    animation: carte-trace 0.45s ease forwards;
+    animation-delay: calc(var(--i, 0) * 110ms + 150ms);
+  }
+}
+@keyframes carte-trace {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- Vignettes animées de l'accueil : état final par défaut ; le mouvement ne tourne que lorsque la section est à l'écran (data-anim="on") et que le visiteur l'accepte ---------- */
 .pa-saisie {
   display: inline-block;
   overflow: hidden;
@@ -684,34 +702,35 @@ a.panneau:hover {
   border-right: 1px solid var(--fg);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .pa-noeud {
+  [data-anim="on"] .pa-noeud {
     animation: pa-allume 6s ease-in-out infinite;
     animation-delay: calc(var(--i) * 0.7s);
   }
-  .pa-saisie {
+  [data-anim="on"] .pa-saisie {
     width: 0;
     animation: pa-frappe 6s steps(6) infinite;
   }
-  .pa-resultat {
+  [data-anim="on"] .pa-resultat {
     opacity: 0;
     animation: pa-apparait 6s ease infinite;
     animation-delay: calc(2s + var(--i) * 0.4s);
   }
-  .pa-barre {
+  [data-anim="on"] .pa-barre {
+    transform: scaleX(0);
     transform-origin: left;
     animation: pa-remplit 6s ease-in-out infinite;
     animation-delay: calc(var(--i) * 0.5s);
   }
-  .pa-puce {
+  [data-anim="on"] .pa-puce {
     opacity: 0;
     animation: pa-apparait 7s ease infinite;
     animation-delay: calc(var(--i) * 0.25s);
   }
-  .pa-phase {
+  [data-anim="on"] .pa-phase {
     animation: pa-balaye 6s ease-in-out infinite;
     animation-delay: calc(var(--i) * 0.45s);
   }
-  .pa-coche {
+  [data-anim="on"] .pa-coche {
     opacity: 0;
     animation: pa-apparait 6s ease infinite;
     animation-delay: calc(var(--i) * 1.1s);
@@ -719,11 +738,6 @@ a.panneau:hover {
 }
 .pa-barre {
   transform: scaleX(var(--p));
-}
-@media (prefers-reduced-motion: no-preference) {
-  .pa-barre {
-    transform: scaleX(0);
-  }
 }
 @keyframes pa-allume {
   0%,

@@ -17,6 +17,8 @@ type Props = {
   legendeDefaut?: ReactNode;
   /** Parcours probable pendant le diagnostic (après la première réponse) : la carte montre son chemin depuis le début, avant que les trois réponses ne soient données. */
   apercu?: string | null;
+  /** L'aperçu est un exemple joué par la page (et non une réponse du visiteur) : la légende le dit. */
+  exemple?: boolean;
 };
 
 let promesse: Promise<Record<string, CarteDepart>> | null = null;
@@ -28,7 +30,7 @@ const chargerCartes = () => (promesse ??= fetch("/cartes-parcours.json").then((r
  * Après le diagnostic, la carte se redessine : le chemin de la personne, de son point de départ à la compétence la plus avancée
  * qui s'appuie dessus. La Carte héros elle-même n'accède à aucun stockage.
  */
-export default function CarteHerosSuivie({ defaut, config, choix, legendeDefaut, apercu }: Props) {
+export default function CarteHerosSuivie({ defaut, config, choix, legendeDefaut, apercu, exemple }: Props) {
   const { etat, now, pret } = usePratique();
   const { reponses } = useReponsesEnregistrees();
   const [cartes, setCartes] = useState<Record<string, CarteDepart> | null>(null);
@@ -64,7 +66,7 @@ export default function CarteHerosSuivie({ defaut, config, choix, legendeDefaut,
     <div key={perso ? cle : "defaut"} className={perso ? "carte-apparait" : undefined}>
       {perso && (
         <p className="mono mb-2" data-carte-perso>
-          {reponsesValides(config, reponses) || choix ? "Votre chemin dans" : "Parcours probable :"} « {perso.titreRoadmap} »
+          {reponsesValides(config, reponses) || choix ? "Votre chemin dans" : exemple ? "Exemple :" : "Parcours probable :"} « {perso.titreRoadmap} »
         </p>
       )}
       <CarteHeros disposition={disposition} progression={progression} />
